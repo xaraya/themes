@@ -1,0 +1,35 @@
+<xar:set name="dayname">date("l", $pubdate)</xar:set>
+<xar:set name="daynum">date("j", $pubdate)</xar:set>
+<xar:set name="month">date("M", $pubdate)</xar:set>
+<xar:set name="year">date("Y", $pubdate)</xar:set>
+<div class="post">
+    <div class="post_cal">
+	    <div class="dayname">#$dayname#</div>
+		<div class="daynum">#$daynum#</div>
+		<div class="month">#$month#</div>
+		<div class="year">#$year#</div>
+    </div>
+	<div class="post_head">
+	    <h2 id="post-#$aid#">
+           #$title#
+            <xar:if condition="!empty($editurl)">
+                [<a href="#$editurl#">#$edittitle#</a>]
+            </xar:if>
+        </h2>
+	</div>    
+	<div class="entry">
+	    #$summary#
+        <p></p>
+        #$body#
+    </div>
+</div>    
+
+<a name="comments"></a>
+
+<xar:if condition="!empty($hooks)">
+    <xar:foreach in="$hooks" key="$hookmodule">
+        <div>
+            #$hooks[$hookmodule]#
+        </div>
+    </xar:foreach>
+</xar:if>

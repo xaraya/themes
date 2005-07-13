@@ -1,0 +1,41 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+<div class="xar-mod-head">
+    <span class="xar-mod-title">
+        <xar:mlstring>
+            Base Module
+        </xar:mlstring>
+    </span>
+</div>
+
+<div class="xar-mod-body">
+    <div style="margin: auto;">
+        <h3>
+            Theme Name: Travelogue
+        </h3>
+        <h3>
+            Theme URI: <a href="http://svn.wp-themes.org/travelogue/">http://svn.wp-themes.org/travelogue/</a>
+        </h3>
+        <h3>Description: Designed with a traveler in mind, or someone with a chronologically-based blog, this theme is attractive and customizable. Don't forget to change the picture in the polaroid!
+
+        </h3>
+        <h3>
+            Ported to Xaraya: <a href="http://www.wyome.com">Wyome Consulting</a>
+
+        </h3>
+        <h3>
+            Version: 1.0
+        </h3>
+        <h3>
+            Author: Josh Lyman
+        </h3>
+        <h3>
+            Author URI: <a href="http://www.podq.com/">http://www.podq.com/</a>
+        </h3>
+        <p>
+            Released under the GPL. The included font, "Dear Joe," is released by joebob of http://www.joebob.nl/, 
+            and is free to use for any purposes. The default picture supplied in the polaroid header image is 
+            copyrighted by Josh Lyman. I don't care if you keep it, but recommend you change it. And please don't 
+            take credit for it either! ;-) Have fun!.
+        </p>
+    </div>
+</div>

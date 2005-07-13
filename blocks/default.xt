@@ -1,0 +1,14 @@
+<ul>
+    <div class="sidebox">
+        <div class="boxhead">
+            <li>
+                <h3>
+                    #$title#
+                </h3>
+            </div>
+            <div class="boxbody">
+                #$content#
+            </div>
+        </li>
+    </div>
+</ul>
