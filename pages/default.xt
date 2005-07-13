@@ -1,0 +1,97 @@
+<?xar type="page" ?>
+<xar:blocklayout version="1.0" content="text/html" xmlns:xar="http://xaraya.com/2004/blocklayout">
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+	<xar:blockgroup name="header" id="header" />
+	<link rel="icon" href="favicon.ico" />
+	<title>#$tpl:pageTitle#</title> 
+	<base href="&xar-baseurl;index.php" />
+	<style type="text/css">
+        @import url(&xar-baseurl;#xarTplGetThemeDir()#/style/style.php) screen;
+    </style>
+    <xar:style scope="common" />
+    <xar:additional-styles />
+	<xar:comment> Head JavaScript </xar:comment>
+	<xar:base-render-javascript position="head" />
+	</head>
+	<body>
+        <div id="page">
+            <ul id="menu">
+                <li>
+                    <a href="#xarModUrl()#">
+                        <xar:mlstring>
+                            home
+                        </xar:mlstring>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <xar:mlstring>
+                            about
+                        </xar:mlstring>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <xar:mlstring>
+                            links
+                        </xar:mlstring>
+                    </a>
+                </li>
+            </ul>
+            <div id="header">
+                <div id="headerimg">
+                    <h1>
+                        <a href="#xarModUrl()#">
+                            #xarModGetVar('themes', 'SiteName')#
+                        </a>
+                    </h1>
+                    <p class="description">
+                        #xarModGetVar('themes', 'SiteSlogan')#
+                    </p>
+                </div>
+            </div>
+            <div id="content">
+                <xar:module main="true" id="modulespace" />
+                
+            </div>
+            <div id="sidebar">
+                <xar:blockgroup name="left" id="blocksleft" />
+                <xar:blockgroup name="right" id="blocksright" />
+            </div>
+            <div id="footer">
+                <p>
+                    <xar:mlstring>
+                        Powered by 
+                    </xar:mlstring>
+                    <a href="http://www.xaraya.com" title="#xarML('Powered by Xaraya')#">
+                        <xar:mlstring>
+                            Xaraya
+                        </xar:mlstring>
+                    </a>
+                    <br />
+                    <a href="http://validator.w3.org/check/referer" title="This page validates as XHTML 1.0 Transitional">
+                        <xar:mlstring>
+                            Valid 
+                        </xar:mlstring>
+                        <abbr title="eXtensible HyperText Markup Language">
+                            XHTML
+                        </abbr>
+                    </a> | 
+                    RSS: <a href="#xarServerGetCurrentURL(array('theme' => 'rss'))#">
+                            <xar:mlstring>
+                                Entries
+                            </xar:mlstring>
+                         </a> |
+                    Atom:<a href="#xarServerGetCurrentURL(array('theme' => 'atom'))#">
+                            <xar:mlstring>
+                                Entries
+                            </xar:mlstring>
+                         </a>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
+</xar:blocklayout>

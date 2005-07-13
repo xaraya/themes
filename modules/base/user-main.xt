@@ -1,0 +1,42 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+<div class="xar-mod-head">
+    <span class="xar-mod-title">
+        <xar:mlstring>
+            Base Module
+        </xar:mlstring>
+    </span>
+</div>
+
+<div class="xar-mod-body">
+    <div style="margin: auto;">
+        <h3>
+            Theme Name: OrangeSky
+        </h3>
+        <h3>
+            Theme URI: <a href="http://blog.detlog.org/orangesky/">http://blog.detlog.org/orangesky/</a>
+        </h3>
+        <h3>
+            Description: WordPress theme inspired by Alexi Murdoch's song "Orange Sky".
+        </h3>
+        <h3>
+            Ported to Xaraya: <a href="http://www.wyome.com">Wyome Consulting</a>
+
+        </h3>
+        <h3>
+            Version: 1.0
+        </h3>
+        <h3>
+            Author: Naoko McCracken
+        </h3>
+        <h3>
+            Author URI: <a href="http://blog.detlog.org/">http://blog.detlog.org/</a>
+        </h3>
+        <p>
+            This WordPress theme is released under GPL:
+            http://www.opensource.org/licenses/gpl-license.php
+            <br /><br />
+            Thank you Michael Heilemann for creating the brilliant kubrick theme!
+            I had learned a lot from it in the process of creating this one.
+        </p>
+    </div>
+</div>
