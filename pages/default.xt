@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xar type="page" ?>
+<xar:blocklayout version="1.0" content="text/html" xmlns:xar="http://xaraya.com/2004/blocklayout">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+		<xar:blockgroup name="header" id="header" />
+        <title>#$tpl:pageTitle#</title>
+        <base href="&xar-baseurl;index.php" />
+        <link rel="StyleSheet" href="&xar-baseurl;themes/diner-casual/style/default.css" type="text/css" />
+		<link rel="icon" href="favicon.ico" />
+        <xar:style scope="common" />
+        <xar:additional-styles />
+        <xar:comment> Head JavaScript </xar:comment>
+        <xar:base-render-javascript position="head" />
+    </head>
+    <body>
+<div id="logoelements">
+	<span class="basebottom">
+		<a class="dinerlinks" href="index.php/articles">Home</a>
+		<span class="pagelogo">|</span>
+		<a class="dinerlinks" href="index.php/news/map">Categories</a>
+		<span class="pagelogo">|</span>
+		<a class="dinerlinks" href="index.php/weblinks">Links</a> 
+		<span class="pagelogo">|</span>
+		<a class="dinerlinks" href="index.php/downloads">Downloads</a> 
+		<span class="pagelogo">|</span>
+		<a class="dinerlinks" href="index.php?module=headlines">Syndication</a> 
+		<span class="pagelogo">|</span>
+		<xar:if condition="xarUserIsLoggedIn()">
+			<a class="dinerlinks" href="index.php?module=roles">Your Account</a>
+		<xar:else />
+			<a class="dinerlinks" href="index.php?module=roles">Account</a>
+		</xar:if>
+		<xar:if condition="xarSecurityCheck('AdminPanel',0)">
+		<span class="pagelogo">|</span>
+			<a class="dinerlinks" href="index.php?module=referer&amp;type=admin">Admin</a>
+		</xar:if>
+		<br />
+		<b>&copy; #xarModGetVar('themes', 'SiteCopyRight')#</b> 
+		<br />
+		#xarModGetVar('themes', 'SiteFooter')# 
+	</span>
+</div>
+<div id="main">
+	<xar:module id="modulespace" main="true" />
+</div>
+<xar:comment> Body JavaScript </xar:comment>
+<xar:base-render-javascript position="body" />
+</body>
+</html>
+</xar:blocklayout>

@@ -1,0 +1,19 @@
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+    <tr>
+        <td align="left" valign="top" class="xar-normal">
+            <xar:if condition="!empty($categories) and count($categories) gt 0">
+                [ <xar:loop name="$categories">
+                    #$cjoin# <a href="#$clink#">#$cname#</a>
+                </xar:loop> ]
+            </xar:if>
+            <a class="xar-title" href="#$redirect#">#$title#</a><br />
+            Description: #$summary#<br />
+            Added on: #$date#
+            <xar:if condition="!empty($counter)">
+                (#$counter#
+                <xar:mlstring>Hits</xar:mlstring>)
+            </xar:if>
+            | <a href="#$link#">Rate / Comment</a>
+        </td>
+    </tr>
+</table>
