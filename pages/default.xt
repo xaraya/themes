@@ -1,0 +1,76 @@
+<?xar type="page" ?>
+<xar:blocklayout version="1.0" content="text/html" xmlns:xar="http://xaraya.com/2004/blocklayout">
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+	<xar:blockgroup name="header" id="header" />
+	<link rel="icon" href="favicon.ico" />
+	<title>#$tpl:pageTitle#</title> 
+	<base href="&xar-baseurl;index.php" />
+	<xar:set name="where">
+		#xarSessionGetVar('Navigation.Where')#
+	</xar:set>
+	<xar:if condition="empty($navigation)">
+		<xar:set name="where">
+			1
+		</xar:set>
+	</xar:if>
+	<xar:set name="return">
+		#xarServerGetCurrentURL()#
+	</xar:set>
+	<xar:if condition="$where eq 1">
+		<style type="text/css">@import url(&xar-baseurl;#xarTplGetThemeDir()#/style/style.css);</style>
+	<xar:else />
+		<style type="text/css">@import url(&xar-baseurl;#xarTplGetThemeDir()#/style/admin.css);</style>
+	</xar:if>
+        <xar:style scope="common" />
+        <xar:additional-styles />
+	<xar:comment> Head JavaScript </xar:comment>
+	<xar:base-render-javascript position="head" />
+	</head>
+	<body onload="window.defaultStatus='Wyome: Custom Design and Development';" id="wyome">
+	<div id="container">
+		<div id="title">
+			<h1><span>Custom Xaraya Development Services and Solutions by John Cox</span></h1>
+		</div>
+		<div id="intro">
+			<div id="quickSummary">
+				<p class="p1"><span>Wyome</span></p>
+				<p class="p2"><span>Custom Development and Design Powered By <a class="xaraya" href="http://www.xaraya.com" title="Xaraya Content Management">Xaraya</a></span></p>
+			</div>
+			<div id="navcontainer">
+				<ul id="navlist">
+					<li id="active"><a href="#xarModUrl()#" id="current" title="Back to the main page">Home</a></li>
+					<li><a href="#xarModUrl('articles', 'user', 'view', array('ptid' => 8))#" title="Custom Development Services offered by Wyome">Services</a></li>
+					<li><a href="#xarModUrl('articles', 'user', 'viewmap')#" title="Site Map of Wyome">Site Map</a></li>
+					<li><a href="#xarModUrl('articles', 'user', 'archive')#" title="Older Articles on Wyome">Archive</a></li>
+					<li><a href="#xarModUrl('articles', 'user', 'view', array('ptid' => 7))#" title="Downloads for Xaraya">Downloads</a></li>
+					<li><a href="#xarModUrl('articles', 'user', 'view', array('ptid' => 2))#" title="Tutorials on Xaraya">Tutorials</a></li>
+					<li><a href="#xarModUrl('articles', 'user', 'view', array('ptid' => 10))#" title="Discussions on Xaraya and OpenSource Development">Blog</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="modulespace">
+			<xar:module class="modulespace" main="true" />
+		</div>
+		<div id="rblocks">			
+			<xar:if condition="xarSecurityCheck('AdminPanel',0)">
+                <xar:block instance="7" module="roles" />
+                <xar:block instance="17" module="mybokmarks" />
+			<xar:else />
+                <xar:blockgroup name="right" id="right" />
+            </xar:if>
+		</div>
+		<div id="footer">
+			 &copy; Copyright 1997 - 2004 |  Wyome provides custom solutions built on the <a href="http://www.xaraya.com" title="Xaraya Content Management and Web Application Framework">Xaraya Web Application Framework</a>.
+		</div>
+	</div>
+	<div id="topimage"><span></span></div>
+	<div id="admin">
+		<xar:blockgroup name="admin" id="admin" />
+	</div>
+	<xar:comment> Body JavaScript </xar:comment>
+	<xar:base-render-javascript position="body" />
+	</body>
+	</html>
+</xar:blocklayout>

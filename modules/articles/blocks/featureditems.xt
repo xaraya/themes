@@ -1,0 +1,22 @@
+<xar:foreach in="$feature" value="$item">
+    <xar:if condition="!empty($item['featuredlabel'])">
+        <xar:if condition="!empty($item['alttitle'])">
+            <p><a href="#$item['featuredlink']#">#$item['alttitle']#</a></p>
+        <xar:else />
+            <p><a href="#$item['featuredlink']#">#$item['featuredlabel']#</a></p>
+        </xar:if>
+    </xar:if>
+</xar:foreach>
+<xar:if condition="!empty($items)">
+    <p><xar:mlstring>More Featured Headlines</xar:mlstring>:</p>
+    <xar:foreach in="$items" value="$item">
+		<p>
+        &bull;
+        <xar:if condition="empty($item['link'])">
+            #$item['label']#
+        <xar:else />
+            <a href="#$item['link']#">#$item['label']#</a>
+        </xar:if>
+		</p>
+    </xar:foreach>
+</xar:if>

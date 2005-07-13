@@ -1,0 +1,21 @@
+<div class="article-view">
+	<h3><a href="#$link#">#$title#</a></h3>
+	<div style="text-align: justify;"><p>#$summary#</p></div>
+	<div style="text-align: right;">
+		<span class="xar-sub">
+			<xar:ml>
+			  <xar:mlstring>Posted on: #(1)</xar:mlstring>
+			  <xar:mlvar>#$date#</xar:mlvar>
+			</xar:ml>
+			<xar:if condition="!empty($counter)">
+			  <xar:ml>
+				  <xar:mlstring>(#(1) Reads)</xar:mlstring>
+				  <xar:mlvar>#$counter#</xar:mlvar>
+			  </xar:ml>
+			</xar:if>
+			<xar:if condition="!empty($comments)">
+				&nbsp; #$comments#
+			</xar:if>
+        </span>
+  </div>
+</div>
