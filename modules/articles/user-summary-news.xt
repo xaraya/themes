@@ -1,0 +1,49 @@
+<xar:set name="somaraxpthemedir">#xarTplGetThemeDir()#</xar:set>
+<div class="xar-alt" style="margin: 0px 3px 6px 3px;padding: 1px;text-align: left;">
+<div class="xar-norm" style="padding: 3px;">
+<br><table border="0" cellpadding="0" cellspacing="0" bgcolor="#ffffff" width="100%">
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="26" height="30"><img src="#$somaraxpthemedir#/images/sidebox-title-left.gif"></td>
+<td align="left" valign="middle" background="#$somaraxpthemedir#/images/sidebox-title-bg.gif" width="100%" height="30">
+<font class="option" color="#363636">&nbsp;&nbsp;<b></b></font>
+</td>
+<td align="left" valign="top" width="6" height="30"><img src="#$somaraxpthemedir#/images/sidebox-title-right.gif"></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="15" height="46"><img src="#$somaraxpthemedir#/images/storybox-left.gif"></td>
+<td align="left" valign="middle" background="#$somaraxpthemedir#/images/storybox-bg.gif" width="100%" height="46">
+<font color="#999999" size="1">_POSTEDBY  _ON  ___timezone (___counter _READS)</font>
+<font color="#999999"></font>
+</td>
+<td width="12" align="left" valign="top"><img src="#$somaraxpthemedir#/images/storybox-right.gif"></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td width="4" align="left" valign="top" background="#$somaraxpthemedir#/images/sidebox-bar-left.gif"><img src="#$somaraxpthemedir#/images/sidebox-bar-px.gif"></td>
+<td>
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr valign="top">
+<td>
+<font color="#999999"><b><a href="search.php?query=&amp;topic="><img src="" border="0" Alt="" align="right" hspace="10" vspace="10"></a></B></font>
+<font class="content" color="#505050"></font>
+</td></tr></table>
+</td>
+<td width="13" align="left" valign="top" background="#$somaraxpthemedir#/images/storybox-content-right.gif"><img src="#$somaraxpthemedir#/images/storybox-content-right-px.gif"></td>
+</tr></table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr valign="top">
+<td width="9" height="29" align="left" valign="top"><img src="#$somaraxpthemedir#/images/storybox-bottom-left.gif"></td>
+<td width="100%" height="29" background="#$somaraxpthemedir#/images/storybox-bottom-bg.gif">&nbsp;</td>
+<td width="18" height="29" align="left" valign="top"><img src="#$somaraxpthemedir#/images/storybox-bottom-right.gif"></td>
+</table>
+</td></tr></table>
+</td></tr></table>

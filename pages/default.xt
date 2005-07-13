@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xar type="page" ?>
+<xar:blocklayout version="1.0" content="text/html" xmlns:xar="http://xaraya.com/2004/blocklayout">
+<xar:set name="rightblocksgroup"><xar:blockgroup name="right" id="right" /></xar:set>
+<xar:set name="leftblocksgroup"><xar:blockgroup name="left" id="left" /></xar:set>
+<xar:set name="centerblocksgroup"><xar:blockgroup name="center" id="center" /></xar:set>
+<xar:set name="topnavblocksgroup"><xar:blockgroup name="topnav" id="topnav" /></xar:set>
+<xar:set name="somaraxpthemedir">#xarTplGetThemeDir()#</xar:set>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>#$tpl:pageTitle#</title> 
+<xar:blockgroup name="header" id="header" /> 
+<base href="&xar-baseurl;index.php" /> 
+<style type="text/css">@import url("&xar-baseurl;#$somaraxpthemedir#/style/style.css"); </style>
+
+<body bgcolor="#ffffff" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0">
+
+<table cellpadding="0" cellspacing="0" width="100%" border="0" bgcolor="#6487dc">
+<tr>
+<td bgcolor="#6487dc" align="left" valign="top" width="65%"><a href="index.php"><img src="#$somaraxpthemedir#/images/logo.gif" align="left" alt="Welcome to" border="0"></a></td>
+<form action="search.php" method="post">
+<td bgcolor="#6487dc" align="right" valign="top">
+<font class="content" color="#000000"><b><xar:mlstring>Search</xar:mlstring></b>
+<input type="text" name="query" size="14"></font></td></form>
+<form action="search.php" method="get"><font class="content">
+<td bgcolor="#6487dc" align="right" valign="top">
+<b><xar:mlstring>Topics</xar:mlstring></b>
+<select name="topic"onChange='submit()'>
+<option value=""><xar:mlstring>All Topics</xar:mlstring></option>
+</select></font></td></form>
+</tr></table>
+
+<table cellpadding="0" cellspacing="0" width="100%" border="0" align="center" bgcolor="#F3F4F7">
+<tr>
+<td bgcolor="#ffffff" colspan="4"><IMG src="#$somaraxpthemedir#/images/pixel.gif" width="1" height="1" alt="" border="0" hspace="0"></td>
+</tr>
+<tr valign="middle" bgcolor="#EAE7D1">
+<td align="left" valign="top" width="8" height="22"><img src="#$somaraxpthemedir#/images/topnav-left.gif"></td>
+<td width="15%" background="#$somaraxpthemedir#/images/topnav-bg.gif" nowrap><font class="content" color="#363636">
+&nbsp;&nbsp;<font color="#ffffff"><a href="index.php?modules=roles&func=register&phase=registerform">Create</a></font> an account
+</font></td>
+<td align="center" height="20" width="73%" background="#$somaraxpthemedir#/images/topnav-bg.gif">
+<font class="content">
+<A href="/">Home</a>&nbsp;&middot;&nbsp;<A href="index.php?module=articles">Articles</a>&nbsp;&middot;&nbsp;<A href="index.php?module=roles">Your Account</a>&nbsp;&middot;&nbsp;<A href="index.php?module=articles&type=admin&func=new">Submit News</a>&nbsp;&middot;&nbsp;<A href="index.php?module=hitcount">Top 10</a>
+</font>
+</td>
+<td align="left" valign="top" width="8" height="22"><img src="#$somaraxpthemedir#/images/topnav-left.gif"></td>
+<td align="right" width="140" background="#$somaraxpthemedir#/images/topnav-bg.gif"><font class="content">
+<script type="text/javascript">
+
+<!--   // Array ofmonth Names
+var monthNames = new Array( "January","February","March","April","May","June","July","August","September","October","November","December");
+var now = new Date();
+thisYear = now.getYear();
+if(thisYear < 1900) {thisYear += 1900}; // corrections if Y2K display problem
+document.write(monthNames[now.getMonth()] + " " + now.getDate() + ", " + thisYear);
+// -->
+
+</script></font>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#EAE7D1" colspan="5"><IMG src="#$somaraxpthemedir#/images/pixel.gif" width="1" height="3" alt="" border="0" hspace="0"></td>
+</tr>
+<tr>
+<td bgcolor="#ACA899" colspan="5"><IMG src="#$somaraxpthemedir#/images/pixel.gif" width="1" height="1" alt="" border="0" hspace="0"></td>
+</tr>
+<tr>
+<td bgcolor="#716F64" colspan="5"><IMG src="#$somaraxpthemedir#/images/pixel.gif" width="1" height="1" alt="" border="0" hspace="0"></td>
+</tr>
+</table>
+
+<!----- Begin Main Content Table ----->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" align="center"><tr valign="top">
+  <td bgcolor="#6487dc"><img src="#$somaraxpthemedir#/images/pixel.gif" width="10" height="1" border="0" alt=""></td>
+  <td bgcolor="#6487dc" width="175" valign="top"><xar:var name="leftblocksgroup"/></td>
+  <td bgcolor="#6487dc"><img src="#$somaraxpthemedir#/images/pixel.gif" width="15" height="1" border="0" alt=""></td>
+  <td bgcolor="#ffffff"><img src="#$somaraxpthemedir#/images/pixel.gif" width="15" height="1" border="0" alt=""></td>
+  <td width="100%"><xar:module main="true" /></td>
+  <td><img src="#$somaraxpthemedir#/images/pixel.gif" width="15" height="1" border="0" alt=""></td>
+  <td valign="top" width="150"><xar:var name="rightblocksgroup"/></td>
+  <td bgcolor="#ffffff"><img src="#$somaraxpthemedir#/images/pixel.gif" width=10 height=1 border=0 alt=""></td>
+</tr></table>
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" align="center">
+<tr align="center">
+<td width="100%" colspan="3">#xarModGetVar('themes', 'SiteFooter')#</td>
+</tr></table>
+
+</body>
+</html>
+</xar:blocklayout>
