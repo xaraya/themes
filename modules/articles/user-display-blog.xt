@@ -1,0 +1,50 @@
+<xar:set name="cids">#xarVarGetCached('Blocks.articles','cids')#</xar:set>
+<xar:set name="catlist">#xarModAPIFunc('categories','user','getcatinfo',array('cids' =&gt; $cids))#</xar:set>
+<div class="post-title">
+    <em>
+   <xar:set name="firstone">1;</xar:set>
+    <xar:if condition="!empty($catlist) and count($catlist) gt 0">
+            <xar:foreach in="$catlist" value="$cat">
+            <xar:if condition="$firstone">
+                <xar:set name="joinchar">''</xar:set>
+                <xar:set name="firstone">0;</xar:set>
+            <xar:else />
+                <xar:set name="joinchar"><xar:mlstring> and </xar:mlstring></xar:set>
+            </xar:if>
+                <span class="linktext">#$joinchar#</span> <a href="#cat['link']#">#$cat['name']#</a>
+        </xar:foreach>
+    </xar:if>
+    </em>
+    #$date#
+</div>
+<p class="post-info">
+        <a href="#xarModURL('articles','user','display',array('ptid'=&gt;$ptid,'aid'=&gt;$aid))#" rel="bookmark" title=" #xarML('Permanent Link')#: #$title#">#$title#</a>
+
+        <xar:if condition="!empty($editurl)">
+            <a href="#$editurl#"> (<xar:mlstring>edit this</xar:mlstring>)</a>
+        </xar:if>
+</p>
+<div class="post-content">
+	#$summary#
+	#$body#
+
+</div>
+
+<xar:if condition="!empty($hooks)">
+    <xar:foreach in="$hooks" key="$hookmodule">
+    <xar:if condition="$hookmodule eq 'comments'">
+    <p>
+      <xar:template type="theme" file="commenttitle" />
+    </p>
+         <div class="post-footer">
+               #$hooks['comments']#
+         </div>
+     <xar:else />
+        <div>
+            #$hooks[$hookmodule]#
+        </div>
+   </xar:if>
+    </xar:foreach>
+</xar:if>
+
+

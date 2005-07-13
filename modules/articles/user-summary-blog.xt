@@ -1,0 +1,30 @@
+<div class="post-title">
+    <em>
+    <xar:set name="firstone">1;</xar:set>
+    <xar:if condition="!empty($categories) and count($categories) gt 0">
+        <xar:foreach in="$categories" value="$cat">
+            <xar:if condition="$firstone">
+                <xar:set name="joinchar">''</xar:set>
+                <xar:set name="firstone">0;</xar:set>
+            <xar:else />
+                <xar:set name="joinchar"><xar:mlstring> and </xar:mlstring></xar:set>
+            </xar:if>
+                <span class="linktext">#$joinchar#</span> <a href="#$cat['clink']#">#$cat['cname']#</a>
+        </xar:foreach>
+    </xar:if>
+    </em>
+    #$date#
+</div>
+<p class="post-info">
+        <a href="#$link#"rel="bookmark" title=" #xarML('Permanent Link')#: #$title#">#$title#</a>
+</p>
+<div class="post-content">
+	#$summary#
+</div>
+<br />
+<a name="comments"></a>
+<div class="post-footer">
+
+    <a href="#$link##comments">#$comments# &raquo;</a>
+
+</div>

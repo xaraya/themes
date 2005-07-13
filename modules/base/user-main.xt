@@ -1,0 +1,58 @@
+<h1 class="xar-mod-title">
+    <xar:mlstring>
+        Thank you for installing and trying Xaraya!
+    </xar:mlstring>
+</h1>
+
+    <h3 class="xar-mod-title">
+        <xar:mlstring>
+            This is another port of the WordPress "FastTrack" theme for use with Xaraya.
+        </xar:mlstring>
+    </h3><br />
+    <div class="post-info">
+    <p>
+        <xar:mlstring>
+            The original Wordpress "FastTrack" theme is licenced under the GPL and
+            can be downloaded from the <a href="http://playwith.wpthemes.info/index.php?wptheme=FastTrack">http://playwith.wpthemes.info</a> site.
+        </xar:mlstring>
+    </p>
+    <p>
+        <xar:mlstring>
+             This port of the theme has a number of features to make it easy to use in Xaraya:
+        </xar:mlstring>
+    </p>
+    <ol>
+       <li><xar:mlstring>A compact administration menu that displays when the <em>Use Dashboard</em>
+           option is checked in the Adminpanels configuration screen. An Admin template removes the right block column to providing a full width module space for admin displays.</xar:mlstring></li>
+       <li><xar:mlstring>Turn off any Login block in your sideblock area, and use the discreet login link in the lower sideblock area.
+        A Login link is displayed if you allow registration at your site, and Logout link after login.
+        For Admin, an 'Admin' link takes them to the Compact Admin Menu.
+                         </xar:mlstring></li>
+
+       <li><xar:mlstring>Comments similar in layout to the original Fasttrack theme when Comments are installed and
+            the default rendering is set to <em>Flat</em> in the Comments modify configuration area.</xar:mlstring></li>
+       <li><xar:mlstring>Changes in comments are best viewed by turning off the Edit Stamp in Comments in Comments Modify Config area.Instead,
+       install the Changelog module and hook to Comments to get optimal view.</xar:mlstring></li>
+             <li><xar:mlstring>Edit links for sideblocks viewable by Admin, take you direct to the block for editing.</xar:mlstring></li>
+
+    </ol>
+    <p>
+        <xar:mlstring>
+            This theme was originally ported to be used as a basis for another theme and I was unaware it had already been ported at that time to Xaraya.  Thus I've renamed this version "xarfasttrack" as opposed to the original "fasttrack" name.
+            You  may find some specific parts of the theme useful for further examination and replication in other Xaraya themes.
+        </xar:mlstring>
+        <xar:mlstring>
+            Thank you for your support, enjoy the theme!.
+        </xar:mlstring>
+    </p>
+    <p>
+        <xar:mlstring>
+            For more information on Xaraya, please visit
+            <a href="http://www.xaraya.com">
+                Xaraya's
+            </a>
+            website.
+        </xar:mlstring>
+    </p>
+    </div>
+

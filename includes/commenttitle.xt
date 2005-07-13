@@ -1,0 +1,17 @@
+<br />
+<xar:set name="numcomments">
+            #xarModAPIFunc('comments','user','get_countlist',
+                    array('modid' =&gt;xarModGetIDFromName('articles'),
+                          'objectids' =&gt; array($aid)))#
+</xar:set>
+
+<a name="comments"></a>
+<xar:if condition="$numcomments gt 0 and !empty($numcomments)">
+<h3 id="comments">
+    <xar:ml>
+        <xar:mlstring>#(1) Responses to </xar:mlstring>
+        <xar:mlvar>#$numcomments#</xar:mlvar>
+    </xar:ml>
+    &ldquo;#$title#&rdquo;
+</h3>
+</xar:if>

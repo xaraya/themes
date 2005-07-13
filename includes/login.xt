@@ -1,0 +1,17 @@
+<xar:if condition="xarUserIsLoggedIn()">
+    <li>
+        <a href="#xarModUrl('roles', 'user', 'main')#">
+            <xar:mlstring>
+                Your Account
+            </xar:mlstring>
+        </a>
+    </li>
+<xar:else />
+    <li>
+        <a href="#xarModUrl('roles', 'user', 'main')#">
+            <xar:mlstring>
+                Login
+            </xar:mlstring>
+        </a>
+    </li>
+</xar:if>

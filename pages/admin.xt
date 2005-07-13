@@ -1,0 +1,49 @@
+<?xar type="page" ?>
+<xar:blocklayout content="text/html" xmlns:xar="http://xaraya.com/2004/blocklayout" version="1.0">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<xar:set name="siteslogan">
+    <xar:var scope="module" module="themes" name="SiteSlogan" />
+</xar:set>
+<xar:set name="adminnav">
+		<xar:block module="adminpanels" type="adminmenu" template="mainnavbubble;top" />
+</xar:set>
+<head>
+        <base href="&xar-baseurl;index.php" />
+       	<link rel="icon" href="favicon.ico" />
+        <xar:blockgroup name="header" id="header" />
+        <title>#$tpl:pageTitle#</title>
+        <link rel="stylesheet" href="&xar-baseurl;#xarTplGetThemeDir()#/style/style.php" type="text/css" title="Empty" />
+        <xar:style scope="common" />
+        <xar:additional-styles />
+
+        <xar:base-render-javascript position="head" />
+        <script type="text/javascript" src="#xarTplGetThemeDir()#/scripts/nav.js"></script>
+</head>
+<body onload="window.defaultStatus='#xarModGetVar('themes', 'SiteName')#';" id="home">
+<xar:if condition="xarModGetVar('adminpanels','dashboard')">
+    <xar:var name="adminnav" />
+</xar:if>
+<div id="rap">
+	<ul id="topnav">
+    	<li><a href="#xarModUrl()#" id="navHome" title="#xarML('Posted Recently')#" accesskey="h"><span style="font-decoration:underline;">H</span>ome</a></li>
+    	<li><a href="#xarModUrl('base', 'user', 'main')#" id="navAbout" title="#xarML('About the Author')#" accesskey="a"><span style="font-decoration:underline;">A</span>bout</a></li>
+    	<li><a href="#xarModUrl('articles', 'user', 'archive')#" id="navArchives" title="#xarML('Posted Previously')#" accesskey="r">A<span style="font-decoration:underline;">r</span>chives</a></li>
+    	<li><a href="#xarModUrl('articles', 'user', 'view',array('ptid'=&gt; 6))#" id="navLinks" title="#xarML('Recommended Links')#" accesskey="l"><span style="font-decoration:underline;">L</span>inks</a></li>
+	    <li><a href="#xarModUrl('sitecontact','user','main')#" id="navContact" title="#xarML('Contact')#" accesskey="c"><span style="font-decoration:underline;">C</span>ontact</a></li>
+    </ul>
+    <div id="header">
+        <h1 style="clear:both;"><a href="#xarModUrl()#" title="test">#xarModGetVar('themes', 'SiteName')#</a></h1>
+    </div>
+    <div id="content-admin">
+        <xar:module main="true" id="modulespace" />
+	    <p style="align:center;"></p>
+    </div>
+    <p id="footer">
+        <xar:mlstring>Design Downloaded from </xar:mlstring><a href="http://wpthemes.info" title="WP Themes.Info">WPThemes.Info</a>.  <xar:mlstring>This version ported to Xaraya by </xar:mlstring><a href="http://xaraya.athomeandabout.com" title="AtHomeAndAbout">AtHomeAndAbout</a>.
+    </p>
+</div>
+<xar:base-render-javascript position="body" />
+</body>
+</html>
+</xar:blocklayout>
