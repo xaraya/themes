@@ -1,0 +1,7 @@
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+<tr>
+<td background="themes/PostNukeBlue/images/BlockRContent.gif">
+<pnt:var id="block_body" name="content" />
+</td>
+</tr>
+</table>

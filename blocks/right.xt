@@ -1,0 +1,31 @@
+<table border="0" cellpadding="0" cellspacing="0" width="166">
+<pnt:if id="title_condition" condition="!empty($title)">
+  <tr>
+   <td><img src="themes/PostNukeBlue/images/spacer.gif" width="6" height="1" border="0"></td>
+   <td><img src="themes/PostNukeBlue/images/spacer.gif" width="147" height="1" border="0"></td>
+   <td><img src="themes/PostNukeBlue/images/spacer.gif" width="7" height="1" border="0"></td>
+   <td><img src="themes/PostNukeBlue/images/spacer.gif" width="6" height="1" border="0"></td>
+   <td><img src="themes/PostNukeBlue/images/spacer.gif" width="1" height="1" border="0"></td>
+  </tr>
+
+  <tr>
+    <td colspan="2" bgcolor="#006699"><img name="BlockRTop" src="themes/PostNukeBlue/images/BlockRTop.gif" width="153" height="9" border="0"></td>
+    <td colspan="2" bgcolor="#006699"><img name="BlockRTop2" src="themes/PostNukeBlue/images/spacer.gif" width="1" height="1" border="0"></td>
+   <td><img src="themes/PostNukeBlue/images/spacer.gif" width="1" height="9" border="0"></td>
+  </tr>
+  <tr>
+    <td background="themes/PostNukeBlue/images/BlockRContent.gif">&nbsp;</td>
+    <td colspan="2" background="themes/PostNukeBlue/images/BlockRContent.gif">
+</pnt:if>
+<span color="#355031"><b><pnt:var id="block_title" name="title" /></b></span><p>
+        <pnt:var id="block_body" name="content" />
+    </td>
+    <td bgcolor="#006699">&nbsp;</td>
+   <td><img src="themes/PostNukeBlue/images/spacer.gif" width="1" height="21" border="0"></td>
+  </tr>
+  <tr>
+    <td colspan="2" bgcolor="#006699"><img name="BlockRBott" src="themes/PostNukeBlue/images/BlockRBott.gif" width="153" height="9" border="0"></td>
+    <td colspan="2" bgcolor="#006699"><img name="BlockRBott2" src="themes/PostNukeBlue/images/spacer.gif" width="1" height="1" border="0"></td>
+   <td><img src="themes/PostNukeBlue/images/spacer.gif" width="1" height="9" border="0"></td>
+  </tr>
+</table><br />
