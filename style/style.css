@@ -1,0 +1,517 @@
+/* XARAYA REQUIRED CLASSES */
+html {
+	
+}
+
+body { 
+	background: rgb(117, 103, 76) url(../images/wyome.png) no-repeat top left; 
+	color: #efc67b; 
+	margin: 0 0 30px 0;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-size: 9pt;
+    font-weight: normal;
+    font-style: inherit;
+}
+
+h1 {
+	color: #313131; 
+	width: 100%;
+	height: 23px;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-size: 16pt;
+    font-weight: bold;
+    font-style: inherit;
+}
+
+h2 {
+	color: #313131; 
+	width: 100%;
+	height: 23px;
+	border-bottom: 1px dashed #313131;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-size: 15pt;
+    font-weight: bold;
+    font-style: inherit;
+}
+h3 {
+	color: #313131; 
+	width: 100%;
+	height: 23px;
+	border-bottom: 1px dashed #313131;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-size: 14pt;
+    font-weight: bold;
+    font-style: inherit;
+}
+h4 {
+	color: #313131; 
+	width: 100%;
+	height: 23px;
+	border-bottom: 1px dashed #313131;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-size: 13pt;
+    font-weight: bold;
+    font-style: inherit;
+}
+h5, h6 {
+	color: #313131; 
+	width: 100%;
+	height: 23px;
+	border-bottom: 1px dashed #313131;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-size: 12pt;
+    font-weight: normal;
+    font-style: inherit;
+}
+
+th {
+   color: #000000;
+   font-size: 9.5pt;
+   font-family: Verdana, Helvetica, Arial, sans-serif;
+   font-weight: bold;
+}
+td {
+   color: #000000;
+   font-size: 8.5pt;
+   font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+table {
+	border: 0px;
+/* 	margin: 0px; */
+/* 	padding: 0px; */
+}
+thead {}
+tbody {}
+tfoot {
+   color: #000000;
+   font-size: 11pt;
+   font-family: Verdana, Helvetica, Arial, sans-serif;
+   font-weight: bolder;
+}
+
+blockquote {
+   width: 60%;
+   color: #000;
+   font-size: 8.5pt;
+   font-family: Verdana, Helvetica, Arial, sans-serif;
+   font-weight: 600;
+   font-style: normal;
+   text-decoration: none;
+   padding: 2em;
+}
+code {
+   color: #000;
+   font-size: 8.5pt;
+   font-family: Verdana, Helvetica, Arial, sans-serif;
+   font-weight: 600;
+   font-style: normal;
+   text-decoration: none;
+   border: 2px #efc67b dashed;
+   padding: 2em;
+}
+pre {
+   width: 60%;
+   color: #000;
+   font-size: 8.5pt;
+   font-family: Verdana, Helvetica, Arial, sans-serif;
+   font-weight: 600;
+   font-style: normal;
+   text-decoration: none;
+   padding: 2em;
+}
+
+
+
+input {
+   background-color: #efc67b;
+   border-bottom-width: 1px;
+   border-color: #000000;
+   border-left-width: 1px;
+   border-right-width: 1px;
+   border-top-width: 1px;
+   font-family: Verdana, Helvetica, Arial, sans-serif;
+   font-size: 8.5pt;
+   font-weight: normal;
+   text-indent: 2px;
+   color: #313131;
+}
+button {
+   border: 2px outset #efc67b;
+   background-color: #efc67b;
+   color: #313131;
+   font-size: 8.5pt;
+   font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+select {
+   background-color: #efc67b;
+   border-bottom-width: 1px;
+   border-color: #000000;
+   border-left-width: 1px;
+   border-right-width: 1px;
+   border-top-width: 1px;
+   font-family: Verdana, Helvetica, Arial, sans-serif;
+   font-size: 8.5pt;
+   font-weight: normal;
+   color: #313131;
+}
+textarea {
+   background-color: #efc67b;
+   border-bottom-width: 1px;
+   border-color: #000000;
+   border-left-width: 1px;
+   border-right-width: 1px;
+   border-top-width: 1px;
+   font-family: Verdana, Helvetica, Arial, sans-serif;
+   font-size: 8.5pt;
+   font-weight: normal;
+   text-indent: 0px;
+   color: #313131;
+}
+
+img {
+   border: 0px;
+}
+
+li {
+   color: #efc67b;
+   font-family: Verdana, Helvetica, Arial, sans-serif;
+   line-height: 150%;
+   margin-bottom: 10px;
+}
+ul {
+   color: #efc67b;
+   font-family: Verdana, Helvetica, Arial, sans-serif;
+   line-height: 150%;
+   margin-bottom: 10px;
+}
+ol {
+   color: #efc67b;
+   font-family: Verdana, Helvetica, Arial, sans-serif;
+   line-height: 150%;
+   margin-bottom: 10px;
+}
+
+sup {
+   font-size: 6.5pt;
+}
+sub {
+   font-size: 6.5pt;
+}
+
+
+/*  THEME SPECIFIC CLASSES */
+
+hr {
+   width:100%;
+   color:#c0c0c0;
+}
+form {
+   font-family: Verdana, Helvetica, Arial, sans-serif;
+   font-size: 8.5pt;
+}
+checkbox {
+   background-color: transparent;
+   font-family: Verdana, Helvetica, Arial, sans-serif;
+   font-size: 8.5pt;
+   font-weight: normal;
+}
+
+/*  XARAYA REQUIRED INDIVIDUAL CLASSES */
+td.xar-norm {}
+td.xar-alt {}
+
+
+/*  XARAYA REQUIRED ANONYMOUS CLASSES  */
+
+/* No Display for this in this theme */
+.xar-mod-head {
+   border: 2px solid #a0a0a0;
+   background-color: #cdd5f8;
+   padding: 3px;
+   text-align: center;
+   font-weight: bold;
+   font-size: 11pt;
+   display: none;
+}
+
+
+
+.xar-mod-title {
+   color: #313131; 
+   font-size: 10.5pt;
+   font-weight: bold;
+   font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+
+.xar-mod-body {
+	margin: 0px;
+	padding: 0px;
+}
+
+.xar-mod-foot {}
+.xar-alt {background-color: #8E7246; }
+.xar-accent {background-color: #8E7246; }
+.xar-alt-outline {border: 1px solid #8E7246; }
+.xar-accent-outline {border: 1px solid #8E7246; }
+.xar-norm-outline {border: 1px solid #8E7246; }
+.xar-norm {}
+.xar-sub {font-size: smaller;}
+
+.xar-menu-section {
+   color: #313131; 
+   font-size: 11pt;
+   font-weight: bold;
+   font-family: Verdana, Helvetica, Arial, sans-serif;
+   border-bottom: thin dotted #313131;
+   line-height: 170%;
+   width: 100%;
+   margin-top: 4px;
+   margin-bottom: 4px;
+}
+
+ul.xar-menu-section, ol.xar-menu-section {
+margin: 0px;
+}
+li.xar-menu-section {
+   border: 0px;
+}
+
+.xar-menu-section-current {
+   color: #191970;
+   font-size: 10pt;
+   font-weight: bold;
+   font-family: Verdana, Helvetica, Arial, sans-serif;
+   border-bottom: 1px solid #191970;
+   line-height: 170%;
+}
+.xar-menu-item {
+   font-size: 8.5pt;
+   font-weight: bold;
+   font-family: Verdana, Helvetica, Arial, sans-serif;
+   padding-left: .5em;
+}
+.xar-menu-item-current {
+   font-size: 8.5pt;
+   font-weight: bold;
+   font-family: Verdana, Helvetica, Arial, sans-serif;
+   padding-left: .5em;
+   padding-bottom: .3em;
+}
+.xar-menu-item:hover {
+}
+
+.xar-menu-subitem {
+   font-size: 8pt;
+   font-weight: bold;
+   font-family: Verdana, Helvetica, Arial, sans-serif;
+   margin-left: 6px;
+   padding-left: 0px;
+}
+
+.xar-menu-subitem:hover {
+}
+.xar-menu-subitem-current {
+   font-weight: bold;
+   color: #000000;
+   font-size: 8pt;
+   margin-left: 6px;
+   padding-left: 0px;
+}
+
+.xar-menu-item-current > .xar-menu-subitem > a {
+}
+.xar-menu-item-current > .xar-menu-subitem > a:visited {
+}
+
+.xar-title {
+   font-weight: bold;
+   font-size: 12px;
+}
+
+.xar-error {
+   color: #ff0000;
+}
+
+
+/* Start Theme Specific Classes */
+
+
+p { 
+	padding-bottom: 5px;
+    color: #efc67b;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+}
+
+a:link { 
+	font-weight: bold; 
+	text-decoration: none; 
+	color: #fe9201;
+}
+
+a:visited {
+	font-weight: bold;
+    color: #fe9201;
+	border: none;
+    text-decoration: none;
+}
+
+a:hover, a:active { 
+	color: #fe9201;
+    text-decoration: underline overline;
+}
+
+/* layout */
+
+#quickSummary p.p2 {
+	position: absolute;
+	top: 330px;
+	left: 0;
+	width: 320px;
+	margin: 0;
+	padding: 15px 20px 15px 20px;
+	text-align: center;
+	font-size: 10px;
+	font-weight: bold;
+	background: #8E7246;
+}
+
+/* used for modulespace */
+#modulespace {
+	margin: 0px 50px 40px 410px; 
+	padding: 10px 0 40px 0;
+	}
+
+#modulespace h3 {
+	font: 16pt verdana, helvetica, sans-serif; 
+	color: #313131; 
+	width: 100%;
+	height: 23px;
+	border-bottom: 1px dashed #313131;
+}
+
+#footer {
+	margin-top: 20px;
+}
+#footer a:link, #footer a:visited { 
+	margin-right: 20px; 
+	}
+
+/* navigation / links */
+
+#linkList {
+	position: absolute;
+	top: 380px;
+	left: 0;
+	width: 360px;
+	text-align: left;
+	padding: 0;
+	margin: 0;
+	font-size: .9em;
+}
+
+/* linklist WITHOUT favorites */
+/* NOTE: keep this linklist CSS if favorites remains hidden */
+#lblocks { 
+	clear: none;
+	float: left;
+	width: 180px;
+	padding: 0 19px 0 20px;
+	margin: 0 0 30px 0;
+	border-right: 1px dashed #efc67b;
+	voice-family: "\"}\"";      
+	voice-family: inherit;
+	width: 140px;
+	}
+html>body #lblocks {
+	width: 140px;
+	}
+
+#rblocks { 
+	float: right;
+	width: 180px;
+	padding: 0 0 0 20px;
+	margin: 0 0 30px 0;
+	voice-family: "\"}\"";      
+	voice-family: inherit;
+	width: 160px;
+	}
+
+html>body #rblocks {
+	width: 160px;
+	}
+
+
+#linkList h3 { 
+	font: 14pt verdana, helvetica, sans-serif; 
+	color: #efc67b; 
+	margin: 0; 
+	width: 120px;
+	height: 12px; 
+	border: 0;
+}
+
+
+#linkList ul {
+	margin: 0px;
+	padding: 0px;
+}
+#linkList li {
+	list-style-type: none;
+	display: block; 
+	padding-top: 2px; 
+	margin-bottom: 2px;
+}
+#linkList li a:link {
+	text-decoration: none;
+	border: none;
+}
+#linkList li a:visited {
+	text-decoration: none;
+	border: none;
+}
+
+#linkList li a.c {
+	text-decoration: none;
+	border: none;
+}
+
+/* Article View */
+
+#article-view {
+	margin: 10px 20px 20px 10px; 
+	padding: 20px 0 0 0;
+	}
+
+#article-view h3 {
+	color: #313131; 
+	width: 100%;
+	height: 23px;
+	border-bottom: 1px dashed #313131;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-size: 16pt;}
+
+/* Top Nav */
+#title
+{
+	text-align: left;
+	padding: 0;
+	margin: 0;
+	height: 50px;
+}
+
+#title h1
+{
+	background: transparent url(../images/title.png) top right no-repeat;
+	height: 50px;
+}
+
+#title h1 span {
+	display: none;
+}
+
+/* Search Engine Highlighting */
+
+.searchword {
+	background-color: #fe9201;
+}
