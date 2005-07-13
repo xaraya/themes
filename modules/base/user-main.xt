@@ -1,0 +1,15 @@
+Welcome to my test bed.  I am currently working on some needed functionality for the Diner, as well as doing some changes in the Xaraya repository to clean up from the recent prefix changes.
+
+I will be converting the old data from the site through the week, so please be patient:)  In the meantime, check out <a href="http://www.xaraya.com">Xaraya.com </a> for more information.
+
+<br /><br >
+<b>Update -- 12-31-02</b><br />
+I updated the site to the latest view from my development site.  I believe that users registration works, along with a few other modules now.  There is also a module that I am working on called "release" which will maintain module and theme id's for you.  This module will be moved to the Xaraya website once complete, but the data will also be moved, so you will be able to check your module id's in the meantime.
+<br /><br />
+<b> Update -- 1-1-03</b><br />
+I am doing a little testing on the RSS block I worked on today.  I am not entirely sure that the socket will time out nicely, so if the page dies, thats why.
+<br /><br />
+<b>Update -- 1-19-03</b><br />
+The articles module is working somewhat now, and I am testing the functionality starting today.  I am not going to put articles up yet that will stay, instead just test articles.  Once complete, I will begin to use the article modules as the main entry point for this site.
+<br /><br />
+<xar:blockgroup name="RSS" id="RSS" />

@@ -1,0 +1,22 @@
+<xar:if condition="empty($warning)">
+	<br />
+	<b><xar:mlstring>Headlines from</xar:mlstring></b>:	<a href = "#$chanlink#" target = "_BLANK"> #$chantitle# </a>
+	<xar:if condition="!empty($chandesc)">
+		 <br />&nbsp;&nbsp;#$chandesc#
+	</xar:if>
+	<br /><br />
+	<xar:if condition="!empty($feedcontent)">
+		<xar:loop name="$feedcontent">
+			<xar:if condition="!empty($link)">
+				<strong>&middot;</strong><a href = "#$link#" target = "_BLANK"> #$title# </a> <br />
+			<xar:else />
+				<strong>&middot;</strong> <b>#$title#</b> <br />
+			</xar:if>
+			<xar:if condition="!empty($description)">
+				#$description# <br /><br />
+			</xar:if>
+		</xar:loop>
+	</xar:if>
+<xar:else />
+	#$warning#
+</xar:if>

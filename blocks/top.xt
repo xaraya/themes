@@ -1,0 +1,9 @@
+<table border="0" cellpadding="1" cellspacing="0" width="100%">
+<tr><td><img src="themes/Xaraya_Classic/images/sh_line.gif" width="100%" height="5"></td></tr>
+<tr>
+<td>
+<xar:var id="block_body" name="content" />
+</td>
+</tr>
+<tr><td><img src="themes/Xaraya_Classic/images/sh_line.gif" width="100%" height="5"></td></tr>
+</table>
