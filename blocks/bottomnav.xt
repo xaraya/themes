@@ -1,0 +1,5 @@
+<xar:comment> start bottom navigation </xar:comment>
+<div class="xar-block-body">
+	#$content#
+</div>
+<xar:comment> end bottom navigation </xar:comment>

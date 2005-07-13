@@ -1,0 +1,9 @@
+<h2>Templates and Styles</h2>
+<p>The theme has 5 external stylesheets, 1 linked and 4 imported. They are well commented, relatively easy to follow and adapt.</p>
+<ul class="">
+  <li id="a1adfqqdfzcvsag">base.css - contains basic styles; nav.css - navigation elements classes; head.css - theme specific headers; pos.css - layout positioning classes; styles.css - all other styles</li>
+  <li id="a2sdffgghjggsfg">no embedded styles used in this theme and the number of inline styles are being kept to absolute minimum (only in overridden templates).</li>
+  <li id="a3tykghjkgghsfg">unfortunatelly not all Xaraya modules provide table-free layout templates yet, so we may 'override' some of them to enable this theme render modules output as expected.</li>
+  <li id="a4uopuouiohksdg">examples of overridden templates can be found in /modules directory (consult RFC10 for current BlockLayout specs and directions)</li>
+  <li id="a4uopuouiohksaq">Some of the 'static' templates and images have been supplied with this theme for demonstration purposes only (see inline comments). They are not required, and may be either unlinked, removed or ignored.</li>
+</ul>

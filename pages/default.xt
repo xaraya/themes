@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xar type="page" ?>
+<xar:blocklayout version="1.0" content="text/html" xmlns:xar="http://xaraya.com/2004/blocklayout">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<xar:blockgroup name="header" id="header" />
+<title>#$tpl:pageTitle#</title> 
+<base href="&xar-baseurl;index.php" />
+<link href="themes/XBlue_Pro/style/base.css" rel="stylesheet" type="text/css" />
+<xar:style scope="common" />
+<xar:additional-styles />
+<xar:comment> Head JavaScript </xar:comment>
+<xar:base-render-javascript position="head" />
+</head>
+<body>
+<!-- set blockgroups and other vars in advance-->
+<xar:set name="$topnavblocksgroup"><xar:blockgroup name="topnav" id="topnav" /></xar:set>
+<xar:set name="$rightblocksgroup"><xar:blockgroup name="right" id="right" /></xar:set>
+<xar:set name="$leftblocksgroup"><xar:blockgroup name="left" id="left" /></xar:set>
+<xar:set name="$centerblocksgroup"><xar:blockgroup name="center" id="center" /></xar:set>
+<xar:set name="$siteslogan">#xarModGetVar('themes', 'SiteSlogan')#</xar:set>
+<xar:set name="$sitecopyright">#xarModGetVar('themes', 'SiteCopyRight')#</xar:set>
+<xar:set name="$sitefooter">#xarModGetVar('themes', 'SiteFooter')#</xar:set>
+
+<div id="wrapper">
+<div id="innerwrapper">
+  <a href="&xar-baseurl;" accesskey="1"><img src="themes/XBlue_Pro/images/logo.gif" alt="Sample Logo" id="logo" /></a>
+    <div id="topNav" class="clear">
+        <ul>
+          <li id="skipNav"><a href="#contentBlockMiddle" accesskey="2">skip navigation</a></li>
+          <li id="homeLink"><a class="swap" href="index.php"><span>home</span></a></li>
+          <li id="aboutLink"><a class="swap" href="#"><span>about</span></a></li>
+          <li id="articlesLink"><a class="swap" href="#"><span>articles</span></a></li>
+          <li id="prodLink"><a class="swap" href="#"><span>products</span></a></li>
+          <li id="linksLink"><a class="swap" href="#"><span>links</span></a></li>
+          <li id="archiveLink"><a class="swap" href="#"><span>archive</span></a></li>
+          <li id="contactLink"><a class="swap" href="#"><span>contact</span></a></li>
+          <li id="loginLink"><a class="swap" href="#"><span>login</span></a></li>
+          <li id="blankLink"></li>
+        </ul>
+  </div>
+  <xar:comment> banner here, not much more yet </xar:comment>
+  <div>
+    <img id="mainBanner" src="themes/XBlue_Pro/images/banner2.jpg" alt="Create sucessful web projects with Xaraya" width="710" height="80" />
+  </div>
+  <xar:comment> not sure if breacrumbs should be implemented dynamically, static for demo purposes only atm </xar:comment>
+  <div id="breadcrumbs">
+    <xar:mlstring>You are here</xar:mlstring>: <a href="&xar-baseurl;index.php"><xar:mlstring>Home</xar:mlstring></a> &gt; <a href="index.php"><xar:mlstring>About</xar:mlstring></a> &gt; <xar:mlstring>Welcome to Xaraya!</xar:mlstring>
+  </div>
+  <xar:comment> main content area </xar:comment>
+  <div id="mainCol">
+    <div class="contentBlockMiddle">
+	    #$centerblocksgroup#
+        <xar:module class="modulespace" main="true" />
+     </div>
+  </div>
+  <xar:comment> right column - all dynamic menus here </xar:comment>
+  <div id="rightCol">
+    <xar:if condition="!empty($rightblocksgroup)">
+        <div class="contentBlockRight">
+            #$rightblocksgroup#
+        </div>
+	</xar:if>
+	<xar:if condition="!empty($leftblocksgroup)">
+        <div class="contentBlockRight">
+            #$leftblocksgroup#
+        </div>
+    </xar:if>
+	<div class="contentBlockRight validateButton ">
+	    <a href="http://validator.w3.org/check/referer"><img src="themes/XBlue_Pro/images/xhtml.gif" width="90" height="15" alt="validate this pages xhtml" /></a>
+		<a href="http://jigsaw.w3.org/css-validator/check/referer/"><img src="themes/XBlue_Pro/images/css.gif" width="90" height="15" alt="validate this pages css" /></a>
+	</div>
+    <div class="contentBlockRight">
+        #$siteslogan#
+    </div>
+  </div>
+  <div id="footer">
+	<div id="copyright">#$sitecopyright#</div>
+    <ul id="bottomNav">
+	  <li class="first mainLink"><a href="#"><xar:mlstring>FAQ</xar:mlstring></a></li>
+	  <li class="mainLink"><a href="#" accesskey="0"><xar:mlstring>Privacy</xar:mlstring></a></li>
+	  <li class="mainLink"><a href="#" accesskey="3"><xar:mlstring>Legal</xar:mlstring></a></li>
+	  <li class="mainLink"><a href="#" accesskey="9"><xar:mlstring>Site Map</xar:mlstring></a></li>
+	</ul>
+  </div>  
+</div>
+</div>
+<xar:comment> Body JavaScript </xar:comment>
+<xar:base-render-javascript position="body" />
+</body>
+</html>
+</xar:blocklayout>

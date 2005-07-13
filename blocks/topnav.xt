@@ -1,0 +1,5 @@
+<xar:comment> start top navigation </xar:comment>
+<div class="xar-block-body-topnav">
+	#$content#
+</div>
+<xar:comment> end top navigation </xar:comment>

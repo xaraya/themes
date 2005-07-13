@@ -1,0 +1,49 @@
+<xar:comment> Default message is slightly edited and re-formatted, mainly to get rid of those awful double breaks </xar:comment>
+<xar:comment> this is how we inserts additional messages from separate templates </xar:comment>
+<div class="contentBlockLeft xar-accent">
+    <h1>
+        <xar:mlstring>
+            Xaraya is currently in the beta development phase 
+        </xar:mlstring>
+        (ver#xarConfigGetVar('System.Core.VersionNum')#) 
+    </h1>
+    <h2>
+        <xar:mlstring>
+            If you notice any unexpected functionality, please use our bug tracker at 
+        </xar:mlstring>
+        <a href="http://bugs.xaraya.com">
+            http://bugs.xaraya.com</a>. 
+    </h2>
+    <h2>
+        <xar:mlstring>
+            Thank you for your support, and feel free to join our development or user discussions to become involved in our community. 
+        </xar:mlstring>
+    </h2>
+    <img src="themes/XBlue_Pro/images/scrshot.jpg" width="195" height="215" class="cutoutImage " alt="xaraya website screenshot" id="xarsite" />
+    <h3>
+        <xar:mlstring>
+            For more information on Xaraya, please visit 
+        </xar:mlstring>
+    </h3>
+    <h3>
+        <a href="http://www.xaraya.com">
+            xaraya website
+        </a>
+    </h3>
+    <h1>
+        Team Xaraya 
+    </h1>
+    <p>
+        <xar:mlstring>
+            P.S. Messages on this page are made out of static templates. However, they can be edited in the overridden template file for the base module; the template is located on this path: 
+        </xar:mlstring>
+        themes/XBlue_Pro/modules/base/user-main.xt 
+    </p>
+    <div class="clear">
+        &nbsp; 
+    </div>
+</div>
+<xar:comment> this is how we inserts additional messages from separate templates </xar:comment>
+<xar:template file="abouttheme" type="theme" />
+<xar:template file="stylesinfo" type="theme" />
+<xar:comment> End of the message and theme presentation details. If you wish to re-use this template you can delete all of the above and insert your own code instead </xar:comment>

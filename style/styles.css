@@ -1,0 +1,404 @@
+/* XARAYA REQUIRED CLASS */
+/* nice background patterns from http://k10k.net/frames.aspx?section=patterns */
+/* but i have just made my own */
+body {
+	margin: 0px;
+	padding: 10px 0 0 0;
+	line-height: 140%;
+	background-color: #54749B;
+	background-image: url(../images/bg.gif);
+	background-repeat: repeat;
+}
+/* XARAYA REQUIRED CLASS */
+p, div {
+	line-height: 1.6em;
+}
+/* XARAYA REQUIRED CLASS */
+h1 {
+	text-transform: uppercase;
+	line-height: 1.6em;
+}
+/* XARAYA REQUIRED CLASS */
+h2 {
+	line-height: 1.6em;
+}
+/* XARAYA REQUIRED CLASS */
+input, select, form, checkbox {
+	font: 1em/1em Verdana, Arial, Helvetica, sans-serif;
+}
+/* XARAYA REQUIRED CLASS */
+th { background-color: #EDEFF4; }
+
+/*  XARAYA REQUIRED INDIVIDUAL CLASSES */
+td.xar-norm {}
+td.xar-alt {}
+
+/*  XARAYA REQUIRED ANONYMOUS CLASSES  */
+
+/* these defaults apply to the left block group */
+.xar-block-head{
+    border-bottom: 1px solid #CED5DD;	
+	voice-family: "\"}\""; 
+	voice-family:inherit;
+	border-bottom: 1px dotted #CED5DD;
+}
+.xar-block-title, .xar-mod-head, .xar-block-title-right, .xar-block-title-center {
+	color: #54749B;
+	margin: 0px;
+	padding: 0px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-weight: bold;
+	text-transform: uppercase;
+	line-height: 1.6em;
+} /* should look same as h1 */
+
+
+.xar-block-body {}
+.xar-block-foot {
+/*     border-bottom: 2px dotted #dddddd; */
+    margin-bottom: 8px;
+}
+
+/* right block group classes */
+.xar-block-head-right{}
+/* .xar-block-title-right {} */
+.xar-block-body-right {}
+.xar-block-foot-right {
+    margin-bottom: 8px;
+}
+
+/* topnav block group classes */
+.xar-block-head-topnav{}
+.xar-block-title-topnav {}
+.xar-block-body-topnav {}
+.xar-block-foot-topnav {}
+
+/* center block group classes */
+.xar-block-head-center {}
+/* .xar-block-title-center {} */
+.xar-block-body-center {}
+.xar-block-foot-center {}
+.xar-mod-body {
+/* 	margin: 0px; */
+/* 	padding: 0px; */
+}
+.xar-mod-foot {}
+.xar-alt { background-color: #C1C9D0; }
+.xar-accent { background-color: #EDEFF4; }
+.xar-alt-outline {
+	border-color: #C1C9D0;
+	border-width: 1px;
+	border-style: solid;
+}
+.xar-accent-outline {
+	border-color: #EDEFF4;
+	border-width: 1px;
+	border-style: solid;
+}
+.xar-norm-outline {
+	border-color: #C7D0DB;
+	border-width: 1px;
+	border-style: solid;
+}
+.xar-norm {background-color: #ffffff; }
+.xar-sub {font-size: xx-small;}
+
+/* SYSTEM MENUS */
+.xar-menu-item {
+	font-weight: bold;
+	font-size: x-small;
+}
+
+li.xar-menu-item a {
+	padding-left:10px;
+}
+
+.xar-menu-subitem {
+	padding: 0;
+}
+
+ul.xar-menu-section, ul.xar-menu-item, ul.xar-menu-subitem {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+/* 	background-color: #E7EAF4; */
+}
+
+ul li.xar-menu-section {
+	margin-top: 2px;
+	border-color: #C7D2E2 #DBDEE2 #DBDEE2 #C7D2E2;
+	border-width: 1px;
+	border-style: solid;
+}
+
+.xar-menu-section li {
+	margin: 0 0 1px 0;
+}
+
+.xar-menu-section a {
+	display: block;
+	padding: 1px 0;
+	width: 170px;
+	color: #003780;
+/* 	background-color: #E7EAEE; */
+/* 	background-color: #6C9BD8; */
+	text-decoration: none;
+}
+
+.xar-menu-section h4 {
+	padding: 0 5px;
+	margin: 1px 5px 5px 5px;
+	border-bottom: #8296BB;
+	border-width: 0 0 1px 0;
+	border-style: none none solid none;
+	text-transform: uppercase;
+}
+
+.xar-menu-section a:hover {
+	color: #fff;
+	background-color: #8296BB;
+	text-decoration: none;
+}
+
+.xar-menu-section ul ul li {
+	margin: 0 0 1px 10px;
+}
+
+.xar-menu-section ul ul a {
+	display: block;
+	padding: 1px 10px;
+	width: 150px;
+	color: #fff;
+	background-color: #8296BB;
+	font-size: 10px;
+	font-weight: normal;
+	text-decoration: none;
+	line-height: 12pt;
+	
+} /* this is the only rule where we currently use absolute font size,
+	 it is done only because of the horizontal space restriction in side menus
+------------------------------------------------------------------[important note] */
+
+/* Hide from IE5-mac. Only IE-win sees this. \*/
+
+* html .xar-menu-item a, * html .xar-menu-item-current a {
+	float:left;
+	f\loat:none;
+}
+
+* html .xar-menu-section ul {
+	height: 0;
+}
+
+* html .xar-menu-section a {
+	width:170px;
+	w\idth:160px;
+}
+
+* html .xar-menu-section ul ul a {
+	width:160px;
+	w\idth:140px;
+} /* End hide from IE5/mac -the above rules are for the benefit of older ie-win 
+ browsers which have broken box model, however for ie6 in strict mode we must
+ provide genuine figures or it will not behave as expected - it can have escaped rules.
+ there is also extra space between listitems in IE5+, floating links seems to be a fix 
+-------------------------------------------------------------------------[comment] */
+
+.xar-menu-section ul ul a:hover {
+	color: #002C80;
+	background-color: #ffffff;
+	text-decoration: none;
+}
+
+
+li.xar-menu-section-current {
+	color: #2C3F58;
+	background-color: #B1C2E3;
+}
+
+li.xar-menu-item-current {
+	color: #2C3F58;
+	background-color: #EDEFF4;
+}
+
+li.xar-menu-item-current a {
+	padding-left: 10px;
+	margin-bottom:1px;
+}
+
+li li.xar-menu-subitem-current a, li.xar-menu-item-current a {
+	color: #4C5056;
+	background-color: #C7D2E2;
+}
+
+.xar-menu-subitem-current a:before {
+	content: "\00BB \0020";
+} /*
+people with css2 compliant browsers can see a nice marker against current function,
+why not have some fun when you can ;-)
+------------------------------------------------------------------[important note] */
+
+/* .xar-menu-section, .xar-menu-section-current { */
+/* 	color: #00536C; */
+/* 	font-size: small; */
+/* 	font-weight: bold; */
+/* } */
+/*  */
+/* .xar-menu-item {} */
+/* .xar-menu-item-current { */
+/* 	background-color: #EDEFF4; */
+/* 	padding: 5px; */
+/* } */
+/* .xar-menu-item:hover {} */
+.xar-menu-subitem, .xar-menu-subitem-current {
+	font-size: xx-small;
+/* 	font-weight: bold; */
+/* 	margin-left: 1em; */
+/* 	line-height: 170%; */
+}
+/* .xar-menu-subitem:hover {} */
+/* .xar-menu-item-current > .xar-menu-subitem > a {} */
+/* .xar-menu-item-current > .xar-menu-subitem > a:visited {} */
+
+.xar-error {
+   color: #ff0000;
+}
+
+/*  THEME SPECIFIC ANONYMOUS CLASSES  */
+/* this class hides headlines and nav bar text with the swap class
+idea from http://www.stopdesign.com/articles/css/replace-text/
+*/
+.swap span {
+	display: none;
+}
+
+/* style the mainLink so there is a rollover arrow bg image*/
+/* hide hover for IE5 using box model hack */ 
+.mainLink a {
+	padding-right: 15px;
+}
+
+.mainLink a:link, .mainLink a {
+	voice-family: "\"}\""; 
+	voice-family:inherit;
+	background: url(../images/grey_arrow.gif) no-repeat right;
+}
+
+html>body .mainLink a:link {
+	background: url(../images/grey_arrow.gif) no-repeat right;
+} 
+.mainLink a:hover {
+	voice-family: "\"}\""; 
+	voice-family:inherit;
+	background: url(../images/red_arrow.gif) no-repeat right;
+}
+
+html>body .mainLink a:hover {
+	background: url(../images/red_arrow.gif) no-repeat right;
+} 
+
+/* wrap aroung the cutout image */
+.cutoutImage {
+	float: left;
+	padding-right: 10px;
+}
+
+/* form elements */
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+
+.stdButton {
+	color: #445362;
+	font: 0.9em/normal Verdana, Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+}
+
+/* validate buttons */
+.validateButton {
+	padding: 0px;
+}
+
+
+/* on IE5.x dotted lines only show if they are 2px. using box model hack to get round this */
+.contentBlockLeft, .contentBlockMiddle, .contentBlockRight, .contentBlockMain {
+	margin-bottom: 5px;
+	margin-right: 5px;
+	padding: 8px;	
+	border: 1px solid #CED5DD;	
+	voice-family: "\"}\""; 
+	voice-family:inherit;
+	border: 1px dotted #CED5DD;	
+}
+
+html>body contentBlockLeft, .contentBlockMiddle, .contentBlockRight, .contentBlockMain {
+	border: 1px dotted #CED5DD;
+} 
+
+.contentBlockRight {
+	margin-right: 0px;
+}
+
+/* breadcrumbs */
+#breadcrumbs {
+	clear: both;
+	padding: 2px;
+	margin-bottom: 5px;
+	line-height: 12px;
+	border: 1px solid #CED5DD;	
+	voice-family: "\"}\""; 
+	voice-family:inherit;
+	border-style: dotted;
+}
+
+html>body #breadcrumbs {
+	border-style: dotted;
+} 
+
+/* hack to deal with solid border on IE5 */
+#footer {
+	padding: 2px;
+	line-height: 12px;
+	border: 1px solid #CED5DD;	
+	voice-family: "\"}\""; 
+	voice-family:inherit;
+	border-style: dotted;
+}
+
+html>body #footer {
+	border-style: dotted;
+} 
+
+/* making the bottomNav a list and giving the elemenst a psudo pipe on the right */
+#bottomNav li {
+	display: inline;
+	padding: 0px 10px;
+	border-left: 1px solid #63798D;	
+}
+
+#bottomNav .first{
+	border-left: none;
+	padding-left: 5px;	
+}
+
+.unstyledList {
+	margin: 10px;
+	padding: 0px;
+	list-style: none;
+}
+
+/* #subNav li, #subNavContact li { */
+/* 	margin-bottom: 10px; */
+/* } */
+
+#wrapper {
+	background-color: #ffffff;
+	padding: 1px;
+	border-color: #B9C8D1;
+	border-width: 1px;
+	border-style: solid;
+}

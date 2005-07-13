@@ -1,0 +1,92 @@
+/* THEME SPECIFIC CLASS */
+/* each nav element has 3px space to the right */
+#skipNav {
+	display:none;
+}
+/* THEME SPECIFIC CLASS */
+#topNav li {
+	float: left;
+	padding: 0px 3px 0px 0px;
+	margin: 0px;
+}
+/* THEME SPECIFIC CLASS */
+#topNav li a {
+	display: block;
+	height: 15px;
+	width: 80px;
+}
+/* THEME SPECIFIC CLASS */
+/* adjust the width of the last nav element when the space is changed */
+#topNav #blankLink {
+	display: block;
+	width: 46px;
+	height: 15px;
+	padding: 0px;
+	background-color: #C6D4E1;
+}
+/* regular state for the links */
+/* THEME SPECIFIC CLASS */
+#topNav #homeLink a {
+	background:  url(../images/home.gif) no-repeat;
+}
+/* THEME SPECIFIC CLASS */
+#topNav #aboutLink a {
+	background:  url(../images/about.gif) no-repeat;
+}
+/* THEME SPECIFIC CLASS */
+#topNav #prodLink a {
+	background:  url(../images/products.gif) no-repeat;
+}
+/* THEME SPECIFIC CLASS */
+#topNav #linksLink a {
+	background:  url(../images/links.gif) no-repeat;
+}
+/* THEME SPECIFIC CLASS */
+#topNav #articlesLink a {
+	background:  url(../images/articles.gif) no-repeat;
+}
+/* THEME SPECIFIC CLASS */
+#topNav #contactLink a {
+	background:  url(../images/contact.gif) no-repeat;
+}
+/* THEME SPECIFIC CLASS */
+#topNav #archiveLink a {
+	background:  url(../images/archive.gif) no-repeat;
+}
+/* THEME SPECIFIC CLASS */
+#topNav #loginLink a {
+	background:  url(../images/login.gif) no-repeat;
+}
+/* over state, selected state and pre-loaded bg's to prevent flickering in IE5 */
+/* THEME SPECIFIC CLASS */
+#topNav #homeLink a:hover, #topNav #homeLinkSelected a:link, #topNav #homeLink, #topNav #homeLinkSelected {
+	background:  url(../images/home_over.gif) no-repeat;
+}
+/* THEME SPECIFIC CLASS */
+#topNav #aboutLink a:hover, #topNav #aboutLinkSelected a:link, #topNav #aboutLink, #topNav #aboutLinkSelected {
+	background:  url(../images/about_over.gif) no-repeat;
+}
+/* THEME SPECIFIC CLASS */
+#topNav #prodLink a:hover, #topNav #prodLinkSelected a:link, #topNav #prodLink, #topNav #prodLinkSelected {
+	background:  url(../images/products_over.gif) no-repeat;
+}
+/* THEME SPECIFIC CLASS */
+#topNav #linksLink a:hover, #topNav #linksLinkSelected a:link, #topNav #linkskLink, #topNav #linksLinkSelected {
+	background:  url(../images/links_over.gif) no-repeat;
+}
+/* THEME SPECIFIC CLASS */
+#topNav #articlesLink a:hover, #topNav #articlesLinkSelected a:link, #topNav #articlesLink, #topNav #articlesLinkSelected {
+	background:  url(../images/articles_over.gif) no-repeat;
+}
+/* THEME SPECIFIC CLASS */
+#topNav #archiveLink a:hover, #topNav #archiveLinkSelected a:link, #topNav #archiveLink, #topNav #archiveLinkSelected {
+	background:  url(../images/archive_over.gif) no-repeat;
+}
+/* THEME SPECIFIC CLASS */
+#topNav #contactLink a:hover, #topNav #contactLinkSelected a:link, #topNav #contactLink, #topNav #contactLinkSelected {
+	background:  url(../images/contact_over.gif) no-repeat;
+}
+/* THEME SPECIFIC CLASS */
+#topNav #loginLink a:hover, #topNav #loginLinkSelected a:link, #topNav #loginLink, #topNav #loginLinkSelected {
+	background:  url(../images/login_over.gif) no-repeat;
+}

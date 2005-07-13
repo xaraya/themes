@@ -1,0 +1,89 @@
+/* XARAYA REQUIRED CLASS */
+body {
+	text-align: center;
+}
+/* THEME SPECIFIC CLASS */
+/* This style is for the wrapper div. It's purpose is to contain the site contents. */
+/* This div beign centered using margin-left:auto; margin-right:auto for standard compliant browsers. */
+/* For IE text-align: center on the body and then text-align: left */
+/* see http://www.bluerobot.com/web/css/center1.html */
+#wrapper {
+	text-align: left;
+	width: 720px;
+	margin-left: auto;
+	margin-right: auto;
+/* 	margin-top: 5px; */
+	margin-bottom: 10px;
+}
+/* THEME SPECIFIC CLASS */
+#innerwrapper {
+	text-align: left;
+	width: 710px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+/* THEME SPECIFIC CLASS */
+/* clears the floats. */
+.clear {
+	clear: both;
+}
+/* THEME SPECIFIC CLASS */
+/* floating the logo to the left and adding some bottom padding */
+#logo {
+	float: left;
+	display: block;
+	padding-bottom: 10px;
+}
+/* THEME SPECIFIC CLASS */
+/* Floating the actual form element seems to work */
+#searchForm fieldset {
+	float: right;
+}
+/* THEME SPECIFIC CLASS */
+/* floating the banner image */
+#mainBanner {
+	float: left;
+	margin: 3px 5px 5px 0px;
+}
+/* THEME SPECIFIC CLASS */
+#callout {
+	float: left;
+	margin: 5px 0px 5px 0px;
+}
+/* THEME SPECIFIC CLASS */
+/* the 3 columns act as containers for the content blocks. */
+/* They all will float left and will be given the correct right-margin */
+/* To get around using the box model hack, the col divs have been given an exact width */
+/* and the padding, margin and border elements have been added to the content elements */
+#leftCol {
+	float: left;
+	width: 205px;
+}
+/* THEME SPECIFIC CLASS */
+#middleCol {
+	float: left;
+	width: 305px;
+}
+
+/* THEME SPECIFIC CLASS */
+#rightCol {
+	float: left;
+	width: 200px;
+}
+/* THEME SPECIFIC CLASS */
+#mainCol {
+	float: left;
+	width: 510px;
+}
+
+/* THEME SPECIFIC CLASS */
+/* footer */
+#footer {
+	clear: both;
+}
+/* THEME SPECIFIC CLASS */
+#copyright {
+	float: right;
+}

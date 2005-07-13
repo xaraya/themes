@@ -1,0 +1,12 @@
+<xar:comment> start center block </xar:comment>
+<div class="xar-block-head-center"></div>
+<div class="xar-block-body-center">
+<xar:if id="title_condition" condition="!empty($title)">
+	<div class="xar-block-title-center">#$title#</div>
+</xar:if>
+	#$content#
+</div>
+<div class="xar-block-foot-center">
+    <!-- not sure what sspose to be here -->
+</div>
+<xar:comment> end center block </xar:comment>
