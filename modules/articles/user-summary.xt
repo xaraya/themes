@@ -1,0 +1,12 @@
+<xar:set name="pager">''</xar:set>
+<entry>
+	<title>#$rsstitle#</title>
+	<link rel="alternate" type="text/html" href="#$link#" title="#$rsstitle#"/> 
+	<id>#xarVarTransform(htmlentities(xarModGetVar('themes', 'AtomTag')), 'HTML', 'XML')#.#$aid#</id> 
+	<modified>#xarLocaleFormatUTCDate("%Y-%m-%dT%H:%M:%SZ",$pubdate)#</modified> 
+	<issued>#xarLocaleFormatUTCDate("%Y-%m-%dT%H:%M:%SZ",$pubdate)#</issued> 
+	<summary type="text/plain">#$rsssummary#</summary>
+	<content type="text/html" mode="escaped" xml:lang="en" xml:base="#$link#">
+		<![CDATA[ #$summary# ]]>
+	</content>
+</entry>
