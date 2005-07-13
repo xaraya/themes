@@ -1,0 +1,7 @@
+<div class="xar-alt" style="margin: 0px 3px 6px 3px;padding: 1px;text-align: left;">
+          <h1><a class="xar-title" href="#$link#">#$title#</a></h1>
+          <xar:if condition="!empty($notes)">
+              <br />
+            Note:<br /><i>#$notes#</i>
+          </xar:if>
+</div>

@@ -1,0 +1,16 @@
+/**
+ * Stylesheet for printing
+ */
+
+@media print {
+
+ .backgroundimg, 
+ tr.topbanner,
+ tr.bottombanner,
+ td.col3,
+ td.col2,
+ img.logo
+  { display: none; }
+
+ td.col3 { width: 10px; }
+}

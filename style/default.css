@@ -1,0 +1,59 @@
+/**
+ * Styles for the NinthAveYellow theme. These stylesheet is mostly concerned
+ * with positioning.
+ * 
+ * Roger Keays
+ * 20th October 2003
+ */
+.backgroundimg {
+  position: fixed; height: 100%; width: 301px; right: 0; z-index: 0;
+  background-image: url('../images/background-right.jpg');
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+body { 
+  background-color: #fcfcbc; font-family: sans-serif; font-size: 11; 
+  padding: 0px; margin: 0px;
+  background-image: url('../images/background-left.jpg');
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* rows */
+table.main {
+   border-collapse: collapse; margin: 0px; padding: 0px; 
+   width: 100%; z-index: 1; position: absolute; top: 0px;
+}
+td { vertical-align: top; }
+tr.topbanner,
+tr.bottombanner { 
+   width: 100%; height: auto; 
+   background-image: url('../images/overlay-orange.gif');
+   background-repeat: repeat;
+}
+tr.content td.col3 { padding-top: 5px; }
+tr.content td.col1 { padding-bottom: 10px; }
+
+/* columns */
+td.col2 { 
+   padding-left: 2px; padding-right: 2px; width: 10px; background-color: black; 
+}
+td.col3 { width: 200px; }
+
+/* block areas */
+div.bottomleft,
+div.topnav { text-align: right; }
+div.slogan,
+div.bottomright { }
+
+/* background-images */
+img.logo { margin: 3px; }
+
+/* module areas */
+div.centergroup { margin-left: 6%; margin-right: 3%; padding: 5px; }
+div.leftandrightgroup { padding-left: 6%; padding-right: 3%; }
+div.centered { text-align: center; width: 100%; }
+

@@ -1,0 +1,151 @@
+/**
+ * Stylesheet mostly concerned with colours
+ */
+div.centergroup {
+    border: 1px dashed #b22222; 
+    background-color: white;
+}
+
+td.slogan { color: #b8860b }
+
+/* block templates */
+.xar-block-title-left,
+.xar-block-title-right { font-weight: bold; }
+
+.xar-block-body-default,
+.xar-block-body-left,
+.xar-block-body-right {
+    background-color: white;
+    border: 1px dashed #b8860b;
+    margin-bottom: 20px; padding: 3px; width: 100%;
+}
+
+a { text-decoration: none; color: #b8860b; font-weight: bold; }
+a:hover { color: #b22222; }
+blockquote { margin: 2em; }
+code { color: #b8860b; font-family: fixed-width; }
+h1 { color: #b22222; font-size: 14px; font-weight: bolder; }
+h2 { 
+   color: #b22222; font-size: 14px; font-weight: bolder;
+   border-bottom: 1px solid #b22222; line-height: 170%;
+}
+h3 { 
+    color: #b22222; font-weight: bold; font-size: 13px;
+    line-height: 100%; 
+}
+h4 {
+   color: #b22222; font-weight: bold;
+   border-bottom: 1px solid #b22222; line-height: 170%;
+}
+th { 
+   font-size: 13px; font-weight: bolder;
+   background-color: #f5deb3; 
+}
+td { }
+table { border: 0px; margin: 0px; padding: 0px; }
+thead {}
+tbody {}
+tfoot { 
+    font-size: 13px; font-weight: bolder; 
+    background-color: #f5deb3; 
+}
+p { }
+pre { color: #b8860b; font-family: fixed-width; }
+input {
+   background-color: #f0f0f0;
+   font-weight: normal; text-indent: 2px; color: #b22222;
+}
+button {
+   border: 2px outset #f0f0f0; background-color: #cdd5f8;
+   color: #b22222;
+}
+
+select {
+   background-color: #f0f0f0; border: 1px solid black; color: #b22222;
+}
+textarea {
+   background-color: #f0f0f0; border: 1px solid black; text-indent: 0px;
+   color: #b22222;
+}
+img { border: 0px; }
+sup { font-size: $xsmall; }
+sub { font-size: $xsmall; }
+
+
+/*  THEME SPECIFIC CLASSES */
+h5, h6 { color: #b8860b; font-weight: bold; }
+hr { color: #c0c0c0; }
+checkbox { background-color: transparent; }
+
+/*  XARAYA REQUIRED INDIVIDUAL CLASSES */
+td.xar-norm {}
+td.xar-alt {}
+
+
+/*  XARAYA REQUIRED ANONYMOUS CLASSES */
+
+.xar-mod-head { }
+.xar-mod-title { color: #b8860b; font-weight: bold; }
+.xar-mod-body {}
+.xar-mod-foot {}
+.xar-alt { border-bottom: 1px dashed #b22222; }
+.xar-accent { background-color: #f5deb3; }
+.xar-alt-outline { border: 1px solid #b8860b; }
+.xar-accent-outline { border: 1px solid #b8860b; }
+.xar-norm-outline { border: 1px solid #b8860b; padding: 1px; }
+.xar-norm { background-color: #ffffff; }
+
+.xar-sub { font-size: 9.5px; } 
+.xar-menu-section {
+   color: #b8860b; font-weight: bold;
+   border-bottom: 1px dashed #b8860b
+   width: 100%; margin-bottom: 4px; list-style-type: none; padding: 0px;
+}
+
+ul.xar-menu-section, ol.xar-menu-section { margin: 0px; }
+li.xar-menu-section { 
+   color: #b22222; font-size: 13px; 
+   border: 0px;
+}
+.xar-menu-section-current {
+   font-weight: bold;
+   border-bottom: 1px dashed #b8860b;
+   list-style-type: none;
+}
+.xar-menu-item {
+   font-size: 10px; color: #b8860b;
+   font-weight: bold; padding-left: 0px; 
+   list-style-type: none; margin: 0px;
+}
+
+.xar-menu-item-current {
+   font-weight: bold;
+   padding-left: .5em; padding-bottom: .3em; list-style-type: none;
+}
+li.xar-menu-item:hover { background-color: #f4a460; }
+.xar-menu-subitem {
+   font-size: 10px; font-weight: bold; margin: 0px 0px 0px 6px;
+   padding-left: 0px; list-style-type: none; 
+}
+.xar-menu-subitem:hover { background-color: #f5deb3; }
+.xar-menu-subitem-current {
+   font-weight: bold; color: #000000; font-size: 10px; margin-left: 6px;
+   padding-left: 0px; list-style-type: none;
+}
+.xar-menu-item > a, .xar-menu-subitem > a { display: block; }
+.xar-menu-item-current > .xar-menu-subitem > a { color: #b8860b; }
+.xar-menu-subitem > a:hover { background-color: #f4a460; }
+.xar-title { font-weight: bold; }
+.xar-error { color: #ff0000; }
+
+.xar-block-body-bottomleft,
+.xar-block-body-bottomright { 
+   border: none; font-size: $xsmall; 
+   margin: 0px; 
+}
+.xar-block-body-topnav {}
+
+/* more font sizes */
+div { font-size: 12px; }
+body { font-size: 12px; }
+table { font-size: 12px; }

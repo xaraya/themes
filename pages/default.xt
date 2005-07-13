@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xar type="page"?>
+
+<xar:blocklayout content="text/html" xmlns:xar="http://xaraya.com/2004/blocklayout" version="1.0">
+
+<xar:comment> set some variables </xar:comment>
+<xar:set name="$themedir">#xarTplGetThemeDir()#</xar:set>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <xar:blockgroup name="header" id="header" />
+        <title>#$tpl:pageTitle#</title>
+        <base href="&xar-baseurl;index.php" />
+        <link rel="stylesheet"
+              href="&xar-baseurl;#$themedir#/style/default.css"
+              type="text/css" />
+        <link rel="stylesheet"
+              href="&xar-baseurl;#$themedir#/style/colors.css"
+              type="text/css" />
+        <link rel="stylesheet"
+              href="&xar-baseurl;#$themedir#/style/print.css"
+              type="text/css" />
+        <link rel="icon" 
+              href="#$themedir#/images/favicon.gif" />
+
+        <xar:style scope="common" />
+        <xar:additional-styles />
+        
+        <xar:base-render-javascript position="head" />
+
+    </head>
+
+    <body>
+
+    <xar:comment> MSIE can't do fixed divs </xar:comment>
+    <xar:if condition="xarModAPIFunc('sniffer', 'user', 'sniff') and xarSessionGetVar('browsername') eq 'Mozilla'">
+        <div class="backgroundimg"></div>
+    </xar:if>
+
+    <!-- three column table -->
+    <table class="main">
+       <tr class="topbanner">
+          <td class="col1">
+            <div class="topnav"><xar:blockgroup name="topnav" /></div>
+          </td>
+          <td class="col2"></td>
+          <td class="col3">
+            <div class="slogan">#xarModGetVar('themes', 'SiteSlogan')#</div>
+          </td>
+       </tr>
+
+       <tr class="content">
+       <td class="col1">
+            <a href="http://www.ninthave.net" alt="ninth ave">
+              <img class="logo" src="#$themedir#/images/logo.gif" />
+            </a>
+            <div class="centergroup">
+               <xar:blockgroup name="center" />
+               <xar:module main="true" />
+
+               <div class="centered">
+                 <a href="#xarServerGetVar('REQUEST_URI')#?theme=print">
+			print this page</a><br/>
+                 <b>#xarConfigGetVar('Site.Core.CopyRight')#</b>
+                 <br />#xarConfigGetVar('Site.Core.Footer')#
+               </div>
+            </div>
+        </td>
+        <td class="col2"></td>
+        <td class="col3">
+            <div class="leftandrightgroup">
+               <xar:blockgroup name="left" />
+               <xar:blockgroup name="right" />
+            </div>
+        </td>
+
+      <tr class="bottombanner">
+        <td class="col1">
+          <div class="bottomleft"><xar:blockgroup name="bottomleft" /></div>
+        </td>
+        <td class="col2"></td>
+        <td class="col3">
+          <div class="bottomright"><xar:blockgroup name="bottomright" /></div>
+        </td>
+      </tr>
+    </table> 
+
+    <xar:base-render-javascript position="body" />
+    </body>
+</html>
+</xar:blocklayout>

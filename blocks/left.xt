@@ -1,0 +1,6 @@
+<xar:if condition="!empty($title)">
+    <span class="xar-block-title-left">#$title#</span>
+</xar:if>
+<div class="xar-block-body-left">
+    #$content#
+</div>

@@ -1,0 +1,38 @@
+<div style="padding-bottom: 0.5em; border-bottom: 1px dashed;">
+	<h1><a class="xar-title" href="#$link#">#$title#</a></h1>
+        <xar:if condition="!empty($url)">
+          <a target="_new" href="#$url#">
+            <span style="text-size: small; font-weight: normal">#$url#</span>
+          </a> <br />
+        </xar:if>
+
+        #$body#
+
+        <xar:if condition="!empty($technologies)">
+	    <br />
+	    <xar:mlstring>Technologies used</xar:mlstring>:
+	    #$technologies#
+        </xar:if>
+
+        <xar:if condition="!empty($loc)">
+	    <br />
+	    <xar:mlstring>Total lines of code</xar:mlstring>:
+	    #$loc#
+        </xar:if>
+
+        <xar:if condition="!empty($notes)">
+          <br />
+          <span class="xar-quote">
+                Note : <i>#$notes#</i>
+          </span>
+        </xar:if>
+
+<xar:if condition="!empty($hooks)">
+<br />
+<xar:foreach in="$hooks" key="$hookmodule">
+#$hooks[$hookmodule]#
+</xar:foreach>
+</xar:if>
+
+</div>
+

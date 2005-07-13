@@ -1,0 +1,19 @@
+<div class="xar-alt" style="margin: 2px 3px 6px 3px;padding: 1px;text-align: left;">
+            <xar:if condition="!empty($categories) and count($categories) gt 0">
+                [ <xar:foreach in="$categories" value="$cat">
+                    #$cat['cjoin']# <a href="#$cat['clink']#">#$cat['cname']#</a>
+                </xar:foreach> ]
+            </xar:if>
+            <a class="xar-title" href="#$link#">#$title#</a>
+            (<a href="#$url#">#$url#</a>)<br/>
+            #$summary#<br />
+            <div style="text-align: right; width: 100%;">
+             <i>#$from#</i> (#$date#)<br/>
+            </div>
+            <xar:if condition="!empty($rating)">
+                - <xar:mlstring>Rating</xar:mlstring>: #$rating#
+            </xar:if>
+            <xar:if condition="!empty($counter)">
+                (#$counter# <xar:mlstring>Hits</xar:mlstring>)
+            </xar:if>
+</div>
