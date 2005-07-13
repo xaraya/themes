@@ -1,0 +1,45 @@
+<?xar type="page" ?>
+<xar:blocklayout version="1.0" content="text/html" xmlns:xar="http://xaraya.com/2004/blocklayout">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<xar:blockgroup name="header" id="header" />
+<link rel="icon" href="favicon.ico" />
+<title>#$tpl:pageTitle#</title> 
+<base href="&xar-baseurl;index.php" />
+<style type="text/css">@import url(&xar-baseurl;#xarTplGetThemeDir()#/style/style.css);</style>
+<xar:style scope="common" />
+<xar:additional-styles />
+<xar:comment> Head JavaScript </xar:comment>
+<xar:base-render-javascript position="head" />
+</head>
+<body onload="window.defaultStatus='Wyome: Custom Design and Development';" id="wyome">
+<div id="container">
+	<div id="title">
+		<h1><span>Design by <a href="http://www.wyome.com">Wyome Development Services</a> based on layout "Buddha" from <a href="http://wwww.csszengarden.com">CSS Zen Garden</a></span></h1>
+	</div>
+	<div id="intro">
+		<div id="quickSummary">
+			<p class="p2"><span>#xarModGetVar('themes', 'sitename')# .::. #xarModGetVar('themes', 'siteslogan')#</span></p>
+		</div>
+	</div>
+	<div id="modulespace">
+		<xar:module class="modulespace" main="true" />
+		<div id="footer">
+		<br />
+			#xarModGetVar('themes', 'SiteCopyRight')# <br /><br />
+			#xarModGetVar('themes', 'SiteFooter')#
+		</div>
+	</div>
+	<div id="linkList">
+		<div id="lblocks">
+			<xar:blockgroup name="left" id="left" />
+			<xar:blockgroup name="right" id="right" />
+		</div>
+	</div>
+</div>
+<xar:comment> Body JavaScript </xar:comment>
+<xar:base-render-javascript position="body" />
+</body>
+</html>
+</xar:blocklayout>

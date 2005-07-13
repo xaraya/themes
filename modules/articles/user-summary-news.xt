@@ -1,0 +1,10 @@
+<div id="article-view">
+	<h3><span>#$title#</span></h3>
+		<xar:if condition="!empty($categories) and count($categories) gt 0">
+			[ <xar:foreach in="$categories" value="$cat">
+				#$cat['cjoin']# <a href="#$cat['clink']#">#$cat['cname']#</a>
+			</xar:foreach> ]
+		</xar:if>
+	#$summary#
+	<p><a href="http://www.wyome.com/cgi-bin/tb/tb.cgi?__mode=list&tb_id=#$aid#" onclick="window.open(this.href, 'trackback', 'width=480,height=480,scrollbars=yes,status=yes'); return false"><xar:mlstring>TrackBack</xar:mlstring></a></p>
+</div>

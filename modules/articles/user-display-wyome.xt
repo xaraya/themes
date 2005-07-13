@@ -1,0 +1,45 @@
+<div id="article-view">
+	<h3><span>#$title#</span></h3>
+		<xar:if condition="!empty($categories) and count($categories) gt 0">
+			[ <xar:foreach in="$categories" value="$cat">
+				#$cat['cjoin']# <a href="#$cat['clink']#">#$cat['cname']#</a>
+			</xar:foreach> ]
+		</xar:if>
+	<p>#$summary#</p>
+	#$body#
+</div>
+
+<xar:if condition="!empty($prevart) || !empty($nextart)">
+<br />
+<table border="0" width="95%">
+<tr>
+    <td align="left"><xar:if condition="!empty($prevart)"><a href="#$prevart#">&lt; <xar:mlstring>prev</xar:mlstring> </a></xar:if>&nbsp;</td>
+    <td align="right">&nbsp;<xar:if condition="!empty($nextart)"> <a href="#$nextart#"><xar:mlstring>next</xar:mlstring> &gt;</a></xar:if></td>
+</tr>
+</table>
+</xar:if>
+
+<xar:if condition="!empty($hooks)">
+<br />
+<xar:foreach in="$hooks" key="$hookmodule">
+#$hooks[$hookmodule]#
+</xar:foreach>
+</xar:if>
+
+<br />
+<xar:if condition="!empty($maplink) or !empty($archivelink)">
+<table border="0" width="95%">
+<tr>
+    <xar:if condition="!empty($maplink)">
+    <td align="left">
+        <a href="#$maplink#">#$maplabel#</a>
+    </td>
+    </xar:if>
+    <xar:if condition="!empty($archivelink)">
+    <td align="right">
+        <a href="#$archivelink#">#$archivelabel#</a>
+    </td>
+    </xar:if>
+</tr>
+</table>
+</xar:if>
