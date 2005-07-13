@@ -1,0 +1,64 @@
+<h1 class="xar-mod-title">
+    <xar:mlstring>
+        Thank you for installing and trying Xaraya!
+    </xar:mlstring>
+</h1>
+    <div class="post-info">
+<p>
+        <xar:mlstring>This is a port by </xar:mlstring><a href="http://xaraya.athomeandabout.com">AtHomeAndAbout</a><xar:mlstring> of the WordPress "Notebook" theme for use with Xaraya. It was originally created for </xar:mlstring><a href="http://www.wordpress.org">WordPress</a>.
+
+</p>
+
+
+    <p>
+        <xar:mlstring>
+            The original Wordpress "Notebook" theme is licenced under the GPL and
+            can be downloaded from the <a href="http://www.alexking.org/index.php?content=software/wordpress/themes.php">http://www.alexking.org</a> website.
+        </xar:mlstring>
+    </p>
+    <p>
+        <xar:mlstring>
+             According to the documentation:
+        </xar:mlstring>
+    </p>
+             <ul>
+                 <li><xar:mlstring>Design is by </xar:mlstring><a href="http://www.chasethestars.com">Stacee Leung</a></li>
+                 <li><xar:mlstring>Original Wordpress theme by </xar:mlstring><a href="http://php-princess.net">Daynah Nguyen</a></li>
+             </ul>
+ <p>
+        <xar:mlstring>
+            This theme has been created to work with News, or Blogs. For other publication types, you may need to customize the templates. Look in the themes/Notebook/modules/articles directory for example templates.
+            The theme does have a few extra features built specifically for Xaraya:
+        </xar:mlstring>
+    </p>
+
+    <ol>
+       <li><xar:mlstring>A compact administration menu that displays when the <em>Use Dashboard</em>
+           option is checked in the Adminpanels configuration screen. You can then remove your Adminpanels admin menu from the sideblock area.</xar:mlstring></li>
+       <li><xar:mlstring>Turn off any Login block in your sideblock area, and use the discreet login link in the lower sideblock area.
+        A Login link is displayed if you allow registration at your site, and Logout link after login.
+        For Admin, an 'Admin' link takes them to the Compact Admin Menu.
+                         </xar:mlstring></li>
+       <li><xar:mlstring>Comments similar in layout to the original Notebook theme when Comments are installed and
+            the default rendering is set to <em>Flat</em> in the Comments modify configuration area.</xar:mlstring></li>
+       <li><xar:mlstring>Changes in comments are best viewed by turning off the Edit Stamp in Comments in Comments Modify Config area.Instead,
+       install the Changelog module and hook to Comments to get optimal view.</xar:mlstring></li>
+             <li><xar:mlstring>Edit links for sideblocks viewable by Admin, take you direct to the block for editing.</xar:mlstring></li>
+
+    </ol>
+    <p>
+        <xar:mlstring>
+            Thank you for your support, enjoy the theme!.
+        </xar:mlstring>
+    </p>
+    <p>
+        <xar:mlstring>
+            For more information on Xaraya, please visit
+            <a href="http://www.xaraya.com">
+                Xaraya's
+            </a>
+            website.
+        </xar:mlstring>
+    </p>
+    </div>
+

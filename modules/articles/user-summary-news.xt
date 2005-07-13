@@ -1,0 +1,46 @@
+<xar:sec id="unique" mask="EditArticles" catch="false">
+    <xar:set name="editurl">#xarModURL('articles','admin','modify',array('aid'=&gt; $aid))#</xar:set>
+<xar:else />
+    <xar:set name="editurl">''</xar:set>
+</xar:sec>
+
+
+<tr>
+    <td class="header">
+    <span>
+        <a href="#$link#"rel="bookmark" title=" #xarML('Permanent Link')#: #$title#">#$title#</a>
+    </span>
+    </td>
+    <td class="header">
+    <span>
+        #$date#
+    </span>
+    </td>
+</tr>
+<tr>
+   <td colspan="2">
+	#$summary#
+	<div class="comments">
+   	    <a name="comments"></a>
+        <xar:mlstring>Posted in </xar:mlstring> 
+        <xar:set name="firstone">1;</xar:set>
+            <xar:if condition="!empty($categories) and count($categories) gt 0">
+                <xar:foreach in="$categories" value="$cat">
+                <xar:if condition="$firstone">
+                    <xar:set name="joinchar">''</xar:set>
+                        <xar:set name="firstone">0;</xar:set>
+                <xar:else />
+                    <xar:set name="joinchar"><xar:mlstring> and </xar:mlstring></xar:set>
+                </xar:if>
+                    #$joinchar# <a href="#$cat['clink']#">#$cat['cname']#</a>
+               </xar:foreach>
+            </xar:if>
+
+        ||<xar:if condition="!empty($editurl)">
+            <a href="#$editurl#"> <xar:mlstring>Edit</xar:mlstring></a> ||
+        </xar:if>
+        <a href="#$link##comments">#$comments# &raquo;</a>
+   </div>
+   </td>
+</tr>
+

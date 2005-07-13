@@ -1,0 +1,165 @@
+<?xar type="page" ?>
+<xar:blocklayout content="text/html" xmlns:xar="http://xaraya.com/2004/blocklayout" version="1.0">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<xar:set name="siteslogan">
+    <xar:var scope="module" module="themes" name="SiteSlogan" />
+</xar:set>
+<xar:set name="adminnav">
+		<xar:block module="adminpanels" type="adminmenu" template="mainnavbubble;top" />
+</xar:set>
+     <xar:set name="sitename">
+            <xar:var scope="module" module="themes" name="SiteName" />
+        </xar:set>
+<head>
+        <base href="&xar-baseurl;index.php" />
+       	<link rel="icon" href="favicon.ico" />
+        <xar:blockgroup name="header" id="header" />
+        <title>#$tpl:pageTitle#</title>
+        <link rel="stylesheet" href="&xar-baseurl;#xarTplGetThemeDir()#/style/style.php" type="text/css" title="Empty" />
+        <xar:style scope="common" />
+        <xar:additional-styles />
+
+        <xar:base-render-javascript position="head" />
+        <script type="text/javascript" src="#xarTplGetThemeDir()#/scripts/nav.js"></script>
+</head>
+<body >
+<xar:if condition="xarModGetVar('adminpanels','dashboard')">
+    <xar:var name="adminnav" />
+</xar:if>
+<div id="Content">
+<table border="0" cellspacing="0" cellpadding="0" class="headertable">
+  <tr>
+    <td style="height: 39px; padding: 0px;"><img src="#xarTplGetThemeDir()#/images/01.jpg" alt="" width="9" height="39" /></td>
+	<td style="height: 39px; padding: 0px;"><img src="#xarTplGetThemeDir()#/images/02.jpg" alt="" width="180" height="39" /></td>
+	<td style="height: 39px; padding: 0px;"><img src="#xarTplGetThemeDir()#/images/03.jpg" alt="" width="33" height="39" /></td>
+	<td style="height: 39px; padding: 0px;"><img src="#xarTplGetThemeDir()#/images/04.jpg" alt="" width="512" height="39" /></td>
+	<td style="height: 39px; padding: 0px;"><img src="#xarTplGetThemeDir()#/images/05.gif" alt="" width="13" height="39" /></td>
+ </tr>
+ <tr>
+    <td class="bg06">&nbsp;</td>
+    <td>
+           <form method="get" id="searchform" action="#xarModUrl('search', 'user', 'main')#">
+	           <p style="margin-top: 20px;">
+
+		            <input type="text" value="" name="q" id="q" size="10"/>
+		            <input type="submit" id="searchsubmit" value="Search" />
+               </p>
+            </form>
+    </td>
+    <td class="bg08">&nbsp;</td>
+	<td><h1> <a href="&xar-baseurl;" title="#$sitename#">#$sitename#</a></h1></td>
+	<td class="bg10">&nbsp;</td>
+</tr>
+<tr>
+    <td><img src="#xarTplGetThemeDir()#/images/11.jpg" width="9" height="41" alt="" /></td>
+	<td class="bg12">&nbsp;</td>
+
+	<td><img src="#xarTplGetThemeDir()#/images/13.jpg" width="33" height="41" alt="" /></td>
+	<td><img src="#xarTplGetThemeDir()#/images/14.jpg" width="512" height="41" alt="" /></td>
+	<td><img src="#xarTplGetThemeDir()#/images/15.gif" width="13" height="41" alt="" /></td>
+  </tr>
+</table>
+<!-- End Header Template --><!-- SideBar Template -->
+<table width="747" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td style="height: 39px;"><img src="#xarTplGetThemeDir()#/images/01.jpg" width="9" height="39" alt="" /></td>
+    <td><img src="#xarTplGetThemeDir()#/images/02.jpg" width="180" height="39" alt="" /></td>
+
+    <td><img src="#xarTplGetThemeDir()#/images/03.jpg" width="33" height="39" alt="" /></td>
+    <td><img src="#xarTplGetThemeDir()#/images/04.jpg" width="512" height="39" alt="" /></td>
+    <td><img src="#xarTplGetThemeDir()#/images/05.gif" width="13" height="39" alt="" /></td>
+  </tr>
+  <tr>
+    <td class="bg06">&nbsp;</td>
+    <td>
+    <ul>
+        <li>
+          <h2><xar:mlstring>About:</xar:mlstring></h2>
+                #$siteslogan#
+        </li>
+    </ul>
+
+   <ul>
+      <li>
+         <xar:blockgroup name="left" id="blocksleft" />
+         <xar:blockgroup name="right" id="blocksright" />
+      </li>
+   </ul>
+   <ul>
+      <li>
+         <h2>Meta</h2>
+         <ul>
+             <xar:if condition="xarUserIsLoggedIn()">
+                 <li>
+                     <a href="&xar-modurl-roles-user-logout;"><xar:mlstring>Logout</xar:mlstring></a>
+                 </li>
+                 <xar:if condition="xarSecurityCheck('AdminPanel',0)">
+                    <li>
+                    <a href="&xar-modurl-adminpanels-admin-modifyconfig;"><xar:mlstring>Site Admin</xar:mlstring></a>
+                    </li>
+                 </xar:if>
+             <xar:elseif condition="xarModGetVar('roles', 'allowregistration')"/>
+                 <li>
+                     <a href="&xar-modurl-roles-user-account;"><xar:mlstring>Login</xar:mlstring></a>
+                 </li>
+             </xar:if>
+
+             <li><a href="http://validator.w3.org/check/referer" title="#xarML('This page validates as XHTML 1.0 Transitional')#">#xarML('Valid')# <abbr title="#xarML('eXtensible HyperText Markup Language')#">XHTML</abbr></a></li>
+             <li><a href="http://jigsaw.w3.org/css-validator/check/referer" title="#xarML('valid css')#"> #xarML('Valid CSS')#</a></li>
+             <li><a href="http://gmpg.org/xfn/"><abbr title=" #xarML('XHTML Friends Network')#"> #xarML('XFN')#</abbr></a></li>
+             <li><a href="http://www.xaraya.com" title=" #xarML('Powered by Xaraya')#"> #xarML('Xaraya')#</a></li>
+          </ul>
+      </li>
+   </ul>
+   <ul>
+   <li>
+<h2>Credits</h2>
+<ul>
+    <li>Design download from: <a href="http://www.alexking.org/index.php?content=software/wordpress/themes.php">http://www.alexking.org</a></li>
+    <li>Ported to Xaraya by: <a href="http://xaraya.athomeandabout.com">AtHomeAndAbout</a></li>
+
+</ul>
+   </li>
+   </ul>
+</td>
+   <td class="bg08">&nbsp;</td>
+   <td>
+<!-- End of Sidebar Template --> 
+<table width="100%"  border="0" cellspacing="0" cellpadding="5">
+
+<tr>
+    <td>
+
+ 	        <xar:module main="true" id="modulespace" />
+
+	</td>
+</tr>
+</table>
+		
+		<div class="navigation">
+			<div class="alignleft"></div>
+			<div class="alignright"></div>
+		</div>
+		
+	
+<!-- Start Footer Template -->
+      <p>&nbsp;</p>
+
+    </td>
+    <td class="bg10">&nbsp;</td>
+  </tr>
+  <tr>
+    <td><img src="#xarTplGetThemeDir()#/images/11.jpg" width="9" height="41" alt="" /></td>
+    <td class="bg12">&nbsp;</td>
+    <td><img src="#xarTplGetThemeDir()#/images/13.jpg" width="33" height="41" alt="" /></td>
+    <td><img src="#xarTplGetThemeDir()#/images/14.jpg" width="512" height="41" alt="" /></td>
+    <td><img src="#xarTplGetThemeDir()#/images/15.gif" width="13" height="41" alt="" /></td></tr>
+
+</table>
+
+</div>
+<xar:base-render-javascript position="body" />
+</body>
+</html>
+</xar:blocklayout>

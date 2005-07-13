@@ -1,0 +1,13 @@
+<xar:if id="title_condition" condition="!empty($title)">
+     <div class="xar-block-head-right">
+           <div class="xar-block-title-right">#$title#</div>
+		    <xar:if condition="xarSecurityCheck('AdminPanel', 0, 'adminmenu', '$blockinfo[title]:All:All')">
+				<a rel="external" href="index.php?module=blocks&amp;type=admin&amp;func=modify_instance&amp;bid=#$bid#" title="Edit this block instance" class="xar-blockedit"></a>
+    		</xar:if>
+    </div>
+</xar:if>
+<div class="xar-block-body-right">
+	#$content#
+</div>
+<div class="xar-block-foot-right">
+</div>
