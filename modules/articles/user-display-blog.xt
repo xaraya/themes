@@ -1,0 +1,33 @@
+<div class="singlepost">
+    <div class="title" id="#$aid#">
+        <a href="#$link#" rel="bookmark">
+            #$title#
+        </a>
+        <xar:if condition="!empty($editurl)">
+            [<a href="#$editurl#">#$edittitle#</a>]
+        </xar:if>
+     </div>
+     <h3>
+        <span class="posted">
+            <xar:mlstring>
+                Posted on
+            </xar:mlstring>
+        </span>
+        #$date#  
+     </h3>
+     <div class="storycontent">
+        #$summary#
+        #$body#
+        #$notes#
+     </div>
+</div>
+
+<a name="comments"></a>
+
+<xar:if condition="!empty($hooks)">
+    <xar:foreach in="$hooks" key="$hookmodule">
+        <div>
+            #$hooks[$hookmodule]#
+        </div>
+    </xar:foreach>
+</xar:if>

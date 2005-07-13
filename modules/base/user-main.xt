@@ -1,0 +1,82 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+<div class="xar-mod-head">
+    <span class="xar-mod-title">
+        <xar:mlstring>
+            Base Module
+        </xar:mlstring>
+    </span>
+</div>
+
+<div class="xar-mod-body">
+    <div style="margin: auto;">
+        <h3>
+            Theme Name: Coffee Cup
+        </h3>
+        <h3>
+            Theme URI: <a href="http://www.zeniths.net">Zeniths.net</a>
+        </h3>
+        <h3>
+            Description: Coffee Cup theme based on <a href="http://www.brokenkode.com/manji/">Manji2</a>
+
+        </h3>
+        <h3>
+            Ported to Xaraya: <a href="http://www.wyome.com">Wyome Consulting</a>
+
+        </h3>
+        <h3>
+            Version: 1.01
+        </h3>
+        <h3>
+            Author: Zenith
+        </h3>
+        <h3>
+            Author URI: <a href="http://www.zeniths.net">Zeniths.net</a>
+        </h3>
+        <p>
+            Coffee Cup theme for WordPress 1.5 designed by Zenith (www.zeniths.net), based on the Manji2 template.
+
+        </p>
+        <p>
+            Manji2 Credits -
+        Manji2 is an extension of the original Manji theme. The development was
+        done by Khaled Abou Alfa and Joshua. Originally released 30th January 2005.
+        </p>
+
+        <p>
+            Original Manji Credits -
+        The Manji template designed by Khaled Abou Alfa (www.brokenkode.com) 
+        and Root (www.atthe404.com/blog); Root is currently offline. Please go read the
+        FAQ on www.brokenkode.com/board for further information.
+        </p>
+
+        <p>
+            Joshua (aka Alphaoide) has been helping complete this project in the wake of 
+        Root's disappearance.
+        </p>
+
+        <p>
+            License -
+        The CSS, XHTML and design is released under GPL:
+        http://www.opensource.org/licenses/gpl-license.php
+        </p>
+
+        <p>
+            Theme for blogging software. Initially released for Wordpress.
+        Copyright (C) 2004 khaled abou alfa.
+        </p>
+
+        <p>
+            This program is free software; you can redistribute it and/or modify it under 
+        the terms of the GNU General Public License as published by the Free Software 
+        Foundation, version 2 of the License.
+        </p>
+
+        <p>
+            This program is distributed in the hope that it will be useful, but WITHOUT ANY 
+        WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A 
+        PARTICULAR PURPOSE. See the GNU General Public License for more details.
+        </p>
+    </div>
+</div>
+
+

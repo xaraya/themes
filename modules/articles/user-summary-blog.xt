@@ -1,0 +1,34 @@
+<div class="post">
+    <div class="title" id="#$pubtypeid#_#$aid#">
+         <a href="#$link#" rel="bookmark">
+            #$title#
+        </a>
+    </div>
+	<h3>
+        <span class="posted">
+            #xarML('Posted on')#
+        </span>
+        #$date#
+    </h3>
+	<div class="storycontent">
+        #$summary#
+    </div>
+    <div class="meta">
+        <div class="author">
+	        #$author# @ #$date#
+        </div>
+        <xar:mlstring>
+            Filed under:
+        </xar:mlstring>
+        <xar:foreach in="$categories" value="$cat">
+            <a href="#$cat['clink']#" title="#xarML('View all posts in')# #$cat['cname']#" rel="category tag">
+                #$cat['cname']# 
+            </a>
+        </xar:foreach>
+    </div>
+    <div class="feedback">
+        <a href="#$link##comments">
+            #$comments#
+        </a>
+    </div>
+</div>

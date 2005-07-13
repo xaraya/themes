@@ -1,0 +1,8 @@
+ <ul>
+    <xar:if id="title_condition" condition="!empty($title)">
+        <li>
+            <h2>#$title#</h2>
+        </li>
+    </xar:if>
+    #$content#
+</ul>
