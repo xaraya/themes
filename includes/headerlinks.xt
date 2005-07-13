@@ -1,0 +1,13 @@
+<xar:set name="toplinkname1"><xar:mlstring>Homepage</xar:mlstring></xar:set>
+<xar:set name="toplinkurl1">"index.php"</xar:set>
+
+<xar:set name="toplinkname2"><xar:mlstring>News</xar:mlstring></xar:set>
+<xar:set name="toplinkurl2">"index.php/articles/news/"</xar:set>
+
+<xar:set name="toplinkname3"><xar:mlstring>Docs</xar:mlstring></xar:set>
+<xar:set name="toplinkurl3">"index.php/articles/docs/"</xar:set>
+
+<xar:set name="toplinkname4"><xar:mlstring>FAQ</xar:mlstring></xar:set>
+<xar:set name="toplinkurl4">"index.php/articles/faqs/"</xar:set>
+
+<span class="xar-normal"><a href="#$toplinkurl1#">#$toplinkname1#</a>&nbsp;::&nbsp;<a href="#$toplinkurl2#">#$toplinkname2#</a>&nbsp;::&nbsp;<a href="#$toplinkurl3#">#$toplinkname3#</a>&nbsp;::&nbsp;<a href="#$toplinkurl4#">#$toplinkname4#</a>&nbsp;</span>

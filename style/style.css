@@ -1,0 +1,445 @@
+@import url(layout.css);
+@import url(menus.css);
+
+/* above are the sylesheets responsible for the common page layout and system menus - must be at top */
+
+/* long comments moved to documentation dir readme.txt */
+
+/*
+Main (X)HTML Selectors - Typography, Colours and Positioning 
+-------------------------------------------------------------------------[comment] */
+
+body {
+    font-family: "trebuchet ms", "luxi sans", verdana, helvetica, sans-serif;
+    font-size: 80%;
+    line-height: 145%;
+    margin:0;
+    padding: 0;
+    color: #000000;
+    background-color: #F6F7EB;
+}
+
+a {
+    color: #000000;
+    font-weight: bold;
+}
+
+/*
+a normal link is being styled similarly across all pages, unless re-declared
+-------------------------------------------------------------------------[comment] */
+
+a:link { }
+a:visited { }
+a:active { }
+a:hover { }
+
+/*
+leave pseudo-classes exactly in this order even if you decide to re-declare them 
+------------------------------------------------------------------[important note] */
+
+a:link:hover, a:visited:hover {
+    color: #000000;
+    text-decoration: underline;
+} /*
+we dont really want to underline and hilite named anchors in this theme, just links 
+------------------------------------------------------------------[important note] */
+
+/*
+Tables and related selectors
+-------------------------------------------------------------------------[comment] */
+
+table, table.xar-norm {
+    font-size: 100%;
+    margin: 5px 0;
+}
+
+/* div table {width:inherit;} */
+
+/*
+the actual border should be visible only when border-width is re-declared
+------------------------------------------------------------------[important note] */
+
+th {
+    color: #000000;
+    background-color: #F6F7EB;
+    border: 1px solid #cccccc;
+}
+
+tfoot {
+    font-weight: bold;
+    background-color: #DCDCE1;
+}
+
+th, td { padding: 3px; }
+
+/*
+General text and related selectors 
+-------------------------------------------------------------------------[comment] */
+
+h1, h2, h3, h4 {
+    font-family: arial, helvetica, tahoma, sans-serif;
+    font-weight: bold;
+    line-height: 120%;
+    color: #000000;
+    padding: 0;
+    margin: .5em 0 .5em 0;
+}
+
+/*
+page headers - shared typography and positioning 
+-------------------------------------------------------------------------[comment] */
+
+h1 { font-size: 140%; }
+h2 { font-size: 130%; }
+h3 { font-size: 120%; }
+h4 { font-size: 110%; }
+p { margin: .5em 0 0 0; }
+
+pre {
+    color: #990066;
+    font-size: 95%;
+    font-family: monaco, courier, monospace;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+ul li {
+    padding-left: 20px;
+    background-image: url(../images/bullet.png);
+    background-repeat: no-repeat;
+    background-position: 0 .45em;
+}
+
+/* reset background on all pre-styled li elements for good browsers */
+ul li[style] { background-image: none; }
+
+blockquote {
+    color: #333366;
+    margin: 2em;
+}
+
+code {
+    color: #990066;
+    font-family: monaco, courier, monospace;
+}
+
+sup, sub {
+    font-size: 95%;
+    font-weight: normal;
+}
+
+/*
+Form elements 
+-------------------------------------------------------------------------[comment] */
+
+form {
+    margin: 1em 0;
+    padding: 0;
+    display: block;
+}
+
+button { border: 2px outset #f0f0f0; }
+
+input,
+select,
+textarea {}
+
+legend {
+    color: #000000;
+    border: 1px solid #aaaaaa;
+    margin: 0 -1px;
+    padding: 1px 5px;
+    font-weight: bold;
+    min-width:15em;
+    display:block;
+    background-image: url(../images/bkgr200.gif);
+    background-position: 0px -410px;
+    background-repeat: repeat-x;
+}
+
+fieldset {
+    border: 1px solid #aaaaaa;
+    margin: 1em 0;
+    padding:5px;
+}
+
+label.xar-form-label {
+    padding: 2px;
+    text-align: right;
+    padding-left: 5px;
+    margin: 0 5px 0 0;
+    font-weight: bold;
+    color: #000000;
+    background-color: #f9f9f9;
+    border:1px solid #f0f0f0;
+    clear:left;
+}
+
+/* reset for table header labels to preserve table styles */
+th label {
+    background-color:transparent;
+    border:0 none;
+    width:auto;
+    margin:auto;
+    padding:auto;
+}
+
+td select {width:auto}
+
+/*
+replaced elements 
+-------------------------------------------------------------------------[comment] */
+
+img { border: 0px; }
+
+/*
+list elements 
+-------------------------------------------------------------------------[comment] */
+
+ul, li, ol { line-height: 140%; }
+
+/* THEME SPECIFIC CLASSES [gen_heading] */
+h5, h6 {
+    color: #333399;
+    font-size: 95%;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+hr {
+    width: 100%;
+    color: #cccccc;
+    height:1px;
+}
+
+/* XARAYA REQUIRED INDIVIDUAL CLASSES [gen_heading] */
+td.xar-norm { }
+td.xar-alt { }
+
+/* XARAYA REQUIRED ANONYMOUS CLASSES  [gen_heading] */
+
+/*
+these defaults apply to the left and right block group 
+-------------------------------------------------------------------------[comment] */
+
+.xar-block-head,
+.xar-block-head-right { color: #333399; }
+
+.xar-block-title,
+.xar-block-title-right {
+    font-weight: bold;
+    font-size: 110%;
+    padding: 0 4px;
+    color: #000000;
+    background-color: #F6F7EB;
+    background-image: url(../images/bkgr200.gif);
+    background-position: 0px -430px;
+    background-repeat: repeat-x;
+}
+
+.xar-block-body,
+.xar-block-body-right { }
+
+.xar-block-foot,
+.xar-block-foot-right { margin-bottom: 2px; }
+
+/*
+topnav block group classes 
+-------------------------------------------------------------------------[comment] */
+
+.xar-block-head-topnav { }
+.xar-block-title-topnav { }
+.xar-block-body-topnav { }
+.xar-block-foot-topnav { }
+
+/*
+center block group classes 
+-------------------------------------------------------------------------[comment] */
+
+.xar-block-head-center { width: 100%; }
+
+.xar-block-title-center {
+    /*  background-color: inherit; */
+    font-weight: bold;
+}
+
+.xar-block-body-center { }
+
+.xar-block-foot-center {
+    width: 100%;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #A0B8E5;
+}
+
+/*
+module rendering area and related rules 
+-------------------------------------------------------------------------[comment] */
+
+.xar-mod-head, .xar-mod-body, .xar-mod-foot { border: 1px solid #cccccc; }
+
+.xar-mod-head {
+    padding: 3px 10px;
+    margin: 4px 0 0 0;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    background-color: #F6F7EB;
+    background-image: url(../images/bkgr200.gif);
+    background-position: 0px -250px;
+    background-repeat: repeat-x;
+    border-bottom: 0 none;
+}
+
+.xar-mod-title {
+    font-size: 110%;
+    font-weight: bold;
+}
+
+.xar-mod-body {
+    padding: 5px 10px;
+    margin:0;
+}
+ 
+.xar-mod-foot {
+    border-top: 0 none;
+    padding: 3px 10px;
+}
+
+/*
+complementary styling - colors, backgrounds and outlines 
+-------------------------------------------------------------------------[comment] */
+
+.xar-alt { background-color: #F6F7EB; }
+.xar-accent { background-color: #F6F7EB; }
+
+.xar-alt-outline {
+    border-color: #F6F7EB;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.xar-accent-outline {
+    border-color: #F6F7EB;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.xar-norm-outline {
+    border-color: #F6F7EB;
+    border-width: 1px;
+    border-style: solid;
+}
+
+/*
+complementary text related styling
+-------------------------------------------------------------------------[comment] */
+
+.xar-norm { background-color: #F6F7EB; }
+.xar-sub { font-size: 80%; }
+.xar-error { color: #ff0000; }
+.xar-title { font-weight: bold; }
+
+/*
+not sure if we still using this rule anywhere TODO: check
+-------------------------------------------------------------------------[comment] */
+
+/* THEME SPECIFIC ANONYMOUS CLASSES  [gen_heading] */
+div.xar-block-body-topnav li, div.xar-block-body-topnav ul {
+    display: inline;
+    list-style-type: none;
+    padding: 0 5px;
+    margin: 0;
+    border: 0;
+} /*
+since topnav group is available by default, we should take care of it
+-------------------------------------------------------------------------[comment] */
+
+/* hide section heading [gen_heading] */
+div.xar-block-body-topnav .xar-menu-section h4 { display: none; }
+
+
+div.xar-block-body-topnav .xar-menu-section ul li a {
+    display: inline;
+    padding-right: .5em;
+    padding-left: .5em;
+}
+
+/* all links should display horizontally in topnav block in this theme */
+div.xar-block-body-topnav {
+    border-color: #757F8B;
+    border-width: 1px;
+    border-style: solid;
+    margin-bottom: 2px;
+    padding: 2px 0;
+}
+
+/*
+not so much a decoration, but rather a high visibility tool for beta-testers 
+-------------------------------------------------------------------------[comment] */
+
+/* MISCELLANEOUS [gen_heading] */
+.txttitle {
+    font-weight: bold;
+    color: #336699;
+    text-decoration: none;
+}
+
+.sidebtns {
+    font-weight: bold;
+    color: #336699;
+    text-decoration: none;
+}
+
+.subhead {
+    font-weight: bold;
+    color: #60a9f0;
+    text-decoration: none;
+}
+
+.btns {
+    text-decoration: none;
+    background-color: #FFD800;
+    color: #000000;
+    font-weight: bold;
+    font-size: 9.5pt;
+}
+
+.busbtns {
+    text-decoration: none;
+    background-color: #85b8ea;
+    color: #000000;
+    font-weight: bold;
+    font-size: 9.5pt;
+}
+
+.blk {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+}
+
+.LightUp {
+    background-color: #cfe5fa;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.LightDown {
+    background-color: #ffffff;
+    color: #336699;
+    font-weight: bold;
+    font-size: 9.5pt;
+    text-decoration: none;
+}
+
+.formUp { background-color: #e3f1ff; }
+
+abbr, acronym, .help {
+    border-bottom: 1px dotted #999;
+    cursor: help;
+}

@@ -1,0 +1,13 @@
+<xar:set name="bottomlinkname1"><xar:mlstring>Homepage</xar:mlstring></xar:set>
+<xar:set name="bottomlinkurl1">"index.php"</xar:set>
+
+<xar:set name="bottomlinkname2"><xar:mlstring>News</xar:mlstring></xar:set>
+<xar:set name="bottomlinkurl2">"index.php/articles/news/"</xar:set>
+
+<xar:set name="bottomlinkname3"><xar:mlstring>Docs</xar:mlstring></xar:set>
+<xar:set name="bottomlinkurl3">"index.php/articles/docs/"</xar:set>
+
+<xar:set name="bottomlinkname4"><xar:mlstring>FAQ</xar:mlstring></xar:set>
+<xar:set name="bottomlinkurl4">"index.php/articles/faqs/"</xar:set>
+
+<span class="xar-normal"><a href="#$bottomlinkurl1#">#$bottomlinkname1#</a>&nbsp;::&nbsp;<a href="#$bottomlinkurl2#">#$bottomlinkname2#</a>&nbsp;::&nbsp;<a href="#$bottomlinkurl3#">#$bottomlinkname3#</a>&nbsp;::&nbsp;<a href="#$bottomlinkurl4#">#$bottomlinkname4#</a>&nbsp;</span>

@@ -1,0 +1,14 @@
+<xar:if id="title_condition" condition="!empty($title)">
+    <div class="xar-block-head">
+        <div class="xar-block-title">
+            <div class="blackline"></div>
+            <xar:var name="title"/>
+        </div>
+    </div>
+</xar:if>
+<div class="xar-block-body">
+    <div class="blackline"></div>
+    <xar:var name="content"/>
+</div>
+<div class="xar-block-foot">
+</div>

@@ -1,0 +1,13 @@
+<form action="index.php?module=search" method="get">
+    <div id="simplesearch">
+        <a href="index.php/search">
+            <xar:mlstring>Advanced Search</xar:mlstring>
+        </a>
+        <label><xar:mlstring>Quick Search</xar:mlstring> : </label>
+	<xar:set name="qfind">
+            <xar:mlstring>Quick Find</xar:mlstring>
+        </xar:set>
+        <input type="hidden" name="module" id="module" value="search" />
+        <input type="text" size="20" name="q" id="pnsearch" value="#$qfind#" onfocus="this.value = ''" onblur="this.value = '#$qfind#'" />
+    </div>
+</form>

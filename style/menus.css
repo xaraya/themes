@@ -1,0 +1,157 @@
+/* system menus in left and right blocks */
+
+.xar-block-body ul, 
+.xar-block-body-right ul,
+.xar-block-body ul li, 
+.xar-block-body-right ul li {
+    font-family: arial, helvetica, verdana, sans-serif;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+    font-weight: bold;
+    line-height: 1.4em;
+}
+
+.xar-block-body ul, 
+.xar-block-body-right ul { list-style-position: outside; }
+
+.xar-block-body ul li, 
+.xar-block-body-right ul li { background-image: none; }
+
+.xar-block-body ul li.xar-menu-section, 
+.xar-block-body-right ul li.xar-menu-section {
+    border: 1px solid #F6F7EB;
+    padding-bottom: 1px;
+}
+
+/* offset collapsing margins effect and style up heading tags */
+.xar-block-body ul li.xar-menu-section h4, 
+.xar-block-body-right ul li.xar-menu-section h4 {
+    margin: 0 0 1px 0;
+    padding: 1px 7px;
+    color: #fefefe;
+    font-size: 95%;
+    text-align: right;
+    text-transform: lowercase;
+    background-color: #F6F7EB;
+}
+
+/* common rules for all items containers - li elements */
+.xar-block-body ul ul li.xar-menu-item, 
+.xar-block-body-right ul ul li.xar-menu-item,
+.xar-block-body ul ul li.xar-menu-item-current, 
+.xar-block-body-right ul ul li.xar-menu-item-current {
+    padding: 0;
+}
+
+/* common rules for all anchors in the menus */
+.xar-block-body ul ul li.xar-menu-item a, 
+.xar-block-body-right ul ul li.xar-menu-item a,
+.xar-block-body ul ul li.xar-menu-item a:hover, 
+.xar-block-body-right ul ul li.xar-menu-item a:hover,
+.xar-block-body ul ul li.xar-menu-item-current a, 
+.xar-block-body-right ul ul li.xar-menu-item-current a,
+.xar-block-body ul ul li.xar-menu-item-current a:hover, 
+.xar-block-body-right ul ul li.xar-menu-item-current a:hover {
+    text-decoration: none;
+    display: block;
+    margin-left: 7px;
+    margin-right: 7px;
+    border-bottom: 1px solid #F2F1ED;   
+}
+
+/* menu items anchors - normal state */
+.xar-block-body ul ul li.xar-menu-item a, 
+.xar-block-body-right ul ul li.xar-menu-item a {
+    color: #B2A78F;
+}
+
+/* menu items anchors - hover state */
+.xar-block-body ul ul li.xar-menu-item a:hover, 
+.xar-block-body-right ul ul li.xar-menu-item a:hover {
+    padding: 0 6px;
+    margin: 0 1px 0 1px;
+    color: #665533;
+    background-color: #EDEAE4;
+}
+
+/*  visually highlight the currently active items and subitems,
+    below is one example of various possible implementations */
+.xar-block-body ul ul li.xar-menu-item-current, 
+.xar-block-body-right ul ul li.xar-menu-item-current {
+    padding: 1px;
+    margin: 0 -1px 0 -1px;
+    border-color: #BFB8A8;
+    border-width: 1px;
+    border-style: solid;
+}
+
+/* menu current items anchors - normal state */
+.xar-block-body ul ul li.xar-menu-item-current a, 
+.xar-block-body-right ul ul li.xar-menu-item-current a {
+    margin: 0;
+    padding: 0 6px;
+    background-color: #EDEAE4;
+    background-image: url(../images/itemarrowdown.gif);
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+/* menu current items anchors - hover state */
+.xar-block-body ul ul li.xar-menu-item-current a:hover, 
+.xar-block-body-right ul ul li.xar-menu-item-current a:hover {
+    margin: 0;
+    color: #FFFFFF;
+    background-color: #BFB8A8;
+}
+
+/*  common rules for subitems elements */
+.xar-block-body ul ul li.xar-menu-subitem, 
+.xar-block-body-right ul ul li.xar-menu-subitem,
+.xar-block-body ul ul li.xar-menu-subitem-current, 
+.xar-block-body-right ul ul li.xar-menu-subitem-current {
+    display:block;
+    margin: 0;
+    border-right: 4px solid #D6DED5;
+    border-left: 4px solid #D6DED5;
+}
+
+/*  common rules for anchors in subitems,
+    if you dont like right alignment or fixed font size - change it here */
+.xar-block-body ul ul li.xar-menu-subitem a, 
+.xar-block-body-right ul ul li.xar-menu-subitem a,
+.xar-block-body ul ul li.xar-menu-subitem-current a, 
+.xar-block-body-right ul ul li.xar-menu-subitem-current a {
+    text-align: right;
+    font-size: 11px;
+    line-height:15px;
+    display: block;
+    padding: 0 4px 0 4px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #F2F1ED;
+    background-image: none;
+}
+
+/*  subitems anchors - hover state */
+.xar-block-body ul ul li.xar-menu-subitem a:hover, 
+.xar-block-body-right ul ul li.xar-menu-subitem a:hover {
+    color: #665533;
+    background-color: #DEDBD5;
+}
+
+/*  subitems anchors current - normal state */
+.xar-block-body ul ul li.xar-menu-subitem-current a, 
+.xar-block-body-right ul ul li.xar-menu-subitem-current a {
+    margin: 0;
+    color: #333333;
+    background-color: #DEDBD5;
+}
+
+/*  subitems anchors current - hover state */
+.xar-block-body ul ul li.xar-menu-subitem-current a:hover, 
+.xar-block-body-right ul ul li.xar-menu-subitem-current a:hover {
+    color: #FFFFFF;
+    margin: 0;
+    background-color: #BFB8A8;
+}
