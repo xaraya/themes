@@ -1,0 +1,32 @@
+<table border="0" cellpadding="0" cellspacing="0" width="150">
+  <tr>
+   <td><img src="themes/V-Autumn/images/spacer.gif" width="10" height="1" border="0" alt=""></td>
+   <td width="100%"><img src="themes/V-Autumn/images/spacer.gif" width="136" height="1" border="0" alt=""></td>
+   <td><img src="themes/V-Autumn/images/spacer.gif" width="10" height="1" border="0" alt=""></td>
+   <td><img src="themes/V-Autumn/images/spacer.gif" width="1" height="1" border="0" alt=""></td>
+  </tr>
+
+  <tr>
+   <td><img name="box_r1_c1" src="themes/V-Autumn/images/box_r1_c1.gif" width="10" height="10" border="0" alt=""></td>
+   <td background="themes/V-Autumn/images/box_r1_c2.gif"><img name="box_r1_c2" src="themes/V-Autumn/images/spacer.gif" width="1" height="1" border="0" alt=""></td>
+   <td><img name="box_r1_c3" src="themes/V-Autumn/images/box_r1_c3.gif" width="10" height="10" border="0" alt=""></td>
+   <td><img src="themes/V-Autumn/images/spacer.gif" width="1" height="10" border="0" alt=""></td>
+  </tr>
+  <tr>
+   <td background="themes/V-Autumn/images/box_r2_c1.gif"><img name="box_r2_c1" src="themes/V-Autumn/images/spacer.gif" width="1" height="1" border="0" alt=""></td>
+    <td align="left" valign="top" bgcolor="#FFFFFF">
+        <span class="leftcontent"><b>
+#$title#<br />
+#$content#
+        </b></span>
+    </td>
+   <td background="themes/V-Autumn/images/box_r2_c3.gif"><img name="box_r2_c3" src="themes/V-Autumn/images/spacer.gif" width="1" height="1" border="0" alt=""></td>
+   <td><img src="themes/V-Autumn/images/spacer.gif" width="1" height="100%" border="0" alt=""></td>
+  </tr>
+  <tr>
+   <td><img name="box_r3_c1" src="themes/V-Autumn/images/box_r3_c1.gif" width="10" height="10" border="0" alt=""></td>
+   <td background="themes/V-Autumn/images/box_r3_c2.gif"><img name="box_r3_c2" src="themes/V-Autumn/images/spacer.gif" width="1" height="1" border="0" alt=""></td>
+   <td><img name="box_r3_c3" src="themes/V-Autumn/images/box_r3_c3.gif" width="10" height="10" border="0" alt=""></td>
+   <td><img src="themes/V-Autumn/images/spacer.gif" width="1" height="10" border="0" alt=""></td>
+  </tr>
+  </table><br />
