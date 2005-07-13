@@ -1,0 +1,56 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+<xar:comment>
+***********
+* WARNING
+* Modify this template at your own risk.
+* If the template contains errors, the exception system will not be able to process
+* it correctly, leading to unexpected results
+***********
+</xar:comment>
+<div class="xar-mod-head"><span class="xar-mod-title"><xar:mlstring>Error Message</xar:mlstring></span></div>
+<div class="xar-mod-body">
+    <h2>#$type#</h2>
+    <div class="xar-norm-outline">
+        <div style="float:right;padding:10px;">
+            <img src="modules/base/xarimages/exception.jpg" alt="Exception Icon" />
+        </div>
+        <div class="xar-mod-title xar-norm-outline" style="margin-top: 1em; margin-left: 1em; margin-right: 1em; width: auto; border-style: none none dotted none;">
+             #$title#
+       </div>
+        <div style="margin-left: 1em; margin-right: 1em; text-align:left;">
+            <p>#$short#</p>
+        </div>
+        <xar:if condition = "$long ne ''">
+            <div class="xar-mod-title xar-norm-outline" style="margin-top: 1em; margin-left: 1em; margin-right: 1em; width: auto; border-style: none none dotted none;">
+                <xar:mlstring>Explanation:</xar:mlstring>
+            </div>
+            <div style="margin-left: 1em; margin-right: 1em; text-align:left;">
+                <p>#$long#</p>
+            </div>
+        </xar:if>
+        <xar:if condition = "$hint ne ''">
+            <div class="xar-mod-title xar-norm-outline" style="margin-top: 1em; margin-left: 1em; margin-right: 1em; width: auto; border-style: none none dotted none;">
+                <xar:mlstring>Further Information:</xar:mlstring>
+            </div>
+            <div style="margin-left: 1em; margin-right: 1em; text-align:left;">
+                <p>#$hint#</p>
+            </div>
+        </xar:if>
+        <!-- Disabled the stack for now -->
+        <xar:if condition = "false and $stack ne ''">
+            <div class="xar-mod-title xar-norm-outline" style="margin-top: 1em; margin-left: 1em; margin-right: 1em; width: auto; border-style: none none dotted none;">
+                <xar:mlstring>Stack:</xar:mlstring>
+            </div>
+            <div style="margin-left: 1em; margin-right: 1em; text-align:left;">
+                <p>#$stack#</p>
+            </div>
+        </xar:if>
+        <div style="margin-left: 1em; margin-right: 1em; text-align:left;">
+            <xar:if condition = "false and $product ne ''">
+                <p><a href="http://bugs.xaraya.com/enter_bug.cgi?product=#$product#&amp;component=#$component#&amp;short_desc=#$title#:%20#$product#/#$component#&amp;comment=#$short#" target="_blank">Click here to raise a bug</a></p>
+            <xar:else />
+                <p><a href="http://bugs.xaraya.com/enter_bug.cgi">Click here to raise a bug</a></p>
+            </xar:if>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+
+<xar:if condition="!empty($for) and $for eq 'id' and !empty($id)">
+    <xul:label class="fieldlabel" control="dd_#$id#">#$label#</xul:label>
+<xar:elseif condition="!empty($for) and $for eq 'name' and !empty($name)"/>
+    <xul:label class="fieldlabel" control="#$name#">#$label#</xul:label>
+<xar:else/>
+    <xul:label>#$label#</xul:label>
+</xar:if>

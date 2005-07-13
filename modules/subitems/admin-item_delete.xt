@@ -1,0 +1,32 @@
+<div class="xar-mod-head">
+<span class="xar-mod-title"><xar:mlstring>Delete subitem</xar:mlstring></span>
+</div>                                                                                                                   
+<div class="xar-mod-body">
+<h2><xar:mlstring>Delete Subitem</xar:mlstring></h2>
+
+<form method="post" action="#xarModURL('subitems','admin','item_delete')#">
+    <input type="hidden" name="authid" id="authid" value="#xarSecGenAuthKey()#" />
+    <input type="hidden" name="confirm" value="1" />
+    <input type="hidden" name="objectid" value="#$objectid#" />
+    <input type="hidden" name="ddid" value="#$ddid#" />
+    <input type="hidden" name="redirect" value="#$redirect#" />
+
+    <div class="xrm_actionarea">
+        <button type="submit" name="delete" value="#xarML('Delete')#" >#xarML('Delete')#</button>
+        <button type="submit" name="cancel" value="#xarML('Cancel')#" >#xarML('Cancel')#</button>
+    </div>
+    
+    <xar:if condition="!empty($preview)">
+    <table>
+        <tr>
+            <td align="center"><xar:data-display object="$object" /></td>
+        </tr>
+    </table>
+    </xar:if>
+    <xar:if condition="isset($hooks)">
+        <div>#$hooks#</div>
+    </xar:if>
+    
+
+</form>
+</div>

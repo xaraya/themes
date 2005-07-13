@@ -1,0 +1,27 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+
+<xul:vbox flex="1" >
+    <spacer flex="1"/>
+    <xul:hbox >
+        <spacer flex="1"/>
+        <xul:vbox class="xar-mod-body" >
+            <xul:vbox>
+                <xul:label class="xar-mod-title"><xar:mlstring>Password Sent</xar:mlstring></xul:label>
+                <xul:hbox>
+                    <xul:vbox class="xrm_actions">
+                        <xul:button id="backtologin" oncommand="document.location='&xar-modurl-roles-user-showloginform;'" label="#xarML('Back to login')#"/>
+                    </xul:vbox>
+               
+                    <xul:description >
+                        <xar:mlstring>
+                            Your new password has been sent to your email address of record. 
+                            You will want to change this new password once you have logged in.
+                        </xar:mlstring>
+                    </xul:description>
+                </xul:hbox>
+            </xul:vbox>
+        </xul:vbox>
+        <spacer flex="1"/>
+    </xul:hbox>
+    <spacer flex="4"/>
+</xul:vbox>

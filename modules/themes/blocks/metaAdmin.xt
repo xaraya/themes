@@ -1,0 +1,88 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+
+<xul:vbox>
+    <xul:label class="fieldlabel" tooltip="#xarML('Add the meta description.')#" control="metadescription#$blockid#">
+        <xar:mlstring>Meta Description</xar:mlstring>
+    </xul:label>
+    <xul:textbox multiline="true"  name="metadescription" id="metadescription#$blockid#" style="width:300px;height:150px;" value="#$metadescription#"/>
+    
+    <xul:label class="fieldlabel" tooltip="#xarML('Add the meta keywords.')#" control="metakeywords#$blockid#">
+        <xar:mlstring>Meta Keywords</xar:mlstring>
+    </xul:label>
+    
+    <xul:textbox multiline="true"  name="metakeywords" id="metakeywords#$blockid#" style="width:300px;height:150px;" value="#$metakeywords#"/>
+    
+    <xul:tooltip id="geourl">
+        <xul:label>
+            <a href="http://geourl.org/" target="_BLANK">GeoUrl</a>
+            <xar:mlstring>allows you to locate websites that are geographically close to yours.</xar:mlstring>
+        </xul:label>
+    </xul:tooltip>
+    
+    <xar:if condition="!empty($usegeo)">
+        <xul:checkbox type="checkbox" tooltip="geourl" name="usegeo" id="usegeo#$blockid#" value="1" checked="true" tabindex="1" label="#xarML('Use GeoUrl')#"/>
+    <xar:else />
+        <xul:checkbox type="checkbox" tooltip="geourl" name="usegeo" id="usegeo#$blockid#" value="1" tabindex="1" label="#xarML('Use GeoUrl')#"/>
+    </xar:if>
+    
+    <xar:if condition="!empty($usegeo)">
+        <xul:label class="fieldlabel" tooltip="geourl" control="longitude#$blockid#"><xar:mlstring>Your Longitude</xar:mlstring></xul:label>
+        <xul:textbox type="text"  tooltip="geourl" name="longitude" id="longitude#$blockid#" value="#$longitude#" size="30" maxlength="100" />
+        <xul:label class="fieldlabel" tooltip="geourl" control="latitude#$blockid#"><xar:mlstring>Your Latitude</xar:mlstring></xul:label>
+        <xul:textbox type="text"  tooltip="geourl" name="latitude" id="latitude#$blockid#" value="#$latitude#" size="30" maxlength="100" />
+    </xar:if>
+
+    <xul:tooltip id="metakeyword">
+        <xul:label>
+            <xar:mlstring>
+                Xaraya can dynamically generate your meta keywords based on the 
+                words used in your Articles or in your Keywords.
+            </xar:mlstring>
+        </xul:label>
+    </xul:tooltip>
+    
+    <xul:radiogroup tooltip="metakeyword">
+        <xul:caption label="#xarML('Use Dynamic Keywords from')#"/>
+        <xar:if condition="$usedk eq 0">
+            <xul:radio type="radio"  name="usedk" id="usedk#$blockid#" value="0" selected="true" tabindex="1" label="#xarML('None')#"/>
+        <xar:else />
+            <xul:radio type="radio"  name="usedk" id="usedk#$blockid#" value="0" tabindex="1" label="#xarML('None')#"/>
+        </xar:if>
+        
+        <xar:if condition="$usedk eq 1">
+            <xul:radio type="radio"  name="usedk" id="usedk#$blockid#" value="1" selected="true" tabindex="2" label="#xarML('Articles module')#" />
+        <xar:else />
+            <xul:radio type="radio"  name="usedk" id="usedk#$blockid#" value="1" tabindex="2" label="#xarML('Articles module')#" />
+        </xar:if>
+        
+        <xar:if condition="$usedk eq 2">
+            <xul:radio type="radio"  name="usedk" id="usedk#$blockid#" value="2" selected="true" tabindex="3" label="#xarML('Keywords module')#"/>
+        <xar:else />
+            <xul:radio type="radio"  name="usedk" id="usedk#$blockid#" value="2" tabindex="3" label="#xarML('Keywords module')#"/>
+        </xar:if>
+
+        <xar:if condition="$usedk eq 3">
+            <xul:radio type="radio"  name="usedk" id="usedk#$blockid#" value="3" selected="true" tabindex="4" label="#xarML('Both')#"/>
+        <xar:else />
+            <xul:radio type="radio"  name="usedk" id="usedk#$blockid#" value="3" tabindex="4" label="#xarML('Both')#"/>
+        </xar:if>
+    </xul:radiogroup>
+    
+    <xul:tooltip id="copyrightpage">
+        <xul:label>
+            <xar:mlstring>
+                Xaraya can generate the proper links for your copyright, help or glossary page as 
+                used by Mozilla and other popular browsers.
+            </xar:mlstring>
+        </xul:label>
+    </xul:tooltip>
+
+    <xul:label class="fieldlabel" tooltip="copyrightpage" control="copyrightpage#$blockid#"><xar:mlstring>Copyright Page</xar:mlstring></xul:label>
+    <xul:textbox type="text" tooltip="copyrightpage" name="copyrightpage" id="copyrightpage#$blockid#" value="#$copyrightpage#" size="30" maxlength="100" />
+
+    <xul:label class="fieldlabel" tooltip="copyrightpage" control="helppage#$blockid#"><xar:mlstring>Help Page</xar:mlstring></xul:label>
+    <xul:textbox type="text" tooltip="copyrightpage" name="helppage" id="helppage#$blockid#" value="#$helppage#" size="30" maxlength="100" />
+
+    <xul:label class="fieldlabel" tooltip="copyrightpage" control="glossary#$blockid#"><xar:mlstring>Glossary</xar:mlstring></xul:label>
+    <xul:textbox type="text"  tooltip="copyrightpage" name="glossary" id="glossary#$blockid#" value="#$glossary#" size="30" maxlength="100" />
+</xul:vbox>

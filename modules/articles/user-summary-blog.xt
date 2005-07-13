@@ -1,0 +1,11 @@
+<div class="articleview">
+    <h4>
+        #$date# | 
+        <a href="#$link#" title="Read More">
+            #$title#
+        </a>
+    </h4>
+	<div style="text-align: justify;">
+        #$summary#
+    </div>
+</div>

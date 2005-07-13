@@ -1,0 +1,58 @@
+
+<!-- <xar:template type="module" file="menu" /> -->
+
+<xul:vbox class="xar-mod-body">
+    <xul:label class="xar-mod-title">
+        <xar:mlstring>Add link to subitems</xar:mlstring>
+    </xul:label>
+    <form action="&xar-modurl-subitems-admin-ddobjectlink_new;" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="authid" id="authid" value="#xarSecGenAuthKey()#" />
+        
+        <xul:hbox>
+            <xul:vbox class="xrm_actionarea">
+                <xul:button type="submit" name="confirm" value="#xarML('Create New DDSubobjectlink')#" label="#xarML('Create link')#" />
+            </xul:vbox>
+            
+            <xul:groupbox>
+                <xul:grid>
+                    <xul:columns>
+                        <xul:column/>
+                        <xul:column/>
+                    </xul:columns>
+                    <xul:rows>
+                        <xul:row>
+                            <xul:label class="fieldlabel"><xar:mlstring>Subitems object</xar:mlstring></xul:label>
+                            <xul:hbox>
+                                <xar:data-input name="objectid" value="$objectid['value']" type="object" />
+                                <xul:label class="xar-error">#$objectid.error:msg#</xul:label>
+                            </xul:hbox>
+                        </xul:row>
+                        <xul:row>
+                            <xul:label class="fieldlabel"><xar:mlstring>Hooked Module Name:</xar:mlstring></xul:label>
+                            <xul:hbox flex="1">
+                                <xar:data-input name="modid" type="module" value="$module['value']"/>
+                                <xul:button type="submit" name="reload" value="#xarML('Reload itemtypes')#" label="#xarML('Reload itemtypes')#"/>
+                                <xul:label class="xar-error">#$module.error:msg#</xul:label>
+                            </xul:hbox>
+                        </xul:row>
+                        <xul:row>
+                            <xul:label class="fieldlabel"><xar:mlstring>Hooked Item Type:</xar:mlstring></xul:label>
+                            <xul:hbox>
+                                <xar:data-input type="itemtype" name="itemtype" module="$module_name" value="$itemtype['value']" value="$itemtype['value']"/>
+                                <xul:label class="xar-error">#$itemtype.error:msg#</xul:label>
+                            </xul:hbox>
+                        </xul:row>
+                        <xul:row>
+                            <xul:label class="fieldlabel"><xar:mlstring>Template to use:</xar:mlstring></xul:label>
+                            <xul:hbox>
+                                <xul:textbox type="text" name="template" value="#$template['value']#" />
+                                <xul:label class="xar-error">#$template.error:msg#</xul:label>
+                            </xul:hbox>
+                        </xul:row>
+                    </xul:rows>
+                </xul:grid>
+            </xul:groupbox>
+        </xul:hbox>
+    </form>
+
+</xul:vbox>

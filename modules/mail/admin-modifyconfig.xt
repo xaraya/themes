@@ -1,0 +1,245 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+<script language="JavaScript">
+<!--
+    // Enter name of mandatory fields
+    var mail_fieldRequired = Array("adminname", "adminmail");
+    // Enter field description to appear in the dialog box
+    var mail_fieldDescription = Array("Admin Name", "Admin Email");
+//-->
+</script>
+
+<form method="post" action="&xar-modurl-mail-admin-updateconfig;" onsubmit="return xar_base_formCheck(this, mail_fieldRequired, mail_fieldDescription);" enctype="application/x-www-form-urlencoded" >
+    <xul:vbox class="xar-mod-body">
+        <xul:label class="xar-mod-title"><xar:mlstring>Modify Mail Configuration</xar:mlstring></xul:label>
+        
+        <xul:hbox>
+            <xul:vbox class="xrm_actionarea">
+                <xul:button type="submit" label="#xarML('Update')#"/>
+            </xul:vbox>
+            
+            <xul:groupbox>
+                <xul:vbox>
+                    <input type="hidden" name="authid" id="authid" value="#$authid#" />
+
+                    <xul:hbox>
+                        <xul:label class="fieldlabel" control="adminname"><xar:mlstring>Admin Name</xar:mlstring></xul:label>
+                        <xul:textbox type="text" name="adminname" id="adminname" value="#xarModGetVar('mail', 'adminname', 1)#" size="30" maxlength="100" />
+                    </xul:hbox>
+                    
+                    <xul:hbox>
+                        <xul:label class="fieldlabel" control="adminmail"><xar:mlstring>Admin Email</xar:mlstring></xul:label>
+                        <xul:textbox type="text" name="adminmail" id="adminmail" value="#xarModGetVar('mail', 'adminmail', 1)#" size="50" maxlength="100" />
+                    </xul:hbox>
+                    
+                    <xar:if condition="xarModGetVar('mail', 'replyto')">
+                        <xul:checkbox type="checkbox" name="replyto" id="replyto" value="1" checked="true" label="#xarML('Add different reply-to')#" />
+                    <xar:else />
+                        <xul:checkbox type="checkbox" name="replyto" id="replyto" value="1" label="#xarML('Add different reply-to')#" />
+                    </xar:if>
+                    
+                    <xar:if condition="xarModGetVar('mail', 'replyto')">
+                        <xul:label class="fieldlabel" control="replytoname"><xar:mlstring>Reply To Name</xar:mlstring></xul:label>
+                        <xul:textbox type="text" name="replytoname" id="replytoname" value="#xarModGetVar('mail', 'replytoname', 1)#" size="30" maxlength="100" />
+             
+                        <xul:label class="fieldlabel" control="replytoemail"><xar:mlstring>Reply To Address</xar:mlstring></xul:label>
+                        <xul:textbox type="text" name="replytoemail" id="replytoemail" value="#xarModGetVar('mail', 'replytoemail', 1)#" size="50" maxlength="100" />
+                    </xar:if>
+
+                    <xar:if condition="xarModGetVar('mail', 'html')">
+                        <xul:checkbox type="checkbox" name="html" id="html" value="1" checked="true" label="#xarML('Send HTML Emails?')#"/>
+                    <xar:else />
+                        <xul:checkbox type="checkbox" name="html" id="html" value="1" label="#xarML('Send HTML Emails?')#"/>
+                    </xar:if>
+
+                    <xar:if condition="xarModGetVar('mail', 'htmluseheadfoot')">
+                        <xul:checkbox type="checkbox" name="htmluseheadfoot" id="htmluseheadfoot" value="1" checked="true" label="#xarML('Use HTML Header/Footer?')#"/>
+                    <xar:else />
+                        <xul:checkbox type="checkbox" name="htmluseheadfoot" id="htmluseheadfoot" value="1" label="#xarML('Use HTML Header/Footer?')#"/>
+                    </xar:if>
+
+                    <xar:if condition="xarModGetVar('mail', 'htmluseheadfoot')">
+                        <xul:label class="fieldlabel" control="htmlheader"><xar:mlstring>HTML Email Header</xar:mlstring></xul:label>
+                        <xul:textbox multiline="true" name="htmlheader" id="htmlheader" rows="10" cols="60" wrap="off" lable="#xarModGetVar('mail', 'htmlheader', 1)#" />
+
+                        <xul:label class="fieldlabel" control="htmlfooter"><xar:mlstring>HTML Email Footer</xar:mlstring></xul:label>
+                        <xul:textbox multiline="true" name="htmlfooter" id="htmlfooter" rows="10" cols="60" wrap="off" label="#xarModGetVar('mail', 'htmlfooter', 1)#"/>
+                    </xar:if>
+
+                    <xar:if condition="xarModGetVar('mail', 'textuseheadfoot')">
+                        <xul:checkbox type="checkbox" name="textuseheadfoot" id="textuseheadfoot" value="1" checked="true" label="#xarML('Use Text Header/Footer?')#" />
+                    <xar:else />
+                        <xul:checkbox type="checkbox" name="textuseheadfoot" id="textuseheadfoot" value="1" checked="true" label="#xarML('Use Text Header/Footer?')#" />
+                    </xar:if>
+
+                    <xar:if condition="xarModGetVar('mail', 'textuseheadfoot')">
+                        <xul:label class="fieldlabel" control="textheader"><xar:mlstring>Text Email Header</xar:mlstring></xul:label>
+                        <xul:textbox multiline="true" name="textheader" id="textheader" rows="10" cols="60" wrap="off" label="#xarModGetVar('mail', 'textheader', 1)#" />
+                        
+                        <xul:label class="fieldlabel" controle="textfooter"><xar:mlstring>Text Email Footer</xar:mlstring></xul:label>
+                        <xul:textbox multiline="true" name="textfooter" id="textfooter" rows="10" cols="60" wrap="off" label="#xarModGetVar('mail', 'textfooter', 1)#" />
+                    </xar:if>
+
+                    <xul:hbox>
+                        <xul:label class="fieldlabel" control="wordwrap"><xar:mlstring>Default Word Wrap Size</xar:mlstring></xul:label>
+                        <xul:textbox type="text" name="wordwrap" id="wordwrap" value="#xarModGetVar('mail', 'wordwrap', 1)#" size="5" maxlength="5" />
+                    </xul:hbox>
+                    
+                    <xul:hbox>
+                        <xul:label class="fieldlabel" control="priority"><xar:mlstring>Default Priority to send messages</xar:mlstring></xul:label>
+                        <xul:menulist name="priority" id="priority" size="1">
+                            <xul:menupopup>
+                                <xar:if condition="xarModGetVar('mail', 'priority') eq '1'">
+                                    <xul:menuitem label="High" value="1" selected="true"/>
+                                    <xul:menuitem label="Normal" value="3"/>
+                                    <xul:menuitem label="Low" value="5"/>
+                                <xar:elseif condition="xarModGetVar('mail', 'priority') eq '3'" />
+                                    <xul:menuitem label="High" value="1"/>
+                                    <xul:menuitem label="Normal" value="3" selected="true"/>
+                                    <xul:menuitem label="Low" value="5"/>
+                                <xar:elseif condition="xarModGetVar('mail', 'priority') eq '5'" />
+                                    <xul:menuitem label="High" value="1"/>
+                                    <xul:menuitem label="Normal" value="3"/>
+                                    <xul:menuitem label="Low" value="5" selected="true"/>
+                                </xar:if>
+                            </xul:menupopup>
+                        </xul:menulist>
+                    </xul:hbox>
+                
+                    <xul:hbox>
+                        <xul:label class="fieldlabel" control="encoding"><xar:mlstring>Default Encoding</xar:mlstring></xul:label>
+                        <xul:menulist name="encoding" id="encoding" size="1">
+                            <xul:menupopup>
+                                <xar:if condition="$encoding eq '7bit'">
+                                    <xul:menuitem label="7bit" value="7bit" selected="true"/>
+                                <xar:else />
+                                    <xul:menuitem label="7bit" value="7bit"/>
+                                </xar:if>
+                                <xar:if condition="$encoding eq '8bit'">
+                                    <xul:menuitem label="8bit" value="8bit" selected="true"/>
+                                <xar:else />
+                                    <xul:menuitem label="8bit" value="8bit"/>
+                                </xar:if>
+                                <xar:if condition="$encoding eq 'binary'">
+                                    <xul:menuitem label="binary" value="binary" selected="true"/>
+                                <xar:else />
+                                    <xul:menuitem label="binary" value="binary"/>
+                                </xar:if>
+                                <xar:if condition="$encoding eq 'quoted-printable'">
+                                    <xul:menuitem label="quoted-printable" value="quoted-printable" selected="true"/>
+                                <xar:else />
+                                    <xul:menuitem label="quoted-printable" value="quoted-printable"/>
+                                </xar:if>
+                                <xar:if condition="$encoding eq 'base64'">
+                                    <xul:menuitem label="base64" value="base64" selected="true"/>
+                                <xar:else />
+                                    <xul:menuitem label="base64" value="base64"/>
+                                </xar:if>
+                            </xul:menupopup>
+                        </xul:menulist>
+                    </xul:hbox>
+                    
+                    <xul:hbox>
+                        <xul:label class="fieldlabel" control="server"><xar:mlstring>Default method to send mail</xar:mlstring></xul:label>
+                        <xul:menulist name="server" onChange="this.form.submit();" id="server" size="1">
+                            <xul:menupopup>
+                                <xar:if condition="xarModGetVar('mail', 'server') eq 'smtp'">
+                                    <xul:menuitem label="SMTP" value="smtp" selected="true"/>
+                                    <xul:menuitem label="SendMail" value="sendmail"/>
+                                    <xul:menuitem label="Mail" value="mail"/>
+                                    <xul:menuitem label="QMail" value="qmail"/>
+                                <xar:elseif condition="xarModGetVar('mail', 'server') eq 'sendmail'" />
+                                    <xul:menuitem label="SMTP" value="smtp"/>
+                                    <xul:menuitem label="SendMail" value="sendmail" selected="true"/>
+                                    <xul:menuitem label="Mail" value="mail"/>
+                                    <xul:menuitem label="QMail" value="qmail"/>
+                                <xar:elseif condition="xarModGetVar('mail', 'server') eq 'mail'" />
+                                    <xul:menuitem label="SMTP" value="smtp"/>
+                                    <xul:menuitem label="SendMail" value="sendmail"/>
+                                    <xul:menuitem label="Mail" value="mail" selected="true"/>
+                                    <xul:menuitem label="QMail" value="qmail"/>
+                                <xar:elseif condition="xarModGetVar('mail', 'server') eq 'qmail'" />
+                                    <xul:menuitem label="SMTP" value="smtp"/>
+                                    <xul:menuitem label="SendMail" value="sendmail"/>
+                                    <xul:menuitem label="Mail" value="mail"/>
+                                    <xul:menuitem label="QMail" value="qmail" selected="true"/>
+                                </xar:if>
+                            </xul:menupopup>
+                        </xul:menulist>
+                    </xul:hbox>
+                    
+                    <xar:if condition="xarModGetVar('mail', 'server') eq 'sendmail'">
+                        <xul:label class="fieldlabel" control="sendmailpath"><xar:mlstring>Path to Sendmail</xar:mlstring></xul:label>
+                        <xul:textbox type="text" name="sendmailpath" id="sendmailpath" value="#xarModGetVar('mail', 'sendmailpath', 1)#" size="30" maxlength="100" />
+                    </xar:if>
+
+                    <xar:if condition="xarModGetVar('mail', 'server') eq 'smtp'">
+                        <xul:label class="fieldlable" control="smtphost"><xar:mlstring>SMTP Host</xar:mlstring></xul:label>
+                        <xul:textbox type="text" name="smtpHost" id="smtpHost" value="#xarModGetVar('mail', 'smtpHost', 1)#" size="30" maxlength="100" />
+                        
+                        <xul:label class="fieldlabel" control="smtpPort"><xar:mlstring>SMTP Port</xar:mlstring></xul:label>
+                        <xul:textbox type="text" name="smtpPort" id="smtpPort" value="#xarModGetVar('mail', 'smtpPort')#" size="5" maxlength="5" />
+                
+                        <xar:if condition="xarModGetVar('mail', 'smtpAuth')">
+                            <xul:checkbox type="checkbox" name="smtpAuth" id="smtpAuth" value="1" checked="true" onChange="this.form.submit();" label="#xarML('SMTP Requires Authentication')#"/>
+                        <xar:else />
+                            <xul:checkbox type="checkbox" name="smtpAuth" id="smtpAuth" value="1" onChange="this.form.submit();" label="#xarML('SMTP Requires Authentication')#"/>
+                        </xar:if>
+
+
+                        <xar:if condition="xarModGetVar('mail', 'smtpAuth')">
+                            <xul:label control="smtpUserName"><xar:mlstring>SMTP Username</xar:mlstring></xul:label>
+                            <xul:textbox type="text" name="smtpUserName" id="smtpUserName" value="#xarModGetVar('mail', 'smtpUserName', 1)#" size="30" maxlength="100" />
+                            
+                            <xul:label control="smtpPassword"><xar:mlstring>Modify SMTP Password</xar:mlstring></label>:</span>
+                            <xul:textbox type="password" name="smtpPassword" id="smtpPassword" value="" size="30" maxlength="30" />
+                        </xar:if>
+
+                        <xul:label control="interval"><xar:mlstring>Support scheduled mail</xar:mlstring></xul:label>
+                        <xar:if condition="xarModIsAvailable('scheduler')">
+                            <xul:menulist name="interval" id="interval">
+                                <xul:menupopup>
+                                    <xul:menuitem value="" label="#xarML('not supported')#"/>
+                                    <xar:foreach in="$intervals" key="$id" value="$name">
+                                        <xar:if condition="!empty($interval) and $interval eq $id">
+                                            <xul:menuitem value="#$id#" selected="true" label="#$name#"/>
+                                        <xar:else/>
+                                            <xul:menuitem value="#$id#" label="#$name#"/>
+                                        </xar:if>
+                                    </xar:foreach>
+                                </xul:menupopup>
+                            </xul:menulist>
+                        <xar:else/>
+                            <input type="hidden" name="interval" value="" />
+                            <xul:label><xar:mlstring>You need to install the 'scheduler' module for this</xar:mlstring></xul:label>
+                        </xar:if>
+                        
+                        <xar:if condition="!empty($unsent)">
+                            <xul:label>
+                            (<xar:ml>
+                                <xar:mlstring>mails scheduled : #(1)</xar:mlstring>
+                                <xar:mlvar>#$unsent#</xar:mlvar>
+                                </xar:ml>
+                            )
+                            </xul:label>
+                            <xul:label>
+                                <xar:mlstring>
+                                    Please note that if you stop the scheduler 
+                                    or if it isn't triggered, previously scheduled 
+                                    mails will not be sent.
+                                </xar:mlstring>
+                            </xul:label>
+                        </xar:if>
+                    </xar:if>
+                    
+                    <xul:label><xar:mlstring>Filtering Options</xar:mlstring></xul:label>
+                    
+                    <xul:label class="fieldlabel" control="searchstrings"><xar:mlstring>Strings for search</xar:mlstring></xul:label>
+                    <xul:textbox multiline="true" name="searchstrings" id="searchstrings" rows="10" cols="30" label="#$searchstrings#" />
+                   
+                    <xul:label class="fieldlabel" control="replacestrings"><xar:mlstring>Strings for replacement</xar:mlstring></xul:label>
+                    <xul:textbox multiline="true" name="replacestrings" id="replacestrings" rows="10" cols="40" label="#$replacestrings#"/>
+                </xul:vbox>
+            </xul:groupbox>
+        </xul:hbox>
+    </xul:vbox>
+</form>

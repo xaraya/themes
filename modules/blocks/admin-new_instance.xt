@@ -1,0 +1,101 @@
+<xar:comment>
+    License: GPL http://www.gnu.org/copyleft/gpl.html 
+</xar:comment>
+<xar:base-include-javascript module="base" filename="formcheck.js" />
+<script type="text/javascript">
+<!--
+    // Enter name of mandatory fields
+    var blocks_fieldRequired = Array("block_name");
+    // Enter field description to appear in the dialog box
+    var blocks_fieldDescription = Array("Name");
+//-->
+</script> 
+<xar:if condition="xarTplAddStyleLink('blocks', 'blocks')">
+    <xar:comment>
+        no action required if external file was not added 
+    </xar:comment>
+</xar:if>
+
+
+<xul:vbox class="xar-mod-body">
+    <xul:label class="xar-mod-title">
+        <xar:mlstring>New Block Instance</xar:mlstring>
+    </xul:label>
+
+    <form class="xar-blocks-admin" action="&xar-modurl-blocks-admin-create_instance;" method="post" onsubmit="return xar_base_formCheck(this, blocks_fieldRequired, blocks_fieldDescription);" enctype="application/x-www-form-urlencoded">
+        <xul:hbox>
+            <xul:vbox class="xarm_actionarea">
+                <xul:button type="submit" value="#$createlabel#" label="#$createlabel#"/>
+            </xul:vbox>
+            
+            <xul:groupbox>
+                <input type="hidden" name="authid" id="authid" value="#xarSecGenAuthKey()#" />
+                <xul:grid>
+                    <xul:columns>
+                        <xul:column/>
+                        <xul:column/>
+                    </xul:columns>
+                    <xul:rows>
+                        <xul:row>
+                            <xul:label for="block_name" class="fieldlabel required">
+                                <xar:mlstring>Name</xar:mlstring>
+                            </xul:label>
+                            <xul:textbox type="text" name="block_name" id="block_name" size="30" value="" maxlength="100" />
+                        </xul:row>
+                        <xul:row>
+                            <xul:label class="fieldlabel" control="block_title">
+                                <xar:mlstring>Title</xar:mlstring>
+                            </xul:label>
+                            <xul:textbox type="text" name="block_title" id="block_title" size="30" value="" maxlength="255" />
+                        </xul:row>
+                        <xul:row>
+                            <xul:label class="fieldlabel" control="block_type">
+                                <xar:mlstring>Type</xar:mlstring>
+                            </xul:label>
+                            <xul:menulist name="block_type" id="block_type">
+                                <xul:menupopup>
+                                    <xar:loop name="$block_types">
+                                        <xul:menuitem value="#$loop:item['tid']#" label="#xarVarPrepForDisplay($loop:item['module'])#/#xarVarPrepForDisplay($loop:item['type'])#" />
+                                    </xar:loop>
+                                </xul:menupopup>
+                            </xul:menulist>
+                        </xul:row>
+                        <xul:row>
+                            <xul:label class="fieldlabel" control="block_template">
+                                <xar:mlstring>Template (optional)</xar:mlstring>
+                            </xul:label>
+                            <xul:textbox type="text" name="block_template" id="block_template" size="30" value="" maxlength="255" />
+                        </xul:row>
+                        <xul:row>
+                            <xul:label class="fieldlabel" control="block_type">
+                                <xar:mlstring>Block group (optional)</xar:mlstring>
+                            </xul:label>
+                            
+                            <xul:menulist name="block_groups[][gid]" id="block_groups">
+                                <xul:menupopup>
+                                    <xul:menuitem value="" label="-- #xarML('no group')# --"/>
+                                    
+                                    <xar:loop name="$block_groups">
+                                        <xul:menuitem value="#$loop:item['gid']#" label="#xarVarPrepForDisplay($loop:item['name'])#"/>
+                                    </xar:loop>
+                                </xul:menupopup>
+                            </xul:menulist>
+                        </xul:row>
+                        <xul:row>
+                            <xul:label class="fieldlabel" control="block_state">
+                                <xar:mlstring>Default state</xar:mlstring>
+                            </xul:label>
+                            <xul:menulist name="block_state" id="block_state">
+                                <xul:menupopup>
+                                    <xul:menuitem value="0" label="#xarML('Hidden')#"/>
+                                    <xul:menuitem value="1" label="#xarML('Minimized')#"/>
+                                    <xul:menuitem value="2" label="#xarML('Maximized')#" selected="true"/>
+                                </xul:menupopup>
+                            </xul:menulist>
+                        </xul:row>
+                    </xul:rows>
+                </xul:grid>
+            </xul:groupbox>
+        </xul:hbox>
+    </form>
+</xul:vbox>

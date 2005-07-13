@@ -1,0 +1,159 @@
+<form class="dd-modifyprop-form" method="post" action="&xar-modurl-dynamicdata-admin-updateprop;">
+<xul:hbox>
+    <!-- First part is the action we can do here -->
+    <xul:vbox class="xrm_actionarea">
+        <xul:button class="dd-norm" type="submit" value="#$updatebutton#" label="#$updatebutton#"/>
+        <xar:if condition="!empty($objectid)">
+            <xar:data-display module="dynamicdata" itemtype="0" itemid="$objectid" fieldlist="name,label,moduleid,itemtype" />
+        </xar:if>
+    </xul:vbox>
+    
+    <!-- Second is the list of all dyn props -->
+    <xul:vbox flex="1">
+        <xar:if condition="!empty($objectid)">
+            <!-- show some basic info about this dynamic object -->
+            <xul:hbox flex="1">
+               <!-- <xul:vbox flex="1">
+                    <xul:description flex="1">
+                        <xar:mlstring>
+                            When DD is used to extend some item (e.g. roles), then you should definitely avoid 
+                            re-using property names that are already in the original item - just like you can't 
+                            have 2 fields called 'state' in "static" items either. 
+                            You should also avoid 'module', 'itemtype', 'itemid', 'transform' and 'returnurl' 
+                            when using DD via hooks, because those are pre-defined parameters in hook calls. 
+                        </xar:mlstring>
+                    </xul:description>
+                    <xul:description flex="1">
+                        <xar:mlstring>
+                            Hint : after you create a property, the label and name are independent from each other. 
+                            You can adapt the property name by clicking on the ID link above. 
+                        </xar:mlstring>
+                    </xul:description>
+                </xul:vbox> -->
+            </xul:hbox>
+        </xar:if>
+
+        <xul:groupbox label="#xarML('Hint: empty the label to delete a property on the next update')#">
+            <xul:caption label="#xarML('Hint: empty the label to delete a property on the next update')#"/>
+
+            <input type="hidden" name="authid" id="authid" value="#$authid#" />
+            <input type="hidden" name="objectid" id="objectid" value="#$objectid#" />
+            <input type="hidden" name="modid" id="modid" value="#$modid#" />
+            <input type="hidden" name="itemtype" id="itemtype" value="#$itemtype#" /> 
+                      
+            <xar:if condition="!empty($objectid) and $objectid lt 3">
+          <!--      <xul:description flex="1">
+                    <xar:mlstring>
+                        Warning ! This is a system object used internally by the Dynamic Data module. 
+                        Trying to modify the properties of this object may break the Dynamic Data module. 
+                        Proceed with caution... 
+                    </xar:mlstring>
+                </xul:description> -->
+            </xar:if>
+        
+            <xar:foreach in="$fields" value="$field">
+                <xar:set name="editvalidation">xarML('Edit validation for property "#(1)"',$field['name'])</xar:set>
+                <xar:set name="otherfields">xarML('Edit property "#(1)"',$field['name'])</xar:set>
+                
+                <xul:groupbox class="item">
+                    <xul:caption class="item">
+                        <xul:label class="fieldlabel">#$labels['id']#:</xul:label>
+                        <xul:label>
+                            <a href="&xar-modurl-dynamicdata-admin-modify;&amp;objectid=2&amp;itemid=#$field.id#" title="#xarVarPrepForDisplay($otherfields)#">
+                                #$field['id']# 
+                            </a>
+                        </xul:label>
+                        <xul:label class="fieldlabel">#$labels['name']#:</xul:label>
+                        <xul:label>#$field['name']#</xul:label>
+                        <xul:label class="fieldlabel">#$labels['source']#:</xul:label>
+                        <xul:label>#$field['source']#</xul:label>
+                    </xul:caption>
+                    <xul:hbox>
+                        <!-- <xul:label class="fieldlabel">#$labels['label']#</xul:label> -->
+                        <xul:textbox type="text" name="dd_label[#$field['id']#]" id="dd_label_#$field['id']#" size="10" value="#$field['label']#" />
+
+                        <!-- <xul:label class="fieldlabel">#$labels['type']#</xul:label> -->
+                        <xar:data-input property="$fieldtypeprop" name="dd_type['.$field['id'].']" id="dd_type_'.$field['id'].'" value="$field['type']" />
+
+                        <!-- <xul:label class="fieldlabel">#$labels['default']#</xul:label> -->
+                        <xul:textbox type="text" name="dd_default[#$field['id']#]" id="dd_default_#$field['id']#" size="10" value="#xarVarPrepForDisplay($field['default'])#" />
+
+                        <xul:label class="fieldlabel">
+                            <a href="&xar-modurl-dynamicdata-admin-showpropval;&amp;itemid=#$field.id#" title="#xarVarPrepForDisplay($editvalidation)#">
+                                #$labels['validation']# 
+                            </a>
+                        </xul:label>
+                        <xul:textbox type="text" name="dd_validation[#$field['id']#]" id="dd_validation_#$field['id']#" size="10" value="#xarVarPrepForDisplay($field['validation'])#" />
+
+                        <!-- <xul:label class="fieldlabel">#$labels['status']#</xul:label> -->
+                        <xar:data-input property="$fieldstatusprop" name="dd_status['.$field['id'].']" size="15" value="$field['status']" />
+                    </xul:hbox>
+                </xul:groupbox>
+            </xar:foreach>
+            <xul:groupbox class="item">
+                <xul:caption>
+                    <xul:label class="fieldlabel">#$labels['new']# #$labels['source']# :</xul:label>
+                    <xul:menulist class="dd-norm" label="dd_source[0]" name="dd_source[0]" id="dd_source_0">
+                        <xul:menupopup>
+                            <xar:foreach in="$sources" value="$mysource">
+                                <xul:menuitem value="#$mysource#" label="#$mysource#"/>
+                            </xar:foreach>
+                        </xul:menupopup>
+                    </xul:menulist>
+                </xul:caption>
+                
+                <xul:grid>
+                    <xul:columns>
+                        <xul:column/>
+                        <xul:column/>
+                    </xul:columns>
+                    <xul:rows>
+                        <xul:row>
+                            <xul:label class="fieldlabel">#$labels['label']#</xul:label>
+                            <xul:textbox type="text" name="dd_label[0]" id="dd_label_0" size="10" />
+                        </xul:row>
+                        <xul:row>
+                            <xul:label class="fieldlabel">#$labels['type']#</xul:label>
+                            <xar:data-input property="$fieldtypeprop" name="dd_type[0]" value="" />
+                        </xul:row>
+                        <xul:row>
+                            <xul:label class="fieldlabel">#$labels['default']#</xul:label>
+                            <xul:textbox type="text" name="dd_default[0]" id="dd_default_0" size="10" />
+                        </xul:row>
+                        <xul:row>
+                            <xul:label class="fieldlabel">#$labels['validation']#</xul:label>
+                            <xul:textbox type="text" name="dd_validation[0]" id="dd_validation_0" size="10" />
+                        </xul:row>
+                        <xul:row>
+                            <xul:label class="fieldlabel">#$labels['status']#</xul:label>
+                            <xar:data-input property="$fieldstatusprop" name="dd_status[0]" value="1" />
+                        </xul:row>
+                    </xul:rows>
+                </xul:grid>
+            </xul:groupbox>
+            <xul:vbox class="dd-clear">
+                <xar:if condition="$modid eq 182">
+                    <xul:description flex="1">
+                        Note : for completely dynamic Objects like this one, you need to 
+                        define one property that is of type "Item ID" 
+                    </xul:description>
+                </xar:if>
+                <xar:if condition="!empty($hooks)">
+                    #$hooks# 
+                </xar:if>
+            </xul:vbox>
+            <xar:if condition="!empty($objectid)">
+                <xul:hbox pack="end">
+                    <xul:button label="#xarML('Modify definition')#" oncommand="document.location='&xar-modurl-dynamicdata-admin-modify;&amp;itemid=#$objectid#'"/>
+                    <xar:if condition="!empty($fields)">
+                        <xar:set name="urlform">#xarModURL('dynamicdata','admin','form',array('objectid' => $objectid, 'theme' => 'print'),true)#</xar:set>
+                        <xul:button label="#xarML('Preview input form')#" oncommand="xar_dynamicdata_formpreview()"/>
+                    </xar:if>
+                    <xul:button label="#xarML('Export to XML')#" oncommand="document.location='&xar-modurl-dynamicdata-util-export;&amp;modid=#$modid#&amp;itemtype=#$itemtype#'"/>
+                </xul:hbox>
+            </xar:if>
+        </xul:groupbox>
+        <!-- xar:data-list object="$myobject" layout="'cells'" template="''" /-->
+    </xul:vbox>
+</xul:hbox>
+</form>

@@ -1,0 +1,13 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+
+<xul:hbox flex="1">
+<xar:if condition="$checked">
+  <xul:checkbox type="checkbox"  name="#$name#" value="1" id="#$id#" tabindex="#$tabindex#" checked="true" label="#$label#" />
+<xar:else/>
+  <xul:checkbox type="checkbox"  name="#$name#" value="1" id="#$id#" tabindex="#$tabindex#" checked="false" label="#$label#"/>
+</xar:if>
+
+<xar:if condition="!empty($invalid)">
+    <xul:label class="xar-error">#$invalid#</xul:label>
+</xar:if>
+</xul:hbox>

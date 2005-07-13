@@ -1,0 +1,46 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+<script language="JavaScript">
+<!--
+    // Enter name of mandatory fields
+    var mail_fieldRequired = Array("subject", "message");
+    // Enter field description to appear in the dialog box
+    var mail_fieldDescription = Array("Subject", "Message");
+//-->
+</script>
+        
+<form action="&xar-modurl-mail-admin-sendtest;" method="post" onsubmit="return xar_base_formCheck(this, mail_fieldRequired, mail_fieldDescription);" enctype="application/x-www-form-urlencoded">
+    <xul:vbox class="xar-mod-body">
+        <xul:label class="xar-mod-title">
+            <xar:mlstring>Test mail configuration</xar:mlstring>
+        </xul:label>
+        
+        <xul:hbox>
+                <xul:vbox class="xrm_actionarea">
+                    <xul:button type="submit" value="#$createlabel#" label="#$createlabel#" />
+                </xul:vbox>
+            
+                <xul:groupbox>
+                    <xul:vbox>
+                        <input type="hidden" name="authid" id="authid" value="#$authid#" />
+
+                        <xul:label class="fieldlabel" control="to"><xar:mlstring>To</xar:mlstring></xul:label>
+                        <xul:textbox type="text" name="name" id="name" value="#$name#"/>
+                    
+                        <xul:label class="fieldlabel" control="to"><xar:mlstring>Email Address</xar:mlstring></xul:label>
+                        <xul:textbox type="text" name="email" id="email" value="#$email#"/>
+                        
+                        <xul:label class="fieldlabel" control="subject"><xar:mlstring>Subject</xar:mlstring></xul:label>
+                        <xul:textbox type="text" name="subject" id="subject" />
+
+                        <xul:label class="fieldlabel" control="message"><xar:mlstring>Message</xar:mlstring></xul:label>
+                        <xul:textbox multiline="true" name="message" id="message" rows="10" cols="50" />
+                        
+                        <xar:if condition="xarModIsAvailable('scheduler')">
+                            <xul:label class="fieldlabel" control="when"><xar:mlstring>No earlier than</xar:mlstring></xul:label>
+                            <xar:data-input name="when" type="calendar" value="" />
+                        </xar:if>
+                    </xul:vbox>
+                </xul:groupbox>
+        </xul:hbox>
+    </xul:vbox>
+</form>

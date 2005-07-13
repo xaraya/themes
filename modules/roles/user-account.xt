@@ -1,0 +1,66 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+
+<xar:set name="compare">xarServerGetCurrentURL()</xar:set>
+<!-- Next line can't be replaced with entities yet -->
+<xar:set name="current">xarModURL('roles', 'user', 'display', array('uid' => xarUserGetVar('uid')))</xar:set>
+<xar:set name="account">&xar-modurl-roles-user-account;</xar:set>
+<xar:set name="uid">xarUserGetVar('uid')</xar:set>
+<xar:if condition="xarTplAddStyleLink('base', 'navtabs')"></xar:if>
+
+<xul:vbox class="xar-mod-body" flex="1">
+    <xul:label class="xar-mod-title">
+        <xar:ml>
+            <xar:mlstring>Account information for #(1)</xar:mlstring>
+            <xar:mlvar>#xarVarPrepForDisplay($name)#</xar:mlvar>
+        </xar:ml>
+    </xul:label>
+    
+    <div style="margin: auto;">
+        <xar:if condition="!empty($message)">
+            #$message#
+        <xar:else />
+        <div>
+            <dl class="xar-tabs">
+                <dt class="help">
+                    <xar:mlstring>
+                        Your Profile
+                    </xar:mlstring>
+                    : 
+                </dt>
+                <xar:if condition="($compare eq $current) or ($compare eq $account)">
+                    <dd class="active">
+                        <a href="#xarServerGetCurrentURL()#">
+                            <xar:mlstring>
+                                Display your profile
+                            </xar:mlstring>
+                        </a>
+                    </dd>    
+                <xar:else />
+                    <dd>
+                        <a href="&xar-modurl-roles-user-account;">
+                            <xar:mlstring>
+                                Display your profile
+                            </xar:mlstring>
+                        </a>
+                    </dd>    
+                </xar:if>
+                #$output#
+                <dd>
+                    <a href="&xar-modurl-roles-user-logout;">
+                        <xar:mlstring>
+                            Logout
+                        </xar:mlstring>
+                    </a>
+                </dd>    
+            </dl>
+        </div>
+        </xar:if>
+        <xar:if condition="$compare eq $account">
+            <div>&nbsp;</div>
+            <xar:module main="false" module="roles" type="user" func="display" />
+        <xar:else />
+            <div>&nbsp;</div>
+            <xar:module main="false" module="$moduleload" type="user" func="usermenu" phase="form" />
+        </xar:if>
+    </div>
+</xul:vbox>

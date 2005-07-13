@@ -1,0 +1,44 @@
+<xar:comment>
+    License: GPL http://www.gnu.org/copyleft/gpl.html 
+</xar:comment>
+
+<xul:hbox flex="1">
+    <xul:tabbox flex="1" >
+        <xul:tabs>
+            <xul:tab label="#xarML('General info')#"/>
+            <xul:tab label="#xarML('Credits')#"/>
+            <xul:tab label="#xarML('Configuration')#"/>
+            <xul:tab label="#xarML('Modules')#"/>
+            <xul:tab label="#xarML('Environment')#"/>
+            <xul:tab label="#xarML('Variables')#"/>
+            <xul:tab label="#xarML('License')#"/>
+            <xul:tab label="#xarML('All')#"/>
+        </xul:tabs>
+        <xul:tabpanels flex="1">
+            <xul:tabpanel>
+                <xul:iframe flex="1" src="index.php?pageName=info&amp;what=1"/>
+            </xul:tabpanel>
+            <xul:tabpanel>
+                <xul:iframe flex="1" src="index.php?pageName=info&amp;what=2"/>
+            </xul:tabpanel>            
+            <xul:tabpanel>
+                <xul:iframe flex="1" src="index.php?pageName=info&amp;what=4"/>
+            </xul:tabpanel>            
+            <xul:tabpanel>
+                <xul:iframe flex="1" src="index.php?pageName=info&amp;what=8"/>
+            </xul:tabpanel>            
+            <xul:tabpanel>
+                <xul:iframe flex="1" src="index.php?pageName=info&amp;what=16"/>
+            </xul:tabpanel>            
+            <xul:tabpanel>
+                <xul:iframe flex="1" src="index.php?pageName=info&amp;what=32"/>
+            </xul:tabpanel>
+            <xul:tabpanel>
+                <xul:iframe flex="1" src="index.php?pageName=info&amp;what=64"/>
+            </xul:tabpanel>
+            <xul:tabpanel>
+                <xul:iframe flex="1" src="index.php?pageName=info"/>
+            </xul:tabpanel>
+        </xul:tabpanels>
+    </xul:tabbox>
+</xul:hbox>

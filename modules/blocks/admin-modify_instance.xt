@@ -1,0 +1,155 @@
+<xar:comment>
+    License: GPL http://www.gnu.org/copyleft/gpl.html 
+</xar:comment>
+
+<xul:vbox class="xar-mod-body">
+    <xul:label class="xar-mod-title">
+        <xar:mlstring>Modify block instance</xar:mlstring>
+    </xul:label>
+    
+    <form class="xar-blocks-admin" action="&xar-modurl-blocks-admin-update_instance;" method="post" enctype="application/x-www-form-urlencoded">
+        <input type="hidden" name="authid" id="authid" value="#$authid#" />
+        <input type="hidden" name="bid" id="bid" value="#$bid#" />
+        <xul:hbox>
+            <xul:vbox class="xrm_actionarea">
+                <xul:button type="submit" value="#xarML('Update')#" label="#xarML('Update')#"/>
+            </xul:vbox>
+        
+            <xul:vbox>
+                <xul:groupbox>
+                    <xul:groupbox>
+                        <xul:caption><xar:mlstring>Instance parameters</xar:mlstring></xul:caption>
+
+                        <xul:label><xar:mlstring>Parent module: </xar:mlstring>#xarVarPrepForDisplay($instance['module'])#</xul:label>
+                        <xul:label><xar:mlstring>Block type: </xar:mlstring>#xarVarPrepForDisplay($instance['type'])#</xul:label>
+                             
+                        <xul:label class="fieldlabel" control="block_name" ><xar:mlstring>Name:</xar:mlstring></xul:label>
+                        <xul:textbox type="text" name="block_name" id="block_name" value="#xarVarPrepForDisplay($instance['name'])#" maxlength="255" />
+                            
+                        <xul:label class="fieldlabel" control="block_title"><xar:mlstring>Title:</xar:mlstring></xul:label>
+                        <xul:textbox type="text" name="block_title" id="block_title" value="#xarVarPrepForDisplay($instance['title'])#" maxlength="255" />
+                    </xul:groupbox>
+                    
+                    <xul:groupbox>
+                        <xul:caption><xar:mlstring>Groups and group templates</xar:mlstring></xul:caption>
+                        
+                        <xar:if condition="$group_method eq 'min'">
+                            <xar:comment>Provide a 'new group' drop-down list.</xar:comment>
+                            <xul:hbox>
+                                <xul:label class="fieldlabel" control="block_new_group">
+                                <xar:mlstring>Add to group:</xar:mlstring></xul:label>
+                                <xul:menulist name="block_new_group" id="block_new_group">
+                                    <xul:menupopup>
+                                        <xul:menuitem value="" selected="true" label="#xarML('-- no new group --')#"/>
+                                        <xar:loop name="$block_groups">
+                                            <xar:if condition="empty($loop:item['selected'])">
+                                                <xul:menuitem value="#$loop:item['gid']#" label="#xarVarPrepForDisplay($loop:item['name'])#"/>
+                                            </xar:if>
+                                        </xar:loop>
+                                    </xul:menupopup>
+                                </xul:menulist>
+                            </xul:hbox>
+                        </xar:if>
+                        
+                        <xar:loop name="$block_groups">
+                            <xar:if condition="$group_method eq 'max' or !empty($loop:item['selected'])">
+                                <xul:hbox>
+                                    <xul:label class="fieldlabel" control="group_templates_#$loop:item.gid#">
+                                        #xarVarPrepForDisplay($loop:item['name'])#:
+                                    </xul:label>
+                                    <xar:if condition="$group_method eq 'max' or !empty($loop:item['selected'])">
+                                        <xul:textbox type="text" name="group_templates[#$loop:item.gid#]" id="group_templates_#$loop:item.gid#" value="#xarVarPrepForDisplay($loop:item.template)#" size="20" maxlength="100" />
+                                        <xar:if condition="$group_method eq 'min'">
+                                            <xar:if condition="!empty($loop:item['selected'])">
+                                                <xul:checkbox type="checkbox" name="block_remove_groups[#$loop:item.gid#]" id="block_remove_groups_#$loop:item.gid#" value="1" label="#xarML('Remove')#" />
+                                                <input type="hidden" name="block_groups[#$loop:item.gid#]" id="block_groups_#$loop:item.gid#" value="1" />
+                                            </xar:if>
+                                        <xar:else />
+                                            <xar:if condition="!empty($loop:item['selected'])">
+                                                <xul:checkbox type="checkbox" name="block_groups[#$loop:item.gid#]" id="block_groups_#$loop:item.gid#" value="1" checked="true" label="#xarML('Selected')#" />
+                                            <xar:else />
+                                                <xul:checkbox type="checkbox" name="block_groups[#$loop:item.gid#]" id="block_groups_#$loop:item.gid#" value="1" label="#xarML('Selected')#"/>
+                                            </xar:if>
+                                        </xar:if>
+                                    </xar:if>
+                                </xul:hbox>
+                            </xar:if>
+                        </xar:loop>
+                        
+                        <xul:label class="fieldlabel" control="block_template"><xar:mlstring>Instance template</xar:mlstring></xul:label>
+                        <xul:textbox type="text" name="block_template" id="block_template" value="#xarVarPrepForDisplay($instance['template'])#" size="40" maxlength="255" />
+                    </xul:groupbox>
+                    
+                    <xar:comment>
+                        It is likely this section will be removed, since blocks generally do not use it. 
+                    </xar:comment>
+                    <xar:if condition="isset($block_settings['form_refresh']) and $block_settings['form_refresh'] eq true">
+                        <xul:groupbox>
+                            <xul:caption><xar:mlstring>Refresh parameters</xar:mlstring></xul:caption>
+                            
+                            <xul:label class="fieldlabel" control="block_refresh"><xar:mlstring>Refresh:</xar:mlstring></xul:label>
+                            <xul:menulist name="block_refresh" id="block_refresh" style="width:150px;">
+                                <xul:menupopup>
+                                    <xar:loop name="$refresh_times">
+                                        <xar:if condition="$instance['refresh'] eq $loop:item['id']">
+                                            <xul:menuitem value="#$loop:item['id']#" selected="true" label="$loop:item['name']" />
+                                        <xar:else />
+                                            <xul:menuitem value="#$loop:item['id']#" label="$loop:item['name']" />
+                                        </xar:if>
+                                    </xar:loop>
+                                </xul:menupop>
+                            </xul:menulist>
+                        </xul:groupbox>
+                    </xar:if>
+                    
+                    <xul:groupbox>
+                        <xul:caption><xar:mlstring>Block state parameters</xar:mlstring></xul:caption>
+                        
+                        <xul:hbox>
+                            <xul:label class="fieldlabel" control="block_state"><xar:mlstring>Default state:</xar:mlstring></xul:label>
+                            <xul:menulist name="block_state" id="block_state">
+                                <xul:menupopup>
+                                    <xar:if condition="$instance['state'] eq 0">
+                                        <xul:menuitem value="0" selected="true" label="#xarML('Hidden')#"/>
+                                    <xar:else />
+                                        <xul:menuitem value="0" label="#xarML('Hidden')#"/>
+                                    </xar:if>
+                                    <xar:if condition="$instance['state'] eq 2">
+                                        <xul:menuitem value="2" selected="true" label="#xarML('Maximized')#"/>
+                                    <xar:else />
+                                        <xul:menuitem value="2" label="#xarML('Maximized')#"/>
+                                    </xar:if>
+                                </xul:menupopup>
+                            </xul:menulist>
+                        </xul:hbox>
+                    </xul:groupbox>
+                    
+                    <xar:comment>
+                        This 'content' section is deprecated - it will be removed once the PHP block no longer uses it. 
+                    </xar:comment>
+                    <xar:if condition="isset($block_settings['form_content']) and $block_settings['form_content'] eq true">
+                        <xul:groupbox class="formelements xar-alt">
+                            <xul:caption><xar:mlstring>Block contents</xar:mlstring></xul:caption>
+                            <xul:label class="fieldlabel" control="block_content"><xar:mlstring>Content:</xar:mlstring></xul:label>
+                            <xul:textbox multiline="true" name="block_content" id="block_content" style="width:300px;height:150px;" label="#$instance['content']#"/>
+                        </xul:groupbox>
+                    </xar:if>
+                    <xar:if condition="!empty($extra_fields)">
+                        <xul:groupbox class="formelements extra">
+                            <xul:caption><xar:mlstring>Extra parameters</xar:mlstring></xul:caption>
+                            <xar:comment>
+                                Blocks can send more fields to be shown and configured the extra_fields var shows those values 
+                            </xar:comment>
+                            <xul:vbox>
+                                #$extra_fields# 
+                            </xul:vbox>
+                            <xul:vbox>
+                                #$hooks# 
+                            </xul:vbox>
+                        </xul:groupbox>
+                    </xar:if>
+                </xul:groupbox>
+            </xul:vbox>
+        </xul:hbox>
+    </form>
+</xul:vbox>

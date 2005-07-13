@@ -1,0 +1,15 @@
+<xul:splitter collapse="after">
+    <xul:grippy />
+</xul:splitter>
+<xul:tree class="xar-block" hidecolumnpicker="true"  onselect="xrm_menuitemselect(event.target)">
+    <xul:treecols>
+        <xul:treecol flex="1" label="#xarML('Admin controls')#"/>
+    </xul:treecols>
+    <xul:treechildren >
+        <xul:treeitem href="&xar-modurl-adminpanels-admin-confirmlogout;">
+            <xul:treerow>
+                <xul:treecell label="#xarML('Admin logout')#"/>
+            </xul:treerow>
+        </xul:treeitem>
+    </xul:treechildren>
+</xul:tree>

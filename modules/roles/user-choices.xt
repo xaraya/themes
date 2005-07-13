@@ -1,0 +1,9 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+
+<xul:vbox class="xar-mod-body">
+    <xul:label class="xar-mod-title"><xar:mlstring>Registration / Login</xar:mlstring></xul:label>
+    
+    <xar:set name="blockid">0</xar:set>
+    <xar:set name="return_url">&xar-baseurl;</xar:set>
+    <xar:template file="blocks/login.xt" type="system"/>
+</xul:vbox>

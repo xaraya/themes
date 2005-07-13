@@ -1,0 +1,25 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+
+<xul:hbox flex="1">
+    <xul:menulist label="#$name#" name="#$name#" id="#$id#" tabindex="#$tabindex#" >
+        <xul:menupopup flex="1">
+            <xar:foreach in="$options" value="$option" >
+                <xar:if condition="empty($option['id']) or $option['id'] ne $option['name']">
+                    <xar:if condition="$option['id'] eq $value" >
+                        <xul:menuitem value="#$option['id']#" selected="true" label="#$option['name']#"/>
+                    <xar:else />
+                        <xul:menuitem value="#$option['id']#" label="#$option['name']#" />
+                    </xar:if>
+                <xar:elseif condition="$option['id'] eq $value" />
+                    <xul:menuitem selected="true" label="#$option['name']#" />
+                <xar:else />
+                    <xul:menuitem label="#$option['name']#"/>
+                </xar:if>
+            </xar:foreach>
+        </xul:menupopup>
+    </xul:menulist>
+    <xar:if condition="!empty($invalid)">
+        <xul:label class="xar-error">#$invalid#</xul:label>
+    </xar:if>
+    <xul:spacer flex="1"/>
+</xul:hbox>

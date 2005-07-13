@@ -1,0 +1,11 @@
+<xul:vbox flex="1">
+    <xar:foreach in="$subitems" key="$objectid" value="$subobject">
+        <xul:vbox flex="1">
+            <xul:label class="xrm_subitemheader">#$subobject.object:label#:</xul:label>
+            <xul:hbox flex="1">
+                <xar:set name="itemtype">#$subobject.object:itemtype#</xar:set>
+                <xar:data-list module="182" itemtype="$itemtype"/>
+            </xul:hbox>
+        </xul:vbox>
+    </xar:foreach>
+</xul:vbox>

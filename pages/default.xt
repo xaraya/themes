@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="/themes/xul/style/style.css" type="text/css"?>
+<?xar type="page" ?>
+<xar:blocklayout content="application/vnd.mozilla.xul+xml" xmlns:xar="http://xaraya.com/2004/blocklayout" version="1.0" >
+<!DOCTYPE window [ <!ENTITY nbsp "&#160;"> ]> 
+
+    <xul:window id="xrm_main" onload="xrm_init()"
+            xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" 
+            xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+            xmlns:xbl="http://www.mozilla.org/xbl"
+            xmlns:xar="http://xaraya.com/2004/blocklayout">
+
+        <xar:base-render-javascript position="head" />
+
+        <!-- Global scripts needed -->
+        <script src="chrome://global/content/globalOverlay.js" />
+        <script src="themes/#xarTplGetThemeName()#/jslib/xrm_init.js"/>
+        <script src="themes/#xarTplGetThemeName()#/jslib/xrm_forms.js"/>
+        <script src="themes/#xarTplGetThemeName()#/jslib/xrm_menus.js"/>
+
+        <!-- The overflow creates the scrollbar, but mousewheel events aren't handled, bug? -->
+        <xul:vbox flex="1" style="overflow: auto;">
+            <xar:blockgroup name="topnav" id="topnav" />
+            <xul:hbox flex="1" >
+                <xul:vbox id="leftblockgroup">
+                    <xar:blockgroup name="left" id="left" />
+                </xul:vbox>
+                <xul:splitter collapse="before" persist="state">
+                    <xul:grippy/>
+                </xul:splitter>
+                <xul:vbox flex="1">
+                    <xar:blockgroup name="center" id="center" />
+                    <xar:module id="modulespace" main="true" />
+                </xul:vbox>
+                <xul:splitter collapse="after" persist="state">
+                    <xul:grippy/>
+                </xul:splitter>
+                <xul:vbox style="min-width: 150px;">
+                    <xar:blockgroup name="right" id="right" />
+                </xul:vbox>
+            </xul:hbox> 
+            <xar:blockgroup name="admin" id="admin" />
+            <xar:base-render-javascript position="body" />
+        </xul:vbox>
+        <xul:statusbar>
+            <xul:statusbarpanel flex="1" label="To be filled and updated with some useful stuff..."/>
+            <xul:resizer />
+        </xul:statusbar>
+    </xul:window>
+</xar:blocklayout>

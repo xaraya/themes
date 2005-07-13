@@ -1,0 +1,2 @@
+<xar:set name="dummy">xarVarFetch('what','id:',$what,-1, XARVAR_NOT_REQUIRED)</xar:set>
+<xar:set name="content">phpinfo($what)</xar:set>

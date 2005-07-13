@@ -1,0 +1,62 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+<xar:set name="isupload">#$object:upload#</xar:set>
+<xar:if condition="!empty($isupload)">
+    <xar:set name="enc_type">'multipart/form-data'</xar:set>
+<xar:else/> 
+    <xar:set name="enc_type">'application/x-www-form-urlencoded'</xar:set>
+</xar:if>
+
+<form method="POST" action="&xar-modurl-dynamicdata-admin-create;" enctype="#$enc_type#">
+    <input type="hidden" name="authid" id="authid" value="#$authid#" />
+    <input type="hidden" name="modid" id="modid" value="#$object:moduleid#" />
+    <input type="hidden" name="itemtype" id="itemtype" value="#$object:itemtype#" />
+    <input type="hidden" name="join" id="join" value="#$object:join#" />
+    <input type="hidden" name="table" id="table" value="#$object:table#" />
+    <input type="hidden" name="itemid" id="itemid" value="#$object:itemid#" />
+    
+    <xul:vbox class="xar-mod-body" flex="1">
+        <xul:label class="xar-mod-title">
+            <xar:ml><xar:mlstring>Create New Item in #(1)</xar:mlstring><xar:mlvar>#$object:label#</xar:mlvar></xar:ml>
+        </xul:label>
+        
+        <xul:hbox flex="1">
+            <xul:vbox class="xrm_actionarea">
+                <xul:button type="submit" label="#xarML('Create')#"/>
+            </xul:vbox>
+            
+            <xar:data-form object="$object" />
+        </xul:hbox>
+    </xul:vbox>
+</form>
+
+<div style="margin: auto;">
+
+<xar:if condition="!empty($preview)">
+<table width="100%" border="1" cellspacing="0" cellpadding="4">
+    <tr>
+        <td align="center">
+            <xar:mlstring>Preview</xar:mlstring>
+        </td>
+    </tr>
+    <tr>
+        <td align="center">
+            <xar:data-display object="$object" />
+        </td>
+    </tr>
+</table>
+</xar:if>
+
+<xar:set name="isupload">#$object:upload#</xar:set>
+<xar:if condition="!empty($isupload)">
+    <xar:set name="enc_type">'multipart/form-data'</xar:set>
+<xar:else/> 
+    <xar:set name="enc_type">'application/x-www-form-urlencoded'</xar:set>
+</xar:if>
+<form method="POST" action="&xar-modurl-dynamicdata-admin-create;" enctype="#$enc_type#">
+    <div>
+        <div>Hooks still here:
+            #$hooks#
+        </div>
+    </div>
+</form>
+</div>

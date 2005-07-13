@@ -1,0 +1,41 @@
+<xar:comment>
+    License: GPL http://www.gnu.org/copyleft/gpl.html 
+</xar:comment>
+<form action="&xar-modurl-roles-user-login;" method="post">
+    <xul:vbox>
+        <input type="hidden" name="redirecturl" id="returnurl#$blockid#" value="#$return_url#" />
+        <xul:label class="fieldlabel" control="uname#$blockid#">
+            <xar:mlstring>Username:</xar:mlstring>
+        </xul:label>
+        <xul:textbox type="text" name="uname" id="uname#$blockid#" maxlength="64" size="10" />
+
+        <xul:label class="fieldlabel" control="pass#$blockid#">
+            <xar:mlstring>Password:</xar:mlstring>
+        </xul:label>
+        <xul:textbox class="xar-fullwidth" type="password" name="pass" id="pass#$blockid#" maxlength="64" size="10" />
+        <xar:set name="loginvalue">
+            <xar:mlstring>Log in</xar:mlstring>
+        </xar:set>
+        <xul:button type="submit" value="#$loginvalue#" label="#$loginvalue#"/>
+        <xar:if condition="xarConfigGetVar('Site.Session.SecurityLevel') ne 'High'">
+            <xul:label style="display:block;margin-top:1em;" control="rememberme#$blockid#">
+                <xul:checkbox type="checkbox" name="rememberme" id="rememberme#$blockid#" value="1" label="#xarML('Do not ask for password')#"/>
+            </xul:label>
+        </xar:if>
+        <xar:if condition="xarModGetVar('roles', 'allowregistration')">
+            <xar:set name="newaccount">
+                <xar:mlstring>
+                   Register new account 
+                </xar:mlstring>
+            </xar:set>
+            <xar:if condition="xarModGetVar('roles', 'minage') eq 0">
+                <xul:label><a href="&xar-modurl-roles-user-register;&amp;phase=registerform">#$newaccount#</a></xul:label>
+            <xar:else />
+                <xul:label><a href="&xar-modurl-roles-user-register;&amp;phase=checkage">#$newaccount#</a></xul:label>
+            </xar:if>
+        </xar:if>
+        <xul:label>
+            <a href="&xar-modurl-roles-user-lostpassword;"><xar:mlstring>Request new password</xar:mlstring></a>
+        </xul:label>
+    </xul:vbox>
+</form>

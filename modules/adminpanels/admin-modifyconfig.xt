@@ -1,0 +1,41 @@
+<xar:comment>
+    License: GPL http://www.gnu.org/copyleft/gpl.html
+</xar:comment>
+
+<form class="xar-fullwidth" method="post" action="&xar-modurl-adminpanels-admin-updateconfig;">
+    <xul:vbox class="xar-mod-body" flex="1">
+        <xul:label class="xar-mod-title">
+            <xar:mlstring>
+                Configure Administrator's Menus (built-in solutions) 
+            </xar:mlstring>
+        </xul:label>
+        <input type="hidden" name="authid" id="authid" value="#$authid#" />
+        <input type="hidden" name="formname" id="formname" value="adminmenu" />
+        <xul:hbox flex="1">
+            <xul:vbox class="xrm_actionarea">
+                <xul:button type="submit" value="#xarML('Submit')#" label="#xarML('Submit')#" />
+            </xul:vbox>
+            <xul:groupbox>
+                <xul:label class="fieldlabel">
+                    <xar:mlstring>Default sort order for menu items:</xar:mlstring>
+                </xul:label>
+                <xul:hbox>
+                    <xul:menulist name="menustyle" id="menustyle" size="1">
+                        <xul:menupopup>
+                            <xar:foreach in="$sortorder" value="$v" key="$k">
+                                <xar:if condition="$k eq $menustyle">
+                                    <xul:menuitem value="#$k#" selected="true" label="#$v#"/>
+                                <xar:else />
+                                    <xul:menuitem value="#$k#" label="#$v#"/>
+                                </xar:if>
+                            </xar:foreach>
+                        </xul:menupopup>
+                    </xul:menulist>
+                    <xul:spacer flex="1" />
+                </xul:hbox>
+                <xar:set name="cblabel">xarML('Disable module overviews')</xar:set>
+                <xar:data-input type="checkbox" name="overview" value="$showoverviews" label="$cblabel"/>
+            </xul:groupbox>
+        </xul:hbox>
+    </xul:vbox>
+</form>

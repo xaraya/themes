@@ -1,0 +1,246 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+<xar:set name="modstatus">xarSessionGetVar('statusmsg')</xar:set>
+
+<form method="post" action="&xar-modurl-modules-admin-settings;">
+    <xul:vbox class="xar-mod-body" flex="1">
+        <xul:hbox class="xar-mod-title">
+            <xul:label><xar:mlstring>View Modules (list mode)</xar:mlstring></xul:label>
+            <xul:spacer flex="1"/>
+            <xul:label>
+                <xar:mlstring>Total listed: </xar:mlstring>
+                <xar:set name="modscount">count($listrowsitems)</xar:set>
+                #$modscount#
+            </xul:label>
+        </xul:hbox>
+        
+        <xul:hbox flex="1">
+            <xul:vbox class="xrm_actionarea">
+                <xul:button type="submit" name="reload" id="reload" value="#$reloadlabel#" label="#$reloadlabel#"/>
+            </xul:vbox>
+            
+            <xul:vbox flex="1">
+                <xul:hbox>
+                    <xul:label class="fieldlabel" control="selstyle"><xar:mlstring>Style</xar:mlstring></xul:label>
+                    <xul:menulist name="selstyle" id="selstyle" onchange="this.form.submit()">
+                        <xul:menupopup>
+                            <xar:foreach in="$style" key="$key" value="$value">
+                                <xar:if condition="$key eq $selstyle">
+                                    <xul:menuitem value="#$key#" selected="true" label="#$value#"/>
+                                <xar:else />
+                                    <xul:menuitem value="#$key#" label="#$value#"/>
+                                </xar:if>
+                            </xar:foreach>
+                        </xul:menupopup>
+                    </xul:menulist>     
+                               
+                    <xul:label class="fieldlabel" for="filter"><xar:mlstring>View</xar:mlstring></xul:label>
+                    <xul:menulist name="selfilter" id="selfilter" onchange="this.form.submit()">
+                        <xul:menupopup>
+                            <xar:foreach in="$filter" key="$key" value="$value">
+                                <xar:if condition="$key eq $selfilter">
+                                    <xul:menuitem value="#$key#" selected="true" label="#$value#"/>
+                                <xar:else />
+                                    <xul:menuitem value="#$key#" label="#$value#"/>
+                                </xar:if>
+                            </xar:foreach>
+                        </xul:menupopup>
+                    </xul:menulist>
+
+                    <xul:label class="fieldlabel" for="sort"><xar:mlstring>Sort by</xar:mlstring></xul:label>
+                    <xul:menulist name="selsort" id="selsort" onchange="this.form.submit()">
+                        <xul:menupopup>
+                            <xar:foreach in="$sort" key="$key" value="$value">
+                                <xar:if condition="$key eq $selsort">
+                                    <xul:menuitem value="#$key#" selected="true" label="#$value#"/>
+                                <xar:else />
+                                    <xul:menuitem value="#$key#" label="#$value#"/>
+                                </xar:if>
+                            </xar:foreach>
+                        </xul:menupopup>
+                    </xul:menulist>
+                
+                    <xar:if condition="$hidecore eq 1">
+                        <xul:checkbox type="checkbox" name="hidecore" id="hidecore" value="1" checked="true" label="#xarML('Hide core modules')#" />
+                    <xar:else />
+                        <xul:checkbox type="checkbox" name="hidecore" id="hidecore" value="1" label="#xarML('Hide core modules')#" />
+                    </xar:if>
+                </xul:hbox>
+            
+                <xul:vbox>
+                    <xar:if condition="$modstatus">
+                        <xar:comment> lets display latest status on core modules upgrades if any </xar:comment>
+                        <xul:label>
+                            <xar:mlstring>
+                                Latest status - the following core modules have been successfully upgraded:
+                            </xar:mlstring>
+                        <xul:label>#$modstatus#</xul:label>
+                    </xar:if>
+                    
+                    <xar:comment> the Module Lists css-based styles </xar:comment>
+                    <xar:if condition="$selstyle eq 'compacta' or $selstyle eq 'compactb'">
+                        <xar:template file="compactlist-ab" type="module" />
+                    <xar:else />
+                        <xar:comment> the Module Lists table-based styles </xar:comment>
+                        <xul:listbox rows="25">
+                            <xul:listhead flex="1">
+                                <xul:listheader label="#xarML('Name')#"/>
+                                <xul:listheader label="#xarML('Version')#"/>
+                                <xul:listheader label="#xarML('Info')#"/>
+                                <xul:listheader label="#xarML('Status')#"/>
+                                <xul:listheader label="#xarML('Actions')#"/>
+                                <xul:listheader label="#xarML('Properties')#"/>
+                                <xul:listheader label="#xarML('Hooks')#"/>
+                            </xul:listhead>
+                            <xul:listcols flex="1">
+                                <xul:listcol id="col1" flex="1"/>
+                                <xul:listcol flex="1" /><xul:listcol flex="1"/><xul:listcol flex="1"/>
+                                <xul:listcol flex="1"/><xul:listcol flex="1" /><xul:listcol flex="1"/>
+                            </xul:listcols>
+                            
+                            <xar:comment> 
+                                please note any element can be a named anchor as long as it has id 
+                                (and name for some browsers) so we shouldnt waste space with empty 
+                                anchors here 
+                            </xar:comment>                      
+                            <xar:foreach in="$listrowsitems" value="$modinfo">
+                                <xul:listitem id="#$modinfo['displayname']#" onclick="alert(event.target.tagName)">
+                                    <xul:listcell id="#$modinfo['displayname']#"  >
+                                        <xar:comment> 
+                                            if module is active and configurable (admin type) make its name a 
+                                            link to module main admin function 
+                                        </xar:comment>
+                                        <xul:label>
+                                            <xar:if condition="$modinfo['modconfigurl'] ne ''">
+                                                <a href="#$modinfo['modconfigurl']#" title="#$modinfo['adminurltitle']#&nbsp;#$modinfo['displayname']#">#$modinfo['displayname']#</a>
+                                            <xar:else />
+                                                #$modinfo['displayname']#
+                                            </xar:if>
+                                        </xul:label>
+                                    </xul:listcell>
+                                    <xul:listcell label="#$modinfo['version']#"/>
+                                    <xul:listcell>
+                                        <xar:if condition="$selstyle eq 'pro'">
+                                            <xul:button type="submit" name="info" id="info" value="#$infolabel#" label="#$infolabel#"/>
+                                        <xar:elseif condition="$selstyle eq 'icons'" />
+                                            <xul:label>
+                                                <a href="#$modinfo['infourlnew']#&amp;theme=print" target="_new">
+                                                    <img src="#$infoimg#" alt="#$infolabel#" />
+                                                </a>
+                                                <noscript>
+                                                    <a href="#$modinfo['infourl']#"><img src="#$infoimg#" alt="#$infolabel#" /></a>
+                                                </noscript>
+                                            </xul:label>
+                                        <xar:else />
+                                            <xul:label>
+                                                <a href="#$modinfo['infourlnew']#&amp;theme=print" target="_new"><xar:mlstring>Info</xar:mlstring></a>
+                                                <noscript>
+                                                    <a href="#$modinfo['infourl']#"><xar:mlstring>Info</xar:mlstring></a>
+                                                </noscript>
+                                            </xul:label>
+                                        </xar:if>
+                                    </xul:listcell>
+                                    <xul:listcell>
+                                        <xul:label>
+                                            #$modinfo['statelabel']#
+                                        </xul:label>
+                                    </xul:listcell>
+                                    <xul:listcell>
+                                        <xar:if condition="$selstyle eq 'pro'">
+                                            <xar:if condition="$modinfo['coremod']">
+                                                <select name="action" id="action" disabled="disabled">
+                                                        <option label="Disabled" selected="selected" disabled="disabled"></option>
+                                                        <option label="Initialise" disabled="disabled"></option>
+                                                        <option label="Activate" disabled="disabled" ></option>
+                                                        <option label="Deactivate" disabled="disabled"></option>
+                                                        <option label="Remove" disabled="disabled"></option>
+                                                </select>
+                                                <noscript>
+                                                    <xul:button type="submit" name="ok" id="ok" value="OK" disabled="disabled" label="OK"/>
+                                                </noscript>
+                                            <xar:else />
+                                                <select name="action" id="action" onchange="this.form.submit()">
+                                                    <option label="Initialise" selected="selected"></option>
+                                                    <option label="Activate" ></option>
+                                                    <option label="Deactivate" disabled="disabled"></option>
+                                                    <option label="Remove" disabled="disabled"></option>
+                                                </select>
+                                                <noscript>
+                                                    <input type="submit" name="ok" id="ok" value="OK" />
+                                                </noscript>
+                                            </xar:if>
+                                        <xar:elseif condition="$selstyle eq 'icons'"/>
+                                            <xar:if condition="$modinfo['actionurl'] eq ''">
+                                                <xul:image src="#$modinfo['actionimg1']#" alt="#$modinfo['actionlabel']#" />
+                                            <xar:else />
+                                                <a href="#$modinfo['actionurl']#"><img src="#$modinfo['actionimg1']#" alt="#$modinfo['actionlabel']#" /></a>
+                                            </xar:if>
+                                            <xar:if condition="$modinfo['removeurl'] eq ''">
+                                                <xul:image src="#$modinfo['actionimg2']#" alt="#$modinfo['actionlabel']#" />
+                                            <xar:else />
+                                                <a href="#$modinfo['removeurl']#"><img src="#$modinfo['actionimg2']#" alt="#$modinfo['actionlabel2']#" /></a>
+                                            </xar:if>
+                                        <xar:else />
+                                            <xul:label>
+                                                <xar:if condition="$modinfo['coremod']">
+                                                    <xar:if condition="$modinfo['state'] eq 5 or $modinfo['state'] eq 2">
+                                                        <a href="#$modinfo['actionurl']#">#$modinfo['actionlabel']#</a>
+                                                    <xar:else />
+                                                        #$modinfo['actionlabel']#
+                                                    </xar:if>
+                                                <xar:else />
+                                                    <a href="#$modinfo['actionurl']#">#$modinfo['actionlabel']#</a>
+                                                    <xar:if condition="$modinfo['state'] eq 2">
+                                                        | <a href="#$modinfo['removeurl']#">#$modinfo['removelabel']#</a>
+                                                    </xar:if>
+                                                </xar:if>
+                                            </xul:label>
+                                        </xar:if>
+                                    </xul:listcell>
+                                    <xul:listcell>
+                                        <xar:if condition="$modinfo['modid'] ne 1 and ($modinfo['state'] eq XARMOD_STATE_INACTIVE or $modinfo['state'] eq XARMOD_STATE_ACTIVE)">
+                                            <xar:if condition="$selstyle eq 'pro'">
+                                                <xul:button type="submit" name="prop" id="prop" value="Set" label="Set" />
+                                            <xar:elseif condition="$selstyle eq 'icons'"/>
+                                                <xul:label>
+                                                    <a href="#$modinfo['propurl']#"><img src="#$propimg#" alt="#$modinfo['prop']#" /></a>
+                                                </xul:label>
+                                            <xar:else />
+                                                <xul:label>
+                                                    <a href="#$modinfo['propurl']#">#$modinfo['prop']#</a>
+                                                </xul:label>
+                                            </xar:if>
+                                        </xar:if>                                    
+                                    </xul:listcell>
+                                    <xul:listcell>
+                                        <xar:if condition="$selstyle eq 'pro'">
+                                            <xul:button type="submit" name="edit" id="edit" value="Edit" label="Edit"/>
+                                        <xar:elseif condition="$selstyle eq 'icons'"/>
+                                            <xul:label>
+                                                <a href="#$modinfo['editurl']#"><img src="#$editimg#" alt="#$modinfo['edit']#" /></a>
+                                            </xul:label>
+                                        <xar:else />
+                                            <xul:label>
+                                                <a href="#$modinfo['editurl']#">#$modinfo['edit']#</a>
+                                            </xul:label>
+                                        </xar:if>
+                                    </xul:listcell>
+                                </xul:listitem>
+                            </xar:foreach>
+                        </xul:listbox>
+                    </xar:if>
+                
+                    <xar:if condition="$selstyle eq 'icons'">
+                        <xul:hbox>
+                            <xul:image src="#xarTplGetImage('set1/disabled.png')#"    alt="disabled" hspace="5" /><xar:mlstring>Disabled</xar:mlstring>
+                            <xul:image src="#xarTplGetImage('set1/activate.png')#"    alt="activate" hspace="5" /><xar:mlstring>Activate</xar:mlstring>
+                            <xul:image src="#xarTplGetImage('set1/deactivate.png')#"  alt="deactivate" hspace="5" /><xar:mlstring>Deactivate</xar:mlstring>
+                            <xul:image src="#xarTplGetImage('set1/upgrade.png')#"     alt="upgrade" hspace="5" /><xar:mlstring>Upgrade</xar:mlstring>
+                            <xul:image src="#xarTplGetImage('set1/initialise.png')#"  alt="initialise" hspace="5" /><xar:mlstring>Install</xar:mlstring>
+                            <xul:image src="#xarTplGetImage('set1/remove.png')#"      alt="remove" hspace="5" /><xar:mlstring>Remove</xar:mlstring>
+                        </xul:hbox>
+                    </xar:if>
+                </xul:vbox>
+            </xul:vbox>
+        </xul:hbox>
+    </xul:vbox>
+</form>

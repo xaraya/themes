@@ -1,0 +1,51 @@
+<xar:comment>License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+<xar:if condition="xarTplAddStyleLink('dynamicdata', 'dd')">
+    <xar:comment>
+        no action required if external file was not added 
+    </xar:comment>
+</xar:if>
+
+<xar:set name="urlform">''</xar:set>
+<script type="text/javascript">
+function xar_dynamicdata_formpreview()
+{
+    var my_window = window.open('#$urlform#',
+                                'FormPreview',
+                                'width=780,height=580,status=no,resizable=yes,top=0,left=0,dependent=yes,alwaysRaised=yes');
+    my_window.opener = window;
+    my_window.focus();
+}
+</script>
+
+<xul:vbox class="xar-mod-body" >
+    <xul:label class="xar-mod-title"><xar:mlstring>Modify properties</xar:mlstring> #$label#</xul:label>
+    
+    <xul:tabbox flex="1">
+        <xul:tabs>
+            <xul:tab id="Dynamic" label="Dynamic properties"/>
+            <xar:if condition="count($static) gt 0"><xul:tab id="Static" label="Static properties"/></xar:if>
+            <xar:if condition="count($relations) gt 0"><xul:tab label="Relations"/></xar:if>
+        </xul:tabs>
+        
+        <xul:tabpanels flex="1">
+            <!-- Dynamic properties -->
+            <xul:tabpanel id="Dynamic">
+                <xar:template file="modifyprop-dynamic" />
+            </xul:tabpanel>
+            
+            <!-- Static properties, if any -->
+            <xar:if condition="count($static) gt 0">
+                <xul:tabpanel id="Static">
+                    <xar:template file="modifyprop-static" />
+                </xul:tabpanel>
+            </xar:if>
+            
+            <!-- Relations, if any -->
+            <xar:if condition="count($relations) gt 0">
+                <xul:tabpanel id="Relations">
+                    <xar:template file="modifyprop-relations"/>
+                </xul:tabpanel>
+            </xar:if>
+        </xul:tabpanels>
+    </xul:tabbox>
+</xul:vbox>

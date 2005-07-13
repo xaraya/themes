@@ -1,0 +1,273 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+
+
+<xul:vbox class="xar-mod-body" flex="1">
+    <xul:label class="xar-mod-title"><xar:mlstring>Query</xar:mlstring> #$label#</xul:label>
+    
+    <xul:vbox>
+        <form id="queryform" method="post" action="&xar-modurl-dynamicdata-admin-query;">
+            <input type="hidden" name="olditemid" value="#$olditemid#"/>
+            <input type="hidden" name="oldquery" value="#$oldquery#"/>
+            <script>
+                var win = document.getElementById('xrm_module');
+                var form = document.getElementById('queryform');
+                var url = '&xar-modurl-dynamicdata-admin-query;';
+                
+                try {
+                    if(win.id == 'xrm_module') {
+                        url = url + '&amp;pageName=module';
+                    }
+                } catch(e) {}
+                form.setAttribute('action', url);
+            </script>
+            <xul:hbox>
+                <xul:vbox class="xrm_actionarea">
+                    <xul:button id="submitbutton" type="submit" value="#$submit#" label="#$submit#" />
+                </xul:vbox>
+                
+                <xul:vbox>
+                    <xul:groupbox>
+                        <xul:caption><xar:mlstring>Choose either an object or a table to run a query on</xar:mlstring></xul:caption>
+                        <xul:hbox>
+                            <xul:vbox>
+                                <xul:label class="fieldlabel" control="itemid"><xar:mlstring>Object:</xar:mlstring></xul:label>
+                                <xul:menulist name="itemid" id="itemid" onpopuphidden="xrm_submit(document.getElementById('submitbutton'));">
+                                    <xul:menupopup>
+                                        <xul:menuitem value="" />
+                                        <xar:foreach in="$objects" value="$item">
+                                            <xar:if condition="!empty($itemid) and $itemid eq $item['objectid']">
+                                                <xul:menuitem value="#$item['objectid']#" selected="true" label="#$item['label']#"/>
+                                            <xar:else/>
+                                                <xul:menuitem value="#$item['objectid']#" label="#$item['label']#"/>
+                                            </xar:if>
+                                        </xar:foreach>
+                                    </xul:menupopup>
+                                </xul:menulist>
+                            </xul:vbox>
+                            <xul:vbox>
+                                <xul:label class="fieldlabel" control="table"><xar:mlstring>Table:</xar:mlstring></xul:label>
+                                <input type="hidden" name="oldtable" value="#$oldtable#"/>
+                                <xul:menulist name="table" id="table" onpopuphidden="xrm_submit(document.getElementById('submitbutton'));">
+                                    <xul:menupopup>
+                                        <xul:menuitem value=""/>
+                                        <xar:foreach in="$tables" value="$item">
+                                            <xar:if condition="!empty($table) and $table eq $item">
+                                                <xul:menuitem value="#$item#" selected="true" label="#$item#"/>
+                                            <xar:else/>
+                                                <xul:menuitem value="#$item#" label="#$item#"/>
+                                            </xar:if>
+                                        </xar:foreach>
+                                        <xar:if condition="!empty($table) and strstr($table, '.')">
+                                            <xul:menuitem value="#$table#" selected="true" label="#$table#"/>
+                                        </xar:if>
+                                    </xul:menupopup>
+                                </xul:menulist>
+                            </xul:vbox>
+                        </xul:hbox>
+                    </xul:groupbox>
+                    
+                    <xul:groupbox>
+                        <xul:caption><xar:mlstring>Query definition</xar:mlstring></xul:caption>
+                        
+                        <xul:hbox>
+                            <xul:vbox>
+                                <xul:label class="fieldlabel" control="query"><xar:mlstring>Load</xar:mlstring></xul:label>
+                                <xul:menulist name="query" id="query" onpopuphidden="xrm_submit(document.getElementById('submitbutton'));">
+                                    <xul:menupopup>
+                                        <xul:menuitem value=""/>
+                                        <xar:foreach in="$queries" value="$item">
+                                            <xar:if condition="!empty($query) and $query eq $item">
+                                                <xul:menuitem value="#$item#" selected="true" label="#$item#"/>
+                                            <xar:else/>
+                                                <xul:menuitem value="#$item#" label="#$item#"/>
+                                            </xar:if>
+                                        </xar:foreach>
+                                    </xul:menupopup>
+                                </xul:menulist>
+                            </xul:vbox>
+                            
+                            <xul:vbox>
+                                <xul:label class="fieldlabel" control="newquery"><xar:mlstring>Save As:</xar:mlstring></xul:label>
+                                <xul:textbox type="text" name="newquery" id="newquery" value="#$newquery#" size="20" />
+                            </xul:vbox>
+                            
+                            <xul:vbox>
+                                <xul:label class="fieldlabel"><xar:mlstring>Show group by column</xar:mlstring></xul:label>
+                                <xar:if condition="!empty($groupby)">
+                                  <xul:checkbox type="checkbox" name="groupby" id="groupby" value="1" checked="true" oncommand="xrm_submit(document.getElementById('submitbutton'));"/>
+                                <xar:else/>
+                                  <xul:checkbox type="checkbox" name="groupby" id="groupby" value="1" oncommand="xrm_submit(document.getElementById('submitbutton'));"/>
+                                </xar:if>
+                            </xul:vbox>
+                        
+                        </xul:hbox>
+                    </xul:groupbox>
+                    
+                    <xul:groupbox>
+                        <xul:caption><xar:mlstring>Results</xar:mlstring></xul:caption>
+                        
+                        <xul:hbox>
+                            <xul:vbox>
+                                <xul:label class="fieldlabel" control="startnum"><xar:mlstring>Start at offset</xar:mlstring></xul:label>
+                                <xul:textbox type="text" name="startnum" id="startnum" value="#$startnum#" size="5" />
+                            </xul:vbox>
+                            
+                            <xul:vbox>
+                                <xul:label class="fieldlabel" control="cache"><xar:mlstring>Rows to cache(??)</xar:mlstring></xul:label>
+                                <xul:textbox type="text" name="cache" id="cache" value="#$cache#" size="3" />
+                            </xul:vbox>
+                            
+                            <xul:vbox>
+                                <xul:label class="fieldlabel" control="numitems"><xar:mlstring>No. of items to show</xar:mlstring></xul:label>
+                                <xul:textbox type="text" name="numitems" id="numitems" value="#$numitems#" size="5" />
+                            </xul:vbox>
+                        </xul:hbox>
+                    </xul:groupbox>
+
+                    <xar:if condition="!empty($jointables)">
+                        <xul:label class="fieldlabel" control="join"><xar:mlstring>Join:</xar:mlstring></xul:label>
+                        <input type="hidden" name="oldjoin" value="#$oldjoin#"/>
+                        <xul:menulist name="join" id="join" onpopuphidden="xrm_submit(document.getElementById('submitbutton'));">
+                            <xul:menupopup>
+                                <xul:menuitem value=""/>
+                                <xar:foreach in="$jointables" value="$item">
+                                    <xar:if condition="!empty($join) and $join eq $item">
+                                        <xul:menuitem value="#$item#" selected="true" label="#$item#"/>
+                                    <xar:else/>
+                                        <xul:menuitem value="#$item#" label="#$item#"/>
+                                    </xar:if>
+                                </xar:foreach>
+                            </xul:menupopup>
+                        </xul:menulist>
+                    </xar:if>
+                    
+                    
+                    <xar:if condition="!empty($properties)">
+                        <xul:groupbox>
+                            <xul:caption><xar:mlstring>Properties:</xar:mlstring></xul:caption>
+                            
+                            <xul:grid>
+                                <xul:rows>
+                                    <xul:row class="header">
+                                        <xul:label>Property</xul:label>
+                                        <xul:label>Include</xul:label>
+                                        <xar:if condition="!empty($groupby)">
+                                            <xul:label>Group By</xul:label>
+                                        </xar:if>
+                                        <xul:label>Condition</xul:label>
+                                        <xul:label>Criterium</xul:label>
+                                        <xul:label>Sort order</xul:label>
+                                    </xul:row>
+                                    <xar:foreach in="$properties" key="$name">
+                                        <xul:row>
+                                            <xar:if condition="$name eq '_extra_'">
+                                                <xul:menulist name="field[$name]">
+                                                    <xul:menupopup>
+                                                        <xul:menuitem value="" label="#xarML('Select:')#"/>
+                                                        <xar:foreach in="$properties" key="$name2">
+                                                            <xar:if condition="!empty($field[$name]) and $field[$name] eq $name2">
+                                                                <xul:menuitem value="#$name2#" selected="true"><xar:data-label property="$properties[$name2]" /></xul:menuitem>
+                                                            <xar:else/>
+                                                                <xul:menuitem value="#$name2#"><xar:data-label property="$properties[$name2]" /></xul:menuitem>
+                                                            </xar:if>
+                                                        </xar:foreach>
+                                                    </xul:menupopup>
+                                                </xul:menulist>
+                                            <xar:elseif condition="!empty($field[$name])"/>
+                                                <xul:label control="field_#$name#"><xar:data-label property="$properties[$name]" /></xul:label>
+                                                <xul:checkbox type="checkbox" name="field[#$name#]" id="field_#$name#" value="1" checked="true" />
+                                            <xar:else/>
+                                                <xul:label control="field_#$name#"><xar:data-label property="$properties[$name]" /></xul:label>
+                                                <xul:checkbox type="checkbox" name="field[#$name#]" id="field_#$name#" value="1" />
+                                            </xar:if>
+                                            <xar:if condition="!empty($groupby)">
+                                                <xul:menulist name="operation[#$name#]" id="operation_#$name#">
+                                                    <xul:menupopup>
+                                                        <xul:menuitem value=""/>
+                                                        <xar:foreach in="$operationoptions" value="$option">
+                                                            <xar:if condition="!empty($operation[$name]) and $operation[$name] eq $option['id']">
+                                                                <xul:menuitem value="#$option['id']#" selected="true" label="#$option['name']#"/>
+                                                            <xar:else/>
+                                                                <xul:menuitem value="#$option['id']#" label="#$option['name']#"/>
+                                                            </xar:if>
+                                                        </xar:foreach>
+                                                    </xul:menupopup>
+                                                </xul:menulist>
+                                                
+                                            </xar:if>
+                                            <xul:menulist name="where[#$name#]" id="where_#$name#">
+                                                <xul:menupopup>
+                                                    <xul:menuitem value=""/>
+                                                    <xar:foreach in="$whereoptions" value="$option">
+                                                        <xar:if condition="!empty($where[$name]) and $where[$name] eq $option['id']">
+                                                            <xul:menuitem value="#$option['id']#" selected="true" label="#$option['name']#" />
+                                                        <xar:else/>
+                                                            <xul:menuitem value="#$option['id']#" label="#$option['name']#"/>
+                                                        </xar:if>
+                                                    </xar:foreach>
+                                                </xul:menupopup>
+                                            </xul:menulist>
+                                            <xar:if condition="isset($value[$name])">
+                                                <xul:textbox name="value[#$name#]" id="value_#$name#" value="#$value[$name]#" type="text" size="13"/>
+                                            <xar:else/>
+                                                <xul:textbox name="value[#$name#]" id="value_#$name#" value="" type="text" size="13"/>
+                                            </xar:if>
+                                            <xul:menulist name="sort[#$name#]" id="sort_#$name#">
+                                                <xul:menupopup>
+                                                    <xul:menuitem value=""/>
+                                                    <xar:foreach in="$sortoptions" value="$option">
+                                                        <xar:if condition="!empty($sort[$name]) and $sort[$name] eq $option['id']">
+                                                            <xul:menuitem value="#$option['id']#" selected="selected" label="#$option['name']#"/>
+                                                        <xar:else/>
+                                                            <xul:menuitem value="#$option['id']#" label="#$option['name']#"/>
+                                                        </xar:if>
+                                                    </xar:foreach>
+                                                </xul:menupopup>
+                                            </xul:menulist>
+                                        </xul:row>
+                                    </xar:foreach>
+                                </xul:rows>
+                            </xul:grid>
+                        </xul:groupbox>
+                    </xar:if>
+                </xul:vbox>
+            </xul:hbox>
+        </form>
+    </xul:vbox>
+    
+    <xar:if condition="isset($mylist)">
+        <xul:splitter collapse="before">
+            <xul:grippy />
+        </xul:splitter>
+        <xul:vbox flex="1">
+            <xul:label class="xar-mod-title"><xar:mlstring>Results</xar:mlstring></xul:label>
+            
+            <!-- 
+            <xar:if condition="!empty($viewlink)">
+                <xul:label>
+                    <a href="#$viewlink#&amp;edit=false"><xar:mlstring>View</xar:mlstring> #$label#</a>
+                </xul:label>
+            </xar:if>
+            -->
+            <xar:if condition="!empty($sample)">
+                <xul:tooltip id="sampletag">
+                    <xul:vbox>
+                        <xul:label style="color: purple; font-weight: bold;">Sample Tag for this query:</xul:label>
+                        <xul:label>#$sample#</xul:label>
+                        <xul:spacer flex="1"/>
+                    </xul:vbox>
+                </xul:tooltip>
+            </xar:if>
+            
+            <xul:hbox flex="1" tooltip="sampletag">
+                
+                    <xar:if condition="!empty($groupby)">
+                        <xar:data-view object="$mylist" layout="list" />
+                    <xar:else/>
+                        <xar:data-list object="$mylist" edit="false"/>
+                    </xar:if>
+            </xul:hbox>
+        </xul:vbox>
+    </xar:if>
+</xul:vbox>
+

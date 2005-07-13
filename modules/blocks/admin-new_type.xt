@@ -1,0 +1,62 @@
+<xar:comment>
+    License: GPL http://www.gnu.org/copyleft/gpl.html 
+</xar:comment>
+<xar:base-include-javascript module="base" filename="formcheck.js" />
+<script type="text/javascript">
+<!--
+    // Enter name of mandatory fields
+    //var blocks_fieldRequired = Array("modulename", "blockname");
+    // Enter field description to appear in the dialog box
+    //var blocks_fieldDescription = Array("Module Name", "Block Name");
+//-->
+</script>
+<xar:if condition="xarTplAddStyleLink('blocks', 'blocks')">
+    <xar:comment>
+        no action required if external file was not added 
+    </xar:comment>
+</xar:if>
+
+<form class="xar-blocks-admin" action="&xar-modurl-blocks-admin-new_type;" method="post" onsubmit="return xar_base_formCheck(this, blocks_fieldRequired, blocks_fieldDescription);" enctype="application/x-www-form-urlencoded">
+    <xul:vbox class="xar-mod-body">
+        <xul:label class="xar-mod-title">
+            <xar:mlstring>Register Block (Add Block Type)</xar:mlstring>
+        </xul:label>
+        
+        <xul:hbox>
+            <xul:vbox>
+                <xul:button type="submit" value="#xarML('Submit')#" label="#xarML('Submit')#"/>
+            </xul:vbox>
+            <xul:vbox>
+                <xul:groupbox>
+                    <input type="hidden" name="authid" id="authid" value="#$authid#" />
+                    <input type="hidden" name="confirm" id="confirm" value="true" />
+                    <xul:label class="fieldlabel" control="moduleid">
+                        <xar:mlstring>Module name</xar:mlstring>
+                    </xul:label>
+                    <xar:data-input type="module" name="moduleid" value="$moduleid" />
+                    <xul:label class="fieldlabel" control="blockname">
+                        <xar:mlstring>Block type</xar:mlstring>
+                    </xul:label>
+                    <xul:hbox>
+                        <xar:if condition="!empty($type_list)">
+                            <xul:menulist name="blockname" id="blockname">
+                                <xul:menupopup>
+                                    <xar:loop name="$type_list">
+                                        <xar:if condition="$loop:item.name eq $blockname">
+                                            <xul:menuitem value="#xarVarPrepForDisplay($loop:item.name)#" selected="true" label="#xarVarPrepForDisplay($loop:item.name)#"/>
+                                        <xar:else />
+                                            <xul:menuitem value="#xarVarPrepForDisplay($loop:item.name)#" label="#xarVarPrepForDisplay($loop:item.name)#" />
+                                        </xar:if>
+                                    </xar:loop>
+                                </xul:menupopup>
+                            </xul:menulist>
+                        <xar:else />
+                            <xul:textbox type="text" name="blockname" id="blockname" value="" size="40" maxlength="255" />
+                        </xar:if>
+                        <xul:button type="submit" name="scan" value="#xarML('Scan Module')#" label="#xarML('Scan Module')#" />
+                    </xul:hbox>
+                </xul:groupbox>
+            </xul:vbox>
+        </xul:hbox>
+    </xul:vbox>
+</form>

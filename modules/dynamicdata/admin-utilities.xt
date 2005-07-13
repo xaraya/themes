@@ -1,0 +1,46 @@
+<xar:comment>
+    License: GPL http://www.gnu.org/copyleft/gpl.html 
+</xar:comment>
+
+<xar:if condition="empty($option)">
+    <xul:tabbox flex="1">
+        <xul:tabs>
+            <xul:tab id="1" label="#xarML('Query')#"/>
+            <xul:tab id="2" label="#xarML('Import')#"/>
+            <xul:tab id="3" label="#xarML('Export')#"/>
+            <xul:tab id="4" selected="true" label="#xarML('Table Definition')#"/>
+            <xul:tab id="5" label="#xarML('Relationships')#"/>
+            <xul:tab id="6" label="#xarML('Meta definitions')#"/>
+            <xul:tab id="7" label="#xarML('Migrate items')#"/>
+        </xul:tabs>
+        <xul:tabpanels flex="1"  >
+            <xul:tabpanel>
+                <xul:iframe type="content" flex="1" src="&xar-modurl-dynamicdata-admin-utilities;&amp;q=query&amp;pageName=module"/>
+            </xul:tabpanel>
+            <xul:tabpanel>
+                <xul:iframe flex="1" src="&xar-modurl-dynamicdata-admin-utilities;&amp;q=import&amp;pageName=module"/>
+            </xul:tabpanel>
+            <xul:tabpanel>
+                <xul:iframe flex="1" src="&xar-modurl-dynamicdata-admin-utilities;&amp;q=export&amp;pageName=module"/>
+            </xul:tabpanel>
+            <xul:tabpanel>
+                <xul:iframe flex="1" src="&xar-modurl-dynamicdata-admin-utilities;&amp;q=static&amp;pageName=module"/>
+            </xul:tabpanel>
+            <xul:tabpanel>
+                <xul:iframe flex="1" src="&xar-modurl-dynamicdata-admin-utilities;&amp;q=relations&amp;pageName=module"/>
+            </xul:tabpanel>
+            <xul:tabpanel>
+                <xul:iframe type="primary-content" flex="1" src="&xar-modurl-dynamicdata-admin-utilities;&amp;q=meta&amp;pageName=module"/>
+            </xul:tabpanel>
+            <xul:tabpanel>
+                <xul:iframe flex="1" src="&xar-modurl-dynamicdata-admin-utilities;&amp;q=migrate&amp;pageName=module"/>
+            </xul:tabpanel>
+        </xul:tabpanels>
+    </xul:tabbox>
+<xar:else/>
+    <xar:if condition="empty($option) or $option eq 'query'">
+        <xar:module main="false" module="dynamicdata" type="admin" func="query" />
+    <xar:else />
+        <xar:module main="false" module="dynamicdata" type="util" func="$option" />
+    </xar:if>
+</xar:if>

@@ -1,0 +1,86 @@
+<xar:comment>
+    License: GPL http://www.gnu.org/copyleft/gpl.html 
+</xar:comment>
+
+
+<form flex="1" method="post" action="&xar-modurl-dynamicdata-admin-updateconfig;">
+    <input type="hidden" name="authid" id="authid" value="#$authid#" />
+    <xul:vbox class="xar-mod-body" flex="1">
+        <xul:label class="xar-mod-title">
+            <xar:mlstring>Configure Property Types</xar:mlstring>
+        </xul:label>
+    
+        <xul:hbox flex="1">
+            <xul:vbox class="xrm_actionarea">
+                <xul:button type="submit" value="#$updatebutton#" label="#xarML('Update')#"/>
+            </xul:vbox>
+    
+            <xul:vbox flex="1">
+                <xul:hbox flex="1">
+                    <xul:listbox flex="1" rows="20">
+                        <xul:listhead flex="1">
+                            <xul:listheader flex="1" label="#$labels.id#"/>
+                            <xul:listheader flex="1" label="#$labels.name#"/>
+                            <xul:listheader flex="1" label="#$labels.informat#"/>
+                            <xul:listheader flex="1" label="#$labels.outformat#"/>
+                            <xul:listheader flex="1" label="#$labels.validation#"/>
+                        </xul:listhead>
+                        <xul:listcols id="blah" flex="1">
+                            <xul:listcol  label="#$labels.id#"/>
+                            <xul:listcol  label="#$labels.name#"/>
+                            <xul:listcol  label="#$labels.informat#"/>
+                            <xul:listcol  label="#$labels.outformat#"/>
+                            <xul:listcol  label="#$labels.validation#"/>
+                        </xul:listcols>
+                        
+                        <xar:foreach in="$fields" value="$field">
+                            <xul:listitem id="#$field.id#" flex="1">
+                                <xul:listcell>
+                                    <xul:label>#$field['id']#</xul:label>
+                                </xul:listcell>
+                                <xul:listcell>
+                                    <xul:textbox type="text" name="name[#$field['id']#]" id="name_#$field['id']#" size="15" value="#$field['name']#" />
+                                </xul:listcell>
+                                <xul:listcell>
+                                    <xul:textbox type="text" name="label[#$field['id']#]" id="label_#$field['id']#" size="20" value="#$field['label']#" />
+                                </xul:listcell>
+                                <xul:listcell>
+                                    <xar:data-input property="$fieldtypeprop" name="format['.$field['id'].']" value="$field['format']" />
+                                </xul:listcell>
+                                <xul:listcell>
+                                    <xul:textbox type="text" name="validation[#$field['id']#]" id="validation_#$field['id']#" size="20" value="#$field['validation']#" />
+                                </xul:listcell>
+                            </xul:listitem>
+                        </xar:foreach>
+                        
+                        <xul:listitem>
+                            <xul:listcell>
+                                <xul:label>#$labels['new']#</xul:label>
+                            </xul:listcell>
+                            <xul:listcell>
+                                <xul:textbox type="text" name="name[0]" id="name_0" size="15" />
+                            </xul:listcell>
+                            <xul:listcell>
+                                <xul:textbox type="text" name="label[0]" id="label_0" size="20" />
+                            </xul:listcell>
+                            <xul:listcell>
+                                <xar:data-input type="fieldtype" name="format[0]" value="" />
+                            </xul:listcell>
+                            <xul:listcell>
+                                <xul:textbox type="text" name="validation[0]" id="validation_0" size="20" value="" />
+                            </xul:listcell>
+                        </xul:listitem>
+                    </xul:listbox>
+                </xul:hbox>
+            
+                <xul:hbox pack="end">
+                    <form method="post" action="&xar-modurl-dynamicdata-admin-updateconfig;">
+                        <input type="hidden" name="authid" id="authid" value="#$authid#" />
+                        <input type="hidden" name="flushPropertyCache" value="true" />
+                        <xul:button type="submit" value="Flush Property Cache" label="Flush Property Cache"/>
+                    </form>
+                </xul:hbox>
+            </xul:vbox>
+        </xul:hbox>
+    </xul:vbox>
+</form>

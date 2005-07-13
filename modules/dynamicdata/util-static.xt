@@ -1,0 +1,103 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+
+<xul:vbox class="xar-mod-body">
+    <xul:label class="xar-mod-title">
+        <xar:mlstring>Static Table Definitions</xar:mlstring>
+    </xul:label>
+
+<xar:if condition="empty($export)">
+    <xul:hbox>
+        <xul:vbox class="xrm_actionarea">
+            <!-- Is this global or per table? -->
+            <xul:button label="#xarML('Add relation')#" oncommand="window.parent.location='&xar-modurl-dynamicdata-util-relations;&amp;modid=#$modid#'"/>
+        </xul:vbox>
+        <xul:vbox flex="1">
+            <xar:foreach in="$tables" key="$table" value="$fields">
+                <xul:label class="header">#$table#</xul:label>
+                <xul:listbox flex="1">
+                    <xul:listhead>
+                        <xul:listheader label="#xarML('Name')#"/>
+                        <xul:listheader label="#xarML('Label')#"/>
+                        <xul:listheader label="#xarML('Type')#"/>
+                        <xul:listheader label="#xarML('Default')#"/>
+                        <xul:listheader label="#xarML('Datasource')#"/>
+                        <xul:listheader label="#xarML('Validation')#"/>
+                    </xul:listhead>
+                    
+                    <xul:listcols flex="1">
+                        <xul:listcol flex="1"/>
+                        <xul:listcol flex="1"/>
+                        <xul:listcol flex="1"/>
+                        <xul:listcol flex="1"/>
+                        <xul:listcol flex="1"/>
+                        <xul:listcol flex="1"/>
+                    </xul:listcols>
+                    <xar:foreach in="$fields" value="$field">
+                        <xul:listitem>
+                            <xul:listcell label="#$field['name']#"/>
+                            <xul:listcell label="#$field['label']#"/>
+                            <xul:listcell>
+                                <xul:label>
+                                    <xar:data-output type="fieldtype" name="dummy" value="$field['type']" />
+                                </xul:label>
+                            </xul:listcell>
+                            <xul:listcell label="#$field['default']#"/>
+                            <xul:listcell label="#$field['source']#"/>
+                            <xul:listcell label="#$field['validation']#"/>
+                        </xul:listitem>
+                    </xar:foreach>
+                </xul:listbox>
+                <xul:hbox pack="end">
+                    <xul:button label="#xarML('Export to XML')#" oncommand="document.location='&xar-modurl-dynamicdata-util-static;&amp;export=1&amp;modid=#$modid#&amp;pageName=module'" />
+        
+                    <form method="post" action="&xar-modurl-dynamicdata-util-importprops;">
+                        <input type="hidden" name="authid" value="#$authid#" />
+                        <input type="hidden" name="modid" value="#$modid#" />
+                        <input type="hidden" name="itemtype" value="#$itemtype#" />
+                        <input type="hidden" name="table" value="#$table#" />
+                        <xul:button type="submit" value="#xarML('Import table')# #$table# " label="#xarML('Import table')# #$table#" />
+                    </form>
+                </xul:hbox>
+            </xar:foreach>
+        </xul:vbox>
+    </xul:hbox>
+<xar:else />
+    <xul:hbox>
+        <xul:vbox class="xrm_actionarea">
+            <xul:button label="#xarML('Definition')#" oncommand="document.location='&xar-modurl-dynamicdata-util-static;&amp;modid=#$modid#&amp;pageName=module'"/>
+        </xul:vbox>
+        
+        <xul:vbox>
+            <form>
+                <textarea name="xml" rows="30" cols="80">
+                &lt;objects&gt;
+                <xar:foreach in="$tables" key="$table" value="$fields">
+                  &lt;object name="#$table#"&gt;
+                    &lt;label&gt;#$table#&lt;/label&gt;
+                    &lt;moduleid&gt;182&lt;/moduleid&gt;
+                    &lt;itemtype&gt;-1&lt;/itemtype&gt;
+                    &lt;urlparam&gt;itemid&lt;/urlparam&gt;
+                    &lt;maxid&gt;0&lt;/maxid&gt;
+                    &lt;config&gt;&lt;/config&gt;
+                    &lt;isalias&gt;0&lt;/isalias&gt;
+                    &lt;properties&gt;
+                <xar:foreach in="$fields" key="$name" value="$field">
+                      &lt;property name="#$name#"&gt;
+                <xar:foreach in="$field" key="$key" value="$value">
+                    <xar:if condition="$key ne 'name'">
+                        &lt;#$key#&gt;#$value#&lt;/#$key#&gt;
+                    </xar:if>
+                </xar:foreach>
+                      &lt;/property&gt;
+                </xar:foreach>
+                    &lt;/properties&gt;
+                  &lt;/object&gt;
+                </xar:foreach>
+                &lt;/objects&gt;
+                </textarea>
+            </form>
+        </xul:vbox>
+    </xul:hbox>
+</xar:if>
+
+</xul:vbox>

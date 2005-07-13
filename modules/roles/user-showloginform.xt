@@ -1,0 +1,41 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+
+<xul:vbox flex="1" >
+    <spacer flex="1"/>
+    <xul:hbox >
+        <spacer flex="1"/>
+        <xul:vbox class="xar-mod-body" >
+            <xul:vbox>
+                <xul:label class="xar-mod-title"><xar:mlstring>Registration / Login</xar:mlstring></xul:label>
+                <form id="loginform" action="&xar-modurl-roles-user-login;" method="post" enctype="application/x-www-form-urlencoded">
+                    <input type="hidden" name="redirecturl" id="returnurl" value="#xarVarPrepForDisplay($redirecturl)#" />
+                    <xul:hbox flex="1">
+                        <xul:vbox class="xrm_actions">
+                            <xul:button type="submit" value="#xarVarPrepForDisplay($loginlabel)#" >#xarVarPrepForDisplay($loginlabel)#</xul:button>
+                        </xul:vbox>
+                        <xul:vbox class="xrm_labels">
+                            <xul:label control="username"><xar:mlstring>Username</xar:mlstring></xul:label>
+                            <xul:label control="password"><xar:mlstring>Password</xar:mlstring></xul:label>
+                        </xul:vbox>
+                        <xul:vbox flex="1" class="xrm_fields" >
+                            <xul:textbox flex="1" type="text" name="uname" id="username" maxlength="255" size="20" />
+                            <xul:hbox>
+                                <xul:vbox>
+                                    <xul:textbox type="password" name="pass" id="password" maxlength="64" size="20" />
+                                    <spacer flex="1"/>
+                                </xul:vbox>
+                                <!-- The style is just to make it align with the password field, so we can prevent using a grid</xar:comment> -->
+                                <xul:button style="margin-top: 1.5pt;" oncommand="document.location='&xar-modurl-roles-user-lostpassword;'"><xar:mlstring>Retrieve</xar:mlstring></xul:button>
+                            </xul:hbox>
+                            <xul:hbox>
+                                <xul:checkbox type="checkbox" name="rememberme" id="remembermeform" value="1" label="#xarML('Remember login')#"/>
+                            </xul:hbox>
+                        </xul:vbox>
+                    </xul:hbox>
+                </form>
+            </xul:vbox>
+        </xul:vbox>
+        <spacer flex="1"/>
+    </xul:hbox>
+    <spacer flex="4"/>
+</xul:vbox>

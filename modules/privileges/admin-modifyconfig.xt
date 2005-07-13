@@ -1,0 +1,39 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+<xar:if condition="xarTplAddStyleLink('base', 'navtabs')">
+</xar:if>
+
+<form method="post" action="&xar-modurl-privileges-admin-modifyconfig;" enctype="application/x-www-form-urlencoded" >
+    <xul:vbox class="xar-mod-body">
+        <xul:label class="xar-mod-title"><xar:mlstring>Configuration</xar:mlstring></xul:label>
+        
+        <xul:hbox>
+            <xul:vbox>
+                <xul:button type="submit" value="#$updatelabel#"  label="#xarML('Update')#"/>
+            </xul:vbox>
+            
+            <xul:tabbox>
+                <xul:tabs>
+                    <xul:tab label="Realms"/>
+                </xul:tabs>
+                <xul:tabpanels>
+                    <xul:tabpanel id="realms">
+                        <input type="hidden" name="authid" id="authid" value="#$authid#" />
+                        <input type="hidden" name="phase" id="phase" value="update" />
+                        <input type="hidden" name="tab" id="tab" value="#$tab#" />
+                        
+                        <xul:vbox>
+                            <xar:if condition="xarModGetVar('privileges', 'showrealms')">
+                                <xul:checkbox type="checkbox" name="enablerealms" id="enablerealms" value="1" checked="true" label="#xarML('Enable Realms')#"/>
+                            <xar:else />
+                                <xul:checkbox type="checkbox" name="enablerealms" id="enablerealms" value="1" label="#xarML('Enable Realms')#"/>
+                            </xar:if>
+                            <xul:label>
+                                <xar:mlstring>Show or hide realms in the privileges input screens</xar:mlstring>
+                            </xul:label>
+                        </xul:vbox>
+                    </xul:tabpanel>
+                </xul:tabpanels>
+            </xul:tabbox>
+        </xul:hbox>
+    </xul:vbox>
+</form>

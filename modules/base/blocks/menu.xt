@@ -1,0 +1,129 @@
+<xar:comment>
+    License: GPL http://www.gnu.org/copyleft/gpl.html 
+</xar:comment>
+
+<xul:vbox flex="1">
+    <xar:if condition="!empty($usercontent)">
+        <xul:tree id="menublock" hidecolumnpicker="true" flex="1" onselect="xrm_menuitemselect(event.target);" >
+            <xul:treecols>
+                <xul:treecol id="menuitem" primary="true" flex="1" label="#xarML('Options')#"/>
+            </xul:treecols>
+            <xul:treechildren flex="1">
+                <xar:set name="index">0</xar:set>
+                <xar:while condition="$index lt count($usercontent)">
+                    <xul:treeitem href="#$usercontent[$index]['url']#" container="true" open="true">
+                        <xul:treerow>
+                            <xul:treecell label="#$usercontent[$index]['title']#" />
+                        </xul:treerow>
+                        
+                        <xar:if condition="!empty($usercontent[$index+1]['child'])">
+                            <xar:set name="index">$index+1</xar:set>
+                            <xul:treechildren>
+                                <xar:while condition="$index lt count($usercontent) and !empty($usercontent[$index]['child'])">
+                                    <xul:treeitem href="#$usercontent[$index]['url']#" container="false" >
+                                        <xul:treerow>
+                                            <xul:treecell label="#$usercontent[$index]['title']#" />
+                                        </xul:treerow>
+                                    </xul:treeitem>
+                                    <xar:set name="index">$index+1</xar:set>
+                                </xar:while>
+                            </xul:treechildren>
+                        <xar:else/>
+                            <xar:set name="index">$index+1</xar:set>
+                        </xar:if>
+                    </xul:treeitem>
+                </xar:while>
+            </xul:treechildren>
+        </xul:tree>
+   </xar:if>
+
+    <xar:comment>
+        modified modules section, quickly brought in line with verticallistbyname.xd and verticallistbycats.xd templates in adminpanels 
+        TODO: see if the menus management can be achieved in one place to avoid duplication and to maintain healthy xhtml structures [andyv] 
+    </xar:comment>
+
+    <xar:if condition="!empty($usermods)">
+        <xul:splitter>
+            <xul:grippy/>
+        </xul:splitter>
+        <xul:tree id="modulelist" hidecolumnpicker="true" flex="1" onselect="xrm_menuitemselect(event.target);">
+            <xul:treecols >
+                <xul:treecol id="moduleitem" flex="1" label="#xarML('Modules')#" primary="true" />
+            </xul:treecols>
+            
+            <xul:treechildren>
+                <xar:foreach in="$usermods" value="$mod" key="$modname">
+                    <xul:treeitem href="#$mod['link']#" container="true" open="true">
+                        <xar:if condition="$mod['modactive']">
+                            <xul:treerow>
+                                <xul:treecell  label="#$mod['label']#" name="activeitem" title="#$mod['desc']#"/>
+                            </xul:treerow>
+                            
+                            <xar:if condition="$indlinks ne ''">
+                                <xul:treechildren>
+                                    <xar:foreach in="$indlinks" value="$sublinks" key="$sublink">
+                                        <xul:treeitem href="#$sublinks['userlink']#">
+                                            <xul:treerow>
+                                                <xar:comment>
+                                                    determine and indicate current states of module functions display 
+                                                </xar:comment>
+                                                <xar:if condition="$sublinks['funcactive']">
+                                                    <xul:treecell class="xar-menu-subitem-current" name="activesubitem" title="#$sublinks['usertitle']#" label="#$sublinks['userlabel']# #$marker#"/>
+                                                <xar:else />
+                                                    <xul:treecell class="xar-menu-subitem" title="#$sublinks['usertitle']#" label="#$sublinks['userlabel']#"/>
+                                                </xar:if>
+                                            </xul:treerow>
+                                        </xul:treeitem>
+                                    </xar:foreach>
+                                </xul:treechildren>
+                            </xar:if>
+
+                        <xar:elseif condition="$mod['modactive'] and !$mod['link']" />
+                            <xul:treerow>
+                                <xul:treecell class="xar-menu-section" label="#$mod['label']#" />
+                            </xul:treerow>
+                        <xar:else />
+                            <xul:treerow>
+                                <xul:treecell class="xar-menu-item" title="#$mod['desc']#" label="#$mod['label']#"/>
+                            </xul:treerow>
+                        </xar:if>
+                    </xul:treeitem>
+                </xar:foreach>
+            </xul:treechildren>
+        </xul:tree>
+    </xar:if>
+
+    <xul:splitter collapse="after">
+        <xul:grippy />
+    </xul:splitter>
+    <xul:tree hidecolumnpicker="true" flex="1" onselect="xrm_menuitemselect(event.target)">
+        <xul:treecols>
+            <xul:treecol flex="1" label="#xarML('User controls')#"/>
+        </xul:treecols>
+        <xul:treechildren>
+            <xar:if condition="$showlogout">
+                <xul:treeitem href="#$logouturl#">
+                    <xul:treerow>
+                        <xul:treecell label="#$logoutlabel#"/>
+                    </xul:treerow>
+                </xul:treeitem>
+            </xar:if>
+            <xar:if condition="(xarThemeIsAvailable('print')) and !empty($displayprint)">
+                <xul:treeitem href="#$printurl#">
+                    <xul:treerow>
+                        <xul:treecell label="#xarML('Print View')#"/>
+                    </xul:treerow>
+                </xul:treeitem>
+            </xar:if>
+            <xar:if condition="(xarThemeIsAvailable('rss')) and !empty($displayrss)">
+                <xar:if condition="($where eq 'articles')">
+                    <xul:treeitem href="#$rssurl#">
+                        <xul:treerow>
+                            <xul:treecell label="#xarML('Syndication')#"/>
+                        </xul:treerow>
+                    </xul:treeitem>
+                </xar:if>
+            </xar:if>
+        </xul:treechildren>
+    </xul:tree>
+</xul:vbox>

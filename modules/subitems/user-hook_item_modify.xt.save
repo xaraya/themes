@@ -1,0 +1,46 @@
+<xul:vbox flex="1">
+    <xar:foreach in="$subitems" key="$objectid" value="$subobject">
+        <xul:vbox flex="1">
+            <xul:label class="xrm_subitemheader">#$subobject.object:label#:</xul:label>
+            <xul:hbox flex="1">
+                <xul:vbox class="xrm_actionarea">
+                    <xul:button label="#xarML('Add item')#" oncommand="document.location='&xar-modurl-subitems-admin-item_new;&amp;objectid=#$subobject.objectid#&amp;itemid=#$subobject.itemid#'"/>
+                </xul:vbox>
+
+                <xul:vbox flex="1">
+                    <xul:tree id="#$objectid#" enableColumnDrag="true" flex="1">
+                        <xul:treecols >
+                            <xar:foreach in="$subobject.properties" key="$name">
+                                <xul:treecol id="#$name#" flex="1" label="#$subobject.properties.$name:label#" persist="width ordinal hidden"/>
+                                <xul:splitter class="tree-splitter"/>
+                            </xar:foreach>
+                        </xul:treecols>
+
+                        <xul:treechildren>
+                            <xar:foreach in="$subobject.values" key="$uid">
+                                <xul:treeitem id="#$name#_#$uid#">
+                                    <xul:treerow>
+                                        <xar:if condition="isset($subobject.values.$uid.$name)">
+                                            <xar:set name="cellvalue" ><xar:data-output property="$subobject['properties'][$name]" value="$subobject['values'][$uid][$name]" /></xar:set>
+                                            <xul:treecell label="#$cellvalue#"/>
+                                        <xar:else />
+                                            <xul:treecell label= " "/>                                        
+                                        </xar:if>    
+                                    </xul:treerow>
+                                </xul:treeitem>
+                            </xar:foreach>
+                        </xul:treechildren>
+                    </xul:tree>
+                    <xul:hbox class="xrm_actionarea" pack="end">
+                        <!-- &xar-modurl-subitems-admin-item_modify;&amp;objectid=#$subobject.objectid#&amp;ddid=#$uid#" -->
+                        <xar:if condition="isset($uid)">
+                            <xul:button label="Edit" oncommand="document.location='&xar-modurl-dynamicdata-admin-modify;&amp;objectid=#$subobject.objectid#&amp;itemid=#$uid#'"/>
+                            <!-- &xar-modurl-subitems-admin-item_delete;&amp;objectid=#$subobject.objectid#&amp;ddid=#$uid#" -->
+                            <xul:button label="Delete" oncommand="document.location='&xar-modurl-dynamicdata-admin-delete;&amp;objectid=#$subobject.objectid#&amp;itemid=#$uid#'"/>
+                        </xar:if>
+                    </xul:hbox>
+                </xul:vbox>
+            </xul:hbox>
+        </xul:vbox>
+    </xar:foreach>
+</xul:vbox>

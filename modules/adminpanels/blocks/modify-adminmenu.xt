@@ -1,0 +1,24 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+<xul:vbox>
+    <xar:if condition="$showlogout eq 1">
+        <xul:checkbox type="checkbox" name="showlogout" id="showlogout#$blockid#" value="1" checked="true" label="#xarML('Show a logout link in this admin menu')#" />
+    <xar:else />
+        <xul:checkbox type="checkbox" name="showlogout" id="showlogout#$blockid#" value="1" label="#xarML('Show a logout link in this admin menu')#" />
+    </xar:if>
+    
+    <xul:hbox>
+        <xul:label class="fieldlabel" control="menustyle"><xar:mlstring>Sort admin menu items</xar:mlstring></xul:label>
+        
+        <xul:menulist name="menustyle" id="menustyle" size="1">
+            <xul:menupopup>
+                <xar:foreach in="$sortorder" value="$v" key="$k">
+                    <xar:if condition="$k eq $menustyle">
+                        <xul:menuitem value="#$k#" selected="true" label="#$v#"/>
+                    <xar:else />
+                        <xul:menuitem value="#$k#" label="#$v#"/>
+                    </xar:if>
+                </xar:foreach>
+            </xul:menupopup>
+        </xul:menulist>
+    </xul:hbox>
+</xul:vbox>

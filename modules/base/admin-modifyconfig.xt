@@ -1,0 +1,68 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+
+<script>
+    function setTabVar(sender)
+    {
+        tab = document.getElementById('tab');
+        tab.value =  sender.id;
+    }
+
+</script>
+
+<form action="&xar-modurl-base-admin-updateconfig;" method="post" enctype="application/x-www-form-urlencoded" >
+<xul:vbox class="xar-mod-body " flex="1" >
+    <xul:label class="xar-mod-title"><xar:mlstring>Modify System Configuration </xar:mlstring></xul:label>
+        <xul:hbox flex="1">
+            <input type="hidden" name="authid" id="authid" value="#$authid#" />
+            <input type="hidden" name="tab" id="tab" value="#$tab#" />
+            
+            <xul:vbox class="xrm_actionarea">
+                <xul:button type="submit" value="#$updatelabel#" label="#xarML('Update')#"/>
+             </xul:vbox>
+            <xul:vbox flex="1">
+                <xul:tabbox flex="1">
+                    <xul:tabs id="tabset" flex="1">
+                        <xul:tab flex="1" id="display" oncommand="setTabVar(this);"  label="#xarML('Site Display')#"/>
+                        <xul:tab flex="1" id="security" oncommand="setTabVar(this);" label="#xarML('Sessions and security')#"/>
+                        <xul:tab flex="1" id="locales" oncommand="setTabVar(this);"  label="#xarML('Multilanguage')#"/>
+                        <xul:tab flex="1" id="other" oncommand="setTabVar(this);"  label="#xarML('Other')#"/>
+                    </xul:tabs>
+                    <xul:tabpanels flex="1">
+                        <xul:tabpanel flex="1" >
+                            <xar:comment> ------------------- Begin Site Display Options --------------------- </xar:comment>
+                            <xul:vbox flex="1">
+                                <xar:template file="modifyconfig-display"/>
+                            </xul:vbox>
+                        </xul:tabpanel>
+                        <xul:tabpanel flex="1" >
+                            <xar:comment> ----------------- Begin Security Options ------------------- </xar:comment>
+                            <xar:set name="authmodules">#xarConfigGetVar('Site.User.AuthenticationModules')#</xar:set>
+                            <xar:if condition="!empty($authmodules) and count($authmodules) gt 1">
+                                <xar:base-include-javascript module="base" filename="orderitem.js" position="head" />
+                                <script type="text/javascript">
+                                    xar_base_reorder_warn = '#xarML('You must select the authentication module you want to move.')#';
+                                </script>
+                            </xar:if>
+                            <xul:vbox flex="1">
+                                <xar:template file="modifyconfig-security"/>
+                            </xul:vbox>
+                        </xul:tabpanel>
+                        <xul:tabpanel flex="1" >
+                            <xar:comment> ----------------- Begin Locale Options ------------------- </xar:comment>
+                            <xul:vbox flex="1" >
+                                <xar:template file="modifyconfig-locales" module="base" type="module"/>
+                            </xul:vbox>
+                        </xul:tabpanel>
+                        <xul:tabpanel flex="1" >
+                            <xar:comment> ----------------- Begin Other Options ------------------- </xar:comment>
+                            <xul:vbox flex="1">
+                                <xar:template file="modifyconfig-other" module="base" type="module"/>
+                            </xul:vbox>
+                        </xul:tabpanel>
+                    </xul:tabpanels>
+                </xul:tabbox>
+            </xul:vbox>
+        </xul:hbox>
+    </xul:vbox>
+</form>
+    

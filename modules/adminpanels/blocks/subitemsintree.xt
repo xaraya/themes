@@ -1,0 +1,14 @@
+<xul:treechildren> 
+    <xar:foreach in="$indlinks" value="$sublinks" key="$sublink">
+        <xul:treeitem href="#$sublinks['adminlink']#">
+            <xul:treerow>
+                <xar:comment> determine and indicate current states of module functions display </xar:comment>
+                <xar:if condition="$sublinks['funcactive']">
+                    <xul:treecell class="xar-menu-subitem-current" name="activesubitem" title="#$sublinks['adminlabel']#" label="#$sublinks['adminlabel']#"/>
+                <xar:else />
+                    <xul:treecell class="xar-menu-subitem" title="#$sublinks['admintitle']#" label="#$sublinks['adminlabel']#"/>
+                </xar:if>                                        
+            </xul:treerow>
+        </xul:treeitem>
+    </xar:foreach>
+</xul:treechildren>

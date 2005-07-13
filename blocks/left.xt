@@ -1,0 +1,15 @@
+<xul:hbox flex="1">
+    <xul:tree class="xar-block" hidecolumnpicker="true" flex="1">
+        <xul:treecols>
+            <xar:if id="title_condition" condition="!empty($title)">
+                <xul:treecol class="xar-block-title" flex="1" label="#$title#"/>
+            <xar:else/>
+                <xul:treecol class="xar-block-title" flex="1"/>
+            </xar:if>
+        </xul:treecols>
+        <xul:vbox class="xar-block-body" flex="1">
+            #$content#
+        </xul:vbox>
+    </xul:tree>
+</xul:hbox>
+

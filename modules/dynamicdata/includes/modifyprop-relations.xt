@@ -1,0 +1,35 @@
+<xul:label>// TODO: very much under construction, obviously :-)</xul:label>
+<form method="post" action="&xar-modurl-dynamicdata-admin-modifyprop;">
+    <xul:vbox class="dd-singlecolumn xar-accent">
+        <!-- don't accept updates for this (for now) -->
+        <xar:foreach in="$relations" value="$relation">
+            <xar:if condition="count($relation['links']) gt 0">
+                <xar:foreach in="$relation['links']" value="$link">
+                    <xul:label class="fieldlabel">#$labels['module']#</xul:label>
+                    <xul:label>#$relation['module']#</xul:label>
+                    
+                    <xul:label class="fieldlabel">#$labels['linktype']#</xul:label>
+                    <xul:label>#$link['type']#</xul:label>
+                        
+                    <xul:label class="fieldlabel">#$labels['linkfrom']#</xul:label>
+                    <xul:label>#$link['from']#</xul:label>
+                    
+                    <xul:label class="fieldlabel">#$labels['linkto']#</xul:label>
+                    <xul:label>#$link['to']#</xul:label>
+                </xar:foreach>
+            <xar:else />
+                <xul:label class="fieldlabel">#$labels['module']#</xul:label>
+                <xul:label>#$relation['module']#</xul:label>
+                
+                <xul:label class="fieldlabel">#$labels['linktype']#</xul:label>
+                <xul:label>(<xar:mlstring>not found</xar:mlstring>)</xul:label>
+                
+                <xul:label class="fieldlabel">#$labels['linkfrom']#</xul:label>
+                <xul:label> - </xul:label>
+                
+                <xul:label class="fieldlabel">#$labels['linkto']#</xul:label>
+                <xul:label>(<xar:mlstring>not found</xar:mlstring>)</xul:label>
+            </xar:if>
+        </xar:foreach>
+    </xul:vbox>
+</form>

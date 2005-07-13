@@ -1,0 +1,35 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+<xar:comment>
+    this is a simplified version of vertical list template
+    for full comments and examples see file verticallistbycats.xd
+</xar:comment>
+
+<xul:vbox flex="1">
+    <xul:tree hidecolumnpicker="true" flex="1" onselect="xrm_menuitemselect(event.target);">
+        <xul:treecols  >
+            <xul:treecol flex="1" primary="true" label="#xarML('[By Name]')#" />
+        </xul:treecols>
+        <xul:treechildren>
+            <xar:foreach in="$adminmods" value="$mod" key="$modname">
+                <xul:treeitem href="#$mod['features']['link']#" container="true" open="true">
+                    <xul:treerow >
+                        <xar:if condition="$mod['features']['modactive'] and !$mod['features']['overview']">
+                            <xul:treecell class="xar-menu-item-current" title="#$mod['features']['label']#" label="#$mod['features']['label']#"/>
+                        <xar:elseif condition="$mod['features']['modactive'] and $mod['features']['overview']" />
+                            <xul:treecell class="xar-menu-item-current" title="#$mod['features']['maintitle']#" label="#$mod['features']['label']#"/>
+                        <xar:else />
+                            <xul:treecell class="xar-menu-item" title="#$mod['features']['maintitle']#" label="#$mod['features']['label']#"/>
+                        </xar:if>
+                    </xul:treerow>
+                    <xar:if condition="isset($mod['indlinks']) and count($mod['indlinks']) gt 0">
+                        <xar:template type="system" file="subitemsintree.xt" subdata="$mod" />
+                    </xar:if>
+                </xul:treeitem>
+            </xar:foreach>
+        </xul:treechildren>
+    </xul:tree>
+
+    <xar:if condition="$showlogout">
+        <xar:template type="system" file="adminlogoutpart.xt"/>
+    </xar:if>
+</xul:vbox>

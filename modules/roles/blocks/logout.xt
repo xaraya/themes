@@ -1,0 +1,13 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+<xul:vbox flex="1">
+    <xul:label>
+        <xar:ml>
+            <xar:mlstring>Welcome, #(1)</xar:mlstring>
+            <xar:mlvar>#$name#</xar:mlvar>
+        </xar:ml>
+    </xul:label>
+    <xul:button label="#xarML('Logout')#" oncommand="document.location='&xar-modurl-roles-user-logout;'"/>
+</xul:vbox>
+<xul:splitter>
+    <xul:grippy/>
+</xul:splitter>

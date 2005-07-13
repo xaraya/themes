@@ -1,0 +1,278 @@
+/*
+ Let's import the global skin for the particular
+ gecko instance our user is working with
+ */
+ @import url(chrome://global/skin/);
+
+/* XARAYA REQUIRED CLASSES */
+a {}
+a:hover {}
+blockquote {}
+
+html, body {
+    font-family: Verdana, Helvetica, sans-serif; 
+}
+
+code {}
+h1 {}
+
+h2, .xar-mod-title, .xar-mod-head {
+  background-color: #ffee99;
+  color: #363636;                                                                                                         
+  font-weight: bold;  
+  padding: 0.2em;                                                                                                                                                                                                           
+  padding-left: 0.5em;                                                                                                    
+  margin: 0;                                                                                         
+  border-bottom: solid thin lightgrey;                                                                                    
+  white-space: nowrap;
+}
+
+.xar-mod-title {
+   font-size: 1.2em;
+}
+
+form {}
+h3 {}
+h4 {}
+th {}
+
+td {
+    padding-left: 3pt;
+    padding-bottom: 2pt;
+    padding-top: 1pt;
+}
+table {}
+thead {}
+tbody {}
+tfoot {}
+p {
+    padding: 5pt;
+}
+pre {}
+
+br {}
+
+textarea, select {
+  margin-left: 0.5em; 
+  margin-right: 0.5em;
+  border: solid thin #006;                                                                                                
+  -moz-border-radius: 4px;
+  text-decoration:none;
+}
+
+input[type=text], input[type=password] {
+  margin-left: 0.5em; 
+  margin-right: 0.5em;
+  border: solid thin #006;                                                                                                
+  background-color: #F9F9F9;                                                                                              
+  -moz-border-radius: 4px;
+  text-decoration:none;
+}
+
+input[type=hidden], textbox[type=hidden] {
+    display: none;
+}
+
+img {
+    border: none;
+}
+
+li {}
+
+ul {
+    padding-left: 8pt;
+}
+
+ol {}
+sup {}
+sub {}
+
+
+tr td div.xrm_labels {
+    margin: 0pt;
+}
+
+/*  XARAYA REQUIRED INDIVIDUAL CLASSES */
+td.xar-norm {}
+td.xar-alt {}
+
+/*  XARAYA REQUIRED ANONYMOUS CLASSES  */
+
+/* these defaults apply to the left block group */
+.xar-block {
+    min-height: 150px;
+}
+.xar-block-head{}
+.xar-block-title {}
+.xar-block-body {}
+.xar-block-foot {}
+
+/* right block group classes */
+.xar-block-head-right{}
+.xar-block-title-right {}
+.xar-block-body-right {}
+.xar-block-foot-right {}
+
+/* topnav block group classes */
+.xar-block-head-topnav {}
+.xar-block-title-topnav {}
+.xar-block-body-topnav {}
+.xar-block-foot-topnav {}
+
+/* center block group classes */
+.xar-block-head-center{}
+.xar-block-title-center {}
+.xar-block-body-center {}
+.xar-block-foot-center {}
+.xar-mod-head {}
+
+
+label.xar-mod-head {}
+
+.xar-mod-title {}
+
+.xar-mod-body {
+    background-color: #F9F9F9;
+    border: solid thin #ffc000;
+}
+
+.xar-mod-foot {}
+
+tr.xar-alt {
+    background-color: #F7F7F7;
+}
+
+.xar-accent {}
+.xar-alt-outline {}
+.xar-accent-outline {}
+.xar-norm-outline {}
+
+tr.xar-norm {
+    background-color: #d8d8d8;
+}
+
+.xar-sub {}
+.xar-menu-section {}
+
+.xar-menu-section h4 {}
+
+ul.xar-menu-section {
+    list-style: none;
+}
+
+.xar-menu-section-current {}
+.xar-menu-item {}
+.xar-menu-item-current{}
+.xar-menu-item:hover {}
+.xar-menu-subitem {}
+.xar-menu-subitem {}
+.xar-menu-subitem:hover {}
+.xar-menu-subitem-current {}
+.xar-menu-item-current > .xar-menu-subitem > a {}
+.xar-menu-item-current > .xar-menu-subitem > a:visited {}
+.xar-title {}
+
+.xar-error {
+    color: red;
+}
+
+.xar-fullwidth {}
+
+.xrm_header {
+    padding-left: 10pt;
+    margin-bottom: 10pt;
+    background-color: #ffffff;
+}
+
+label, description {}
+
+description {}
+
+form {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.fieldlabel {
+    font-weight: bold;
+}
+
+
+.xrm_subitemheader {
+    /* clear: both; */
+    background-color: #ffee99;
+    color: #363636;                                                                                                         
+    font-weight: bold;  
+    padding: 0.2em;                                                                                                                                                                                                           
+    padding-left: 0.5em;                                                                                                    
+    margin: 0;             
+    border-top: thin solid #ffc000;                                                                         
+    border-bottom: solid thin lightgrey;                                                                                    
+    white-space: nowrap;
+}
+
+table.xrm_subitems, table {
+    width: 99.9%;
+    display: block;
+    border-collapse: collapse;
+}
+
+.xrm_subitems {
+    padding: 0pt;
+    margin: 0pt;
+}
+
+.xrm_subitems td, td {
+    padding-right: 3pt;
+    border-right: thin solid #ffc000;
+    border-left: thin solid #ffc000;
+}
+
+.xrm_subitems thead tr th, th {
+    background-color: #CECEE7;
+    color: #363636;
+    text-align: left;
+    padding: 2pt;
+    padding-left: 3pt;
+    border-right: thin solid #ffc000;
+    border-left: thin solid #ffc000;
+    
+}
+
+/* Combined styling */
+.xrm_labels {
+    background-color: #CECEE7;
+    padding-left: 3pt;
+    padding-right: 5pt;
+    border-right: thin solid #ffc000;
+    border-left: thin solid #ffc000;
+}
+
+.xrm_actions {
+    padding-left: 3pt;
+    padding-right: 3pt;
+    background-color: #ffffff;
+
+}
+
+.xrm_actions a {
+    text-decoration: none;
+}
+
+.xrm_fields {
+    background-color: #ffffff;
+}
+
+hbox, vbox {
+    /* border: thin solid #ffc000; 
+       padding: 0.5pt; */
+}
+
+.debug {
+  border: thin solid red;
+  padding: 0.5pt;
+}
+                                                                                                                     
+  

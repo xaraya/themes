@@ -1,0 +1,129 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+
+<xar:if condition="xarModGetVar('base','editor') eq 'htmlarea'">
+    <xar:template file="htmlarea_insert" module="htmlarea" type="module" />
+</xar:if>
+<xar:set name="messagetitle">#xarML('Write this string in the message body or subject to display the corresponding information')#</xar:set>
+
+<form action="&xar-modurl-mail-admin-template;" method="post" enctype="application/x-www-form-urlencoded">
+    <xul:vbox class="xar-mod-body">
+        <xul:label class="xar-mod-title">
+            <xar:mlstring>Configure Notification Template</xar:mlstring>
+        </xul:label>
+        
+        <xul:hbox>
+            <xul:vbox class="xrm_actionarea">
+                <xul:button type="submit" value="#xarML('Update')#" label="#xarML('Update')#"/>
+            </xul:vbox>
+            
+            <xul:groupbox>
+                <xul:vbox>
+                    <xar:if condition="!empty($settings)">
+                        <xar:mlstring>The mail module is currently hooked to the following modules :</xar:mlstring>
+                        <ul>
+                            <xar:foreach in="$settings" key="$modname" value="$config">
+                                <li>
+                                    <a href="#$config['link']#">
+                                        #$config['modname']#
+                                        <xar:if condition="!empty($config['type'])">
+                                            - #$config['type']#
+                                        </xar:if>
+                                    </a>
+                                </li> 
+                            </xar:foreach>
+                        </ul>
+                    <xar:else/>
+                        <xar:mlstring>The mail module is currently not hooked to any module</xar:mlstring>
+                    </xar:if>
+                    
+                    <xul:hbox>
+                        <xul:label class="fieldlabel" control="mailtype"><xar:mlstring>Template</xar:mlstring></xul:label>
+                        <form method="post" action="&xar-modurl-mail-admin-template;">
+                            <xul:menulist name="mailtype" id="mailtype" size="1" tabindex="5"  oncommand="this.form.submit()">
+                                <xul:menupopup>
+                                    <xar:loop name="$templates">
+                                        <xar:if condition="$mailtype eq $loop:item['key']">
+                                            <xul:menuitem value="#$loop:item['key']#" selected="true" label="#$loop:item['value']#"/>
+                                        <xar:else/>
+                                            <xul:menuitem value="#$loop:item['key']#" label="#$loop:item['value']#"/>
+                                        </xar:if>
+                                    </xar:loop>
+                                </xul:menupopup>
+                            </xul:menulist>
+                        </form>
+                    </xul:hbox>
+                    
+                    <xar:if condition="$mailtype eq 'createhook'">
+                        <xar:set name="explanation"><xar:ml><xar:mlstring>This email will be sent to #(1) [#(2)] when a hooked item is created</xar:mlstring><xar:mlvar>#xarModGetVar('mail', 'adminname')#</xar:mlvar><xar:mlvar>#xarModGetVar('mail', 'adminmail')#</xar:mlvar></xar:ml></xar:set>
+                    <xar:elseif condition="$mailtype eq 'changehook'" />
+                        <xar:set name="explanation"><xar:ml><xar:mlstring>This email will be sent to #(1) [#(2)] when a hooked item is updated</xar:mlstring><xar:mlvar>#xarModGetVar('mail', 'adminname')#</xar:mlvar><xar:mlvar>#xarModGetVar('mail', 'adminmail')#</xar:mlvar></xar:ml></xar:set>
+                    <xar:elseif condition="$mailtype eq 'deletehook'" />
+                        <xar:set name="explanation"><xar:ml><xar:mlstring>This email will be sent to #(1) [#(2)] when a hooked item is deleted</xar:mlstring><xar:mlvar>#xarModGetVar('mail', 'adminname')#</xar:mlvar><xar:mlvar>#xarModGetVar('mail', 'adminmail')#</xar:mlvar></xar:ml></xar:set>
+                    <xar:else/>
+                        <xar:set name="explanation"><xar:ml><xar:mlstring>This email will be sent to #(1) [#(2)]</xar:mlstring><xar:mlvar>#xarModGetVar('mail', 'adminname')#</xar:mlvar><xar:mlvar>#xarModGetVar('mail', 'adminmail')#</xar:mlvar></xar:ml></xar:set>
+                    </xar:if>
+            
+                    
+                    <input type="hidden" name="authid" id="authid" value="#$authid#" />
+                    <input type="hidden" name="phase" id="phase" value="update" />
+                    <input type="hidden" name="mailtype" id="mailtype" value="#$mailtype#" />
+
+                    <xul:description width="0" label="#$explanation#"/>
+
+                    <xul:label class="fieldlabel" control="subject"><xar:mlstring>Subject</xar:mlstring></xul:label>
+                    <xul:textbox type="text" name="subject" id="subject" size="50" value="#xarVarPrepForDisplay($subject)#"  maxlength="150" />
+                    
+                    <xul:label class="fieldlabel" control="message"><xar:mlstring>Message</xar:mlstring></xul:label>
+                    <xul:textbox multiline="true" name="message" id="message" rows="10" cols="50" label="#xarVarPrepForDisplay($message)#" />
+
+                    
+                    <xul:label class="fieldlabel">
+                        <xar:mlstring>The following variables will be replaced in the text with specific information</xar:mlstring> :
+                    </xul:label>
+                    
+                    <xul:grid>
+                        <xul:columns>
+                            <xul:column/>
+                            <xul:column/>
+                        </xul:columns>
+                        
+                        <xul:rows>
+                            <xul:row>
+                                <xul:label>$sitename</xul:label>
+                                <xul:label><xar:mlstring>Name of the site</xar:mlstring></xul:label>
+                            </xul:row>
+                            <xul:row>
+                                <xul:label>$siteslogan</xul:label>
+                                <xul:label><xar:mlstring>Slogan of the site</xar:mlstring></xul:label>
+                            </xul:row>
+                            <xul:row>
+                                <xul:label>$siteurl</xul:label>
+                                <xul:label><xar:mlstring>URL of the site</xar:mlstring>(#xarServerGetBaseURL()#)</xul:label>
+                            </xul:row>
+                            <xul:row>
+                                <xul:label>$siteadmin</xul:label>
+                                <xul:label><xar:mlstring>Name of the administrator</xar:mlstring></xul:label>
+                            </xul:row>
+                            <xul:row>
+                                <xul:label>$adminmail</xul:label>
+                                <xul:label><xar:mlstring>Email address of the administrator</xar:mlstring></xul:label>
+                            </xul:row>
+                            <xul:row>
+                                <xul:label>$modulename</xul:label>
+                                <xul:label><xar:mlstring>Name of the module</xar:mlstring></xul:label>
+                            </xul:row>
+                            <xul:row>
+                                <xul:label>$objectid</xul:label>
+                                <xul:label><xar:mlstring>ID of the created/updated/deleted item</xar:mlstring></xul:label>
+                            </xul:row>
+                        </xul:rows>
+                    </xul:grid>
+                    <xul:label>
+                        <xar:mlstring>Note: other variables may be available depending on the module</xar:mlstring>
+                    </xul:label>
+                </xul:vbox>
+            </xul:groupbox>
+        </xul:hbox>
+    </xul:vbox>
+</form>
+

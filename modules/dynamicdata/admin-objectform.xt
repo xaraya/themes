@@ -1,0 +1,22 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+
+<xul:groupbox>
+    <xul:grid>
+        <xul:columns>
+            <xul:column/>
+            <xul:column/>
+        </xul:columns>
+        
+        <xul:rows>
+            <xar:foreach in="$properties" key="$name" value="$property">
+                <xul:row>
+                    <xar:data-label property="$properties[$name]" label="id" />
+                    <xar:data-input property="$properties[$name]" />
+                </xul:row>
+            </xar:foreach>
+        </xul:rows>
+    </xul:grid>
+</xul:groupbox>
+
+
+

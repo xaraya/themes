@@ -1,0 +1,87 @@
+<!-- <xar:template type="module" file="menu" /> -->
+
+<xul:vbox class="xar-mod-body">
+    <xul:label class="xar-mod-title">
+        <xar:ml>
+            <xar:mlstring>Edit Link to #(1)</xar:mlstring>
+            <xar:mlvar>#$label#</xar:mlvar>
+        </xar:ml>
+    </xul:label>
+    
+    <form action="&xar-modurl-subitems-admin-ddobjectlink_edit;" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="authid" id="authid" value="#xarSecGenAuthKey()#" />    
+        <input type="hidden" name="objectid" id="objectid" value="#$objectid#" />         
+        
+        <xul:hbox>
+            <xul:vbox class="xrm_actionarea">
+                <xul:button type="submit" name="confirm" value="#xarML('Update DDSubobjectlink')#" label="#xarML('Update link')#"/>
+            </xul:vbox>
+            
+            <xul:groupbox>
+                <xul:grid>
+                    <xul:columns>
+                        <xul:column/>
+                        <xul:column/>
+                    </xul:columns>
+                    <xul:rows>
+                        <xul:row>
+                            <xul:label class="fieldlabel"><xar:mlstring>Which module contains the parent item?</xar:mlstring></xul:label>
+                            <xul:hbox>
+                                <xar:data-input name="modid" type="module" value="$module['value']" />
+                                <xul:button type="submit" name="reload" value="#xarML('Reload itemtypes')#" label="#xarML('Reload itemtypes')#"/>
+                                <xul:label class="xar-error">#$module.error:msg#</xul:label>
+                            </xul:hbox>
+                        </xul:row>
+                        <xul:row>
+                            <xul:label class="fieldlabel"><xar:mlstring>Which itemtype from that module?</xar:mlstring></xul:label>
+                            <xul:hbox>
+                                <xar:data-input name="itemtype" type="itemtype" module="$module_name" value="$itemtype['value']" />
+                                <xul:label class="xar-error">#$itemtype.error:msg#</xul:label>
+                            </xul:hbox>
+                        </xul:row>
+                        <xul:row>
+                            <xul:label class="fieldlabel"><xar:mlstring>Template to use:</xar:mlstring></xul:label>
+                            <xul:hbox>
+                                <xul:textbox type="text" name="template" value="#$template['value']#" />
+                                <xul:label class="xar-error">#$template.error:msg#</xul:label>
+                            </xul:hbox>
+                        </xul:row>
+                        <xul:row>
+                            <xul:label class="fieldlabel"><xar:mlstring>Sorting:</xar:mlstring></xul:label>
+                            <xul:hbox>
+                                <xul:menulist name="sortby">
+                                    <xul:menupopup>
+                                        <xul:menuitem label="#xarML('Not specified')#"/>
+                                        <xar:foreach in="$properties" key="$name" value="$property" >    
+                                            <xar:if condition="array_key_exists($name,$sort['value'])">
+                                                <xul:menuitem value="#$name#" selected="true" label="#$properties.$name:label#"/>
+                                            <xar:else />
+                                                <xul:menuitem value="#$name#" label="#$properties.$name:label#"/>
+                                            </xar:if>
+                                        </xar:foreach>
+                                    </xul:menupopup>
+                                </xul:menulist>
+
+                                <xul:menulist name="sortmode">
+                                    <xul:menupopup>
+                                        <xar:if condition="in_array('ASC',$sort['value'])">
+                                            <xul:menuitem value="ASC" selected="true" label="#xarML('Ascending')#"/>
+                                        <xar:else />
+                                            <xul:menuitem value="ASC" label="#xarML('Ascending')#"/>
+                                        </xar:if>
+                                        <xar:if condition="in_array('DESC',$sort['value'])">
+                                            <xul:menuitem value="DESC" selected="true" label="#xarML('Descending')#"/>        
+                                        <xar:else />
+                                            <xul:menuitem value="DESC" label="#xarML('Descending')#"/>        
+                                        </xar:if>  
+                                    </xul:menupopup>
+                                </xul:menulist>
+                                <xul:label class="xar-error">#$sort.error:msg#</xul:label>
+                            </xul:hbox>
+                        </xul:row>
+                    </xul:rows>
+                </xul:grid>
+            </xul:groupbox>
+        </xul:hbox>
+    </form>
+</xul:vbox>

@@ -1,0 +1,35 @@
+<xar:set name="enctype">'application/x-www-form-urlencoded'</xar:set>
+<xar:if condition="!empty($object:upload)">
+    <xar:set name="enctype">'multipart/form-data'</xar:set>
+</xar:if>
+
+<form method="post" action="&xar-modurl-subitems-admin-item_new;" enctype="#$enctype#">
+    <input type="hidden" name="authid" id="authid" value="#xarSecGenAuthKey()#" />
+    <input type="hidden" name="confirm" value="1" />
+    <input type="hidden" name="objectid" value="#$objectid#" />
+    <input type="hidden" name="itemid" value="#$itemid#" />
+    <input type="hidden" name="redirect" value="#$redirect#" />
+    
+    <xul:vbox class="xar-mod-body" flex="1">
+        <xul:label class="xar-mod-title"><xar:mlstring>Add subitem</xar:mlstring></xul:label>
+        
+        <xul:hbox>
+            <xul:vbox class="xrm_actionarea">
+                <!-- <input type="submit" name="preview" value="#xarML('Preview')#" /> -->
+                <xul:button type="submit" name="create" value="#xarML('Create')#" label="#xarML('Create')#"/>
+            </xul:vbox>
+            <xul:vbox>
+                <xar:data-form object="$object" />   
+            </xul:vbox>
+            
+            <xar:if condition="isset($hooks)">
+                <xul:vbox>
+                    #$hooks#
+                </xul:vbox>
+            </xar:if>
+        </xul:hbox>
+        
+    </xul:vbox> 
+</form>
+
+                                                                                                        

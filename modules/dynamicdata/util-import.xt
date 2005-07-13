@@ -1,0 +1,55 @@
+<xar:comment>
+    License: GPL http://www.gnu.org/copyleft/gpl.html 
+</xar:comment>
+
+
+<xul:vbox class="xar-mod-body" flex="1" style="overflow: auto;">
+    <xul:label class="xar-mod-title">
+        <xar:mlstring>
+            Import Object Definition 
+        </xar:mlstring>
+    </xul:label>
+    <xul:label>#$warning#</xul:label>
+    <form method="post" action="&xar-modurl-dynamicdata-util-import;&amp;pageName=module">
+        <input type="hidden" name="authid" id="authid" value="#$authid#" />
+        <xul:hbox flex="1">
+            <xul:vbox class="xrm_actionarea" flex="1">
+                <xul:button type="submit" value="#xarML('Import Definition')#" label="#xarML('Import')#"/>
+            </xul:vbox>
+            
+            <xul:hbox flex="100%">
+            <xul:vbox flex="1">
+                <xul:label class="fieldlabel" control="basedir">
+                    <xar:mlstring>Base directory</xar:mlstring>
+                </xul:label>
+                <xul:hbox>
+                    <xul:textbox type="text" name="basedir" id="basedir" value="#$basedir#" size="50" maxlength="250" />
+                    <xul:button type="submit" name="refresh" id="refresh" value="#xarML('Refresh')#" label="#xarML('Refresh')#"/>
+                </xul:hbox>
+                
+                <xul:label class="fieldlabel" control="import">
+                    <xar:mlstring>Available .xml files</xar:mlstring>
+                </xul:label>
+                <xul:hbox>
+                <xul:menulist name="import" id="import">
+                    <xul:menupopup>
+                        <xar:foreach in="$options" value="$option">
+                            <xul:menuitem value="#$option['id']#" label="#$option['name']#"/>
+                        </xar:foreach>
+                    </xul:menupopup>
+                </xul:menulist>
+                </xul:hbox>
+                
+                <xul:checkbox type="checkbox" name="keepitemid" id="keepitemid" value="1" label="#xarML('Preserve item ids if possible')#"/>
+
+                <xul:label class="fieldlabel">
+                    <xar:mlstring>
+                        Select a file in the list above, or paste the object definition in here 
+                    </xar:mlstring>
+                </xul:label>
+                <xul:textbox multiline="true" flex="1" name="xml" id="xml" rows="30" cols="80"/>
+            </xul:vbox>
+            </xul:hbox>
+        </xul:hbox>
+    </form>
+</xul:vbox>

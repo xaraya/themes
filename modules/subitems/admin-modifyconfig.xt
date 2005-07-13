@@ -1,0 +1,24 @@
+
+<!-- <xar:template type="module" file="menu" /> -->
+
+
+<form method="post" action="&xar-modurl-subitems-admin-updateconfig;">
+
+<xul:vbox class="xar-mod-body">
+    <xul:label class="xar-mod-title">#$menutitle#</xul:label>
+    <xul:hbox>
+        <xul:vbox class="xarm_actionarea">
+            <xul:button type="submit" value="#$updatebutton#" label="#$updatebutton#" />
+        </xul:vbox>
+        <xul:vbox>
+            <input type="hidden" name="authid" id="authid" value="#$authid#" />
+            
+            <xar:data-input type="checkbox" name="shorturls" value="$shorturlschecked" label="$shorturlslabel"/>
+
+            <xul:vbox>
+                #$hooks#
+            </xul:vbox>
+        </xul:vbox>
+    </xul:hbox>
+</xul:vbox>
+</form>

@@ -1,0 +1,44 @@
+<xar:comment>
+    License: GPL http://www.gnu.org/copyleft/gpl.html 
+</xar:comment>
+<xar:base-include-javascript module="base" filename="formcheck.js" />
+<script type="text/javascript">
+<!--
+    // Enter name of mandatory fields
+    var blocks_fieldRequired = Array("group_name");
+    // Enter field description to appear in the dialog box
+    var blocks_fieldDescription = Array("Name");
+//-->
+</script> 
+<xar:if condition="xarTplAddStyleLink('blocks', 'blocks')">
+    <xar:comment>
+        no action required if external file was not added 
+    </xar:comment>
+</xar:if>
+
+<xul:vbox class="xar-mod-body">
+    <xul:label class="xar-mod-title">
+        <xar:mlstring>New Block Group</xar:mlstring>
+    </xul:label>
+    <xul:hbox>
+        <form class="xar-blocks-admin" action="&xar-modurl-blocks-admin-create_group;" method="post" onsubmit="return xar_base_formCheck(this, blocks_fieldRequired, blocks_fieldDescription);" enctype="application/x-www-form-urlencoded">
+            <xul:vbox>
+                <xul:button type="submit" value="#$createlabel#" label="#$createlabel#"/>
+            </xul:vbox>
+        
+            <xul:vbox>
+                <xul:groupbox>
+                    <input type="hidden" name="authid" id="authid" value="#xarSecGenAuthKey()#" />
+                    <xul:label class="fieldlabel" control="group_name">
+                        <xar:mlstring>Name</xar:mlstring>
+                    </xul:label>
+                    <xul:textbox type="text" name="group_name" id="group_name" value="" size="40" maxlength="255" />
+                    <xul:label class="fieldlabel" control="group_template">
+                        <xar:mlstring>Default template (optional)</xar:mlstring>
+                    </xul:label>
+                    <xul:textbox type="text" name="group_template" id="group_template" value="" size="40" maxlength="255" />
+                </xul:groupbox>
+            </xul:vbox>
+        </form>
+    </xul:hbox>
+</xul:vbox>

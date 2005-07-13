@@ -1,0 +1,80 @@
+<xul:vbox flex="1">
+    <xul:groupbox >
+        <xul:caption label="#xarML('Website Display Configuration')#"/>
+        
+        <!-- <xul:description width="0">
+            <xar:mlstring>Please note that the default theme variable has moved to the themes module.</xar:mlstring>
+        </xul:description> -->
+        
+        <xul:label class="fieldlabel" control="defaultmodule"><xar:mlstring>Default Module</xar:mlstring></xul:label>
+        <xul:hbox>
+            <xul:menulist name="defaultmodule" id="defaultmodule" size="1">
+                <xul:menupopup>
+                    <xar:loop name="$mods">
+                        <xar:if condition="xarConfigGetVar('Site.Core.DefaultModuleName') eq $loop:item['name']">
+                            <xul:menuitem value="#$loop:item['name']#" selected="true" label="#$loop:item['displayname']#"/>
+                        <xar:else />
+                            <xul:menuitem value="#$loop:item['name']#" label="#$loop:item['displayname']#"/>
+                        </xar:if>
+                    </xar:loop>
+                </xul:menupopup>
+            </xul:menulist>
+            <xul:spacer flex="1"/>
+        </xul:hbox>
+
+
+        <xar:if condition="xarConfigGetVar('Site.Core.DefaultModuleName') eq 'base'">
+            <xar:if condition="xarModGetVar('base', 'UseAlternatePageTemplate')">
+                <xul:checkbox type="checkbox" name="alternatepagetemplate" id="alternatepagetemplate" value="1" checked="true" label="#xarML('Use Alternate Page Template')#"/>
+            <xar:else />
+                <xul:checkbox type="checkbox" name="alternatepagetemplate" id="alternatepagetemplate" value="1" label="#xarML('Use Alternate Page Template')#"/>
+            </xar:if>
+
+            <xul:label class="fieldlabel" control="alternatepagetemplatename"><xar:mlstring>Alternate Page Template Name</xar:mlstring></xul:label>
+            <xul:textbox type="text" id="alternatepagetemplatename" name="alternatepagetemplatename" value="#xarModGetVar('base', 'AlternatePageTemplateName')#" size="15" />
+        </xar:if>
+
+
+        <xul:label class="fieldlabel" control="defaulttype"><xar:mlstring>Default Module Type</xar:mlstring></xul:label>
+        <xul:hbox>
+            <xul:menulist name="defaulttype" id="defaulttype" size="1">
+                <xul:menupopup>
+                    <xar:if condition="xarConfigGetVar('Site.Core.DefaultModuleType') eq 'admin'">
+                        <xul:menuitem value="admin" selected="true" label="Admin"/>
+                        <xul:menuitem value="user" label="User"/>
+                    <xar:else />
+                        <xul:menuitem value="admin" label="Admin"/>
+                        <xul:menuitem value="user" selected="true" label="User"/>
+                    </xar:if>
+                </xul:menupopup>
+            </xul:menulist>
+            <xul:spacer flex="1"/>
+        </xul:hbox>
+
+        <xul:label class="fieldlabel" control="defaultfunction"><xar:mlstring>Default Module Function</xar:mlstring></xul:label>
+        <xul:textbox type="text" id="defaultfunction" name="defaultfunction" value="#xarConfigGetVar('Site.Core.DefaultModuleFunction')#" size="30" maxlength="100" />
+
+        <xul:label class="fieldlabel" control="themedir"><xar:mlstring>Default Theme Directory</xar:mlstring></xul:label>
+        <xul:textbox type="text" id="themedir" name="themedir" value="#xarConfigGetVar('Site.BL.ThemesDirectory')#" size="30" maxlength="100" />
+
+        <xar:if condition="xarConfigGetVar('Site.Core.EnableShortURLsSupport')">
+            <xul:checkbox type="checkbox" name="shorturl" id="shorturl" value="1" checked="true" label="#xarML('Enable Short URL Support')#"/>
+        <xar:else />
+            <xul:checkbox type="checkbox" name="shorturl" id="shorturl" value="1" label="#xarML('Enable Short URL Support')#"/>
+        </xar:if>        
+
+        <xar:if condition="xarModGetVar('base', 'SupportShortURLs')">
+            <xul:checkbox type="checkbox" name="baseshorturl" id="baseshorturl" value="1" checked="true" label="#xarML('Enable Base Short URLs')#"/>
+        <xar:else />
+            <xul:checkbox type="checkbox" name="baseshorturl" id="baseshorturl" value="1" label="#xarML('Enable Base Short URLs')#"/>
+        </xar:if>        
+
+
+        <xar:if condition="xarConfigGetVar('Site.Core.FixHTMLEntities')">
+            <xul:checkbox type="checkbox" name="htmlenitites" id="htmlenitites" value="1" checked="true" label="#xarML('Fix HTML Entities')#" />
+        <xar:else />
+            <xul:checkbox type="checkbox" name="htmlenitites" id="htmlenitites" value="1" label="#xarML('Fix HTML Entities')#" />
+        </xar:if>    
+    </xul:groupbox>
+</xul:vbox>
+

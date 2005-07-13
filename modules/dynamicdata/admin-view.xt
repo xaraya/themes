@@ -1,0 +1,32 @@
+<xar:comment>License: GPL http://www.gnu.org/copyleft/gpl.html</xar:comment>
+
+<xul:vbox flex="1" class="xar-mod-body">
+    <xul:label class="xar-mod-title"><xar:mlstring>View </xar:mlstring>#$label#</xul:label>
+    <xar:data-list layout="$layout" module="$modid" itemtype="$itemtype" join="$join" table="$table" param="$param" startnum="$startnum" catid="$catid" sort="$sort" />
+
+    <xar:if condition="!empty($modlist) and count($modlist) gt 0">
+        <xul:splitter collapse="after">
+            <xul:grippy />
+        </xul:splitter>
+        <xul:vbox>
+            <xul:label class="xar-mod-title"><xar:mlstring>Other modules</xar:mlstring></xul:label>
+            
+            <xul:listbox flex="1">
+                <xul:listhead>
+                    <xul:listheader label="#xarML('Module')#"/>
+                </xul:listhead>
+
+                <xar:foreach in="$modlist" value="$module">
+                    <xar:if condition="!empty($module.header)">
+                        <xul:listitem style="font-weight: bold;" label="#$module.header#"/>
+                    </xar:if>
+                    <xar:if condition="empty($module.link)">
+                        <xul:listitem label="#$module.name#"/>
+                    <xar:else/>
+                        <xul:listitem label="#$module.name#" ondblclick="document.location='#$module.link#'"/>
+                    </xar:if>
+                </xar:foreach>
+            </xul:listbox>
+        </xul:vbox>
+    </xar:if>
+</xul:vbox>

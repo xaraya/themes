@@ -1,0 +1,38 @@
+<xul:vbox class="dd-singlecolumn xar-accent">
+    <xul:label>// TODO: very much under construction, obviously :-) </xul:label>
+
+    <!-- don't accept updates for this (for now) -->
+    <xar:foreach in="$static" value="$field">
+        <xul:hbox>
+            <xul:label class="fieldlabel">#$labels['name']#</xul:label>
+            <xul:label>#$field['name']#</xul:label>
+
+            <xul:label class="fieldlabel">#$labels['label']#</xul:label>
+            <xul:label>#$field['label']#</xul:label>
+            
+            <xul:label class="fieldlabel">#$labels['type']#</xul:label>
+            <xar:data-output property="$fieldtypeprop" name="static_type['.$field['id'].']" value="$field['type']" />
+
+            <xul:label class="fieldlabel">#$labels['default']#</xul:label>
+            <xul:label>#$field['default']#</xul:label>
+            
+            <xul:label class="fieldlabel">#$labels['source']#</xul:label>
+            <xul:label>#$field['source']#</xul:label>
+            
+            <xul:label class="fieldlabel">#$labels['validation']#</xul:label>
+            <xul:label>#$field['validation']#</xul:label>
+        </xul:hbox>
+    </xar:foreach>
+    <!-- xar:data-list module="dynamicdata" itemtype="1" where="$where" param="itemid" layout="cells" / -->
+    <xar:if condition="count($tables) gt 0">
+        <xar:foreach in="$tables" value="$table">
+            <form method="post" action="&xar-modurl-dynamicdata-util-importprops;">
+                <input type="hidden" name="authid" id="authid" value="#$authid#" />
+                <input type="hidden" name="modid" id="modid" value="#$modid#" />
+                <input type="hidden" name="itemtype" id="itemtype" value="#$itemtype#" />
+                <input type="hidden" name="table" id="table" value="#$table#" />
+                <xul:button type="submit" value="#xarML('Import table')# #$table#" label="#xarML('Import table')# #$table#"/>
+            </form>
+        </xar:foreach>
+    </xar:if>
+</xul:vbox>

@@ -1,0 +1,117 @@
+<!-- Initialization of some information -->
+<xar:set name="mlsmode">#xarConfigGetVar('Site.MLS.MLSMode')#</xar:set>
+<xar:set name="single_checked">false</xar:set>
+<xar:if condition="$mlsmode eq 'SINGLE'"><xar:set name="single_checked">true</xar:set></xar:if>
+<xar:set name="boxed_checked">false</xar:set>
+<xar:if condition="$mlsmode eq 'BOXED'"><xar:set name="boxed_checked">true</xar:set></xar:if>
+<xar:set name="unboxed_checked">false</xar:set>
+<xar:if condition="$mlsmode eq 'UNBOXED'"><xar:set name="unboxed_checked">true</xar:set></xar:if>
+
+<xul:vbox flex="1">
+    <xul:vbox flex="1">
+        <xul:groupbox >
+            <xul:caption label="#xarML('Mode of operation')# #$mlsmode#"/>
+            <xul:radiogroup id="mlsmode" >
+                <xul:description width="0">
+                    <xar:mlstring>The multilanguage system (MLS) works in three different modes.</xar:mlstring>
+                    <xar:mlstring>Please note that you cannot use UNBOXED mode of the MultiLanguage system unless you have php 4.3.0
+                    with the mbstring extension compiled in.</xar:mlstring>
+                </xul:description>
+                
+                <xar:if condition="$single_checked">
+                  <xul:radio  id="mlsmode_single" name="mlsmode" value="SINGLE" selected="true" label="#xarML('Single language mode (SINGLE)')#" />
+                <xar:else/>
+                  <xul:radio id="mlsmode_single" name="mlsmode" value="SINGLE" label="#xarML('Single language mode (SINGLE)')#" />
+                </xar:if>
+
+                <xul:description width="0">
+                      <xar:mlstring>
+                        MLS uses only one character set, typically single byte but potentially multi byte if mb_string is 
+                        built in. All information is stored coherently with the chosen character set (at installation time), 
+                        and also user data is meaningful in the chosen character set.
+                      </xar:mlstring>
+                </xul:description>
+
+                <xar:if condition="$boxed_checked">
+                  <xul:radio id="mlsmode_boxed" name="mlsmode" value="BOXED" selected="true" label="#xarML('Per page mode (BOXED)')#" />
+                <xar:else/>
+                  <xul:radio  id="mlsmode_boxed" name="mlsmode" value="BOXED" label="#xarML('Per page mode (BOXED)')#" />
+                </xar:if>
+
+                <xul:description width="0">
+                        MLS can use more than one character set in the site (the same consideration for the single or multi byte matter as 
+                        above can be applied here), but only one character set per page is used (this is an obvious concept maybe, 
+                        but important to understand). Due to this fact content cannot be shared across through different 
+                        language areas (for example an Arabic comment won't be shown in the English area even if 
+                        they are referring to the same object, e.g. an article available in both English and Arabic). 
+                        Another point is that every operation involves only a single language. This mode can produce 
+                        unexpected results if mb_string is not installed.
+                               
+                        <xar:if condition="function_exists('mb_strlen')">
+                            (<xar:mlstring>It is installed on this server, so you can give this mode a try</xar:mlstring>)
+                        <xar:else/>
+                            (<xar:mlstring>WARNING: mb_string is NOT installed on this server, proceed with caution</xar:mlstring>)
+                        </xar:if>
+                </xul:description>
+                
+                <xar:if condition="$unboxed_checked">
+                  <xul:radio id="mlsmode_unboxed" name="mlsmode" value="UNBOXED" selected="true" label="#xarML('Full multilanguage (UNBOXED) (experimental!)')#" />
+                <xar:else/>
+                  <xul:radio id="mlsmode_unboxed" name="mlsmode" value="UNBOXED" label="#xarML('Full multilanguage (UNBOXED) (experimental!)')#" />
+                </xar:if>
+                <xul:description width="0">
+                        MLS uses an universal character set to represent everything (read: UTF-8). This guarantees that no 
+                        conversion is needed for the content representation. Every page is always shown according to 
+                        the user chosen language, but the page can contain texts in other languages 
+                        (for example a French article and comments inside an English page).)
+                </xul:description>
+            </xul:radiogroup>
+        </xul:groupbox>
+    </xul:vbox>
+
+    <xul:groupbox>
+        <xul:caption><xar:mlstring>Language/Locale Configuration</xar:mlstring></xul:caption>
+
+        <xul:label><xar:mlstring>The following locales are available to this site:</xar:mlstring></xul:label>
+        <xar:loop name="$locales">
+            <xar:set name="checked">'false'</xar:set>
+            <xar:if condition="$loop:item['active'] == 1">
+                <xar:set name="checked">'true'</xar:set>
+            </xar:if>
+            <xul:checkbox type="checkbox" name="active[]" id="locale_#$loop:index#" label="#$loop:item['name']#"
+                value="#$loop:item['name']#" checked="#$checked#" />
+        </xar:loop>
+
+        <xul:label control="defaultlocale"><xar:mlstring>Default Locale</xar:mlstring></xul:label>
+        <xul:hbox>
+            <xul:menulist name="defaultlocale" id="defaultlocale" size="1">
+                <xul:menupopup>
+                    <xar:loop name="$locales">
+                        <xar:if condition="xarMLSGetSiteLocale() eq $loop:item['name']">
+                            <xul:menuitem value="#$loop:item['name']#" selected="true" label="#$loop:item['name']#"/>
+                        <xar:else />
+                            <xul:menuitem value="#$loop:item['name']#" label="#$loop:item['name']#" />
+                        </xar:if>
+                    </xar:loop>
+                </xul:menupopup>
+            </xul:menulist>
+            <xul:spacer flex="1"/>
+        </xul:hbox>
+        
+        <xul:label><xar:mlstring>Translations backend</xar:mlstring></xul:label>
+        <xul:hbox>
+            <xul:menulist name="translationsbackend" id="translationsbackend" size="1">
+                <xul:menupopup>
+                    <xar:if condition="xarConfigGetVar('Site.MLS.TranslationsBackend') eq 'xml'">
+                        <xul:menuitem value="xml" selected="true" label="#xarML('XML (good for interoperability)')#"/>
+                        <xul:menuitem value="php" label="#xarML('PHP (good for programmed access)')#"/>
+                    <xar:elseif condition="xarConfigGetVar('Site.MLS.TranslationsBackend') eq 'php'" />
+                        <xul:menuitem value="xml"  label="#xarML('XML (good for interoperability)')#"/>
+                        <xul:menuitem value="php" selected="true" label="#xarML('PHP (good for programmed access)')#"/>
+                    </xar:if>
+                </xul:menupopup>
+            </xul:menulist>
+            <xul:spacer flex="1"/>
+        </xul:hbox>
+    </xul:groupbox>
+</xul:vbox>

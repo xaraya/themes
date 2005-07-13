@@ -1,0 +1,76 @@
+<xar:comment>
+    License: GPL http://www.gnu.org/copyleft/gpl.html 
+</xar:comment>
+<xar:comment>
+    Legend 
+</xar:comment>
+<xul:vbox>
+    <xul:label><xar:mlstring>Legend of Actions</xar:mlstring></xul:label>
+    <xul:label>
+    <xar:mlstring>
+        [D]efault [H]idden/[M]aximized [E]dit [R]emove 
+    </xar:mlstring>
+    </xul:label>
+
+    <xul:vbox>
+        <xul:grid>
+            <xul:columns>
+                <xul:column label="#xarML('Block name')#"/>
+                <xul:column label="#xarML('Groups')#"/>
+                <xul:column label="#xarML('Template')#"/>
+                <xul:column label="#xarML('State')#"/>
+                <xul:column label="#xarML('Edit')#"/>
+                <xul:column label="#xarML('Remove')#"/>
+            </xul:columns>
+            
+            <xul:rows>
+                <xar:loop name="$blocks">
+                    <xul:row>
+                        <xul:label>#$loop:item['name']#</xul:label>
+                        
+                        <xul:label>
+                            <xar:if condition="!empty($loop:item.groups)">
+                                <xar:loop name="$loop:item.groups" id="groupsl">
+                                    <a href="&xar-modurl-blocks-admin-modify_group;&amp;gid=#$loop:groupsl:item.gid#" title="#xarML('Edit group')#">
+                                        #$loop:groupsl:item.name# 
+                                    </a>
+                                </xar:loop>
+                            <xar:else />
+                                <xar:mlstring>none</xar:mlstring>
+                            </xar:if>
+                        </xul:label>
+                        <xul:label>
+                        
+                            <xar:if condition="$loop:item['template'] ne NULL">
+                                #$loop:item['template']#
+                            <xar:else />
+                                <xar:if condition="empty($loop:item['group_template'])">
+                                    <xar:mlstring> D </xar:mlstring>
+                                <xar:else />
+                                    #$loop:item['group_template']#
+                                </xar:if>
+                            </xar:if>
+                        </xul:label>
+                        <xul:label>
+                            <xar:if condition="$loop:item['state'] eq '0'">
+                                <xar:mlstring> H </xar:mlstring>
+                            <xar:else />
+                                <xar:mlstring> M </xar:mlstring>
+                            </xar:if>
+                        </xul:label>
+                        <xul:label>
+                            <a href="&xar-modurl-blocks-admin-modify_instance;&amp;bid=#$loop:item.bid#">
+                                <xar:mlstring> E </xar:mlstring>
+                            </a>
+                        </xul:label>
+                        <xul:label>
+                            <a href="#$loop:item['deleteurl']#" onclick="return xar_base_confirmLink(this, '#xarVarPrepForDisplay($loop:item['deleteconfirm'])#')">
+                                <xar:mlstring> R </xar:mlstring>
+                            </a>
+                        </xul:label>
+                    </xul:row>
+                </xar:loop>
+            </xul:rows>
+        </xul:grid>
+    </xul:vbox>
+</xul:vbox>

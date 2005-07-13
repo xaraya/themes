@@ -1,0 +1,31 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+<xar:if condition="!empty($isprimary) and xarModIsHooked('categories',$modname,$itemtype)">
+    <xar:template file="catnavigation"/>
+</xar:if>
+<xar:if condition="empty($layout) or $layout eq 'default'">
+    <xul:grid>
+        <xul:columns>
+            <xul:column/>
+            <xul:column/>
+        </xul:columns>
+        <xul:rows>
+            <xar:foreach in="$properties" key="$name" value="$property">
+                <xul:row>
+                    <xul:label class="fieldlabel"><xar:data-label property="$properties[$name]" /></xul:label>
+                    <xul:label><xar:data-output property="$properties[$name]" /></xul:label>
+                </xul:row>
+            </xar:foreach>
+        </xul:rows>
+    </xul:grid>
+<xar:else />
+    <xul:description flex="1">
+        <xar:mlstring>Specify your own layout here...</xar:mlstring>
+    </xul:description>
+    <xul:description flex="1">
+        <xar:mlstring>
+            You can also specify a separate template, 
+            e.g. if you want to handle individual fields differently for a 
+            particular module / itemtype
+        </xar:mlstring>
+</xar:if>
+

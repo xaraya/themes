@@ -1,0 +1,122 @@
+<xar:comment>License: GPL http://www.gnu.org/copyleft/gpl.html</xar:comment>
+
+<!-- local commands -->
+<xul:commandset id="needTreeSelection">
+    <xul:command id="lcmd_edit" oncommand="xrm_treeitem_edit('objectlist')" ondblclick="xrm_treeitem_edit('objectlist')" />
+    <xul:command id="lcmd_delete" oncommand="xrm_treeitem_delete('objectlist')" />
+</xul:commandset>
+
+<xul:command id="lcmd_sort" onclick="xrm_sorton(this)"/>
+
+<xul:keyset>
+    <xul:key id="key_delete" observes="lcmd_delete" keycode="VK_DELETE"/>
+    <xul:key id="key_enter" observes="lcmd_edit" keycode="VK_RETURN"/>
+</xul:keyset>
+
+<xul:command id="lcmd_test" onclick="alert('test passed')"/>
+<xar:set name="editable">!isset($edit) or $edit != 'false'</xar:set>
+
+<script >
+function xrm_treeitem_edit(treeId)
+{
+    <xar:if condition="$editable">
+    itemid = xrm__gettreeitem(treeId);
+    if(itemid == -1) {
+        //alert('Select an item from the list first');
+    } else {
+        document.location = '&xar-modurl-dynamicdata-admin-modify;&amp;itemtype=#$itemtype#&amp;itemid='+itemid;
+    }
+    </xar:if>
+}
+
+function xrm_treeitem_delete(treeId)
+{
+    <xar:if condition="$editable">
+    itemid = xrm__gettreeitem(treeId);
+    if(itemid == -1) {
+        alert('Before you can delete an item, select one from the list first.');
+    } else {
+        document.location = '&xar-modurl-dynamicdata-admin-delete;&amp;itemtype=#$itemtype#&amp;itemid='+itemid;
+    }
+    </xar:if>
+}
+function xrm_sorton(treeCol) 
+{
+    document.location='#$sorturl#='+treeCol.id;
+}
+
+function xrm__gettreeitem(treeId)
+{
+    tree = document.getElementById(treeId);
+    if(tree.currentIndex == -1) {
+        return -1;
+    } else {
+        item = tree.view.getItemAtIndex(tree.currentIndex)
+        return item.id;
+    }
+}
+
+</script>
+
+
+<xul:hbox flex="1">
+    <xar:comment>we don't use xar:data-form or xar:data-input here, because this is typically not an input form</xar:comment>
+    <xar:if condition="$editable">
+        <xul:vbox class="xrm_actionarea">
+            <xar:if condition="!empty($newlink)">
+                <xul:button label="#xarML('Create New')#" oncommand="document.location = '#$newlink#'"/>
+            </xar:if>
+            <xar:if condition="!empty($objectid)">
+                <xul:button label="#xarML('Query')#" oncommand="document.location= '&xar-modurl-dynamicdata-admin-query;&amp;itemid=#$objectid#'"/>
+           </xar:if> 
+        </xul:vbox>
+    </xar:if>
+    
+    <xul:vbox flex="1">
+        <xul:tree id="objectlist" enableColumnDrag="true" flex="1" command="lcmd_edit">
+            <xul:treecols>
+                <xar:foreach in="$properties" key="$name">
+                    <!-- Sorturl #$sorturl#=#$name# -->
+                    <xul:treecol command="lcmd_sort" id="#$name#" flex="1" label="#$properties.$name:label#" persist="width ordinal hidden" />
+                    <xul:splitter class="tree-splitter"/>
+                </xar:foreach>
+            </xul:treecols>
+
+            <xul:treechildren >
+                <xar:foreach in="$items" key="$itemid" value="$fields">
+                    <xul:treeitem id="#$itemid#" >
+                        <xul:treerow >
+                            <xar:foreach in="$properties" key="$name">
+                                <xar:if condition="!empty($fields[$name])">
+                                    <xar:set nonmarkup="no" name="cellvalue"><xar:data-output property="$properties[$name]" value="$fields[$name]" /></xar:set>
+                                    <xul:treecell label="#$cellvalue#"/>
+                                <xar:else/>
+                                    <xul:treecell label=" "/>
+                                </xar:if>
+                            </xar:foreach>
+                        </xul:treerow>
+                    </xul:treeitem>
+                </xar:foreach>
+            </xul:treechildren>
+        </xul:tree>
+        <xar:if condition="$editable">
+            <xul:hbox class="xrm_actionarea" pack="end">
+                <xul:button label="Edit" command="lcmd_edit" key="key_enter" />
+                <xul:button label="Delete" command="lcmd_delete" key="key_delete" />
+            </xul:hbox>
+        </xar:if>
+    </xul:vbox>
+</xul:hbox>
+
+<!--
+<xar:foreach in="$links[$itemid]" value="$option">
+    <xar:if condition="!empty($option['olink'])">
+        #$option['ojoin']# 
+        <a href="#$option['olink']#">
+            #$option['otitle']# 
+        </a>
+    <xar:else />
+        #$option['ojoin']# #$option['otitle']# 
+    </xar:if>
+</xar:foreach>
+-->

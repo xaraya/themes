@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<xul:window id="main"  xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+<xul:vbox flex="1">
+
+<xul:toolbox>
+<xul:toolbar id="nav">
+    <xul:toolbarbutton label="Back"/>
+    <xul:toolbarbutton label="Forward"/>
+      <xul:menubar id="sample-menubar">
+        <xul:menu id="file-menu" label="File">
+          <xul:menupopup id="file-popup">
+            <xul:menuitem label="New"/>
+            <xul:menuitem label="Open"/>
+            <xul:menuitem label="Save"/>
+            <xul:menuseparator/>
+            <xul:menuitem label="Exit"/>
+          </xul:menupopup>
+        </xul:menu>
+        <xul:menu id="edit-menu" label="Edit">
+          <xul:menupopup id="edit-popup">
+            <xul:menuitem label="Undo"/>
+            <xul:menuitem label="Redo"/>
+          </xul:menupopup>
+        </xul:menu>
+      </xul:menubar>
+</xul:toolbar>
+</xul:toolbox>
+    <xul:tabbox flex="1">
+        <xul:tabs >
+            <xul:tab id="first"  label="Site Display" selected="false"/>
+            <xul:tab id="second" label="Sessions and security" selected="true"/>
+            <xul:tab id="third"  label="Multilanguage" selected="false"/>
+        </xul:tabs>
+        <xul:tabpanels id="sheet1" flex="1">
+            <xul:tabpanel >
+                    <xul:label>First Tab</xul:label>
+               
+
+
+            </xul:tabpanel>
+            <xul:tabpanel id="sheet2">
+                    <xul:label>Second Tab</xul:label>
+            </xul:tabpanel>
+            <xul:tabpanel id="sheet3">
+                    <xul:label>Third Tab</xul:label>
+            </xul:tabpanel>
+        </xul:tabpanels>
+    </xul:tabbox>
+</xul:vbox>
+</xul:window>

@@ -1,0 +1,99 @@
+<xar:comment>
+    License: GPL http://www.gnu.org/copyleft/gpl.html 
+</xar:comment>
+
+<xul:vbox>
+    <xar:if condition="!empty($content)">
+        <xul:groupbox>
+            <xul:caption>
+                <xar:mlstring>Edit Items</xar:mlstring>
+            </xul:caption>
+            
+            <xul:grid>
+                <xul:columns>
+                    <xul:column />
+                    <xul:column />
+                    <xul:column />
+                    <xul:column />
+                    <xul:column />
+                    <xul:column />
+                </xul:columns>
+
+                <xul:rows>
+                    <xul:row>
+                        <xul:label class="header"><xar:mlstring>Title</xar:mlstring></xul:label>
+                        <xul:label class="header"><xar:mlstring>URL</xar:mlstring></xul:label>
+                        <xul:label class="header"><xar:mlstring>Description</xar:mlstring></xul:label>
+                        <xul:label class="header"><xar:mlstring>Delete</xar:mlstring></xul:label>
+                        <xul:label class="header"><xar:mlstring>Child</xar:mlstring></xul:label>
+                        <xul:label class="header"><xar:mlstring>Insert blank</xar:mlstring></xul:label>
+                    </xul:row>
+                    <xar:loop name="$contentlines">
+                        <xul:row>
+                            <xul:textbox name="linkname[#$loop:index#]" id="linkname_#$loop:index#" maxlength="255" value="#xarVarPrepForDisplay($loop:item.1)#" />
+                            <xul:textbox name="linkurl[#$loop:index#]" id="linkurl_#$loop:index#" maxlength="255" value="#xarVarPrepForDisplay($loop:item.0)#" />
+                            <xul:textbox type="text" name="linkdesc[#$loop:index#]" id="linkdesc_#$loop:index#" maxlength="255" value="#$loop:item.2#" />
+                            <xul:checkbox type="checkbox" name="linkdelete[#$loop:index#]" id="linkdelete_#$loop:index#" value="1" />
+                            <xar:if condition="empty($loop:item[3])">
+                                <xul:checkbox type="checkbox" name="linkchild[#$loop:index#]" id="linkchild_#$loop:index#" value="1" />
+                            <xar:else />
+                                <xul:checkbox type="checkbox" name="linkchild[#$loop:index#]" id="linkchild_#$loop:index#" value="1" checked="true" />
+                            </xar:if>
+                            <xul:checkbox type="checkbox" name="linkinsert[#$loop:index#]" id="linkinsert_#$loop:index#" value="1" class="xar-norm" />
+                        </xul:row>
+                    </xar:loop>
+                </xul:rows>
+            </xul:grid>
+        </xul:groupbox>
+    </xar:if>
+    
+    <xul:groupbox>
+        <xul:caption>
+            <xar:mlstring>Add a New Menu Item</xar:mlstring>
+        </xul:caption>
+
+        <xul:label class="fieldlabel"><xar:mlstring>Title</xar:mlstring></xul:label>
+        <xul:textbox type="text" name="new_linkname" id="new_linkname" maxlength="255" />
+        
+        <xul:label class="fieldlabel"><xar:mlstring>URL</xar:mlstring></xul:label>
+        <xul:textbox type="text" name="new_linkurl" id="new_linkurl" maxlength="255" />
+
+        <xul:label class="fieldlabel">
+            <xar:mlstring>Description</xar:mlstring> ( <xar:mlstring>Optional</xar:mlstring>)
+        </xul:label>
+        <xul:textbox type="text" name="new_linkdesc" id="new_linkdesc" maxlength="255" />
+    </xul:groupbox>
+
+    <xul:groupbox>
+        <xul:caption><xar:mlstring>Menu Extras</xar:mlstring></xul:caption>
+
+        <xar:if condition="!empty($displaymodules)">
+            <xul:checkbox type="checkbox" value="1" name="displaymodules" id="displaymodules" checked="true" label="#xarML('Display modules')#" />
+        <xar:else />
+            <xul:checkbox type="checkbox" value="1" name="displaymodules" id="displaymodules" label="#xarML('Display modules')#"/>
+        </xar:if>
+
+        <xar:if condition="!empty($showlogout)">
+            <xul:checkbox type="checkbox" value="1" name="showlogout" id="showlogout" checked="true" label="#xarML('Display Non-Admin User Logout')#" />
+        <xar:else />
+            <xul:checkbox type="checkbox" value="1" name="showlogout" id="showlogout" label="#xarML('Display Non-Admin User Logout')#"/>
+        </xar:if>
+
+        <xar:if condition="!empty($displayprint)">
+            <xul:checkbox type="checkbox" value="1" name="displayprint" id="displayprint" checked="true" label="#xarML('Display Print Link')#" />
+        <xar:else />
+            <xul:checkbox type="checkbox" value="1" name="displayprint" id="displayprint" label="#xarML('Display Print Link')#"/>
+        </xar:if>
+
+        <xar:if condition="!empty($displayrss)">
+            <xul:checkbox type="checkbox" value="1" name="displayrss" id="displayrss" checked="true" label="#xarML('Display RSS Link')#" />
+        <xar:else />
+            <xul:checkbox type="checkbox" value="1" name="displayrss" id="displayrss" label="#xarML('Display RSS Link')#"/>
+        </xar:if>
+
+        <xar:if condition="!empty($displaymodules)">
+            <xul:label class="fieldlabel" control="marker"><xar:mlstring>Marker</xar:mlstring></xul:label>
+            <xul:textbox type="text" name="marker" id="marker" value="#xarVarPrepForDisplay($marker)#" size="20" />
+        </xar:if>
+    </xul:groupbox>
+</xul:vbox>

@@ -1,0 +1,59 @@
+<xul:vbox flex="1">
+    <xul:groupbox>
+        <xul:caption label="#xarML('Sessions and Security')#"/>
+        
+        <xar:if condition="xarConfigGetVar('Site.Core.EnableSecureServer')">
+            <xul:checkbox type="checkbox" name="secureserver" id="secureserver" value="1" checked="true" label="#xarML('Configure to run on Secure Server')#"/>
+        <xar:else />
+            <xul:checkbox type="checkbox" name="secureserver" id="secureserver" value="1" label="#xarML('Configure to run on Secure Server')#"/>
+        </xar:if>
+
+        <xul:label class="fieldlabel" control="securitylevel"><xar:mlstring>Security Level</xar:mlstring></xul:label>
+        <xul:hbox>
+            <xul:menulist name="securitylevel" id="securitylevel" size="1">
+                <xul:menupopup>
+                    <xar:if condition="xarConfigGetVar('Site.Session.SecurityLevel') eq 'High'">
+                        <xul:menuitem value="High" selected="true" label="#xarML('High')#"/>
+                        <xul:menuitem value="Medium" label="#xarML('Medium')#"/>
+                        <xul:menuitem value="Low" label="#xarML('Low')#"/>
+                    <xar:elseif condition="xarConfigGetVar('Site.Session.SecurityLevel') eq 'Medium'" />
+                        <xul:menuitem value="High"  label="#xarML('High')#"/>
+                        <xul:menuitem value="Medium" selected="true" label="#xarML('Medium')#"/>
+                        <xul:menuitem value="Low" label="#xarML('Low')#"/>
+                    <xar:elseif condition="xarConfigGetVar('Site.Session.SecurityLevel') eq 'Low'" />
+                        <xul:menuitem value="High"  label="#xarML('High')#"/>
+                        <xul:menuitem value="Medium" label="#xarML('Medium')#"/>
+                        <xul:menuitem value="Low" selected="true" label="#xarML('Low')#"/>
+                    </xar:if>
+                </xul:menupopup>
+            </xul:menulist>
+            <xul:spacer flex="1"/>
+        </xul:hbox>
+ 
+        <xar:if condition="xarConfigGetVar('Site.Session.SecurityLevel') eq 'Medium'">
+            <xul:label class="fieldlabel" control="sessionduration"><xar:mlstring>Session Duration (In Days)</xar:mlstring></xul:label>
+            <xul:textbox type="text" name="sessionduration" value="#xarConfigGetVar('Site.Session.Duration')#" size="5" maxlength="3" />
+        </xar:if>
+
+        <xul:label class="fieldlabel" control="sessiontimeout"><xar:mlstring>Session Inactivity Time Out</xar:mlstring></xul:label>
+        <xul:textbox type="text" name="sessiontimeout" value="#xarConfigGetVar('Site.Session.InactivityTimeout')#" size="5" maxlength="3" />
+
+        <xul:label class="fieldlabel" control="authmodules"><xar:mlstring>Authentication Modules</xar:mlstring></xul:label>
+        <xar:if condition="!empty($authmodules) and count($authmodules) gt 1">
+            <xar:set name="size">count($authmodules)</xar:set>
+            <xul:menulist name="authmodules" id="authmodules" size="#$size#">
+                <xul:menupopup>
+                    <xar:foreach in="$authmodules" value="$authmodule">
+                        <xul:menuitem value="#$authmodule#" label="#$authmodule#"/>
+                    </xar:foreach>
+                </xul:menupopup>
+            </xul:menulist>
+            <input type="hidden" name="authmodule_order" id="authmodule_order" value="" />
+            <input type="image" src="#xarTplGetImage('up.gif','blocks')#" onclick="return xar_base_reorder('authmodules', true, 'authmodule_order');" title="#xarML('Move Up')#" />
+            <input type="image" src="#xarTplGetImage('down.gif','blocks')#" onclick="return xar_base_reorder('authmodules', false, 'authmodule_order');" title="#xarML('Move Down')#" />
+        <xar:else/>
+            <xul:label>#$authmodules[0]#</xul:label>
+        </xar:if>
+    </xul:groupbox>
+</xul:vbox>
+

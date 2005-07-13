@@ -1,0 +1,60 @@
+
+<xul:vbox flex="1">
+    <xul:groupbox >
+        <xul:caption label="#xarML('Legacy configuration')#" />
+        
+        <xar:if condition="xarConfigGetVar('Site.Core.LoadLegacy')">
+            <xul:checkbox type="checkbox" name="loadlegacy" id="loadlegacy" value="1" checked="true" label="#xarML('Load Legacy Support')#" />
+        <xar:else />
+            <xul:checkbox type="checkbox" name="loadlegacy" id="loadlegacy" value="1" label="#xarML('Load Legacy Support')#"/>
+        </xar:if>
+    </xul:groupbox>
+
+    <xul:groupbox>
+        <xul:caption label="#xarML('Proxy Configuration')#"/>
+
+        <xul:description width="0">
+            <xar:mlstring>
+                If your webserver only allows outgoing network connections 
+                (for retrieving headlines, checking links etc.) via a proxy server, 
+                specify its hostname and port number here.
+            </xar:mlstring>
+        </xul:description>
+
+        <xul:label class="fieldlabel" control="proxyhost"><xar:mlstring>Proxy Server</xar:mlstring></xul:label>
+        <xul:textbox type="text" name="proxyhost" value="#xarModGetVar('base','proxyhost')#" size="30" maxlength="100" />
+
+        <xul:label class="fieldlabel" control="proxyport"><xar:mlstring>Proxy Port</xar:mlstring></xul:label>
+        <xul:textbox type="text" name="proxyport" value="#xarModGetVar('base','proxyport')#" size="5" maxlength="10" />
+    </xul:groupbox>
+
+    <xul:groupbox>
+        <xul:caption label="#xarML('Timezone Configuration')#"/>
+        <xul:label class="fieldlabel" control="defaulttimezone"><xar:mlstring>Default Timezone</xar:mlstring></xul:label>
+        <xar:set name="timezone">#xarConfigGetVar('Site.Core.TimeZone')#</xar:set>
+        <xul:hbox>
+            <xar:data-input type="timezone" name="defaulttimezone" id="defaulttimezone" value="$timezone" />
+            <xul:spacer flex="1"/>
+        </xul:hbox>
+    </xul:groupbox>
+    
+    <xul:groupbox>
+        <xul:caption label="#xarML('External Editors')#"/>
+        
+        <xul:label class="fieldlabel" control="editor"><xar:mlstring>WYSIWYG Editors</xar:mlstring></xul:label>
+        <xul:hbox>
+            <xul:menulist name="editor" id="editor" size="1">
+                <xul:menupopup>
+                    <xar:loop name="$editors">
+                        <xar:if condition="$editor eq $loop:item['displayname']">
+                            <xul:menuitem value="#$loop:item['displayname']#" selected="true" label="#$loop:item['displayname']#"/>
+                        <xar:else />
+                            <xul:menuitem value="#$loop:item['displayname']#" label="#$loop:item['displayname']#"/>
+                        </xar:if>
+                    </xar:loop>
+                </xul:menupopup>
+            </xul:menulist>
+            <xul:spacer flex="1"/>
+        </xul:hbox>
+    </xul:groupbox>
+</xul:vbox>

@@ -1,0 +1,36 @@
+<xar:if condition="isset($menustyle)">
+	<description value="#$menustyle#"/>
+</xar:if>
+
+<!-- NEW XUL WAY - MORE ROBUST LOGIC - MARKING TRUELY ACTIVE LINKS NOW -->
+
+<xul:tree hidecolumnpicker="true" minwidth="100" flex="1" onselect="return processAdminPanelClick(this);">
+  <!-- Define the columns in this view -->
+  <xul:treecols>
+      <xul:treecol id="adminpanels" label="Modules" primary="true" flex="1"/>
+  </xul:treecols>
+  
+  <xul:treechildren>
+    <xul:treeitem container="true" open="true">
+      <xul:treerow>
+        <xul:treecell label="Panels"/>
+      </xul:treerow>
+
+      <xul:treechildren>
+        <!-- Loop through all module labels -->
+        <xar:loop name="$adminmods">
+          <xar:if condition="$link"> 
+            <xul:treeitem container="true">
+              <!-- label is always there -->
+              <xul:treerow>
+                <xul:treecell id="#$label#" label="#$label#"/>
+              </xul:treerow>
+            </xul:treeitem> 
+          </xar:if>   
+        </xar:loop>
+      </xul:treechildren>
+    </xul:treeitem>
+  </xul:treechildren>
+</xul:tree>
+<!-- Logout -->
+<!-- [<a href="#$logouturl#">#$logoutlabel#</a>] -->

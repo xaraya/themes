@@ -1,0 +1,39 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+
+
+
+<xul:vbox flex="1" >
+    <spacer flex="1"/>
+    <xul:hbox >
+        <spacer flex="1"/>
+        <xul:vbox class="xar-mod-body" >
+            <xul:vbox>
+                <xul:label class="xar-mod-title"><xar:mlstring>Request Lost Password</xar:mlstring></xul:label>
+                <xul:description >
+                    <xar:mlstring>Enter your username or your e-mail address to retrieve your account information.</xar:mlstring>
+                </xul:description>
+                <form id="requestpasswd" action="&xar-modurl-roles-user-lostpassword;" method="post" enctype="application/x-www-form-urlencoded">
+                    <input type="hidden" name="authid" id="authid" value="#$authid#" />
+                    <input type="hidden" name="phase" id="phase" value="send" />
+                    <xul:hbox flex="1">
+                        <xul:vbox class="xrm_actions">
+                            <xul:button type="submit" value="#$emaillabel#">#$emaillabel#"</xul:button>
+                        </xul:vbox>
+                        <xul:vbox class="xrm_labels">
+                            <xul:label control="username"><xar:mlstring>Username</xar:mlstring></xul:label>
+                            <xul:label for="email"><xar:mlstring>E-mail address</xar:mlstring>:</xul:label>
+                        </xul:vbox>
+                        <xul:vbox flex="1" class="xrm_fields" >
+                            <xul:textbox flex="1" type="text" name="uname" id="username" maxlength="255" size="20" />
+                            <xul:hbox>
+                                <xul:textbox type="text" name="email" id="email" maxlength="255" size="25" />
+                            </xul:hbox>
+                        </xul:vbox>
+                    </xul:hbox>
+                </form>
+            </xul:vbox>
+        </xul:vbox>
+        <spacer flex="1"/>
+    </xul:hbox>
+    <spacer flex="4"/>
+</xul:vbox>

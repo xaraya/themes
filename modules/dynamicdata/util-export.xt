@@ -1,0 +1,31 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+
+<script>
+    function gotoTarget(baselink)
+    {
+        var win = document.getElementById('xrm_module');
+        try {
+            if(win.id == 'xrm_module') {
+                baselink= baselink + '&amp;pageName=module';
+            }
+        } catch(e) {}
+        document.location = baselink;
+    }
+    </script>
+<xul:vbox flex="1" class="xar-mod-body">
+    <xul:label class="xar-mod-title">#$label#</xul:label>
+
+    <xul:hbox flex="1" >
+        <xul:vbox class="xrm_actionarea">
+            <xar:if condition="!empty($formlink)">
+                <xul:button id="formexport" label="#xarML('Export items to browser')#" oncommand="gotoTarget('#$formlink#');"/>
+            </xar:if>
+            <xar:if condition="!empty($filelink)">
+                <xul:button id="fileexport" label="#xarML('Export items to file')#" oncommand="gotoTarget('#$filelink#');"/>
+            </xar:if>
+        </xul:vbox>
+        <!-- we would like to use a xul:textbox here, but i can't get the whitespace right for it -->
+        <textarea style="width: 100%;" cols="80">#$xml#</textarea>
+    </xul:hbox>
+
+</xul:vbox>

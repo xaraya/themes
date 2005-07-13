@@ -1,0 +1,114 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+
+<form action="&xar-modurl-themes-admin-updateconfig;" method="post" enctype="application/x-www-form-urlencoded">
+    <xul:vbox class="xar-mod-body">
+        <xul:label class="xar-mod-title"><xar:mlstring>Modify Configuration</xar:mlstring></xul:label>
+        <input type="hidden" name="authid" id="authid" value="#$authid#" />
+        
+        <xul:hbox>
+            <xul:vbox>
+                <xul:button type="submit" value="#$submitbutton#" label="#$submitbutton#"/>
+            </xul:vbox>
+            
+            <xul:groupbox>
+                <xul:vbox>
+                    <xul:groupbox>
+                        <xul:caption label="#xarML('Site display options')#"/>
+                        
+                        <xul:hbox>
+                            <xul:label class="fieldlabel" control="defaulttheme"><xar:mlstring>Default Theme</xar:mlstring></xul:label>
+                            <xul:menulist name="defaulttheme" id="defaulttheme" size="1">
+                                <xul:menupopup>
+                                    <xar:loop name="$themes">
+                                        <xar:if condition="$loop:item['directory'] eq $defaulttheme">
+                                            <xul:menuitem value="#$loop:item['regid']#" selected="true" label="#$loop:item['name']#"/>
+                                        <xar:else />
+                                            <xul:menuitem value="#$loop:item['regid']#" label="#$loop:item['name']#"/>
+                                        </xar:if>
+                                    </xar:loop>
+                                </xul:menupopup>
+                            </xul:menulist>
+                        </xul:hbox>
+
+                        <xul:label class="fieldlabel" control="sitename"><xar:mlstring>Site Name</xar:mlstring></xul:label>
+                        <xul:textbox type="text" name="sitename" id="sitename" value="#xarModGetVar('themes', 'SiteName', 1)#" size="30" maxlength="100" />
+                        
+                        <xul:label class="fieldlabel" control="slogan"><xar:mlstring>Site Slogan</xar:mlstring></xul:label>
+                        <xul:textbox type="text" name="slogan" id="slogan" value="#xarModGetVar('themes', 'SiteSlogan', 1)#" size="30" maxlength="100" />
+                        
+                        <xul:label class="fieldlabel" control="copyright"><xar:mlstring>Copyright</xar:mlstring></xul:label>
+                        <xul:textbox type="text" name="copyright" id="copyright" value="#xarModGetVar('themes', 'SiteCopyRight', 1)#" size="30" maxlength="100" />
+                        
+                        #xarVarDelCached('Mod.Variables.themes','SiteCopyRight')#
+                        <xul:label class="fieldlabel" control="footer"><xar:mlstring>Footer Note</xar:mlstring></xul:label>
+                        <xul:textbox multiline="true" name="footer" id="footer" cols="60" rows="5" class="xar-norm" label="#xarModGetVar('themes', 'SiteFooter', 1)#"/>
+                    </xul:groupbox>
+                    <xul:groupbox>
+                        #xarVarDelCached('Mod.Variables.themes','SiteFooter')#
+                        <xul:caption label="#xarML('Page Title Options')#"/>
+                        
+                        <xul:label class="fieldlabel" control="separator"><xar:mlstring>Page Title Separator</xar:mlstring></xul:label>
+                        <xul:textbox type="text" name="separator" id="separator" value="#xarModGetVar('themes', 'SiteTitleSeparator', 1)#" size="10" maxlength="15" />
+                        
+                        <xul:hbox>
+                            <xul:label class="fieldlabel" control="pagetitle"><xar:mlstring>Page Title Order</xar:mlstring></xul:label>
+                            <xul:menulist name="pagetitle" id="pagetitle" size="1">
+                                <xul:menupopup>
+                                    <xar:set name="sitetitleorder">xarModGetVar('themes', 'SiteTitleOrder')</xar:set>
+                                    <xar:set name="defaultselected">($sitetitleorder == 'default') ? 'true' : 'false'</xar:set>
+                                    <xar:set name="spselected">($sitetitleorder == 'sp') ? 'true' : 'false'</xar:set>
+                                    <xar:set name="mpsselected">($sitetitleorder == 'mps') ? 'true' : 'false'</xar:set>
+                                    <xar:set name="pmsselected">($sitetitleorder == 'pms') ? 'true' : 'false'</xar:set>
+                                    <xar:set name="toselected">($sitetitleorder == 'tos') ? 'true' : 'false'</xar:set>
+                                    <xar:set name="themeselected">($sitetitleorder == 'theme') ? 'true' : 'false'</xar:set>
+                                    
+                                    <xul:menuitem value="default" selected="#$defaultselected#" label="#xarML('Site Name - Module Name - Page Name')#"/>
+                                    <xul:menuitem value="sp" selected="#$spselected#" label="#xarML('Site Name - Page Name')#"/>
+                                    <xul:menuitem value="mps" selected="#$mpsselected#" label="#xarML('Module Name - Page Name - Site Name')#"/>
+                                    <xul:menuitem value="pms" selected="#$pmsselected#" label="#xarML('Page Name - Module Name - Site Name')#"/>
+                                    <xul:menuitem value="to" selected="#$toselected#" label="#xarML('Page Name')#"/>
+                                    <xul:menuitem value="theme" selected="#$themeselected#" label="#xarML('Theme Driven')#"/>
+                                </xul:menupopup>
+                            </xul:menulist>
+                        </xul:hbox>
+                    </xul:groupbox>
+                    <xul:groupbox>
+                        <xul:caption label="#xarML('Template Debugging options')#"/>
+                        
+                        <xar:if condition="xarConfigGetVar('Site.BL.CacheTemplates')">
+                            <xar:if condition="xarModGetVar('themes', 'ShowPHPCommentBlockInTemplates')">
+                                <xul:checkbox type="checkbox" name="showphpcbit" id="showphpcbit" value="1" checked="true" label="#xarML('Show php comment block header in compiled templates')#"/>
+                            <xar:else />
+                                <xul:checkbox type="checkbox" name="showphpcbit" id="showphpcbit" value="1" label="#xarML('Show php comment block header in compiled templates')#"/>
+                            </xar:if>
+                        </xar:if>
+                
+                        <xar:if condition="xarModGetVar('themes', 'ShowTemplates')">
+                          <xul:checkbox type="checkbox" name="showtemplates" id="showtemplates" value="1" checked="true" label="#xarML('Show template filenames in HTML comments')#"/>
+                        <xar:else />
+                          <xul:checkbox type="checkbox" name="showtemplates" id="showtemplates" value="1"  label="#xarML('Show template filenames in HTML comments')#"/>
+                        </xar:if>
+
+                        <xar:if condition="xarConfigGetVar('Site.BL.CacheTemplates')">
+                            <xul:checkbox type="checkbox" name="cachetemplates" id="cachetemplates" value="1" checked="true" label="#xarML('Cache templates')#" />
+                        <xar:else/>
+                            <xul:checkbox type="checkbox" name="cachetemplates" id="cachetemplates" value="1" label="#xarML('Cache templates')#" />
+                        </xar:if>
+                        
+                        <xar:if condition="xarModGetVar('themes', 'var_dump')">
+                            <xul:checkbox type="checkbox" name="var_dump" id="var_dump" value="1" checked="true" label="#xarML('Debug Templates by Showing Variables Available')#"/>
+                        <xar:else/>
+                            <xul:checkbox type="checkbox" name="var_dump" id="var_dump" value="1" label="#xarML('Debug Templates by Showing Variables Available')#"/>
+                        </xar:if>
+                        
+                        <xar:if condition="xarThemeIsAvailable('atom')">
+                            <!-- This should be moved if we ever fully support the atom spec -->
+                            <xul:label class="fieldlabel" control="AtomTag"><xar:mlstring>Atom Tag</xar:mlstring></xul:label>
+                            <xul:textbox type="text" name="AtomTag" id="AtomTag" value="#xarModGetVar('themes', 'AtomTag', 1)#" size="30" maxlength="100" />
+                        </xar:if>
+                    </xul:groupbox>
+                </xul:vbox>
+            </xul:groupbox>
+        </xul:hbox>
+    </xul:vbox>
+</form>

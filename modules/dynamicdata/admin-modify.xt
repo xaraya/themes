@@ -1,0 +1,57 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+
+<xar:set name="isupload">#$object:upload#</xar:set>
+<xar:if condition="!empty($isupload)">
+    <xar:set name="enc_type">'multipart/form-data'</xar:set>
+<xar:else/> 
+    <xar:set name="enc_type">'application/x-www-form-urlencoded'</xar:set>
+</xar:if>
+
+<xul:vbox flex="1" class="xar-mod-body">
+    <xul:label class="xar-mod-title">
+        <xar:ml>
+            <xar:mlstring>Modify Item #(1) in #(2)</xar:mlstring>
+            <xar:mlvar>#$object:itemid#</xar:mlvar>
+            <xar:mlvar>#$object:label#</xar:mlvar>
+        </xar:ml>
+    </xul:label>
+    <xul:hbox >
+        <form method="POST" action="&xar-modurl-dynamicdata-admin-update;" enctype="#$enc_type#">
+            <input type="hidden" name="authid" id="authid" value="#$authid#" />
+            <input type="hidden" name="modid" id="modid" value="#$object:moduleid#" />
+            <input type="hidden" name="itemtype" id="itemtype" value="#$object:itemtype#" />
+            <input type="hidden" name="join" id="join" value="#$object:join#" />
+            <input type="hidden" name="table" id="table" value="#$object:table#" />
+            <input type="hidden" name="itemid" id="itemid" value="#$object:itemid#" />
+
+            <xul:hbox>
+                <xul:vbox class="xrm_actionarea">
+                    <!-- <input type="submit" name="preview" value="#xarML('Preview')#" /> -->
+                    <xul:button type="submit" value="#xarML('Update')#" label="#xarML('Update')#"/>
+
+                </xul:vbox>
+                <xul:vbox>
+                    <xar:data-form object="$object" />
+                    <xul:hbox class="xrm_actionarea" pack="end">
+                        <xar:if condition="!empty($objectid) and $objectid eq 2">
+                            <xul:button label="#xarML('Edit validation')#" oncommand="document.location='&xar-modurl-dynamicdata-admin-showpropval;&amp;itemid=#$itemid#'"/>
+                        </xar:if>
+                        <xar:if condition="!empty($objectid) and $objectid eq 1">
+                            <xul:button label="#xarML('View items')#" oncommand="document.location='&xar-modurl-dynamicdata-admin-view;&amp;itemid=#$itemid#'"/>
+                            <xul:button label="#xarML('Modify Dynamic Properties')#" oncommand="document.location='&xar-modurl-dynamicdata-admin-modifyprop;&amp;itemid=#$itemid#'"/>
+                            <xul:button label="#xarML('Export Object Definition to XML')#" oncommand="document.location='&xar-modurl-dynamicdata-util-export;&amp;objectid=#$itemid#'"/>
+                        </xar:if>
+                    </xul:hbox>
+                </xul:vbox>
+            </xul:hbox>
+        </form>
+    </xul:hbox>
+
+
+
+    
+    <xul:vbox flex="1">
+        #$hooks#
+    </xul:vbox>
+</xul:vbox>
+
