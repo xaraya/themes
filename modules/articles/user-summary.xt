@@ -1,0 +1,18 @@
+<div class="xar-norm" style="padding: 3px;">
+    <h1><a href="#$link#">#$title#</a></h1>
+    <xar:if condition="isset($author)">
+    <p>#$author#</p>
+    </xar:if>
+    <xar:if condition="isset($date)">
+    <p>
+        <xar:ml>
+            <xar:mlstring>#(1) #(2)</xar:mlstring>
+            <xar:mlvar>#xarLocaleGetFormattedDate('long',$date)#</xar:mlvar>
+            <xar:mlvar>#xarLocaleGetFormattedTime('long',$date)#</xar:mlvar>
+        </xar:ml>
+    </p>
+    </xar:if>
+    <xar:if condition="isset($summary)">
+    <p>#$summary#</p>
+    </xar:if>
+</div>
