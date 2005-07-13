@@ -1,0 +1,19 @@
+<div class="articleview" style="border-bottom: 1px #D6CE7B solid; padding-bottom: 10px;">
+    <h4>
+        #$date# | 
+        <a href="#$link#" title="Read More">
+            #$title#
+        </a>
+    </h4>
+    <div style="margin-top: -15px;">
+        <a href="#$link#" title="read all of '#$title#'" class="plink">
+            Permalink
+        </a>
+        <a href="#$link##comments" class="comments">
+            [#$comments#]
+        </a>
+    </div>
+	<div style="text-align: justify;">
+        #$summary#
+    </div>
+</div>

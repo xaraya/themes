@@ -1,0 +1,68 @@
+<?xar type="page" ?>
+<xar:blocklayout version="1.0" content="text/html" xmlns:xar="http://xaraya.com/2004/blocklayout">
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+	<xar:blockgroup name="header" id="header" />
+	<link rel="icon" href="favicon.ico" />
+	<title>#$tpl:pageTitle#</title> 
+	<base href="&xar-baseurl;index.php" />
+	<style type="text/css">
+        @import url(&xar-baseurl;#xarTplGetThemeDir()#/style/style.css) screen,projection;
+    </style>
+    <xar:style scope="common" />
+    <xar:additional-styles />
+	<xar:comment> Head JavaScript </xar:comment>
+	<xar:base-render-javascript position="head" />
+	</head>
+	<body onload="javascript:window.scrollbars.visible=false;" id="wyome">
+    <div id="description">
+        <h2>
+            <a href="http://www.wyome.com">Wyome</a> provides custom Xaraya Design and Development Services.
+        </h2>
+        <p>This page is styled in <a href="http://www.mozilla.com">Mozilla</a> and other modern standards compliant browsers.</p>
+    </div>
+    <div id="topcontainer"></div>
+    <div id="container">
+        <div id="logo"></div>
+        <div id="summarycontainer">
+            <xar:module class="modulespace" main="true" />
+            <xar:blockgroup name="right" id="right" />
+        </div>
+        <div id="modulescontainer">
+            <div id="modulessummary">
+                <h2>Module Download Summary</h2>
+                <a href="javascript:window.scrollBy(-2000,0)" title="Home">Back</a>
+                <xar:module main="false" module="articles" ptid="9" />
+            </div>
+        </div>
+        <div id="themescontainer">
+            <div id="themessummary">
+                <h2>Theme Download Summary</h2>
+                <a href="javascript:window.scrollBy(-2000,0)" title="Home">Back</a>
+                <xar:module main="false" module="articles" ptid="10" />
+            </div>
+        </div>
+        <div id="docscontainer">
+            <div id="docssummary">
+                <h2>Documentation Summary</h2>
+                <a href="javascript:window.scrollBy(-2000,0)" title="Home">Back</a>
+                <xar:module main="false" module="articles" ptid="11" />
+            </div>
+        </div>
+        <div id="navcontainer">
+        <xar:set name="url">xarServerGetCurrentURL()</xar:set>
+            <ul id="navlist">
+                <li><a href="#xarModUrl()#" id="current" title="Back to the main page">Home</a></li>
+                <li><a href="javascript:window.scrollBy(800,0)" title="Modules">Modules</a></li>
+                <li><a href="javascript:window.scrollBy(1300,0)" title="Themes">Themes</a></li>
+                <li><a href="javascript:window.scrollBy(1600,0)" title="Documentation">Documentation</a></li>
+                <li><a href="#xarModUrl('sitecontact', 'user', 'main')#" title="Contact Us">Contact</a></li>
+            </ul>
+        </div>
+
+    </div>
+	<xar:base-render-javascript position="body" />
+	</body>
+	</html>
+</xar:blocklayout>

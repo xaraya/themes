@@ -1,0 +1,31 @@
+<form action="&xar-modurl-roles-user-login;" method="post">
+    <p>
+        <input type="hidden" name="redirecturl" id="returnurl#$blockid#" value="#$return_url#" />
+        <label for="uname#$blockid#">
+            <strong>
+                <xar:mlstring>
+                    Username: 
+                </xar:mlstring>
+            </strong>
+        </label>
+        <input class="xar-fullwidth" type="text" name="uname" id="uname#$blockid#" maxlength="64" size="10" />
+    </p>
+    <p>
+        <label for="pass#$blockid#">
+            <strong>
+                <xar:mlstring>
+                    Password: 
+                </xar:mlstring>
+            </strong>
+        </label>
+        <input class="xar-fullwidth" type="password" name="pass" id="pass#$blockid#" maxlength="64" size="10" />
+    </p>
+    <p>
+        <xar:set name="loginvalue">
+            <xar:mlstring>
+                Log in
+            </xar:mlstring>
+        </xar:set>
+        <input type="submit" value="#$loginvalue#" />
+    </p>
+</form>

@@ -1,0 +1,13 @@
+<div class="article-view" style="border-bottom: 1px #D6CE7B solid; padding-bottom: 10px;">
+	<h3><span>#$title#</span></h3>
+	<p>
+	    #$summary#
+	</p>
+	<p>
+        <a href="#$link#" title="Read More">
+            <xar:mlstring>
+                Read Entire Tutorial
+            </xar:mlstring>
+        </a>
+    </p>
+</div>

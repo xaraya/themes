@@ -1,0 +1,441 @@
+/*
+ * Parts of this CSS file is credited to http://www.csszengardens
+ * for inspiration and help with some positioning (top image and logo image).
+ * Other parts go to the Xaraya team for the basic components.
+*/
+
+body {  
+	font: normal 12px/14px verdana, arial, sans serif; 
+	color: #000; 
+	background: #FFFCFB; 
+	margin: 0; 
+	padding: 0;
+	}
+
+#description {
+    display: none;
+    }
+
+#topcontainer {
+	width: 2563px;
+	background: #D8AA5C;
+	margin: 0px;
+	padding: 22px 0 0 0;
+	}
+
+#container { 
+	width: auto;
+	margin: 0px;
+	padding: 0px;
+	height: 471px;
+	}
+
+    #logo {
+		background: url(../images/background.jpg) no-repeat top left;
+		width: 500px;
+		height: 500px;
+		padding: 0 0 0 201px;
+		margin: 0;
+        }
+	#summarycontainer{
+		position:absolute;
+		top: 22px;
+		left: 500px;
+		clear: both;
+		width: 500px;
+		height: 500px;
+		padding-left: 10px;
+		border-left: thin solid #000;
+		}
+
+		#summary {
+			width: 400px;
+			padding-left: 25px;
+			}
+			#summary h2{
+				margin-left: -20px;
+				font: bold small-caps 22px/26px verdana, arial, sans serif; 
+				font-style: italic;
+				color: #D8AA5C; 
+				} 
+		.login {
+			width: 400px;
+			padding-left: 25px;
+			}
+			.login h2{
+				margin-left: -20px;
+				font: bold small-caps 22px/26px verdana, arial, sans serif; 
+				font-style: italic;
+				color: #D8AA5C; 
+				}
+
+	#modulescontainer{
+		position:absolute;
+		top: 22px;
+		left: 1050px;
+		clear: both;
+		width: 500px;
+		height: 500px;
+		padding-left: 10px;
+		border-left: thin solid #000;
+		}
+
+		#modulessummary {
+			width: 400px;
+			padding-left: 25px;
+			}
+			#modulessummary h2{
+				margin-left: -20px;
+				font: bold small-caps 22px/26px verdana, arial, sans serif; 
+				font-style: italic;
+				color: #D8AA5C; 
+				} 
+	#themescontainer{
+		position:absolute;
+		top: 22px;
+		left: 1550px;
+		clear: both;
+		width: 500px;
+		height: 500px;
+		padding-left: 10px;
+		border-left: thin solid #000;
+		}
+
+		#themessummary {
+			width: 400px;
+			padding-left: 25px;
+			}
+			#themessummary h2{
+				margin-left: -20px;
+				font: bold small-caps 22px/26px verdana, arial, sans serif; 
+				font-style: italic;
+				color: #D8AA5C; 
+				} 
+	#docscontainer{
+		position:absolute;
+		top: 22px;
+		left: 2050px;
+		clear: both;
+		width: 500px;
+		height: 500px;
+		padding-left: 10px;
+		border-left: thin solid #000;
+		border-right: thin solid #000;
+		}
+
+		#docssummary {
+			width: 400px;
+			padding-left: 25px;
+			}
+			#docssummary h2{
+				margin-left: -20px;
+				font: bold small-caps 22px/26px verdana, arial, sans serif; 
+				font-style: italic;
+				color: #D8AA5C; 
+				} 
+
+		#navcontainer
+		{
+			margin: -20px 0 0 0;
+			padding: 0;
+			height: 20px;
+		}
+
+			#navcontainer ul
+			{
+				border: 0;
+				margin: 0;
+				padding: 0;
+				list-style-type: none;
+				text-align: center;
+			}
+
+			#navcontainer ul li
+			{
+				display: block;
+				float: left;
+				text-align: center;
+				padding: 0;
+				margin: 0;
+			}
+
+			#navcontainer ul li a
+			{
+				background: #fff;
+				width: 99px;
+				height: 18px;
+				border-top: 1px solid #000;
+				border-left: 1px solid #000;
+				border-bottom: 1px solid #000;
+				border-right: none;
+				padding: 0;
+				margin: 0 0 0 0;
+				color: #D1A303;
+				text-decoration: none;
+				display: block;
+				text-align: center;
+				font: normal 10px/18px verdana, arial, sans serif;
+			}
+
+			#navcontainer ul li a:hover
+			{
+				color: #000;
+				background: #D8AA5C;
+			}
+
+			#navcontainer a:active
+			{
+				background: #c60;
+				color: #fff;
+			}
+
+p { 
+	font: 12pt/16pt georgia; 
+	margin-top: 0px; 
+	text-align: justify;
+	}
+
+th {
+   font-weight: bold;
+}
+td {
+}
+table {
+	border: 0px;
+/* 	margin: 0px; */
+/* 	padding: 0px; */
+}
+thead {}
+tbody {}
+tfoot {
+}
+
+blockquote {
+   background: #fff; 
+   color: #000;
+   font-size: 10px;
+   padding: 2em;
+   border: 1px solid #000;
+}
+code {
+   background: #fff; 
+   color: #000;
+   font-size: 10px;
+   padding: 2em;
+   border: 1px solid #000;
+}
+pre {
+   background: #fff; 
+   color: #000;
+   font-size: 10px;
+   padding: 2em;
+   border: 1px solid #000;
+}
+
+input {
+   background-color: #F5F5F5;
+   border-bottom-width: 1px;
+   border-color: #000000;
+   border-left-width: 1px;
+   border-right-width: 1px;
+   border-top-width: 1px;
+   font-weight: bold;
+   text-indent: 2px;
+   font-size: 10px;
+   color: #000;
+}
+button {
+   border: 2px outset #000;
+   background-color: #F5F5F5;
+   font-size: 10px;
+   color: #000;
+}
+select {
+   background-color: #F5F5F5;
+   border-bottom-width: 1px;
+   border-color: #000000;
+   border-left-width: 1px;
+   border-right-width: 1px;
+   border-top-width: 1px;
+   font-size: 10px;
+   font-weight: bold;
+   color: #000;
+}
+textarea {
+   background-color: #F5F5F5;
+   border-bottom-width: 1px;
+   border-color: #000000;
+   border-left-width: 1px;
+   border-right-width: 1px;
+   border-top-width: 1px;
+   font-size: 12px;
+   font-weight: bold;
+   text-indent: 0px;
+   color: #000;
+}
+
+img {
+   border: 0px;
+}
+
+li {
+   color: #000;
+}
+
+ul {
+   margin-bottom: 10px;
+}
+
+.blockcontainer ul
+{
+	margin-left: 0;
+	padding-left: 0;
+	list-style-type: none;
+}
+
+.blockcontainer li a
+{
+	display: block;
+	padding: 3px;
+	width: 190px;
+	background-color: white;
+	font-size: smaller;
+    text-decoration: none;
+}
+
+ol {
+   margin-bottom: 10px;
+}
+
+sup {
+   font-size: 6.5px;
+}
+sub {
+   font-size: 6.5px;
+}
+
+
+/*  THEME SPECIFIC CLASSES */
+
+hr {
+   width:100%;
+   color:#000;
+}
+form {
+}
+checkbox {
+   background-color: transparent;
+   font-weight: normal;
+}
+
+/*  XARAYA REQUIRED INDIVIDUAL CLASSES */
+td.xar-norm {}
+td.xar-alt {}
+
+
+/*  XARAYA REQUIRED ANONYMOUS CLASSES  */
+
+/* No Display for this in this theme */
+.xar-mod-head {
+   display: none;
+}
+
+.xar-mod-title {
+   color: #000; 
+   font-size: 14px;
+   font-weight: bold;
+}
+
+.xar-mod-body {
+	margin: 0px;
+	padding: 0px;
+}
+
+.xar-mod-foot {}
+.xar-alt {background-color: #CACACA; }
+.xar-accent {background-color: #CACACA; }
+.xar-alt-outline {border: 1px solid #CACACA; }
+.xar-accent-outline {border: 1px solid #CACACA; }
+.xar-norm-outline {border: 1px solid #CACACA; }
+.xar-norm {}
+.xar-sub {font-size: smaller;}
+
+.xar-title {
+   font-weight: bold;
+   font-size: 12px;
+}
+
+.xar-error {
+   color: #000;
+}
+
+
+/* Start Theme Specific Classes */
+
+p { 
+    color: #000;
+    font-size: 12px;
+}
+
+a:link { 
+	text-decoration: underline;
+	color: #000;
+}
+
+a:visited {
+    color: #000;
+	border: none;
+	text-decoration: underline;
+}
+
+a:hover, a:active { 
+	color: #000;
+    text-decoration: underline overline;
+}
+
+h1 {
+	color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: inherit;
+}
+
+h2 {
+	color: #000;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: inherit;
+}
+h3 {
+	color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: inherit;
+}
+h4 {
+	color: #000; 
+    font-size: 13px;
+    font-weight: bold;
+    font-style: inherit;
+}
+h5, h6 {
+	color: #000;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: inherit;
+}
+
+/* Articles */
+.plink {
+	background: url(../images/plink.png) no-repeat;
+	padding: 1px 0 1px 18px;
+}
+
+.comments {
+	background: url(../images/comments.png) no-repeat;
+	margin: -1.3em 0 0 0;
+	padding: 0 0 1px 18px;
+}
+
+/* Navigation */
+
