@@ -1,0 +1,65 @@
+<?xar type="page" ?>
+<xar:blocklayout version="1.0" content="text/html" xmlns:xar="http://xaraya.com/2004/blocklayout">
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+	<xar:blockgroup name="header" id="header" />
+	<link rel="icon" href="favicon.ico" />
+	<title>#$tpl:pageTitle#</title> 
+	<base href="&xar-baseurl;index.php" />
+	<style type="text/css">
+        @import url(&xar-baseurl;#xarTplGetThemeDir()#/style/style.php) screen,projection;
+    </style>
+        <xar:style scope="common" />
+        <xar:additional-styles />
+	<xar:comment> Head JavaScript </xar:comment>
+	<xar:base-render-javascript position="head" />
+	</head>
+	<body onload="window.defaultStatus='#xarModGetVar('themes', 'SiteName')#';" id="body">
+    <div id="rap">
+	    <div id="header">
+           <ul id="topnav" style="padding-right: 15px; float: right;">
+		        <li><a href="#xarModUrl()#" id="navHome" title="#xarML('Posted Recently')#" accesskey="h">#xarML('Home')# |</a></li>
+		        <li><a href="#xarModUrl('base', 'user', 'main')#" id="navAbout" title="#xarML('About the Author')#" accesskey="a">#xarML('About')# |</a></li>
+		        <li><a href="#xarModUrl('articles', 'user', 'archives')#" id="navArchives" title="#xarML('Posted Previously')#" accesskey="r">#xarML('Archives')# |</a></li>
+		        <li><a href="#" id="navLinks" title="#xarML('Recommended Links')#" accesskey="l">#xarML('Links')# |</a></li>
+		        <li><a href="#xarModUrl('sitecontact', 'user', 'main')#" id="navContact" title="#xarML('Contact the Author')#" accesskey="c">#xarML('Contact')# </a></li>
+	        </ul>
+	        <h1 style="clear:both;"><a href="#xarModUrl()#" title="test">#xarModGetVar('themes', 'SiteName')#</a></h1>		
+	        <div id="desc">#xarModGetVar('themes', 'SiteSlogan')#</div>
+        </div>
+	    <div id="main">
+	        <div id="content">
+                <xar:module main="true" id="modulespace" />
+            </div>
+	        <div id="sidebar">
+                <h2><label for="s">#xarML('Search')#:</label></h2>
+                    <ul>
+                        <li>
+                            <form id="searchform" method="get" action="/wordpress/index.php">
+                                <div style="text-align:center">
+                                    <p><input type="text" name="s" id="s" size="15" /></p>
+                                    <p><input type="submit" name="submit" value="#xarML('Search')#" /></p>
+
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                <h2>Meta</h2>
+                    <ul>
+                        <li><a href="http://validator.w3.org/check/referer" title="#xarML('This page validates as XHTML 1.0 Transitional')#">#xarML('Valid')# <abbr title="#xarML('eXtensible HyperText Markup Language')#">XHTML</abbr></a></li>
+                        <li><a href="http://jigsaw.w3.org/css-validator/check/referer" title="#xarML('valid css')#"> #xarML('Valid CSS')#</a></li>
+                        <li><a href="http://gmpg.org/xfn/"><abbr title=" #xarML('XHTML Friends Network')#"> #xarML('XFN')#</abbr></a></li>
+                        <li><a href="http://www.xaraya.com" title=" #xarML('Powered by Xaraya')#"> #xarML('Xaraya')#</a></li>
+                    </ul>		
+                <xar:blockgroup name="left" id="blocksleft" />
+                <xar:blockgroup name="right" id="blocksright" />
+            </div>
+            <p id="footer">
+                Design Downloaded from <a href="http://wpthemes.info" title="WP Themes.Info">WPThemes.Info</a>.  Ported to Xaraya by <a href="http://www.wyome.com" title="Wyome Consulting">Wyome Consulting</a>.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+</xar:blocklayout>

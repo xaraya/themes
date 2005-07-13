@@ -1,0 +1,29 @@
+<div class="post">
+    <p class="post-date">
+        #$date#
+    </p>
+    <div class="post-info">
+        <h2 class="post-title">
+            #$title#
+        </h2>
+        #xarML('Posted by')# #$author# 
+        <xar:if condition="!empty($editurl)">
+            [<a href="#$editurl#">#$edittitle#</a>]
+        </xar:if>
+    </div>  
+    <div class="post-content">
+        #$summary#
+        <p class="post-info"></p>
+        <div class="post-footer">&nbsp;</div>
+    </div>
+</div>
+
+<a name="comments"></a>
+
+<xar:if condition="!empty($hooks)">
+    <xar:foreach in="$hooks" key="$hookmodule">
+        <div>
+            #$hooks[$hookmodule]#
+        </div>
+    </xar:foreach>
+</xar:if>

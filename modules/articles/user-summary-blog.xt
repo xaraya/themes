@@ -1,0 +1,25 @@
+<div class="post">
+    <p class="post-date">
+        #$date#
+    </p>
+    <div class="post-info">
+        <h2 class="post-title">
+            <a href="#$link#" rel="bookmark" title=" #xarML('Permanent Link')#: #$title#">
+                #$title#
+            </a>
+        </h2>
+        #xarML('Posted by')# #$author# #xarML(' under ')#
+        <xar:foreach in="$categories" value="$cat">
+            <a href="#$cat['clink']#" title="#xarML('View all posts in')# #$cat['cname']#" rel="category tag">
+                #$cat['cname']# 
+            </a>
+        </xar:foreach>
+        <br/>
+        <a href="#$link##comments">#$comments#</a>&nbsp;
+    </div>  
+    <div class="post-content">
+        #$summary#
+        <p class="post-info"></p>
+        <div class="post-footer">&nbsp;</div>
+    </div>
+</div>
