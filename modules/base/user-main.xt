@@ -1,0 +1,39 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+<div class="xar-mod-head">
+    <span class="xar-mod-title">
+        <xar:mlstring>
+            Base Module
+        </xar:mlstring>
+    </span>
+</div>
+
+<div class="xar-mod-body">
+    <div style="margin: auto;">
+        <h3>
+            Theme Name: Head
+        </h3>
+        <h3>
+            Theme URI: <a href="http://wpthemes.prissed.com/">http://wpthemes.prissed.com/</a>
+        </h3>
+        <h3>
+            Description: Head.  By Priss.  Bright green, yellow, blue, and black.
+        </h3>
+        <h3>
+            Ported to Xaraya: <a href="http://www.wyome.com">Wyome Consulting</a>
+
+        </h3>
+        <h3>
+            Version: 1.5
+        </h3>
+        <h3>
+            Author: Priss
+        </h3>
+        <h3>
+            Author URI: <a href="http://www.prissed.com/">http://www.prissed.com/</a>
+        </h3>
+        <p>
+            This WordPress theme is released under GPL:
+            http://www.opensource.org/licenses/gpl-license.php
+        </p>
+    </div>
+</div>

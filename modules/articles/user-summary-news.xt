@@ -1,0 +1,31 @@
+<xar:set name="time">date("g", $pubdate)</xar:set>
+<h2>
+    #$date#
+</h2> 
+<div class="post"> 
+    <h3 class="storytitle" id="post-#$aid#">
+        <a href="#$link#" rel="bookmark"> 
+            #$title#
+        </a>
+    </h3> 
+    <div class="meta"> 
+        <xar:mlstring>
+            Filed under
+        </xar:mlstring>: 
+        <xar:foreach in="$categories" value="$cat">
+            <a href="#$cat['clink']#" title="#xarML('View all posts in')# #$cat['cname']#" rel="category tag">
+                #$cat['cname']# 
+            </a>
+        </xar:foreach>       
+        &#8212; #$author# @ #$time#
+    </div> 
+    <div class="storycontent"> 
+        #$summary#
+    </div> 
+    <div class="feedback" align="right"> 
+        <a href="#$link##comments">
+            #$comments# &raquo;
+        </a>
+    </div> 
+</div> 
+<div align="center">&#8226; &#8226; &#8226;<br />&nbsp;</div>

@@ -1,0 +1,10 @@
+<ul>
+    <li>
+        <h2>
+            #$title#
+        </h2>
+	    <ul>
+		    #$content#
+	    </ul>
+	</li>
+</ul>

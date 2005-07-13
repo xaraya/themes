@@ -1,0 +1,90 @@
+<?xar type="page" ?>
+<xar:blocklayout version="1.0" content="text/html" xmlns:xar="http://xaraya.com/2004/blocklayout">
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+	<xar:blockgroup name="header" id="header" />
+	<link rel="icon" href="favicon.ico" />
+	<title>#$tpl:pageTitle#</title> 
+	<base href="&xar-baseurl;index.php" />
+	<style type="text/css">
+        @import url(&xar-baseurl;#xarTplGetThemeDir()#/style/style.php) screen;
+    </style>
+        <xar:style scope="common" />
+        <xar:additional-styles />
+	<xar:comment> Head JavaScript </xar:comment>
+	<xar:base-render-javascript position="head" />
+	</head>
+	<body>
+        <div id="left">
+            <div id="leftmenu">
+                <xar:blockgroup name="left" id="blocksleft" />
+	        </div>
+        </div>
+        <div id="mid">
+            <div id="description">
+                #xarModGetVar('themes', 'SiteSlogan')#
+            </div>
+            <div id="midmenu">
+		        <ul>
+                    <li id="search">
+                        <xar:mlstring>
+                            Search
+                        </xar:mlstring>:
+                        <ul>
+                            <li>
+                                <form id="searchform" method="get" action="#xarModUrl('search', 'user', 'main')#">
+                                <input type="text" name="q" id="q" size="15" />
+                                <input type="submit" value="go" />
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+					<li>
+                        <xar:mlstring>
+                            Meta
+                        </xar:mlstring>
+                        <ul>
+        					<li>
+                                <a href="http://validator.w3.org/check/referer" title="#xarML('This page validates as XHTML 1.0 Transitional')#">
+                                    <xar:mlstring>
+                                        Valid 
+                                    </xar:mlstring>
+                                    <abbr title="eXtensible HyperText Markup Language">
+                                        XHTML
+                                    </abbr>
+                                </a>
+                            </li>
+					        <li>
+                                <a href="http://www.xaraya.com" title="#xarML('Powered By Xaraya')#">
+                                    <xar:mlstring>
+                                        Powered by: Xaraya
+                                    </xar:mlstring>
+                                </a>
+                            </li>
+					        <li>
+                                <a href="http://www.prissed.com">
+                                    Template by: Priss
+                                </a>
+                            </li>
+					        <li>
+                                <a href="http://www.wyome.com">
+                                    Xaraya Port: Wyome Consulting
+                                </a>
+                            </li>
+						</ul>
+				    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="main">
+            <h1>
+                <a href="#xarModUrl()#">
+                    #xarModGetVar('themes', 'SiteName')#
+                </a>
+            </h1>
+            <xar:module main="true" id="modulespace" />
+        </div>
+    </body>
+</html>
+</xar:blocklayout>
