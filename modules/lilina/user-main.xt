@@ -1,0 +1,42 @@
+<script type="text/javascript" src="modules/lilina/xartemplates/includes/lilina.js"></script>
+<script type="text/javascript" src="modules/base/xartemplates/functions.js"></script>
+<xar:loop name="$items">
+<div class="articleview" style="border-bottom: 1px #C5C5C5 solid; padding-bottom: 10px;">
+    <h4>
+        #xarLocaleGetFormattedDate('short', $loop:item['timestamp'])# | 
+        <a href="#$loop:item['link']#" title="read all of '#$loop:item['title']#">
+            #$loop:item['title']#
+        </a>
+    </h4>
+    <div style="margin-top: -15px;">
+        <a href="#$loop:item['curl']#" title="go to '#$loop:item['ctitle']#'" class="plink">
+            Go to Channel
+        </a>
+        <xar:if condition="empty($loop:item['comments'])">
+            <a href="#xarModUrl('lilina', 'user', 'display', array('id' => $loop:item['id']))#" class="comments">
+                [ No Comments Yet]
+            </a>
+        <xar:else />
+            <a href="#xarModUrl('lilina', 'user', 'display', array('id' => $loop:item['id']))#" class="comments">
+                [#$loop:item['comments']# comments]
+            </a>
+        </xar:if>
+        <xar:sec mask="AdminLilina" catch="false">
+            <span class="garbage">
+                <a href="#$loop:item['deleteurl']#" onClick="#$loop:item['javascript']#"><img src="#xarTplGetImage('garbage.gif')#" alt="#xarML('Add this to garbage filter')#" /></a>
+            </span>
+        </xar:sec>
+    </div>
+	<div style="text-align: justify;">
+        #$loop:item['summary']#
+    </div>
+</div>
+</xar:loop>
+<xar:if condition="empty($catid)">
+    <p style="font-size: 9px; text-align: center;">
+        #$pager#
+    </p>
+</xar:if>
+<p>
+    <a href="#xarModUrl('lilina', 'user', 'rss', array('catid' => $catid, 'theme' => 'rss'))#"><img src="#xarTplGetImage('xml.gif')#" alt="#xarML('RSS Feed')#" /></a>
+</p>

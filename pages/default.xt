@@ -1,0 +1,81 @@
+<?xar type="page" ?>
+<xar:blocklayout version="1.0" content="text/html" xmlns:xar="http://xaraya.com/2004/blocklayout">
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+	<xar:blockgroup name="header" id="header" />
+	<link rel="icon" href="favicon.ico" />
+	<title>#$tpl:pageTitle#</title> 
+	<base href="&xar-baseurl;index.php" />
+	<style type="text/css">@import url(&xar-baseurl;#xarTplGetThemeDir()#/style/style.css);</style>
+    <xar:additional-styles />
+	<xar:comment> Head JavaScript </xar:comment>
+	<xar:base-render-javascript position="head" />
+	</head>
+	<body onload="window.defaultStatus='Wyome: Custom Design and Development';" id="wyome">
+    <div id="description"><h2>Wyome provides custom Xaraya Design and Development Services.</h2></div>
+    <div id="container">
+        <div id="logo">
+            <h1>Pro-Football News</h1>
+            <p>The Best from Around the NFL</p>
+        </div>
+		<div id="modulespace">
+			<xar:module class="modulespace" main="true" />
+            <p>&nbsp;</p>
+            <p class="xar-sub">Developed 2004-2005 <a href="http://www.wyome.com">Wyome Consulting, LLC</a>. All Rights Reserved. <a href="#xarModUrl('roles', 'user', 'terms')#">Terms and Conditions</a> :: <a href="#xarModUrl('roles', 'user', 'privacy')#">Privacy Policy</a><br /><br />
+            Aggregating Syndicated News from around the NFL.  All Rights Reserved by Individual Copy Right Holders. 
+            </p>
+		</div>
+		<div id="footer">
+            <a href="#xarServerGetCurrentURL(array('theme' => 'print'))#" title="Xaraya Development">print</a>
+		</div>
+	    <div id="blocks">
+            <xar:blockgroup name="left" id="left" />
+
+            <script type="text/javascript"><!--
+            google_ad_client = "pub-0061202906476576";
+            google_ad_width = 160;
+            google_ad_height = 600;
+            google_ad_format = "160x600_as";
+            google_ad_channel ="0919621239";
+            google_ad_type = "text";
+            google_color_border = "CCCCCC";
+            google_color_bg = "FFFFFF";
+            google_color_link = "000000";
+            google_color_url = "999999";
+            google_color_text = "999999";
+            //--></script>
+            <script type="text/javascript"
+              src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+            </script>
+        </div>
+        <xar:set name="url">xarServerGetCurrentURL()</xar:set>
+        <div id="navcontainer">
+            <h3>
+                Navigate
+            </h3>
+            <ul id="navlist">
+                <li id="active"><a href="#xarModUrl()#" id="current" title="Back to the main page">Home</a></li>
+                <li><a href="#xarModUrl('articles', 'user', 'view')#" title="Pro-Football Blog">Blog</a></li>
+                <li><a href="#xarModUrl('lilina', 'user', 'resources')#" title="Resources">Resources</a></li>
+                <li><a href="#xarModUrl('sitecontact', 'user', 'main')#" title="Contact Us">Contact</a></li>
+                <li><a href="#xarModUrl('roles', 'user', 'main')#" title="Login">Login</a></li>
+                <xar:if condition="xarUserIsLoggedIn()">
+                    <script type="text/javascript" src="modules/mybookmarks/xartemplates/popup.js"></script>
+                    <li><a href="#xarModUrl('mybookmarks', 'user', 'view', array('theme' => 'print'))#" onclick="popUp(this.href,'console',400,600);return false;">View Bookmarks</a></li>
+                    <li><a href="#xarModUrl('mybookmarks', 'user', 'new', array('url' => $url, 'theme' => 'print'))#" onclick="popUp(this.href,'fixed',200,600);return false;">Add Bookmarks</a></li>
+               </xar:if>
+            </ul>
+        </div>
+        <form action="index.php?module=search" method="get">
+            <div id="search">
+            <input type="hidden" name="module" id="module" value="search" />
+            <input type="text" name="q" id="q8" size="15" value="search" onfocus="this.value='';" onblur="if (this.value=='') {this.value='Search';}" />
+            </div>
+        </form>
+        <xar:blockgroup name="online" id="online" />
+    </div>
+	<xar:base-render-javascript position="body" />
+	</body>
+	</html>
+</xar:blocklayout>

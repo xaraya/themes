@@ -1,0 +1,32 @@
+<div id="article-view">
+	<h3>
+        <a href="#$link#" title="read all of '#$title#">#$title#</a>
+    </h3>
+	<div>
+        #$summary#
+    </div>
+</div>
+<div style="margin: 15px;">
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-0061202906476576";
+    google_ad_width = 336;
+    google_ad_height = 280;
+    google_ad_format = "336x280_as";
+    google_ad_channel ="0919621239";
+    google_ad_type = "text";
+    google_color_border = "CCCCCC";
+    google_color_bg = "FFFFFF";
+    google_color_link = "000000";
+    google_color_url = "999999";
+    google_color_text = "999999";
+    //--></script>
+    <script type="text/javascript"
+      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+</div>
+
+<a name="comments"></a>
+
+<xar:if condition="!empty($hooks)">
+    #$hooks#
+</xar:if>
