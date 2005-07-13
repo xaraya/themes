@@ -1,0 +1,23 @@
+<div class="article-view" style="border-bottom: 1px #D6CE7B solid; padding-bottom: 10px;">
+	<h3><span>#$title#</span></h3>
+	<p>
+	    #$summary#
+	</p>
+	<p>
+        <a href="#$link#" title="Read More">
+            <xar:mlstring>
+                Read Entire Tutorial
+            </xar:mlstring>
+        </a>
+    </p>
+    <div class="xar-articles-keywords">
+        <xar:if condition="!empty($keywords)">
+            <xar:mlstring>
+                Tagged As
+            </xar:mlstring>:
+            <xar:loop name="$keywords">
+                <a href="#xarModUrl('keywords', 'user', 'main', array('keyword'=> $loop:item['keyword']))#" title="#$loop:item['keyword']#">#$loop:item['keyword']#</a>  
+            </xar:loop>
+        </xar:if>
+    </div>
+</div>

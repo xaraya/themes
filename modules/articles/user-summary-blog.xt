@@ -1,0 +1,31 @@
+<div class="articleview" style="border-bottom: 1px #D6CE7B solid; padding-bottom: 10px;">
+    <h4>
+        #$date# | 
+        <a href="#$link#" title="Read More">
+            #$title#
+        </a>
+    </h4>
+    <div style="margin-top: -15px;">
+        <a href="#$link#" title="read all of '#$title#'" class="plink">
+            Permalink
+        </a>
+        <a href="#$link##comments" class="comments">
+            [ #$comments# ]
+        </a>
+    </div>
+    <div id="puff#$aid#">
+        <div style="text-align: justify;">
+            #$summary#
+        </div>
+        <div class="xar-articles-keywords">
+            <xar:if condition="!empty($keywords)">
+                <xar:mlstring>
+                    Tagged As
+                </xar:mlstring>:
+                <xar:loop name="$keywords">
+                    <a href="#xarModUrl('keywords', 'user', 'main', array('keyword'=> $loop:item['keyword']))#" title="#$loop:item['keyword']#">#$loop:item['keyword']#</a>  
+                </xar:loop>
+            </xar:if>
+        </div>
+    </div>
+</div>
