@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xar type="page" ?>
+<xar:blocklayout version="1.0" content="text/html" xmlns:xar="http://xaraya.com/2004/blocklayout">
+<xar:set name="seabreezethemedir">#xarTplGetThemeDir()#</xar:set>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<xar:blockgroup name="header" id="header" />
+<title>#$tpl:pageTitle#</title>
+<base href="&xar-baseurl;index.php" />
+<link rel="StyleSheet" href="#$seabreezethemedir#/style/styleNN.css" type="text/css" />
+<style type="text/css">
+@import url("#$seabreezethemedir#/style/style.css");
+@import url("#$seabreezethemedir#/style/stylemenu.css");
+</style>
+<xar:comment> Head JavaScript </xar:comment>
+<xar:base-render-javascript position="head" />
+</head>
+<body text="#333333" link="#000000" alink="#FF9900" vlink="#CC6600" topmargin="0" marginheight="0" marginwidth="0" leftmargin="0" rightmargin="0" bgcolor="#FFFFFF">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#FFFFFF">
+<tr>
+<td colspan="2" valign="top" height="91" background="#$seabreezethemedir#/images/hbkg.gif">
+<!--a href="index.php"><img src="#$seabreezethemedir#/images/logoshort.gif" width="230" height="91" border="0" align="top"></a-->
+</td>
+</tr>
+<tr>
+<td bgcolor="#F3F3F3" valign="middle" align="left" width="50%">&nbsp;<a class="xar-sub" href="index.php?module=roles">Your Account<img src="#$seabreezethemedir#/images/go.gif" width="29" height="29" align="absmiddle" border="0"></a>
+</font></td>
+<td width="50%" height="21" align="right" bgcolor="#F3F3F3" valign="middle">
+<span class="xar-sub"><a href="index.php">Home</a>&nbsp;::&nbsp;<a href="index.php?module=articles">Articles</a>&nbsp;::&nbsp;<a href="index.php?module=search">Advanced Search</a>&nbsp;::&nbsp;<a href="index.php?module=polls">Polls</a>&nbsp;::&nbsp;<a href="index.php?module=stats">Stats</a></span><img src="#$seabreezethemedir#/images/blank.gif" width="1" height="1"></td>
+</tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="150" valign="top" bgcolor="#F3F3F3">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr bgcolor="#F3F3F3">
+<td><img src="#$seabreezethemedir#/images/blank.gif" width="1" height="17" alt="" border="0"></td>
+</tr>
+<tr>
+<td valign="top"><xar:blockgroup name="left" /></td>
+</tr>
+</table>
+</td>
+<td width="35" bgcolor="#FFFFFF" align="left" valign="top">
+<div align="left"><img src="#$seabreezethemedir#/images/lefttop.gif" width="17" height="17" border="0"  alt=""></div>
+</td>
+<td width="100%" valign="top" align="center" bgcolor="#FFFFFF">
+<span class="message-centre">
+<xar:block module="roles" type="login" />
+<xar:blockgroup name="center" />
+</span>
+<xar:module main="true" />
+</td>
+<td width="140" valign="top" bgcolor="#FFFFFF">
+<xar:blockgroup name="right" /><br /></td>
+</tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+<tr bgcolor="#CCCCCC">
+<td height="10"><img src="#$seabreezethemedir#/images/blank.gif" width="1" height="1" border=0 alt=""></td>
+</tr>
+<tr bgcolor="#F3F3F3">
+<td>
+<table width="90%" border="0" cellspacing="0" cellpadding="5" align="center">
+<tr>
+<td>
+<div align="center">
+<font class="xar-sub">
+<font class="xar-sub">
+<xar:var name="$foot1" scope="config" /><br />
+</font>
+</font>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<xar:comment> Body JavaScript </xar:comment>
+<xar:base-render-javascript position="body" />
+</body>
+</html>
+</xar:blocklayout>

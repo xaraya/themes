@@ -1,0 +1,415 @@
+BODY  {
+BACKGROUND: #FFFFFF; 
+COLOR: #333333; 
+FONT-FAMILY: Verdana, Helvetica, sans-serif; 
+MARGIN-TOP: 2; 
+MARGIN-LEFT: 2; 
+MARGIN-RIGHT: 2; 
+MARGIN-BOTTOM: 2;
+}
+
+TD {
+FONT-FAMILY: Verdana, Helvetica, sans-serif;
+FONT-SIZE: 8pt;
+}
+
+A {
+BACKGROUND: none; 
+COLOR: #4C5EA8; 
+TEXT-DECORATION: underline
+}
+
+A:active {
+BACKGROUND: none; 
+COLOR: #CC6600;
+TEXT-DECORATION: underline
+}
+
+A:visited {
+BACKGROUND: none; 
+COLOR: #4C5EA8; 
+TEXT-DECORATION: underline
+}
+
+A:hover {
+BACKGROUND: none; 
+COLOR: #CC6600; 
+TEXT-DECORATION: underline
+}
+
+.xar-title {
+FONT: bold 9pt Verdana, Helvetica, sans-serif; 
+BACKGROUND: none; 
+COLOR: #CC6600;
+TEXT-DECORATION: none
+}
+
+A.xar-title {
+FONT: bold 9pt Verdana,Helvetica,sans-serif; 
+BACKGROUND: none; 
+COLOR: #CC6600;
+TEXT-DECORATION: underline
+}
+
+A.xar-title:active {
+BACKGROUND: none; 
+COLOR: #CC6600;
+FONT: bold 9pt Verdana, Helvetica, sans-serif; 
+TEXT-DECORATION: underline
+}
+
+A.xar-title:visited {
+BACKGROUND: none; 
+COLOR: #CC6600;
+FONT: bold 9pt Verdana, Helvetica, sans-serif; 
+TEXT-DECORATION: underline
+}
+
+A.xar-title:hover {
+BACKGROUND: none; 
+COLOR: #4C5EA8;
+FONT: bold 9pt Verdana,Helvetica,sans-serif; 
+TEXT-DECORATION: underline
+}
+
+A.xar-normal {
+BACKGROUND: none; 
+COLOR: #000000;
+TEXT-DECORATION: underline
+}
+
+A.xar-normal:active {
+BACKGROUND: none; 
+COLOR: #F3F3F3;
+FONT: 8pt Verdana,Helvetica,sans-serif; 
+TEXT-DECORATION: underline
+}
+
+A.xar-normal:visited {
+BACKGROUND: none; 
+COLOR: #4C5EA8;
+FONT: 8pt Verdana,Helvetica,sans-serif; 
+TEXT-DECORATION: underline
+}
+
+A.xar-normal:hover {
+BACKGROUND: none; 
+COLOR: #CC6600;
+FONT: 8pt Verdana,Helvetica,sans-serif; 
+TEXT-DECORATION: underline
+}
+
+A.xar-hometext {
+BACKGROUND: none; 
+COLOR: #000000;
+FONT: 8pt Verdana,Helvetica,sans-serif; 
+TEXT-DECORATION: underline
+}
+
+A.xar-hometext:active {
+BACKGROUND: none; 
+COLOR: #000000;
+FONT: 8pt Verdana,Helvetica,sans-serif; 
+TEXT-DECORATION: underline
+}
+
+A.xar-hometext:visited {
+BACKGROUND: none; 
+COLOR: #4C5EA8;
+FONT: 8pt Verdana,Helvetica,sans-serif; 
+TEXT-DECORATION: underline
+}
+
+A.xar-hometext:hover {
+BACKGROUND: none; 
+COLOR: #CC6600;
+FONT: 8pt Verdana,Helvetica,sans-serif; 
+TEXT-DECORATION: underline
+}
+
+:TD.xar-hometext {
+BACKGROUND: none; 
+COLOR: #000000;
+FONT: 8pt Verdana, Helvetica, sans-serif;
+TEXT-DECORATION: none: line-height: 1
+}
+
+.xar-logo {
+BACKGROUND: none; 
+COLOR: #191919;
+FONT-FAMILY: Verdana, Helvetica, sans-serif; 
+LETTER-SPACING: 7pt; 
+TEXT-DECORATION: none
+} 
+
+.xar-sub {
+BACKGROUND: none; 
+COLOR: #666666;
+FONT: 7pt Verdana, Helvetica, sans-serif; 
+TEXT-DECORATION: none
+} 
+
+A.xar-sub {
+BACKGROUND: none; 
+COLOR: #191919;
+FONT: 8pt Verdana, Helvetica, sans-serif; 
+TEXT-DECORATION: underline
+}
+
+A.xar-sub:active	{
+BACKGROUND: none; 
+COLOR: #F3F3F3;
+FONT: 8pt Verdana, Helvetica, sans-serif; 
+TEXT-DECORATION: underline
+}
+
+A.xar-sub:visited {
+BACKGROUND: none; 
+COLOR: #4C5EA8;
+FONT: 8pt Verdana, Helvetica, sans-serif; 
+TEXT-DECORATION: underline
+}
+
+A.xar-sub:hover {
+BACKGROUND: none; 
+COLOR: #CC6600;
+FONT: 8pt Verdana, Helvetica, sans-serif; 
+TEXT-DECORATION: underline
+}
+
+.xar-logo {
+BACKGROUND: none; 
+COLOR: #FFFFFF;  
+FONT-WEIGHT: bold; 
+FONT-FAMILY: Verdana, Helvetica, sans-serif; 
+LETTER-SPACING: 3px; 
+TEXT-DECORATION: none
+}
+
+A.xar-logo {
+BACKGROUND: none; 
+COLOR: #FFFFFF;  
+FONT-WEIGHT: bold; 
+FONT-FAMILY: Verdana, Helvetica, sans-serif; 
+LETTER-SPACING: 3px; 
+TEXT-DECORATION: none
+}
+
+A.xar-logo:active {
+BACKGROUND: none; 
+COLOR: #FFFFFF;  
+FONT-WEIGHT: bold; 
+FONT-FAMILY: Verdana, Helvetica, sans-serif; 
+LETTER-SPACING: 3px; 
+TEXT-DECORATION: none
+}
+
+A.xar-logo: visited {
+BACKGROUND: none; 
+COLOR: #FFFFFF; 
+FONT-WEIGHT: bold; 
+FONT-FAMILY: Verdana, Helvetica, sans-serif; 
+LETTER-SPACING: 3px; 
+TEXT-DECORATION: none
+}
+
+A.xar-logo:hover	{
+BACKGROUND: none; 
+COLOR: #CC6600;  
+FONT-WEIGHT: bold; 
+FONT-FAMILY: Verdana, Helvetica, sans-serif; 
+LETTER-SPACING: 3px; 
+TEXT-DECORATION: none
+}
+
+A.xar-storytitle {
+FONT-SIZE: 10pt; 
+BACKGROUND: none; 
+COLOR: #990000;
+LETTER-SPACING: 3px;
+TEXT-DECORATION: none
+}
+
+A.xar-storytitle:active {
+FONT-SIZE: 10pt; 
+BACKGROUND: none; 
+COLOR: #FF0000;
+LETTER-SPACING: 3px;
+TEXT-DECORATION: none
+}
+
+A.xar-storytitle:visited {
+FONT-SIZE: 10pt; 
+BACKGROUND: none; 
+COLOR: #660000;
+LETTER-SPACING: 3px;
+TEXT-DECORATION: none
+}
+
+A.xar-storytitle:hover {
+FONT-SIZE: 10pt; 
+BACKGROUND: none; 
+COLOR: #FF0000;
+LETTER-SPACING: 3px;
+TEXT-DECORATION: none
+}
+
+.xar-logo-7pt {
+BACKGROUND: none; 
+COLOR: #FFFFFF; 
+FONT-SIZE: 7pt; 
+FONT-WEIGHT: bold; 
+FONT-FAMILY: Verdana, Helvetica, sans-serif; 
+TEXT-DECORATION: none
+}
+
+.xar-pagetitle {
+BACKGROUND: none; 
+COLOR: #4C5EA8;
+FONT: bold 10pt Verdana, Helvetica, sans-serif;
+TEXT-DECORATION: none
+}
+
+.xar-storytitle {
+BACKGROUND: none; 
+COLOR: #990000;
+FONT: bold 10pt Verdana, Helvetica, sans-serif; 
+LETTER-SPACING: 3px;
+TEXT-DECORATION: none
+}
+
+.xar-title-rblock {
+BACKGROUND: none; 
+COLOR: #4C5EA8;
+FONT: bold 10pt Verdana, Helvetica, sans-serif; 
+LETTER-SPACING: 0px;
+TEXT-DECORATION: none
+}
+
+.xar-title-lblock {
+BACKGROUND: none; 
+COLOR: #4C5EA8;
+FONT: bold 10pt Verdana, Helvetica, sans-serif; 
+LETTER-SPACING: 1.5px;
+TEXT-DECORATION: none
+}
+
+.xar-rblock {
+BACKGROUND: none; 
+COLOR: #000000;
+FONT: 8pt Verdana, Helvetica, sans-serif; 
+LETTER-SPACING: 0px;
+TEXT-DECORATION: none
+}
+
+.xar-bartitle {
+BACKGROUND: none; 
+COLOR: #003399;
+FONT: bold 8pt Verdana, Helvetica, sans-serif; 
+LETTER-SPACING: 2px;
+TEXT-DECORATION: none
+}
+
+.xar-normal {
+BACKGROUND: none; 
+COLOR: #191919; 
+FONT: 8pt Verdana, Helvetica, sans-serif;
+TEXT-DECORATION: none
+}
+
+
+.xar-footer {
+BACKGROUND: none; 
+COLOR: #FFFFFF; 
+FONT: 6pt Verdana, Helvetica, sans-serif;
+TEXT-DECORATION: none
+}
+
+.xar-art {
+BACKGROUND: none; 
+COLOR: #191919;
+FONT: 10pt Verdana, Helvetica, sans-serif;
+TEXT-DECORATION: none; 
+line-height: 1.5
+}
+
+TD.xar-normal {
+BACKGROUND: none; 
+COLOR: #666666;
+FONT: 10pt Verdana, Helvetica, sans-serif;
+TEXT-DECORATION: 
+none: line-height: 1.5
+}
+
+TD.xar-title {
+BACKGROUND: none; 
+COLOR: #4C5EA8; 
+FONT: bold 10pt Verdana, Helvetica, sans-serif;
+TEXT-DECORATION: none
+}
+
+INPUT {
+background : #EBF2FD;
+color: #000000;
+font-size: 10px;
+}
+
+INPUT.xar-text {
+BACKGROUND : #F3F3F3; 
+COLOR: #000000; 
+BORDER: solid 1px #000000; 
+FONT-SIZE: 10pt
+}
+
+INPUT.r-button {
+BACKGROUND : none; 
+COLOR: #000000; 
+FONT-SIZE: 10pt
+}
+
+INPUT.xar-button {
+BACKGROUND : #F3F3F3; 
+COLOR: #000000; 
+BORDER: 1px solid #000000; 
+FONT-SIZE: 10pt;  
+border-collapse: collapse
+}
+
+TEXTAREA.xar-text {
+BACKGROUND : #F3F3F3; 
+COLOR: #000000; 
+BORDER: solid 1px #000000; 
+FONT-SIZE: 10pt;  
+border-bottom: 1px dashed
+}
+
+SELECT.xar-text {
+BACKGROUND : #F3F3F3; 
+COLOR: #000000; 
+BORDER: solid 1px #000000; 
+FONT-SIZE: 10pt
+}
+
+/* Centre blocks and admin messages */
+
+.message-centre { 
+FONT: normal 10pt Verdana, Helvetica, sans-serif;
+border-style: none;
+}
+
+.message-centre .border2 {
+border-style: none;
+border-width: 0;
+padding: 0;
+}
+
+TD.message-centre {
+FONT: normal 10pt Verdana, Helvetica, sans-serif;border-style: none;
+border: 1px;
+padding: 3px;
+}
+
+.message-centre .xar-title {
+FONT: bold 10pt Verdana, Helvetica, sans-serif;
+color: #4C5EA8;
+}

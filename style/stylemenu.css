@@ -1,0 +1,132 @@
+/*
+system menus and related rules 
+-------------------------------------------------------------------------[comment] */
+
+.xar-menu-item {
+	font-weight: bold;
+}
+
+li.xar-menu-item a {
+	padding-left:10px;
+}
+
+.xar-menu-subitem {
+	padding: 0;
+}
+
+ul.xar-menu-section, ul.xar-menu-item, ul.xar-menu-subitem {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	background-color: #E7EAF4;
+}
+
+ul li.xar-menu-section {
+	margin-top: 2px;
+	border-color: #C7D2E2 #DBDEE2 #DBDEE2 #C7D2E2;
+	border-width: 1px;
+	border-style: solid;
+	font-family: helvetica, arial, verdana, sans-serif;
+}
+
+.xar-menu-section li {
+	margin: 0 0 1px 0;
+}
+
+.xar-menu-section a {
+	display: block;
+	padding: 1px 0;
+	width: 160px;
+	color: #003780;
+	text-decoration: none;
+}
+
+.xar-menu-section h4 {
+	padding: 0 5px;
+	margin: 1px 5px 5px 5px;
+	border-bottom: 1px solid #BA1D00;
+}
+
+.xar-menu-section a:hover {
+	color: #fff;
+	background-color: #8296BB;
+	text-decoration: none;
+}
+
+.xar-menu-section ul ul li {
+	margin: 0 0 1px 10px;
+}
+
+.xar-menu-section ul ul a {
+	display: block;
+	padding: 1px 10px;
+	width: 140px;
+	color: #fff;
+	background-color: #8296BB;
+	font-size: 10px;
+	font-weight: normal;
+	text-decoration: none;
+	line-height: 12pt;
+	
+} /* this is the only rule where we currently use absolute font size,
+	 it is done only because of the horizontal space restriction in side menus
+------------------------------------------------------------------[important note] */
+
+/* Hide from IE5-mac. Only IE-win sees this. \*/
+
+* html .xar-menu-item a, * html .xar-menu-item-current a {
+	float:left;
+	f\loat:none;
+}
+
+* html .xar-menu-section ul {
+	height: 0;
+}
+
+* html .xar-menu-section a {
+	width:170px;
+	w\idth:160px;
+}
+
+* html .xar-menu-section ul ul a {
+	width:160px;
+	w\idth:140px;
+} /* End hide from IE5/mac -the above rules are for the benefit of older ie-win 
+ browsers which have broken box model, however for ie6 in strict mode we must
+ provide genuine figures or it will not behave as expected - it can have escaped rules.
+ there is also extra space between listitems in IE5+, floating links seems to be a fix 
+-------------------------------------------------------------------------[comment] */
+
+.xar-menu-section ul ul a:hover {
+	color: #002C80;
+	background-color: #BFD5FF;
+	text-decoration: none;
+}
+
+
+li.xar-menu-section-current {
+	color: #2C3F58;
+	background-color: #B1C2E3;
+}
+
+li.xar-menu-item-current {
+	color: #2C3F58;
+	background-color: #E7EAEE;
+}
+
+li.xar-menu-item-current a {
+	padding-left: 10px;
+	margin-bottom:1px;
+}
+
+li li.xar-menu-subitem-current a, li.xar-menu-item-current a {
+	color: #4C5056;
+	background-color: #C7D2E2;
+}
+
+.xar-menu-subitem-current a:before {
+	content: "\00BB \0020";
+} /*
+people with css2 compliant browsers can see a nice marker against current function,
+why not have some fun when you can ;-)
+------------------------------------------------------------------[important note] */
