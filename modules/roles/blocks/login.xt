@@ -1,0 +1,12 @@
+<p>
+<form action="&xar-modurl-roles-user-login;" method="post" enctype="application/x-www-form-urlencoded">
+<xar:mlstring>Username</xar:mlstring>: <input type="text" name="uname" id="uname#$blockid#" maxlength="64" size="10" />
+&nbsp;&nbsp;<xar:mlstring>Password</xar:mlstring>: <input type="password" name="pass" id="pass#$blockid#" maxlength="64" size="10" />
+<xar:if condition="xarConfigGetVar('seclevel') ne 'High'">
+    <input type="checkbox" name="rememberme" id="rememberme#$blockid#" value="1" /> <xar:mlstring>Remember me</xar:mlstring>
+</xar:if>
+<input type="hidden" name="redirecturl" id="returnurl#$blockid#" value="#$return_url#" />
+<input type="submit" value="#xarML('Sign in')#" />
+<xar:mlstring>Need an account?</xar:mlstring>&nbsp;&nbsp;
+<a href="iboard/index.php?act=Reg&CODE=00"><xar:mlstring>Register here</xar:mlstring></a>.
+</form></p>

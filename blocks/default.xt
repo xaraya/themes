@@ -1,0 +1,4 @@
+<H1><xar:var id="block_title" name="$title" /></H1>
+<hr/>
+     <xar:var id="block_body" name="$content" />
+<br/><br/>

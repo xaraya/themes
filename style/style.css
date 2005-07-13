@@ -1,0 +1,267 @@
+/* static page areas */
+
+body {
+  margin:0;
+  padding:0;
+  background:#FFFFFF;
+  text-align:center;
+  font: 85% Verdana,Sans-Serif;
+  voice-family: "\"}\""; voice-family:inherit;
+  }
+
+/* container is the frame of the page and gives the margins. */
+#container {
+  position:relative;
+  width:780px;
+  margin:0 auto;
+  text-align:left;
+  border-left: thin solid #DCAC72;
+  border-right: thin solid #DCAC72;
+  border-bottom: thin solid #DCAC72;
+  background-color: #FFF6E8;
+  }
+
+/* the headertable is the first part of the page, and contains the logo. */  
+#container #headertable {
+	background-image: url(../images/logo.png);
+	background-repeat: no-repeat;
+	/*font-size: xx-small;
+	*/
+	width: 780px;
+	height: 122px;
+	text-align: left;
+	border-bottom: 1px solid #DCAC72;
+}
+/* hidden page title for text browsers */
+#headertable h1 span{
+  display:none;
+}
+
+/* top menu bar / login info */
+#Top {
+	font-size: 78%;
+	text-align: center;
+	border-bottom: thin solid #F4D1A5;
+	margin: 0 0 0 0;
+	background-color: #FAE1B1;
+	width: 780px;
+	border-top : none;
+}
+/* paragraph spacing in top menu bar */
+#Top p{
+  margin: 2px 2px 0 0;
+}
+
+/* the modulespace is where the module is held. */
+#Modulespace {
+	text-align:left;
+	position:relative;
+	/*font-size: x-small;
+	*/
+	/*float : left;*/
+	width: 775px;
+	background : #FFF6E8;
+	padding : 0px 0px 5px 5px;
+}
+
+/* this styling only applies to the module area, basically setting everything to a "normal" way of viewing. */ 
+#Modulespace hr{
+	width: 98%;
+	border-bottom : thin solid #F4D1A5;
+	margin: 0 0 0 0;
+}
+
+#Modulespace table{
+	width: 540;
+}
+
+#Modulespace td{
+   font-size: 90%;
+}
+
+#Modulespace p{
+  margin-bottom: 12px;
+}
+
+.formspace label{
+  font-weight: bolder;
+}
+
+.formspace textarea{
+  width: 400px;
+  height: 100px;
+}
+.formspace optgroup{
+  background-color: #FFF6E8;
+  border: 1px;  
+}
+
+/* now, if I create an id for a particular module's viewing area, I can easily override
+   the modulespace formatting with something that I need just for that module to view right. */
+#Modulespace #Articlespace {
+	text-align:left;
+	position:relative;
+	background : #FFF6E8;
+	padding : 0px 0px 5px 5px;
+}
+
+/* right menu bar, could just as easily be left based on positioning. */
+#container #Right {
+	border-left:1px solid #DCAC72;
+	border-bottom:1px solid #DCAC72;
+	position: relative;
+	float: right;
+	width: 170px;
+	background-color: #FFFCF5;
+	margin: 0px 0px 10px 10px;
+	font-size: 78%;
+	padding: 5px;
+}
+
+/* this styling only applies to the right menu. */
+#Right table{
+	width: 100%;
+}
+
+
+
+#footer {
+	margin:;
+	margin-bottom : 0;
+	margin-top : 0;
+	margin-left : 10px;
+	margin-right : 10px;
+	float : none;
+	clear : both;
+  vertical-align: bottom;
+}
+
+/* paragraph spacing in the footer */
+#footer p{
+  margin: 2px 2px 0 0;
+  font-size: 78%;
+  text-align: center;
+}
+
+/*some basic markup stuff */
+a, a:link {
+	text-decoration : none;
+	font-weight : bolder;
+	color : #6F1010;
+}
+
+a:visited {
+	color: #00376B;
+	text-decoration: none;
+	}
+
+a:hover {
+	color: #B41C1C;
+	text-decoration: underline;
+	}
+  
+h1{
+	font-weight : bold;
+	font-size : 110%;
+	margin: 0 0 0 0;
+}
+h2{
+	font-weight: bold;
+	font-size: 100%;
+	margin: 0 0 0 0;
+}
+
+img {
+	border-width: 0;
+	vertical-align: text-top;
+	}
+
+
+
+/* some xaraya stuff */
+
+
+
+/* some items for the admin menu */
+.xar-menu-section {
+   color: #191970;
+   font-size: 11pt;
+   font-weight: bold;
+   font-family: Tahoma,Verdana,Arial,Helvetica,sans-serif;
+   border-bottom: thin dotted #a0a0a0;
+   line-height: 170%;
+   width: 100%;
+   margin-bottom: 4px;
+   list-style-type: none;
+   padding: 0px;
+}
+ul.xar-menu-section, ol.xar-menu-section {
+   margin: 4px 0px 4px 0px;
+}
+li.xar-menu-section {
+   border-width: 0px;
+}
+.xar-menu-section-current {
+border: 1px solid #f00;
+   background-color: #cce6ff;
+   color: #191970;
+   font-size: 10pt;
+   font-weight: bold;
+   font-family: Tahoma,Verdana,Arial,Helvetica,sans-serif;
+   border-bottom: 1px solid #191970;
+   line-height: 170%;
+   list-style-type: none;
+}
+.xar-menu-item {
+   font-size: 8.5pt;
+   font-weight: bold;
+   font-family: Tahoma,Verdana,Arial,Helvetica,sans-serif;
+   padding-left: 0px;
+   line-height: 120%;
+   list-style-type: none;
+margin: 0px;
+}
+.xar-menu-item-current {
+   background-color: #cce6ff;
+   font-size: 8.5pt;
+   font-weight: bold;
+   font-family: Tahoma,Verdana,Arial,Helvetica,sans-serif;
+   padding-left: .5em;
+   padding-bottom: .3em;
+   list-style-type: none;
+}
+li.xar-menu-item:hover {
+   background-color: #f0f0f0;
+}
+.xar-menu-subitem {
+   font-size: 8pt;
+   font-weight: bold;
+   font-family: Tahoma,Verdana,Arial,Helvetica,sans-serif;
+   margin: 0px 0px 0px 6px;
+   padding-left: 0px;
+   list-style-type: none;
+   background-color: #cdd5f8;
+}
+.xar-menu-subitem:hover {
+}
+.xar-menu-subitem-current {
+   font-weight: bold;
+   color: #000000;
+   background-color: #f0f0f0;
+   font-size: 8pt;
+   margin-left: 6px;
+   padding-left: 0px;
+   list-style-type: none;
+}
+.xar-menu-item > a, .xar-menu-subitem > a {
+display: block;
+}
+.xar-menu-item-current > .xar-menu-subitem > a {
+   color: #193970;
+}
+.xar-menu-subitem > a:hover {
+   background-color: #cce6ff;
+}
+.xar-menu-item-current > .xar-menu-subitem > a:visited {
+   color: #003366;
+}

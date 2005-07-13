@@ -1,0 +1,44 @@
+this is a test.
+
+<h1>Module Name</h1>
+<h2>form name/action description</h2>
+<div class="formspace">
+  <table summary="form description here">
+    <tr>
+      <td><label for="text1">text1:</label></td><td><input type="text" id="text1" /></td>
+    </tr><tr>
+      <td><label for="check1">check1:</label></td><td><input type="checkbox" id="check1" /></td>
+    </tr><tr>    
+      <td><label for="check2">check2:</label></td><td><input type="checkbox" id="check2" /></td>
+    </tr><tr>    
+      <td><label for="check3">check3:</label></td><td><input type="checkbox" id="check3" /></td>
+    </tr><tr>    
+      <td><label for="check4">check4:</label></td><td><input type="checkbox" id="check4" /></td>
+    </tr><tr>
+      <td><label for="optgroup1">option group</label></td>
+      <td>
+        <optgroup id="optgroup" label="option group">
+          <input type="checkbox" id="optcheck1" /><label for="optcheck1">check1</label>
+          <input type="checkbox" id="optcheck2" /><label for="optcheck2">check2</label>
+          <input type="checkbox" id="optcheck3" /><label for="optcheck3">check3</label>
+          <input type="checkbox" id="optcheck4" /><label for="optcheck4">check4</label>
+        </optgroup>
+      </td>
+    </tr><tr>
+      <td><label for="ta1">textarea1: </label></td><td><textarea id="ta1" name="textarea1"></textarea></td>
+    </tr><tr>    
+      <td><label for="select1">select1: </label></td>
+      <td><select id="select1" name="select1"/>
+          <option value="option1" label="option1">option1</option>
+          <option value="option2" label="option2">option2</option>
+          <option value="option3" label="option3">option3</option>
+          <option value="option4" label="option4">option4</option>
+          <option value="option5" label="option5">option5</option>
+          <option value="option6" label="option6">option6</option>
+        </select>
+      </td>
+    </tr><tr>
+      <td>&nbsp;</td><td><button type="submit">Submit</button></td>
+    </tr>
+  </table>
+</div>
