@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xar type="page" ?>
+<xar:blocklayout version="1.0" content="text/html" xmlns:xar="http://xaraya.com/2004/blocklayout">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <xar:blockgroup name="header" id="header" />
+    <title>#$tpl:pageTitle#</title> 
+    <base href="&xar-baseurl;index.php" />
+<style type="text/css">@import url(&xar-baseurl;themes/ddf/style/style.css); </style> 
+<xar:style scope="common" />
+<xar:additional-styles />
+<xar:comment> Head JavaScript </xar:comment>
+<xar:base-render-javascript position="head" />
+
+<script type="text/javascript">
+<!--
+
+if (document.images) {
+  image1on = new Image();
+  image1on.src = "themes/ddf/images/main_on.gif";
+
+  image2on = new Image();
+  image2on.src = "themes/ddf/images/projects_on.gif";
+
+  image3on = new Image();
+  image3on.src = "themes/ddf/images/sponsors_on.gif";
+
+  image4on = new Image();
+  image4on.src = "themes/ddf/images/faq_on.gif";
+
+  image5on = new Image();
+  image5on.src = "themes/ddf/images/contact_on.gif";
+
+  image6on = new Image();
+  image6on.src = "themes/ddf/images/corporate_on.gif";
+
+  image1off = new Image();
+  image1off.src = "themes/ddf/images/main_off.gif";
+
+  image2off = new Image();
+  image2off.src = "themes/ddf/images/projects_off.gif";
+
+  image3off = new Image();
+  image3off.src = "themes/ddf/images/sponsors_off.gif";
+
+  image4off = new Image();
+  image4off.src = "themes/ddf/images/faq_off.gif";
+
+  image5off = new Image();
+  image5off.src = "themes/ddf/images/contact_off.gif";
+
+  image6off = new Image();
+  image6off.src = "themes/ddf/images/corporate_off.gif";
+
+}
+
+function changeImages() {
+  if (document.images) {
+    for (var i=0; i<changeImages.arguments.length; i+=2) {
+      document[changeImages.arguments[i]].src = eval(changeImages.arguments[i+1] + ".src");
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<xar:comment> Body JavaScript </xar:comment>
+<xar:base-render-javascript position="body" />
+
+<table width="100%" cellspacing="0" cellpadding="0" border="0">  
+  <tr>
+    <td style="width:100%; background-image: url('themes/ddf/images/banner_bg.gif')"><img src="themes/ddf/images/banner.jpg" alt="" width="635" height="111"/></td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0" cellpadding="0" border="0">  
+  <tr>
+    <td style="width:70%; background-image: url('themes/ddf/images/banner_bottom_bg.gif')"><img src="themes/ddf/images/banner_bottom.jpg" alt="" width="332" height="32"/></td>
+	<td style="width:10%; background-image: url('themes/ddf/images/banner_bottom_bg.gif')" align="right"><img src="themes/ddf/images/banner_curve.gif" alt="" width="35" height="32"/></td>
+	<td style="width:30%; background-image: url('themes/ddf/images/banner_right_bg.gif')"><img src="themes/ddf/images/banner_right_bg.gif" width="27" alt="" height="32"/></td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0" cellpadding="10" border="0">  
+  <tr>
+    <td style="width:80%" valign="top" rowspan="2" class="contentbox">
+		<xar:module id="modulespace" main="true" />
+	</td>
+	<td style="width:30%" valign="top" class="contentbox"><span class="sectiontitle">Welcome to the DDF</span></td>
+  </tr>
+  <tr>
+    <td style="width:30%" align="right" valign="top" class="contentbox"><img src="themes/ddf/images/mainpage.gif" alt="" width="204" height="154"/></td>
+  </tr>
+</table>
+<table width="100%" cellspacing="0" cellpadding="0" border="0">  
+  <tr>
+    <td style="width:70%; background-image: url('themes/ddf/images/bottom.gif');" align="right" valign="bottom">
+	  <table width="100%" cellspacing="0" cellpadding="0" border="0" class="navigation">
+	    <tr>
+		  
+		  <td style="width:100%" align="center" valign="bottom">
+		  <a href="index.php" onmouseover="changeImages('image1', 'image1on')" onmouseout="changeImages('image1', 'image1off')"><img id="image1" src="themes/ddf/images/main_off.gif" alt="Main Index"/></a>
+		  <a href="index.php/docs/1" onmouseover="changeImages('image2', 'image2on')" onmouseout="changeImages('image2', 'image2off')"><img id="image2" src="themes/ddf/images/projects_off.gif" alt="Projects"/></a>
+		  <a href="index.php/docs/3" onmouseover="changeImages('image3', 'image3on')" onmouseout="changeImages('image3', 'image3off')"><img id="image3" src="themes/ddf/images/sponsors_off.gif" alt="Sponsors"/></a>
+		  <a href="/index.php/faqs/" onmouseover="changeImages('image4', 'image4on')" onmouseout="changeImages('image4', 'image4off')"><img id="image4" src="themes/ddf/images/faq_off.gif" alt="FAQ"/></a>
+		  <a href="index.php/docs/6" onmouseover="changeImages('image5', 'image5on')" onmouseout="changeImages('image5', 'image5off')"><img id="image5" src="themes/ddf/images/contact_off.gif" alt="Contact"/></a>
+		  <a href="index.php/docs/5" onmouseover="changeImages('image6', 'image6on')" onmouseout="changeImages('image6', 'image6off')"><img id="image6" src="themes/ddf/images/corporate_off.gif" alt="Corporate Info"/></a>
+		  </td>
+		</tr>
+	  </table>
+	</td>
+	<td style="width:10%; background-image: url('themes/ddf/images/bottom.gif')" align="right"><img src="themes/ddf/images/bottom_curve.gif" alt="" width="42" height="45"/></td>
+	<td style="width:30%; background-image: url('themes/ddf/images/bottom_right.gif')"><img src="themes/ddf/images/bottom_right.gif" width="32" alt="" height="45"/></td>
+  </tr>
+  <tr>
+    <td colspan="3" style="background-color:#ff7f00"><img src="themes/ddf/images/bottom_space.gif" width="1" alt="" height="50"/></td>
+  </tr>
+  <tr>
+    <td colspan="3" style="background-color:#ff7f00"><a href="index.php?module=roles&amp;func=showloginform" style="color: #ff7f00;text-decoration: none;">&#960;</a><img src="themes/ddf/images/bottom_logo.gif" alt="" width="179" height="107"/></td>
+  </tr>
+</table>
+<xar:comment> Body JavaScript </xar:comment>
+<xar:base-render-javascript position="body" />
+</body>
+</html>
+</xar:blocklayout>

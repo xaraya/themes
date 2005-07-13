@@ -1,0 +1,8 @@
+
+<blockquote>
+            <li >
+            <a class="txttitle" href="#$link#">#$title#</a>
+            <div style="width:100%;">#$summary#</div>
+            </li>
+</blockquote>
+
