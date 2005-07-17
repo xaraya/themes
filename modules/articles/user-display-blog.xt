@@ -1,5 +1,7 @@
 <xar:set name="cids">#xarVarGetCached('Blocks.articles','cids')#</xar:set>
-<xar:set name="catlist">#xarModAPIFunc('categories','user','getcatinfo',array('cids' =&gt; $cids))#</xar:set>
+<xar:if condition="!empty($cids)">
+    <xar:set name="catlist">#xarModAPIFunc('categories','user','getcatinfo',array('cids' =&gt; $cids))#</xar:set>
+</xar:if>
 <div class="post-title">
     <em>
    <xar:set name="firstone">1;</xar:set>
