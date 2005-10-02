@@ -1,0 +1,23 @@
+<xar:set name="notes">str_replace('<p>', '', $notes)</xar:set>
+<xar:set name="notes">str_replace('</p>', '', $notes)</xar:set>
+<div class="articleview">
+	<h3>
+        #$title#
+        <xar:if condition="!empty($editurl)">
+            [<a href="#$editurl#">#$edittitle#</a>]
+        </xar:if>
+    </h3>
+	<div style="text-align: justify;">
+        #$summary#
+    </div>
+	<h5>
+        <xar:mlstring>
+            Download
+        </xar:mlstring>:
+    </h5>
+	<p>
+        <a href="var/uploads/#$notes#" title="#$notes#">
+            #$notes#
+        </a>
+    </p>
+</div>

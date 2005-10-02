@@ -1,0 +1,18 @@
+<div class="article">
+	<h2>
+       <a href="#$link#" title="#$title#" rel="bookmark">
+           #$title#
+       </a>
+    </h2>
+    <div class="meta">
+       #$date#
+    </div>
+    <div class="storycontent">
+        #$summary#
+	</div>
+    <div class="feedback">
+        <a href="#$link##comments">
+            #$comments#
+        </a>
+    </div>
+</div>

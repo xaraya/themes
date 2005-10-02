@@ -1,0 +1,10 @@
+<p style="padding-top: 20px;">
+    <xar:mlstring>
+        Users
+    </xar:mlstring>:
+    #$numusers#
+    <xar:mlstring>
+    Guests
+    </xar:mlstring>:
+    #$numguests#
+</p>

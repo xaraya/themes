@@ -1,0 +1,26 @@
+<div class="article">
+	<h1>
+           #$title#
+    </h1>
+    <div class="meta">
+       #$date#
+        <xar:if condition="!empty($editurl)">
+            [<a href="#$editurl#">#$edittitle#</a>]
+        </xar:if>
+    </div>
+    <div class="storycontent">
+        <div>#$summary#</div>
+        <div>#$body#</div>
+        <div>#$notes#</div>
+	</div>
+</div>
+
+<a name="comments"></a>
+
+<xar:if condition="!empty($hooks)">
+    <xar:foreach in="$hooks" key="$hookmodule">
+        <div>
+            #$hooks[$hookmodule]#
+        </div>
+    </xar:foreach>
+</xar:if>

@@ -1,0 +1,21 @@
+<xar:set name="themedir">#xarTplGetThemeDir()#</xar:set>
+
+<script type="text/javascript" src="#$themedir#/scripts/prototype.js"></script>
+<xar:if condition="!empty($numcols) and $number gt 0">
+    <xar:foreach in="$columns" key="$col">
+        <xar:foreach in="$columns[$col]" key="$row">
+            #$columns[$col][$row]#
+        </xar:foreach>
+    </xar:foreach>
+
+<xar:elseif condition="!empty($number)" />
+    <xar:foreach in="$columns" key="$col">
+        <xar:foreach in="$columns[$col]" key="$row">
+            #$columns[$col][$row]#
+        </xar:foreach>
+    </xar:foreach>
+</xar:if>
+
+#$output#
+
+<div style="padding-top: 10px; text-align: center; font-size: smaller;">#$pager#</div>
