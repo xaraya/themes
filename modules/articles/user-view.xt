@@ -1,0 +1,27 @@
+<xar:if condition="!empty($numcols) and $number gt 0">
+    <xar:foreach in="$columns" key="$col">
+        <xar:foreach in="$columns[$col]" key="$row">
+            #$columns[$col][$row]#
+        </xar:foreach>
+    </xar:foreach>
+
+<xar:elseif condition="!empty($number)" />
+    <xar:foreach in="$columns" key="$col">
+        <xar:foreach in="$columns[$col]" key="$row">
+            #$columns[$col][$row]#
+        </xar:foreach>
+    </xar:foreach>
+</xar:if>
+
+    <div id="footer">
+        <h1>
+            <xar:var scope="module" module="themes" name="SiteName" />
+        </h1>
+        <h2>
+            <xar:var scope="module" module="themes" name="SiteSlogan" />
+        </h2>
+        <div id="controls"></div>
+    </div>
+</div>
+<div class="presentation">
+    #$output#
