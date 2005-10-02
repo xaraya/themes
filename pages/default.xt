@@ -2,7 +2,7 @@
 <!DOCTYPE blocklayout PUBLIC "-//XAR//DTD BL 1.0 Strict//EN" "http://xaraya.com/bl1/DTD/bl1-strict.dtd">
 <?xar type="page" ?>
 <xar:blocklayout version="1.0" content="text/xml" xmlns:xar="http://xaraya.com/2004/blocklayout">
-	<feed version="0.3" xmlns="http://purl.org/atom/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:lang="en">
+	<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US">
 		<title>#xarVarTransform(htmlentities(xarModGetVar('themes', 'SiteName')), 'HTML', 'XML')#</title> 
 		<link rel="alternate" type="text/html" href="#xarVarPrepForDisplay(xarServerGetBaseURL())#" title="#xarVarTransform(htmlentities(xarModGetVar('themes', 'SiteName')), 'HTML', 'XML')#" /> 
 		<author>
