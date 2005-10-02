@@ -1,11 +1,11 @@
 <entry>
 	<title>#$rsstitle#</title>
-	<link rel="alternate" type="text/html" href="#$link#" title="#$rsstitle#"/> 
+	<link rel="alternate" type="text/html" href="#$link#" title="#xarVarTransform(htmlentities($rsstitle), 'HTML', 'XML')#"/> 
 	<id>#xarVarTransform(htmlentities(xarModGetVar('themes', 'AtomTag')), 'HTML', 'XML')#.#$aid#</id> 
-	<modified>#xarLocaleFormatUTCDate("%Y-%m-%dT%H:%M:%SZ",$pubdate)#</modified> 
-	<issued>#xarLocaleFormatUTCDate("%Y-%m-%dT%H:%M:%SZ",$pubdate)#</issued> 
-	<summary type="text/plain">#$rsssummary#</summary>
-	<content type="text/html" mode="escaped" xml:lang="en" xml:base="#$link#">
-		<![CDATA[ #$summary# ]]>
+	<updated>#xarLocaleFormatUTCDate("%Y-%m-%dT%H:%M:%SZ",$pubdate)#</updated> 
+	<published>#xarLocaleFormatUTCDate("%Y-%m-%dT%H:%M:%SZ",$pubdate)#</published> 
+	<summary type="text">#xarVarTransform(htmlentities($rsssummary), 'HTML', 'XML')#</summary>
+	<content type="html" xml:lang="en" xml:base="#$link#">
+		<![CDATA[ #xarVarTransform(htmlentities($summary), 'HTML', 'XML')# ]]>
 	</content>
 </entry>

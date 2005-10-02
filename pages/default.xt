@@ -3,18 +3,16 @@
 <?xar type="page" ?>
 <xar:blocklayout version="1.0" content="text/xml" xmlns:xar="http://xaraya.com/2004/blocklayout">
 	<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US">
-		<title>#xarVarTransform(htmlentities(xarModGetVar('themes', 'SiteName')), 'HTML', 'XML')#</title> 
-		<link rel="alternate" type="text/html" href="#xarVarPrepForDisplay(xarServerGetBaseURL())#" title="#xarVarTransform(htmlentities(xarModGetVar('themes', 'SiteName')), 'HTML', 'XML')#" /> 
+        <title>#xarVarTransform(htmlentities(xarModGetVar('themes', 'SiteName')), 'HTML', 'XML')#</title>
+        <subtitle>#xarVarTransform(htmlentities(xarModGetVar('themes', 'SiteSlogan')), 'HTML', 'XML')#</subtitle>
+        <link rel="alternate" type="text/html" href="#xarVarPrepForDisplay(xarServerGetBaseURL())#" title="#xarVarTransform(htmlentities(xarModGetVar('themes', 'SiteName')), 'HTML', 'XML')#" /> 
+        <link href="#xarVarPrepForDisplay(xarServerGetCurrentURL(array('theme' => 'atom')))#" rel="self"/>
 		<author>
 			<name>#xarVarTransform(htmlentities(xarModGetVar('mail', 'adminname')), 'HTML', 'XML')#</name> 
-			<url>#xarVarPrepForDisplay(xarServerGetBaseURL())#</url> 
-			<email>#xarVarTransform(htmlentities(xarModGetVar('mail', 'adminmail')), 'HTML', 'XML')#</email> 
 		</author>
-		<tagline>#xarVarTransform(htmlentities(xarModGetVar('themes', 'SiteSlogan')), 'HTML', 'XML')#</tagline>
 		<id>#xarVarTransform(htmlentities(xarModGetVar('themes', 'AtomTag')), 'HTML', 'XML')#</id>
-		<generator url="http://www.xaraya.com" version="#xarConfigGetVar('System.Core.VersionNum')#">#xarConfigGetVar('System.Core.VersionId')#</generator> 
-		<copyright>#xarModGetVar('themes', 'SiteCopyright')#</copyright> 
-		<modified>#xarLocaleFormatUTCDate("%Y-%m-%dT%H:%M:%SZ",getlastmod())#</modified> 
+        <generator uri="http://www.xaraya.com" version="1.00">Xarayar</generator>
+		<updated>#xarLocaleFormatUTCDate("%Y-%m-%dT%H:%M:%SZ",getlastmod())#</updated> 
 		<xar:module class="modulespace" main="true" />
 	</feed>
 </xar:blocklayout>
