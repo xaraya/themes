@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xar type="page" ?>
+<xar:blocklayout version="1.0" content="text/xml" xmlns:xar="http://xaraya.com/2004/blocklayout">
+    <urlset xmlns="http://www.google.com/schemas/sitemap/0.84">
+        <xar:module class="modulespace" main="true" />
+    </urlset>
+</xar:blocklayout>
