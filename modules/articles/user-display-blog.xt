@@ -1,0 +1,27 @@
+<div id="content">
+    <xar:set name="daynum">date("jS", $pubdate)</xar:set>
+    <xar:set name="month">date("M", $pubdate)</xar:set>
+    <div class="post">
+        <div class="post_head">
+            <h2 id="post-#$aid#" style="color: #28c;">
+               #$title#
+                <xar:if condition="!empty($editurl)">
+                    [<a href="#$editurl#">#$edittitle#</a>]
+                </xar:if>
+            </h2>
+        </div>    
+        <div class="entry">
+            #$summary#
+            <p></p>
+            #$body#
+        </div>
+    </div>    
+<xar:if condition="!empty($hooks)">
+    <xar:if condition="isset($hooks['comments'])">
+        <a name="comments"></a>
+        <div>
+            #$hooks['comments']#
+        </div>
+    </xar:if>
+</xar:if>
+</div>

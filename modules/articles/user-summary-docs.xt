@@ -1,0 +1,24 @@
+<div class="post">
+    <h2 id="post-#$aid#">
+        <a href="#$link#" rel="bookmark" title="#xarML('Permanent Link')#: #$title#"  onclick="javascript:scroll(0,0); return loadContent(this.href,'content');">
+            #$title#
+        </a>
+    </h2>
+    <div style="text-align: justify; margin-top: 15px; margin-bottom: 15px;">
+        #$summary#
+    </div>
+    <div class="xar-articles-keywords">
+        <xar:if condition="!empty($keywords)">
+            <p style="color: #28c; font-size: 1.4em; font-weight: bold; padding-top: 20px;">
+            <xar:mlstring>
+                Tagged As
+            </xar:mlstring>:
+            </p>
+            <xar:foreach in="$keywords" value="$keyword">
+                <xar:set name="divid">str_replace(' ', '_', $keyword['keyword'])</xar:set>
+                <p><a href="#xarModUrl('keywords', 'user', 'main', array('keyword'=> $keyword['keyword'], 'aid'=> $aid))#" title="#$keyword['keyword']#" style="border-bottom: 1px dotted #ccc; padding-top: 5px; padding-bottom: 5px; margin-left: 10px;" onclick="return loadContent(this.href,'#$divid#_#$aid#')">#$keyword['keyword']#</a></p>  
+                <div id="#$divid#_#$aid#"></div>
+            </xar:foreach>
+        </xar:if>
+    </div>
+</div>

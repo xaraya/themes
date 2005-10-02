@@ -1,0 +1,15 @@
+<xar:if condition="isset($_GET['ajax'])">
+    <xar:set name="divid">xarVarPrepForDisplay($_GET['ajax'])</xar:set>
+</xar:if>
+<xar:if condition="isset($divid)">
+    <div id="content">
+<xar:else />
+    <div id="articles">
+</xar:if>
+    <xar:foreach in="$columns" key="$col">
+        <xar:foreach in="$columns[$col]" key="$row">
+            #$columns[$col][$row]#
+        </xar:foreach>
+    </xar:foreach>
+    <div style="padding-top: 10px; text-align: center; font-size: smaller;">#$pager#</div>
+</div>

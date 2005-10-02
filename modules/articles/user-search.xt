@@ -1,0 +1,14 @@
+<xar:foreach in="$results" value="$result">
+<ul class='LSRes'>
+    <xar:foreach in="$result['items']" value="$item">
+        <li class="LSRow"><a href="#$loop:item['URL']#">
+            <xar:if condition="!empty($item['categories']) and count($item['categories']) gt 0">
+                [ <xar:foreach in="$item['categories']" value="$cat">
+                    #$cat['cjoin']# <a href="#$cat['clink']#">#$cat['cname']#</a>
+                </xar:foreach> ]
+            </xar:if>
+            <a href="#$item['link']#">#$item['title']#</a> <xar:if condition="!empty($item['pubdate'])">#xarLocaleFormatDate('%a, %d %B %Y %H:%M:%S %Z', $item['pubdate'])#</xar:if>
+        </li>
+    </xar:foreach>
+</ul>
+</xar:foreach>

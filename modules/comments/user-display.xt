@@ -1,0 +1,68 @@
+<xar:if condition="isset($_GET['ajaxblock'])">
+    <xar:set name="divid">xarVarPrepForDisplay($_GET['ajaxblock'])</xar:set>
+</xar:if>
+<xar:if condition="isset($divid)">
+    <div id="content">
+<xar:else />
+    <div id="comments_151_#$header['itemtype']#_#$header['objectid']#" style="border: 1px dotted #ccc; margin: 5px; padding: 10px;">
+</xar:if>
+<xar:if condition="isset($_GET['ajax'])">
+    <xar:set name="keyid">xarVarPrepForDisplay($_GET['ajax'])</xar:set>
+</xar:if>
+<xar:if condition="!empty($keyid)">
+    <p style="color: #28c; font-size: 1.4em; font-weight: bold; padding-top: 20px;">
+        <span class="nohover">
+            <a title="Close" onclick="document.getElementById('comments_151_#$header['itemtype']#_#$header['objectid']#').style.display = 'none';">
+                <img src="themes/wyome_4/images/close.png" title="close" alt="close" />
+            </a>
+        </span>
+        Comments:
+    </p>
+</xar:if>
+<xar:sec mask="Comments-Read" catch="false">
+    <xar:set name="$number_of_comments">count($package['comments'])</xar:set>
+    <xar:if condition="$package['settings']['render'] ne 'nocomments'">
+        <xar:if condition="$number_of_comments eq 0">
+                <p>
+                    <xar:mlstring>There are no comments attached to this item.</xar:mlstring>
+                </p>
+            <xar:if condition="!isset($header['selected_cid'])">
+                <xar:template file="input-box" type="module" />
+            <xar:elseif condition="!empty($header['objectlink']) and !empty($header['objecttitle'])"/> 
+                <p>
+                    <xar:mlstring>Return to</xar:mlstring> 
+                    <a href="#$header['objectlink']#" onclick="return loadContent(this.href,'content')">#$header['objecttitle']#</a>
+                </p>
+            </xar:if>
+        <xar:else/>
+            <xar:if condition="!isset($header['selected_cid'])">
+                <xar:template file="option_bar" type="module" />
+            </xar:if>
+            <xar:if condition="$package['settings']['render'] eq 'nested'">
+                <xar:template file="view-nested" type="module" />
+            <xar:elseif condition="$package['settings']['render'] eq 'threaded'" />
+                <xar:template file="view-threaded" type="module" />
+            <xar:elseif condition="$package['settings']['render'] eq 'flat'" />
+                <xar:template file="view-flat" type="module" />
+            </xar:if>
+            <xar:if condition="!isset($header['selected_cid'])">
+                <xar:template file="input-box" type="module" />
+            <xar:elseif condition="!empty($header['objectlink']) and !empty($header['objecttitle'])"/> 
+                <p>
+                    <xar:mlstring>Return to</xar:mlstring> 
+                    <a href="#$header['objectlink']#" onclick="return loadContent(this.href,'content')">#$header['objecttitle']#</a>
+                </p>
+            </xar:if>
+        </xar:if>
+    <xar:else />
+        <p>
+            <xar:mlstring>Comments display and submission are currently disabled.</xar:mlstring>
+            <xar:if condition="$number_of_comments ne 0">
+                <xar:mlstring>Total number of attached comments:</xar:mlstring> #$number_of_comments#
+            <xar:else />
+                <xar:mlstring>There are no comments attached to this item.</xar:mlstring>
+            </xar:if>
+        </p>
+    </xar:if>
+</xar:sec>
+</div>

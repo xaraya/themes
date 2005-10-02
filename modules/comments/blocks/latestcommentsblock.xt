@@ -1,0 +1,12 @@
+<p style="color: #28c; font-size: 1.4em; font-weight: bold; padding-top: 20px;">Comments <span class="xml"><a href="#xarModUrl('comments', 'user', 'rss', array('theme'=> 'rss'))#">XML</a></span>:</p>
+<ul>
+  <xar:foreach in="$commentlist" key="$daylabel" value="$commentsthisday">
+      <xar:foreach in ="$commentsthisday" value="$comment">
+        <li style="border-bottom: 1px dotted #ccc; padding-top: 5px; padding-bottom: 5px; margin-left: -35px; margin-right: 5px; list-style: none;">
+            <xar:set name="subject">str_replace('<p>', '', $comment['xar_subject'])</xar:set>
+            <xar:set name="fullsubject">str_replace('</p>', '', $subject)</xar:set>
+            <a href="#xarModURL('comments','user','display',array('cid' => $comment['xar_cid'], 'ajaxblock' => true))#" onclick="javascript:scroll(0,0); return loadContent(this.href,'content');">#$fullsubject#</a>
+        </li>
+      </xar:foreach>
+  </xar:foreach>
+</ul>

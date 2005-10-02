@@ -1,0 +1,1 @@
+<xar:loop name="$usercontent"><li><a href="#$loop:item['url']#" title="#$loop:item['comment']#"> #$loop:item['title']#</a></li></xar:loop>

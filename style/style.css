@@ -1,0 +1,128 @@
+@import url(xaraya.php);
+@import url(verticlemenu.php);
+@import url(type.php);
+@import url(search.php);
+
+body
+{ 
+    background: #fff; 
+    color: #000;
+    margin: 0px;
+    font-size: 62.5%;
+	font-family: Trebuchet MS, Verdana, Arial, Helvetica, sans-serif;
+}
+
+#wyome_title
+{
+	position: absolute;
+	top: 50px;
+	left: 100px;
+}
+
+#wyome_links
+{
+	position: absolute;
+	top: 80px;
+	left: 0px;
+}
+
+#wyome_links li
+{
+	list-style-type: none;
+	display: inline;
+	font-size: 1.4em;
+	padding: 10px;
+}
+
+#content
+{ 
+	margin: 0px;
+    padding-top: 100px;
+    padding-left: 20px;
+	padding-right: 20px;
+    padding-bottom: 20px;
+	width: 600px; 
+    font-size: 1.1em;
+    float: right;
+}
+
+#wyome-description
+{
+    display: none;
+}
+
+#admin-panel
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+	z-index: 10;
+}
+
+#page-title
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+	padding: 0 0 20px 10px;
+}
+    #page-title h1
+    {
+		font-family:  Vivaldi, Helvetica, Georgia,  sans-serif;
+        font-size: 5em;
+		text-align: center;
+        color: #ddd;
+        background: #f5f5f5;
+    }
+#page-title-links
+{
+    position: absolute;
+    top: 25px;
+    left: 0px;
+	padding: 0 0 20px 10px;
+	z-index: 10;
+}
+	#page-title-links ul, #page-title-links li
+	{
+		margin: 0;
+		padding: 0;
+		display: inline;
+		list-style-type: none;
+        font-size: 1.2em;
+        font-variant: small-caps;
+        background: #f5f5f5;
+	}
+
+	#page-title-links a:link, #page-title-links a:visited
+	{
+		float: left;
+		font-weight: bold;
+		margin: 0 10px 4px 10px;
+		text-decoration: none;
+		color: #6495ED;
+        background: #f5f5f5;
+		font-size: 1.2em;
+	}
+
+	#page-title-links a:hover
+	{
+		border-bottom: 4px solid #036;
+		padding-top: 5px;
+		background: #f5f5f5; 
+		color: #036;
+	}
+
+	#page-title-links a:hover { color: #036; }
+
+
+.articleview
+{
+    border-bottom: 1px #651 dotted; 
+    padding-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.articleview:hover
+{
+	background: #f8f8f8;
+}

@@ -1,0 +1,17 @@
+<xar:if condition="!empty($items)">
+    <xar:set name="dummy">shuffle($items)</xar:set>
+    <xar:foreach in="$items" value="$item">
+        <xar:set name="size">($item['value'] * .01) * .4</xar:set>
+        <xar:set name="weight">($item['value'] * .01) * 100</xar:set>
+        <xar:if condition="$weight gt 1000">
+            <xar:set name="weight">1000</xar:set>
+        </xar:if>
+        <xar:if condition="$size gt 4">
+            <xar:set name="size">4</xar:set>
+        </xar:if>
+        <xar:if condition="$size lt 1">
+            <xar:set name="size">1</xar:set>
+        </xar:if>
+        <a href="#$item['link']#" style="font-size: #$size#em; font-weight: #$weight#" title="#$item['title']#">#$item['title']#</a>
+    </xar:foreach>
+</xar:if> 

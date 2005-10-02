@@ -1,0 +1,12 @@
+<xar:if condition="empty($warning)">
+<p style="color: #28c; font-size: 1.4em; font-weight: bold; padding-top: 20px;">Sighted <span class="xml"><a href="http://del.icio.us/rss/niceguyeddie">XML</a></span>:</p>
+  <xar:if condition="!empty($feedcontent)">
+    <ul>
+      <xar:loop name="$feedcontent">
+        <li style="border-bottom: 1px dotted #ccc; padding-top: 5px; padding-bottom: 5px; margin-left: -35px; margin-right: 5px; list-style: none;">         
+            <a href="#xarVarPrepForDisplay($loop:item['link'])#">#$loop:item['title']#</a>
+        </li>
+      </xar:loop>
+    </ul>
+  </xar:if>
+</xar:if>

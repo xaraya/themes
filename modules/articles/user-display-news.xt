@@ -1,0 +1,36 @@
+<xar:set name="time">date("g", $pubdate)</xar:set>
+<h2>
+    #$date#
+</h2> 
+<div class="post"> 
+    <h3 class="storytitle" id="post-#$aid#">
+        #$title#
+        <xar:if condition="!empty($editurl)">
+            [<a href="#$editurl#">#$edittitle#</a>]
+        </xar:if>
+    </h3> 
+    <div class="meta"> 
+        &#8212; #$author# @ #$time#
+    </div> 
+    <div class="storycontent"> 
+        #$summary#
+        <p></p>
+        #$body#
+    </div> 
+    <div class="feedback" align="right"> 
+        <a href="#$link##comments">
+            #$comments# &raquo;
+        </a>
+    </div> 
+</div> 
+
+
+<a name="comments"></a>
+
+<xar:if condition="!empty($hooks)">
+    <xar:foreach in="$hooks" key="$hookmodule">
+        <div>
+            #$hooks[$hookmodule]#
+        </div>
+    </xar:foreach>
+</xar:if>

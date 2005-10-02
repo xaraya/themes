@@ -1,0 +1,42 @@
+<xar:set name="dayname">date("l", $pubdate)</xar:set>
+<xar:set name="daynum">date("j", $pubdate)</xar:set>
+<xar:set name="month">date("M", $pubdate)</xar:set>
+<xar:set name="year">date("Y", $pubdate)</xar:set>
+<div class="post">
+    <div class="post_cal">
+	    <div class="dayname">#$dayname#</div>
+		<div class="daynum">#$daynum#</div>
+		<div class="month">#$month#</div>
+		<div class="year">#$year#</div>
+    </div>
+	<div class="post_head">
+	    <h2 id="post-#$aid#">
+            <a href="#$link#" rel="bookmark" title=" #xarML('Permanent Link')#: #$title#">
+                #$title#
+            </a>
+        </h2>
+		<p class="postmetadata">
+            <xar:mlstring>
+                Part of
+            </xar:mlstring> #$author# 
+            <xar:mlstring>
+                adventure in
+            </xar:mlstring>
+            <xar:foreach in="$categories" value="$cat">
+                <a href="#$cat['clink']#" title="#xarML('View all posts in')# #$cat['cname']#" rel="category tag">
+                    #$cat['cname']# 
+                </a>
+            </xar:foreach>
+        </p> 
+	</div>
+	<div class="entry">
+	    #$summary#
+    </div>
+    <div class="comments">
+	    <p style="font-weight:bold;text-align:right;">
+            <a href="#$link##comments">
+                #$comments# &#187;
+            </a>
+        </p>
+	</div>
+</div>

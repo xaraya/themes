@@ -1,0 +1,41 @@
+<xar:set name="daynum">date("jS", $pubdate)</xar:set>
+<xar:set name="month">date("M", $pubdate)</xar:set>
+<div class="post">
+	<div class="post_head">
+	    <h2 id="post-#$aid#" style="color: #28c;">
+		    #$daynum# #$month#:
+            <a href="#$link#" rel="bookmark" title="#$title#" onclick="javascript:scroll(0,0); return loadContent(this.href,'content');">
+                #$title#
+            </a>
+        </h2>
+	</div>
+    <div class="post_cal">
+        <a href="http://wyome.com/ws.php?type=trackback&amp;id=151,10,#$aid#" title="trackback">
+            TrackBack
+        </a> |
+        <a href="&xar-modurl-articles-user-display;&amp;ptid=#$pubtypeid#&amp;aid=#$aid#" onclick="return loadContent('&xar-modurl-comments-user-display;&amp;modid=151&amp;itemtype=#$pubtypeid#&amp;objectid=#$aid#&amp;ajax=true','comments_151_#$pubtypeid#_#$aid#');">
+            #$comments#
+        </a> |
+        <a href="#$link#" rel="bookmark" title="#xarML('Permanent Link')#: #$title#" >
+            Permalink
+        </a>
+    </div>
+    <div id="comments_151_#$pubtypeid#_#$aid#"></div>
+	<div class="entry">
+	    #$summary#
+    </div>
+    <div class="xar-articles-keywords">
+        <xar:if condition="!empty($keywords)">
+            <p style="color: #28c; font-size: 1.4em; font-weight: bold; padding-top: 20px;">
+            <xar:mlstring>
+                Tagged As
+            </xar:mlstring>:
+            </p>
+            <xar:foreach in="$keywords" value="$keyword">
+                <xar:set name="divid">str_replace(' ', '_', $keyword['keyword'])</xar:set>
+                <p><a href="#xarModUrl('keywords', 'user', 'main', array('keyword'=> $keyword['keyword'], 'aid'=> $aid))#" title="#$keyword['keyword']#" style="border-bottom: 1px dotted #ccc; padding-top: 5px; padding-bottom: 5px; margin-left: 10px;" onclick="return loadContent(this.href,'#$divid#_#$aid#')">#$keyword['keyword']#</a></p>  
+                <div id="#$divid#_#$aid#"></div>
+            </xar:foreach>
+        </xar:if>
+    </div>
+</div>

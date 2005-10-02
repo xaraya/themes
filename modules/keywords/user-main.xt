@@ -1,0 +1,64 @@
+<xar:if condition="empty($keyword)">
+    <div id="content">
+        <xar:foreach in="$items" value="$item">
+            <xar:set name="size">$item['count'] * .4</xar:set>
+            <xar:set name="weight">$item['count'] * 100</xar:set>
+            <xar:if condition="$weight gt 1000">
+                <xar:set name="weight">1000</xar:set>
+            </xar:if>
+            <xar:if condition="$size gt 4">
+                <xar:set name="size">4</xar:set>
+            </xar:if>
+            <xar:if condition="$size lt 1">
+                <xar:set name="size">1</xar:set>
+            </xar:if>
+            <a href="#$item['url']#" style="font-size: #$size#em; font-weight: #$weight#" title="#$item['label']#"  onclick="javascript:scroll(0,0); return loadContent(this.href,'content');">#$item['label']#</a>
+        </xar:foreach>
+    </div>
+<xar:elseif condition="$status eq 1 and !empty($keyword)" />
+<xar:if condition="isset($_GET['aid'])">
+    <xar:set name="keyid">xarVarPrepForDisplay($_GET['aid'])</xar:set>
+</xar:if>
+<xar:set name="divid">str_replace(' ', '_', $keyword)</xar:set>
+<xar:if condition="empty($keyid)">
+    <div id="content">
+<xar:else />
+    <div id="#$divid#_#$keyid#">
+</xar:if>
+        <p style="color: #28c; font-size: 1.4em; font-weight: bold; padding-top: 20px;">
+            <xar:if condition="!empty($keyid)">
+                <span class="nohover">
+                    <a title="Close" onclick="document.getElementById('#$divid#_#$keyid#').style.display = 'none';">
+                        <img src="themes/wyome_4/images/close.png" title="close" alt="close" />
+                    </a>
+                </span>
+            </xar:if>
+            See Also:
+        </p>
+        <ul>
+            <xar:foreach in="$items" key="$id" value="$item">
+                <li style="border-bottom: 1px dotted #ccc; padding-top: 5px; padding-bottom: 5px; margin-left: -35px; margin-right: 5px; list-style: none;">
+                    <xar:if condition="!empty($item['url']) and !empty($item['label'])">
+                        <a href="#$item['url']#" onclick="javascript:scroll(0,0); return loadContent(this.href,'content');">
+                            #$item['label']# 
+                        </a>
+                        <xar:elseif condition="!empty($item['url'])" />
+                        <xar:comment>
+                            you could skip these items 
+                        </xar:comment>
+                        <a href="#$item['url']#" onclick="javascript:scroll(0,0); return loadContent(this.href,'content');">
+                            <xar:ml>
+                                <xar:mlstring>
+                                    item #(1) 
+                                </xar:mlstring>
+                                <xar:mlvar>
+                                    #$item['itemid']# 
+                                </xar:mlvar>
+                            </xar:ml>
+                        </a>
+                    </xar:if>
+                </li>
+            </xar:foreach>
+        </ul>
+    </div>
+</xar:if>

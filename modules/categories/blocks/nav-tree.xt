@@ -1,0 +1,15 @@
+<p style="color: #28c; font-size: 1.4em; font-weight: bold; padding-top: 20px;">Categories:</p>
+<ul>
+<xar:foreach in="$cattrees" value="$cattree">
+    <xar:foreach in="$cattree['catparents']" value="$catparent">
+        <li style="border-bottom: 1px dotted #ccc; padding-top: 5px; padding-bottom: 5px; margin-left: -35px; margin-right: 5px; list-style: none;">         
+            <a href="#$catparent['catlink']#&amp;ajax=true" onclick="javascript:scroll(0,0); return loadContent(this.href,'content');">#$catparent['catlabel']#</a> <span class="xml"><a href="#$catparent['catlink']#&amp;theme=rss">XML</a></span>
+        </li>
+    </xar:foreach>
+    <xar:foreach in="$cattree['catitems']" value="$catitem">
+        <li style="border-bottom: 1px dotted #ccc; padding-top: 5px; padding-bottom: 5px; margin-left: -35px; margin-right: 5px; list-style: none;">         
+            <a href="#$catitem['catlink']#&amp;ajax=true" onclick="javascript:scroll(0,0); return loadContent(this.href,'content');">#$catitem['catlabel']#</a> <span class="xml"><a href="#$catitem['catlink']#&amp;theme=rss">XML</a></span>
+        </li>
+    </xar:foreach>
+</xar:foreach>
+</ul>

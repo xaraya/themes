@@ -1,0 +1,9 @@
+Currently Online
+<xar:mlstring>
+    Users
+</xar:mlstring>:
+#$numusers#
+<xar:mlstring>
+    Guests
+</xar:mlstring>:
+#$numguests#
