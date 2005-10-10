@@ -1,7 +1,7 @@
 <?php
 $themeinfo['name'] = 'XBlue_Pro';
 $themeinfo['id'] = '31505';
-$themeinfo['directory'] = 'xblue_pro';
+$themeinfo['directory'] = 'XBlue_Pro';
 $themeinfo['author'] = 'andyv';
 $themeinfo['homepage'] = 'http://xaraya.com/~andyv/';
 $themeinfo['email'] = 'andyv@xaraya.com';
