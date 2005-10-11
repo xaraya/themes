@@ -7,7 +7,8 @@
 <xar:blockgroup name="header" id="header" />
 <title>#$tpl:pageTitle#</title> 
 <base href="&xar-baseurl;index.php" />
-<link href="&xar-baseurl;themes/XBlue_Pro/style/base.css" rel="stylesheet" type="text/css" />
+<xar:set name="themeloc">xarTplGetThemeDir()</xar:set>
+<link href="#$themeloc#/style/base.css" rel="stylesheet" type="text/css" />
 <xar:style scope="common" />
 <xar:additional-styles />
 <xar:comment> Head JavaScript </xar:comment>
@@ -24,7 +25,8 @@
 <body>
 <div id="wrapper">
 <div id="innerwrapper">
-  <a href="&xar-baseurl;" accesskey="1"><img src="&xar-baseurl;themes/XBlue_Pro/images/logo.gif" alt="Sample Logo" id="logo" /></a>
+  <a href="&xar-baseurl;" accesskey="1"><img src="#$themeloc#/images/logo.gif" alt="Sample 
+Logo" id="logo" /></a>
     <div id="topNav" class="clear">
         <ul>
           <li id="skipNav"><a href="#contentBlockMiddle" accesskey="2">skip navigation</a></li>
@@ -41,7 +43,8 @@
   </div>
   <xar:comment> banner here, not much more yet </xar:comment>
   <div>
-    <img id="mainBanner" src="&xar-baseurl;themes/XBlue_Pro/images/banner2.jpg" alt="Create sucessful web projects with Xaraya" width="710" height="80" />
+    <img id="mainBanner" src="#$themeloc#/images/banner2.jpg" alt="Create sucessful web 
+projects with Xaraya" width="710" height="80" />
   </div>
   <xar:comment> not sure if breacrumbs should be implemented dynamically, static for demo purposes only atm </xar:comment>
   <div id="breadcrumbs">
@@ -67,7 +70,9 @@
         </div>
     </xar:if>
 	<div class="contentBlockRight validateButton ">
-	    <a href="http://validator.w3.org/check/referer"><img src="&xar-baseurl;themes/XBlue_Pro/images/xhtml.gif" width="90" height="15" alt="validate this pages xhtml" /></a>
+	    <a href="http://validator.w3.org/check/referer"><img 
+src="&xar-baseurl;themes/xblue_pro/images/xhtml.gif" width="90" height="15" alt="validate this pages xhtml" 
+/></a>
 		<a href="http://jigsaw.w3.org/css-validator/check/referer/"><img src="&xar-baseurl;themes/XBlue_Pro/images/css.gif" width="90" height="15" alt="validate this pages css" /></a>
 	</div>
     <div class="contentBlockRight">

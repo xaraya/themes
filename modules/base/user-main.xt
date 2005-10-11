@@ -19,7 +19,8 @@
             Thank you for your support, and feel free to join our development or user discussions to become involved in our community. 
         </xar:mlstring>
     </h2>
-    <img src="themes/XBlue_Pro/images/scrshot.jpg" width="195" height="215" class="cutoutImage " alt="xaraya website screenshot" id="xarsite" />
+    <xar:set name="themeloc">xarTplGetThemeDir()</xar:set>
+    <img src="#$themeloc#/images/scrshot.jpg" width="195" height="215" class="cutoutImage " alt="xaraya website screenshot" id="xarsite" />
     <h3>
         <xar:mlstring>
             For more information on Xaraya, please visit 
