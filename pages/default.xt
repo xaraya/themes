@@ -38,11 +38,11 @@
 <tr valign="middle" bgcolor="#EAE7D1">
 <td align="left" valign="top" width="8" height="22"><img src="#$somaraxpthemedir#/images/topnav-left.gif"></td>
 <td width="15%" background="#$somaraxpthemedir#/images/topnav-bg.gif" nowrap><font class="content" color="#363636">
-&nbsp;&nbsp;<font color="#ffffff"><a href="index.php?modules=roles&func=register&phase=registerform">Create</a></font> an account
+&nbsp;&nbsp;<font color="#ffffff"><a href="index.php?modules=roles&amp;func=register&amp;phase=registerform">Create</a></font> an account
 </font></td>
 <td align="center" height="20" width="73%" background="#$somaraxpthemedir#/images/topnav-bg.gif">
 <font class="content">
-<A href="/">Home</a>&nbsp;&middot;&nbsp;<A href="index.php?module=articles">Articles</a>&nbsp;&middot;&nbsp;<A href="index.php?module=roles">Your Account</a>&nbsp;&middot;&nbsp;<A href="index.php?module=articles&type=admin&func=new">Submit News</a>&nbsp;&middot;&nbsp;<A href="index.php?module=hitcount">Top 10</a>
+<A href="/">Home</a>&nbsp;&middot;&nbsp;<A href="index.php?module=articles">Articles</a>&nbsp;&middot;&nbsp;<A href="index.php?module=roles">Your Account</a>&nbsp;&middot;&nbsp;<A href="index.php?module=articles&amp;type=admin&amp;func=new">Submit News</a>&nbsp;&middot;&nbsp;<A href="index.php?module=hitcount">Top 10</a>
 </font>
 </td>
 <td align="left" valign="top" width="8" height="22"><img src="#$somaraxpthemedir#/images/topnav-left.gif"></td>
