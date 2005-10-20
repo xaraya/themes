@@ -4,7 +4,7 @@
  */
 $themeinfo['name'] = 'NinthAveYellow';
 $themeinfo['id'] = '636363';
-$themeinfo['directory'] = 'NinthAveYellow';
+$themeinfo['directory'] = 'ninthaveyellow';
 $themeinfo['author'] = 'Roger Keays';
 $themeinfo['homepage'] = 'http://www.ninthave.net';
 $themeinfo['email'] = 'r.keays@ninthave.net';
@@ -17,4 +17,3 @@ $themeinfo['xar_version'] = '1.0';
 $themeinfo['bl_version'] = '1.0';
 $themeinfo['class'] = '2';
 ?>
-
