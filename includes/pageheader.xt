@@ -1,13 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE blocklayout PUBLIC "-//XAR//DTD BL 1.0 Strict//EN" "http://xaraya.com/bl1/DTD/bl1-strict.dtd">
-<?xar type="include" ?>
-<xar:blocklayout version="1.0" content="text/html" xmlns:xar="http://xaraya.com/2004/blocklayout" dtd="xhtml1-strict">
-    <xar:set name="siteslogan"><xar:var scope="module" module="themes" name="SiteSlogan" /></xar:set>
+<xar:set name="siteslogan"><xar:var scope="module" module="themes" name="SiteSlogan" /></xar:set>
 
-    <img id="iceBg" src="&xar-baseurl;#xarTplGetThemeDir()#/images/iceBackground.png" title="ice ice baby" />
+<img id="iceBg" src="&xar-baseurl;#xarTplGetThemeDir()#/images/iceBackground.png" title="ice ice baby" />
     
-    <div id="iceHeader">
-        <a href="/" title="ICE home"><img id="iceLogo" src="&xar-baseurl;#xarTplGetThemeDir()#/images/iceLogoTest.png" title="ice logo" /></a>
-        <div id="iceSlogan"><xar:var name="siteslogan" /></div>
-    </div>
-</xar:blocklayout>
+<div id="iceHeader">
+    <a href="/" title="ICE home"><img id="iceLogo" src="&xar-baseurl;#xarTplGetThemeDir()#/images/iceLogoTest.png" title="ice logo" /></a>
+    <div id="iceSlogan"><xar:var name="siteslogan" /></div>
+</div>
