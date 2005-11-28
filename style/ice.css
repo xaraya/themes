@@ -18,8 +18,10 @@ h1 {
     color: #AE4E06;
     text-transform: uppercase;
     letter-spacing: 2px;
-    text-align: center;
+    text-align: center;/* 
     background-color: #F1FBFF;
+    background-color: #D1EFF8; */
+    border-bottom: 2px dotted #7F95D7;
     padding: .35em;
     margin-top: 2.8em;
 }
@@ -28,12 +30,17 @@ h2 {
     font-weight: bold;
     color: #AE4E06;
     letter-spacing: 1px;
-    margin: 2.8em 0 1.4em;
+    margin: 2.1em 0 1.4em;
 }
 h3 {
     font-size: 104%;
     font-weight: bold;
     color: #AE4E06;
+}
+h4 {
+    font-size: 100%;
+    font-weight: bold;
+    margin: .7em 0 0;
 }
 legend {
     font-size: 104%;
@@ -131,15 +138,19 @@ fieldset {
 #iceNavSide {
     float: right;
     width: 20%;
-    margin: 0 0 4em 4em;
+    margin: 0 0 4.2em 4.2em;
     border-bottom: 10px solid #384890;
-    padding: .5em;
+    border-bottom: 2px dotted #7F95D7;
+    border-left: 1px solid #7F95D7;
+    padding: .7em;
+    padding-bottom: 2.1em;
     background-color: #F1FBFF;
+    background-color: #D1EFF8;
 }
 #iceContent {
     min-height: 40em;
     margin: 2.8em 20% 0 0;
-    padding: 0 4em 2em 4em;
+    padding: 0 5.6em 2.1em 5.6em;
 }
 /* #iceNavTop {
     min-height: 2.1em;
@@ -155,13 +166,39 @@ fieldset {
 }
 
 /* iceNavSide block styling */
+#iceNavSide h2 {
+    margin: 0;
+}
+#iceNavSide .xar-blocksDefault:first-child h2 {
+    margin: .7em 0 0;
+}
 #iceNavSide ul {
     margin: 0;
-    padding: 0 0 0 1em;
+    padding: 0;
+    list-style-type: none;
+}
+#iceNavSide li {
+    margin: 0;
+    padding: 0;
 }
 #iceNavSide ul ul {
-    margin: 0 0 1em 0;
-    padding: 0 0 0 1em;
+    padding-left: .7em;
+}
+#iceNavSide hr {
+    width: 33%;
+    height: 2px;
+    margin: 2.1em auto;/* 
+    background-color: #7F95D7; */
+    border-bottom: 2px dotted #7F95D7;
+    border-width: 0 0 2px 0;
+}
+#iceNavSide .xar-blocksDefault:first-child hr {
+    display: none;
+}
+
+/* iceContent block styling */
+#iceContent p {
+    margin: 0 0 .7em 1.4em;
 }
 
 /* Styling commerce specific */
