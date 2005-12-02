@@ -1,0 +1,7 @@
+@import "style.css";
+@import "verticalmenu.css";
+
+#dashboard {
+    margin: 0px;
+    padding: 0px;
+}

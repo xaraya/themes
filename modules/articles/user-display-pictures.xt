@@ -1,0 +1,69 @@
+<xar:if condition="xarTplAddStyleLink('articles', 'gallery')"></xar:if>
+<xar:base-include-javascript filename="xar_articles_pictures.js" />
+<xar:template file="publinks" type="module" />
+<xar:categories-navigation layout="trails" showchildren="1" module="articles" itemtype="$ptid" itemid="$aid" cids="$cids" showcatcount="$showcatcount" showempty="0" />
+
+<div id="wrap"> 
+    <div id="header"> 
+        <h1>
+            #$title#
+        </h1> 
+        <p>
+            <xar:if condition="!empty($counter)">
+                ( #$counter#
+                <xar:mlstring>
+                    Reads
+                </xar:mlstring>)
+            </xar:if>
+            <xar:if condition="!empty($editurl)">
+                [
+                <a href="#$editurl#">
+                    #$edittitle#
+                </a>
+                ]
+            </xar:if> 
+        </p>
+    </div> 
+    <div id="main-content"> 
+        <div id="fullplate-photo"> 
+            <p>#$notes#</p>
+            <div id='photoholder'>
+                <xar:if condition="xarModIsHooked('uploads','articles',$pubtypeid) and substr($body,0,1) eq ';'">
+                    <xar:set name="img_output">xarModAPIFunc('uploads','user','showoutput',array('value' => $body, 'multiple' => true))</xar:set>
+                    <xar:foreach in="$img_output" key="$fileId" value="$fileInfo">
+                        <a href="#xarModURL('images', 'user', 'display', array('fileId' => $fileId))#" alt="#xarMl('View full sized image')#" style="background: none;">
+                            <xar:if condition="xarModIsAvailable('images')">
+                                <xar:set name="file">$fileInfo</xar:set>
+                                <xar:template file="picture-display" type="module" />
+                            <xar:else />
+                                <img style="border: 1px solid black;" src="#xarModURL('uploads', 'user', 'download', array('fileId' => $fileInfo['fileId']))#"  width="100%" alt="#$title#" id="thephoto" />
+                            </xar:if>
+                        </a>
+                    </xar:foreach>
+                <xar:else />
+                    <img style="border: 1px solid black;" src="#$body#" border="0" alt="#$title#" id="thephoto" />
+                </xar:if>
+            </div>
+			<p class="xar-sub xar-articles-notes"><xar:mlstring>Note: Click the image for a full-size view.</xar:mlstring></p>
+            <xar:if condition="!empty($prevart) || !empty($nextart)">
+				<div style="width: 100%; margin-top: 10px; text-align: center;">
+                    <xar:if condition="!empty($prevart)">
+                        <a href="#$prevart#">&laquo; <xar:mlstring>Previous</xar:mlstring></a> &nbsp;
+                    </xar:if>
+                    <xar:if condition="!empty($nextart)">
+                        &nbsp; <a href="#$nextart#"><xar:mlstring>Next</xar:mlstring> &raquo;</a>
+                    </xar:if>
+				</div>
+            </xar:if>
+        </div> 
+    </div> 
+</div>
+
+<br /><br />
+<xar:if condition="!empty($hooks)">
+    <xar:foreach in="$hooks" key="$hookmodule">
+        #$hooks[$hookmodule]#
+    </xar:foreach>
+</xar:if>
+
+<xar:template file="navtabs-user" type="module" />

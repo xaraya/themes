@@ -1,0 +1,48 @@
+<xar:if condition="!empty($maplink) or !empty($archivelink) or !empty($submitlink)">
+    <xar:if condition="xarTplAddStyleLink('base', 'navtabs')">
+        <div class="xar-tabs">
+            <div class="navhelp help" title="#xarML('Click on a tab to explore further')#">
+                <xar:mlstring>
+                    Options 
+                </xar:mlstring>
+                : 
+            </div>
+            <div class="tabnav-hairline"><!-- &nbsp; --></div>
+            <ul class="navlist">
+                <xar:if condition="!empty($submitlink)">
+                    <li>
+                        <a href="#$submitlink#" title="New Item">
+                            <xar:mlstring>
+                                New Item 
+                            </xar:mlstring>
+                        </a>
+                    </li>
+                    <xar:if condition="!empty($submitcat) and (!isset($addfolder) or $addfolder != 0)">
+                        <li>
+                            <a href="#$submitcat#" title="New Folder">
+                                <xar:mlstring>
+                                    New Folder
+                                </xar:mlstring>
+                            </a>
+                        </li>
+                    </xar:if>
+                </xar:if>
+                <xar:if condition="!empty($maplink)">
+                    <li>
+                        <a href="#$maplink#">
+                            #$maplabel# 
+                        </a>
+                    </li>
+                </xar:if>
+                <xar:if condition="!empty($archivelink)">
+                    <li>
+                        <a href="#$archivelink#">
+                            #$archivelabel# 
+                        </a>
+                    </li>
+                </xar:if>
+            </ul>
+            <div class="tabnav-hairline"><!-- &nbsp; --></div>
+        </div>
+    </xar:if>
+</xar:if>

@@ -1,0 +1,19 @@
+
+<div style="border-bottom: 1px solid #cccccc; margin-bottom: 3px;width: auto;">
+    <div style="float: left; width: 3%;">
+    <xar:set name="themedir">#xarTplGetThemeDir()#</xar:set>
+    <a href="var/uploads/#$body#"><img src="#$themedir#/images/filesave.png" /></a>
+    </div>
+    <div style="float: left; width: 50%;">
+        <a href="var/uploads/#$body#">#$title#</a>
+    </div>
+    <div style="float: left; width: 35%;">
+        #$date#
+    </div>
+    <div style="float: right; width: 10%; text-align: right;">
+        <a href="#xarModURL('articles', 'admin', 'modify', array('aid' => $aid))#" title="#xarML('Edit this item')#"><img src="#$themedir#/images/edit.png" /></a>
+        <a href="#xarModURL('articles', 'admin', 'delete', array('aid' => $aid))#" title="#xarML('Delete this item...')#"><img src="#$themedir#/images/red-x.png" /></a>
+    </div>
+    <div style="clear: both; width: auto;"></div>
+</div>
+

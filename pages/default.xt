@@ -1,0 +1,109 @@
+<?xar type="page" ?>
+<xar:blocklayout version="1.0" content="text/html" xmlns:xar="http://xaraya.com/2004/blocklayout">
+
+<xar:set name="themedir">#xarTplGetThemeDir()#</xar:set>
+<xar:set name="sitename">#xarModGetVar('themes', 'SiteName')#</xar:set>
+<xar:set name="slogan">#xarModGetVar('themes', 'SiteSlogan')#</xar:set>
+<xar:set name="footer">#xarModGetVar('themes', 'SiteFooter')#</xar:set>
+<xar:set name="copyright">#xarModGetVar('themes', 'SiteCopyRight')#</xar:set>
+
+<xar:set name="leftblocks"><xar:blockgroup name="left" id="left" /></xar:set>
+<xar:set name="rightblocks"><xar:blockgroup name="right" id="right" /></xar:set>
+<xar:set name="centerblocks"><xar:blockgroup name="center" id="center" /></xar:set>
+
+<xar:comment>
+    Let topic images alternate between left and right side of article:
+</xar:comment>
+<xar:set name="themename">xarTplGetThemeName()</xar:set>
+<xar:if condition="xarThemeSetVar($themename, 'side', 1, 1)"></xar:if>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <xar:blockgroup name="header" id="header" />
+    <link rel="icon" href="favicon.ico" />
+    <title>#$tpl:pageTitle#</title>
+    <base href="&xar-baseurl;" />
+
+    <xar:style scope="common" />
+    <xar:style />
+    <xar:additional-styles />
+
+    <xar:base-render-javascript position="head" />
+</head>
+<body onload="window.defaultStatus='#$sitename#';" id="body">
+
+    <xar:if condition="!empty($adminnav)"><div id="adminmenu">#$adminnav#</div></xar:if>
+
+    <div id="top">
+        <div id="top_img"><img src="#$themedir#/images/logo.png" alt="#$sitename#" /></div>
+        <h1 class="sitename">
+            <a class="sitename" href="." title="#$sitename# Home">#$sitename#</a>
+        </h1>
+        <h2 class="slogan">#$slogan#</h2>
+
+        <form action="index.php?module=search" method="get">
+            <input type="hidden" name="module" id="module" value="search" />
+            <div id="searchBox">
+                <div id="searchAssist">search&nbsp;</div>
+                <input type="text" name="q" id="q6" class="textinput" />
+                <input type="submit" value="GO" class="searchButton" />
+            </div>
+        </form>
+        <div class="xar-clearboth"></div>
+    </div>
+    <div id="container">
+        <xar:if condition="!empty($leftblocks) and !empty($rightblocks)">
+            <div id="left-column">
+                <div id="inner-column-left">
+                    #$leftblocks#
+                </div>
+            </div>
+            <div id="main-3cols">
+                #$centerblocks#
+                <xar:module class="modulespace" main="true" />
+            </div>
+            <div id="right-column">
+                <div id="inner-column-right">
+                    #$rightblocks#
+                </div>
+            </div>
+        <xar:elseif condition="!empty($leftblocks) and empty($rightblocks)" />
+            <div id="left-column">
+                <div id="inner-column-left">
+                    #$leftblocks#
+                </div>
+            </div>
+            <div id="main-2cols">
+                #$centerblocks#
+                <xar:module class="modulespace" main="true" />
+            </div>
+        <xar:elseif condition="empty($leftblocks) and !empty($rightblocks)" />
+            <div id="main-2cols">
+                #$centerblocks#
+                <xar:module class="modulespace" main="true" />
+            </div>
+            <div id="right-column">
+                <div id="inner-column-right">
+                    #$rightblocks#
+                </div>
+            </div>
+        <xar:else />
+            <div id="main-1cols">
+                #$centerblocks#
+                <xar:module class="modulespace" main="true" />
+            </div>
+        </xar:if>
+
+    </div>
+    <div id="footer">
+    <div id="footer-inner">
+        <div id="copyright">#$copyright#</div>
+        <div id="footernote">#$footer#</div>
+        <div class="xar-clearboth"></div>
+    </div>
+    </div>
+    <xar:base-render-javascript position="body" />
+</body>
+</html>
+</xar:blocklayout>
