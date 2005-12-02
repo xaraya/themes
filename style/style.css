@@ -1,0 +1,336 @@
+/* Import Xaraya Styles */
+@import "xaraya.css";
+
+/*
+Theme Name: Green Marinee
+Theme URI: http://e-lusion.com/
+Description: Green Marine was designed and built specially for <a href="http://alexking.org">Alex King's</a> WordPress 1.5 themes competition.
+Version: 1.0
+Author: Ian Main
+Author URI: http://e-lusion.com/
+
+For the WordPress community (GPL), enjoy it guys.
+by Ian Main - e-lusion.com
+
+Ported to Xaraya by Curtis Farnham, Nov 2005
+*/
+
+/*
+
+    1) General selectors
+    2) Structure
+    3) Left selectors
+    4) Right selectors
+    5) Footer
+    6) Forms
+    7) Accessibility
+    8) Hacks
+
+*/
+
+/* 1) -=-=-=- General selectors -=-=-=- */
+
+body {
+    background: #FCFEF4 url(../images/bg_top.gif) repeat-x;
+    margin: 68px 0 20px 0;
+    padding: 0;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    font-size: 76%;
+    color: #3F3F3F;
+    text-align: center;
+    }
+
+h1.title {
+    color: #FCFEF4;
+    margin: -35px 0 0 7px;
+    position: absolute;
+    font-size: 2.2em;
+    }
+
+h1.title a:link,
+h1.title a:visited {
+    color: #FCFEF4;
+    text-decoration: none;
+    }
+
+h1.title a:hover,
+h1.title a:active {
+    background: none;
+    color: #DAED9C;
+    text-decoration: none;
+    }
+
+h1 {
+    margin: 0px;
+    font-size: 1.4em;
+    }
+
+h2 {
+    color: #7DA721;
+    font-weight: normal;
+    font-size: 1.8em;
+    margin: 20px 0 0 0;
+    }
+
+h2 a:link, h2 a:visited {
+    color: #7DA721;
+    font-weight: normal;
+    text-decoration: none;
+    }
+
+h2 a:hover, h2 a:active {
+    color: #3F3F3F;
+    background: none;
+    font-weight: normal;
+    text-decoration: none;
+    }
+
+h3 {
+    color: #7DA721;
+    font-size: 1.4em;
+    margin: 20px 0 0 0;
+    font-weight: normal;
+    }
+
+h4 {
+    font-size: 1em;
+    margin: 20px 0 3px 0;
+    font-weight: bold;
+    }
+
+
+a:link {
+    color: #78A515;
+    font-weight: bold;
+    text-decoration: none;
+    }
+
+a:visited {
+    color: #999;
+    }
+
+a:hover, a:active {
+    background: #78A515;
+    color: #fff;
+    text-decoration: none;
+    }
+
+blockquote {
+    border-left: 4px solid #3F3F3F;
+    padding: 0 10px 0 10px;
+    margin: 0 0 0 10px;
+    }
+
+code {
+    font-family: Courier New, fixed;
+    color: #444E1F;
+    background: #F7FEDC;
+    }
+
+pre {
+    font-family: Courier New, fixed;
+    background: #F7FEDC;
+    border: 1px solid #3F3F3F;
+    padding: 5px;
+    margin: 5px;
+    font-size: .9em;
+}
+
+p {
+    line-height: 1.4;
+    }
+
+
+img {
+    border: none;
+    }
+
+ul {
+    margin-left: 10px;
+    padding-left: 10px;
+    list-style: none;
+}
+
+/* 2)-=-=-=- Structure -=-=-=- */
+
+#container {
+    width: 765px;
+    margin: 0 auto;
+    text-align: left;
+    }
+
+.container_left {
+    background: url(../images/container_left.gif) no-repeat;
+    }
+
+.container_right {
+    background: url(../images/container_right.gif) no-repeat top right;
+    }
+
+.topline {
+    background: url(../images/container_top.gif) no-repeat;
+    }
+
+#content {
+    margin: 0px 20px 0px 20px;
+    padding: 10px 0 0 0;
+    width: 480px;
+    min-height: 285px;
+    }
+
+#content_bg {
+    background: #fff url(../images/container.gif) repeat-y;
+    }
+
+
+
+/* Comment this out if you don't want to display the slogan */
+h1.title {
+    margin: -45px 0 0 7px;
+    }
+
+.tagline {
+    color: #888;
+    margin: -18px 0 0 9px;
+    position: absolute;
+    font-size: 1em;
+    font-weight: bold;
+
+    /* Leave this commented out if you want to display the slogan */
+    /* display: none; */
+    }
+
+.highlight { /* Basic highlight for text */
+    background: #F7FEDC;
+    }
+
+.readmore {
+    text-align: right;
+    padding-top: 3px;
+}
+
+.topic_icon,
+.topic_icon_left,
+.topic_icon_right {
+    margin: 5px;
+}
+
+.topic_icon,
+.topic_icon_right {
+    float: right;
+}
+
+.topic_icon_left {
+    float: left;
+}
+
+.topic_icon img,
+.topic_icon_left img,
+.topic_icon_right img {
+    border: 1px solid black;
+}
+
+.topic_icon a:hover {
+    background: none;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.photoalbum {
+    text-align: center;
+}
+
+.photoalbum img {
+    border: 1px solid black;
+    margin: 5px;
+}
+
+.photoalbum a:hover {
+    background: none;
+}
+
+.code {
+    font-family: Courier New, fixed;
+    color: #444E1F;
+    background: #F7FEDC;
+}
+
+/* 4)-=-=-=- Right selectors -=-=-=- */
+
+#right {
+    float: right;
+    width: 250px;
+    padding: 30px 15px;
+    font-size: .9em;
+
+    /* Box model hack used for IE5.5/5 */
+    voice-family: "\"}\"";
+    voice-family: inherit;
+    width: 230px;
+    }
+
+#right a:visited {
+    text-decoration: none;
+}
+
+/* 5)-=-=-=- Footer -=-=-=- */
+
+#footer {
+    background: url(../images/footer.gif) no-repeat;
+    height: 75px;
+    }
+
+#footer p {
+    padding: 30px 0 0 70px;
+    float: left;
+    text-transform: uppercase;
+    font-size: .9em;
+    color: #777;
+    }
+
+
+/* 6)-=-=-=- Forms -=-=-=- */
+
+input {
+    border: 1px solid #BFBFBF;
+    color: #949494;
+    background: #fff;
+    padding: 2px 2px 1px 2px;
+    font-size: 1em;
+    }
+
+input:hover {
+    background: #fff;
+    border: 1px solid #ACE149;
+    color: #7DA721;
+    font-size: 1em;
+    }
+
+textarea {
+    font-family: Arial, Verdana, Helvetica;
+    font-size: 1.1em;
+    border: 1px solid #BFBFBF;
+    color: #949494;
+    padding: 2px 2px 1px 2px;
+    width: 450px;
+    }
+
+textarea:hover {
+    background: #fff;
+    border: 1px solid #ACE149;
+    color: #7DA721;
+    }
+
+/* 7)-=-=-=- Accessibility -=-=-=- */
+
+#skip {
+    display: none;
+    }
+
+hr { /* Simple style when CSS not in use */
+    display: none;
+    }
+
+/* 8)-=-=-=- Hacks -=-=-=- */

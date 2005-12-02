@@ -1,0 +1,16 @@
+/* Import Xaraya Styles */
+@import "style.css";
+@import "verticalmenu.css";
+
+#content_bg {
+    background: #fff url(../images/container-admin.gif) repeat-y;
+    }
+
+
+#content {
+    width: 735px;
+    }
+
+#footer {
+    background: url(../images/footer-admin.gif) no-repeat;
+    }

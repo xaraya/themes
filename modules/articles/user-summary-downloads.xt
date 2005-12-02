@@ -1,0 +1,61 @@
+<xar:comment> *** Make topic images alternate sides *** </xar:comment>
+<xar:set name="$themename">xarTplGetThemeName()</xar:set>
+<xar:set name="$side">xarThemeGetVar($themename, 'side')</xar:set>
+<xar:if condition="$side"><xar:set name="$newside">0</xar:set><xar:else /><xar:set name="$newside">1</xar:set></xar:if>
+<xar:if condition="xarThemeSetVar($themename, 'side', 1, $newside)"></xar:if>
+
+<div class="xar-articles-summary xar-standard-box-padding">
+	<xar:if condition="!empty($categories) and count($categories) gt 0">
+		[ 
+		<xar:foreach in="$categories" value="$cat">
+			#$cat['cjoin']# <a href="#$cat['clink']#">#$cat['cname']#</a> 
+		</xar:foreach>
+		] 
+	</xar:if>
+	<h1><a class="xar-title" href="#$link#">#$title#</a></h1> 
+	<div class="xar-accent xar-padding-thin">
+		<span class="xar-sub">
+			<xar:mlstring>Posted on</xar:mlstring>:
+			<xar:mlvar>#xarLocaleGetFormattedDate('long',$pubdate)#</xar:mlvar>&nbsp;
+			<xar:mlvar>#xarLocaleGetFormattedTime('long',$pubdate)#</xar:mlvar>
+		</span> 
+	</div>
+	<xar:if condition="$side">
+		<div class="topic_icon_left">#$topic_icons#</div>
+	<xar:else />
+		<div class="topic_icon_right">#$topic_icons#</div>
+	</xar:if>
+	<div class="xar-articles-summary">
+		#$summary#
+
+	    <p><b><xar:mlstring>Download</xar:mlstring>:</b><br />
+
+        <xar:if condition="!empty($notes) and xarModIsHooked('uploads','articles',$pubtypeid) and substr($notes,0,1) eq ';'">
+
+	        <xar:set name="notes_output">xarModAPIFunc('uploads','user','showoutput',array('value' => $notes, 'multiple' => true))</xar:set>
+	        <xar:foreach in="$notes_output" key="$fileid" value="$fileinfo">
+				<xar:set name="$size">#xarModAPIFunc('uploads', 'user', 'normalize_filesize', array('fileSize' => $fileinfo['fileSize']))#</xar:set>
+	            <a href="#$fileinfo['fileDownload']#">#$fileinfo['fileName']#</a> (#$size['short']#)<br />
+	        </xar:foreach>
+
+        <xar:elseif condition="!empty($notes) and file_exists('var/uploads/'.$notes)" />
+
+            <a href="var/uploads/#$notes#" title="#$notes#">#$notes#</a>
+
+        <xar:elseif condition="!empty($notes)" />
+
+	        #$notes#
+
+	    </xar:if>
+		</p>
+
+	    <div class="xar-articles-keywords">
+	        <xar:if condition="!empty($keywords)">
+		        <xar:mlstring>Keywords</xar:mlstring>: 
+		        <xar:loop name="$keywords">
+		            <a href="#xarModUrl('keywords', 'user', 'main', array('keyword' => $loop:item['keyword']))#" title="#$loop:item['keyword']#">#$loop:item['keyword']#</a>
+		        </xar:loop>
+			</xar:if>
+	    </div>
+	</div>
+</div>

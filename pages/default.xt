@@ -1,0 +1,88 @@
+<?xar type="page" ?>
+<xar:blocklayout version="1.0" content="text/html" xmlns:xar="http://xaraya.com/2004/blocklayout">
+
+<xar:comment> *** SET SOME VARS *** </xar:comment>
+    <xar:set name="$baseurl">&xar-baseurl;</xar:set>
+    <xar:set name="$themedir">#xarTplGetThemeDir()#</xar:set>
+    <xar:set name="$sitename">#xarModGetVar('themes', 'SiteName')#</xar:set>
+    <xar:set name="$slogan">#xarModGetVar('themes', 'SiteSlogan')#</xar:set>
+    <xar:set name="footer">#xarModGetVar('themes', 'SiteFooter')#</xar:set>
+    <xar:set name="copyright">#xarModGetVar('themes', 'SiteCopyRight')#</xar:set>
+
+    <xar:set name="$leftblocks"><xar:blockgroup name="left" id="left" /></xar:set>
+    <xar:set name="$rightblocks"><xar:blockgroup name="right" id="right" /></xar:set>
+    <xar:set name="$centerblocks"><xar:blockgroup name="center" id="center" /></xar:set>
+
+
+    <xar:comment> *** Reset topic image side *** </xar:comment>
+    <xar:set name="$themename">xarTplGetThemeName()</xar:set>
+    <xar:if condition="xarThemeSetVar($themename, 'side', 1, 1)"></xar:if>
+
+
+<xar:comment> *** BEGIN THE HTML NOW *** </xar:comment>
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+    <xar:blockgroup name="header" id="header" />
+    <link rel="icon" href="favicon.ico" />
+    <title>#$tpl:pageTitle#</title>
+    <base href="&xar-baseurl;index.php" />
+
+    <xar:comment> Head Style Sheets</xar:comment>
+    <xar:style scope="common" />
+    <xar:style />
+    <xar:additional-styles />
+
+    <xar:comment> Head JavaScript </xar:comment>
+    <xar:base-render-javascript position="head" />
+    </head>
+    <body onload="window.defaultStatus='#$sitename#';" id="body">
+        <div id="container">
+            <div id="skip">
+                <p><a href="#content" title="Skip to site content">Skip to content</a></p>
+                <p><a href="#search" title="Skip to search" accesskey="s">Skip to search - Accesskey = s</a></p>
+            </div>
+            <hr />
+            <h1 class="title"><a href="#$baseurl#">#$sitename#</a></h1>
+            <div class="tagline">#$slogan#</div>
+
+            <div id="content_bg">
+            <!-- Needed for dropshadows -->
+                <div class="container_left">
+                    <div class="container_right">
+                        <div class="topline">
+
+                            <!-- end header -->
+                            <!-- begin sidebar -->
+                            <div id="right">
+                                #$leftblocks#
+                                #$rightblocks#
+                            </div>
+                            <!-- end sidebar -->
+
+                            <hr />
+                            <div id="content">
+                                #$centerblocks#
+                                <xar:module main="true" id="modulespace" />
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
+                        <!-- End content -->
+                        <!-- begin footer -->
+                        <hr />
+                        <div id="footer">
+                            <p>#$copyright#
+                            <xar:if condition="!empty($copyright) and !empty($footer)"> - </xar:if>
+                            #$footer#
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+    </html>
+
+</xar:blocklayout>

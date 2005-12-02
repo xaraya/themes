@@ -1,0 +1,62 @@
+<xar:comment> *** Make topic images alternate sides *** </xar:comment>
+<xar:set name="$themename">xarTplGetThemeName()</xar:set>
+<xar:set name="$side">xarThemeGetVar($themename, 'side')</xar:set>
+<xar:if condition="$side"><xar:set name="$newside">0</xar:set><xar:else /><xar:set name="$newside">1</xar:set></xar:if>
+<xar:if condition="xarThemeSetVar($themename, 'side', 1, $newside)"></xar:if>
+
+<div class="xar-articles-summary xar-standard-box-padding">
+	<xar:if condition="!empty($categories) and count($categories) gt 0">
+		[ 
+		<xar:foreach in="$categories" value="$cat">
+			#$cat['cjoin']# <a href="#$cat['clink']#">#$cat['cname']#</a> 
+		</xar:foreach>
+		] 
+	</xar:if>
+	<h1 style="text-align: left;"><a class="xar-title" href="#$link#">#$title#</a></h1> 
+	<div class="xar-accent xar-padding-thin">
+		<span class="xar-sub">
+			<xar:mlstring>Posted on</xar:mlstring>:
+			<xar:mlvar>#xarLocaleGetFormattedDate('long',$pubdate)#</xar:mlvar>&nbsp;
+			<xar:mlvar>#xarLocaleGetFormattedTime('long',$pubdate)#</xar:mlvar>
+		</span> 
+	</div>
+	<xar:if condition="xarModIsHooked('uploads','articles',$pubtypeid) and substr($body,0,1) eq ';'">
+		<div class="photoalbum">
+			<xar:set name="img_output">xarModAPIFunc('uploads','user','showoutput',array('value' => $body, 'multiple' => true))</xar:set>
+			<xar:foreach in="$img_output" key="$fileId" value="$fileInfo">
+				<a href="#$link#">
+					<xar:if condition="xarModIsAvailable('images')">
+						<xar:set name="file">$fileInfo</xar:set>
+						<xar:template file="picture-thumbnail" type="module" />
+					<xar:else />
+						<img class="photoalbum" src="#xarModURL('uploads', 'user', 'download', array('fileId' => $fileInfo['fileId']))#" width="150px" alt="#$title#" />
+					</xar:if>
+				</a>
+			</xar:foreach>
+		</div>
+	<xar:else />
+		<a href="#$link#"><img class="photoalbum" src="#$summary#" alt="#$title#" /></a>
+	</xar:if>
+	<xar:if condition="!empty($notes)">
+		<div class="xar-articles-summary" style="text-align: center;">#$notes#</div>
+	</xar:if>
+	  
+	<xar:if condition="!empty($counter)">
+		<xar:if condition="$counter eq 1">
+			(#$counter#&nbsp;<xar:mlstring>read</xar:mlstring>)
+		<xar:else />
+			(#$counter#&nbsp;<xar:mlstring>reads</xar:mlstring>)
+		</xar:if>
+	</xar:if>
+
+	<div class="xar-articles-keywords">
+		<xar:if condition="!empty($keywords)">
+			<xar:mlstring>
+				Keywords
+			</xar:mlstring>:
+			<xar:loop name="$keywords">
+				<a href="#xarModUrl('keywords', 'user', 'main', array('keyword'=> $loop:item['keyword']))#" title="#$loop:item['keyword']#">#$loop:item['keyword']#</a>  
+			</xar:loop>
+		</xar:if>
+	</div>
+</div>

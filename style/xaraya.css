@@ -1,0 +1,151 @@
+th {
+   font-weight: bold;
+}
+table {
+    border: 0px;
+}
+
+/* No Display for this in this theme */
+.xar-mod-head {
+   display: none;
+}
+
+.xar-mod-title {
+   font-weight: bold;
+}
+
+.xar-module-icon {
+    float: right;
+    margin: 5px;
+}
+
+.xar-mod-body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.xar-mod-foot {}
+/* was #F3F6ED */
+.xar-alt {background-color: #F7FEDC;}
+.xar-accent {
+    background-color: #F5F5F5;
+    font-size: .9em;
+    padding: 2px;
+}
+.xar-accent:hover {background: #F7FEDC;}
+
+.xar-alt-outline {border: 1px solid #F7FEDC; }
+.xar-accent-outline {border: 1px solid #F7FEDC; }
+.xar-norm-outline {border: 1px solid #F7FEDC; }
+.xar-sub {font-size: .9em;}
+.xar-title {font-weight: bold;}
+
+.xar-error {
+    color: #cc3300;
+}
+
+ul.xar-menu-section {
+    padding: 0 0 0 0px;
+    margin: 5px;
+}
+
+ul.xar-menu-item {
+    padding: -10px 10px 30px 6px;
+    margin: 0;
+}
+
+ul.xar-menu-subitem {
+    margin: 0;
+    padding: 0;
+}
+
+li.xar-menu-item {
+    list-style: none;
+    background: url(../images/links_bullet.gif) no-repeat 0 5px;
+    padding: 3px 0 2px 20px;
+}
+
+li.xar-menu-subitem {
+    list-style: none;
+    background: url(../images/sub_icon.gif) no-repeat 0 4px;
+    padding: 2px 0 2px 20px;
+}
+
+li.xar-menu-item-current {
+    list-style: none;
+    background: url(../images/links_bullet.gif) no-repeat 0 5px;
+    padding: 3px 0 2px 20px;
+}
+
+li.xar-menu-subitem-current {
+    list-style: none;
+    background: url(../images/sub_icon.gif) no-repeat 0 4px;
+    padding: 2px 0 2px 20px;
+    font-weight: bold;
+}
+
+
+.xar-block-title {
+    font-size: 1.5em;
+    margin: 0 0 0px 0;
+    font-weight: normal;
+}
+
+
+li.xar-menu-item a,
+li.xar-menu-subitem a {
+    text-decoration: none;
+}
+
+li.xar-menu-item a:link,
+li.xar-menu-item a:visited,
+li.xar-menu-subitem a:link,
+li.xar-menu-subitem a:visited {
+    color: #565D4A;
+    font-weight: normal;
+    }
+
+li.xar-menu-item a:hover,
+li.xar-menu-subitem a:hover {
+    background: #80BE14;
+    color: #fff;
+    }
+
+li.xar-menu-section {
+    padding: 0px;
+    list-style: none;
+}
+
+
+/*
+.xar-block-head {
+    color: #7DA721;
+    font-weight: bold;
+    font-size: 1.4em;
+    margin: 20px 0 0 0;
+}
+*/
+
+.xar-block-foot {
+    border-top: 3px solid #ACE149;
+    margin: 10px 0 10px 0;
+    }
+
+
+.xar-standard-box-padding {
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #dddddd;
+}
+
+.xar-articles-notes {
+    font-style: italic;
+    padding-top: 5px;
+    text-align: justify;
+}
+
+.xar-articles-summary {
+    min-height: 80px;
+    margin-top: 5px;
+    text-align: justify;
+}
