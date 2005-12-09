@@ -81,6 +81,14 @@ fieldset {
     right: -60px;
     z-index: 10;
 }
+input, button, textarea {
+    position: relative;
+    z-index: 11; /* so they're always in front of the background-image, just for the sketch */
+    background-color: transparent;
+}
+input:focus, button:focus, textarea:focus {
+    background-color: #FEFDFD;
+}
 #iceNavGlobal a, #iceContent a {
     position: relative;
     z-index: 20;
