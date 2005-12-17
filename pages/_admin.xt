@@ -4,11 +4,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-    <title>#$tpl:pageTitle#</title> 
+    <title>#$tpl:pageTitle#</title>
     <base href="&xar-baseurl;index.php" />
 <style type="text/css">@import url(&xar-baseurl;themes/Xaraya_Classic/style/style.css); </style> 
-        <xar:style scope="common" />
-        <xar:additional-styles />
+<xar:style scope="common" />
+<xar:additional-styles />
+
 <xar:comment> Head JavaScript </xar:comment>
 <xar:base-render-javascript position="head" />
 </head>
