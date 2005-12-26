@@ -34,6 +34,7 @@ Required:
 Optional:
 ---------
 - $icalStartTime   - Start time of the even in HHMMSS format
+- $icalTimeZone    - Timezone to tell client how times should be interpreted.
 - $icalPriority    - A priority number (0 (unspecified) 1 (Highest) >1 (Lower))
                      This may help iCal client rendering events
                      occurring at overlapping time intervals
