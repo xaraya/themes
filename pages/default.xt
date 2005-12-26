@@ -2,7 +2,7 @@
 <xar:blocklayout version="1.0" content="text/plain" xmlns:xar="http://xaraya.com/2004/blocklayout">
 BEGIN:VCALENDAR
 CALSCALE:GREGORIAN
-PRODID:-//Apple Computer\, Inc//iCal 2.0//EN
+PRODID:-//Digital Development Foundation//Xaraya//EN
 VERSION:2.0
 <xar:module class="modulespace" main="true"/>
 END:VCALENDAR

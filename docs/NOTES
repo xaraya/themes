@@ -1,0 +1,16 @@
+This theme DOES NOT produce XML, but the ical format as specified in
+RFC-2445 [http://www.ietf.org/rfc/rfc2445.txt]
+
+It started as one of those experiments to see how far we can stretch
+BL and turned out the be something useful if treated with tender love
+and care.
+
+The idea is that since a theme is installation global you can provide
+override only templates for any part of your installation to create a
+dynamic calendar. 
+
+The most common use would be to use something like Apple's iCal or
+Mozilla's sunbird to 'subscribe' to the calendar. Basically any item
+which has some sort of title, a date of some sort and an owner can be
+made into an entry into a calendar.
+

@@ -1,0 +1,19 @@
+BEGIN:VEVENT
+DTSTART;TZID=#$icalTimeZone#:#$icalStartDate#T#$icalStartTime#
+
+PRIORITY:#$icalPriority#
+
+SEQUENCE:#$icalSequence#
+
+<xar:set name="icalOrganizerName">xarUserGetVar('name',$icalOrganizer)</xar:set>
+<xar:set name="icalOrganizerEmail">xarUserGetVar('email',$icalOrganizer)</xar:set>
+ORGANIZER;CN="#$icalOrganizerName#":MAILTO:#$icalOrganizerEmail#
+
+<xar:set name="icalSummary">str_replace(',','\,',$icalSummary)</xar:set>
+SUMMARY:#$icalSummary#
+
+UID:#$icalGUID#
+
+URL:#$icalURL#
+
+END:VEVENT
