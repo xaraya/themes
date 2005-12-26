@@ -13,7 +13,7 @@
 <xar:set name="icalGUID">$link</xar:set>
 <xar:set name="icalStartDate">date('Ymd',$pubdate)</xar:set>
 <xar:set name="icalSummary">$title</xar:set>
-<xar:set name="icalTimeZone">'Europe/Amsterdam'</xar:set>
+<xar:set name="icalTimeZone">xarConfigGetVar('Site.Core.TimeZone')</xar:set>
 <xar:set name="icalStartTime">date('His',$pubdate)</xar:set>
 <xar:set name="icalPriority">0</xar:set>
 <xar:set name="icalSequence">0</xar:set>
