@@ -33,16 +33,21 @@ Required:
 
 Optional:
 ---------
-- $icalStartTime - Start time of the even in HHMMSS format
-- $icalPriority  - A priority number (0 (unspecified) 1 (Highest) >1 (Lower))
-                   This may help iCal client rendering events
-                   occurring at overlapping time intervals
-- $icalSequence  - sort of like a version number for the event, when
-                   an event with the same GUID has been changed,
-                   clients can look at the sequence to see if it a
-                   newer version.
-- $icalUrl       - An URL to the event
-- $icalOrganizer - The roles ID of the organizer of the event
+- $icalStartTime   - Start time of the even in HHMMSS format
+- $icalPriority    - A priority number (0 (unspecified) 1 (Highest) >1 (Lower))
+                     This may help iCal client rendering events
+                     occurring at overlapping time intervals
+- $icalSequence    - sort of like a version number for the event, when
+                     an event with the same GUID has been changed,
+                     clients can look at the sequence to see if it a
+                     newer version.
+- $icalUrl         - An URL to the event
+- $icalOrganizer   - The roles ID of the organizer of the event
+- $icalDescription - A longer description, html may be be passed in, but
+                     with care, the ical-vevent.xt templates does strip tags, escapes
+                     characters etc. but is certainly not foolproof,
+                     each client adds it's own weirdness here too
+                     
 
 When a module wants to expose its item in an iCal format, override the
 appropriate templates for that module and create the above
@@ -52,8 +57,8 @@ generates the output for exactly one VEVENT in the output.
 Variable formate rules for passing into the VEVENT template:
 - pass dates in YYYYMMDD format
 - pass times in HHMMSS format
-- pass content as plain text (no html yet), the proper escaping (a comma for example) is
-  done in the VEVENT template.
+- pass content as is, format wise, it is advised to trunk content to
+  255 chars or less.
 
 
 Implementation specifics:

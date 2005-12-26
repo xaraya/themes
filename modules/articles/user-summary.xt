@@ -19,5 +19,6 @@
 <xar:set name="icalSequence">0</xar:set>
 <xar:set name="icalOrganizer">$authorid</xar:set>
 <xar:set name="icalUrl">$link</xar:set>
+<xar:set name="icalDescription">substr($summary,0,252).'...'</xar:set>
 <xar:comment>Create a vevent out of the above</xar:comment>
 <xar:template type="theme" file="ical-vevent"/>

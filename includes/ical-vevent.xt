@@ -20,6 +20,15 @@ SEQUENCE:#$icalSequence#
 ORGANIZER;CN="#$icalOrganizerName#":MAILTO:#$icalOrganizerEmail#
 </xar:if>
 
+<xar:if condition="isset($icalDescription)">
+<xar:set name="icalDescription">strip_tags($icalDescription)</xar:set>
+<xar:set name="nogo">array(',',"\n")</xar:set>
+<xar:set name="yogo">array('\,','\n')</xar:set>
+<xar:set name="icalDescription">str_replace($nogo,$yogo,$icalDescription)</xar:set>
+<xar:set name="icalDescription">html_entity_decode($icalDescription)</xar:set>
+DESCRIPTION:#$icalDescription#
+
+</xar:if>
 <xar:if condition="isset($icalUrl)">
 URL:#$icalUrl#
 </xar:if>
