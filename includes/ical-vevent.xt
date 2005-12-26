@@ -3,6 +3,8 @@ UID:#$icalGUID#
 
 DTSTART;<xar:if condition="isset($icalTimeZone)">TZID=#$icalTimeZone#:</xar:if>#$icalStartDate#<xar:if condition="isset($icalStartTime)">T#$icalStartTime#</xar:if>
 
+<xar:if condition="!isset($icalEndDate)">DTEND;<xar:if condition="isset($icalTimeZone)">TZID=#$icalTimeZone#:</xar:if>#$icalStartDate#<xar:if condition="isset($icalStartTime)">T#$icalStartTime#</xar:if></xar:if>
+
 <xar:set name="icalSummary">str_replace(',','\,',$icalSummary)</xar:set>
 SUMMARY:#$icalSummary#
 
