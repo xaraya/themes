@@ -4,6 +4,11 @@ BEGIN:VCALENDAR
 CALSCALE:GREGORIAN
 PRODID:-//Digital Development Foundation//Xaraya//EN
 VERSION:2.0
+<xar:set name="sectionfetch">xarVarFetch('calendar','str:1:',$calendar,NULL,XARVAR_NOT_REQUIRED)</xar:set>
+<xar:if condition="!isset($calendar)">
 <xar:module class="modulespace" main="true"/>
+<xar:elseif condition="$calendar eq 'allarticles'"/> 
+<xar:module class="modulespace" main="true" module="articles" func="view" numitems="9999999"/>
+</xar:if>
 END:VCALENDAR
 </xar:blocklayout>
