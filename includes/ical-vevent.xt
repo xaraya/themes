@@ -1,19 +1,25 @@
 BEGIN:VEVENT
-DTSTART;TZID=#$icalTimeZone#:#$icalStartDate#T#$icalStartTime#
+UID:#$icalGUID#
 
-PRIORITY:#$icalPriority#
-
-SEQUENCE:#$icalSequence#
-
-<xar:set name="icalOrganizerName">xarUserGetVar('name',$icalOrganizer)</xar:set>
-<xar:set name="icalOrganizerEmail">xarUserGetVar('email',$icalOrganizer)</xar:set>
-ORGANIZER;CN="#$icalOrganizerName#":MAILTO:#$icalOrganizerEmail#
+DTSTART;<xar:if condition="isset($icalTimeZone)">TZID=#$icalTimeZone#:</xar:if>#$icalStartDate#<xar:if condition="isset($icalStartTime)">T#$icalStartTime#</xar:if>
 
 <xar:set name="icalSummary">str_replace(',','\,',$icalSummary)</xar:set>
 SUMMARY:#$icalSummary#
 
-UID:#$icalGUID#
+<xar:if condition="!isset($icalPriority)"><xar:set name="icalPriority">0</xar:set></xar:if>
+PRIORITY:#$icalPriority#
 
-URL:#$icalURL#
+<xar:if condition="!isset($icalSequence)"><xar:set name="icalSequence">0</xar:set></xar:if>
+SEQUENCE:#$icalSequence#
+
+<xar:if condition="isset($icalOrganizer)">
+<xar:set name="icalOrganizerName">xarUserGetVar('name',$icalOrganizer)</xar:set>
+<xar:set name="icalOrganizerEmail">xarUserGetVar('email',$icalOrganizer)</xar:set>
+ORGANIZER;CN="#$icalOrganizerName#":MAILTO:#$icalOrganizerEmail#
+</xar:if>
+
+<xar:if condition="isset($icalUrl)">
+URL:#$icalUrl#
+</xar:if>
 
 END:VEVENT

@@ -2,18 +2,22 @@
     Map the articles specific variables to the ical variables and
     call the common template. The common template is the only one
     which deals with the iCal specifics.
+    Required variables (everything else is optional):
+    - icalGUID      - some GLOBALLY unique identifier which should never change (a link to the item usually will do)
+    - icalStartDate - The date of the event in YYYYMMDD format
+    - icalSummary   - Short description (like a title)
     Rules: 
     - pass dates in YYYYMMDD format
     - pass times in HHMMSS format
 </xar:comment>
+<xar:set name="icalGUID">$link</xar:set>
 <xar:set name="icalStartDate">date('Ymd',$pubdate)</xar:set>
-<xar:set name="icalStartTime">date('His',$pubdate)</xar:set>
+<xar:set name="icalSummary">$title</xar:set>
 <xar:set name="icalTimeZone">'Europe/Amsterdam'</xar:set>
+<xar:set name="icalStartTime">date('His',$pubdate)</xar:set>
 <xar:set name="icalPriority">0</xar:set>
 <xar:set name="icalSequence">0</xar:set>
 <xar:set name="icalOrganizer">$authorid</xar:set>
-<xar:set name="icalSummary">$title</xar:set>
-<xar:set name="icalGUID">$link</xar:set>
-<xar:set name="icalURL">$link</xar:set>
+<xar:set name="icalUrl">$link</xar:set>
 <xar:comment>Create a vevent out of the above</xar:comment>
 <xar:template type="theme" file="ical-vevent"/>

@@ -14,3 +14,57 @@ Mozilla's sunbird to 'subscribe' to the calendar. Basically any item
 which has some sort of title, a date of some sort and an owner can be
 made into an entry into a calendar.
 
+Inner workings:
+
+The default.xt page template contains the main outline for a iCal
+file. In the ical/include directory there is a subtemplate:
+ical-vevent.xt which contains the model in iCal format for a VEVENT to
+be put into the output stream. Each module may override it's templates
+to shape it's data into the right variables to be able to call that
+template.
+
+The following variables are supported for the VEVENT generation:
+
+Required:
+--------
+- $icalGUID      - some GLOBALLY unique identifier which should never change (a link to the item usually will do)
+- $icalStartDate - The date of the event in YYYYMMDD format
+- $icalSummary   - Short description (like a title)
+
+Optional:
+---------
+- $icalStartTime - Start time of the even in HHMMSS format
+- $icalPriority  - A priority number (0 (unspecified) 1 (Highest) >1 (Lower))
+                   This may help iCal client rendering events
+                   occurring at overlapping time intervals
+- $icalSequence  - sort of like a version number for the event, when
+                   an event with the same GUID has been changed,
+                   clients can look at the sequence to see if it a
+                   newer version.
+- $icalUrl       - An URL to the event
+- $icalOrganizer - The roles ID of the organizer of the event
+
+When a module wants to expose its item in an iCal format, override the
+appropriate templates for that module and create the above
+variables after which a <xar:template type="theme" file="ical-event"/>
+generates the output for exactly one VEVENT in the output.
+
+Variable formate rules for passing into the VEVENT template:
+- pass dates in YYYYMMDD format
+- pass times in HHMMSS format
+- pass content as plain text (no html yet), the proper escaping (a comma for example) is
+  done in the VEVENT template.
+
+
+Implementation specifics:
+-------------------------
+* Since this is a plain text format, the spacing is
+SIGNIFICANT. Blocklayout, to give the most prominent example,
+generates NO whitespace after #$somevariable#, nor a CRLF after it, so
+if a line ends with such an expression, insert a forced blank line if
+you need the CRLF.
+* So far I have only tested this theme with Apple's iCal, because
+somehow the Mozilla calendar can not subscribe to it, if it aint on a
+webDAV share. Of course it is still possible to DOWNLOAD output of the
+the ical theme, save that into a file and open that file. This defeats
+obviously the whole idea of the calendar being dynamic.

@@ -10,7 +10,7 @@
  * @author Marcel van der Boom
  */
 $themeinfo['name'] = 'ical';
-$themeinfo['id'] = '479399';
+$themeinfo['id'] = '607';
 $themeinfo['directory'] = 'ical';
 $themeinfo['author'] = 'Marcel van der Boom';
 $themeinfo['homepage'] = 'http://marcel.hsdev.com';
