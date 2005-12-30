@@ -1,4 +1,4 @@
-<xar:comment>License: GPL http://www.gnu.org/copyleft/gpl.html</xar:comment>
+<xar:comment>License: GPL http://www.gnu.org/copyleft/gpl.html</xar:comment>xxxx
 
 <div id="ice-objectdisplay">
     <xar:set name="isupload">#$object:upload#</xar:set>
