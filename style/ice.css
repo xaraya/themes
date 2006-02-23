@@ -14,26 +14,34 @@ a img {
 }
 h1 {
     font-size: 120%;
+    line-height: 16px;
     font-weight: bold;
     color: #AE4E06;
     text-transform: uppercase;
     letter-spacing: 2px;
-    text-align: center;
+    text-align: center;/* 
     background-color: #F1FBFF;
-    padding: .35em;
-    margin-top: 2.8em;
+    background-color: #D1EFF8; */
+    border-bottom: 2px dotted #7F95D7;
+    padding: 4px;
+    margin-top: 0;
 }
 h2 {
     font-size: 112%;
     font-weight: bold;
     color: #AE4E06;
     letter-spacing: 1px;
-    margin: 2.8em 0 1.4em;
+    margin: 2.1em 0 1.4em;
 }
 h3 {
     font-size: 104%;
     font-weight: bold;
     color: #AE4E06;
+}
+h4 {
+    font-size: 100%;
+    font-weight: bold;
+    margin: .7em 0 0;
 }
 legend {
     font-size: 104%;
@@ -69,11 +77,19 @@ fieldset {
 /* Styling the top level blockgroups */
 #iceBg {
     position: absolute;
-    top: -40px;
-    right: -10px;
+    top: -20px;
+    right: -60px;
     z-index: 10;
 }
-#iceNavSide a, #iceContent a {
+input, button, textarea {
+    position: relative;
+    z-index: 11; /* so they're always in front of the background-image, just for the sketch */
+    background-color: transparent;
+}
+input:focus, button:focus, textarea:focus {
+    background-color: #FEFDFD;
+}
+#iceNavGlobal a, #iceContent a {
     position: relative;
     z-index: 20;
 }
@@ -84,11 +100,13 @@ fieldset {
     border-width: 10px 0;
     padding: 12px 24px 12px 36px;
     background-color: #C7EFFA;
+    position: relative;
+    z-index: 5;
 }
 #iceHeader #iceLogo {
     display: block;
     position: absolute;
-    top: 12px;
+    top: -27px;
     left: -36px;
     z-index: 30;
 }
@@ -128,20 +146,25 @@ fieldset {
     color: #E7C04B;
 }
 
-#iceNavSide {
+#iceNavGlobal {
     float: right;
-    width: 20%;
-    margin: 0 0 4em 4em;
+    width: 22%;
+    margin: 60px 0 4.2em 4.2em;
     border-bottom: 10px solid #384890;
-    padding: .5em;
-    background-color: #F1FBFF;
+    border: 2px dotted #7F95D7;
+    border-width: 2px 0;
+    padding-bottom: 2.1em;
+    background-color: #D1EFF8;
 }
 #iceContent {
     min-height: 40em;
-    margin: 2.8em 20% 0 0;
-    padding: 0 4em 2em 4em;
+    margin: 0 22% 0 0;
+    padding: 145px 5.6em 2.1em 5.6em;
+    border-right: 1px solid #7F95D7;
+    position: relative;
+    top: -109px;
 }
-/* #iceNavTop {
+/* #iceNavModule {
     min-height: 2.1em;
     background-color: #F1FBFF;
 } */
@@ -154,14 +177,51 @@ fieldset {
     text-align: center;
 }
 
-/* iceNavSide block styling */
-#iceNavSide ul {
-    margin: 0;
-    padding: 0 0 0 1em;
+/* iceNavGlobal block styling */
+#iceNavGlobal h2 {
+    margin: 0 .6em;
 }
-#iceNavSide ul ul {
-    margin: 0 0 1em 0;
-    padding: 0 0 0 1em;
+#iceNavGlobal .xar-blocksDefault:first-child h2 {
+    margin-top: 1.2em;
+}
+#iceNavGlobal ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+#iceNavGlobal li {
+    margin: 0;
+    padding: 2px 0;
+}
+#iceNavGlobal li h4 {
+    padding-left: .7em;
+}
+#iceNavGlobal li li {
+    padding-left: 1.4em;
+}
+#iceNavGlobal li.xar-menu-item-current {
+    background-color: #F1FBFF;
+    background-color: #E7F8FD;
+    border: 1px dotted #7F95D7;
+    border-width: 1px 0;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+#iceNavGlobal hr {
+    width: 33%;
+    height: 2px;
+    margin: 2.1em auto;/* 
+    background-color: #7F95D7; */
+    border-bottom: 2px dotted #7F95D7;
+    border-width: 0 0 2px 0;
+}
+#iceNavGlobal .xar-blocksDefault:first-child hr {
+    display: none;
+}
+
+/* iceContent block styling */
+#iceContent p {
+    margin: 0 0 .7em 1.4em;
 }
 
 /* Styling commerce specific */
