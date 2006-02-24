@@ -9,14 +9,15 @@ a img {
 
 /* Basic font styles */
 * {
-    font: 12px/1.4em Helvetica, Arial, sans-serif;
+    font: 12px/1.5em Helvetica, Arial, sans-serif;
     color: #18284E;
+    color: #582A00;
 }
-h1 {
-    font-size: 120%;
+h1, .xar-mod-head .xar-mod-title {
+    font-size: 16px;
     line-height: 16px;
     font-weight: bold;
-    color: #AE4E06;
+    color: #B63900;
     text-transform: uppercase;
     letter-spacing: 2px;
     text-align: center;/* 
@@ -25,59 +26,66 @@ h1 {
     border-bottom: 2px dotted #7F95D7;
     padding: 4px;
     margin-top: 0;
+    display: block;
 }
 h2 {
-    font-size: 112%;
+    font-size: 14px;
     font-weight: bold;
-    color: #AE4E06;
+    color: #B63900;
     letter-spacing: 1px;
-    margin: 2.1em 0 1.4em;
+    margin: 2.25em 0 1.5em;
 }
 h3 {
-    font-size: 104%;
+    font-size: 13px;
     font-weight: bold;
-    color: #AE4E06;
+    color: #B63900;
 }
 h4 {
-    font-size: 100%;
+    font-size: 12px;
     font-weight: bold;
     margin: .7em 0 0;
 }
 legend {
-    font-size: 104%;
+    font-size: 13px;
     font-weight: bold;
-    color: #AE4E06;
+    color: #B63900;
 }
 a:link {
     color: blue;
+    color: #4066FF;
     text-decoration: none;
+    border-bottom: 1px dotted;
 }
 a:visited {
     color: purple;
+    color: #663399;
     text-decoration: none;
+    border-bottom: 1px dotted;
 }
 a:hover {
     color: blue;
-    text-decoration: underline;
+    text-decoration: none;
+    border-bottom: 1px solid;
 }
 a:active {
     color: red;
+    border-bottom: 1px solid;
 }
 
 /* General used mark-up */
+fieldset {
+    margin-bottom: 1.5em;
+    border: 1px solid #D9C78E;
+}
 .seperator {
     clear: both;
     visibility: hidden;
 }
-fieldset {
-    margin-bottom: 1.2em;
-    border: 1px solid #D9C78E;
-}
 
 /* Styling the top level blockgroups */
 #iceBg {
-    position: absolute;
-    top: -20px;
+    position: fixed;
+    top: -10px;
     right: -60px;
     z-index: 10;
 }
@@ -113,7 +121,7 @@ input:focus, button:focus, textarea:focus {
 #iceHeader #iceSlogan {
     padding-top: 11px;
     text-align: right;
-    font-size: 120%;
+    font-size: 16px;
     font-weight: bold;
     color: #384890;
     font-style: italic;
@@ -145,11 +153,19 @@ input:focus, button:focus, textarea:focus {
 #iceHeader #iceSlogan {
     color: #E7C04B;
 }
+/* variant 4 */
+#iceHeader {
+    border-color: #582A00;
+    background-color: #B63900;
+}
+#iceHeader #iceSlogan {
+    color: #EBB612;
+}
 
 #iceNavGlobal {
     float: right;
     width: 22%;
-    margin: 60px 0 4.2em 4.2em;
+    margin: 60px 0 4.5em 4.5em;
     border-bottom: 10px solid #384890;
     border: 2px dotted #7F95D7;
     border-width: 2px 0;
@@ -159,19 +175,21 @@ input:focus, button:focus, textarea:focus {
 #iceContent {
     min-height: 40em;
     margin: 0 22% 0 0;
-    padding: 145px 5.6em 2.1em 5.6em;
+    padding: 145px 6em 2.25em 6em;
     border-right: 1px solid #7F95D7;
     position: relative;
     top: -109px;
 }
 /* #iceNavModule {
-    min-height: 2.1em;
+    min-height: 2.25em;
     background-color: #F1FBFF;
 } */
 #iceFooter {
     clear: left;
-    border-top: 10px solid #613906;
-    padding: .5em 4em;
+    border-top: 10px solid #582A00;
+    padding: .75em 4.5em;
+    position: relative;
+    top: -109px;
 }
 #iceFooter #iceFooterXar {
     text-align: center;
@@ -179,11 +197,23 @@ input:focus, button:focus, textarea:focus {
 
 /* iceNavGlobal block styling */
 #iceNavGlobal h2 {
-    margin: 0 .6em;
+    margin: 0 .75em;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #7F95D7;
 }
+#iceNavGlobal h2 span {
+    background-color: #D1EFF8;
+    font: inherit;
+    color: inherit;
+    padding: 0 .3em;
+}
+/* 
 #iceNavGlobal .xar-blocksDefault:first-child h2 {
-    margin-top: 1.2em;
-}
+    margin-top: .3em;
+} */
 #iceNavGlobal ul {
     margin: 0;
     padding: 0;
@@ -194,10 +224,27 @@ input:focus, button:focus, textarea:focus {
     padding: 2px 0;
 }
 #iceNavGlobal li h4 {
-    padding-left: .7em;
+    padding-left: .75em;
+    letter-spacing: 2px;
+    color: #384890;
+    color: #582A00;
 }
 #iceNavGlobal li li {
-    padding-left: 1.4em;
+    padding-left: .75em;
+}
+#iceNavGlobal li li ul {
+    padding-top: 1em;
+}
+#iceNavGlobal li li li {
+    padding-left: 1.2em;
+    border-top: 1px dotted #7F95D7;
+}
+#iceNavGlobal li li li a {
+    position: relative;
+    top: -1em;
+    background-color: #E7F8FD;
+    padding-left: .3em;
+/*     display: block; */
 }
 #iceNavGlobal li.xar-menu-item-current {
     background-color: #F1FBFF;
@@ -207,21 +254,33 @@ input:focus, button:focus, textarea:focus {
     padding-top: 1px;
     padding-bottom: 1px;
 }
-#iceNavGlobal hr {
-    width: 33%;
-    height: 2px;
-    margin: 2.1em auto;/* 
-    background-color: #7F95D7; */
-    border-bottom: 2px dotted #7F95D7;
-    border-width: 0 0 2px 0;
+
+#iceNavGlobal li.xar-menu-item-current > a {
+    color: #B63900;/* 
+    font-weight: bold; */
 }
+#iceNavGlobal hr {
+    width: 90%;
+    height: 2px;
+    margin: 3em auto -.8em;/* 
+    background-color: #7F95D7; */
+    border-bottom: 1px dotted #7F95D7;
+    border-width: 0 0 1px 0;
+}/* 
 #iceNavGlobal .xar-blocksDefault:first-child hr {
     display: none;
+} */
+#iceNavGlobal a:link, #iceNavGlobal a:visited {
+    border: 0;
+}
+
+#iceNavGlobal a:hover, #iceNavGlobal a:active {
+    border-bottom: 1px solid;
 }
 
 /* iceContent block styling */
 #iceContent p {
-    margin: 0 0 .7em 1.4em;
+    margin: 0 0 .75em 1.5em;
 }
 
 /* Styling commerce specific */

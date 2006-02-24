@@ -2,7 +2,7 @@
     <hr />
     <xar:if id="title_condition" condition="!empty($title)">
     <div class="xar-block-head">
-        <h2>#$title#</h2>
+        <h2><span>#$title#</span></h2>
     </div>
     </xar:if>
     <div class="xar-block-body">
