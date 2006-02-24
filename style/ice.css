@@ -260,6 +260,7 @@ pre {
     margin: .5em;
     padding: .5em;
     font-family: monospace;
+    overflow: auto;
 }
 
 /* van marcel uit Xaraya Classic */
