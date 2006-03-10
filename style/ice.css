@@ -3,15 +3,36 @@ html, body {
     padding: 0;
     background-color: #FEFDFD;
 }
-a img {
-    border: none;
-}
 
-/* Basic font styles */
+/* Basic font styles and general used mark-up */
 * {
     font: 12px/1.5em Helvetica, Arial, sans-serif;
     color: #18284E;
     color: #582A00;
+}
+a:link {
+    color: blue;
+    color: #4066FF;
+    text-decoration: none;
+    border-bottom: 1px dotted;
+}
+a:visited {
+    color: purple;
+    color: #663399;
+    text-decoration: none;
+    border-bottom: 1px dotted;
+}
+a:hover {
+    color: blue;
+    text-decoration: none;
+    border-bottom: 1px solid;
+}
+a:active {
+    color: red;
+    border-bottom: 1px solid;
+}
+a img {
+    border: none;
 }
 h1, .xar-mod-head .xar-mod-title {
     font-size: 16px;
@@ -50,29 +71,6 @@ legend {
     font-weight: bold;
     color: #B63900;
 }
-a:link {
-    color: blue;
-    color: #4066FF;
-    text-decoration: none;
-    border-bottom: 1px dotted;
-}
-a:visited {
-    color: purple;
-    color: #663399;
-    text-decoration: none;
-    border-bottom: 1px dotted;
-}
-a:hover {
-    color: blue;
-    text-decoration: none;
-    border-bottom: 1px solid;
-}
-a:active {
-    color: red;
-    border-bottom: 1px solid;
-}
-
-/* General used mark-up */
 fieldset {
     margin-bottom: 1.5em;
     border: 1px solid #D9C78E;
@@ -85,7 +83,7 @@ fieldset {
 /* Styling the top level blockgroups */
 #iceBg {
     position: fixed;
-    top: -10px;
+    top: 10px;
     right: -60px;
     z-index: 10;
 }
@@ -127,33 +125,6 @@ input:focus, button:focus, textarea:focus {
     font-style: italic;
     letter-spacing: 6px;
 }
-/* variant 1 */
-#iceHeader {
-    border-color: #AB5112; 
-    background-color: #D9C78E;
-}
-#iceHeader #iceSlogan {
-    position: relative;
-    z-index: 20;
-    color: #AB5112;
-}
-/* variant 2 */
-#iceHeader {
-    border-color: #761A02; 
-    background-color: #AB5112;
-}
-#iceHeader #iceSlogan {
-    color: #D9C78E;
-}
-/* variant 3 */
-#iceHeader {
-    border-color: #613906;
-    background-color: #AE4E06;
-}
-#iceHeader #iceSlogan {
-    color: #E7C04B;
-}
-/* variant 4 */
 #iceHeader {
     border-color: #582A00;
     background-color: #B63900;
@@ -168,12 +139,13 @@ input:focus, button:focus, textarea:focus {
     margin: 60px 0 4.5em 4.5em;
     border-bottom: 10px solid #384890;
     border: 2px dotted #7F95D7;
-    border-width: 2px 0;
+    border-width: 2px 0 2px 1px;
+    border-left-style: solid;
     padding-bottom: 2.1em;
     background-color: #D1EFF8;
 }
-#iceContent {
-    min-height: 40em;
+#iceContent {/* 
+    min-height: 60em; */
     margin: 0 22% 0 0;
     padding: 145px 6em 2.25em 6em;
     border-right: 1px solid #7F95D7;
@@ -185,11 +157,12 @@ input:focus, button:focus, textarea:focus {
     background-color: #F1FBFF;
 } */
 #iceFooter {
-    clear: left;
+    clear: both;
     border-top: 10px solid #582A00;
-    padding: .75em 4.5em;
+    padding: .75em 4.5em;/* 
     position: relative;
-    top: -109px;
+    top: -109px; */
+    margin-top: -109px;
 }
 #iceFooter #iceFooterXar {
     text-align: center;
@@ -366,3 +339,8 @@ pre {
     background-color: white;
     border: thin solid black;
 }    
+
+/* Repare a small error from the xarcore-xhtml1-strict stylesheet */
+.xar-form-input-wrapper-after {
+    clear: left !important;
+}
