@@ -10,7 +10,8 @@
 	<style type="text/css">
         @import url(&xar-baseurl;#xarTplGetThemeDir()#/style/style.css) screen,projection;
     </style>
-	#$tpl:additionalStyles#
+    <xar:style scope="common" />
+    <xar:additional-styles />
 	<xar:comment> Head JavaScript </xar:comment>
 	<xar:base-render-javascript position="head" />
 	</head>
