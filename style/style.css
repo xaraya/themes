@@ -1,0 +1,594 @@
+@import "verticalmenu.css";
+/* style.css for iTheme. Last modified 23 Apr 2006 */
+/* XARAYA REQUIRED CLASSES */
+a:link, a:visited {
+    color: #0000CD;
+    text-decoration: none;
+}
+a:hover, a:active {
+    color: #FF4500;
+}
+blockquote {}
+body {
+    font-size: 12px;
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+code {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 11px;
+    color:#339900;
+    font-weight: bold;
+}
+/* below is a catchall for all fonts that I want to be #006699, and bold... */
+h1, h2, h3, h4, .xar-title, .xar-mod-title, .xar-block-title, .xar-block-title-center, .leftblock-title, .xar-block-title-right {
+    color: #006699;
+    font-weight: bold;
+}
+h1 { 
+    font-size: 16px; 
+    color: #8B0000; 
+    text-transform: uppercase; 
+    padding: 0; 
+    margin: 0;
+}
+h2 { 
+    font-size: 14px; 
+    color: #8B0000; 
+    text-transform: uppercase; 
+    padding: 0; 
+    margin: 0;
+}
+h3 { 
+    font-size: 12px; 
+    color: #8B0000; 
+    text-transform: uppercase; 
+    padding: 0; 
+    margin: 0;
+}
+h4 {}
+th {}
+td {}
+.showcell td {
+    background: #e0e0e0;
+    padding: 3px;
+}
+table { font-size: 11px;}
+thead {}
+tbody {}
+tfoot {}
+p {}
+pre {
+    font-family: "Courier New", Courier, mono;
+    color:#009933;
+    font-weight: bold;
+}
+input {}
+button {}
+select {}
+textarea {}
+img { border: none; }
+li {}
+ul {}
+ol {}
+sup {}
+sub {}
+/*  XARAYA REQUIRED INDIVIDUAL CLASSES */
+td.xar-norm {}
+td.xar-alt {}
+/*  XARAYA REQUIRED ANONYMOUS CLASSES  */
+/* these defaults apply to the left block group */
+.leftblock-wrapper { margin: 0px; padding:0; }
+.leftblock-head{ 
+    margin-bottom: 4px; 
+    height: 15px;
+    border-bottom: solid 1px #666;
+    background: url(../images/leftblock/leftblock_hdr_bg.png) repeat-x;
+}
+.leftblock-title {
+    color:#666;
+    font-size: 11px !important;
+    text-align: center;
+    padding-top: 1px;
+}
+.leftblock-body{ 
+    margin: 5px;
+    font-size: 11px;
+}
+.leftblock-foot{border-bottom: solid 1px #666;}
+/*-- end leftblock --- */
+.xar-block-title {}
+.xar-block-body {}
+.xar-block-foot {}
+/* right block group classes */
+.rightblock-wrapper { margin: 10px 0; }
+.xar-block-head-right{ margin-bottom: 4px; border-bottom: dotted 1px #999;}
+.xar-block-title-right {}
+.xar-block-body-right {}
+.xar-block-foot-right {}
+/* topnav block group classes */
+.xar-block-head-topnav {}
+.xar-block-title-topnav {}
+.xar-block-body-topnav {}
+.xar-block-foot-topnav {}
+/* center block group classes */
+.centerblock-wrapper {}
+.xar-block-head-center{ margin-bottom: 4px; border-bottom: dotted 1px #999;}
+.xar-block-title-center { font-size: 16px;}
+.xar-block-body-center {}
+.xar-block-foot-center {}
+.xar-mod-head {}
+.xar-mod-title {}
+.xar-mod-body {}
+.xar-mod-foot {}
+.xar-margin-bottom {
+margin-bottom: 10px;
+}
+.xar-quote {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-style: italic;
+    padding: 5px;
+    background: #e0e0e0;
+    border: dashed 1px #999;
+}
+.xar-alt {}
+.xar-accent {background: #e0e0e0;}
+.xar-alt-outline {}
+.xar-accent-outline {}
+.xar-norm-outline {}
+.xar-norm { 
+    font-size: 11px;
+    background: #fff;
+}
+.xar-sub {
+    font-size: 9px;
+    color: #666;
+}
+.xar-menu-section {
+    margin: 0;
+    padding: 0;
+    list-style:none;
+}
+.xar-menu-section-current {
+    margin: 0;
+    padding: 0;
+    list-style:none;
+    background: #e0e0e0;
+    color: #FFCC66;
+}
+.xar-menu-item {
+    margin: 7px;
+    padding: 0;
+}
+/* this style is to remove the bullet from the menu item,
+and make it more compact */
+.xar-menu-section > .xar-menu-item li {
+    margin: 2px;
+    padding: 2px;
+    list-style:none;
+    display: block;
+    border-top: solid 1px #000;
+    border-bottom: solid 1px #000;
+}
+/* this style is for the submenu */	
+.xar-menu-section > .xar-menu-item li ul li {
+    margin: 2px;
+    padding: 2px;
+    list-style:none;
+    display: block;
+    border: solid 1px #000; /* why doesn't this display in IE?? */
+    background-color:#FFFFCC;
+	}
+/* for IE */
+
+/* end for IE */
+.xar-menu-item-current {
+    margin: 7px;
+    padding: 0;
+    background: #f0f0f0;
+    color: #000;
+}
+.xar-menu-item:hover {
+    margin: 7px;
+    padding: 0;
+    /*background: pink;*/
+    color: #000;
+    /* need to figure out why when I set this to a background color
+    the whole background is colored, rather than the individual link */
+}
+
+/* NOTE--- I NEED TO FIX THE MENU STYLES FOR INTERNET EXPLORER!!!!! */
+.xar-menu-subitem {}
+.xar-menu-subitem:hover {}
+.xar-menu-subitem-current {}
+.xar-menu-item-current > .xar-menu-subitem > a {}
+.xar-menu-item-current > .xar-menu-subitem > a:visited {}
+.xar-title { font-size: 12px;}
+.xar-error {}
+
+/* theme specific styles */
+div#wrapper {
+    position: relative;
+    margin: 0 10px;
+    min-width: 740px;
+    max-width: 1280px;
+    text-align: left;
+}
+#wrapper2 {
+    position: relative;
+    width: auto;
+    margin: 0px 10px 0 210px;
+}
+div#innerwrapper {
+    position: relative;
+    margin-right: 0px;
+    width: 100%;
+    background-color: #ffffff;
+}
+#header {
+    position: relative;
+    background: url(../images/header/hdr_bg.png) repeat-x;
+}
+#headerTR {
+    position: relative;
+    background: url(../images/header/hdr_tr.png) no-repeat right top;
+    margin: 0;
+    padding: 0;
+}
+#leftcol {
+    float: left;
+    position: relative;
+    width: 200px;
+    margin-left: -210px;
+    background-color: #e7edf6;
+    z-index: 10;
+    border-right: #000 solid 1px; 
+}
+div#leftsidecontent {
+    margin: 0px;
+    padding: 0px;
+    background-color: transparent;
+}
+div#body {
+    float: left;
+    position: relative;
+    width: 100%;
+    z-index: 12;
+    margin: 0; 
+    /* increasing margin, or padding makes a scrollbar */
+}
+#contentbody {
+    /* note the float, and relative position prevents this div
+    from creating a space above the left div on certain pages */
+    float: left;
+    position: relative;
+    margin: 5px; /* 5px fixes in IE 7, and FF Windows */
+    padding: 0;
+}
+.footer {
+    position: relative;
+    padding: 3px 0  0 3px;
+    border-top: solid 1px #008FD4;
+    font-size: 9px;
+}
+/* NOW FOR THE BLOCK STYLES */
+.loginfield {
+    border: solid 1px #666;
+    width: 100px;
+    font-size: 10px;
+}
+
+/* rounded corners not in use atm */
+/* ----------- rounded corners styles ---------------------- */
+.topright_corner {
+    background: url(../images/topright.png) no-repeat right top;
+    margin: 0;
+    padding: 0;
+}
+.bottomleft_corner {
+    background: url(../images/bottomleft.png) no-repeat left bottom;
+    margin: 0;
+    padding: 0;
+}
+.bottomright_corner {
+    background: url(../images/bottomright.png) no-repeat right bottom;
+    margin: 0;
+    padding: 0;
+}
+/* ----------- end rounded corners styles -------------------*/
+
+/* MAIN MENU LAYOUT STYLES--- */
+/*------------------ NEWS TEMPLATES --------------------*/
+.news-title {	
+    font-size: 16px;	
+    font-weight: bold;	
+    color: #008FD4;	
+    border-top: solid 1px #008FD4;	
+    border-bottom: solid 1px #008FD4;	
+    padding: 3px 0px 3px 0px;	
+}
+.xar-sub-shadow {
+background: url(../images/news_shadow.gif) repeat-x;
+height: 15px;
+}
+
+/*--------------- DOCUMENTS TEMPLATES ----------------*/
+
+/*------ SEARCH BLOCK ------------------*/
+
+.hdr_searchblock {
+    float: right;	
+    margin-right: 20px;	
+}
+
+/*------------ RANDOM QUOTES BLOCK -------------------*/
+.quote_summary {	
+    margin-top: 5px;	
+    font-style: italic;	
+    font-size:11px;	color:#999;	
+}
+.quote_title {	
+    text-align: right; 	
+    color: #d42026; 	
+    padding:5px; 	
+    font-style: italic; 	
+    font-size: 11px;	
+}
+/*-----------KEYWORDS MODULE STYLES -----------------------*/
+.keywords-article {    
+    margin: 15px 0px 10px 10px;     
+    padding: 5px;     
+    width: 200px;     
+    background: #e0e0e0;     
+    border: solid 1px #008FD4;    
+}
+/* COMMENTS IN ARTICLES (NESTED COMMENTS) */
+.comment-body {
+    border: dashed 1px #999;
+    padding: 5px;
+    margin: 3px 0 0 0;
+    font-size: 11px;
+}
+span.permalink {
+font-size: 9px;
+padding: 2px;
+background: #e0e0e0;
+}
+/* MISC STYLES */
+.hidden { visibility: hidden;}
+.clearboth { clear: both; }
+.clearright { clear: right; }
+.clearleft {clear: left; }
+
+/* PROBLEM STYLES CORRECTION BELOW */
+/* Problem styles I needed to screw with so certain things don't end up on the 
+bottom of the page. Typically, this is due to either too much width, or from
+a clear:both */
+
+/* this is for the 'submit', 'save and edit', and 'add article' buttons, when
+adding a new article. The default styles cause it to clear everything in this theme :/
+*/
+.xar-form-input-wrapper-after {
+    clear: none !important;
+}
+
+/* end the style for article submission correction */
+
+/* navtabs-user.docs.xt styles */
+.navtabs-container {
+    border-top: dashed 1px #999;
+    border-bottom: dashed 1px #999;
+    padding: 3px;
+    font-size: 10px;
+}
+.navtabs-ul {
+    list-style: none;
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+.navtabs-li {
+    background: #e0e0e0; 
+    padding: 3px;
+    margin-right: 3px;
+    display: inline;
+}
+/* the glassblock styles */
+.glassBlock {
+    background: #b7b7b7;
+    margin-bottom: 10px;
+}
+.glassTL {
+    background:url(../images/glassblock/block_tl.gif) no-repeat left top;
+    margin: 0;
+    padding: 0;
+}
+.glassTR {
+    background:url(../images/glassblock/block_tr.gif) no-repeat right top;
+    margin: 0;
+    padding: 0;
+}
+.glassHead {
+    background: url(../images/glassblock/block_top.gif) repeat-x;
+    text-align: center;
+}
+.glassTitle {
+    padding: 5px;
+    color: #fff;
+    font-weight: bold;
+}
+.glassContentBG {
+    margin: 1px; 
+    background: #f7f7f7; 
+    border-bottom: solid 1px #b7b7b7;
+}
+.glassBR {
+    background:url(../images/glassblock/block_br.gif) no-repeat right bottom;
+    margin: 0 -1px -1px 0;
+    padding: 0;
+}
+.glassBL {
+    background:url(../images/glassblock/block_bl.gif) no-repeat left bottom;
+    margin: 0 0 -1px -1px;
+    padding: 0;
+}
+.glassContent {
+    padding: 5px;
+    font-size: 10px;
+}
+.weblinksLT {
+    background: #fff;
+}
+.weblinksDK {
+    background: #e0e0e0;
+}
+.target li {
+    list-style-image: url(../images/target.png);
+    border: none;
+}
+/* ------------------------------------------------------- 
+    AND NOW TO START A BETTER HORIZONTAL NAVIGATION SYSTEM
+    HOPEFULLY THE FOLLOWING CLASSES WILL BE COOL
+    ------------------------------------------------------- */
+.topnav {
+    background: url(../images/header/topbar_gradient.png) repeat-x; 
+    margin: 0;
+    padding: 0;
+    height: 25px; /* this needs to be 24 instead of 25 because it 
+        creates a space in FF OSX but I need to find a way to display
+        bottom border in FF win if I do that */
+    border-top: solid 1px #000; 
+    border-bottom: solid 1px #000;
+/* .topnav is used to create the background for the whole topnav block */
+} 
+.topnav ul, .topnav li {
+    display: inline;
+    margin-left: 0;
+    padding: 0px 15px; /* top/bottom paddin makes no difference here */
+    /* border: 1px solid pink; */
+    list-style: none;
+    background: none !important;/* this style prevents the 
+        redundant li background = VERY IMPORTANT */
+} 
+/* -----------------------------------------------------------
+VERY IMPORTANT: 
+The .topnav ul, .topnav li is very importantneed this! It is
+basically what controls the outer appearance of the menu. 
+---------------------------------------------------------- */
+.topnavblock {
+    padding: 5px; /* 5px pisses off IE, 0px screws with FF */
+    margin: 0;
+}
+.topnav ul {}
+.topnav li {
+    /* this creates one border around the whole menu, and each list item
+    ...so it's probably not the best class to use */
+}
+.topnav-menu-section {
+    margin: 0 0 0 10px;
+    padding: 0;
+    list-style:none;
+    display: inline;
+}
+.topnav-menu-section ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+.topnav-menu-section ul li {
+    list-style: none;
+    margin: 0;
+    padding:0;
+    display: inline;
+    background: #e0e0e0;
+}
+.topnav-menu-item li {
+/* this can create the style for the list item, but not the content
+of the list item since it is a link because it's a menu 
+ADDITIONALLY - this creates a style for the redundant li (behind the one we want) */
+}
+.topnav-menu-item-current { background: #fff !important; }
+.topnav a:link, .topnav a:visited {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    color: #666;
+    padding: 5px 5px 5px 5px;
+    z-index: 1000;
+    background: url(../images/header/topbar_gradient.png) repeat-x;
+    /* height: 30px; -- can't have height here. FF ignores it, and 
+    IE hates it. */
+    margin-right:-1px; /* this style can make spaces between the buttons. In this case -1 is to prevent double left border width */
+    border-right: solid 1px #000;
+    border-left: solid 1px #000;
+    border-collapse:collapse;
+    /* NOTE: I think I need to change the class to something like
+    .topnav a:link ul li, .topnav a:visited ul li to prevent
+    redundant borders and backgrounds */
+}
+
+.topnav a:active, .topnav a:hover {
+    color: #000;
+    background: url(../images/header/topbar_gradient_hover.png) repeat-x;
+}
+   
+/* THE SEARCHBLOCK STYLES */
+.searchLeft {
+    background:url(../images/search/searchLeft.png) no-repeat left top;
+    margin: 0;
+    padding: 0;
+    }
+.seachContent{
+    margin-left: 26px;
+    margin-right: 17px;
+    height: 30px;
+    background: #fff;
+}
+.searchRight {
+    background:url(../images/search/searchRight.png) no-repeat right top;
+    margin: 0;
+    padding: 0;
+}
+/* THE TESTMAC BLOCK ----------------- */
+.mactop {
+    background:url(../images/testmac/mac_topbg.jpg) repeat-x;
+    text-align: center;
+    font-size:11px;
+    font-family:Arial, Helvetica, sans-serif;
+    height: 18px;
+}
+.macTL {float: left;}
+.macTR {float: right;}
+.macbody {
+    background:url(../images/testmac/mac_body.jpg) repeat;
+    float:left;
+    margin: 0;
+    padding: 0;
+}
+.macbodyleft {
+    float: left;
+    width: 17px;
+    background-image:url(../images/testmac/mac_body_left.jpg);
+    background-repeat: repeat-y;
+}
+.macbodyright {
+    float: right;
+    background-image:url(../images/testmac/mac_body_right.jpg);
+    background-repeat: repeat-y;
+    width: 21px;
+}
+.macbottom {
+    background:url(../images/testmac/mac_bottombg.jpg) repeat-x;
+    float: left;
+    margin: 0;
+}
+.macbottomleft {
+    float: left;
+}
+.macbottomright {
+    float: right;
+}

@@ -1,0 +1,19 @@
+23 Apr 2006:
+
+Although a theme shouldn't require documentation in my opinion, this one does because it uses a horizontal navigation bar, and has a couple block groups that are unique to the theme. Rather than letting people overlook these features I prefer to provide a brief explanation.
+
+SETTING UP THE HORIZONTAL NAVIGATION MENU:
+The horizontal navigation bar uses the 'topnav' block. I made the set up of this as straightforward as possible.
+1. create a block named 'topnav', and assign it to the 'topnav' blockgroup.
+2. this block instance will use the 'topnav' template, so put that into the appropriate field.
+
+THE BASE PAGE:
+I wanted to have some blocks on the right side of the homepage only, so I added the blockgroup tag to the base module's user-main.xt temnplate. The tag is: <xar:blockgroup name="baseright" id="baseright" />
+
+This means in order to use this blockgroup you will need to create it in the blocks administration. Then you will be able to assign blocks to this group. There is a template that can be assigned to this group called 'glassblock1'. I recommend using it.
+
+ADMINISTRATION:
+I like the compact admin menu, so it is utilized in this theme. As a result, you can de-activate the admin menu from the left column if you have it. Additionally, since the theme uses a horizontal navigation bar, you may want to deactivate any other menu's that may be in the left blockgroup.
+
+SITE LOGO:
+I included the Photoshop file so you can customize the logo image to suit your site. This file is located in the same directory as this document (ie. Docs).

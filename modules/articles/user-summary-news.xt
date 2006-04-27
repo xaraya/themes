@@ -1,0 +1,114 @@
+<xar:comment>
+This template has a conditional which has two versions of the user-summary-weblinks template. The first version is the standard layout, intended for the article section, or wherever. The second layout is intended only for use on the homepage, which is set as 'base'. Thus the base module is set to be the homepage, and the second layout will display.
+</xar:comment>
+
+<xar:if condition="xarModGetName() ne 'base'">
+<xar:comment>
+    This is the first layout, intended to be viewed anywhere on the site
+</xar:comment>
+
+<div class="xar-norm xar-standard-box-padding">
+    <div class="news-title">
+		<xar:if condition="!empty($categories) and count($categories) gt 0">
+        	[
+        	<xar:foreach in="$categories" value="$cat">
+            #$cat['cjoin']# <a href="#$cat['clink']#">#$cat['cname']#</a>
+        	</xar:foreach>
+        	]
+    	</xar:if>
+		<a href="#$link#">#$title#</a></div>
+    <div class="xar-sub-shadow">
+        <div class="xar-sub xar-margin-bottom">
+            <xar:ml>
+                <xar:mlstring>Posted by: #(1) on #(2) #(3)</xar:mlstring>
+                <xar:mlvar>#$author#</xar:mlvar>
+                <xar:mlvar>#xarLocaleGetFormattedDate('long',$pubdate)#</xar:mlvar>
+                <xar:mlvar>#xarLocaleGetFormattedTime('long',$pubdate)#</xar:mlvar>
+            </xar:ml>
+            <xar:if condition="!empty($counter)">
+                <xar:if condition="$counter eq 1">
+                    (#$counter#&nbsp;
+                    <xar:mlstring>read</xar:mlstring>
+                    )
+                    <xar:else />
+                    (#$counter#&nbsp;
+                    <xar:mlstring>reads</xar:mlstring>
+                    )
+                </xar:if>
+            </xar:if>
+        </div>
+    </div>
+    <div class="xar-align-right">
+
+    </div>
+    <div class="xar-articles-summary">
+		<span class="xar-sub" style="float: right;"> #$topic_icons# </span>
+		#$summary#
+		<hr style="clear: right; visibility: hidden;" />
+    </div>
+    <xar:if condition="!empty($notes)">
+        <div class="xar-articles-notes">
+            <xar:mlstring>
+                Note
+            </xar:mlstring>
+            : #$notes#
+        </div>
+    </xar:if>
+    <div class="xar-align-right">
+        <xar:if condition="!empty($words)">
+            <xar:comment>
+                Note : you can use $bytes here too if you prefer the geeky way of counting
+            </xar:comment>
+            <a href="#$link#">
+                <xar:mlstring>
+                    Read More
+                </xar:mlstring>
+            </a>
+            <xar:if condition="$words eq 1">
+                (#$words#&nbsp;
+                <xar:mlstring>
+                    word
+                </xar:mlstring>
+                )
+                <xar:else />
+                (#$words#&nbsp;
+                <xar:mlstring>
+                    words
+                </xar:mlstring>
+                )
+            </xar:if>
+        </xar:if>
+        <xar:if condition="!empty($comments)">
+            #$comments#
+        </xar:if>
+        <div class="xar-articles-keywords">
+            <xar:if condition="!empty($keywords)">
+                <xar:mlstring>Keywords</xar:mlstring>:
+                <xar:loop name="$keywords">
+                    <a href="#xarModUrl('keywords', 'user', 'main', array('keyword'=> $loop:item['keyword']))#" title="#$loop:item['keyword']#">#$loop:item['keyword']#</a>
+                </xar:loop>
+            </xar:if>
+        </div>
+    </div>
+</div>
+<xar:else />
+
+<xar:comment>
+    This is the second layout, intended to be viewed only on the homepage (base module)
+</xar:comment>
+
+<!-- begin second template stuff -->
+<table border="0" style="margin-bottom: 4px; font-size: 12px;">
+        <tr>
+            <td><img src="#xarTplGetThemeDir()#/images/frontpage/news_frontpage.png" /></td>
+            <td>
+                (<em>News Article</em>) <a class="xar-title" href="#$link#">#$title#</a>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>#$summary#</td>
+        </tr>
+    </table>
+<!-- end second template stuff -->
+</xar:if>

@@ -1,0 +1,94 @@
+<xar:comment>
+This template has a conditional which has two versions of the user-summary-weblinks template. The first version is the standard layout, intended for the article section, or wherever. The second layout is intended only for use on the homepage, which is set as 'base'. Thus the base module is set to be the homepage, and the second layout will display.
+</xar:comment>
+
+<xar:if condition="xarModGetName() ne 'base'">
+<xar:comment>
+    This is the first layout, intended to be viewed anywhere on the site
+</xar:comment>
+<div class="xar-standard-box-padding">
+    <xar:if condition="!empty($categories) and count($categories) gt 0">
+        [
+        <xar:foreach in="$categories" value="$cat">
+            #$cat['cjoin']# <a href="#$cat['clink']#">#$cat['cname']#</a>
+        </xar:foreach>
+        ]
+    </xar:if>
+    <a class="xar-title" href="#$redirect#" rel="external">#$title#<img src="#xarTplGetThemeDir()#/images/frontpage/links_frontpage.png" /></a>
+    <br />
+    <xar:mlstring>
+        Description
+    </xar:mlstring>
+    : #$summary#
+    <br />
+    <xar:if condition="!empty($notes)">
+        <xar:mlstring>
+            Source
+        </xar:mlstring>
+        : #$notes#
+        <br />
+    </xar:if>
+    <xar:mlstring>
+        Added on
+    </xar:mlstring>
+    : #xarLocaleGetFormattedDate('long',$pubdate)# #xarLocaleGetFormattedTime('long',$pubdate)#
+    <xar:if condition="!empty($rating)">
+        -
+        <xar:mlstring>
+            Rating
+        </xar:mlstring>
+        : #$rating#
+    </xar:if>
+    <xar:if condition="!empty($counter)">
+        <xar:if condition="$counter eq 1">
+            (#$counter#&#160;
+            <xar:mlstring>
+                read
+            </xar:mlstring>
+            )
+            <xar:else />
+            (#$counter#&#160;
+            <xar:mlstring>
+                reads
+            </xar:mlstring>
+            )
+        </xar:if>
+    </xar:if>
+    | <a href="#$link#">
+        <xar:mlstring>
+            Rate / Comment
+        </xar:mlstring>
+    </a>
+    <div class="xar-articles-keywords">
+        <xar:if condition="!empty($keywords)">
+            <xar:mlstring>
+                Keywords
+            </xar:mlstring>
+            :
+            <xar:loop name="$keywords">
+                <a href="#xarModUrl('keywords', 'user', 'main', array('keyword'=&gt; $loop:item['keyword']))#" title="#$loop:item['keyword']#">#$loop:item['keyword']#</a>
+            </xar:loop>
+        </xar:if>
+    </div>
+</div>
+<xar:else />
+
+<xar:comment>
+    This is the second layout, intended to be viewed only on the homepage (base module)
+</xar:comment>
+<!-- begin welink stuff -->
+
+<table border="0" style="margin-bottom: 4px; font-size: 12px;">
+    <tr>
+        <td><img src="#xarTplGetThemeDir()#/images/frontpage/links_frontpage.png" /></td>
+        <td>
+            (<em>Weblink</em>) <a class="xar-title" href="#$redirect#" rel="external">#$title#</a>
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>#$summary#</td>
+    </tr>
+</table>
+<!-- end weblink stuff -->
+</xar:if>

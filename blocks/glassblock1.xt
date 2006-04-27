@@ -1,0 +1,20 @@
+<div class="glassBlock">
+    <div class="glassHead">
+        <div class="glassTL">
+            <div class="glassTR">
+                <div class="glassTitle">
+                    <xar:var name="title"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="glassContentBG">
+        <div class="glassBR">
+            <div class="glassBL">
+                <div class="glassContent">
+                    <xar:var name="content"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

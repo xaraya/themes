@@ -1,0 +1,23 @@
+<xar:if condition="!empty($maplink) or !empty($archivelink) or !empty($submitlink)">   
+	<div class="navtabs-container">
+	<xar:if condition="xarTplAddStyleLink('base', 'navtabs')">
+    </xar:if>
+    <ul class="navtabs-ul">		
+			<xar:if condition="!empty($maplink)">
+				<li class="navtabs-li">
+					<a href="#$maplink#">#$maplabel#</a>
+				</li>	
+			</xar:if>				
+			<xar:if condition="!empty($submitlink)">
+				<li class="navtabs-li">
+					<a href="#$submitlink#" title="Submit Article"><xar:mlstring>Contribute</xar:mlstring></a>
+				</li>	
+			</xar:if>			
+			<xar:if condition="!empty($archivelink)">
+				<li class="navtabs-li">
+					<a href="#$archivelink#">#$archivelabel#</a>
+				</li>	
+			</xar:if>		
+	</ul>
+	</div><!-- close navtabs container -->
+</xar:if>

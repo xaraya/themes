@@ -1,0 +1,18 @@
+<div style="margin: 0 20px 0 20px; border: dashed 1px #999; padding: 8px;">
+    <h1 style="margin-bottom: 20px;">The Zwiggybo.com Blog....</h1>
+    <div class="xar-title" style="margin-bottom: 20px; background: #e0e0e0; padding: 5px;"> #$title#
+        <xar:if condition="!empty($editurl)">
+            [<a href="#$editurl#">#$edittitle#</a>]
+        </xar:if>
+    </div>
+    <div>#$summary#</div>
+    <div>#$body#</div>
+    <div>#$notes#</div>
+    <xar:if condition="!empty($hooks)">
+        <br />
+        <xar:foreach in="$hooks" key="$hookmodule">
+            #$hooks[$hookmodule]#
+        </xar:foreach>
+    </xar:if>
+    <xar:template file="navtabs-user" type="module" />
+</div>

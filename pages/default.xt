@@ -1,0 +1,60 @@
+<?xar type="page" ?>
+<!-- iTheme edited 25 Apr 2006 -->
+<xar:blocklayout content="text/html" xmlns:xar="http://xaraya.com/2004/blocklayout" version="1.0">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <base href="&xar-baseurl;index.php" />
+    <xar:set name="themedirectory">#xarTplGetThemeDir()#</xar:set>
+    <xar:set name="sitename"><xar:var scope="module" module="themes" name="SiteName"/></xar:set>
+    <xar:set name="sitefooter"><xar:var scope="module" module="themes" name="SiteFooter"/></xar:set>
+    <xar:set name="siteslogan"><xar:var scope="module" module="themes" name="SiteSlogan"/></xar:set>
+    <xar:set name="sitecopyright"><xar:var scope="module" module="themes" name="SiteCopyRight"/></xar:set>
+    <xar:set name="adminnav"><xar:block module="base" type="adminmenu" template="mainnavbubble;top" /></xar:set>
+    <xar:blockgroup name="header" id="header" />
+    <title>#$tpl:pageTitle#</title>
+    <link rel="stylesheet" href="&xar-baseurl;#xarTplGetThemeDir()#/style/style.css" type="text/css" title="#xarTplGetThemeName()#" />
+    <xar:style scope="common" />
+    <xar:style scope="theme" file="ie_win" condition="lt IE 7" />
+    <xar:additional-styles />
+    <xar:base-render-javascript position="head" />
+    <script type="text/javascript" src="#xarTplGetThemeDir()#/scripts/nav.js"></script>
+    <xar:set name="adminnav">
+    <xar:block module="base" type="adminmenu" template="mainnavbubble;top" />
+    </xar:set>
+</head>
+<body>
+    <div id="wrapper">
+        <xar:var name="adminnav"/>
+        <div id="header">
+            <div id="headerTR">
+            <!--<span class="hdr_searchblock"><xar:blockgroup name="search" id="search" /></span>-->
+            <a href="index.php"><img alt="logo" src="#xarTplGetThemeDir()#/images/header/logo.png" align="top" /></a>
+            </div>
+        </div>
+        <div class="topnav">
+            <xar:blockgroup name="topnav" id="topnav" />
+        </div>
+        <div id="wrapper2">
+            <div id="innerwrapper">
+                <div id="leftcol">
+                    <div id="leftsidecontent">
+                        <xar:blockgroup name="admin" id="admin" />
+                        <xar:blockgroup name="left" id="left" />
+                        <xar:blockgroup name="right" id="right" />
+                    </div><!-- close leftsidecontent div -->
+                </div>
+                    <div id="contentbody">
+                        <xar:module id="modulespace" main="true" />
+                    </div>
+            </div><!-- close innerwrapper div -->
+        </div> <!-- close wrapper2 div -->
+        <div class="footer clearboth">
+            #$sitecopyright# | #$sitefooter# | #$siteslogan#
+        </div>
+        <hr class="hidden clearboth" />
+    </div> <!-- close wrapper div -->
+    <xar:base-render-javascript position="body" />
+</body>
+</html>
+</xar:blocklayout>

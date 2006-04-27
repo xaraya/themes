@@ -1,0 +1,22 @@
+<xar:comment>
+ * Standard user menu template used on all user pages. Contains an opening
+ * DIV tag that is closed in the user-footer template.
+ *
+ * @package JungleLib
+ * @subpackage CommonTemplates
+ * @copyright (c) 2004 Jason Levitt
+ * @link http://www.junglelib.com
+ * @author Jason Levitt <fredb86@users.sourceforge.net>
+ * @author Garrett Hunter <garrett@blacktower.com>
+ * @license http://www.gnu.org/licenses/gpl.html GNU Public License
+ * @version $Id: user-menu.xd,v 1.6 2005/09/03 17:59:06 garrett Exp $
+</xar:comment>
+<xar:style scope="module" module="junglelib" file="junglelib" />
+
+<div class="xar-mod-body"><xar:comment>closed in template user-footer</xar:comment>
+<xar:set name="$statusmsg">xarSessionGetVar('statusmsg'); xarSessionSetVar('statusmsg', '')</xar:set>
+<xar:if condition="!empty($statusmsg)">
+<div>
+    #$statusmsg#
+</div>
+</xar:if>

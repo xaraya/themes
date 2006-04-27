@@ -1,0 +1,10 @@
+<div class="leftblock-wrapper">
+    <xar:if id="title_condition" condition="!empty($title)">
+        <div class="leftblock-head">
+            <img src="#xarTplGetThemeDir()#/images/leftblock/leftblock_hdr_drag.png" alt="" style="float: right;" />
+            <div class="leftblock-title">#$title#</div>
+        </div>
+    </xar:if>
+    <div class="leftblock-body">#$content#</div>
+    <div class="leftblock-foot"></div>
+</div>

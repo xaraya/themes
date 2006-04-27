@@ -1,0 +1,131 @@
+<xar:comment>
+ * Custom product template used to display products
+ *
+ * @package JungleLib
+ * @subpackage CommonTemplates
+ * @copyright (c) 2004 Jason Levitt
+ * @link http://www.junglelib.com
+ * @author Jason Levitt <fredb86@users.sourceforge.net>
+ * @author Garrett Hunter <garrett@blacktower.com>
+ * @license http://www.gnu.org/licenses/gpl.html GNU Public License
+ * @version $Id: tmpl-generic.xd,v 1.4 2006/01/09 02:33:28 garrett Exp $
+</xar:comment>
+<xar:style scope="module" module="junglelib" file="books" />
+<table class="xar-junglelib-user-mtab">
+  <tr>
+    <td>
+      <table class="xar-junglelib-user-itab">
+        <tr>
+          <td>
+            <div class="xar-junglelib-user-ptitle" style="background: #E7EDF6; border: solid 1px #999; padding: 5px;">#$TITLE#</div>
+          </td>
+          <td class="junglelib-center">
+<a href="#$AFFILIATELINK#"
+  onclick="window.open(this.href, 'new'); return false;">
+<img src="modules/junglelib/xarimages/buy-from-amazon.gif"
+ title="#xarML('Go to Amazon item page')#" 
+ alt="#xarML('Go to Amazon item page')#" />
+</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table class="junglelib-full">
+                <tr class="junglelib-top">
+                  <th class="junglelib-right">
+                    <xar:mlstring>Category</xar:mlstring>: </th>
+                  <td>
+                    <a href="#$CATEGORYLINK#">#$CATEGORY#</a>
+                  </td>
+                </tr>
+                <tr class="junglelib-top">
+                  <th class="junglelib-right">
+                    <xar:mlstring>ASIN</xar:mlstring>: </th>
+                  <td>#$ASIN# </td>
+                </tr>
+<xar:if condition="!empty($EAN)">
+               <tr class="junglelib-top">
+                  <th class="junglelib-right">
+                    <xar:mlstring>EAN</xar:mlstring>: </th>
+                  <td>#$EAN# </td>
+                </tr>
+            </xar:if>
+<xar:if condition="!empty($UPC)">
+              <tr class="junglelib-top">
+                  <th class="junglelib-right">
+                    <xar:mlstring>UPC</xar:mlstring>: </th>
+                  <td>#$UPC# </td>
+                </tr>
+            </xar:if>
+<xar:if condition="!empty($MANUFACTURER)">
+                <tr class="junglelib-top">
+                  <th class="junglelib-right">
+                    <xar:mlstring>Manufacturer </xar:mlstring>: </th>
+                  <td>#$MANUFACTURER# </td>
+                </tr>
+            </xar:if>
+                <tr class="junglelib-top">
+                  <th class="junglelib-right">
+                    <xar:mlstring>Description</xar:mlstring>: </th>
+                  <td>#$DESCRIPTION#</td>
+                </tr>
+<xar:if condition="!empty($AVAIL)">
+                <tr class="junglelib-top">
+                  <th class="junglelib-right">
+                    <xar:mlstring>Availability</xar:mlstring>: </th>
+                  <td>#$AVAIL#</td>
+                </tr>
+</xar:if>
+<xar:if condition="!empty($RELEASEDATE)">
+                <tr class="junglelib-top">
+                  <th class="junglelib-right">
+                    <xar:mlstring>Released</xar:mlstring>: </th>
+                  <td>#$RELEASEDATE# </td>
+                </tr>
+</xar:if>
+            </table>
+          </td>
+          <td class="xar-junglelib-user-tdct">
+            <xar:if condition="!empty($COVERMED)">
+              <img src="#$COVERMED#" alt="#xarML('product image')#" title="#xarML('product image')#"/>
+              <xar:else/>
+              <img src="http://g-images.amazon.com/images/G/01/x-site/icons/no-img-sm.gif" title="" alt=""/>
+            </xar:if>
+            <xar:if condition="!empty($COVERLAR)">
+              <div>
+                <a href="javascript: void window.open('#$COVERLAR#','image','left=15,top=15,width=500,height=500,menubar=no')" title="">
+                  <span class="small">
+                    <xar:mlstring>Closer View</xar:mlstring>
+                    <img src="modules/junglelib/xarimages/zoom.gif" title="#xarML('zoom image')#" alt="#xarML('zoom image')#"/>
+                  </span>
+                </a>
+              </div>
+            </xar:if>
+          </td>
+        </tr>
+      </table>
+      <div class="xar-junglelib-user-orange">
+        <span>
+          <xar:mlstring>Average Amazon Customer Rating</xar:mlstring>:
+          <img src="#$RATINGSTARS['img']#" title="#$RATINGSTARS['alt']#" alt="#$RATINGSTARS['alt']#"/>
+        </span>
+        <span class="xar-junglelib-user-spanright">
+          <img src="modules/junglelib/xarimages/fs-truck-icon.gif" width="29" height="22" alt="SuperSaver Shipping" title="Super Saver Shipping"/>
+                      Ships for <strong>FREE</strong> with
+                      <a href="javascript: void window.open ('http://www.amazon.com/exec/obidos/redirect?tag=#xarModGetVar('junglelib','associatesid')#&amp;path=subst/misc/super-saver-shipping.html','popup','resizable=yes,scrollbars=yes,menubar=yes,status=yes' )">Super Saver Shipping</a>
+        </span>
+      </div>
+      <div>
+        <p>
+          <xar:mlstring>This record last updated on:</xar:mlstring> #$DATELASTUPDATED#</p>
+        </p>
+          <xar:if condition="!empty($hooks)">
+            <xar:foreach in="$hooks" key="$hookmodule">
+              #$hooks[$hookmodule]#
+            </xar:foreach>
+          </xar:if>
+      </div>
+    </td>
+  </tr>
+</table>
+

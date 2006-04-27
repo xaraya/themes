@@ -1,0 +1,69 @@
+/* iTheme for IE styles. Last Modified 23 Apr 2006 */
+
+div#wrapper { width: expression((body.clientWidth <= 740) ? "740px" : "auto");
+    z-index:13;
+    position:relative;
+    padding: 0;
+    margin: 0 10px;
+}
+div#wrapper2 {
+    width: auto;
+    margin-left: 210px;
+}
+#leftcol {
+    float: left;
+    width: 200px;
+    margin-left: -210px !important;
+    z-index: 10;
+}
+div#leftsidecontent, div#body {
+    position: relative;
+}
+/* MENU STYLES FOR IE */
+.xar-menu-item li {
+    margin: 2px;
+    padding: 2px;
+    list-style:none;
+    display: block;
+    border-top: solid 1px #000;
+    border-bottom: solid 1px #000;
+}
+.xar-menu-item li ul li {
+    margin: 2px;
+    padding: 2px;
+    list-style:none;
+    display: block;
+    border: solid 1px #000; /* why doesn't this display in IE?? */
+    background-color:#FFFFCC;
+}
+
+/* styles to fix xarbb */
+div.xarbb-tablewrapper {width: 99%;}
+div#contentbody {width: 98% !important;}
+/* the following styles allow IE to actually render borders as
+it should on the following styles */
+.xar-block-head{
+    display: inline;
+    width: 100%;
+}
+.news-title {
+    display: inline;
+    width: 100%;
+}
+
+/* styles to fix the peekaboo bug in the glassblock for that crappy browser we all know as
+Internet Explorer... thanks MicroSoft! */
+.glassBlock {height: 100%;}
+.glassContentBG {
+    margin: 1px 1px 0 1px;
+    background: #f7f7f7;
+    border-bottom: solid 1px #b7b7b7;
+}
+.topnavblock {
+    padding: 0px; /* 5px pisses off IE, 0px screws with FF */
+    margin: 5px;
+}
+.topnav {
+/*	padding: 4px 0; -- this almost fixes the top/bottom spacing of the navbar */
+/* margin: 5px 0 0 5px; */
+}

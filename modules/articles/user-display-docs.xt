@@ -1,0 +1,88 @@
+<xar:template file="publinks" type="module" />
+<xar:categories-navigation layout="trails" showchildren="1" module="articles" itemtype="$ptid" itemid="$aid" cids="$cids" showcatcount="$showcatcount" showempty="0" />
+<!-- set print stuff -->
+<xar:set name="prettyprintimg">
+    xarTplGetImage('prettyprint.gif', 'base');
+</xar:set>
+<xar:set name="prettytxt">
+    <xar:mlstring>Printer friendly page</xar:mlstring>
+</xar:set>
+<xar:set name="prettyprint">
+    preg_replace('/&/', "&amp;$1", xarServerGetCurrentURL(array ('theme' => 'print')));
+</xar:set>
+<!-- end set print stuff -->
+<div class="xar-alt-outline xar-fullwidth">
+    <div class="xar-accent-outline xar-fullwidth">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+            <tr>
+                <td align="left" valign="top" class="xar-normal">
+
+					<div class="xar-title" style="background: #e0e0e0; padding: 5px;">
+						<img src="#xarTplGetThemeDir()#/images/doc_icon.gif" style="float: left; margin-right: 4px;"  />
+						#$title#
+                        <xar:if condition="!empty($editurl)">
+                            [<a href="#$editurl#">#$edittitle#</a>]
+                        </xar:if>
+                    </div>
+
+                    <div class="xar-sub" style="margin-bottom: 20px;">
+						<xar:if condition="!empty($counter)">
+							<span style="float:left; margin-left: 5px;">(#$counter# <xar:mlstring>Reads</xar:mlstring>)</span>
+						</xar:if>
+						<span style="float: right; margin:3px 20px 5px 0;">
+							<a href="#$prettyprint#">#$prettytxt# <img src="#$prettyprintimg#" alt="#$prettytxt#" /></a>
+						</span>
+						<hr style="width: 1px;" class="clearleft hidden" />
+					</div>
+                    <div class="clearleft" style="font-size:12px;">
+						<xar:if condition="!empty($topic_icons)">
+							<span style="float: left; margin: 0 5px 5px 0;" class="xar-sub clearleft">
+								#$topic_icons#
+							</span>
+						</xar:if>
+
+						#$body#
+						<hr style="width: 1px;" class="clearleft hidden" />
+                    </div>
+					<xar:if condition="!empty($notes)">
+                    <span class="xar-title" style="margin-top: 10px;">Additional Note:</span>
+					<div class="xar-quote">
+						#$notes#
+					</div>
+					</xar:if>
+                    <xar:if condition="!empty($previous) and !empty($next)">
+                        <div class="xar-normal xar-align-right xar-padding-thick">
+                            <span> #$previous# </span> <span> #$next# </span>
+                        </div>
+                    </xar:if>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<xar:if condition="!empty($prevart) || !empty($nextart)">
+    <br />
+    <table border="0" width="95%">
+        <tr>
+            <td align="left">
+                <xar:if condition="!empty($prevart)">
+                    <a href="#$prevart#">&lt;<xar:mlstring>prev</xar:mlstring></a>
+                </xar:if>
+                &nbsp;
+            </td>
+            <td align="right">
+                &nbsp;
+                <xar:if condition="!empty($nextart)">
+                    <a href="#$nextart#"><xar:mlstring>next</xar:mlstring>&gt;</a>
+                </xar:if>
+            </td>
+        </tr>
+    </table>
+</xar:if>
+<xar:if condition="!empty($hooks)">
+    <br />
+    <xar:foreach in="$hooks" key="$hookmodule">
+        #$hooks[$hookmodule]#
+    </xar:foreach>
+</xar:if>
+<xar:template file="navtabs-user" type="module" />
