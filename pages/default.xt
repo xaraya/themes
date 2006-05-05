@@ -1,25 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
 <?xar type="page" ?>
-<xar:blocklayout content="text/html" xmlns:xar="http://xaraya.com/2004/blocklayout" version="1.0">
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-        <base href="&xar-baseurl;index.php" />
-        <xar:blockgroup name="header" id="header" />
-        <title>#$tpl:pageTitle#</title>
-        <link rel="stylesheet" href="&xar-baseurl;#xarTplGetThemeDir()#/style/style.css" type="text/css" title="Empty" />
-        <xar:style scope="common" />
-        <xar:additional-styles />
-        <xar:base-render-javascript position="head" />
-</head>
-<body>
-<xar:module id="modulespace" main="true" />
-<xar:blockgroup name="topnav" id="topnav" />
-<xar:blockgroup name="admin" id="admin" />
-<xar:blockgroup name="left" id="left" />
-<xar:blockgroup name="right" id="right" />
-<xar:blockgroup name="center" id="center" />
-
-<xar:base-render-javascript position="body" />
-</body>
-</html>
+<!DOCTYPE blocklayout PUBLIC "-//XAR//DTD BL 1.0 Strict//EN" "http://xaraya.com/bl1/DTD/bl1-strict.dtd">
+<xar:blocklayout content="text/html" xmlns:xar="http://xaraya.com/2004/blocklayout" version="1.0" dtd="xhtml1-strict">
+  <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+      <xar:blockgroup name="header" id="header" />
+      <title>#$tpl:pageTitle#</title>
+      <xar:style scope="common" />
+      <xar:style scope="theme" file="style" title="Empty"/>
+      <xar:additional-styles />
+      <xar:base-render-javascript position="head" />
+    </head>
+    <body>
+      <xar:module id="modulespace"  main="true" />
+      <xar:blockgroup name="topnav" id="topnav" />
+      <xar:blockgroup name="admin"  id="admin"  />
+      <xar:blockgroup name="left"   id="left"   />
+      <xar:blockgroup name="right"  id="right"  />
+      <xar:blockgroup name="center" id="center" />
+      
+      <xar:base-render-javascript position="body" />
+    </body>
+  </html>
 </xar:blocklayout>
