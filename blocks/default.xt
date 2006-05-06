@@ -6,7 +6,7 @@
       </div>
     </xar:if>
     <div class="xar-block-body">
-      <xar:var name="content" />
+      <xar:var name="content" prep="false"/>
     </div>
   </div>
 </xar:template>
