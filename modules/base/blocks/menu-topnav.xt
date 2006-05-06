@@ -1,0 +1,47 @@
+<xar:if condition="!empty($usercontent)">
+    <ul class="topnav-menu-section">
+        <li class="topnav-menu-section">
+            <ul class="topnav-menu-item">
+                <xar:foreach in="$usercontent" value="$item">
+                    <xar:if condition="empty($item['url'])">
+                        <li class="topnav-menu-item">
+                            #$item['title']# 
+                        </li>
+                        <xar:elseif condition="!empty($item['child']) and ($item['here'])" />
+                        <li class="topnav-menu-item-current">
+                            <ul class="topnav-menu-subitem">
+                                <li class="topnav-menu-subitem-current">
+                                    <a href="#$item['url']#" title="#$item['comment']#">
+                                        #$item['title']# 
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <xar:elseif condition="($item['here']) and empty($item['child'])" />
+                        <li class="topnav-menu-item-current">
+                            <a name="activeitem" href="#$item['url']#" title="#$item['comment']#">
+                                #$item['title']# 
+                            </a>
+                        </li>
+                        <xar:elseif condition="!empty($item['child'])" />
+                        <li class="topnav-menu-item">
+                            <ul class="topnav-menu-subitem">
+                                <li class="topnav-menu-subitem">
+                                    <a href="#$item['url']#" title="#$item['comment']#">
+                                        #$item['title']# 
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <xar:else />
+                        <li class="topnav-menu-item">
+                            <a href="#$item['url']#" title="#$item['comment']#">
+                                #$item['title']# 
+                            </a>
+                        </li>
+                    </xar:if>
+                </xar:foreach>
+            </ul>
+        </li>
+    </ul>
+</xar:if>
