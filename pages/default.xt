@@ -1,75 +1,78 @@
-<?xml version="1.0" encoding="utf-8"?>
 <?xar type="page" ?>
-<xar:blocklayout version="1.0" content="text/html" xmlns:xar="http://xaraya.com/2004/blocklayout">
-<xar:comment>A simple theme originally used at zwiggybo.com, and is for the Xaraya CMS</xar:comment>
-<!--- setting short names for stuff --->
-<xar:set name="themedirectory">#xarTplGetThemeDir()#</xar:set>
-<xar:set name="sitename"><xar:var scope="module" module="themes" name="SiteName"/></xar:set>
-<xar:set name="sitefooter"><xar:var scope="module" module="themes" name="SiteFooter"/></xar:set>
-<xar:set name="siteslogan"><xar:var scope="module" module="themes" name="SiteSlogan"/></xar:set>
-<xar:set name="sitecopyright"><xar:var scope="module" module="themes" name="SiteCopyRight"/></xar:set>
-
+<!-- zigmo3: this file last edited 5 May 2006 -->
+<xar:blocklayout content="text/html" xmlns:xar="http://xaraya.com/2004/blocklayout" version="1.0">
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-    <head>
-        <xar:blockgroup name="header" id="header" />
-        <title>WTF: Weapons, Tactics, and Firepower</title> 
-        <base href="&xar-baseurl;index.php" />
-        <xar:comment> Main CSS rules </xar:comment>
-        <style type="text/css" media="screen">@import url(&xar-baseurl;#$themedirectory#/style/style.css);</style>
-        
-        <xar:comment> Additional CSS rules promoted by Xaraya modules - be careful, these may alter the main theme rules </xar:comment>
+<head>
+    <base href="&xar-baseurl;index.php" />
+    <xar:set name="themedirectory">#xarTplGetThemeDir()#</xar:set>
+    <xar:set name="sitename"><xar:var scope="module" module="themes" name="SiteName"/></xar:set>
+    <xar:set name="sitefooter"><xar:var scope="module" module="themes" name="SiteFooter"/></xar:set>
+    <xar:set name="siteslogan"><xar:var scope="module" module="themes" name="SiteSlogan"/></xar:set>
+    <xar:set name="sitecopyright"><xar:var scope="module" module="themes" name="SiteCopyRight"/></xar:set>
+    <xar:set name="adminnav"><xar:block module="base" type="adminmenu" template="mainnavbubble;top" /></xar:set>
+    <xar:blockgroup name="header" id="header" />
+    <title>#$tpl:pageTitle#</title>
+    <link rel="stylesheet" href="&xar-baseurl;#xarTplGetThemeDir()#/style/style.css" type="text/css" title="#xarTplGetThemeName()#" />
+    <xar:style scope="common" />
+    <xar:style scope="theme" file="ie_win" condition="lt IE 7" />
+    <xar:additional-styles />
+    <xar:base-render-javascript position="head" />
+    <script type="text/javascript" src="#xarTplGetThemeDir()#/scripts/nav.js"></script>
+    <xar:set name="adminnav">
+    <xar:block module="base" type="adminmenu" template="mainnavbubble;top" />
+    </xar:set>
+</head>
 
-#$tpl:additionalStyles# <script type="text/javascript" src="#xarTplGetThemeDir()#/scripts/nav.js"></script> 
-        <xar:comment> Head JavaScript </xar:comment>
-        <xar:base-render-javascript position="head" />
-<xar:set name="adminnav">
-	<xar:block module="adminpanels" type="adminmenu" template="mainnavbubble;top" />
-</xar:set>
-    </head>
-    <body>
-
-
-	
+<body>
 <table width="100%"  border="0" cellspacing="2" cellpadding="0" style="border: solid 1px #003366; background: #e0e0e0; ">
-  <tr>
-    <td colspan="2" style="border: solid 1px #003366; "><xar:var name="adminnav" />
-		<table width="100%"  border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td style="background-color:#004A80; "><a href="index.php"><img src="#xarTplGetThemeDir()#/images/header_banner.jpg" width="375" height="100" align="top" /></a>
-		<!--- the userpanel --->
+    <tr>
+        <td colspan="2" style="border: solid 1px #003366; "><xar:var name="adminnav" />
+            <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td style="background-color:#004A80; ">
+                        <a href="index.php">
+                            <img src="#xarTplGetThemeDir()#/images/header_banner.jpg" width="375" height="100" align="top" />
+                        </a>
+<!--- the userpanel --->
 <xar:if condition="xarUserIsLoggedIn()">
-<div class="userpanel">
-<img src="#xarTplGetThemeDir()#/images/news_arrow.gif" width="11" height="12" align="top"><a href="index.php?module=roles">Display Your Profile</a><br>
-<img src="#xarTplGetThemeDir()#/images/news_arrow.gif" width="11" height="12" align="top"><a href="index.php?module=roles&amp;func=account&amp;moduleload=roles">Modify Your Account</a><br>
-<img src="#xarTplGetThemeDir()#/images/news_arrow.gif" width="11" height="12" align="top"><a href="index.php?module=authsystem&amp;func=logout">Log-Out</a>
+    <div class="userpanel">
+        <img src="#xarTplGetThemeDir()#/images/news_arrow.gif" width="11" height="12" align="top"><a href="index.php?module=roles">Display Your Profile</a><br>
+        <img src="#xarTplGetThemeDir()#/images/news_arrow.gif" width="11" height="12" align="top"><a href="index.php?module=roles&amp;func=account&amp;moduleload=roles">Modify Your Account</a><br>
+        <img src="#xarTplGetThemeDir()#/images/news_arrow.gif" width="11" height="12" align="top"><a href="index.php?module=authsystem&amp;func=logout">Log-Out</a>
 <!--- begin message interface --->
-<xar:blockgroup name="userpanelmessages" id="userpanelmessages" />
+    <xar:blockgroup name="userpanelmessages" id="userpanelmessages" />
 <!--- end message interface --->
 <img src="#xarTplGetThemeDir()#/images/news_arrow.gif" width="11" height="12" align="top"><a href="index.php?module=messages">Send a message</a>
 </div>
 </xar:if>
-<!--- end the userpanel ---></td>
-      </tr>
-      <tr>
-        <td style="background: #000; color: #fff; padding: 3px; ">#xarLocaleFormatDate('%d %B, %Y')#</td>
-      </tr>
-    </table></td>
-  </tr>
-  <tr>
-    <td width="200" valign="top" style="border: solid 1px #003366; padding: 2px; "><xar:blockgroup name="left" id="left" /></td>
-    <td valign="top"  style="border: solid 1px #003366; background: #fff; padding: 2px; "><xar:module class="modulespace" main="true" /></td>
-  </tr>
-  <tr>
-    <td colspan="2" class="bottombar"><xar:var name="sitefooter"/></td>
-  </tr>
+<!--- end the userpanel --->
+                    </td>
+                </tr>
+                <tr>
+                    <td style="background: #000; color: #fff; padding: 3px; ">#xarLocaleFormatDate('%d %B, %Y')#</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td width="200" valign="top" style="border: solid 1px #003366; padding: 2px; ">
+            <xar:blockgroup name="left" id="left" />
+        </td>
+        <td valign="top"  style="border: solid 1px #003366; background: #fff; padding: 2px; ">
+            <xar:module class="modulespace" main="true" />
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" class="bottombar"><xar:var name="sitefooter"/></td>
+    </tr>
 </table>
 <!--- end the body --->
 <!--- begin the footer --->               
-	<div style="margin-top: 5px; text-align: center;">
+<div style="margin-top: 5px; text-align: center;">
     <xar:var name="sitecopyright"/><br>
     <xar:var name="siteslogan"/><br>
-    </div>
+</div>
 <!--- end the footer --->
 <xar:base-render-javascript position="body" />
 </body>

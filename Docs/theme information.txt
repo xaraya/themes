@@ -1,0 +1,8 @@
+The basis of this theme is to allow the user to get the theme up and running with a minimum amount of effort and knowlegde. Additionally, although CSS-based layout is the dominant (and preferred) method of theme design today, this theme was made with tabled layout, and the character of the theme depends on it -- so it would be counter productive to be too concerned about it.
+
+In the 'comps' directory is a .psd file of the logo image, which is there for you to edit in order to make a new logo image.
+
+The ie_win.css stylesheet was put in the style directory not because this theme needs it (it doesn't), but rather because sometimes certain compensations need to be made for the lesser browser (read Internet Explorer).
+
+
+Enjoy.

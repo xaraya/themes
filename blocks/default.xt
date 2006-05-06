@@ -1,10 +1,10 @@
 <table width="100%"  border="0" cellspacing="2" cellpadding="0" class="blockoutside">
-  <xar:if id="title_condition" condition="!empty($title)">
-  <tr>
-    <td class="blockheader"><xar:var name="title"/></td>
-  </tr>
-  </xar:if>
-  <tr>
-    <td valign="top"  class="blockbody"><xar:var name="content"/></td>
-  </tr>
+    <xar:if id="title_condition" condition="!empty($title)">
+        <tr>
+            <td class="blockheader"><xar:var name="title"/></td>
+        </tr>
+    </xar:if>
+        <tr>
+            <td valign="top"  class="blockbody"><xar:var name="content"/></td>
+        </tr>
 </table>
