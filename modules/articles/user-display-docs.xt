@@ -1,0 +1,80 @@
+<xar:template file="publinks" type="module" />
+<xar:categories-navigation layout="trails" showchildren="1" module="articles" itemtype="$ptid" itemid="$aid" cids="$cids" showcatcount="$showcatcount" showempty="0" />
+
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" style="background-color:#fff; border: solid 1px #666;">
+      <tr>
+        <td align="left" valign="top" class="xar-normal"  style="padding: 5px;"><img src="#xarTplGetThemeDir()#/images/doc_icon.gif" style="float: left; margin-right: 10px;">
+          <div class="xar-title" style="font-size: 14px; font-family:Verdana, Arial, Helvetica, sans-serif; background-color: #6699CC;  color: #CCCCCC; border-bottom: solid 1px #666; border-top: solid 1px #666; padding: 3px;">
+            #$title#
+<xar:if condition="!empty($editurl)">
+    [<a href="#$editurl#">#$edittitle#</a>]
+</xar:if>
+          </div>
+ <!---         <br /> --->
+                    <xar:if condition="!empty($counter)">
+                      <div style="background-color: #DAD8EB; color: #666;  border-bottom: solid 1px #666; font-style:italic; "> This article has been read #$counter# 
+                       <xar:mlstring>times</xar:mlstring> </div>
+                    </xar:if>
+
+          <div align="right">
+            <span class="xar-sub">
+              #$topic_icons#
+            </span>
+          </div>
+<div style="color: #666; margin-bottom: 10px; clear:both;">
+          #$body#
+		  <p>
+	<!--- #$testupload_output# --->
+<xar:if condition="isset($testupload_output) AND is_array($testupload_output)">
+	<xar:foreach in="$testupload_output" key="$fileId" value="$testupload">
+		<a href="#$testupload['fileURL']#"><div style="border: solid 2px red; background-color:#FFCC00; "><img src="#$testupload['mimeImage']#"  alt="$testupload_output">
+			Download this file: #$testupload['fileName']#
+			</div>
+		</a>
+		<img src="#$testupload['fileURL']#" style="float: left;" alt="$testupload_output">
+		<br>	
+	</xar:foreach>
+</xar:if> 
+	
+	
+		  </p>
+		  
+</div>
+          
+          <span class="xar-quote">
+            #$notes#
+          </span>
+          <xar:if condition="!empty($previous) and !empty($next)">
+          <div class="xar-normal" style="text-align:right; padding:.25em;">
+            <span>
+              #$previous#
+            </span>
+            <span>
+              #$next#
+            </span>
+          </div>
+          </xar:if>
+    </td>
+  </tr>
+</table>
+
+
+<xar:if condition="!empty($prevart) || !empty($nextart)">
+<br />
+<table border="0" width="95%">
+<tr>
+    <td align="left"><xar:if condition="!empty($prevart)"><a href="#$prevart#">&lt; <xar:mlstring>prev</xar:mlstring> </a></xar:if>&nbsp;</td>
+    <td align="right">&nbsp;<xar:if condition="!empty($nextart)"> <a href="#$nextart#"><xar:mlstring>next</xar:mlstring> &gt;</a></xar:if></td>
+</tr>
+</table>
+</xar:if>
+
+<xar:if condition="!empty($hooks)">
+<br />
+<xar:foreach in="$hooks" key="$hookmodule">
+#$hooks[$hookmodule]#
+</xar:foreach>
+</xar:if>
+
+<xar:template file="navtabs-user" type="module" />

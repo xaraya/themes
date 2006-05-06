@@ -1,0 +1,12 @@
+<xar:if condition="isset($zwigfile_output) AND is_array($zwigfile_output)">
+ 	<xar:foreach in="$zwigfile_output" key="$fileId" value="$zwigfile">
+<table width="100%"  border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 10px;">
+  <tr>
+    <td valign="TOP"><img src="#xarTplGetThemeDir()#/images/file_icons/#$fileicon#" align="top"></td>
+    <td align="LEFT" width="100%" style="padding-left: 5px;"><a href="#$zwigfile['fileURL']#">#$title#</a>
+<br>File description:&nbsp;#$body#
+<br>File name:&nbsp;#$zwigfile['fileName']#</td>
+  </tr>
+</table>
+</xar:foreach>
+ </xar:if>

@@ -1,0 +1,20 @@
+<xar:set name="$localeinfo">xarLocaleGetInfo(xarMLSGetSiteLocale())</xar:set>
+<xar:if condition="!isset($editorwidth)">
+	<xar:set name="$editorwidth">"500px"</xar:set>
+</xar:if>
+<xar:if condition="!isset($editorheight)">
+	<xar:set name="$editorheight">"400px"</xar:set>
+</xar:if><script type="text/javascript">
+  _editor_url = "modules/htmlarea/xartemplates/includes/HTMLArea/";
+  _editor_lang = "#$localeinfo['lang']#";
+</script>
+<script language="javascript" type="text/javascript" src="modules/htmlarea/xartemplates/includes/HTMLArea/htmlarea.js"></script>
+<script language="javascript" type="text/javascript" src="modules/htmlarea/xartemplates/includes/HTMLArea/dialog.js"></script>
+<script language="javascript" type="text/javascript" src="modules/htmlarea/xartemplates/includes/HTMLArea/htmlarea-lang-#$localeinfo['lang']#.js">
+</script>
+<script type="text/javascript" defer="1">
+	 var config = new HTMLArea.Config(); 
+	 config.width = '#$editorwidth#';
+	 config.height = '#$editorheight#';
+	 HTMLArea.replaceAll(config);
+</script>

@@ -1,0 +1,7 @@
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="20"><img src="#xarTplGetThemeDir()#/images/news_arrow.gif"></td>
+    <td align="left"><a class="xar-title" href="#$link#">#$title#</a></td>
+	<td align="RIGHT"  style="padding-left: 5px; font-size: 10px;" >#xarLocaleFormatDate('%d %B, %Y',$pubdate)#</td>
+  </tr>
+</table>

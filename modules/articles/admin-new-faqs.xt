@@ -1,0 +1,88 @@
+<div class="xar-mod-head" style="margin-bottom: 20px;"><span class="xar-mod-title"><xar:mlstring>Question Submission Form</xar:mlstring></span></div>
+<div class="xar-mod-body">
+    <div style="margin: auto;">
+    <xar:if condition="!empty($preview)">
+        <div style="width: 100%;padding: 3px;">
+            #$preview#
+        </div>
+        <br />
+    </xar:if>
+
+    
+    
+    <xar:if condition="!empty($ptid)">
+        <xar:if condition="!empty($withupload)">
+            <form method="post" name="post" id="post" action="&xar-modurl-articles-admin-create;" enctype="multipart/form-data" #$formhooks['formaction']#>
+        <xar:else />
+            <form method="post" name="post" id="post" action="&xar-modurl-articles-admin-create;" #$formhooks['formaction']#>
+        </xar:if>
+        <div style="float:left;width:100%"> <xar:comment> containing float - quick fix for JC's css layouts [andyv] </xar:comment>
+        <xar:comment>
+            Instead of looping over all fields, you can also access individual field definitions
+            via $fields['title'], $fields['summary'] etc.
+        </xar:comment>
+            <xar:foreach in="$fields" value="$field">
+                <div style="clear: both; padding-top: 10px;">
+                    <span style="float: left; width: 20%; text-align: right;">
+                        <span class="help" title="#$field['label']#" >
+                            <label for="#$field['id']#">
+                                #$field['label']#</label>:
+                        </span>
+                    </span>
+                    <span style="float: right; width: 78%;  text-align: left;">
+                        <xar:articles-field definition="$field['definition']" />
+                    </span>
+                </div>
+            </xar:foreach>
+            <xar:if condition="!empty($formhooks['formdisplay'])">
+                <div style="clear: both; padding-top: 10px;">
+                    <span style="float: left; width: 20%; text-align: right;">
+                        <span class="help" title="Form Controls as determined by hook selection.')#">
+                            <xar:mlstring>
+                                Form Controls 
+                            </xar:mlstring>
+                            :
+                        </span>
+                    </span>
+                    <span style="float: right; width: 78%; text-align: left;">
+                        #$formhooks['formdisplay']# 
+                    </span>
+                </div>
+            </xar:if>
+            <xar:comment>
+                put the hooks in, each hook should be a block level element thus keeping the form valid
+            </xar:comment>
+            <xar:if condition="!empty($hooks)">
+                <xar:foreach in="$hooks" key="$hookmodule">
+                    #$hooks[$hookmodule]# 
+                </xar:foreach>
+            </xar:if>
+            <div style="clear: both; padding-top: 10px;">
+                <span style="float: left; width: 20%; text-align: right;">
+                    <span class="help" title="#xarML('This is the allowed HTML that this website has configured.')#">
+                        <xar:mlstring>
+                            Allowed HTML tags 
+                        </xar:mlstring>
+                        :
+                    </span>
+                </span>
+                <span style="float: right; width: 78%; text-align: left;">
+                    #$allowedhtml# 
+                </span>
+            </div>
+            <div style="clear: both; padding-top: 10px;">
+                <span style="float: left; width: 30%; text-align: right;">
+            <xar:comment> These need to be in elements for xhtml </xar:comment>
+                    <input type="hidden" name="authid" id="authid" value="#$authid#" />
+                    <input type="hidden" name="ptid" id="ptid" value="#$ptid#" />
+                    <input type="submit" name="preview" id="preview" value="#$previewlabel#" />
+                    &nbsp;&nbsp;&nbsp; 
+                    <input type="submit" value="#$addlabel#" />
+                </span>
+            </div>
+
+        </div>&nbsp; <xar:comment> end of containing float + some dummy content to make sure the outer container wraps up [andyv] </xar:comment>
+        </form>
+    </xar:if>
+</div>
+</div>

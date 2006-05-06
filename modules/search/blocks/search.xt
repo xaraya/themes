@@ -1,0 +1,12 @@
+<form action="index.php?module=search" method="get">
+	<div class="srchtop" style="margin-bottom: 5px; ">
+		<a accesskey="s" href="index.php/search">Advanced Search</a>
+	</div>
+	<span id="simplesearch">
+				<input type="hidden" name="module" id="module" value="search" />
+		<input type="text" size="20" name="q" id="zwigsearch" value="search" onfocus="this.value = ''" onblur="this.value = ' Search '" />
+		<input type="submit" value="Search" id="zwigsearchsubmit" />
+	</span>
+</form>
+<span ><img src="#xarTplGetThemeDir()#/images/magnifying_glass.gif"></span>
+<hr style="clear:both; visibility: hidden; ">

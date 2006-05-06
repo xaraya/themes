@@ -1,0 +1,65 @@
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" >
+      <tr>
+        <td align="left" valign="top" class="xar-normal"  style="padding: 5px;">
+ <xar:if condition="!empty($editurl)">
+    [<a href="#$editurl#">#$edittitle#</a>]
+</xar:if>         
+                    
+
+          
+<div style="color: #666; margin-top: 5px; margin-left: 5px; margin-bottom: 10px; clear:both;">
+          #$body#
+		  <p>
+	<!--- #$testupload_output# --->
+<xar:if condition="isset($testupload_output) AND is_array($testupload_output)">
+	<xar:foreach in="$testupload_output" key="$fileId" value="$testupload">
+		<a href="#$testupload['fileURL']#"><div style="border: solid 2px red; background-color:#FFCC00; "><img src="#$testupload['mimeImage']#"  alt="$testupload_output">
+			Download this file: #$testupload['fileName']#
+			</div>
+		</a>
+		<img src="#$testupload['fileURL']#" style="float: left;" alt="$testupload_output">
+		<br>	
+	</xar:foreach>
+</xar:if> 
+	
+	
+		  </p>
+		  
+</div>
+          
+          <span class="xar-quote">
+            #$notes#
+          </span>
+          <xar:if condition="!empty($previous) and !empty($next)">
+          <div class="xar-normal" style="text-align:right; padding:.25em;">
+            <span>
+              #$previous#
+            </span>
+            <span>
+              #$next#
+            </span>
+          </div>
+          </xar:if>
+    </td>
+  </tr>
+</table>
+
+
+<xar:if condition="!empty($prevart) || !empty($nextart)">
+<br />
+<table border="0" width="95%">
+<tr>
+    <td align="left"><xar:if condition="!empty($prevart)"><a href="#$prevart#">&lt; <xar:mlstring>prev</xar:mlstring> </a></xar:if>&nbsp;</td>
+    <td align="right">&nbsp;<xar:if condition="!empty($nextart)"> <a href="#$nextart#"><xar:mlstring>next</xar:mlstring> &gt;</a></xar:if></td>
+</tr>
+</table>
+</xar:if>
+
+<xar:if condition="!empty($hooks)">
+<br />
+<xar:foreach in="$hooks" key="$hookmodule">
+#$hooks[$hookmodule]#
+</xar:foreach>
+</xar:if>
+
+<xar:template file="navtabs-user" type="module" />

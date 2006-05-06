@@ -1,0 +1,24 @@
+<!--- License: GPL http://www.gnu.org/copyleft/gpl.html --->
+
+<!--- added javascript to update the image preview --->
+<select name="#$name#" id="#$id#" #$tabindex#  onChange='document.getElementById("#$id#image").src = "#$basedir#" + "/" +
+          document.getElementById("#$id#").options[document.
+           getElementById("#$id#").selectedIndex].value'>
+
+   <xar:foreach in="$options" value="$option" >
+
+   <xar:if condition="($option['id'])" >
+            <xar:if condition="$option['id'] eq $value" >
+                <option value="#$option['id']#" selected="selected">#$option['name']#</option>
+            <xar:else />
+                <option value="#$option['id']#">#$option['name']#</option>
+          </xar:if>
+        </xar:if>
+
+    </xar:foreach>
+</select>
+ <img id="#$id#image" src="#$basedir#/#$value#" />
+
+ <xar:if condition="!empty($invalid)">
+    <span class="xar-error">#$invalid#</span>
+</xar:if>

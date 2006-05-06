@@ -1,0 +1,45 @@
+<xar:loop name="$feature">
+    <xar:if condition="!empty($loop:item['featuredlabel'])">
+        <xar:if condition="!empty($loop:item['alttitle'])">
+            <a href="#$loop:item['featuredlink']#">#$loop:item['alttitle']#</a>
+        <xar:else />
+          &bull;  <a href="#$loop:item['featuredlink']#">#xarVarPrepForDisplay($loop:item['featuredlabel'])#</a>
+        </xar:if>
+        <br />
+        <xar:if condition="$loop:item['showfeaturedsum'] eq true">
+            <xar:if condition="!empty($loop:item['altsummary'])">
+                #$loop:item['altsummary']#
+            <xar:else />
+                <xar:if condition="!empty($loop:item['featureddesc'])">
+                    #xarVarPrepHTMLDisplay($loop:item['featureddesc'])#
+                </xar:if>
+            </xar:if>
+             <br />
+        </xar:if>
+        <xar:if condition="$loop:item['showfeaturedbod'] eq true">
+                #$loop:item['featuredbody']#
+       </xar:if>
+<!---        <br /> --->
+    </xar:if>
+</xar:loop>
+
+<xar:if condition="!empty($items)">
+<!---    <br />
+    <div class="xar-block-title"><xar:mlstring>More Featured Headlines</xar:mlstring>:</div> --->
+    <xar:foreach in="$items" value="$item">
+        &bull;
+        <xar:if condition="empty($item['link'])">
+            #xarVarPrepForDisplay($item['label'])#
+        <xar:else />
+            <a href="#$item['link']#">#xarVarPrepForDisplay($item['label'])#</a>
+        </xar:if>
+        <xar:if condition="!empty($item['count'])">
+            (#$item['count']#)
+        </xar:if>
+        <br />
+        <xar:if condition="!empty($item['desc'])">
+            #xarVarPrepHTMLDisplay($item['desc'])#
+        <br />
+        </xar:if>
+    </xar:foreach>
+</xar:if>
