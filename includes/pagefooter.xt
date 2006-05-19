@@ -4,10 +4,10 @@
 <xar:set name="poweredbyxaraya"><xar:mlstring>Powered by Xaraya</xar:mlstring></xar:set>
 
 <div id="iceFooter">
-    <div id="iceFooterGroup">
+<!--     <div id="iceFooterGroup">
         <xar:blockgroup name="footer" id="footer" />
     </div>
     <div id="iceFooterXar">
         <xar:var name="sitefooter" />
-    </div>
+    </div> -->
 </div>

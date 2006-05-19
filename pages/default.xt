@@ -17,9 +17,11 @@
     <xar:template file="pageheader" type="theme" />
     
 <!--     <div id="admin"><xar:blockgroup name="admin" id="admin" /></div> -->
-    <div id="iceNavGlobal"><xar:blockgroup name="left" id="left" /></div>
+    <div id="iceRightBar"><div id="iceNavGlobal"><xar:blockgroup name="left" id="left" /><img src="&xar-baseurl;#xarTplGetThemeDir()#/images/xar_poweredby88x31invhue3.gif" /></div></div>
     <div id="iceContent">
-        <div id="iceNavModule"><xar:blockgroup name="topnav" id="topnav" /></div>
+        <div id="iceNavModule">
+            <xar:blockgroup name="topnav" id="topnav" />
+        </div>
         <xar:module id="modulespace" main="true" />
     </div>
 <!--     <div id="right"><xar:blockgroup name="right" id="right" /></div> -->
