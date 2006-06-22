@@ -8,7 +8,8 @@
             xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
             xmlns:xbl="http://www.mozilla.org/xbl"
             xmlns:xar="http://xaraya.com/2004/blocklayout">
-        
+        <xar:base-render-javascript position="head" />
+        <xar:base-render-javascript position="body" />
         <!-- Global scripts needed -->
         <script src="chrome://global/content/globalOverlay.js" />
         <script src="themes/#xarTplGetThemeName()#/jslib/xrm_init.js"/>
