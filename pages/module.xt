@@ -3,7 +3,7 @@
 <?xar type="page" ?>
 <xar:blocklayout version="1.0" content="application/vnd.mozilla.xul+xml" xmlns:xar="http://xaraya.com/2004/blocklayout">
 <!DOCTYPE window [ <!ENTITY nbsp "&#160;"> ]> 
-    <xul:window id="xrm_module" onload="xrm_init()"
+    <xul:window id="xrm_module" onload="xrm_init()" title="#$tpl:pageTitle#"
             xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" 
             xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
             xmlns:xbl="http://www.mozilla.org/xbl"
