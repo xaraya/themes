@@ -37,18 +37,7 @@ The 'baseflag' variable allows you to skip certain categories in the trail :
     </td>
 </tr>
 </table>
-
-<xar:if condition="!empty($catimage)">
-<br />
-<table border="0" width="95%">
-<tr>
-    <td align="center" valign="top">
-        <img src="#$catimage#" border="0" alt="#$catname#" />
-    </td>
-</tr>
-</table>
-</xar:if>
-
+<xar:comment> ----------- category image was here :p ------------- </xar:comment>
 <xar:if condition="!empty($cathooks)">
 <br />
 <!-- TODO: do something specific with pubsub, hitcount, comments etc. -->
