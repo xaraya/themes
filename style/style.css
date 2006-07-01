@@ -1,5 +1,5 @@
 @import "verticalmenu.css";
-/* style.css for itheme. Last modified 28 June 2006 */
+/* style.css for itheme. Last modified 1 July 2006 */
 /* XARAYA REQUIRED CLASSES */
 a:link, a:visited {
     color: #0000CD;
@@ -267,6 +267,9 @@ div#body {
     position: relative;
     margin: 5px; /* 5px fixes in IE 7, and FF Windows */
     padding: 0;
+	/* test styles are below */
+	width: 100%; /* this width declaration is present because I was having problems in user-display-news template
+	-- sooo let's see if it has any side effects, and what I did to screw up the template in the first place. */
 }
 .footer {
     position: relative;
@@ -303,17 +306,62 @@ div#body {
 /* MAIN MENU LAYOUT STYLES--- */
 /*------------------ NEWS TEMPLATES --------------------*/
 .news-title {	
-    font-size: 16px;	
+    font-size: 14px;	
     font-weight: bold;	
-    color: #008FD4;	
-    border-top: solid 1px #008FD4;	
-    border-bottom: solid 1px #008FD4;	
-    padding: 3px 0px 3px 0px;	
+    color: #fff;	
+/*    border-top: solid 1px #008FD4;*/		
+/*    border-bottom: solid 1px #000;*/
+    padding: 3px 0px 3px 25px;	
 }
 .xar-sub-shadow {
 background: url(../images/news_shadow.gif) repeat-x;
 height: 15px;
 }
+
+
+/* begin user-news-display.xt specific styles */
+.newsheader {
+    background: url(../images/gradients/newsheader_bg.png) repeat-x left top;
+    margin-bottom:1px;
+}
+.whiteTL {
+    background:url(../images/gradients/topleft_corner_white.png) no-repeat left top;
+    margin: 0;
+    padding: 0;
+}
+.whiteTR {
+    background:url(../images/gradients/topright_corner_white.png) no-repeat right top;
+    margin: 0;
+    padding: 0;
+}
+
+.newspostinfoLL {
+    background:url(../images/gradients/whitegrey_LL.gif) no-repeat left bottom #d4d4d4;
+/*   margin: 0 0 -1px -1px; */
+    margin: 0;
+    padding: 0;
+}
+.newspostinfo {
+    /*border: solid 1px #666;*/
+    padding: 2px 2px 2px 25px;
+    font-size: 9px;
+    color: #666;
+/*  background: #d4d4d4;	*/
+    margin-bottom: 15px;
+}
+.newsdisplaysummary {
+margin: 0 0 0 25px;
+}
+.newsdisplaybody {
+margin: 0 0 0 25px;
+}
+.newsdisplaynotes {
+    margin: 25px;
+    color: #666;
+    font-size: 10px;
+}
+/* end user-news-display.xt specific styles */
+
 
 /*--------------- DOCUMENTS TEMPLATES ----------------*/
 

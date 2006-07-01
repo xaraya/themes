@@ -33,7 +33,7 @@
             </div>
         </div>
         <div class="topnav">
-            <xar:blockgroup name="topnav" id="topnav" />
+			<xar:blockgroup name="topnav" id="topnav" />
         </div>
         <div id="wrapper2">
             <div id="innerwrapper">

@@ -1,12 +1,23 @@
 <xar:template file="publinks" type="module" />
 <xar:categories-navigation layout="trails" showchildren="1" module="articles" itemtype="$ptid" itemid="$aid" cids="$cids" showcatcount="$showcatcount" showempty="0" />
-<div class="xar-norm-outline">
-    <div class="news-title">#$title#
-    	<xar:if condition="!empty($editurl)">[
-    	<a href="#$editurl#">#$edittitle#</a>]</xar:if>
-	</div>
+<div class="xar-norm-outline" >
+<!-- begin rounded corners for title bar --> 
+    <div class="newsheader">
+        <div class="whiteTL">
+            <div class="whiteTR">
+                <div class="news-title">
+                    #$title#
+                    <xar:if condition="!empty($editurl)">
+                        [<a href="#$editurl#">#$edittitle#</a>]
+                    </xar:if>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- end rounded corners for title bar -->
+
     <div class="xar-floatright">#$topic_icons#</div>
-    <div class="xar-sub xar-margin-bottom">
+    <div class="newspostinfoLL newspostinfo xar-margin-bottom">
         <xar:if condition="!empty($profile)">
             <xar:set name="$author_string">'
             <a href="'.$profile.'">'.$author.'</a>'</xar:set>
@@ -26,11 +37,11 @@
             </xar:ml>
         </xar:if>
     </div>
-    <div>#$summary#</div>
-    <div>#$body#</div>
+    <div class="newsdisplaysummary">#$summary#</div>
+    <div class="newsdisplaybody">#$body#</div>
     <xar:if condition="!empty($notes)">
-        <p class="xar-quote">Note :
-        <em>#$notes#</em></p>
+        <div class="newsdisplaynotes"><strong>Note:</strong> 
+        <em>#$notes#</em></div>
     </xar:if>
     <xar:if condition="!empty($previous) and !empty($next)">
         <div class="xar-normal xar-align-right">#$previous# #$next#</div>

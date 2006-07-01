@@ -1,3 +1,13 @@
+<!-- <a href="index.php">
+	<img src="#xarTplGetThemeDir()#/images/header/homeicon.png" alt="homeicon.png" style="padding: none !important; margin-top: -5px;" />
+	</a> 
+** Note: the above works for adding a home icon, but then the topnav styles would need to be modified to change:
+    1) remove the black border around buttons
+	2) remove right padding/ or margin...whichever
+	As a thought it may be better to do this using spans, but lists are preferable supposedly.
+-->
+            
+
 <xar:if condition="!empty($usercontent)">
     <ul class="topnav-menu-section">
         <li class="topnav-menu-section">

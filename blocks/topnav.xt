@@ -1,1 +1,3 @@
-<div class="topnavblock">#$content#</div>
+<div class="topnavblock">
+	#$content#
+</div>
