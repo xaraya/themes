@@ -8,6 +8,10 @@ This template has a conditional which has two versions of the user-summary-webli
 </xar:comment>
 
 <div class="xar-norm xar-standard-box-padding">
+<!-- add corners -->
+<div class="newssumTL">
+    <div class="newssumTR">
+<!-- end add corners -->  
     <div class="news-title">
 		<xar:if condition="!empty($categories) and count($categories) gt 0">
         	[
@@ -17,8 +21,8 @@ This template has a conditional which has two versions of the user-summary-webli
         	]
     	</xar:if>
 		<a href="#$link#">#$title#</a></div>
-    <div class="xar-sub-shadow">
-        <div class="xar-sub xar-margin-bottom">
+    <div class="newssummarypostinfo">
+        <div>
             <xar:ml>
                 <xar:mlstring>Posted by: #(1) on #(2) #(3)</xar:mlstring>
                 <xar:mlvar>#$author#</xar:mlvar>
@@ -38,23 +42,31 @@ This template has a conditional which has two versions of the user-summary-webli
             </xar:if>
         </div>
     </div>
+<!-- add corners -->
+</div></div>
+<!-- end add corners -->
+
     <div class="xar-align-right">
 
     </div>
-    <div class="xar-articles-summary">
+<!-- add corners -->
+<div class="newssumLL">
+    <div class="newssumLR">
+<!-- end add corners -->     
+    <div class="xar-articles-summary" style="padding: 5px;">
 		<span class="xar-sub" style="float: right;"> #$topic_icons# </span>
 		#$summary#
 		<hr style="clear: right; visibility: hidden;" />
     </div>
     <xar:if condition="!empty($notes)">
-        <div class="xar-articles-notes">
+        <div class="xar-articles-notes" style="margin-left: 10px; font-size: 9px; font-style: italic;">
             <xar:mlstring>
                 Note
             </xar:mlstring>
             : #$notes#
         </div>
     </xar:if>
-    <div class="xar-align-right">
+    <div class="xar-align-right" style="margin-right: 15px; padding-bottom: 3px;">
         <xar:if condition="!empty($words)">
             <xar:comment>
                 Note : you can use $bytes here too if you prefer the geeky way of counting
@@ -90,6 +102,9 @@ This template has a conditional which has two versions of the user-summary-webli
             </xar:if>
         </div>
     </div>
+<!-- add corners -->
+</div></div>
+<!-- end add corners -->    
 </div>
 <xar:else />
 

@@ -1,5 +1,5 @@
 @import "verticalmenu.css";
-/* style.css for itheme. Last modified 1 July 2006 */
+/* style.css for itheme. Last modified 2 July 2006 */
 /* XARAYA REQUIRED CLASSES */
 a:link, a:visited {
     color: #0000CD;
@@ -361,6 +361,39 @@ margin: 0 0 0 25px;
     font-size: 10px;
 }
 /* end user-news-display.xt specific styles */
+
+/* begin user-news-summary.xt specific styles */
+.newssumTL {
+background:url(../images/articles/newssum_TL.gif) no-repeat left top #d4d4d4;
+    margin: 0;
+    padding: 0;
+}
+.newssumTR {
+background:url(../images/articles/newssum_TR.gif) no-repeat right top;
+    margin: 0;
+    padding: 0;
+}
+.newssumLL {
+    background:url(../images/articles/newssum_LL.gif) no-repeat left bottom #e7edf6;
+/*   margin: 0 0 -1px -1px; */
+    margin: 0;
+    padding: 0;
+}
+.newssumLR {
+	background:url(../images/articles/newssum_LR.gif) no-repeat right bottom;
+/*    margin: 0 -1px -1px 0; */
+    margin: 0;
+    padding: 0;
+    }
+.newssummarypostinfo {
+    /*border: solid 1px #666;*/
+    padding: 2px 2px 2px 25px;
+    font-size: 9px;
+    color: #666;
+    background: #fff;
+    margin-bottom: 0px;
+}
+/* end user-news-summary.xt specific styles */
 
 
 /*--------------- DOCUMENTS TEMPLATES ----------------*/
