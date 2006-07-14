@@ -40,8 +40,14 @@
     <div class="newsdisplaysummary">#$summary#</div>
     <div class="newsdisplaybody">#$body#</div>
     <xar:if condition="!empty($notes)">
-        <div class="newsdisplaynotes"><strong>Note:</strong> 
-        <em>#$notes#</em></div>
+        <div class="newsdisplaynotes">
+            <fieldset style="width: 40%;">
+                <legend>
+                    Note 
+                </legend>
+                #$notes#
+            </fieldset>
+        </div>
     </xar:if>
     <xar:if condition="!empty($previous) and !empty($next)">
         <div class="xar-normal xar-align-right">#$previous# #$next#</div>

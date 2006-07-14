@@ -1,5 +1,26 @@
-*NOTE: go to iTheme/modules/base/user-main.xt to edit this template. It has as an example two different blocks in it, and a tag to display front-page articles.
-<!-- UNCOMMENT AS YOU DESIRE
+<fieldset>
+    <legend>
+        Thanks for Trying itheme!  
+    </legend>
+
+<p>This theme is intended for the average Xaraya user. If you are reading this message you managd to get it installed, and with minimal effort you will be able to get it configured. At this point there are really only <strong>three</strong> things you need to configure.
+</p>
+<ol>
+<li>Add links to the navigation bar. This is easy! Make a base/menu block named 'topnav', and enter 'topnav' for the block instance template name. Then assign the block to the topnav blockgroup.</li>
+<li>Use the .psd file included in the 'docs' folder to create your own personalized logo image.</li>
+<li>Change the content of this file (see the instructions below).</li>
+</ol>
+<div style="border: dashed 1px #000; background: #e0e0e0; padding: 10px; margin: 20px 0 20px 0;">
+    *NOTE: go to iTheme/modules/base/user-main.xt to edit this template. It has as an example two different blocks in it, and a tag to display front-page articles.
+</div>
+
+
+</fieldset>
+
+
+
+
+    <!-- UNCOMMENT AS YOU DESIRE
 <div class="centerblocks">
     <span style="float: right; margin: 10px; width: 180px;">
         <xar:blockgroup name="baseright" id="baseright" />

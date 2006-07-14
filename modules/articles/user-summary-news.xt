@@ -72,9 +72,7 @@ This template has a conditional which has two versions of the user-summary-webli
                 Note : you can use $bytes here too if you prefer the geeky way of counting
             </xar:comment>
             <a href="#$link#">
-                <xar:mlstring>
-                    Read More
-                </xar:mlstring>
+                    <img src="#xarTplGetThemeDir()#/images/articles/news_readmore.png" align="top" alt="read more" />
             </a>
             <xar:if condition="$words eq 1">
                 (#$words#&nbsp;
