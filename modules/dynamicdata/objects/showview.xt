@@ -1,1 +1,10 @@
-#xarVarSetCached('Themes.JSON','data',$items)#
+<!-- @todo see if we can do this in a less hacky way -->
+<xar:set name="i">array()</xar:set>
+<xar:foreach in="$items" key="$itemid" value="$fields">
+    <xar:set name="t">array()</xar:set>
+    <xar:foreach in="$properties" key="$name">
+        <xar:set name="dummy">1; $t[] = $properties[$name]->showOutput(array('value' => $fields[$name]))</xar:set>
+    </xar:foreach>
+    <xar:set name="dummy2">1; $i[] =$t</xar:set>
+</xar:foreach>
+#xarVarSetCached('Themes.JSON','data',$i)#
