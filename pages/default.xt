@@ -2,7 +2,7 @@
 <!DOCTYPE blocklayout PUBLIC "-//XAR//DTD BL 1.0 Strict//EN" "http://xaraya.com/bl1/DTD/bl1-strict.dtd">
 <!-- License: GPL http://www.gnu.org/copyleft/gpl.html -->
 <?xar type="page" ?>
-<xar:blocklayout version="1.0" content="text/html" xmlns:xar="http://xaraya.com/2004/blocklayout">
+<xar:blocklayout version="1.0" content="application/json" xmlns:xar="http://xaraya.com/2004/blocklayout">
     <xar:module class="modulespace" main="true" />
     <xar:set name="jsondata">json_encode(xarVarGetCached('Themes.JSON','data'))</xar:set>
     #$jsondata#
