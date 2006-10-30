@@ -29,15 +29,14 @@ This template has a conditional which has two versions of the user-summary-webli
         <br />
     </xar:if>
     <xar:mlstring>
-        Added on
+        Added on 
     </xar:mlstring>
-    : #xarLocaleGetFormattedDate('long',$pubdate)# #xarLocaleGetFormattedTime('long',$pubdate)#
+    : #xarLocaleGetFormattedDate('long',$pubdate)# #xarLocaleGetFormattedTime('long',$pubdate)#&nbsp;&nbsp;
     <xar:if condition="!empty($rating)">
-        -
         <xar:mlstring>
-            Rating
+            <strong>Rating
         </xar:mlstring>
-        : #$rating#
+        : #$rating#</strong>
     </xar:if>
     <xar:if condition="!empty($counter)">
         <xar:if condition="$counter eq 1">
@@ -54,11 +53,11 @@ This template has a conditional which has two versions of the user-summary-webli
             )
         </xar:if>
     </xar:if>
-    | <a href="#$link#">
+     (<a href="#$link#">
         <xar:mlstring>
             Rate / Comment
         </xar:mlstring>
-    </a>
+    </a>)
     <div class="xar-articles-keywords">
         <xar:if condition="!empty($keywords)">
             <xar:mlstring>
