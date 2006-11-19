@@ -119,6 +119,7 @@ h1, h2, h3, h4 {
 .xar-mod-head {
 }
 .xar-mod-title {
+	font-size: 18px;
 }
 .xar-mod-body {
 }
@@ -138,6 +139,8 @@ h1, h2, h3, h4 {
 .xar-norm {
 }
 .xar-sub {
+	font-size: 9px;
+	color:#663366;
 }
 .xar-menu-section {
 }
@@ -161,6 +164,7 @@ h1, h2, h3, h4 {
 .xar-menu-item-current > .xar-menu-subitem > a:visited {
 }
 .xar-title {
+	font-size: 18px;
 }
 .xar-error {
 }
