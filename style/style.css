@@ -120,6 +120,7 @@ h1, h2, h3, h4 {color: #008080;}
 .xar-alt {
 }
 .xar-accent {
+	background: #e0e0e0;
 }
 .xar-alt-outline {
 }
@@ -160,9 +161,9 @@ h1, h2, h3, h4 {color: #008080;}
 
 /* ---------------- HEADER STYLES ------------------------------------- */
 .header {
-	background: #008080;
-/*	border-bottom: solid 1px #000; */
-	height: 60px;
+	background:url(../images/header/header_image.jpg) no-repeat #008080;
+	/*	border-bottom: solid 1px #000; */
+	height: 129px;
 	margin: 0;
 	padding: 0;
 }
@@ -289,7 +290,7 @@ ADDITIONALLY - this creates a style for the redundant li (behind the one we want
 	background: none;
 	}
 .xcontent {
-	margin-right: 200px;
+	margin-right: 170px;
 	background: none;
 	}
 .xrightcol {
