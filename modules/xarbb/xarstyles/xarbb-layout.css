@@ -20,7 +20,7 @@ font-size: 12px;
 font-weight: bold;
 }
 .lastpost {
-background: #f0f0f0;
+background: #f0f0f0 !important;
 }
 div.xarbb-tablewrapper table td.icon {
 background: #e0e0e0;
