@@ -38,10 +38,16 @@ background: #e0e0e0;
 
 div.xarbb-tablewrapper table td.message {
 background: #f0f0f0;
+width: 100%;
 }
 
+div.xarbb-tablewrapper table td.forumgroup h4 {
+/* 	
+line-height: 10% !important;
+height: 18px; */
+margin: 2px 0 2px 5px;
+padding: 0;
+}
 div.xarbb-tablewrapper table td.forumgroup {
-/* 	the only way to make this cell be normal sized is to change the 
-	template to remove the h4, and make it into a title element 
-*/
+/* add background color, or whatever here */
 }
