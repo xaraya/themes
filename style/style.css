@@ -382,13 +382,30 @@ ADDITIONALLY - this creates a style for the redundant li (behind the one we want
 	font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
 	color: #fff;
 	}
-	
+
+/* --------------- DOCUMENT SUMMARY & DISPLAY TEMPLATES --------------- */
+.docs_displaytitle {
+	margin-bottom: 5px; 
+	background: #008080; 
+	padding: 5px;
+	font-size:14px;
+	font-weight: bold;
+	font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+	color: #fff;
+}
 	
 /* --------------- COMMENTS STYLES ----------------- */
 div .xar-ib-actionpanel.xar-accent {
 border: solid 1px #008080;
 }
 
+
+
+/* --------------- REGISTRATION BLOCK -------------- */
+.rlogin_input {
+	width: 100px;
+	border: solid 1px #008080;
+}
 
 
 /* --------------- USEFUL STYLES ------------------- */
@@ -399,3 +416,4 @@ border: solid 1px #008080;
 .clearboth { clear: both; }
 .clearright { clear: right; }
 .clearleft {clear: left; }
+.bordered_input {border: solid 1px #008080;}
