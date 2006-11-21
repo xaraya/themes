@@ -1,0 +1,72 @@
+<div  class="xar-fullwidth xar-margin-thickbottom">
+   <div style="float:left; clear:left; font-size: 16px; color: #fff; background: #e9e9f1; border-bottom: solid 1px #b6b6cf; padding: 4px; margin-bottom: 10px; width: 100%;">
+        <a href="#$link#">#$title#</a>
+    </div>
+    <xar:comment>
+        <xar:if condition="!empty($categories) and count($categories) gt 0">[
+
+        <xar:foreach in="$categories" value="$cat">#$cat['cjoin']#
+            <a href="#$cat['clink']#">#$cat['cname']#</a></xar:foreach>]
+        </xar:if>
+    </xar:comment>
+<!-- SCREENSHOT -->
+
+<div class="xar-thirdwidth" style="float:left; clear:left;">
+        <xar:if condition="isset($themesshot_output) AND count($themesshot_output) ge '1'">
+    	    <xar:foreach in="$themesshot_output" key="$imageId">
+                <xar:image-resize src="$imageId" width="150px" constrain="1" label="$title" />
+            </xar:foreach>
+         <xar:else />
+            <div class="xar-nowrap xar-align-center" style="width:150px;">
+            <p class="xar-padding-thick"><xar:mlstring>Theme </xar:mlstring></p>
+            <p class="xar-padding-thick"><xar:mlstring>shot </xar:mlstring></p>
+            <p class="xar-padding-thick"><xar:mlstring>comming!</xar:mlstring></p>
+            </div>
+         </xar:if>
+     </div>
+
+<!-- END SCREENSHOT -->
+      
+   
+      
+      <div class="xar-halfwidth" style="float:left;margin-bottom: 15px;">
+        <p>#$summary#</p>
+        <p>
+            <xar:ml>
+                <xar:mlstring>Submitted by: #(1)</xar:mlstring>
+                <xar:mlvar>#$author#</xar:mlvar>
+            </xar:ml>
+        </p>
+
+        <xar:comment>
+        <xar:if condition="empty($notes)">
+
+        <xar:elseif condition="xarModIsHooked('uploads','articles',$pubtypeid) and substr($notes,0,1) eq ';'" />
+            <xar:set name="notes_output">xarModAPIFunc('uploads','user','showoutput',array('value' => $notes, 'multiple' => true))</xar:set>
+            <xar:foreach in="$notes_output" key="$fileid" value="$fileinfo">
+            <p>
+                 <a href="#$fileinfo['fileDownload']#">#$fileinfo['fileName']#</a>
+            </p>
+            </xar:foreach>
+        <xar:elseif condition="file_exists('var/uploads/'.$notes)" />
+            <p>
+                <a href="var/uploads/#$notes#" title="#$notes#">#$notes#</a>
+            </p>
+        <xar:else />
+            <p>#$notes#</p>
+        </xar:if>
+        </xar:comment>
+        <div class="xar-align-right " style="float:left;margin-bottom: 15px;">
+            <a href="#$link##comments">#$comments# &raquo;</a>
+        </div>
+      </div>
+    <xar:comment>
+    <div class="xar-articles-keywords">
+        <xar:if condition="!empty($keywords)">
+        <xar:mlstring>Keywords</xar:mlstring>:
+        <xar:loop name="$keywords">
+            <a href="#xarModUrl('keywords', 'user', 'main', array('keyword' => $loop:item['keyword']))#" title="#$loop:item['keyword']#">#$loop:item['keyword']#</a>
+        </xar:loop></xar:if>
+    </div>
+    </xar:comment>
+</div>
