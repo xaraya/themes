@@ -143,7 +143,7 @@ h1, h2, h3, h4 {
 }
 .xar-sub {
 	font-size: 9px;
-	color:#663366;
+	color:#999;
 }
 .xar-menu-section {
 }
@@ -171,6 +171,11 @@ h1, h2, h3, h4 {
 }
 .xar-error {
 }
+.xar-articles-notes {
+	margin: 20px 0 0 10px;
+	font-size: 10px;
+	font-style:italic;
+	}
 /* theme specific styles */
 
 /* ---------------- HEADER STYLES ------------------------------------- */
@@ -346,7 +351,22 @@ margin-left: -100%;
 	}
 .docs_summarytitle a:link, .docs_summarytitle a:visited {color: #fcf8b6;}
 .docs_summarytitle a:hover, .docs_summarytitle a:active {color: #000;}
-	
+
+/* --------------- NEWS SUMMARY & DISPLAY TEMPLATES ------------------ */
+.newssummary-title {
+	font-size: 14px;
+	font-weight: bold;
+	border-bottom: solid 1px #e0e0e0;
+	}
+div.newssummary-title h5 {
+float: right; margin: -1.33em 3px 0 0; padding: 0; color: #667;
+font-size: 10px;
+font-weight: normal;
+font-style: italic;
+	}
+.news_summarycontent {
+	margin: 10px 5px 5px 5px;
+	}	
 /* --------------- COMMENTS STYLES ----------------- */
 div .xar-ib-actionpanel.xar-accent {
 border: solid 1px #003663;

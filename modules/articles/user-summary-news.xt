@@ -6,21 +6,26 @@
         </xar:foreach>
         ] 
     </xar:if>
-    <h1> <a class="xar-title" href="#$link#">#$title#</a> </h1> 
-    <div class="xar-accent xar-padding-thick">
+    <div class="newssummary-title" > 
+        <a href="#$link#">#$title#</a> 
+        <h5 >
+        <xar:mlvar>
+            #xarLocaleGetFormattedDate('short',$pubdate)#
+        </xar:mlvar>
+<!--        <xar:mlvar>
+            #xarLocaleGetFormattedTime('short',$pubdate)#
+        </xar:mlvar>
+-->
+        </h5>
+    </div> 
+    <div >
         <span class="xar-sub"> 
             <xar:ml>
                 <xar:mlstring>
-                    Posted by: #(1) on #(2) #(3)
+                    Posted by: #(1)
                 </xar:mlstring>
                 <xar:mlvar>
                     #$author#
-                </xar:mlvar>
-                <xar:mlvar>
-                    #xarLocaleGetFormattedDate('long',$pubdate)#
-                </xar:mlvar>
-                <xar:mlvar>
-                    #xarLocaleGetFormattedTime('long',$pubdate)#
                 </xar:mlvar>
             </xar:ml>
             <xar:if condition="!empty($counter)">
@@ -43,54 +48,53 @@
     <div class="xar-align-right">
         <span class="xar-sub"> #$topic_icons# </span> 
     </div>
-    <div class="xar-articles-summary">
-        #$summary# 
-    </div>
-    <xar:if condition="!empty($notes)">
-        <div class="xar-articles-notes">
-            <xar:mlstring>
-                Note 
-            </xar:mlstring>
-            : #$notes# 
+    <div class="news_summarycontent"><!-- enclosing div around content etc -->
+        <div  class="xar-articles-summary">
+            #$summary# 
         </div>
-    </xar:if>
-    <div class="xar-align-right">
-        <xar:if condition="!empty($words)">
-            <xar:comment>
-                Note : you can use $bytes here too if you prefer the geeky way of counting
-            </xar:comment>
-            <a href="#$link#">
+        <xar:if condition="!empty($notes)">
+            <div class="xar-articles-notes">
                 <xar:mlstring>
-                    Read More
+                    Note 
                 </xar:mlstring>
-            </a> 
-            <xar:if condition="$words eq 1">
-                (#$words#&nbsp;
-                <xar:mlstring>
-                    word
-                </xar:mlstring>
-                ) 
-                <xar:else />
-                (#$words#&nbsp;
-                <xar:mlstring>
-                    words
-                </xar:mlstring>
-                ) 
-            </xar:if>
+                : #$notes# 
+            </div>
         </xar:if>
-        <xar:if condition="!empty($comments)">
-            #$comments# 
-        </xar:if>
-        <div class="xar-articles-keywords">
-            <xar:if condition="!empty($keywords)">
-                <xar:mlstring>
-                    Keywords 
-                </xar:mlstring>
-                : 
-                <xar:loop name="$keywords">
-                    <a href="#xarModUrl('keywords', 'user', 'main', array('keyword'=> $loop:item['keyword']))#" title="#$loop:item['keyword']#">#$loop:item['keyword']#</a> 
-                </xar:loop>
+        <div class="xar-align-right">
+            <xar:if condition="!empty($words)">
+                <a href="#$link#">
+                    <xar:mlstring>
+                        Read More
+                    </xar:mlstring>
+                </a> 
+                <xar:if condition="$words eq 1">
+                    (#$words#&nbsp;
+                    <xar:mlstring>
+                        word
+                    </xar:mlstring>
+                    ) 
+                    <xar:else />
+                    (#$words#&nbsp;
+                    <xar:mlstring>
+                        words
+                    </xar:mlstring>
+                    ) 
+                </xar:if>
             </xar:if>
+            <xar:if condition="!empty($comments)">
+                #$comments# 
+            </xar:if>
+            <div class="xar-articles-keywords">
+                <xar:if condition="!empty($keywords)">
+                    <xar:mlstring>
+                        Keywords 
+                    </xar:mlstring>
+                    : 
+                    <xar:loop name="$keywords">
+                        <a href="#xarModUrl('keywords', 'user', 'main', array('keyword'=> $loop:item['keyword']))#" title="#$loop:item['keyword']#">#$loop:item['keyword']#</a> 
+                    </xar:loop>
+                </xar:if>
+            </div>
         </div>
-    </div>
+    </div> <!-- close encapse div -->
 </div>
