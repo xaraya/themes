@@ -215,19 +215,19 @@ h1, h2, h3, h4 {
 
 /* ----------------- BEGIN TOP NAV BAR STYLES ------------------------- */
 .topnav {
-    margin: -13px 0 0 252px;;
+    margin: -18px 0 0 270px;;
     padding: 0;
-    height: 25px; /* this needs to be 24 instead of 25 because it 
+    height: 15px; /* this needs to be 24 instead of 25 because it 
         creates a space in FF OSX but I need to find a way to display
         bottom border in FF win if I do that
     border-top: solid 1px #000; 
     border-bottom: solid 1px #000;
 /* .topnav is used to create the background for the whole topnav block */
-} 
+	} 
 .topnav ul, .topnav li {
     display: inline;
     margin-left: 0;
-    padding: 0px 15px; /* top/bottom paddin makes no difference here */
+    padding: 0px 5px; /* top/bottom paddin makes no difference here */
     /* border: 1px solid pink; */
     list-style: none;
     background: none !important;/* this style prevents the 
@@ -239,8 +239,8 @@ The .topnav ul, .topnav li is very importantneed this! It is
 basically what controls the outer appearance of the menu. 
 ---------------------------------------------------------- */
 .topnavblock {
-    padding: 5px; /* 5px pisses off IE, 0px screws with FF */
-    margin: 0;
+    padding: 0px; /* 5px pisses off IE, 0px screws with FF */
+    margin-top: 0; 
 }
 .topnav ul {}
 .topnav li {
@@ -251,7 +251,7 @@ basically what controls the outer appearance of the menu.
     margin: 0 0 0 10px;
     padding: 0;
     list-style:none;
-    display: inline;
+    display: inline; 
 }
 .topnav-menu-section ul {
     list-style: none;
@@ -264,27 +264,25 @@ basically what controls the outer appearance of the menu.
     margin: 0;
     padding:0;
     display: inline;
-    background: #e0e0e0;
+    background: none;
 }
 .topnav-menu-item li {
 /* this can create the style for the list item, but not the content
 of the list item since it is a link because it's a menu 
 ADDITIONALLY - this creates a style for the redundant li (behind the one we want) */
 }
-.topnav-menu-item-current { background: #fff !important; }
+.topnav-menu-item-current { background: none !important; }
 .topnav a:link, .topnav a:visited {
     font-size: 12px;
     font-weight: bold;
     text-align: center;
-    color: #666;
-    padding: 5px 5px 5px 5px;
+    color: #fff;
+    padding: /* 5px 5px 5px 5px */ 0; /* this is the actual link width -- keep it as zero for now */
     z-index: 1000;
     background: url(../images/header/topbar_gradient.png) repeat-x;
     /* height: 30px; -- can't have height here. FF ignores it, and 
     IE hates it. */
     margin-right:-1px; /* this style can make spaces between the buttons. In this case -1 is to prevent double left border width */
-    border-right: solid 1px #000;
-    border-left: solid 1px #000;
     border-collapse:collapse;
     /* NOTE: I think I need to change the class to something like
     .topnav a:link ul li, .topnav a:visited ul li to prevent
@@ -292,7 +290,7 @@ ADDITIONALLY - this creates a style for the redundant li (behind the one we want
 }
 
 .topnav a:active, .topnav a:hover {
-    color: #000;
+    color: #ccc;
     background: url(../images/header/topbar_gradient_hover.png) repeat-x;
 }
 

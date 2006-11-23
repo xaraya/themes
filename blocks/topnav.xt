@@ -1,1 +1,7 @@
-#$content#
+<span class="topnavblock">
+    <img src="#xarTplGetThemeDir()#/images/topnav/left_tab.png" alt=""  />
+	    <span style=" position: relative; top: -6px; background: #003663; padding: 3px 5px; margin: 0; ">
+	        #$content#
+	    </span>
+	<img src="#xarTplGetThemeDir()#/images/topnav/right_tab.png" alt=""  />
+</span>
