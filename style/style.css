@@ -324,7 +324,7 @@ ADDITIONALLY - this creates a style for the redundant li (behind the one we want
 	}
 
 #left_content {
-	margin: 0 10px 0 50px; 
+	margin: 0 10px 0 60px; 
 	padding: 10px 0;
 	}
 
@@ -336,7 +336,9 @@ ADDITIONALLY - this creates a style for the redundant li (behind the one we want
 	z-index: 12;
 	}
 
-#main_content {}
+#main_content {
+	margin: 0 10px 0 0;
+	}
 
 .footer {
 	font-size: 10px;
@@ -402,9 +404,8 @@ border: solid 1px #003663;
 
 /* --------------- REGISTRATION BLOCK -------------- */
 .rlogin_input {
-	width: 100px;
-	border: solid 1px #003663;
-}
+	width: 150px;
+	}
 
 
 /* --------------- USEFUL STYLES ------------------- */
