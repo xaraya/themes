@@ -298,22 +298,45 @@ ADDITIONALLY - this creates a style for the redundant li (behind the one we want
 
 
 /* ----------------- END TOP NAV BAR STYLES ------------------------- */
-.xpage {
+
+
+/* ---- DEFAULT.XT STYLES ---- */
+#background_wrapper {
+	width: auto;
 	background: url(../images/page_bg.png) repeat-y;
 	}
-.xcontentcontainer {
-float: left;
-width: 100%;
+#outer_wrapper {
+	width: auto; 
+	margin-left: 260px;
 	}
-.xcontent {
-margin-top: 20px;
-margin-left: 253px;
+
+#inner_wrapper {
+	margin: 0; 
+	width: 100%;
 	}
-.xleftcol {
-float: left;
-width: 240px;
-margin-left: -100%;
-}
+
+#left_wrapper {
+	float: left; 
+	position: relative; 
+	width: 250px; 
+	margin-left: -260px; 
+	z-index: 10;
+	}
+
+#left_content {
+	margin: 0 10px 0 50px; 
+	padding: 10px 0;
+	}
+
+#content_wrapper {
+	float: left; 
+	position: relative; 
+	width: 100%; 
+	margin: 0; 
+	z-index: 12;
+	}
+
+#main_content {}
 
 .footer {
 	font-size: 10px;
@@ -321,15 +344,18 @@ margin-left: -100%;
 	text-align: center;
 	margin: 0px;
 	background: #003663;
-}
+	padding: 3px;
+	}
 .footer a:link, .footer a:visited {
 	text-decoration: none;
 	color: #66CCCC;
-}
+	}
 .footer a:active, .footer a:hover {
 	text-decoration: none;
 	color: #00CC00;
-}
+	}
+
+/* ---- END DEFAULT.XT STYLES ---- */
 
 /* --------------- DOCUMENT SUMMARY & DISPLAY TEMPLATES --------------- */
 .docs_displaytitle {

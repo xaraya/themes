@@ -5,7 +5,7 @@
   <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
 	<base href="&xar-baseurl;index.php" />
-    <xar:set name="themedirectory">#xarTplGetThemeDir()#</xar:set>
+    </head><xar:set name="themedirectory">#xarTplGetThemeDir()#</xar:set>
     <xar:set name="sitename"><xar:var scope="module" module="themes" name="SiteName"/></xar:set>
     <xar:set name="sitefooter"><xar:var scope="module" module="themes" name="SiteFooter"/></xar:set>
     <xar:set name="siteslogan"><xar:var scope="module" module="themes" name="SiteSlogan"/></xar:set>
@@ -22,44 +22,45 @@
     </head>
     <body>
 	<xar:var name="adminnav"/>
-	<div class="xpage">
 	    <div class="header">
 			<div><a href="index.php"><img src="#xarTplGetThemeDir()#/images/logo.png" /></a></div>
             <div class="topnav">
                 <xar:blockgroup name="topnav" id="topnav" />
             </div>
 		</div>
-
-        
-		<div class="xcontentcontainer">
-			<div class="fauxpadding">
-				<div class="xcontent">
-					<xar:module id="modulespace"  main="true" />
+	<div id="background_wrapper">
+		<div id="outer_wrapper">
+			<div id="inner_wrapper">
+				<div id="left_wrapper">
+					<div id="left_content">
+						<xar:if condition="!xarUserIsLoggedIn()">
+						<div class="rlogin_input"><xar:block module="registration" type="rlogin" template="" /></div>
+						
+					<xar:else />
+						<div style="text-align: center; ">
+						<a href="&xar-modurl-authsystem-user-logout;">
+							<img src="#$themedirectory#/images/logout.gif" alt="logout" />
+						</a>
+						</div>
+					</xar:if>
+					<xar:blockgroup name="admin"  id="admin"  />
+					<xar:blockgroup name="left"   id="left"   />
+					<xar:blockgroup name="right"  id="right"  />
+					</div>
+				</div>
+				<div id="content_wrapper">
+					<div id="main_content">
+						<xar:module id="modulespace"  main="true" />
+					</div>
 				</div>
 			</div>
 		</div>
-		<div class="xleftcol">
-			<div style="margin-left: 59px;" class="leftpadding">
-                <xar:if condition="!xarUserIsLoggedIn()">
-                    <xar:block module="registration" type="rlogin" template="" />
-                <xar:else />
-                    <div style="text-align: center; margin: 10px auto;">
-                    <a href="&xar-modurl-authsystem-user-logout;">
-                        <img src="#$themedirectory#/images/logout.gif" alt="logout" />
-                    </a>
-                    </div>
-                </xar:if>
-				<xar:blockgroup name="admin"  id="admin"  />
-				<xar:blockgroup name="left"   id="left"   />
-				<xar:blockgroup name="right"  id="right"  />
-			</div>
-	  	</div>
-        <hr class="hidden clearboth" />
+	
+		<hr class="hidden clearboth" />
 		<div class="footer">
-		    #$sitecopyright# | #$sitefooter# | #$siteslogan#
-	    </div> 
+			#$sitecopyright# | #$sitefooter# | #$siteslogan#
+		</div> 
 	</div>
-     
       <xar:base-render-javascript position="body" />
     </body>
   </html>
