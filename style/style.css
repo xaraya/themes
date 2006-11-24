@@ -1,5 +1,5 @@
 @import "verticalmenu.css";
-/* Styles for 'minnow' theme, updated 23 nov 06 */
+/* Styles for 'minnow' theme, updated 24 nov 06 */
 a:link, a:visited {
     text-decoration: none;
     color: #0000ff;
@@ -132,27 +132,48 @@ h1, h2, h3, h4 {
     font-size: 9px;
     color:#999;
     }
+
+/* --------------------- THE MENU STYLES ------------------- */
 .xar-menu-section {
+    margin: 0;
+    padding: 0;
+    list-style:none;
 }
 .xar-menu-section-current {
+    margin: 0;
+    padding: 0;
+    list-style:none;
+    background: #e0e0e0;
+    color: #FFCC66;
 }
 .xar-menu-item {
+    margin: 7px;
+    padding: 0;
+    list-style-type: square;
 }
 .xar-menu-item-current {
+    margin: 7px;
+    padding: 0;
+    color: #000;
 }
 .xar-menu-item:hover {
+    margin: 7px;
+    padding: 0;
+    /*background: pink;*/
+    color: #000;
+    /* need to figure out why when I set this to a background color
+    the whole background is colored, rather than the individual link */
 }
-.xar-menu-subitem {
-}
-.xar-menu-subitem:hover {
 
-}
+.xar-menu-subitem {}
+.xar-menu-subitem:hover {}
 .xar-menu-subitem-current {
 }
 .xar-menu-item-current > .xar-menu-subitem > a {
 }
 .xar-menu-item-current > .xar-menu-subitem > a:visited {
 }
+/* --------------------- END THE MENU STYLES --------------- */
 .xar-title {
     font-size: 18px;
     }
