@@ -2,12 +2,20 @@
     <xar:if condition="!empty($categories) and count($categories) gt 0">[ 
     <xar:foreach in="$categories" value="$cat">#$cat['cjoin']# 
     <a href="#$cat['clink']#">#$cat['cname']#</a></xar:foreach>]</xar:if>
-    <div class="docs_summarytitle">
+
+    <div class="docs_summarytitle" > 
         <a href="#$link#">#$title#</a>
         <xar:sec mask="AdminArticles" catch="false">
-            <a href="#xarModURL('articles','admin','modify', array('aid' => $aid))#"> (EDIT) </a>
-        </xar:sec>    
+            <span class="xar-sub"><a href="#xarModURL('articles','admin','modify', array('aid' => $aid))#"> (EDIT) </a></span>
+        </xar:sec>        
+        <h5 >
+        <xar:mlvar>
+            #xarLocaleGetFormattedDate('short',$pubdate)#
+        </xar:mlvar>
+        </h5>
     </div>
+
+
     <div class="xar-sub">
         <xar:if condition="!empty($counter)">
             <xar:if condition="$counter eq 1">(#$counter#&#160;

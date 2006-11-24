@@ -7,7 +7,10 @@
         ] 
     </xar:if>
     <div class="newssummary-title" > 
-        <a href="#$link#">#$title#</a> 
+        <a href="#$link#">#$title#</a>
+        <xar:sec mask="AdminArticles" catch="false">
+            <a href="#xarModURL('articles','admin','modify', array('aid' => $aid))#"> (EDIT) </a>
+        </xar:sec>        
         <h5 >
         <xar:mlvar>
             #xarLocaleGetFormattedDate('short',$pubdate)#

@@ -354,15 +354,22 @@ ADDITIONALLY - this creates a style for the redundant li (behind the one we want
     color: #fff;
     }
 .docs_summarytitle {
-    background: #569bd2;
-    border-bottom: solid 1px #003663;
-    color: #fff;
     font-size: 14px;
     font-weight: bold;
-    padding: 5px;
+    border-bottom: solid 1px #e0e0e0;
     }
-.docs_summarytitle a:link, .docs_summarytitle a:visited {color: #fcf8b6;}
-.docs_summarytitle a:hover, .docs_summarytitle a:active {color: #000;}
+div.docs_summarytitle h5 {
+    float: right; 
+    margin: -1.33em 3px 0 0; 
+    padding: 0; 
+    color: #667;
+    font-size: 10px;
+    font-weight: normal;
+    font-style: italic;
+    }
+	
+.docs_summarytitle a:link, .docs_summarytitle a:visited {color: #003663;}
+.docs_summarytitle a:hover, .docs_summarytitle a:active {color: #ccc;}
 
 /* --------------- NEWS SUMMARY & DISPLAY TEMPLATES ------------------ */
 .newssummary-title {
