@@ -142,7 +142,7 @@ h1, h2, h3, h4 {
 }
 .xar-sub {
 	font-size: 9px;
-	color:#663366;
+	color:#666;
 }
 .xar-menu-section {
 }
@@ -393,7 +393,23 @@ ADDITIONALLY - this creates a style for the redundant li (behind the one we want
 	font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
 	color: #fff;
 }
+.docs_summarytitle {
+    font-size: 12px;
+    font-weight: bold;
+    border-bottom: solid 1px #e0e0e0;
+    }
+div.docs_summarytitle h5 {
+    float: right; 
+    margin: -1.33em 3px 0 0; 
+    padding: 0; 
+    color: #667;
+    font-size: 10px;
+    font-weight: normal;
+    font-style: italic;
+    }
 	
+.docs_summarytitle a:link, .docs_summarytitle a:visited {color: #003663;}
+.docs_summarytitle a:hover, .docs_summarytitle a:active {color: #ccc;}	
 /* --------------- COMMENTS STYLES ----------------- */
 div .xar-ib-actionpanel.xar-accent {
 border: solid 1px #008080;
