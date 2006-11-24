@@ -5,7 +5,7 @@
   <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
 	<base href="&xar-baseurl;index.php" />
-    </head><xar:set name="themedirectory">#xarTplGetThemeDir()#</xar:set>
+    <xar:set name="themedirectory">#xarTplGetThemeDir()#</xar:set>
     <xar:set name="sitename"><xar:var scope="module" module="themes" name="SiteName"/></xar:set>
     <xar:set name="sitefooter"><xar:var scope="module" module="themes" name="SiteFooter"/></xar:set>
     <xar:set name="siteslogan"><xar:var scope="module" module="themes" name="SiteSlogan"/></xar:set>
