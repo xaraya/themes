@@ -1,150 +1,137 @@
 @import "verticalmenu.css";
-/* Styles for 'minnow' theme, updated 21 nov 06 */
+/* Styles for 'minnow' theme, updated 23 nov 06 */
 a:link, a:visited {
-	text-decoration: none;
-	color: #0000ff;
+    text-decoration: none;
+    color: #0000ff;
 }
 a:active, a:hover {
-	text-decoration: none;
-	color: red;
+    text-decoration: none;
+    color: red;
 }
 td.xar-norm { background: #fff;}
 td.xar-alt {background: #f0f0f0;}
 body {
-	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-	font-size: 10px;
-	background: #fff;
-	margin: 0;
-}
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    background: #fff;
+    margin: 0;
+    }
 
 div {font-size: 12px;}
 
 img {border: none; vertical-align:top}
 fieldset {
-	border: solid 1px #e0e0e0;
-	background: #fff;
-	margin: 5px 0;
-	padding: 15px;
-}
+    border: solid 1px #e0e0e0;
+    background: #fff;
+    margin: 5px 0;
+    padding: 15px;
+    }
 legend {
-	font-size: 12px;
-	font-weight: bold;
-	padding: 3px 5px;
-	min-width:10em;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px 5px;
+    min-width:10em;
     display:block;
     border: solid 1px #e0e0e0;
-	color: #666;
-	background: #f0f0f0;
-}
+    color: #666;
+    background: #f0f0f0;
+    }
 code {
-	font-family:"Courier New", Courier, monospace;
-	font-size: 11px;
-	color:#660066;
-	}
+    font-family:"Courier New", Courier, monospace;
+    font-size: 11px;
+    color:#660066;
+    }
 pre {
-	font-family:"Courier New", Courier, monospace;
-	font-size: 11px;
-	color: #009900;
-	font-weight: bold;
-	}
+    font-family:"Courier New", Courier, monospace;
+    font-size: 11px;
+    color: #009900;
+    font-weight: bold;
+    }
 	
 h1, h2, h3, h4 {
-	color: #003663;
-	font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
-	
-	}
+    color: #003663;
+    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    }
 
 /*  XARAYA REQUIRED ANONYMOUS CLASSES  */
 
 /* these defaults apply to the left block group */
 .xar-block-head{
-	text-align: center;
-	border-bottom: dotted 1px #000;
-	margin-bottom: 4px;
-}
+    text-align: center;
+    border-bottom: dotted 1px #000;
+    margin-bottom: 4px;
+    }
 .xar-block-title {
-	font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
-	font-weight: bold;
-	color: #003663;
-}
+    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    font-weight: bold;
+    color: #003663;
+    }
 .xar-block-body {
-	font-size: 10px;
-}
+    font-size: 10px;
+    }
 .xar-block-foot {
-	margin-bottom: 10px;
-}
+    margin-bottom: 10px;
+    }
 
 /* right block group classes */
 .xar-block-head-right{
-	text-align: center;
-	border-bottom: dotted 1px #000;
-	margin-bottom: 4px;
-}
+    text-align: center;
+    border-bottom: dotted 1px #000;
+    margin-bottom: 4px;
+    }
 .xar-block-title-right {
-	font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
-	font-weight: bold;
-	color: #003663;
-}
+    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    font-weight: bold;
+    color: #003663;
+    }
 .xar-block-body-right {
-	font-size: 10px;
-}
+    font-size: 10px;
+    }
 .xar-block-foot-right {
-	margin-bottom: 10px;
-}
+    margin-bottom: 10px;
+    }
 
 /* topnav block group classes */
-.xar-block-head-topnav {
-}
-.xar-block-title-topnav {
-}
-.xar-block-body-topnav {
-}
-.xar-block-foot-topnav {
-}
+.xar-block-head-topnav {}
+.xar-block-title-topnav {}
+.xar-block-body-topnav {}
+.xar-block-foot-topnav {}
 
 /* center block group classes */
 .xar-block-head-center{
-	text-align: center;
-}
+    text-align: center;
+    }
 .xar-block-title-center {
-	font-size: 16px;
-	font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
-	font-weight: bold;
-	color: #003663;
-}
-.xar-block-body-center {
-}
+    font-size: 16px;
+    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    font-weight: bold;
+    color: #003663;
+    }
+.xar-block-body-center {}
 .xar-block-foot-center {
-	margin-bottom: 10px;
-}
-.xar-mod-head {
-}
+    margin-bottom: 10px;
+    }
+.xar-mod-head {}
 .xar-mod-title {
-	font-size: 18px;
+    font-size: 16px;
 }
-.xar-mod-body {
-}
-.xar-mod-foot {
-}
-.xar-alt {
-}
+.xar-mod-body {}
+.xar-mod-foot {}
+.xar-alt {}
 .xar-accent {
-	background: #e0e0e0;
-}
-.xar-alt-outline {
-}
+    background: #e0e0e0;
+    }
+.xar-alt-outline {}
 .xar-accent-outline {
-	border: solid 1px #003663;
-	background: #f0f0f0;
-}
-.xar-norm-outline {
-}
-.xar-norm {
-}
+    border: solid 1px #003663;
+    background: #f0f0f0;
+    }
+.xar-norm-outline {}
+.xar-norm {}
 .xar-sub {
-	font-size: 9px;
-	color:#999;
-}
+    font-size: 9px;
+    color:#999;
+    }
 .xar-menu-section {
 }
 .xar-menu-section-current {
@@ -167,58 +154,55 @@ h1, h2, h3, h4 {
 .xar-menu-item-current > .xar-menu-subitem > a:visited {
 }
 .xar-title {
-	font-size: 18px;
-}
-.xar-error {
-}
+    font-size: 18px;
+    }
+.xar-error {}
 .xar-articles-notes {
-	margin: 20px 0 0 10px;
-	font-size: 10px;
-	font-style:italic;
-	}
+    margin: 20px 0 0 10px;
+    font-size: 10px;
+    font-style:italic;
+    }
 /* theme specific styles */
 
 /* ---------------- HEADER STYLES ------------------------------------- */
 
 .sitename {
-	position: relative;
-	top: 10px;
-	left: 10px;
-	font-size: 20px;
-	font-weight: bold;
-	font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
-	/* margin: 20px; */
-	color: #fff;
-}
+    position: relative;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    /* margin: 20px; */
+    color: #fff;
+    }
 .sitename a:link, .sitename a:visited {
-	color: Yellow;
-}
+    color: Yellow;
+    }
 .sitename a:active, .sitename a:hover {
-	color: #FFDEAD;
-}
+    color: #FFDEAD;
+    }
 .slogan {
-	position: relative;
-	top: 10px;
-	left: 150px;
-	font-size: 14px;
-	font-weight: bold;
-	font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
-	color: #fff;
-}
-
+    position: relative;
+    top: 10px;
+    left: 150px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    color: #fff;
+    }
 
 /* ----------------- BEGIN TOP NAV BAR STYLES ------------------------- */
 .topnav {
-	margin: 0;
-	
+    margin: 0;
     padding: 0;
     height: 15px; /* this needs to be 24 instead of 25 because it 
         creates a space in FF OSX but I need to find a way to display
         bottom border in FF win if I do that
-    border-top: solid 1px #000; 
-    border-bottom: solid 1px #000;
+        border-top: solid 1px #000; 
+        border-bottom: solid 1px #000;
 /* .topnav is used to create the background for the whole topnav block */
-	} 
+    } 
 .topnav ul, .topnav li {
     display: inline;
     margin-left: 0;
@@ -296,130 +280,122 @@ ADDITIONALLY - this creates a style for the redundant li (behind the one we want
 
 /* ---- DEFAULT.XT STYLES ---- */
 #pagewrapper {
-	
-	padding: 0;
-	width: 100%;
-	}
-
+    padding: 0;
+    width: 100%;
+    }
 #header {
-	background:url(../images/hdr_top.png) repeat-x;
-	height: 39px;
-	margin: 0;
-	padding: 0;
-	font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
-	}
-
+    background:url(../images/hdr_top.png) repeat-x;
+    height: 39px;
+    margin: 0;
+    padding: 0;
+    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    }
 #background_wrapper {
-	width: auto;
-	background: url(../images/page_bg.png) repeat-y;
-	}
+    width: auto;
+    background: url(../images/page_bg.png) repeat-y;
+    }
 #outer_wrapper {
-	width: auto; 
-	margin-left: 260px;
-	}
-
+    width: auto; 
+    margin-left: 260px;
+    }
 #inner_wrapper {
-	margin: 0; 
-	width: 100%;
-	}
-
+    margin: 0; 
+    width: 100%;
+    }
 #left_wrapper {
-	float: left; 
-	position: relative; 
-	width: 250px; 
-	margin-left: -260px; 
-	z-index: 10;
-	}
-
+    float: left; 
+    position: relative; 
+    width: 250px; 
+    margin-left: -260px; 
+    z-index: 10;
+    }
 #left_content {
-	margin: 0 10px 0 60px; 
-	padding: 10px 0;
-	}
-
+    margin: 0 10px 0 60px; 
+    padding: 10px 0;
+    }
 #content_wrapper {
-	float: left; 
-	position: relative; 
-	width: 100%; 
-	margin: 0; 
-	z-index: 12;
-	}
-
+    float: left; 
+    position: relative; 
+    width: 100%; 
+    margin: 0; 
+    z-index: 12;
+    }
 #main_content {
-	margin: 0 10px 0 0;
-	}
+    margin: 0 10px 0 0;
+    }
 
 .footer {
-	font-size: 10px;
-	color: #fff;
-	text-align: center;
-	margin: 0px;
-	background: #003663;
-	padding: 3px;
-	}
+    font-size: 10px;
+    color: #fff;
+    text-align: center;
+    margin: 0px;
+    background: #003663;
+    padding: 3px;
+    }
 .footer a:link, .footer a:visited {
-	text-decoration: none;
-	color: #66CCCC;
-	}
+    text-decoration: none;
+    color: #66CCCC;
+    }
 .footer a:active, .footer a:hover {
-	text-decoration: none;
-	color: #00CC00;
-	}
+    text-decoration: none;
+    color: #00CC00;
+    }
 
 /* ---- END DEFAULT.XT STYLES ---- */
 
 /* --------------- DOCUMENT SUMMARY & DISPLAY TEMPLATES --------------- */
 .docs_displaytitle {
-	margin-bottom: 5px; 
-	background: #003663; 
-	padding: 5px;
-	font-size:14px;
-	font-weight: bold;
-	font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
-	color: #fff;
-	}
+    margin-bottom: 5px; 
+    background: #003663; 
+    padding: 5px;
+    font-size:14px;
+    font-weight: bold;
+    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    color: #fff;
+    }
 .docs_summarytitle {
-	background: #569bd2;
-	border-bottom: solid 1px #003663;
-	color: #fff;
-	font-size: 14px;
-	font-weight: bold;
-	padding: 5px;
-	}
+    background: #569bd2;
+    border-bottom: solid 1px #003663;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px;
+    }
 .docs_summarytitle a:link, .docs_summarytitle a:visited {color: #fcf8b6;}
 .docs_summarytitle a:hover, .docs_summarytitle a:active {color: #000;}
 
 /* --------------- NEWS SUMMARY & DISPLAY TEMPLATES ------------------ */
 .newssummary-title {
-	font-size: 14px;
-	font-weight: bold;
-	border-bottom: solid 1px #e0e0e0;
-	}
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: solid 1px #e0e0e0;
+    }
 div.newssummary-title h5 {
-float: right; margin: -1.33em 3px 0 0; padding: 0; color: #667;
-font-size: 10px;
-font-weight: normal;
-font-style: italic;
-	}
+    float: right; 
+    margin: -1.33em 3px 0 0; 
+    padding: 0; 
+    color: #667;
+    font-size: 10px;
+    font-weight: normal;
+    font-style: italic;
+    }
 .news_summarycontent {
-	margin: 10px 5px 5px 5px;
-	}	
+    margin: 10px 5px 5px 5px;
+    }	
 /* --------------- COMMENTS STYLES ----------------- */
 div .xar-ib-actionpanel.xar-accent {
-border: solid 1px #003663;
-}
-
-
+    border: solid 1px #003663;
+    }
 
 /* --------------- REGISTRATION BLOCK -------------- */
 .rlogin_input {
-	width: 150px;
-	}
-
+    width: 150px;
+    }
 
 /* --------------- USEFUL STYLES ------------------- */
 .fauxpadding {
-	margin: 5px;
-	}
+    margin: 5px;
+    }
 .leftpadding {margin:0;padding: 5px;}
 .hidden { visibility: hidden;}
 .clearboth { clear: both; }

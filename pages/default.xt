@@ -36,16 +36,6 @@
                 <div id="inner_wrapper">
                     <div id="left_wrapper">
                         <div id="left_content">
-                            <xar:if condition="!xarUserIsLoggedIn()">
-                            <div class="rlogin_input"><xar:block module="registration" type="rlogin" template="" /></div>
-                            
-                        <xar:else />
-                            <div style="text-align: center; ">
-                            <a href="&xar-modurl-authsystem-user-logout;">
-                                <img src="#$themedirectory#/images/logout.gif" alt="logout" />
-                            </a>
-                            </div>
-                        </xar:if>
                         <xar:blockgroup name="admin"  id="admin"  />
                         <xar:blockgroup name="left"   id="left"   />
                         <xar:blockgroup name="right"  id="right"  />
