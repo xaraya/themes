@@ -388,7 +388,37 @@ div.newssummary-title h5 {
     }
 .news_summarycontent {
     margin: 10px 5px 5px 5px;
-    }	
+    }
+
+/* --------------- THEME SUBMISSION TEMPLATES ------ */
+.submission_sumwrapper {
+    width: 100%;
+    margin: 0 0 20px 0;
+    padding: 0;
+    
+    }
+.submission_summarytitle {
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: solid 1px #e0e0e0;
+    clear: left;
+    margin-bottom: 10px;
+    }
+div.submission_summarytitle h5 {
+    float: right; 
+    margin: -1.33em 3px 0 0; 
+    padding: 0; 
+    color: #667;
+    font-size: 10px;
+    font-weight: normal;
+    font-style: italic;
+    }
+.submission_summarytitle a:link, .submission_summarytitle a:visited {color: #003663;}
+.submission_summarytitle a:hover, .submission_summarytitle a:active {color: #ccc;}
+.submission_summarybody {
+    float:left;
+    margin-bottom: 15px;
+    }
 /* --------------- COMMENTS STYLES ----------------- */
 div .xar-ib-actionpanel.xar-accent {
     border: solid 1px #003663;

@@ -3,11 +3,7 @@
     <xar:categories-navigation layout="trails" showchildren="1" module="articles" itemtype="$ptid" catid="$catid" showcatcount="$showcatcount" showempty="1" />
 </xar:if>
 
-    <xar:comment>
-        You can use different user-view-[pubtype].xd templates for different pubtypes,
-        and also a separate user-view-frontpage.xd template for the articles frontpage
-    </xar:comment>
-
+<div style="margin: 20px 10px 0 0;">
 <xar:if condition="!empty($author) or !empty($pubdate)">
     <h2>
         <xar:if condition="!empty($pubdate)">
@@ -32,13 +28,6 @@
         </xar:if>
     </h2>
 </xar:if>
-<div class="xar-thirdwidth" style="float:left; clear:left;">
-<h3>Theme Name</h3>
-</div>
-<div class="xar-halfwidth" style="float:left;">
-<h3>Information</h3>
-</div>
-
 
 <xar:if condition="!empty($numcols) and $number gt 0">
     <div id="article-columns" style="width: 98%;">
@@ -133,3 +122,4 @@
         </xar:if>
     </dl>
 </xar:if>
+</div>
