@@ -278,24 +278,16 @@ ADDITIONALLY - this creates a style for the redundant li (behind the one we want
     font-weight: bold;
     text-align: center;
     color: #fff;
-    padding: /* 5px 5px 5px 5px */ 0; /* this is the actual link width -- keep it as zero for now */
+    padding: 0; /* this is the actual link width */
     z-index: 1000;
-    background: url(../images/header/topbar_gradient.png) repeat-x;
-    /* height: 30px; -- can't have height here. FF ignores it, and 
-    IE hates it. */
-    margin-right:-1px; /* this style can make spaces between the buttons. In this case -1 is to prevent double left border width */
+    margin-right: 15px; /* this style can make spaces between the buttons. In this case -1 is to prevent double left border width */
     border-collapse:collapse;
-    /* NOTE: I think I need to change the class to something like
-    .topnav a:link ul li, .topnav a:visited ul li to prevent
-    redundant borders and backgrounds */
 }
 
 .topnav a:active, .topnav a:hover {
     color: #ccc;
     background: url(../images/header/topbar_gradient_hover.png) repeat-x;
 }
-
-
 /* ----------------- END TOP NAV BAR STYLES ------------------------- */
 
 
