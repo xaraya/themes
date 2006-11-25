@@ -1,4 +1,4 @@
-/* ironblue 10 dec 05 */
+/* minnow 25 Nov 2006 */
 
 div#hmenu {
 /* 	width: 100%; */
@@ -9,7 +9,7 @@ div#hmenu {
 	width:740px;
 	position:relative;
 	color: #484848;
-/* 	background-color: #BB0101; */
+ 	background-color: #fff; 
 }
 
 * html div#hmenu { z-index:9998;}
@@ -31,6 +31,7 @@ div#hmenu ul#hmenuroot a.empty {
 	line-height: 12px;
 	font-family: arial, helvetica, sans-serif;
 	width:auto;
+ 	background-color: #fcf8b6;
 }
 
 #hmenuroot, #hmenuroot ul {

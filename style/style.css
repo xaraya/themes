@@ -3,16 +3,25 @@
 a:link, a:visited {
     text-decoration: none;
     color: #0000ff;
+    background-color: #fff;
 }
 a:active, a:hover {
     text-decoration: none;
     color: red;
+    background-color: #fff;
 }
-td.xar-norm { background: #fff;}
-td.xar-alt {background: #f0f0f0;}
+td.xar-norm { 
+    background: #fff;
+    color: #000;
+    }
+td.xar-alt {
+    background: #f0f0f0;
+    color: #000;
+    }
 body {
     font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-    font-size: 10px;
+    font-size: 12px;
+    color: #000;
     background: #fff;
     margin: 0;
     }
@@ -22,6 +31,7 @@ div {font-size: 12px;}
 img {border: none; vertical-align:top}
 fieldset {
     border: solid 1px #e0e0e0;
+    color: #666;
     background: #fff;
     margin: 5px 0;
     padding: 15px;
@@ -40,18 +50,23 @@ code {
     font-family:"Courier New", Courier, monospace;
     font-size: 11px;
     color:#660066;
+    background: #fff;
     }
 pre {
     font-family:"Courier New", Courier, monospace;
     font-size: 11px;
     color: #009900;
     font-weight: bold;
+    background: #fff;
     }
 	
-h1, h2, h3, h4 {
+h1, h2, h3, h4 h5 {
     color: #003663;
     font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    background-color: #fff;
     }
+
+p {line-height: 120%;}
 
 /*  XARAYA REQUIRED ANONYMOUS CLASSES  */
 
@@ -65,6 +80,7 @@ h1, h2, h3, h4 {
     font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
     font-weight: bold;
     color: #003663;
+    background: #fffcd6;
     }
 .xar-block-body {
     font-size: 10px;
@@ -83,6 +99,7 @@ h1, h2, h3, h4 {
     font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
     font-weight: bold;
     color: #003663;
+    background: #fffcd6;
     }
 .xar-block-body-right {
     font-size: 10px;
@@ -106,8 +123,9 @@ h1, h2, h3, h4 {
     font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
     font-weight: bold;
     color: #003663;
+    background: #fffcd6;
     }
-.xar-block-body-center {}
+.xar-block-body-center { font-size: 12px;}
 .xar-block-foot-center {
     margin-bottom: 10px;
     }
@@ -119,11 +137,13 @@ h1, h2, h3, h4 {
 .xar-mod-foot {}
 .xar-alt {}
 .xar-accent {
+    color: #000;
     background: #e0e0e0;
     }
 .xar-alt-outline {}
 .xar-accent-outline {
     border: solid 1px #003663;
+    color: #000;
     background: #f0f0f0;
     }
 .xar-norm-outline {}
@@ -131,6 +151,7 @@ h1, h2, h3, h4 {
 .xar-sub {
     font-size: 9px;
     color:#999;
+    background: #fff;
     }
 
 /* --------------------- THE MENU STYLES ------------------- */
@@ -138,41 +159,98 @@ h1, h2, h3, h4 {
     margin: 0;
     padding: 0;
     list-style:none;
-}
+    background: #fffcd6;
+    color: #003663;
+    }
 .xar-menu-section-current {
     margin: 0;
     padding: 0;
     list-style:none;
-    background: #e0e0e0;
+    background: #fffcd6;
     color: #FFCC66;
-}
+    }
 .xar-menu-item {
-    margin: 7px;
+    margin-left: 7px;
     padding: 0;
     list-style-type: square;
-}
+    background: #fffcd6;
+    color: #003663;
+    }
 .xar-menu-item-current {
-    margin: 7px;
+    margin-left: 7px;
+    padding: 0;
+    color: #003663;
+    background: #fffcd6;
+    }
+.xar-menu-item-current a:link, .xar-menu-item-current a:visited {
+    margin-left: 7px;
+    padding: 0;
+    color: red;
+    background: #fffcd6;
+    }
+.xar-menu-item-current a:active, .xar-menu-item-current a:hover {
+    margin-left: 7px;
     padding: 0;
     color: #000;
-}
-.xar-menu-item:hover {
-    margin: 7px;
+    background: #fffcd6;
+    }
+.xar-menu-item a:link, .xar-menu-item a:visited {
+    margin-left: 7px;
     padding: 0;
-    /*background: pink;*/
-    color: #000;
-    /* need to figure out why when I set this to a background color
-    the whole background is colored, rather than the individual link */
+    background: #fffcd6;
+    color: #003663;
+    }
+.xar-menu-item a:active, .xar-menu-item a:hover {
+    margin-left: 7px;
+    padding: 0;
+    background: #fffcd6;
+    color: #999;
+    }
+
+.xar-menu-subitem {
+    margin-left: 7px;
+    padding: 0;
+    background: #fffcd6; 
+    color: #003663;
+    }
+.xar-menu-subitem a:active, .xar-menu-subitem a:hover {
+    margin-left: 7px;
+    padding: 0;
+    background: #fffcd6;
+    color: green;
+    }
+.xar-menu-subitem a:link, .xar-menu-subitem a:visited {
+    margin-left: 7px;
+    padding: 0;
+    background: #fffcd6;
+    color: blue;
+    }
+.xar-menu-subitem-current {
+    margin-left: 7px;
+    padding: 0;    
+    background: #fffcd6;
+    color: red;
 }
 
-.xar-menu-subitem {}
+/*
+.xar-menu-item-current > .xar-menu-subitem > a:link, .xar-menu-item-current > .xar-menu-subitem > a:visited {
+    margin-left: 7px;
+    padding: 0;
+    background: #fffcd6;
+    color: #003663;
+}
+.xar-menu-item-current > .xar-menu-subitem > a:hover, .xar-menu-item-current > .xar-menu-subitem > a:hover {
+    margin-left: 7px;
+    padding: 0;
+    background: #fffcd6;
+    color: purple;
+}
+*/
 .xar-menu-subitem:hover {}
-.xar-menu-subitem-current {
-}
-.xar-menu-item-current > .xar-menu-subitem > a {
-}
-.xar-menu-item-current > .xar-menu-subitem > a:visited {
-}
+li.xar-menu-item-current > #activeitem {
+    margin-left: 7px;
+    padding: 0;
+    }
 /* --------------------- END THE MENU STYLES --------------- */
 .xar-title {
     font-size: 18px;
@@ -196,12 +274,15 @@ h1, h2, h3, h4 {
     font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
     /* margin: 20px; */
     color: #fff;
+    background: #e0e0e0;
     }
 .sitename a:link, .sitename a:visited {
     color: Yellow;
+    background: #e0e0e0;
     }
 .sitename a:active, .sitename a:hover {
     color: #FFDEAD;
+    background: #e0e0e0;
     }
 .slogan {
     position: relative;
@@ -211,6 +292,7 @@ h1, h2, h3, h4 {
     font-weight: bold;
     font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
     color: #fff;
+    background: #003663;
     }
 
 /* ----------------- BEGIN TOP NAV BAR STYLES ------------------------- */
@@ -282,11 +364,13 @@ ADDITIONALLY - this creates a style for the redundant li (behind the one we want
     z-index: 1000;
     margin-right: 15px; /* this style can make spaces between the buttons. In this case -1 is to prevent double left border width */
     border-collapse:collapse;
+    background: #004775;
 }
 
 .topnav a:active, .topnav a:hover {
     color: #ccc;
     background: url(../images/header/topbar_gradient_hover.png) repeat-x;
+    background: #004775;
 }
 /* ----------------- END TOP NAV BAR STYLES ------------------------- */
 
@@ -320,20 +404,19 @@ ADDITIONALLY - this creates a style for the redundant li (behind the one we want
     position: relative; 
     width: 250px; 
     margin-left: -260px; 
-    z-index: 10;
     }
-#left_content {
+.left_content {
     margin: 0 10px 0 60px; 
     padding: 10px 0;
+    z-index: 15;
     }
 #content_wrapper {
     float: left; 
     position: relative; 
     width: 100%; 
     margin: 0; 
-    z-index: 12;
     }
-#main_content {
+.main_content {
     margin: 0 10px 0 0;
     }
 
@@ -348,10 +431,12 @@ ADDITIONALLY - this creates a style for the redundant li (behind the one we want
 .footer a:link, .footer a:visited {
     text-decoration: none;
     color: #66CCCC;
+    background: #003663;
     }
 .footer a:active, .footer a:hover {
     text-decoration: none;
     color: #00CC00;
+    background: #003663;
     }
 
 /* ---- END DEFAULT.XT STYLES ---- */
@@ -376,13 +461,20 @@ div.docs_summarytitle h5 {
     margin: -1.33em 3px 0 0; 
     padding: 0; 
     color: #667;
+    background: #fff;
     font-size: 10px;
     font-weight: normal;
     font-style: italic;
     }
 	
-.docs_summarytitle a:link, .docs_summarytitle a:visited {color: #003663;}
-.docs_summarytitle a:hover, .docs_summarytitle a:active {color: #ccc;}
+.docs_summarytitle a:link, .docs_summarytitle a:visited {
+    color: #003663;
+    background: #fff;
+    }
+.docs_summarytitle a:hover, .docs_summarytitle a:active {
+    color: #ccc;
+    background: #fff;
+    }
 
 /* --------------- NEWS SUMMARY & DISPLAY TEMPLATES ------------------ */
 .newssummary-title {
@@ -395,6 +487,7 @@ div.newssummary-title h5 {
     margin: -1.33em 3px 0 0; 
     padding: 0; 
     color: #667;
+    background: #fff;
     font-size: 10px;
     font-weight: normal;
     font-style: italic;
@@ -422,12 +515,19 @@ div.submission_summarytitle h5 {
     margin: -1.33em 3px 0 0; 
     padding: 0; 
     color: #667;
+    background: #fff;
     font-size: 10px;
     font-weight: normal;
     font-style: italic;
     }
-.submission_summarytitle a:link, .submission_summarytitle a:visited {color: #003663;}
-.submission_summarytitle a:hover, .submission_summarytitle a:active {color: #ccc;}
+.submission_summarytitle a:link, .submission_summarytitle a:visited {
+    color: #003663;
+    background: #fff;
+    }
+.submission_summarytitle a:hover, .submission_summarytitle a:active {
+    color: #ccc;
+    background: #fff;
+    }
 .submission_summarybody {
     float:left;
     margin-bottom: 15px;

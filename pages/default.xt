@@ -35,14 +35,14 @@
             <div id="outer_wrapper">
                 <div id="inner_wrapper">
                     <div id="left_wrapper">
-                        <div id="left_content">
+                        <div class="left_content">
                         <xar:blockgroup name="admin"  id="admin"  />
                         <xar:blockgroup name="left"   id="left"   />
                         <xar:blockgroup name="right"  id="right"  />
                         </div>
                     </div>
                     <div id="content_wrapper">
-                        <div id="main_content">
+                        <div class="main_content">
                             <xar:module id="modulespace"  main="true" />
                         </div>
                     </div>
