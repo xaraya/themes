@@ -1,0 +1,45 @@
+<div class="faqsummary_wrapper">
+    <a name="#$aid#"></a>
+    <br />
+    <xar:if condition="!empty($categories) and count($categories) gt 0">
+        [ <xar:foreach in="$categories" value="$cat">
+            #$cat['cjoin']# <a href="#$cat['clink']#">#$cat['cname']#</a>
+        </xar:foreach> ]
+    </xar:if>
+    <h3 class="faq_title">
+    <a class="xar-title" href="#$link#">#$title#</a>
+            <xar:sec mask="AdminArticles" catch="false">
+                <span class="xar-sub">
+                    <a href="#xarModURL('articles','admin','modify', array('aid' => $aid))#"> 
+                        <img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" /> 
+                    </a>
+                </span>
+            </xar:sec>
+    </h3>        
+
+    <xar:if condition="!empty($counter)">
+        <div class="xar-sub">    
+            <xar:if condition="$counter eq 1">
+                (#$counter#&nbsp;<xar:mlstring>read</xar:mlstring>)
+            <xar:else />
+                (#$counter#&nbsp;<xar:mlstring>reads</xar:mlstring>)
+            </xar:if>
+        </div>    
+    </xar:if>
+
+    <div class="faq_summarybody">
+        <xar:if condition="!empty($notes)">
+            <xar:mlstring>by</xar:mlstring> #$notes#
+        </xar:if>
+        <xar:if condition="!empty($summary)">
+            <div class="faq_sumsum">
+                <strong>Additional Info:</strong> #$summary#
+            </div>
+        </xar:if>
+        <div class="faq_sumbody">
+            <h3 class="faq_title">ANSWER:</h3>
+            #$body#
+        </div>
+        <p><a href="#xarServerGetCurrentURL()##titles"><xar:mlstring>Back to top</xar:mlstring></a></p>
+    </div>
+</div>

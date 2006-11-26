@@ -361,7 +361,43 @@ div.docs_summarytitle h5 {
     }
 	
 .docs_summarytitle a:link, .docs_summarytitle a:visited {color: #003663;}
-.docs_summarytitle a:hover, .docs_summarytitle a:active {color: #ccc;}	
+.docs_summarytitle a:hover, .docs_summarytitle a:active {color: #ccc;}
+
+/* --------------- FAQ SUMMARY & DISPLAY STYLES ---- */
+h2.faq_title {
+    padding: 0; 
+    margin: 20px 0 0 0;
+    }
+h3.faq_title {
+    padding: 0; 
+    margin: 0 0 10px 0;
+    border-bottom: dotted 1px #666;
+    }
+.faq_title a:link, .faq_title a:visited {color: #003663;}
+.faq_title a:hover, .faq_title a:active {color: #ccc;}
+faqsummary_wrapper {
+margin-bottom: 20px;
+} /* -- this is the wrapper around the entire summary on
+    user-summary-faq ---- */
+.faq_summarybody {
+    margin: 0 15px;
+    }
+.faq_sumsum {
+    font-style: italic;
+    margin: 0 10px 15px 10px;
+    }
+.faq_sumbody {}
+.faq_displaywrapper {
+    margin: 0 10px 30px 10px;
+}
+.faq_displaysummary {font-style: italic;}
+.faq_submittedby {
+    font-size: 10px;
+    color: #999;
+    }
+.faq_displaybody {margin: 20px 0 0 0;}
+.faq_nexttag {float: right; margin: 0 15px 0 15px;}
+.faq_prevtag {float: right;}
 /* --------------- COMMENTS STYLES ----------------- */
 div .xar-ib-actionpanel.xar-accent {
     border: solid 1px #008080;
@@ -382,3 +418,22 @@ div .xar-ib-actionpanel.xar-accent {
 .clearright { clear: right; }
 .clearleft {clear: left; }
 .bordered_input {border: solid 1px #008080;}
+
+/* ---------- TINYMCE STYLES FOR STYLE DROPDOWN ---------- */
+.highlighter {
+    background: yellow;
+    font-style: italic;
+    color: #000;
+}
+
+.path {
+    font-family: "Courier New", Courier, monospace;
+
+    color: brown;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.inverse {
+background: #000;
+color: #fff;
+}
