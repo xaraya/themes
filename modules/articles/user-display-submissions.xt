@@ -4,7 +4,9 @@
     <h3>#$title#
         <xar:if condition="!empty($editurl)">
         <span style="font-size:small;">
-           [<a href="#$editurl#">#$edittitle#</a>]
+            <a href="#$editurl#">
+                <img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" />
+            </a>
         </span>
         </xar:if>
     </h3>

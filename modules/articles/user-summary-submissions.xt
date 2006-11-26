@@ -3,7 +3,9 @@
         <a href="#$link#">#$title#</a>
         <xar:sec mask="AdminArticles" catch="false">
             <span class="xar-sub">
-                <a href="#xarModURL('articles','admin','modify', array('aid' => $aid))#"> (EDIT) </a>
+                <a href="#xarModURL('articles','admin','modify', array('aid' => $aid))#">
+                    <img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" />
+                </a>
             </span>
         </xar:sec>        
         <h5 >

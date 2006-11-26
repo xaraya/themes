@@ -70,7 +70,10 @@ p {line-height: 120%;}
 
 /*  XARAYA REQUIRED ANONYMOUS CLASSES  */
 
-/* these defaults apply to the left block group */
+/* --------DEFAULT BLOCK ------------ */
+.block_wrapper {
+    margin-bottom: 10px;
+    }
 .xar-block-head{
     text-align: center;
     border-bottom: dotted 1px #000;
@@ -85,10 +88,36 @@ p {line-height: 120%;}
 .xar-block-body {
     font-size: 10px;
     }
-.xar-block-foot {
-    margin-bottom: 10px;
+.xar-block-foot {}
+/* ----------- LEFT BLOCK -------- */
+
+.blockwrapper_left{
+    margin-bottom: 20px;
+    }
+.blockhead_left {
+    text-align: center;
+    border-bottom: dotted 1px #000;
+    margin: 4px 0 4px 0;
+    }
+.blocktitle_left {
+    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    font-weight: bold;
+    color: #003663;
+    background: #fffcd6;
+    }
+.blockbody_left {
+    font-size: 10px;
+    }
+.blockbody_left a:link, .blockbody_left a:visited {
+    color: #003663;
+    background: #fffcd6;
     }
 
+.blockbody_left a:active, .blockbody_left a:hover {
+    color: #ccc;
+    background: #fffcd6;
+    } 
+ 
 /* right block group classes */
 .xar-block-head-right{
     text-align: center;
@@ -170,87 +199,69 @@ p {line-height: 120%;}
     color: #FFCC66;
     }
 .xar-menu-item {
-    margin-left: 7px;
-    padding: 0;
     list-style-type: square;
     background: #fffcd6;
     color: #003663;
-    }
+}
 .xar-menu-item-current {
-    margin-left: 7px;
-    padding: 0;
-    color: #003663;
+    color: #999; /* makes the bullet a lighter color */
+    background: #fffcd6;
+}
+.xar-menu-item .xar-menu-item-current a:link, .xar-menu-item .xar-menu-item-current a:visited {
+    color: #999;
     background: #fffcd6;
     }
-.xar-menu-item-current a:link, .xar-menu-item-current a:visited {
-    margin-left: 7px;
-    padding: 0;
-    color: red;
+.xar-menu-item .xar-menu-item-current a:active, .xar-menu-item .xar-menu-item-current a:hover {
+    color: #999;
     background: #fffcd6;
     }
-.xar-menu-item-current a:active, .xar-menu-item-current a:hover {
-    margin-left: 7px;
-    padding: 0;
-    color: #000;
+.xar-menu-item:hover {
+    color: red; /* makes bullet red when hovering over item */
     background: #fffcd6;
-    }
+}
+/* ----- a little fun ----- */
 .xar-menu-item a:link, .xar-menu-item a:visited {
-    margin-left: 7px;
-    padding: 0;
+
     background: #fffcd6;
     color: #003663;
     }
 .xar-menu-item a:active, .xar-menu-item a:hover {
-    margin-left: 7px;
-    padding: 0;
+
     background: #fffcd6;
     color: #999;
     }
-
+/* ---------- yay ---------- */
 .xar-menu-subitem {
-    margin-left: 7px;
-    padding: 0;
+    background: #fffcd6; 
+    color: #003663;
+}
+.xar-menu-subitem:hover {
+    background: #fffcd6; 
+    color: red;
+    }
+
+
+
+.xar-menu-subitem a:link, .xar-menu-subitem a:visited {
     background: #fffcd6; 
     color: #003663;
     }
 .xar-menu-subitem a:active, .xar-menu-subitem a:hover {
-    margin-left: 7px;
-    padding: 0;
-    background: #fffcd6;
-    color: green;
-    }
-.xar-menu-subitem a:link, .xar-menu-subitem a:visited {
-    margin-left: 7px;
-    padding: 0;
-    background: #fffcd6;
-    color: blue;
+    background: #fffcd6; 
+    color: #999;
     }
 .xar-menu-subitem-current {
-    margin-left: 7px;
-    padding: 0;    
     background: #fffcd6;
-    color: red;
+    color: #999;
 }
-
-/*
-.xar-menu-item-current > .xar-menu-subitem > a:link, .xar-menu-item-current > .xar-menu-subitem > a:visited {
-    margin-left: 7px;
-    padding: 0;
+.xar-menu-item .xar-menu-item-current .xar-menu-subitem a:link, .xar-menu-item .xar-menu-item-current .xar-menu-subitem a:visited {
     background: #fffcd6;
     color: #003663;
 }
-.xar-menu-item-current > .xar-menu-subitem > a:hover, .xar-menu-item-current > .xar-menu-subitem > a:hover {
-    margin-left: 7px;
-    padding: 0;
+.xar-menu-item .xar-menu-item-current  .xar-menu-subitem  a:active, .xar-menu-item .xar-menu-item-current  .xar-menu-subitem  a:active {
     background: #fffcd6;
-    color: purple;
+    color: #999;
 }
-*/
-.xar-menu-subitem:hover {}
-li.xar-menu-item-current > #activeitem {
-    margin-left: 7px;
-    padding: 0;
-    }
 /* --------------------- END THE MENU STYLES --------------- */
 .xar-title {
     font-size: 18px;
@@ -449,6 +460,10 @@ ADDITIONALLY - this creates a style for the redundant li (behind the one we want
     font-size:14px;
     font-weight: bold;
     font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    color: #fff;
+    }
+.docs_displaytitle a:link, .docs_displaytitle a:visited {
+    background: #003663;
     color: #fff;
     }
 .docs_summarytitle {

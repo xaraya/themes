@@ -9,7 +9,7 @@
     <div class="newssummary-title" > 
         <a href="#$link#">#$title#</a>
         <xar:sec mask="AdminArticles" catch="false">
-            <a href="#xarModURL('articles','admin','modify', array('aid' => $aid))#"> (EDIT) </a>
+            <a href="#xarModURL('articles','admin','modify', array('aid' => $aid))#"><img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" /></a>
         </xar:sec>        
         <h5 >
         <xar:mlvar>

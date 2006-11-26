@@ -1,19 +1,21 @@
-<div class="block_wrapper">
+<div class="blockwrapper_left">
     <xar:if id="title_condition" condition="!empty($title)">
-      <div class="xar-block-head">
-        <div class="xar-block-title">
-            <xar:var name="title" prep="false" />
+      <div class="blockhead_left">
+        <div class="blocktitle_left">
+            <xar:var name="title" prep="false"/>
             <xar:sec mask="AdminPanel" catch="false">
                 <span class="xar-sub">
                     <a href="#xarModURL('blocks','admin','modify_instance', array('bid' => $bid))#">
                     <img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" />                
                     </a>
                 </span>
-            </xar:sec>
+            </xar:sec>        
         </div>
       </div>
     </xar:if>
-    <div class="xar-block-body">
-      <xar:var name="content" />
+    <div class="blockbody_left">
+      <xar:var name="content" prep="false"/>
     </div>
 </div>
+
+
