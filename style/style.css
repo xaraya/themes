@@ -1,272 +1,233 @@
 @import "verticalmenu.css";
-/* Styles for 'simpleone' theme, updated 18 nov 06 */
+/* Styles for 'simpleone' theme, updated 26 nov 06 */
 a:link, a:visited {
-	text-decoration: none;
-	color: #0000ff;
-}
+    text-decoration: none;
+    color: #0000ff;
+    }
 a:active, a:hover {
-	text-decoration: none;
-	color: red;
-}
+    text-decoration: none;
+    color: red;
+    }
 td.xar-norm { background: #fff;}
 td.xar-alt {background: #f0f0f0;}
 body {
-	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-	font-size: 10px;
-	background: #fffacd;
-}
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    background: #fffacd;
+    }
 
 div {font-size: 12px;}
 
 img {border: none;}
 fieldset {
-	border: solid 1px #e0e0e0;
-	background: #fff;
-	margin: 5px 0;
-	padding: 15px;
-}
+    border: solid 1px #e0e0e0;
+    background: #fff;
+    margin: 5px 0;
+    padding: 15px;
+    }
 legend {
-	font-size: 12px;
-	font-weight: bold;
-	padding: 3px 5px;
-	min-width:10em;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px 5px;
+    min-width:10em;
     display:block;
     border: solid 1px #e0e0e0;
-	color: #666;
-	background: #f0f0f0;
-}
+    color: #666;
+    background: #f0f0f0;
+    }
 code {
-	font-family:"Courier New", Courier, monospace;
-	font-size: 11px;
-	color:#660066;
-	}
+    font-family:"Courier New", Courier, monospace;
+    font-size: 11px;
+    color:#660066;
+    }
 pre {
-	font-family:"Courier New", Courier, monospace;
-	font-size: 11px;
-	color: #009900;
-	font-weight: bold;
-	}
+    font-family:"Courier New", Courier, monospace;
+    font-size: 11px;
+    color: #009900;
+    font-weight: bold;
+    }
 	
 h1, h2, h3, h4 {
-	color: #008080;
-	font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
-	
-	}
+    color: #008080;
+    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    }
 
 /*  XARAYA REQUIRED ANONYMOUS CLASSES  */
 
 /* these defaults apply to the left block group */
 .xar-block-head{
-	text-align: center;
-	border-bottom: dotted 1px #000;
-	margin-bottom: 4px;
-}
+    text-align: center;
+    border-bottom: dotted 1px #000;
+    margin-bottom: 4px;
+    }
 .xar-block-title {
-	font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
-	font-weight: bold;
-	color: #008080;
-}
+    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    font-weight: bold;
+    color: #008080;
+    }
 .xar-block-body {
-	font-size: 10px;
-}
+    font-size: 10px;
+    }
 .xar-block-foot {
-	margin-bottom: 10px;
-}
+    margin-bottom: 10px;
+    }
 
 /* right block group classes */
 .xar-block-head-right{
-	text-align: center;
-	border-bottom: dotted 1px #000;
-	margin-bottom: 4px;
-}
+    text-align: center;
+    border-bottom: dotted 1px #000;
+    margin-bottom: 4px;
+    }
 .xar-block-title-right {
-	font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
-	font-weight: bold;
-	color: #008080;
-}
+    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    font-weight: bold;
+    color: #008080;
+    }
 .xar-block-body-right {
-	font-size: 10px;
-}
+    font-size: 10px;
+    }
 .xar-block-foot-right {
-	margin-bottom: 10px;
-}
+    margin-bottom: 10px;
+    }
 
 /* topnav block group classes */
-.xar-block-head-topnav {
-}
-.xar-block-title-topnav {
-}
-.xar-block-body-topnav {
-}
-.xar-block-foot-topnav {
-}
+.xar-block-head-topnav {}
+.xar-block-title-topnav {}
+.xar-block-body-topnav {}
+.xar-block-foot-topnav {}
 
 /* center block group classes */
 .xar-block-head-center{
-	text-align: center;
-}
+    text-align: center;
+    }
 .xar-block-title-center {
-	font-size: 16px;
-	font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
-	font-weight: bold;
-	color: #008080;
-}
-.xar-block-body-center {
-}
+    font-size: 16px;
+    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    font-weight: bold;
+    color: #008080;
+    }
+.xar-block-body-center {}
 .xar-block-foot-center {
-	margin-bottom: 10px;
-}
-.xar-mod-head {
-}
+    margin-bottom: 10px;
+    }
+.xar-mod-head {}
 .xar-mod-title {
-	font-size: 18px;
-}
-.xar-mod-body {
-}
-.xar-mod-foot {
-}
-.xar-alt {
-}
+    font-size: 18px;
+    }
+.xar-mod-body {}
+.xar-mod-foot {}
+.xar-alt {}
 .xar-accent {
-	background: #e0e0e0;
-}
-.xar-alt-outline {
-}
+    background: #e0e0e0;
+    }
+.xar-alt-outline {}
 .xar-accent-outline {
-	border: solid 1px #008080;
-	background: #f0f0f0;
-}
-.xar-norm-outline {
-}
-.xar-norm {
-}
+    border: solid 1px #008080;
+    background: #f0f0f0;
+    }
+.xar-norm-outline {}
+.xar-norm {}
 .xar-sub {
-	font-size: 9px;
-	color:#666;
-}
-.xar-menu-section {
-}
-.xar-menu-section-current {
-}
-.xar-menu-item {
-}
-.xar-menu-item-current {
-}
-.xar-menu-item:hover {
-}
-.xar-menu-subitem {
-}
-.xar-menu-subitem:hover {
-
-}
-.xar-menu-subitem-current {
-}
-.xar-menu-item-current > .xar-menu-subitem > a {
-}
-.xar-menu-item-current > .xar-menu-subitem > a:visited {
-}
+    font-size: 9px;
+    color:#666;
+    }
+.xar-menu-section {}
+.xar-menu-section-current {}
+.xar-menu-item {}
+.xar-menu-item-current {}
+.xar-menu-item:hover {}
+.xar-menu-subitem {}
+.xar-menu-subitem:hover {}
+.xar-menu-subitem-current {}
+.xar-menu-item-current > .xar-menu-subitem > a {}
+.xar-menu-item-current > .xar-menu-subitem > a:visited {}
 .xar-title {
-	font-size: 18px;
-}
-.xar-error {
-}
+    font-size: 18px;
+    }
+.xar-error {}
 /* theme specific styles */
 
 /* ---------------- HEADER STYLES ------------------------------------- */
 .header {
-	background:url(../images/header/header_image.jpg) no-repeat #008080;
-	/*	border-bottom: solid 1px #000; */
-	height: 129px;
-	margin: 0;
-	padding: 0;
-	font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
-}
+    background:url(../images/header/header_image.jpg) no-repeat #008080;
+    height: 129px;
+    margin: 0;
+    padding: 0;
+    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    }
 .sitename {
-	position: relative;
-	top: 10px;
-	left: 10px;
-	font-size: 20px;
-	font-weight: bold;
-	font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
-	/* margin: 20px; */
-	color: #fff;
-}
+    position: relative;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    color: #fff;
+    }
 .sitename a:link, .sitename a:visited {
-	color: Yellow;
-}
+    color: Yellow;
+    }
 .sitename a:active, .sitename a:hover {
-	color: #FFDEAD;
-}
+    color: #FFDEAD;
+    }
 .slogan {
-	position: relative;
-	top: 10px;
-	left: 150px;
-	font-size: 14px;
-	font-weight: bold;
-	font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
-	color: #fff;
-}
-
+    position: relative;
+    top: 10px;
+    left: 150px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    color: #fff;
+    }
 
 /* ----------------- BEGIN TOP NAV BAR STYLES ------------------------- */
 .topnav {
     background: url(../images/header/topbar_gradient.png) repeat-x; 
     margin: 0;
     padding: 0;
-    height: 25px; /* this needs to be 24 instead of 25 because it 
-        creates a space in FF OSX but I need to find a way to display
-        bottom border in FF win if I do that */
+    height: 25px; 
     border-top: solid 1px #000; 
     border-bottom: solid 1px #000;
-/* .topnav is used to create the background for the whole topnav block */
 } 
 .topnav ul, .topnav li {
     display: inline;
     margin-left: 0;
-    padding: 0px 15px; /* top/bottom paddin makes no difference here */
-    /* border: 1px solid pink; */
+    padding: 0px 15px; 
     list-style: none;
     background: none !important;/* this style prevents the 
         redundant li background = VERY IMPORTANT */
 } 
 /* -----------------------------------------------------------
 VERY IMPORTANT: 
-The .topnav ul, .topnav li is very importantneed this! It is
+The .topnav ul, .topnav li is very important need this! It is
 basically what controls the outer appearance of the menu. 
 ---------------------------------------------------------- */
 .topnavblock {
-    padding: 5px; /* 5px pisses off IE, 0px screws with FF */
+    padding: 5px;
     margin: 0;
-}
+    }
 .topnav ul {}
-.topnav li {
-    /* this creates one border around the whole menu, and each list item
-    ...so it's probably not the best class to use */
-}
+.topnav li {}
 .topnav-menu-section {
     margin: 0 0 0 10px;
     padding: 0;
     list-style:none;
     display: inline;
-}
+    }
 .topnav-menu-section ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: inline;
-}
+    }
 .topnav-menu-section ul li {
     list-style: none;
     margin: 0;
     padding:0;
     display: inline;
     background: #e0e0e0;
-}
-.topnav-menu-item li {
-/* this can create the style for the list item, but not the content
-of the list item since it is a link because it's a menu 
-ADDITIONALLY - this creates a style for the redundant li (behind the one we want) */
-}
+    }
+.topnav-menu-item li {}
 .topnav-menu-item-current { background: #fff !important; }
 .topnav a:link, .topnav a:visited {
     font-size: 12px;
@@ -276,123 +237,114 @@ ADDITIONALLY - this creates a style for the redundant li (behind the one we want
     padding: 5px 5px 5px 5px;
     z-index: 1000;
     background: url(../images/header/topbar_gradient.png) repeat-x;
-    /* height: 30px; -- can't have height here. FF ignores it, and 
-    IE hates it. */
     margin-right:-1px; /* this style can make spaces between the buttons. In this case -1 is to prevent double left border width */
     border-right: solid 1px #000;
     border-left: solid 1px #000;
     border-collapse:collapse;
-    /* NOTE: I think I need to change the class to something like
-    .topnav a:link ul li, .topnav a:visited ul li to prevent
-    redundant borders and backgrounds */
-}
-
+    }
 .topnav a:active, .topnav a:hover {
     color: #000;
     background: url(../images/header/topbar_gradient_hover.png) repeat-x;
-}
-
+    }
 
 /* ----------------- END TOP NAV BAR STYLES ------------------------- */
 .xpage {
-	width: 780px;
-	margin: 0 auto;
-	background: url(../images/page_bg.png) repeat-y;
-	border: solid 1px #000;
-	}
+    width: 780px;
+    margin: 0 auto;
+    background: url(../images/page_bg.png) repeat-y;
+    border: solid 1px #000;
+    }
 .xcontentcontainer {
-	float: left;
-	width: 100%;
-	background: none;
-	}
+    float: left;
+    width: 100%;
+    background: none;
+    }
 .xcontent {
-	margin-right: 170px;
-	background: none;
-	}
+    margin-right: 170px;
+    background: none;
+    }
 .xrightcol {
-	float: left;
-	width: 160px;
-	margin-left: -160px;
-}
-
+    float: left;
+    width: 160px;
+    margin-left: -160px;
+    }
 .footer {
-	font-size: 10px;
-	color: #999;
-	text-align: center;
-	margin: 5px;
-}
+    font-size: 10px;
+    color: #999;
+    text-align: center;
+    margin: 5px;
+    }
 .footer a:link, .footer a:visited {
-	text-decoration: none;
-	color: #008000;
-}
+    text-decoration: none;
+    color: #008000;
+    }
 .footer a:active, .footer a:hover {
-	text-decoration: none;
-	color: #A52A2A;
-}
-
+    text-decoration: none;
+    color: #A52A2A;
+    }
 
 /* --------------- RANDOM QUOTES BLOCK ------------- */
 .quote_summary {
-	font-style: italic;
-	font-size: 10px;
-	}
+    font-style: italic;
+    font-size: 10px;
+    }
 .quote_title { 
-	color: #CC3333; /* author name */
-	font-size: 10px;
-	} 
+    color: #CC3333; /* author name */
+    font-size: 10px;
+    } 
 
 /* --------------- BLOG SUMMARY AND DISPLAY TEMPLATES -------------- */
 .blogtitle_summary {
-	border-bottom: solid 1px #999; 
-	border-top: solid 1px #999; 
-	font-size: 14px; 
-	padding: 3px;
-	margin: 0;
-	}
+    border-bottom: solid 1px #999; 
+    border-top: solid 1px #999; 
+    font-size: 14px; 
+    padding: 3px;
+    margin: 0;
+    }
 .blogtitle_summary h1 {
-	margin: 0;
-	padding: 0;
-}
+    margin: 0;
+    padding: 0;
+    }
 .blogauthor {
-	color: #999;
-	font-size: 10px;
-	margin-bottom: 10px;
-	}
+    color: #999;
+    font-size: 10px;
+    margin-bottom: 10px;
+    }
 .blogcomments {
-	 margin-left: 10px; 
-	 font-style: italic;
-	}
+    margin-left: 10px; 
+    font-style: italic;
+    }
 .blogsummary {
-	font-size: 11px; 
-	font-family: 'Courier New', Courier, mono; 
-	color: #000; 
-	padding: 5px;
-	}
+    font-size: 11px; 
+    font-family: 'Courier New', Courier, mono; 
+    color: #000; 
+    padding: 5px;
+    }
 .blog_displaycontainer {
-	margin: 0 20px 0 20px; 
-	border: dashed 1px #999; 
-	padding: 8px;
-	}
+    margin: 0 20px 0 20px; 
+    border: dashed 1px #999; 
+    padding: 8px;
+    }
 .blog_displaytitle {
-	margin-bottom: 20px; 
-	background: #008080; 
-	padding: 5px;
-	font-size:14px;
-	font-weight: bold;
-	font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
-	color: #fff;
-	}
+    margin-bottom: 20px; 
+    background: #008080; 
+    padding: 5px;
+    font-size:14px;
+    font-weight: bold;
+    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    color: #fff;
+    }
 
 /* --------------- DOCUMENT SUMMARY & DISPLAY TEMPLATES --------------- */
 .docs_displaytitle {
-	margin-bottom: 5px; 
-	background: #008080; 
-	padding: 5px;
-	font-size:14px;
-	font-weight: bold;
-	font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
-	color: #fff;
-}
+    margin-bottom: 5px; 
+    background: #008080; 
+    padding: 5px;
+    font-size:14px;
+    font-weight: bold;
+    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    color: #fff;
+    }
 .docs_summarytitle {
     font-size: 12px;
     font-weight: bold;
@@ -412,22 +364,19 @@ div.docs_summarytitle h5 {
 .docs_summarytitle a:hover, .docs_summarytitle a:active {color: #ccc;}	
 /* --------------- COMMENTS STYLES ----------------- */
 div .xar-ib-actionpanel.xar-accent {
-border: solid 1px #008080;
-}
-
-
+    border: solid 1px #008080;
+    }
 
 /* --------------- REGISTRATION BLOCK -------------- */
 .rlogin_input {
-	width: 100px;
-	border: solid 1px #008080;
-}
-
+    width: 100px;
+    border: solid 1px #008080;
+    }
 
 /* --------------- USEFUL STYLES ------------------- */
 .fauxpadding {
-	margin: 5px;
-}
+    margin: 5px;
+    }
 .hidden { visibility: hidden;}
 .clearboth { clear: both; }
 .clearright { clear: right; }

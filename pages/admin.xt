@@ -26,7 +26,7 @@
         <div id="header">
             #$sitename# <a href="#xarModUrl()#" title="#$sitename#">( View Site &gt; )</a>
         </div>
-        <div id="wrapper">
+        <div>
             <div id="adminmenu">
                 <xar:var name="adminnav"/>
             </div>
