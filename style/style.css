@@ -19,11 +19,13 @@ td.xar-alt {
     color: #000;
     }
 body {
+    position: absolute;
     font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
     font-size: 12px;
     color: #000;
     background: #fff;
     margin: 0;
+    z-index: 0;
     }
 
 div {font-size: 12px;}
