@@ -494,12 +494,12 @@ div.docs_summarytitle h5 {
     }
 
 /* --------------- NEWS SUMMARY & DISPLAY TEMPLATES ------------------ */
-.newssummary-title {
+.newssummary_title {
     font-size: 14px;
     font-weight: bold;
     border-bottom: solid 1px #e0e0e0;
     }
-div.newssummary-title h5 {
+div.newssummary_title h5 {
     float: right; 
     margin: -1.33em 3px 0 0; 
     padding: 0; 
@@ -509,9 +509,31 @@ div.newssummary-title h5 {
     font-weight: normal;
     font-style: italic;
     }
+.newssummary_title a:link, .newssummary_title a:visited {
+    color: #003663;
+    background: #fff;
+    }
+.newssummary_title a:hover, .newssummary_title a:active {
+    color: #ccc;
+    background: #fff;
+    }
 .news_summarycontent {
     margin: 10px 5px 5px 5px;
     }
+.news_displaytitle {
+    margin-bottom: 5px; 
+    background: #003663; 
+    padding: 5px;
+    font-size:14px;
+    font-weight: bold;
+    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    color: #fff;
+    }
+.news_displaytitle a:link, .news_displaytitle a:visited {
+    background: #003663;
+    color: #fff;
+    }
+
 
 /* --------------- THEME SUBMISSION TEMPLATES ------ */
 .submission_sumwrapper {

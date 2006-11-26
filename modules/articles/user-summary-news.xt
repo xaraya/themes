@@ -6,7 +6,7 @@
         </xar:foreach>
         ] 
     </xar:if>
-    <div class="newssummary-title" > 
+    <div class="newssummary_title" > 
         <a href="#$link#">#$title#</a>
         <xar:sec mask="AdminArticles" catch="false">
             <a href="#xarModURL('articles','admin','modify', array('aid' => $aid))#"><img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" /></a>
