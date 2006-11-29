@@ -55,14 +55,6 @@
         <div  class="xar-articles-summary">
             #$summary# 
         </div>
-        <xar:if condition="!empty($notes)">
-            <div class="xar-articles-notes">
-                <xar:mlstring>
-                    Note 
-                </xar:mlstring>
-                : #$notes# 
-            </div>
-        </xar:if>
         <div class="xar-align-right">
             <xar:if condition="!empty($words)">
                 <a href="#$link#">
