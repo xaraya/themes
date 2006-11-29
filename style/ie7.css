@@ -1,0 +1,33 @@
+#header {
+    min-width: 100%;
+    }
+.topnav {
+    width: auto; 
+    min-width: 100%;
+    margin: 0;
+    }	
+ .docs_displaytitle {
+    padding: 5px;
+    min-width: 98%;
+    margin: 0px;
+    }
+.main_content {
+    margin: 0 10px 0 0;
+    width: auto;
+    }
+div.docs_summarytitle h5 {
+    width: 150px;
+    text-align: right;
+    }
+div.newssummary_title h5 {
+    width: 150px;
+    text-align: right;
+    }
+.news_displaytitle {
+    padding: 5px;
+    min-width: 98%;
+    margin: 0px;
+    }
+.block_wrapper {
+    min-width: 100%;
+    }

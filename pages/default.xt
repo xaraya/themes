@@ -15,6 +15,7 @@
 	<xar:style scope="common" />
 	<xar:style scope="theme" file="style" title="#xarTplGetThemeName()#" />
 	<xar:style scope="theme" file="ie6" condition="lt IE 7" />
+    <xar:style scope="theme" file="ie7" condition="gte IE 7" />
 	<xar:additional-styles />
 	<xar:base-render-javascript position="head" />
 	<xar:set name="adminnav">
