@@ -1,5 +1,5 @@
 @import "verticalmenu.css";
-/* Styles for 'simpleone' theme, updated 26 nov 06 */
+/* Styles for 'simpleone' theme, updated 5 Dec 06 */
 a:link, a:visited {
     text-decoration: none;
     color: #0000ff;
@@ -131,16 +131,65 @@ h1, h2, h3, h4 {
     font-size: 9px;
     color:#666;
     }
-.xar-menu-section {}
-.xar-menu-section-current {}
-.xar-menu-item {}
-.xar-menu-item-current {}
-.xar-menu-item:hover {}
-.xar-menu-subitem {}
-.xar-menu-subitem:hover {}
-.xar-menu-subitem-current {}
-.xar-menu-item-current > .xar-menu-subitem > a {}
-.xar-menu-item-current > .xar-menu-subitem > a:visited {}
+/* --------------------- THE MENU STYLES ------------------- */
+.xar-menu-section {
+    margin: 0;
+    padding: 0;
+    list-style:none;
+    color: #003663;
+    }
+.xar-menu-section-current {
+    margin: 0;
+    padding: 0;
+    list-style:none;
+    color: #FFCC66;
+    }
+.xar-menu-item {
+    list-style-type: square;
+    color: #003663;
+}
+.xar-menu-item-current {
+    color: #999; /* makes the bullet a lighter color */
+}
+.xar-menu-item .xar-menu-item-current a:link, .xar-menu-item .xar-menu-item-current a:visited {
+    color: #999;
+    }
+.xar-menu-item .xar-menu-item-current a:active, .xar-menu-item .xar-menu-item-current a:hover {
+    color: #999;
+    }
+.xar-menu-item:hover {
+    color: red; /* makes bullet red when hovering over item */
+}
+/* ----- a little fun ----- */
+.xar-menu-item a:link, .xar-menu-item a:visited {
+    color: #003663;
+    }
+.xar-menu-item a:active, .xar-menu-item a:hover {
+    color: #999;
+    }
+/* ---------- yay ---------- */
+.xar-menu-subitem {
+    color: #003663;
+}
+.xar-menu-subitem:hover {
+    color: red;
+    }
+.xar-menu-subitem a:link, .xar-menu-subitem a:visited {
+    color: #003663;
+    }
+.xar-menu-subitem a:active, .xar-menu-subitem a:hover {
+    color: #999;
+    }
+.xar-menu-subitem-current {
+    color: #999;
+}
+.xar-menu-item .xar-menu-item-current .xar-menu-subitem a:link, .xar-menu-item .xar-menu-item-current .xar-menu-subitem a:visited {
+    color: #003663;
+}
+.xar-menu-item .xar-menu-item-current  .xar-menu-subitem  a:active, .xar-menu-item .xar-menu-item-current  .xar-menu-subitem  a:active {
+    color: #999;
+}
+/* --------------------- END THE MENU STYLES --------------- */
 .xar-title {
     font-size: 18px;
     }
@@ -172,8 +221,8 @@ h1, h2, h3, h4 {
     }
 .slogan {
     position: relative;
-    top: 10px;
-    left: 150px;
+    top: 30px;
+    left: 0px;
     font-size: 14px;
     font-weight: bold;
     font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
@@ -409,6 +458,24 @@ div .xar-ib-actionpanel.xar-accent {
     border: solid 1px #008080;
     }
 
+/*---------------- TOP ITEMS BLOCK ----------------- */
+.topitemsblock {
+	list-style-type: none;
+	font-size: 10px;
+	margin: 0;
+	padding: 0;	
+	}
+.topitemsblock ul {
+	list-style-type: square;
+	margin: 0 10px 0 15px;
+	padding: 3px;
+	}	
+.topitemsblock ul li {
+	list-style-type: square;
+	margin: 0;
+	padding: 0;
+	}
+	
 /* --------------- USEFUL STYLES ------------------- */
 .fauxpadding {
     margin: 5px;

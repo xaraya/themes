@@ -24,8 +24,10 @@
 	<xar:var name="adminnav"/>
 	<div class="xpage">
 		<div class="header">
-			<div class="sitename"><a href="index.php">#$sitename#</a></div>
-			<div class="slogan">#$siteslogan#</div>
+		    <span style="float: right; margin: 20px 20px 0 0; z-index: 1000;"> 		    <xar:block module="search" type="search" template="contentonly" />
+		    </span>
+			<span  class="sitename"><a href="index.php">#$sitename#</a></span>
+			<span class="slogan">#$siteslogan#</span>
 		</div>
         <div class="topnav">
 			<xar:blockgroup name="topnav" id="topnav" />
