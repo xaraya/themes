@@ -19,6 +19,12 @@ body {
 div {font-size: 12px;}
 
 img {border: none;}
+input {
+    border: solid 1px #000; 
+    padding: 2px;
+    }
+textarea {border: solid 1px #000; padding: 2px;}
+
 fieldset {
     border: solid 1px #e0e0e0;
     background: #fff;
@@ -122,9 +128,9 @@ h1, h2, h3, h4 {
     }
 .xar-alt-outline {}
 .xar-accent-outline {
-    border: solid 1px #008080;
-    background: #f0f0f0;
-    }
+	border: solid 1px #000;
+	background: #f0f0f0;
+	}/* also provides background for comment bbcode box  */
 .xar-norm-outline {}
 .xar-norm {}
 .xar-sub {
@@ -447,10 +453,34 @@ margin-bottom: 20px;
 .faq_displaybody {margin: 20px 0 0 0;}
 .faq_nexttag {float: right; margin: 0 15px 0 15px;}
 .faq_prevtag {float: right;}
+
 /* --------------- COMMENTS STYLES ----------------- */
 div .xar-ib-actionpanel.xar-accent {
-    border: solid 1px #008080;
+    border: solid 1px #000;
+  	background: url(../images/bbcodepanel_bg.png) repeat-x;
     }
+.xar-ib-actionpanel {
+    width: 14em;
+    float: right;
+    padding: 0 .25em;;
+    height:19em;
+    margin: 10px 5px 10px 5px;
+}
+input.xar-ib-field, textarea.xar-ib-fieldtext {
+    border: solid 1px #000;
+    margin: 10px auto;
+    width: 90% !important;
+    font-family:"Courier New", Courier, monospace;
+    font-size: 12px;
+}
+
+.xar-cm-note {} /* the font for 'not responsible for comments...etc */
+
+.xar-ib-wrapper {
+    margin: 0;
+    padding: .25em;
+    height: 21em !important;
+}
 
 /* --------------- REGISTRATION BLOCK -------------- */
 .rlogin_input {
@@ -504,3 +534,19 @@ div .xar-ib-actionpanel.xar-accent {
 background: #000;
 color: #fff;
 }
+
+/* ---------------- other interesting styles for forms ------------ */
+ .xar-form-input-wrapper input {
+border: solid 1px #000;
+} /* adds border around the name, email, and organization input boxes */
+.xar-form-input-wrapper select {
+border: solid 1px #000;
+} /* adds a border around the select menu */    
+
+/* more styles for forms --------------------------------- */
+.xar-form-label {
+border-bottom: dotted 1px #000;
+}
+
+
+/* end the styles for forms ----------------------------- */
