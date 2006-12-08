@@ -31,7 +31,7 @@
     </div>
 <!-- END SCREENSHOT -->
           
-    <div  class="submission_summarybody xar-threequarterswidth">
+    <div class="submission_summarybody xar-threequarterswidth">
         <p>#$summary#</p>
         <p>
             <xar:ml>

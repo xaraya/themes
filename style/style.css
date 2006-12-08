@@ -1,5 +1,5 @@
 @import "verticalmenu.css";
-/* Styles for 'minnow' theme, updated 24 nov 06 */
+/* Styles for 'minnow' theme, updated 5 dec 06 */
 a:link, a:visited {
     text-decoration: none;
     color: #0000ff;
@@ -31,6 +31,17 @@ body {
 div {font-size: 12px;}
 
 img {border: none; vertical-align:top}
+
+/*
+input { 
+    border: solid 1px #000;
+    padding: 2px;
+    }
+textarea { 
+    border: solid 1px #000;
+    padding: 2px;
+    }
+    */
 fieldset {
     border: solid 1px #e0e0e0;
     color: #666;
@@ -65,7 +76,7 @@ pre {
 h1, h2, h3, h4 h5 {
     color: #003663;
     font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
-    background-color: #fff;
+    background-color: ;
     }
 
 p {line-height: 120%;}
@@ -146,18 +157,29 @@ p {line-height: 120%;}
 .xar-block-foot-topnav {}
 
 /* center block group classes */
-.xar-block-head-center{
-    text-align: center;
+
+.centerblock_wrapper {
+    margin-bottom: 10px;
     }
-.xar-block-title-center {
+.centerblock_head{
+    text-align: center;
+    margin: 0 0 10px 0;
+    background: url(../images/centerhd_bg.png) no-repeat; 
+    height: 36px;
+    color: #003663;    
+    }
+.centerblock_title {
     font-size: 16px;
     font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
     font-weight: bold;
-    color: #003663;
-    background: #fffcd6;
+    padding-top: 7px;
+
+
     }
-.xar-block-body-center { font-size: 12px;}
-.xar-block-foot-center {
+.centerblock_body { 
+    font-size: 12px;
+    margin: 0 15px 10px 15px;}
+.centerblock_foot {
     margin-bottom: 10px;
     }
 .xar-mod-head {}
@@ -182,7 +204,6 @@ p {line-height: 120%;}
 .xar-sub {
     font-size: 9px;
     color:#999;
-    background: #fff;
     }
 
 /* --------------------- THE MENU STYLES ------------------- */
@@ -266,7 +287,8 @@ p {line-height: 120%;}
 }
 /* --------------------- END THE MENU STYLES --------------- */
 .xar-title {
-    font-size: 18px;
+    font-size: 12px;
+    font-weight: bold;
     }
 .xar-error {}
 .xar-articles-notes {
@@ -571,16 +593,84 @@ div.submission_summarytitle h5 {
     float:left;
     margin-bottom: 15px;
     }
+
+/* --------------- FAQ SUMMARY & DISPLAY STYLES ---- */
+h2.faq_title {
+    padding: 0; 
+    margin: 20px 0 0 0;
+    }
+h3.faq_title {
+    padding: 0; 
+    margin: 0 0 10px 0;
+    border-bottom: dotted 1px #666;
+    }
+.faq_title a:link, .faq_title a:visited {color: #003663;}
+.faq_title a:hover, .faq_title a:active {color: #ccc;}
+faqsummary_wrapper {
+margin-bottom: 20px;
+} /* -- this is the wrapper around the entire summary on
+    user-summary-faq ---- */
+.faq_summarybody {
+    margin: 0 15px;
+    }
+.faq_sumsum {
+    font-style: italic;
+    margin: 0 10px 15px 10px;
+    }
+.faq_sumbody {}
+.faq_displaywrapper {
+    margin: 0 10px 30px 10px;
+}
+.faq_displaysummary {font-style: italic;}
+.faq_submittedby {
+    font-size: 10px;
+    color: #999;
+    }
+.faq_displaybody {margin: 20px 0 0 0;}
+.faq_nexttag {float: right; margin: 0 15px 0 15px;}
+.faq_prevtag {float: right;}
+
 /* --------------- COMMENTS STYLES ----------------- */
 div .xar-ib-actionpanel.xar-accent {
-    border: solid 1px #003663;
+    border: solid 1px #000;
+  	background: url(../images/bbcodepanel_bg.png) repeat-x;
     }
+.xar-ib-actionpanel {
+    width: 14em;
+    float: right;
+    padding: 0 .25em;;
+    height:19em;
+    margin: 10px 5px 10px 5px;
+}
+input.xar-ib-field, textarea.xar-ib-fieldtext {
+    border: solid 1px #000;
+    margin: 10px auto;
+    width: 90% !important;
+    font-family:"Courier New", Courier, monospace;
+    font-size: 12px;
+}
+
+.xar-cm-note {} /* the font for 'not responsible for comments...etc */
+
+.xar-ib-wrapper {
+    margin: 0;
+    padding: .25em;
+    height: 21em !important;
+}
 
 /* --------------- REGISTRATION BLOCK -------------- */
 .rlogin_input {
     width: 150px;
     }
-
+/* --------------- SEARCH BLOCK -------------------- */
+.searchingblock {    
+    margin: 0px 20px 20px 20px; 
+    width: auto;
+    }
+.searchstyle input  {
+    border: solid 1px #000;
+    padding: 2px;
+    }
 /* --------------- USEFUL STYLES ------------------- */
 .fauxpadding {
     margin: 5px;
