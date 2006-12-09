@@ -1,0 +1,369 @@
+@import "verticalmenu.css";
+/* ------------- styles for orangeandgrey updated 8 dec 06 ------------- */
+
+/* XARAYA REQUIRED CLASSES */
+a:link, a:visited {
+    text-decoration: none;
+    color: #0000ff;
+}
+a:active, a:hover {
+    text-decoration: none;
+    color: red;
+}
+blockquote {
+    font-style: italic;
+    color: #5660ba;
+}
+body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        line-height: 1.5em;
+        font-family: "trebuchet ms", "luxi sans", verdana, helvetica, sans-serif;
+        font-size: 12px;
+    }
+fieldset {
+    border: solid 1px #e0e0e0;
+    color: #666;
+    background: #fff;
+    margin: 5px 0;
+    padding: 15px;
+    }
+legend {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px 5px;
+    min-width:10em;
+    display:block;
+    border: solid 1px #e0e0e0;
+    color: #666;
+    background: #f0f0f0;
+    }
+code {
+    font-family:"Courier New", Courier, monospace;
+    font-size: 11px;
+    color:#660066;
+    }
+h1, h2, h3, h4 {
+    color: #666;
+    line-height: 100%;
+    font-family: "Futura Condensed", "Tahoma Bold", futura, "Franklin Gothic Bold", sans-serif;    }
+h1 {
+    font-size: 18px;
+    }
+h2 {
+    font-size: 16px;
+    }
+h3 {
+    font-size: 14px;
+    }
+h4 {
+    font-size: 12px;
+    }
+th {
+}
+td {
+}
+table {
+}
+thead {
+}
+tbody {
+}
+tfoot {
+}
+p {
+}
+pre {
+    font-family:"Courier New", Courier, monospace;
+    font-size: 11px;
+    color: #009900;
+    font-weight: bold;
+    background: #fff;
+    }
+input {
+}
+button {
+}
+select {
+}
+textarea {
+}
+img {
+    border: none;
+    }
+li {
+}
+ul {
+}
+ol {
+}
+sup {
+    font-size: 9px;
+    }
+sub {
+    font-size: 9px;
+
+    }
+
+/*  XARAYA REQUIRED INDIVIDUAL CLASSES */
+td.xar-norm {}
+td.xar-alt {}
+
+/*  XARAYA REQUIRED ANONYMOUS CLASSES  */
+
+/* --------- left block group styles --------------- */
+.leftblock_wrapper { 
+    margin: 0 10px 10px 10px;
+    }
+.leftblock_head{
+    border-bottom: solid 1px #999;
+    margin-bottom: 4px;
+    padding: 0;
+}
+.leftblock_title {
+    font-size: 19px;
+    color: #003663;
+    padding: 0;
+    margin: 0;
+    line-height: 100%;
+}
+.leftblock_body {}
+.leftblock_foot {}
+
+/* --------- right block group styles -------------- */
+rightblock_wrapper {
+    margin: 0 10px 10px 10px;
+    }
+.rightblock_head{
+    text-align: center;
+    border-bottom: dotted 1px #000;
+    margin-bottom: 4px;
+    }
+.rightblock_title {
+    font-weight: bold;
+    color: #003663;
+    }
+.rightblock_body {}
+.rightblock_foot {}
+
+/* topnav block group classes */
+.xar-block-head-topnav {
+}
+.xar-block-title-topnav {
+}
+.xar-block-body-topnav {
+}
+.xar-block-foot-topnav {
+}
+/* --------- default block group styles ------------ */
+.defaultblock_wrapper {}
+.defaultblock_head {}
+.defaultblock_title {}
+.defaultblock_body {}
+.defaultblock_foot {}
+
+/* --------- center block group styles ------------- */
+.centerblock_wrapper {
+    margin-bottom: 10px;
+    }
+.centerblock_head{
+    text-align: center;
+    padding: 0;
+    border-bottom: dotted 1px #003663;
+    margin: 0 0 10px 0;
+    color: #003663;    
+    }
+.centerblock_title {
+    font-size: 16px;
+    font-weight: bold;
+    }
+.centerblock_body { 
+    margin: 0 15px 10px 15px;
+    }
+.centerblock_foot {
+    margin-bottom: 10px;
+    }
+.xar-mod-head {}
+.xar-mod-title {
+    font-size: 16px;
+}
+.xar-mod-body {
+}
+.xar-mod-foot {
+}
+.xar-alt {
+}
+.xar-accent {
+    background: #f0f0f0;
+}
+.xar-alt-outline {
+}
+.xar-accent-outline {
+}
+.xar-norm-outline {
+}
+.xar-norm {
+}
+.xar-sub {
+    font-size: 9px;
+    color:#999;
+    }
+    
+/* --------------------- THE MENU STYLES ----------- */
+.xar-menu-section {
+    margin: 0;
+    padding: 0;
+    list-style:none;
+    color: #003663;
+    }
+.xar-menu-section-current {
+    margin: 0;
+    padding: 0;
+    list-style:none;
+    color: #FFCC66;
+    }
+.xar-menu-item {
+    list-style-type: square;
+    color: #003663;
+}
+.xar-menu-item-current {
+    color: #999; /* makes the bullet a lighter color */
+}
+.xar-menu-item .xar-menu-item-current a:link, .xar-menu-item .xar-menu-item-current a:visited {
+    color: #999;
+    }
+.xar-menu-item .xar-menu-item-current a:active, .xar-menu-item .xar-menu-item-current a:hover {
+    color: #999;
+    }
+.xar-menu-item:hover {
+    color: red; /* makes bullet red when hovering over item */
+}
+/* ----- a little fun ----- */
+.xar-menu-item a:link, .xar-menu-item a:visited {
+
+    color: #003663;
+    }
+.xar-menu-item a:active, .xar-menu-item a:hover {
+    color: #999;
+    }
+/* ---------- yay ---------- */
+.xar-menu-subitem {
+    color: #003663;
+}
+.xar-menu-subitem:hover {
+    color: red;
+    }
+.xar-menu-subitem a:link, .xar-menu-subitem a:visited {
+    color: #003663;
+    }
+.xar-menu-subitem a:active, .xar-menu-subitem a:hover {
+    color: #999;
+    }
+.xar-menu-subitem-current {
+    color: #999;
+}
+.xar-menu-item .xar-menu-item-current .xar-menu-subitem a:link, .xar-menu-item .xar-menu-item-current .xar-menu-subitem a:visited {
+    color: #003663;
+}
+.xar-menu-item .xar-menu-item-current  .xar-menu-subitem  a:active, .xar-menu-item .xar-menu-item-current  .xar-menu-subitem  a:active {
+    color: #999;
+}
+/* --------------------- END THE MENU STYLES --------------- */
+
+.xar-title {
+}
+.xar-error {
+}
+
+/* ---------------------------- DEFAULT.XT PAGE STYLES ---------- */
+#header {
+    height: 70px; 
+    background: #e0e0e0;
+    }
+#headertitle {
+    margin: 0 200px 0 0; width: auto;
+    }
+    
+#headertitle h1 {
+    position: relative; top: 20px; left: 20px; padding: 0; margin: 0;
+    }
+#headertitle h3 {
+    position: relative; top: 20px; left: 60px; padding: 0; margin: 0;    }
+#outerwrapper {
+background: url(../images/leftbg.png) repeat-y;
+
+    position: relative;
+    padding: 0;
+    }
+#innerwrapper {
+float: left;
+width: 100%;
+    }
+#leftcolumn {
+float: left;
+width: 200px; /*Width of left column*/
+margin-left: -100%;
+font-size: 12px;
+font-weight: normal;
+
+    }
+
+#bodycontent {
+margin-left: 200px; /*Set left margin to LeftColumnWidth*/
+    }
+.contentspacer {
+margin: 10px; /*Margins for inner DIV inside each column (to provide padding)*/
+    }
+#footer {
+    clear: both;
+    background: #000;
+    color: #ccc;
+    font-size: 10px;
+    }
+.footer_position {
+    margin: 0 10px;
+    }
+
+/* --------- DOCUMENT SUMMARY & DISPLAY TEMPLATES ---------- */
+.docs_displaytitle {
+    margin-bottom: 5px; 
+    background: #7f7f7f; 
+    padding: 5px;
+    font-size:14px;
+    font-weight: bold;
+    font-family: "Futura Condensed", "Tahoma Bold", futura, "Franklin Gothic Bold", sans-serif;
+    color: #fff;
+    }
+.docs_summarytitle {
+    font-size: 12px;
+    font-weight: bold;
+    border-bottom: solid 1px #e0e0e0;
+    }
+div.docs_summarytitle h5 {
+    float: right; 
+    margin: -1.8em 3px 0 0; 
+    padding: 0; 
+    color: #667;
+    font-size: 10px;
+    font-weight: normal;
+    font-style: italic;
+    }
+	
+.docs_summarytitle a:link, .docs_summarytitle a:visited {color: #003663;}
+.docs_summarytitle a:hover, .docs_summarytitle a:active {color: #ccc;}
+
+/* --------- Using h1 as a title in user-news-display etc. */
+h1.title {
+    background: #ccc;
+    color: #fff; 
+    padding: 5px; 
+    margin: 0;
+    }
+    
+    
+    
+    
+    
+    
+    

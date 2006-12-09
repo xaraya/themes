@@ -1,0 +1,21 @@
+<div class="leftblock_wrapper">
+    <xar:if id="title_condition" condition="!empty($title)">
+      <div class="leftblock_head">
+        <div class="leftblock_title">
+            <xar:var name="title" prep="false"/>
+            <xar:sec mask="AdminPanel" catch="false">
+            <span class="xar-sub">
+                <a href="#xarModURL('blocks','admin','modify_instance', array('bid' => $bid))#">
+                <img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" />                
+                </a>
+            </span>
+            </xar:sec>        
+        </div>
+      </div>
+    </xar:if>
+    <div class="leftblock_body">
+      <xar:var name="content" prep="false"/>
+    </div>
+    <div class="leftblock_foot"></div>
+</div>
+
