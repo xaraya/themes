@@ -11,3 +11,18 @@
 .news_displaytitle {
     height: 1px;
     }
+body {
+	z-index: 0;
+	position: absolute;
+}
+#outerwrapper {
+	height: 1px;
+}
+#innerwrapper {
+}
+.roundblock {
+	height: 1px;
+}
+#footer {
+	height: 1px;
+}
