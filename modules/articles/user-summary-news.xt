@@ -6,9 +6,15 @@
         </xar:foreach>
         ] 
     </xar:if>
-    <h1 class="title"> <a href="#$link#">#$title#</a> </h1> 
-    <div class="xar-accent">
-        <span class="xar-sub"> 
+    <h1 class="title"> 
+        <a href="#$link#">#$title#</a> 
+<xar:sec mask="AdminPanel" catch="false">
+    <a href="#xarModURL('articles','admin','modify', array('aid' => $aid))#">
+        <img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" />
+    </a>
+</xar:sec>        
+    </h1> 
+    <div class="xar-sub">
             <xar:ml>
                 <xar:mlstring>
                     Posted by: #(1) on #(2) #(3)
@@ -38,32 +44,16 @@
                     ) 
                 </xar:if>
             </xar:if>
-        </span> 
     </div>
     <div class="xar-align-right">
         <span class="xar-sub"> #$topic_icons# </span> 
     </div>
-    <div class="xar-articles-summary">
+    <div class="news_summary">
         #$summary# 
     </div>
-    <xar:if condition="!empty($notes)">
-        <div class="xar-articles-notes">
-            <xar:mlstring>
-                Note 
-            </xar:mlstring>
-            : #$notes# 
-        </div>
-    </xar:if>
     <div class="xar-align-right">
         <xar:if condition="!empty($words)">
-            <xar:comment>
-                Note : you can use $bytes here too if you prefer the geeky way of counting
-            </xar:comment>
-            <a href="#$link#">
-                <xar:mlstring>
-                    Read More
-                </xar:mlstring>
-            </a> 
+            <a href="#$link#">Read More</a> 
             <xar:if condition="$words eq 1">
                 (#$words#&nbsp;
                 <xar:mlstring>

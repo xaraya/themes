@@ -7,7 +7,7 @@
                 <span class="xar-sub">
                     <a href="#xarModURL('blocks','admin','modify_instance', array('bid' => $bid))#">
                     <img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" />                
-                    </a>
+                    </a> (center)
                 </span>
             </xar:sec>
         </div>

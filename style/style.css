@@ -202,8 +202,10 @@ rightblock_wrapper {
 .xar-accent-outline {
 }
 .xar-norm-outline {
+    border: solid 1px #ffab99;
 }
 .xar-norm {
+    background: #fff;
 }
 .xar-sub {
     font-size: 9px;
@@ -353,17 +355,57 @@ div.docs_summarytitle h5 {
 .docs_summarytitle a:link, .docs_summarytitle a:visited {color: #003663;}
 .docs_summarytitle a:hover, .docs_summarytitle a:active {color: #ccc;}
 
+
+/* --------- NEWS SUMMARY & DISPLAY TEMPLATES ---------- */
+.news_summary {
+    margin: 0 10px 0 10px;
+    }
+.newscontent {
+    margin: 0 10px 0 10px;
+    }
 /* --------- Using h1 as a title in user-news-display etc. */
 h1.title {
-    background: #ccc;
-    color: #fff; 
-    padding: 5px; 
+    /*  background: #ccc;   */
+    color: #000; 
+    padding: 0 5px 0 5px; 
     margin: 0;
+    border-bottom: dotted 1px #999;
     }
     
+.article_notes {
+    font-style: italic; 
+    color: #999;
+    margin: 0 20px 0 20px;
+    }
     
-    
-    
+/* --------- ROUNDBLOCK CLASSES -------- */
+.roundblock h1, .roundblock h2, .roundblock h3, .roundblock h4, .roundblock h5 {color: #4E6281;}
+.roundblock {
+    background: #e4ecec; 
+    color: #666;
+    margin-bottom: 20px;
+    }
+.blockspacer {padding: 10px;}
+.roundblock_ul {
+    background:url(../images/blocks/roundblock/roundblock_ul.gif) no-repeat left top;
+    margin: 0;
+    padding: 0;
+    }
+.roundblock_ur {
+    background:url(../images/blocks/roundblock/roundblock_ur.gif) no-repeat right top;
+    margin: 0;
+    padding: 0;
+    }
+.roundblock_ll {
+    background:url(../images/blocks/roundblock/roundblock_ll.gif) no-repeat left bottom;
+    margin: 0;
+    padding: 0;
+    }
+.roundblock_lr {
+    background:url(../images/blocks/roundblock/roundblock_lr.gif) no-repeat right bottom;
+    margin: 0;
+    padding: 0;
+    }
     
     
     

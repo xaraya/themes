@@ -1,0 +1,19 @@
+<xar:sec mask="AdminPanel" catch="false">
+    <span class="xar-sub" style="margin: 10px;">
+    <a href="#xarModURL('blocks','admin','modify_instance', array('bid' => $bid))#"><img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" /></a> (roundblock)
+    </span> 
+</xar:sec>
+
+<div class="roundblock">
+    <div class="roundblock_ul">
+        <div class="roundblock_ur">
+            <div class="roundblock_ll">
+                <div class="roundblock_lr">
+                    <div class="blockspacer">
+                        <xar:var name="content"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
