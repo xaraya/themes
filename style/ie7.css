@@ -1,7 +1,25 @@
+body {
+	z-index: 0;
+	position: absolute;
+}
 #header {
     min-width: 100%;
     }
-.topnav {
+#headertitle {
+    margin: 0 200px 0 0; width: auto;
+    }
+    
+#headertitle h1 {
+    width: 400px;
+    }
+#headertitle h3 {
+    width: 400px;
+    }
+#outerwrapper {
+    z-index: 1;
+    height: 100%;
+    }
+    .topnav {
     width: auto; 
     min-width: 100%;
     margin: 0;
