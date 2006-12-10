@@ -1,6 +1,9 @@
+body {
+	z-index: 0;
+	position: absolute;
+}
 .docs_displaytitle {
     height: 1px;
-    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
     }
 .docs_summarytitle {
     height: 1px;
@@ -11,10 +14,6 @@
 .news_displaytitle {
     height: 1px;
     }
-body {
-	z-index: 0;
-	position: absolute;
-}
 #outerwrapper {
 	height: 1px;
 }

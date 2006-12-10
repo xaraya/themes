@@ -28,12 +28,12 @@
 			    <span style="float: right; margin: 10px 20px 0 0; z-index: 1000;"> 		    <xar:block module="search" type="search" template="contentonly" />
 		    </span>
 	    <div id="headertitle">
-	    <h1>
-	    <a href="index.php">#$sitename#</a>
-	    </h1>
-	    <h3>
-	        #$siteslogan#
-	    </h3>
+            <h1>
+                <a href="index.php">#$sitename#</a>
+            </h1>
+            <h3>
+                #$siteslogan#
+            </h3>
 	    </div>
     </div>
 	<div id ="outerwrapper">
