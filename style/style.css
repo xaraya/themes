@@ -630,6 +630,20 @@ margin-bottom: 20px;
 .faq_nexttag {float: right; margin: 0 15px 0 15px;}
 .faq_prevtag {float: right;}
 
+/* ----- FAQ user-view-faqs.xt, and admin-new-faq's templates ---- */
+.boldtext {
+    font-weight: bold;
+    }
+.unboldtext {
+    font-weight: normal;
+    }
+.italictext {
+    font-style: italic;
+    }
+.faqsuperlist {
+    list-style-type: square;
+    }
+
 /* --------------- COMMENTS STYLES ----------------- */
 div .xar-ib-actionpanel.xar-accent {
     border: solid 1px #000;
@@ -671,6 +685,73 @@ input.xar-ib-field, textarea.xar-ib-fieldtext {
     border: solid 1px #000;
     padding: 2px;
     }
+/* ---------- TINYMCE STYLES FOR STYLE DROPDOWN ---------- */
+.highlighter {
+    background: yellow;
+    font-style: italic;
+    color: #000;
+}
+
+.path {
+    font-family: "Courier New", Courier, monospace;
+
+    color: brown;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.inverse {
+background: #000;
+color: #fff;
+}
+.codeHighlight {
+    background: yellow;
+    font-style: italic;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1.2em;
+    color: #000;
+    }
+.codeOrange {
+    font-family:"Courier New", Courier, monospace;
+    font-size: 12px;
+    font-weight: bold;
+    color:#ff8212;
+    }
+.codePurple {
+    font-family:"Courier New", Courier, monospace;
+    font-size: 12px;
+    color: #830081;
+    font-weight: bold;
+    } 
+.codeGreen {
+    font-family:"Courier New", Courier, monospace;
+    font-size: 12px;
+    color: #00d000;
+    font-weight: bold;
+    }
+.codeGrey {
+    font-family:"Courier New", Courier, monospace;
+    font-size: 12px;
+    color: #999;
+    font-weight: bold;
+    }
+.codeBlack {
+    font-family:"Courier New", Courier, monospace;
+    font-size: 12px;
+    color: #000;
+    font-weight: bold;
+    } 
+.codeRed {
+    font-family:"Courier New", Courier, monospace;
+    font-size: 12px;
+    color: #ff0018;
+    font-weight: bold;
+    }
+.codeBlue {
+    font-family:"Courier New", Courier, monospace;
+    font-size: 12px;
+    color: #2c00ff;
+    font-weight: bold;
+    }     
 /* --------------- USEFUL STYLES ------------------- */
 .fauxpadding {
     margin: 5px;
