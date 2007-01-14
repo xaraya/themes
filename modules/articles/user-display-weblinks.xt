@@ -1,0 +1,54 @@
+<xar:template file="publinks" type="module" />
+<xar:categories-navigation layout="trails" showchildren="1" module="articles" itemtype="$ptid" itemid="$aid" cids="$cids" showcatcount="$showcatcount" showempty="0" />
+
+
+<div style="margin-top: 20px;">
+    <div class="docs_displaytitle">
+        #$title#
+        <xar:if condition="!empty($editurl)">
+            <a href="#$editurl#">
+                <img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" style="background: #fff;" />
+            </a>
+        </xar:if>
+    </div>
+
+    <div style="margin-top: 15px;">
+        <strong>Description:</strong> #$summary#
+    </div>   
+    <div>
+        <xar:if condition="!empty($notes)">
+            Source: #$notes#
+        </xar:if>
+    </div>
+
+    <div style="padding: 3px; border: solid 1px #e0e0e0; background: #f0f0f0; margin: 20px 0 3px 0; width: 200px;">
+        <strong>Link added:</strong>&nbsp;
+        #xarLocaleGetFormattedDate('short',$pubdate)#
+    </div>
+
+    <div style="padding: 3px; border: solid 1px #e0e0e0; background: #f0f0f0; margin: 0 0 3px 0; width: 200px;">
+        <strong>Hits:</strong> #$counter#
+    </div>
+    <div style="padding: 3px; border: solid 1px #e0e0e0; background: #f0f0f0; margin: 0 0 3px 0; width: 200px;">
+        <strong>Site link:</strong> 
+        <a href="#$redirect#">#$title#</a>
+    </div>
+<!--- prev/next --->
+<xar:if condition="!empty($prevart) || !empty($nextart)">
+    <xar:if condition="!empty($prevart)">
+        <a href="#$prevart#">&lt; <xar:mlstring>prev</xar:mlstring> </a>
+    </xar:if>
+    <xar:if condition="!empty($nextart)"> 
+        <a href="#$nextart#"><xar:mlstring>next</xar:mlstring> &gt;</a>
+    </xar:if>
+</xar:if>
+
+    <xar:if condition="!empty($hooks)">
+        <div>
+            <xar:foreach in="$hooks" key="$hookmodule">
+                #$hooks[$hookmodule]#
+            </xar:foreach>
+        </div>
+    </xar:if>
+    <xar:template file="navtabs-user" type="module" />
+</div>

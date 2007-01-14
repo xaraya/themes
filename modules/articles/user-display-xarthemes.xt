@@ -1,0 +1,107 @@
+<xar:template file="publinks" type="module" />
+<xar:categories-navigation layout="trails" showchildren="1" module="articles" itemtype="$ptid" itemid="$aid" cids="$cids" />
+<div class="xar-fullwidth xar-margin-thickbottom">
+    <div class="docs_displaytitle">#$title#
+        <xar:if condition="!empty($editurl)">
+        <span style="font-size:small;">
+            <a href="#$editurl#">
+                <img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" />
+            </a>
+        </span>
+        </xar:if>
+    </div>
+
+    <xar:if condition="!empty($categories) and count($categories) gt 0">
+        [ <xar:foreach in="$categories" value="$cat">
+            #$cat['cjoin']# <a href="#$cat['clink']#">#$cat['cname']#</a>
+        </xar:foreach> ]
+    </xar:if>
+
+    <div class="xar-thirdwidth" style="float:left;">
+        <xar:if condition="isset($themesshot_output) AND count($themesshot_output) ge '1'">
+    	    <xar:foreach in="$themesshot_output" key="$imageId">
+                <xar:image-resize src="$imageId" width="150px" constrain="1" label="$title" />
+            </xar:foreach>
+         <xar:else />
+            <div class="xar-nowrap xar-align-center" style="width:150px;">
+            <p class="xar-padding-thick"><xar:mlstring>Theme </xar:mlstring></p>
+            <p class="xar-padding-thick"><xar:mlstring>shot </xar:mlstring></p>
+            <p class="xar-padding-thick"><xar:mlstring>coming!</xar:mlstring></p>
+            </div>
+         </xar:if>
+     </div>
+    <div>
+	  #$summary#
+	  
+	  <div style="border: solid 1px #e0e0e0; background: #f0f0f0; margin-bottom: 2px; clear: left;">Demo: <a href="#$themedemolink#">#$themedemolink#</a></div>
+	  
+	  <div style="border: solid 1px #e0e0e0; background: #f0f0f0; margin-bottom: 2px;">
+	  Version: #$themeversion#
+	  </div>
+
+
+        <div style="border: solid 1px #e0e0e0; background: #f0f0f0; margin-bottom: 2px;">	  
+        <strong><xar:mlstring>Author: </xar:mlstring></strong>
+        <xar:if condition="!empty($profile)">
+            <xar:set name="$author_string">'
+            <a href="'.$profile.'">'.$author.'</a>'</xar:set>
+            <xar:else />
+            <xar:set name="$author_string">#$author#</xar:set>
+        </xar:if>
+
+        #$author_string#
+        </div>
+        <div style="border: solid 1px #e0e0e0; background: #f0f0f0; margin-bottom: 2px;">
+        Website: <a href="#$themewebsite#">#$themewebsite#</a>
+        </div>
+        
+
+<div style="border: solid 1px #e0e0e0; background: #f0f0f0; margin-bottom: 2px;">
+Download URL: 
+</div>
+<!-- REMOVE DOWNLOADURL FOR NOW        
+        
+        <p><strong><xar:mlstring>Download: </xar:mlstring></strong>
+        <xar:if condition="strlen(trim($downloadurl)) ne 0">
+             #$downloadurl_output#
+        <xar:else />
+            <xar:mlstring>No download provided at this time</xar:mlstring>
+        </xar:if>
+        </p>
+-->       
+        <xar:if condition="!empty($editurl)"> <xar:comment>Show submitted file to Admins only</xar:comment>
+	        <xar:if condition="empty($notes)">
+
+            <xar:elseif condition="xarModIsHooked('uploads','articles',$pubtypeid) and substr($notes,0,1) eq ';'" />
+            <p><strong><xar:mlstring>Theme Admin Download:</xar:mlstring></strong>
+                <xar:set name="notes_output">xarModAPIFunc('uploads','user','showoutput',array('value' => $notes, 'multiple' => true))</xar:set>
+                    <xar:foreach in="$notes_output" key="$fileid" value="$fileinfo">
+                        <a href="#$fileinfo['fileDownload']#">#$fileinfo['fileName']#</a>
+                    </xar:foreach>
+                <xar:elseif condition="file_exists('var/uploads/'.$notes)" />
+                    <a href="var/uploads/#$notes#" title="#$notes#">#$notes#</a>
+                <xar:else />
+                    #$notes#
+           </xar:if>
+            </p>
+      </xar:if>
+    </div>
+</div>
+<div class="xar-clearboth">&nbsp;</div>
+
+<xar:if condition="!empty($prevart) || !empty($nextart)">
+<br />
+<div class="xar-floatleft">
+<xar:if condition="!empty($prevart)"><a href="#$prevart#">&lt; <xar:mlstring>prev</xar:mlstring> </a></xar:if>
+</div>
+<div class="xar-floatright">
+&nbsp;<xar:if condition="!empty($nextart)"> <a href="#$nextart#"><xar:mlstring>next</xar:mlstring> &gt;</a></xar:if>
+</div>
+</xar:if>
+
+<xar:if condition="!empty($hooks)">
+<br />
+<xar:foreach in="$hooks" key="$hookmodule">
+#$hooks[$hookmodule]#
+</xar:foreach>
+</xar:if>

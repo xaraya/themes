@@ -1,0 +1,23 @@
+<h1 class="blogtitle_summary">
+    <a href="#$link#">#$title#</a>
+        <xar:sec mask="AdminArticles" catch="false">
+            <span class="xar-sub"><a href="#xarModURL('articles','admin','modify', array('aid' => $aid))#"><img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" style="background: #fff;" /></a></span>
+        </xar:sec> </h1>
+<div class="blogauthor">Posted by #$author#, on
+	<xar:if condition="isset($pubdate)">
+        <xar:ml>
+            <xar:mlstring>#(1) #(2)</xar:mlstring>
+            <xar:mlvar>#xarLocaleGetFormattedDate('short',$pubdate)#</xar:mlvar>
+            <xar:mlvar>#xarLocaleGetFormattedTime('short',$pubdate)#</xar:mlvar>
+        </xar:ml>
+    </xar:if>
+    <span class="blogcomments">( #$comments# )</span>
+</div>
+    <xar:if condition="isset($summary)">
+        <div class="blogsummary">#$summary#</div>
+    </xar:if>
+<xar:comment>
+    <div style="">
+        <a href="index.php/blog/archive"> &raquo;&nbsp;View Blog Archives</a>
+    </div>
+</xar:comment>

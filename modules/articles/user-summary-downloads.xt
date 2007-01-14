@@ -1,0 +1,71 @@
+<xar:comment>
+This template has a conditional which has two versions of the user-summary-downloads template. The first version is the standard layout, intended for the article section, or wherever. The second layout is intended only for use on the homepage, which is set as 'base'. Thus the base module is set to be the homepage, and the second layout will display.
+</xar:comment>
+
+<xar:if condition="xarModGetName() ne 'base'"> 
+	    <xar:comment>
+			This is the first layout, intended to be viewed anywhere on the site
+		</xar:comment>
+<!-- begin downloads template 1 -->
+
+<div class="xar-norm xar-standard-box-padding" style=" border: dashed 1px #999; margin-bottom: 5px;">
+    <h3>
+        <a href="#$link#" class="xar-title">#$title#</a> 
+		<xar:if condition="!empty($comments)">
+            <span style=" font-size: 11px; font-weight: normal; font-style: italic;">(#$comments#) </span>
+<xar:sec mask="AdminPanel" catch="false">
+    <a href="#xarModURL('articles','admin','modify', array('aid' => $aid))#"> 
+        &nbsp;<img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" />
+    </a>
+</xar:sec>
+        </xar:if>
+		
+    </h3>
+    <xar:if condition="!empty($categories) and count($categories) gt 0">[ 
+    <xar:foreach in="$categories" value="$cat">#$cat['cjoin']# 
+    <a href="#$cat['clink']#">#$cat['cname']#</a></xar:foreach>]</xar:if>
+    <p><strong><xar:mlstring>Description:</xar:mlstring></strong> #$summary#</p>
+    <strong><xar:mlstring>Download</xar:mlstring>: </strong>
+    <xar:if condition="empty($notes)">
+        <xar:elseif condition="xarModIsHooked('uploads','articles',$pubtypeid) and substr($notes,0,1) eq ';'" />
+        <xar:comment>If you hook the uploads module to articles, then file upload fields will contain a comma-separated list of file ids, and you will need to call an API function to retrieve the file information. For dynamic extra fields, you can use [fieldname]_output directly to access the file information.</xar:comment>
+        <xar:set name="notes_output">xarModAPIFunc('uploads','user','showoutput',array('value' => $notes, 'multiple' => true))</xar:set>
+        <xar:foreach in="$notes_output" key="$fileid" value="$fileinfo">
+                <a href="#$fileinfo['fileDownload']#">#$fileinfo['fileName']#</a>
+        </xar:foreach>
+        <xar:elseif condition="file_exists('var/uploads/'.$notes)" />
+        <p>
+            <a href="var/uploads/#$notes#" title="#$notes#">#$notes#</a>
+        </p>
+        <xar:else />
+        <p>#$notes#</p>
+    </xar:if>
+    <div class="xar-articles-keywords">
+        <xar:if condition="!empty($keywords)">
+        <xar:mlstring>Keywords</xar:mlstring>: 
+        <xar:loop name="$keywords">
+            <a href="#xarModUrl('keywords', 'user', 'main', array('keyword' => $loop:item['keyword']))#" title="#$loop:item['keyword']#">#$loop:item['keyword']#</a>
+        </xar:loop></xar:if>
+    </div>
+</div>
+<!-- end downloads template 1 -->
+<xar:else />
+		<xar:comment>
+			This is the second layout, intended to be viewed only on the homepage (base module)
+		</xar:comment>
+
+<!-- begin second template stuff -->
+    <div class="docs_summarytitle" > 
+        <img src="#xarTplGetThemeDir()#/images/frontpage/downloads_frontpage.gif" />
+        <a href="#$link#">#$title#</a>
+        <xar:sec mask="AdminArticles" catch="false">
+            <span class="xar-sub"><a href="#xarModURL('articles','admin','modify', array('aid' => $aid))#"> <img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" /></a></span>
+        </xar:sec>        
+        <h5 >
+        <xar:mlvar>
+            #xarLocaleGetFormattedDate('short',$pubdate)#
+        </xar:mlvar>
+        </h5>
+    </div>
+<!-- end second template stuff -->
+</xar:if>

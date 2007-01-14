@@ -1,0 +1,722 @@
+@import "verticalmenu.css";
+@import "code.css";
+/* Styles for 'purplenurple' theme, updated 6 Jan 2007 */
+a:link, a:visited {
+    text-decoration: underline;
+    color: #9d0a0e;
+    }
+a:active, a:hover {
+    text-decoration: none;
+    color: red;
+    }
+td.xar-norm { background: #fff;}
+td.xar-alt {background: #f0f0f0;}
+body {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    background: #999;
+    }
+
+div {font-size: 12px;}
+
+img {border: none;}
+input {border: solid 1px #7182b8; padding: 2px;}
+textarea {border: solid 1px #7182b8; padding: 2px;}
+fieldset {
+    border: solid 1px #7182b8;
+    background: #fff;
+    margin: 5px 0;
+    padding: 15px;
+    }
+legend {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px 5px;
+    min-width:10em;
+    display:block;
+    border: solid 1px #7182b8;
+    color: #666;
+    background: #f0f0f0;
+    }
+code {
+    font-family:"Courier New", Courier, monospace;
+    font-size: 11px;
+    color:#660066;
+    }
+pre {
+    font-family:"Courier New", Courier, monospace;
+    font-size: 11px;
+    color: #009900;
+    font-weight: bold;
+    }
+	
+h1, h2, h3, h4 {
+    color: #7182b8;
+    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    padding: 0;
+    margin: 0;
+    }
+
+/*  XARAYA REQUIRED ANONYMOUS CLASSES  */
+
+/* these defaults apply to the left block group */
+.xar-block-head{
+    text-align: center;
+    border-bottom: dotted 1px #000;
+    margin-bottom: 4px;
+    }
+.xar-block-title {
+    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    font-weight: bold;
+    color: #7182b8;
+    }
+.xar-block-body {
+    font-size: 10px;
+    }
+.xar-block-foot {
+    margin-bottom: 10px;
+    }
+
+/* right block group classes */
+.xar-block-head-right{
+    text-align: center;
+    border-bottom: dotted 1px #000;
+    margin-bottom: 4px;
+    }
+.xar-block-title-right {
+    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    font-weight: bold;
+    color: #7182b8;
+    }
+.xar-block-body-right {
+    font-size: 10px;
+    }
+.xar-block-foot-right {
+    margin-bottom: 10px;
+    }
+
+/* topnav block group classes */
+.xar-block-head-topnav {}
+.xar-block-title-topnav {}
+.xar-block-body-topnav {}
+.xar-block-foot-topnav {}
+
+/* center block group classes */
+.centerblock_wrapper {
+    margin-bottom: 10px;
+    }
+.centerblock_head{
+    text-align: center;
+    margin: 0 0 10px 0;
+    background: url(../images/centerhd_bg.png) no-repeat; 
+    height: 36px;
+    color: #7182b8;    
+    }
+.centerblock_title {
+    font-size: 16px;
+    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    font-weight: bold;
+    padding-top: 7px;
+    }
+.centerblock_body { 
+    font-size: 12px;
+    margin: 0 15px 10px 15px;}
+.centerblock_foot {
+    margin-bottom: 10px;
+    }
+/* end centerblock classes */
+.xar-mod-head {}
+.xar-mod-title {
+    font-size: 18px;
+    }
+.xar-mod-body {}
+.xar-mod-foot {}
+.xar-alt {}
+.xar-accent {
+    background: #e0e0e0;
+    }
+.xar-alt-outline {}
+.xar-accent-outline {
+	border: solid 1px #7182b8;
+	background: #f0f0f0;
+	}/* also provides background for comment bbcode box  */
+.xar-norm-outline {}
+.xar-norm {}
+.xar-sub {
+    font-size: 9px;
+    color:#666;
+    }
+/* --------------------- THE MENU STYLES ------------------- */
+.xar-menu-section {
+    margin: 0;
+    padding: 0;
+    list-style:none;
+    color: #7182b8;
+    }
+.xar-menu-section-current {
+    margin: 0;
+    padding: 0;
+    list-style:none;
+    color: #FFCC66;
+    }
+.xar-menu-item {
+    list-style-type: square;
+    color: #003663;
+}
+.xar-menu-item-current {
+    color: #999; /* makes the bullet a lighter color */
+}
+.xar-menu-item .xar-menu-item-current a:link, .xar-menu-item .xar-menu-item-current a:visited {
+    color: #999;
+    }
+.xar-menu-item .xar-menu-item-current a:active, .xar-menu-item .xar-menu-item-current a:hover {
+    color: #999;
+    }
+.xar-menu-item:hover {
+    color: red; /* makes bullet red when hovering over item */
+}
+/* ----- a little fun ----- */
+.xar-menu-item a:link, .xar-menu-item a:visited {
+    color: #003663;
+    }
+.xar-menu-item a:active, .xar-menu-item a:hover {
+    color: #999;
+    }
+/* ---------- yay ---------- */
+.xar-menu-subitem {
+    color: #003663;
+}
+.xar-menu-subitem:hover {
+    color: red;
+    }
+.xar-menu-subitem a:link, .xar-menu-subitem a:visited {
+    color: #003663;
+    }
+.xar-menu-subitem a:active, .xar-menu-subitem a:hover {
+    color: #999;
+    }
+.xar-menu-subitem-current {
+    color: #999;
+}
+.xar-menu-item .xar-menu-item-current .xar-menu-subitem a:link, .xar-menu-item .xar-menu-item-current .xar-menu-subitem a:visited {
+    color: #003663;
+}
+.xar-menu-item .xar-menu-item-current  .xar-menu-subitem  a:active, .xar-menu-item .xar-menu-item-current  .xar-menu-subitem  a:active {
+    color: #999;
+}
+/* --------------------- END THE MENU STYLES --------------- */
+.xar-title {
+    font-size: 18px;
+    }
+.xar-error {}
+/* theme specific styles */
+
+/* ---------------- HEADER STYLES ------------------------------------- */
+.header {
+    background:url(../images/header/header_image.png) no-repeat #999;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    }
+/* -- the .sitename, and .slogan are not used in this theme, but are 
+    useful if styling the sitename, and slogan somewhere --*/
+.sitename {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    color: #fff;
+    }
+.sitename a:link, .sitename a:visited {
+    color: Yellow;
+    }
+.sitename a:active, .sitename a:hover {
+    color: #FFDEAD;
+    }
+.slogan {
+    position: relative;
+    top: 30px;
+    left: 0px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    color: #fff;
+    }
+
+/* ----------------- BEGIN TOP NAV BAR STYLES ------------------------- */
+.topnav {
+    background: #7182b8; /* colors the background of topnav */
+    margin: 0;
+    padding: 0;
+    height: 25px; 
+} 
+.topnav ul, .topnav li {
+    display: inline;
+    margin-left: 0;
+    padding: 0px 15px; 
+    list-style: none;
+    background: none !important;
+} 
+/* -----------------------------------------------------------
+VERY IMPORTANT: 
+The .topnav ul, .topnav li is very important need this! It is
+basically what controls the outer appearance of the menu. 
+---------------------------------------------------------- */
+.topnavblock {
+    padding: 5px;
+    margin: 0;
+    }
+.topnav ul {}
+.topnav li {}
+.topnav-menu-section {
+    margin: 0 0 0 10px;
+    padding: 0;
+    list-style:none;
+    display: inline;
+    }
+.topnav-menu-section ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline;
+    }
+.topnav-menu-section ul li {
+    list-style: none;
+    margin: 0;
+    padding:0;
+    display: inline;
+    background: #e0e0e0;
+    }
+.topnav-menu-item li {}
+.topnav-menu-item-current { background: #fff !important; }
+.topnav a:link, .topnav a:visited {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #fcf8b6;
+    padding: 5px 5px 5px 5px;
+    z-index: 1000;
+    border-collapse:collapse;
+    }
+.topnav a:active, .topnav a:hover {
+    color: #ccc;
+    text-decoration: none;
+    }
+/* ----------------- END TOP NAV BAR STYLES ------- */
+.xpage {
+    width: 780px;
+    margin: 0 auto;
+    background: url(../images/page_bg.png) top right repeat-y #fff;
+    border: solid 0px #ccc;
+    }
+.xcontentcontainer {
+    float: left;
+    width: 100%;
+    background: none;
+    }
+.xcontent {
+    margin-right: 180px;
+    background: none;
+    }
+.xrightcol {
+    float: left;
+    width: 180px;
+    margin-left: -180px;
+    }
+.footer {
+    font-size: 10px;
+    color: #fff;
+    background: #7182b8;
+    text-align: center;
+    margin: 0px;
+    padding: 5px 0;
+    }
+.footer a:link, .footer a:visited {
+    text-decoration: none;
+    color: #fcf8b6;
+    }
+.footer a:active, .footer a:hover {
+    text-decoration: none;
+    color: #999;
+    }
+
+/* --------------- RANDOM QUOTES BLOCK ------------- */
+.quote_summary {
+    font-style: italic;
+    font-size: 10px;
+    }
+.quote_title { 
+    color: #CC3333; /* author name */
+    font-size: 10px;
+    } 
+
+/* --------------- BLOG SUMMARY AND DISPLAY TEMPLATES ------ */
+.blogtitle_summary {
+    border-bottom: solid 1px #999; 
+    border-top: solid 1px #999; 
+    font-size: 14px; 
+    padding: 3px;
+    margin: 0;
+    }
+.blogtitle_summary h1 {
+    margin: 0;
+    padding: 0;
+    }
+.blogauthor {
+    color: #999;
+    font-size: 10px;
+    margin-bottom: 10px;
+    }
+.blogcomments {
+    margin-left: 10px; 
+    font-style: italic;
+    }
+.blogsummary {
+    font-size: 11px; 
+    font-family: 'Courier New', Courier, mono; 
+    color: #000; 
+    padding: 5px;
+    }
+.blog_displaycontainer {
+    margin: 0 20px 0 20px; 
+    border: dashed 1px #999; 
+    padding: 8px;
+    }
+.blog_displaytitle {
+    margin-bottom: 20px; 
+    background: #000; 
+    padding: 5px;
+    font-size:14px;
+    font-weight: bold;
+    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    color: #fff;
+    }
+/* --------------- NEWS SUMMARY & DISPLAY TEMPLATES -------- */
+.newssummary_title {
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: solid 1px #e0e0e0;
+    }
+div.newssummary_title h5 {
+    float: right; 
+    margin: -1.33em 3px 0 0; 
+    padding: 0; 
+    color: #667;
+    background: #fff;
+    font-size: 10px;
+    font-weight: normal;
+    font-style: italic;
+    }
+.newssummary_title a:link, .newssummary_title a:visited {
+    color: #003663;
+    background: #fff;
+    text-decoration: none;
+    }
+.newssummary_title a:hover, .newssummary_title a:active {
+    color: #ccc;
+    background: #fff;
+    text-decoration: none;
+    }
+.news_summarycontent {
+    margin: 10px 5px 5px 5px;
+    }
+.news_displaytitle {
+    margin-bottom: 5px; 
+    background: #7182b8; 
+    padding: 5px;
+    font-size:14px;
+    font-weight: bold;
+    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    color: #fff;
+    }
+.news_displaytitle a:link, .news_displaytitle a:visited {
+    color: #fff;
+    text-decoration: none;
+    }
+
+
+/* --------------- DOCUMENT SUMMARY & DISPLAY TEMPLATES ------ */
+.docs_displaytitle {
+    margin-bottom: 5px; 
+    background: #7182b8; 
+    padding: 5px;
+    font-size:14px;
+    font-weight: bold;
+    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    color: #fff;
+    }
+.docs_summarytitle {
+    font-size: 12px;
+    font-weight: bold;
+    border-bottom: solid 1px #e0e0e0;
+    }
+div.docs_summarytitle h5 {
+    float: right; 
+    margin: -1.33em 3px 0 0; 
+    padding: 0; 
+    color: #667;
+    font-size: 10px;
+    font-weight: normal;
+    font-style: italic;
+    }
+	
+.docs_summarytitle a:link, .docs_summarytitle a:visited {
+    color: #003663;
+    text-decoration: none;
+    }
+.docs_summarytitle a:hover, .docs_summarytitle a:active {
+    color: #ccc;
+    text-decoration: none;    
+    }
+/* --------------- WEBLINKS SUMMARY & DISPLAY STYLES ---*/
+.links_summarytitle {
+    font-size: 12px;
+    font-weight: bold;
+    border-bottom: solid 1px #e0e0e0;
+    margin: 0 0 3px 0;
+    }
+div.links_summarytitle h5 {
+    float: right; 
+    margin: -1.33em 3px 0 0; 
+    padding: 0; 
+    color: #667;
+    font-size: 10px;
+    font-weight: normal;
+    font-style: italic;
+    }
+	
+.links_summarytitle a:link, .links_summarytitle a:visited {
+    color: #003663;
+    text-decoration: none;
+    }
+.links_summarytitle a:hover, .links_summarytitle a:active {
+    color: #ccc;
+    text-decoration: none;    
+    }
+
+
+/* --------------- FAQ SUMMARY & DISPLAY STYLES ---- */
+h2.faq_title {
+    padding: 0; 
+    margin: 20px 0 0 0;
+    color: #000;
+    }
+h3.faq_title {
+    padding: 0; 
+    margin: 0 0 10px 0;
+    border-bottom: dotted 1px #666;
+    }
+.faq_title a:link, .faq_title a:visited {color: #003663;}
+.faq_title a:hover, .faq_title a:active {color: #ccc;}
+faqsummary_wrapper {
+margin-bottom: 20px;
+} /* -- this is the wrapper around the entire summary on
+    user-summary-faq ---- */
+.faq_summarybody {
+    margin: 0 15px;
+    }
+.faq_sumsum {
+    font-style: italic;
+    margin: 0 10px 15px 10px;
+    }
+.faq_sumbody {}
+.faq_displaywrapper {
+    margin: 0 10px 30px 10px;
+}
+.faq_displaysummary {font-style: italic;}
+.faq_submittedby {
+    font-size: 10px;
+    color: #999;
+    }
+.faq_displaybody {margin: 20px 0 0 0;}
+.faq_nexttag {float: right; margin: 0 15px 0 15px;}
+.faq_prevtag {float: right;}
+
+/* ----------- THEMES SUBMISSION STYLES ------------ */
+
+.submission_sumwrapper {
+margin-bottom: 10px;
+}
+.submission_summarytitle {
+margin-bottom: 4px;
+}
+.submission_summarytitle {
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: solid 1px #e0e0e0;
+    }
+div.submission_summarytitle h5 {
+    float: right; 
+    margin: -1.33em 3px 0 0; 
+    padding: 0; 
+    color: #667;
+    font-size: 10px;
+    font-weight: normal;
+    font-style: italic;
+    }
+	
+.submission_summarytitle a:link, .submission_summarytitle a:visited {
+    color: #003663;
+    text-decoration: none;
+    }
+.submission_summarytitle a:hover, .submission_summarytitle a:active {
+    color: #ccc;
+    text-decoration: none;    
+    }
+
+/* --------------- COMMENTS STYLES ----------------- */
+div .xar-ib-actionpanel.xar-accent {
+    border: solid 1px #000;
+  	background: url(../images/bbcodepanel_bg.png) repeat-x;
+    }
+
+.xar-ib-actionpanel {
+    width: 14em;
+    float: right;
+    padding: 0 .25em;;
+    height:19em;
+    margin: 10px 5px 10px 5px;
+}    
+
+input.xar-ib-field, textarea.xar-ib-fieldtext {
+    border: solid 1px #000;
+    margin: 10px auto;
+    width: 90% !important;
+    font-family:"Courier New", Courier, monospace;
+    font-size: 12px;
+}
+
+.xar-cm-note {} /* the font for 'not responsible for comments...etc */
+
+.xar-ib-wrapper {
+    margin: 0;
+    padding: .25em;
+    height: 21em !important;
+}
+
+/* --------------- REGISTRATION BLOCK -------------- */
+.rlogin_input {
+    width: 100px;
+    border: solid 1px #7182b8;
+    }
+
+/*---------------- TOP ITEMS BLOCK ----------------- */
+.topitemsblock {
+	list-style-type: none;
+	font-size: 10px;
+	margin: 0;
+	padding: 0;	
+	}
+.topitemsblock ul {
+	list-style-type: square;
+	margin: 0 10px 0 15px;
+	padding: 3px;
+	}	
+.topitemsblock ul li {
+	list-style-type: square;
+	margin: 0;
+	padding: 0;
+	}
+	
+/* --------------- USEFUL STYLES ------------------- */
+.fauxpadding {
+    margin: 5px;
+    }
+.hidden { visibility: hidden;}
+.clearboth { clear: both; }
+.clearright { clear: right; }
+.clearleft {clear: left; }
+.bordered_input {border: solid 1px #008080;}
+
+
+/* other interesting styles for forms */
+ .xar-form-input-wrapper input {
+border: solid 1px #000;
+} /* adds border around the name, email, and organization input boxes */
+.xar-form-input-wrapper select {
+border: solid 1px #000;
+} /* adds a border around the select menu */  
+
+
+/* more styles for forms --------------------------------- */
+.xar-form-label {
+border-bottom: dotted 1px #000;
+}
+
+
+/* end the styles for forms ----------------------------- */
+
+/* --------- ROUNDBLOCK CLASSES -------- */
+.roundblock h1, .roundblock h2, .roundblock h3, .roundblock h4, .roundblock h5 {color: #4E6281;}
+.roundblock {
+    background: #dadeed; 
+    color: #666;
+    margin-bottom: 20px;
+    }
+.blockspacer {padding: 10px;}
+.roundblock_ul {
+    background:url(../images/blocks/roundblock/roundblock_ul.gif) no-repeat left top;
+    margin: 0;
+    padding: 0;
+    }
+.roundblock_ur {
+    background:url(../images/blocks/roundblock/roundblock_ur.gif) no-repeat right top;
+    margin: 0;
+    padding: 0;
+    }
+.roundblock_ll {
+    background:url(../images/blocks/roundblock/roundblock_ll.gif) no-repeat left bottom;
+    margin: 0;
+    padding: 0;
+    }
+.roundblock_lr {
+    background:url(../images/blocks/roundblock/roundblock_lr.gif) no-repeat right bottom;
+    margin: 0;
+    padding: 0;
+    }
+/* ----------------------bullet image styles ------------- */
+.rssbullet {
+    list-style-image: url(../images/rss_icon.gif);
+    } /* used in rss.center.xt */
+ .checkmarkbullet {
+    list-style-image: url(../images/checkmark_bullet.gif);
+    }  
+/* ----- RSSBLOCKS ----- */
+.rssheader {
+    background: url(../images/rssheaderbg.gif) repeat-x;
+    height: 28px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    color: #fff;
+}
+.rssheader a:link, .rssheader a:visited {
+color: #fcf8b6;
+}
+.rssheader a:active, .rssheader a:hover {
+color: #e4ecec;
+}
+.rssheader h2 {
+padding-top: 5px;
+text-align: center;
+color: #fff;
+font-size: 14px;
+}
+
+/* ------ MISCELLANEOUS ---------- */
+.boldtext {
+    font-weight: bold;
+    }
+.unboldtext {
+    font-weight: normal;
+    }
+.italictext {
+    font-style: italic;
+    }
+.faqsuperlist {
+    list-style-type: square;
+    }

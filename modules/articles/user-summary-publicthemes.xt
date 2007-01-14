@@ -1,0 +1,87 @@
+<xar:comment>
+This template has a conditional which has two versions of the user-summary-docs template. The first version is the standard layout, intended for the article section, or wherever. The second layout is intended only for use on the homepage, which is set as 'base'. Thus the base module is set to be the homepage, and the second layout will display.
+</xar:comment>
+
+<xar:if condition="xarModGetName() ne 'base'"> 
+<xar:comment>
+	This is the first layout, intended to be viewed anywhere on the site
+</xar:comment>
+<div  class="submission_sumwrapper">
+    <div class="submission_summarytitle"> 
+        <a href="#$link#">#$title#</a>
+        <xar:sec mask="AdminArticles" catch="false">
+            <span class="xar-sub">
+                <a href="#xarModURL('articles','admin','modify', array('aid' => $aid))#">
+                    <img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" />
+                </a>
+            </span>
+        </xar:sec>        
+        <h5 >
+            <xar:mlvar>
+                #xarLocaleGetFormattedDate('short',$pubdate)#
+            </xar:mlvar>
+        </h5>
+    </div>
+
+<!-- SCREENSHOT -->
+    <div  style="float:left; margin: 0 20px 4px 0; clear:left; border: solid 1px #000;">
+        <xar:if condition="isset($themesshot_output) AND count($themesshot_output) ge '1'">
+    	    <xar:foreach in="$themesshot_output" key="$imageId">
+                <xar:image-resize src="$imageId" width="150px" constrain="1" label="$title" />
+            </xar:foreach>
+        <xar:else />
+            <div class="xar-nowrap xar-align-center" style="width:150px;">
+            <p class="xar-padding-thick"><xar:mlstring>Screen </xar:mlstring></p>
+            <p class="xar-padding-thick"><xar:mlstring>shot </xar:mlstring></p>
+            <p class="xar-padding-thick"><xar:mlstring>coming soon!</xar:mlstring></p>
+            </div>
+        </xar:if>
+    </div>
+<!-- END SCREENSHOT -->
+          
+    <div class="submission_summarybody">
+        <p>#$summary#</p>
+        <p>
+            <xar:ml>
+                <xar:mlstring>Submitted by: #(1)</xar:mlstring>
+                <xar:mlvar>#$author#</xar:mlvar>
+            </xar:ml>
+        </p>
+        <div style="border: solid 1px #e0e0e0; background: #f0f0f0; clear: left;">
+
+</div>
+
+<xar:if condition="!empty($themeupload)">
+<xar:set name="fileInfo">current($themeupload_output)</xar:set>
+<a href="#$fileInfo['fileDownload']#">#$fileInfo['fileName']#</a>
+</xar:if>
+
+        <div class="xar-align-right " style="float:left;margin-bottom: 15px;">
+            <xar:if condition="!empty($comments)">
+            <a href="#$link##comments">#$comments# &raquo;</a>
+            </xar:if>
+        </div>
+    </div>
+    <hr style="clear: left; visibility: hidden;" />
+</div>
+
+<xar:else />
+
+<xar:comment>
+	This is the second layout, intended to be viewed only on the homepage (base module)
+</xar:comment>
+
+    <div class="docs_summarytitle" > 
+        <img src="#xarTplGetThemeDir()#/images/frontpage/theme_frontpage.gif" />
+        <em>Theme Download</em>: <a href="#$link#">#$title#</a>
+        <xar:sec mask="AdminArticles" catch="false">
+            <span class="xar-sub"><a href="#xarModURL('articles','admin','modify', array('aid' => $aid))#"> <img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" /></a></span>
+        </xar:sec>        
+        <h5 >
+        <xar:mlvar>
+            #xarLocaleGetFormattedDate('short',$pubdate)#
+        </xar:mlvar>
+        </h5>
+    </div>
+
+</xar:if>

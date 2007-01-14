@@ -1,0 +1,53 @@
+/* CSS Document */
+
+div .xarbb-tablewrapper {
+background: #fff;
+border: solid 1px #008080;
+}
+
+div .xarbb-tablewrapper th {
+background: #008080;
+color: #fff;
+/* border: solid 1px #008080; */
+}
+
+div.xarbb-tablewrapper table td.forumname {
+	background: #f0f0f0;
+	
+}
+div.xarbb-tablewrapper table td.forumname span.xar-title {
+font-size: 12px;
+font-weight: bold;
+}
+.lastpost {
+background: #f0f0f0 !important;
+}
+div.xarbb-tablewrapper table td.icon {
+background: #e0e0e0;
+}
+div.xarbb-legendwrapper {
+background: #e0e0e0;
+}
+div.xarbb-noteswrapper {
+background: ;
+}
+
+div.xarbb-tablewrapper table td.author {
+background: #e0e0e0;
+}
+
+div.xarbb-tablewrapper table td.message {
+background: #f0f0f0;
+width: 100%;
+}
+
+div.xarbb-tablewrapper table td.forumgroup h4 {
+/* 	
+line-height: 10% !important;
+height: 18px; */
+margin: 2px 0 2px 5px;
+padding: 0;
+}
+div.xarbb-tablewrapper table td.forumgroup {
+/* add background color, or whatever here */
+}

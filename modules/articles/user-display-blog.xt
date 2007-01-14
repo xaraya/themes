@@ -1,0 +1,20 @@
+<div class="blog_displaycontainer">
+    <h1 style="margin-bottom: 20px;">
+        The <xar:var scope="module" module="themes" name="SiteName"/> Blog....
+    </h1>
+    <div class="blog_displaytitle"> #$title#
+        <xar:if condition="!empty($editurl)">
+            <a href="#$editurl#"><img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" style="background: #fff;" /></a>
+        </xar:if>
+    </div>
+    <div>#$summary#</div>
+    <div>#$body#</div>
+    <div>#$notes#</div>
+    <xar:if condition="!empty($hooks)">
+        <br />
+        <xar:foreach in="$hooks" key="$hookmodule">
+            #$hooks[$hookmodule]#
+        </xar:foreach>
+    </xar:if>
+    <xar:template file="navtabs-user" type="module" />
+</div>

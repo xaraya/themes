@@ -1,0 +1,42 @@
+<div style="margin: 10px;"><a href="index.php?module=articles&type=admin&func=new&ptid=4">&raquo;&raquo; Submit a Question!! </a></div>
+<xar:set name="properties">#xarModAPIFunc('dynamicdata','user','getobject',array('module'=>'articles','itemtype'=>4))#</xar:set>
+<xar:set name="values">#xarModAPIFunc('dynamicdata','user','getitems', array('module'=> 'articles','itemtype'=> 4))#</xar:set>
+<xar:set name="rootcategory" >xarModAPIFunc('categories','user','getcat', array('cid' => 20))</xar:set>
+<xar:set name="primarycategory">xarModAPIFunc('categories','user','getchildren', array('cid' => 20))</xar:set>
+<xar:comment><strong style="color: red;">#$rootcategory[0]['name']#</strong></xar:comment>
+<ul class="faqsuperlist">
+	<xar:foreach in="$primarycategory" value="$primarycategoryout">
+ 		<li class="boldtext">#$primarycategoryout['name']#
+            <!--start trying to get articles from primary category if they exist-->
+            <xar:set name="$articletitlez">xarModAPIFunc('articles','user','getall', array('ptid' => 4, 'cids' => array($primarycategoryout['cid'] )))</xar:set>
+<ul class="unboldtext">
+<xar:foreach in="$articletitlez" value="$articletitlezout">
+    <li class="faqsuperlist">
+        <xar:set name="articlelink">#xarModURL('articles','user','display',array('ptid'=>4,
+'aid'=>$articletitlezout['aid']))#</xar:set>
+        <a href="#$articlelink#"> #$articletitlezout['title']#</a>
+    </li>
+</xar:foreach>
+</ul>
+            <!--end trying to get articles from primary category if they exist-->
+ 	        <xar:set name="secondarycategory">xarModAPIFunc('categories','user','getchildren',array('cid'=>$primarycategoryout['cid']))</xar:set>
+  			<ul class="faqsuperlist boldtext italictext">
+  			<xar:foreach in="$secondarycategory" value="$secondarycategoryout">
+   				<li>#$secondarycategoryout['name']#</li>
+   				<xar:set name="$articletitlez">xarModAPIFunc('articles','user','getall', array('ptid' => 4, 'cids' => array($secondarycategoryout['cid'] )))</xar:set>
+  					<ul class="unboldtext unitalictext">
+  					<xar:foreach in="$articletitlez" value="$articletitlezout">
+   						<li>
+   						<xar:set name="reflist">#xarModAPIFunc('articles','user','getall',array('ptid'=>4, 'aids'=>array($articletitlezout['aid'])))#</xar:set>
+							<xar:foreach in="$reflist" key="$i">
+                            <xar:data-getitem name="$properties" values="$values" module="articles" itemtype="4" itemid="$articletitlezout['aid']" />
+							<xar:set name="articlelink">#xarModURL('articles','user','display',array('ptid'=>4,'aid'=>$reflist.$i.aid))#</xar:set>
+ 							<a href="#$articlelink#"> #$articletitlezout['title']#</a>
+ 							</xar:foreach>
+							</li>
+  			</xar:foreach>
+				</ul>
+ </xar:foreach>
+ </ul>
+</xar:foreach>
+</ul>

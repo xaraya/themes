@@ -1,0 +1,47 @@
+<div  class="submission_sumwrapper">
+    <div class="submission_summarytitle"> 
+        <a href="#$link#">#$title#</a>
+        <xar:sec mask="AdminArticles" catch="false">
+            <span class="xar-sub">
+                <a href="#xarModURL('articles','admin','modify', array('aid' => $aid))#">
+                    <img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" />
+                </a>
+            </span>
+        </xar:sec>        
+        <h5 >
+            <xar:mlvar>
+                #xarLocaleGetFormattedDate('short',$pubdate)#
+            </xar:mlvar>
+        </h5>
+    </div>
+
+<!-- SCREENSHOT -->
+    <div  style="float:left; margin-right: 20px; clear:left;">
+        <xar:if condition="isset($themesshot_output) AND count($themesshot_output) ge '1'">
+    	    <xar:foreach in="$themesshot_output" key="$imageId">
+                <xar:image-resize src="$imageId" width="150px" constrain="1" label="$title" />
+            </xar:foreach>
+        <xar:else />
+            <div class="xar-nowrap xar-align-center" style="width:150px;">
+            <p class="xar-padding-thick"><xar:mlstring>Theme </xar:mlstring></p>
+            <p class="xar-padding-thick"><xar:mlstring>shot </xar:mlstring></p>
+            <p class="xar-padding-thick"><xar:mlstring>comming!</xar:mlstring></p>
+            </div>
+        </xar:if>
+    </div>
+<!-- END SCREENSHOT -->
+          
+    <div class="submission_summarybody xar-threequarterswidth">
+        <p>#$summary#</p>
+        <p>
+            <xar:ml>
+                <xar:mlstring>Submitted by: #(1)</xar:mlstring>
+                <xar:mlvar>#$author#</xar:mlvar>
+            </xar:ml>
+        </p>
+        <div class="xar-align-right " style="float:left;margin-bottom: 15px;">
+            <a href="#$link##comments">#$comments# &raquo;</a>
+        </div>
+    </div>
+    <hr style="clear: left; visibility: hidden;" />
+</div>

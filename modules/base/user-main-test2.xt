@@ -1,0 +1,19 @@
+<h2>test2</h2>
+
+<xar:set name="item">
+    xarModAPIFunc('articles','user','getall',array('ptid' => 4))
+</xar:set> <!-- would return an array of articles, this gives us $item -->
+
+<!--
+<pre>
+    <xar:set name="foo">print_r($item)</xar:set>
+</pre> --><!-- to see the array -->
+
+<xar:loop name="$item">
+
+<p>#$loop:item.title#</p>
+
+</xar:loop>
+
+<xar:set name="artcount">count($item)</xar:set>
+#$artcount#

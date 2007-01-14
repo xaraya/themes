@@ -1,0 +1,124 @@
+<xar:comment>
+This template has a conditional which has two versions of the user-summary-weblinks template. The first version is the standard layout, intended for the article section, or wherever. The second layout is intended only for use on the homepage, which is set as 'base'. Thus the base module is set to be the homepage, and the second layout will display.
+</xar:comment>
+
+<xar:if condition="xarModGetName() ne 'base'">
+<xar:comment>
+    This is the first layout, intended to be viewed anywhere on the site
+</xar:comment>
+
+<div class="xar-norm xar-standard-box-padding">
+    <xar:if condition="!empty($categories) and count($categories) gt 0">
+        [ 
+        <xar:foreach in="$categories" value="$cat">
+            #$cat['cjoin']# <a href="#$cat['clink']#">#$cat['cname']#</a> 
+        </xar:foreach>
+        ] 
+    </xar:if>
+    <div class="newssummary_title" > 
+        <a href="#$link#">#$title#</a>
+        <xar:sec mask="AdminArticles" catch="false">
+            <a href="#xarModURL('articles','admin','modify', array('aid' => $aid))#"><img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" /></a>
+        </xar:sec>        
+        <h5 >
+        <xar:mlvar>
+            #xarLocaleGetFormattedDate('short',$pubdate)#
+        </xar:mlvar>
+<!--        <xar:mlvar>
+            #xarLocaleGetFormattedTime('short',$pubdate)#
+        </xar:mlvar>
+-->
+        </h5>
+    </div> 
+    <div >
+        <span class="xar-sub"> 
+            <xar:ml>
+                <xar:mlstring>
+                    Posted by: #(1)
+                </xar:mlstring>
+                <xar:mlvar>
+                    #$author#
+                </xar:mlvar>
+            </xar:ml>
+            <xar:if condition="!empty($counter)">
+                <xar:if condition="$counter eq 1">
+                    (#$counter#&nbsp;
+                    <xar:mlstring>
+                        read
+                    </xar:mlstring>
+                    ) 
+                    <xar:else />
+                    (#$counter#&nbsp;
+                    <xar:mlstring>
+                        reads
+                    </xar:mlstring>
+                    ) 
+                </xar:if>
+            </xar:if>
+        </span> 
+    </div>
+    <div class="xar-align-right">
+        <span class="xar-sub"> #$topic_icons# </span> 
+    </div>
+    <div class="news_summarycontent"><!-- enclosing div around content etc -->
+        <div  class="xar-articles-summary">
+            #$summary# 
+        </div>
+        <div class="xar-align-right">
+            <xar:if condition="!empty($words)">
+                <a href="#$link#">
+                    <xar:mlstring>
+                        Read More
+                    </xar:mlstring>
+                </a> 
+                <xar:if condition="$words eq 1">
+                    (#$words#&nbsp;
+                    <xar:mlstring>
+                        word
+                    </xar:mlstring>
+                    ) 
+                    <xar:else />
+                    (#$words#&nbsp;
+                    <xar:mlstring>
+                        words
+                    </xar:mlstring>
+                    ) 
+                </xar:if>
+            </xar:if>
+            <xar:if condition="!empty($comments)">
+                #$comments# 
+            </xar:if>
+            <div class="xar-articles-keywords">
+                <xar:if condition="!empty($keywords)">
+                    <xar:mlstring>
+                        Keywords 
+                    </xar:mlstring>
+                    : 
+                    <xar:loop name="$keywords">
+                        <a href="#xarModUrl('keywords', 'user', 'main', array('keyword'=> $loop:item['keyword']))#" title="#$loop:item['keyword']#">#$loop:item['keyword']#</a> 
+                    </xar:loop>
+                </xar:if>
+            </div>
+        </div>
+    </div> <!-- close encapse div -->
+</div>
+
+<xar:else />
+<xar:comment>
+    This is the second layout, intended to be viewed only on the homepage (base module)
+</xar:comment>
+<!-- begin second template stuff -->
+    <div class="docs_summarytitle" > 
+        <img src="#xarTplGetThemeDir()#/images/frontpage/news_frontpage.gif" />
+        <a href="#$link#">#$title#</a>
+        <xar:sec mask="AdminArticles" catch="false">
+            <span class="xar-sub"><a href="#xarModURL('articles','admin','modify', array('aid' => $aid))#"> <img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" /></a></span>
+        </xar:sec>        
+        <h5 >
+        <xar:mlvar>
+            #xarLocaleGetFormattedDate('short',$pubdate)#
+        </xar:mlvar>
+        </h5>
+    </div>
+<!-- end second template stuff -->
+</xar:if>

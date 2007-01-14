@@ -1,0 +1,56 @@
+<script type="text/javascript">
+   function formCheck(el){
+  if(el.value == ''){
+     alert('Please Enter Something to Post!');
+        el.focus();
+           return false;
+      } else {
+            return true;
+            }
+      }
+</script>
+
+<xar:style scope="module" module="shouter" file="shouter" />
+<xar:additional-styles />
+
+<xar:set name="oldurl">xarServerGetCurrentURL()</xar:set>
+<xar:comment >begin shoutblock wrapper div (for setting width)</xar:comment><div style="#$blockwidth#">
+<div class="shoutblockwrapper">
+	<xar:if condition="count($items) ge 1">
+        <xar:foreach in="$items" value="$item" key="$key">
+          <xar:if condition="(($key+1) % 2)">
+                <xar:set name="mycolor">
+                    $lightrow
+                </xar:set>
+                <xar:else />
+                <xar:set name="mycolor">
+                    $darkrow
+                </xar:set>
+            </xar:if>
+            <div style="#$mycolor# padding: 3px;">
+			<span class="shoutblockusername" >#$item['xar_name']#</span><br />
+			<span class="shoutblockpostinfo">(#xarLocaleGetFormattedDate('medium', $item['xar_date'])# #xarLocaleGetFormattedTime('short', $item['xar_date'])#)</span><br />
+			<span class="shoutblockcontent">#$item['xar_shout']#</span><br />
+			</div>
+		</xar:foreach>
+  	<xar:else/>
+    <xar:mlstring>Be the first to shout here!</xar:mlstring>
+	</xar:if>
+</div>
+<xar:comment >end the shout body </xar:comment>
+<xar:if condition="$anonymouspost or (xarUserIsLoggedIn())">
+    <div class="shoutblockpostformcontainer">
+        <form method="post"  action="#xarModUrl('shouter', 'admin', 'create')#" onsubmit="return formCheck(document.getElementById('shout'));">
+            <p><input style="font-size:10px;" type="text" id="shout" name="shout" size="20" /></p>
+            <p><input type="hidden" name="oldurl" value="#$oldurl#" /></p>
+            <p><input class="shoutblockbutton" type="submit" name="submit" value="#$shoutbutton#" /></p>
+        </form>
+    </div>
+<xar:else />
+    <div class="shoutblock_notloggedin_warning">
+        <xar:mlstring>
+            You must be logged-in to post a shout.
+        </xar:mlstring>
+    </div>
+</xar:if>
+</div>
