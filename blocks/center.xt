@@ -1,0 +1,11 @@
+<xar:if id="title_condition" condition="!empty($title)">
+<h2>#$title#</h2>
+<xar:sec mask="AdminPanel" catch="false">
+    <span class="xar-sub">
+        <a href="#xarModURL('blocks','admin','modify_instance', array('bid' => $bid))#">
+        <img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" />                
+        </a> (center)
+    </span>
+</xar:sec>
+</xar:if>
+<p>#$content#</p>

@@ -1,0 +1,66 @@
+<xar:comment>
+This template has a conditional which has two versions of the user-summary-docs template. The first version is the standard layout, intended for the article section, or wherever. The second layout is intended only for use on the homepage, which is set as 'base'. Thus the base module is set to be the homepage, and the second layout will display.
+</xar:comment>
+
+<xar:if condition="xarModGetName() ne 'base'"> 
+	    <xar:comment>
+			This is the first layout, intended to be viewed anywhere on the site
+		</xar:comment>
+
+<div class="xar-standard-box-padding">
+    <xar:if condition="!empty($categories) and count($categories) gt 0">[ 
+    <xar:foreach in="$categories" value="$cat">#$cat['cjoin']# 
+    <a href="#$cat['clink']#">#$cat['cname']#</a></xar:foreach>]</xar:if>
+<hr style="margin-bottom: 20px;" />
+    <div class="docs_summarytitle" > 
+        <img src="#xarTplGetThemeDir()#/images/frontpage/docs_frontpage.gif" />
+        <a href="#$link#">#$title#</a>
+        <xar:sec mask="AdminArticles" catch="false">
+            <span class="xar-sub"><a href="#xarModURL('articles','admin','modify', array('aid' => $aid))#"> <img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" style="background: #fff;" /></a></span>
+        </xar:sec>        
+        <h5 >
+        <xar:mlvar>
+            #xarLocaleGetFormattedDate('short',$pubdate)#
+        </xar:mlvar>
+        </h5>
+    </div>
+
+
+    <div class="xar-sub">
+        <xar:if condition="!empty($counter)">
+            <xar:if condition="$counter eq 1">(#$counter#&#160;
+                <xar:mlstring>read</xar:mlstring>) 
+                <xar:else />(#$counter#&#160;
+                <xar:mlstring>reads</xar:mlstring>)
+            </xar:if>
+        </xar:if>
+    </div>
+    <div class="xar-articles-keywords">
+        <xar:if condition="!empty($keywords)">
+        <xar:mlstring>Keywords</xar:mlstring>: 
+        <xar:loop name="$keywords">
+            <a href="#xarModUrl('keywords', 'user', 'main', array('keyword'=&gt; $loop:item['keyword']))#" title="#$loop:item['keyword']#">#$loop:item['keyword']#</a>
+        </xar:loop></xar:if>
+    </div>
+</div>
+
+<xar:else />
+
+		<xar:comment>
+			This is the second layout, intended to be viewed only on the homepage (base module)
+		</xar:comment>
+
+    <div class="docs_summarytitle" > 
+        <img src="#xarTplGetThemeDir()#/images/frontpage/docs_frontpage.gif" />
+        <a href="#$link#">#$title#</a>
+        <xar:sec mask="AdminArticles" catch="false">
+            <span class="xar-sub"><a href="#xarModURL('articles','admin','modify', array('aid' => $aid))#"> <img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" /></a></span>
+        </xar:sec>        
+        <h5 >
+        <xar:mlvar>
+            #xarLocaleGetFormattedDate('short',$pubdate)#
+        </xar:mlvar>
+        </h5>
+    </div>
+
+</xar:if>

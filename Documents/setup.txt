@@ -1,0 +1,13 @@
+This theme is easy to setup, but to keep the theme true to its design, the are a few things to look at.
+
+# This theme has a horizontal top-navigation bar. Make sure the site has a blockgroup named 'topnav' (which is a blockgroup that is present in a default installation of Xaraya). Also, when setting up the topnav block, follow the following conventions:
+- name the block 'topnav'
+- configure the block to use the 'topnav' template
+- the block will go in the 'topnav' blockgroup
+
+
+# The theme was designed to have an image in the top center block, and it looks good that way. You may want to consider including an image.
+
+The same thing applies to the second block in the left column.
+
+# The sitename will go next to the topnav block. Ensure you don't have a super-long sitename, or it will push the topnav block down.
