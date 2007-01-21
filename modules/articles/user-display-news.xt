@@ -1,0 +1,46 @@
+<xar:template file="publinks" type="module" />
+<xar:categories-navigation layout="trails" showchildren="1" module="articles" itemtype="$ptid" itemid="$aid" cids="$cids" showcatcount="$showcatcount" showempty="0" />
+<div style="margin-top: 20px;">
+    <div class="news_displaytitle"> #$title# 
+        <xar:if condition="!empty($editurl)">
+            <a href="#$editurl#"><img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" style="background: #fff; margin-left: 10px; position: relative; top: 3px;" /></a>
+        </xar:if>
+    </div> 
+    <div class="newsinfo">
+        <xar:if condition="!empty($counter)">
+            (#$counter# <xar:mlstring>Reads</xar:mlstring>) 
+        </xar:if>
+    </div>
+    <div class="newsbody">
+        <p>
+            #$summary#
+        </p>
+            #$body#
+    </div>
+    <xar:if condition="!empty($notes)">
+        <fieldset style="margin: 40px;">
+            <legend><strong><xar:mlstring>Note:</xar:mlstring></strong></legend>
+            #$notes#
+            </fieldset>
+    </xar:if>
+    <xar:if condition="!empty($previous) and !empty($next)">
+        <div class="xar-normal xar-align-right xar-padding-thick">
+            <span> #$previous# </span> <span> #$next# </span> 
+        </div>
+    </xar:if>
+</div>
+<xar:if condition="!empty($prevart) || !empty($nextart)">
+    <div class="xar-normal xar-overflow-auto">
+        <xar:if condition="!empty($prevart)">
+        <a class="xar-floatleft" href="#$prevart#">&lt; 
+        <xar:mlstring>prev</xar:mlstring></a>&#160;</xar:if>
+        <xar:if condition="!empty($nextart)">
+            <a class="xar-floatright" href="#$nextart#">
+            <xar:mlstring>next</xar:mlstring>&gt;</a>
+        </xar:if>
+    </div>
+</xar:if>
+<xar:if condition="!empty($hooks)">
+    <xar:foreach in="$hooks" key="$hookmodule">#$hooks[$hookmodule]#</xar:foreach>
+</xar:if>
+<xar:template file="navtabs-user" type="module" />

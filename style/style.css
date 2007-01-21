@@ -1,0 +1,321 @@
+/* --- brownie: last edited 20 Jan 2007 --- */
+@import "verticalmenu.css";
+
+body {
+    background: #f5eee8;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #666;
+}
+
+/* GENERIC STYLES */
+
+a { color: #986734; }
+
+a:hover { text-decoration: none; }
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+    color: #986734;
+}
+
+h1 { font-size: 34px; }
+
+h2 {
+    margin: 10px 0 30px 0px;
+    font-size: 24px;
+}
+
+h3 {
+	padding: 0 0 22px 0;
+	font-size: 13px;
+}
+
+/* ---- BEGIN STYLES TO PRETTY UP BASIC HTML ---- */
+table {border: none;}
+tbody {border: none;}
+img {border: none}
+/* ---- END STYLES TO PRETTY UP BASIC HTML ---- */
+
+p {
+    margin-top: 0;
+    text-align: justify;
+    line-height: 160%;
+    }
+
+blockquote {
+    border-left: solid 2px #dfc6b8;
+    padding-left: 3px;
+    font-style: italic;
+    }
+
+legend {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px 5px;
+    min-width:10em;
+    display:block;
+    border: solid 1px #986734;
+    color: #fff;
+    background: #dfc6b8;
+    }
+fieldset {
+    border: solid 1px #986734;
+    color: #666;
+    background: #fff;
+    margin: 5px 0;
+    padding: 15px;
+    }
+
+/* USEFUL XARAYA STYLES */
+.xar-norm {
+    background: #fff;
+    }
+.xar-accent {
+background: #f5eee8;
+    }
+table.xar-accent {
+background: #986734;
+    }
+.xar-mod-title {
+    font-size: 16px;
+    color: #986734;
+    }
+th {
+background: #dfc6b8;
+color: #fff;
+    }
+/* THEME STYLES */
+/* Header */
+
+#header {
+    margin: 5px;
+    border: solid 1px #986734;
+    height: 200px;
+    background: url(../images/header_image.jpg) no-repeat top left #dfc6b8;
+    }
+#header h1 {
+    margin: 20px 0 0 20px;
+    }
+
+
+/* Content */
+
+#content {
+    width: 100%;
+    margin: 0 auto;
+    }
+
+#rightcolumn {
+    float: right;
+    width: 200px;
+    padding: 0 0 0 0px;
+    margin: 5px 5px 5px 0;
+    border: solid 1px #986734;
+    background: #fff;
+    }
+
+
+#maincolumn {
+    float: right;
+    width: 775px;
+    margin: 5px;
+    }
+
+/* Footer */
+
+#footer {
+    clear: both;
+    margin: 5px;
+    padding: 5px 0;
+    border: solid 1px #986734;
+    background: #fff;
+    text-align: center;
+    color: #999;
+    }
+
+/* ---- Xar Menu styling ---- */
+.xar-menu-section {
+    margin: 0 0 0 3px;
+    padding: 0;
+    list-style-type: none;
+    }
+.xar-menu-item {
+    margin: 0 0 0 3px;
+    padding: 0;
+    list-style-type: none;
+    }
+.xar-menu-item-current {
+    margin: 0 0 0 3px;
+    padding: 0;
+    list-style-type: none;
+    color: #cccccc !important;
+    }
+    
+/* ------------- ARTICLE TEMPLATES STYLES ------------- */
+
+/* --- NEWS SUMMARY & DISPLAY TEMPLATES --- */
+.fpnewswrapper {
+padding: 10px 0 0 0;
+}
+.newsumwrap {
+margin: 0 0 20px 0;
+}
+.newssummary_title {
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: solid 1px #986734;
+    }
+div.newssummary_title h5 {
+    float: right; 
+    margin: -1.33em 3px 0 0; 
+    padding: 0; 
+    font-size: 10px;
+    font-weight: normal;
+    font-style: italic;
+    }
+.newssummary_title a:link, .newssummary_title a:visited {
+    color: ;
+    text-decoration: none;
+    }
+.newssummary_title a:hover, .newssummary_title a:active {
+    color: #ccc;
+    text-decoration: none;
+    }
+.news_summarycontent {
+    margin: 10px 5px 5px 5px;
+    }
+.news_displaytitle {
+    margin: 5px; 
+    font-size:14px;
+    font-weight: bold;
+    color: #986734;
+    border-bottom: solid 1px #986734;   
+    }
+.news_displaytitle a:link, .news_displaytitle a:visited {
+    color: #fff;
+    text-decoration: none;
+    }
+.newsbody {
+    margin: 20px 10px;
+    }
+/* --- DOCUMENT SUMMARY & DISPLAY TEMPLATES --- */
+.docsumwrap {
+    margin: 0 0 20px 0;
+}
+.fpdocswrapper {
+padding: 10px 0 0 0;
+}
+.docs_displaytitle {
+    margin-bottom: 5px; 
+    font-size:14px;
+    font-weight: bold;
+    color: #986734;
+    border-bottom: solid 1px #986734;
+    }
+.docs_summarytitle {
+    font-size: 12px;
+    font-weight: bold;
+    border-bottom: solid 1px #986734;
+    }
+div.docs_summarytitle h5 {
+    float: right; 
+    margin: -1.33em 3px 0 0; 
+    padding: 0; 
+    font-size: 10px;
+    font-weight: normal;
+    font-style: italic;
+    }
+	
+.docs_summarytitle a:link, .docs_summarytitle a:visited {
+    color: ;
+    text-decoration: none;
+    }
+.docs_summarytitle a:hover, .docs_summarytitle a:active {
+    color: #ccc;
+    text-decoration: none;    
+    }
+
+
+.xar-sub { 
+font-size: 10px;
+}
+ 
+/* --------------- WEBLINKS SUMMARY & DISPLAY STYLES ---*/
+.links_summarytitle {
+    font-size: 12px;
+    font-weight: bold;
+    border-bottom: solid 1px #986734;
+    margin: 0 0 3px 0;
+    }
+div.links_summarytitle h5 {
+    float: right; 
+    margin: -1.33em 3px 0 0; 
+    padding: 0; 
+    color: #667;
+    font-size: 10px;
+    font-weight: normal;
+    font-style: italic;
+    }
+	
+.links_summarytitle a:link, .links_summarytitle a:visited {
+    color: #986734;
+    text-decoration: none;
+    }
+.links_summarytitle a:hover, .links_summarytitle a:active {
+    color: #ccc;
+    text-decoration: none;    
+    }
+.fplinkswrapper {
+padding: 10px 0 0 0;
+}
+.linksumwrap {
+margin: 0 0 20px 0;
+}
+/* ------------------------------- BLOCKS ------------------------- */
+.centerblockwrapper {
+	margin: 0 0 5px 0;
+    border: solid 1px #986734;
+    background: #fff;
+    }
+.centerblock_title {
+	margin: 5px;
+	padding: 5px 0;
+    border: solid 1px #986734;
+    background: #dfc6b8;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    }
+.centerblock_content {
+    color: #666;
+    margin: 10px;
+    }
+
+.sideblockwrapper {}
+.sideblock_title {
+	margin: 5px;
+	padding: 5px 0;
+    border: solid 1px #986734;
+    background: #dfc6b8;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    }
+.sideblock_content {
+    color: #666;
+    margin: 10px;
+    }
+
+
+
+
+/* --- MISCELLANEOUS STYLES --- */
+.newsinfo {
+margin-left: 5px;
+color: #666;
+font-size: 10px;
+}

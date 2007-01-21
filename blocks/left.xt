@@ -1,0 +1,15 @@
+<div class="sideblockwrapper">
+    <xar:if id="title_condition" condition="!empty($title)">
+    <div class="sideblock_title">
+        #$title#
+        <xar:sec mask="AdminPanel" catch="false">
+            <span class="xar-sub">
+                <a href="#xarModURL('blocks','admin','modify_instance', array('bid' => $bid))#">
+                <img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" />                
+                </a> (left)
+            </span>
+        </xar:sec>
+    </div>
+    </xar:if>
+    <div class="sideblock_content">#$content#</div>
+</div>
