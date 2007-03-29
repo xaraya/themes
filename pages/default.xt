@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xar type="page" ?>
-<!DOCTYPE blocklayout PUBLIC "-//XAR//DTD BL 1.0 Strict//EN" "http://xaraya.com/bl1/DTD/bl1-strict.dtd">
+<!DOCTYPE blocklayout PUBLIC "-//XAR//DTD BL 2.0 Strict//EN" "http://xaraya.com/bl2/DTD/bl2-strict.dtd">
 <xar:blocklayout version="2.0" content="text/html" xmlns:xar="http://xaraya.com/2004/blocklayout" dtd="xhtml1-strict">
   <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
       <xar:blockgroup name="header" id="header" />
-      <title>#$tpl:pageTitle#</title>
+      <title><xar:var name="tpl:pageTitle" /></title>
       <xar:style scope="common" />
       <xar:style scope="theme" file="style" title="Empty"/>
       <xar:additional-styles />
@@ -18,7 +18,7 @@
       <xar:blockgroup name="left"   id="left"   />
       <xar:blockgroup name="right"  id="right"  />
       <xar:blockgroup name="center" id="center" />
-      
+
       <xar:base-render-javascript position="body" />
     </body>
   </html>
