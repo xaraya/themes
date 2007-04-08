@@ -1,0 +1,20 @@
+<div class="toprowblockwrap">
+    <xar:if id="title_condition" condition="!empty($title)">
+      <div class="toprowmiddle_head">
+        <div class="toprowmiddle_title">
+            <xar:var name="title" prep="false"/>
+            <xar:sec mask="AdminPanel" catch="false">
+            <span class="xar-sub">
+                <a href="#xarModURL('blocks','admin','modify_instance', array('bid' => $bid))#">
+                <img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" />                
+                </a>
+            </span>
+            </xar:sec>        
+        </div>
+      </div>
+    </xar:if>
+    <div class="toprowmiddle_body">
+      <xar:var name="content" prep="false"/>
+    </div>
+    <div class="toprowmiddle_foot"></div>
+</div>

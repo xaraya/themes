@@ -1,0 +1,24 @@
+m83 requires a lot of manual configuration. This is because the layout I wanted didn't lend itself to a wholly dynamic setup. 
+
+The main page is split up into segments;
+- the header
+- the topnav
+- the toprow
+- the middlerow
+- the bottomrow
+- the footer
+
+The segments have their own unique blockgroups which will need to be added in the blocks admin area.
+
+* header - none
+* topnav - there is a topnav blockgroup configured by default in Xaraya. However, when setting up this block, it is important to use the following:
+
+type: base/menu
+name: topnav
+title: topnav
+instance template: topnav
+blockgroup: topnav
+
+* toprow - has the leftmost menu, which requires that the menu links be configured manually in the default.xt template. The toprow also has two other blockgroups; toprowmiddle and toprowright. There should only be one instance of the blocks, and the height of the contents should not exceed that of the left menu, otherwise the intended layout will not look as good.
+
+* middlerow

@@ -1,0 +1,4 @@
+<!--    <xar:template file="calpic" type="theme" /> -->
+<xar:blockgroup name="announcement" id="announcement" />
+<xar:module module="articles" main="false" func="view" status="3" />
+<xar:blockgroup name="center" id="center" />

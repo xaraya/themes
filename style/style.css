@@ -14,15 +14,27 @@
     background: #fff;
 }
 .toprowmenu ul li {
-    list-style: none;
-
     margin: 1px 0;
-
-    padding: 0;
+	padding: 3px 0;
+	list-style-image: url(../images/trm_bullet.png);
     background: #ffeecb;
+	list-style-position: inside;
 }
-
-
+/* toprow blocks */
+.toprowblockwrap {
+	margin: 10px;
+}
+.toprowmiddle_head {
+	margin-bottom: 10px;
+}
+.toprowmiddle_title {
+	font-size: 12px;
+	font-weight: bold;
+}
+.toprowmiddle_body {
+	font-size: 10px;
+}
+.toprowmiddle_foot{}
 
 
 
@@ -362,10 +374,11 @@ basically what controls the outer appearance of the menu.
 .footer {
     font-size: 10px;
     color: #fff;
-    background: #7182b8;
+    background: #999;
     text-align: center;
     margin: 0px;
     padding: 5px 0;
+    border-top: solid 5px #000;
     }
 .footer a:link, .footer a:visited {
     text-decoration: none;
