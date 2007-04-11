@@ -1,6 +1,7 @@
 @import "verticalmenu.css";
 @import "code.css";
-/* Styles for 'm83' theme, updated 7 Apr 2007 */
+
+/* Styles for 'm83' theme, updated 11 Apr 2007 */
 .toprow {
     background: #ccc;
  /*   border-bottom: solid 5px #000; */
@@ -32,7 +33,6 @@ ul#trmenu a:active, #trmenu a:hover {
 	font-weight: bold;
 }
 
-}
 /* toprow blocks */
 .toprowblockwrap {
 	margin: 10px;
@@ -66,12 +66,13 @@ ul#trmenu a:active, #trmenu a:hover {
 .toprowright_foot{}
 
 
-
-
 /* end new styles ------------- */
+
+
+
 a:link, a:visited {
     text-decoration: underline;
-    color: #9d0a0e;
+    color: #999;
     }
 a:active, a:hover {
     text-decoration: none;
@@ -119,7 +120,7 @@ pre {
     }
 	
 h1, h2, h3, h4 {
-    color: #7182b8;
+    color: #ff8400;
     font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
     padding: 0;
     margin: 0;
@@ -178,7 +179,7 @@ h1, h2, h3, h4 {
     margin: 0 0 10px 0;
     background: url(../images/centerhd_bg.png) no-repeat; 
     height: 36px;
-    color: #7182b8;    
+    color: #666;    
     }
 .centerblock_title {
     font-size: 16px;
@@ -219,7 +220,7 @@ h1, h2, h3, h4 {
     margin: 0;
     padding: 0;
     list-style:none;
-    color: #7182b8;
+    color: #666;
     }
 .xar-menu-section-current {
     margin: 0;
@@ -497,7 +498,7 @@ div.newssummary_title h5 {
     }
 .news_displaytitle {
     margin-bottom: 5px; 
-    background: #7182b8; 
+    background: #ff8400; 
     padding: 5px;
     font-size:14px;
     font-weight: bold;
@@ -513,7 +514,7 @@ div.newssummary_title h5 {
 /* --------------- DOCUMENT SUMMARY & DISPLAY TEMPLATES ------ */
 .docs_displaytitle {
     margin-bottom: 5px; 
-    background: #7182b8; 
+    background: #ff8400; 
     padding: 5px;
     font-size:14px;
     font-weight: bold;
@@ -713,43 +714,15 @@ border: solid 1px #000;
 } /* adds a border around the select menu */  
 
 
-/* more styles for forms --------------------------------- */
+/* more styles for forms -- */
 .xar-form-label {
 border-bottom: dotted 1px #000;
 }
 
 
-/* end the styles for forms ----------------------------- */
+/* end the styles for forms --*/
 
-/* --------- ROUNDBLOCK CLASSES -------- */
-.roundblock h1, .roundblock h2, .roundblock h3, .roundblock h4, .roundblock h5 {color: #4E6281;}
-.roundblock {
-    background: #dadeed; 
-    color: #666;
-    margin-bottom: 20px;
-    }
-.blockspacer {padding: 10px;}
-.roundblock_ul {
-    background:url(../images/blocks/roundblock/roundblock_ul.gif) no-repeat left top;
-    margin: 0;
-    padding: 0;
-    }
-.roundblock_ur {
-    background:url(../images/blocks/roundblock/roundblock_ur.gif) no-repeat right top;
-    margin: 0;
-    padding: 0;
-    }
-.roundblock_ll {
-    background:url(../images/blocks/roundblock/roundblock_ll.gif) no-repeat left bottom;
-    margin: 0;
-    padding: 0;
-    }
-.roundblock_lr {
-    background:url(../images/blocks/roundblock/roundblock_lr.gif) no-repeat right bottom;
-    margin: 0;
-    padding: 0;
-    }
-/* ----------------------bullet image styles ------------- */
+/* -- bullet image styles -- */
 .rssbullet {
     list-style-image: url(../images/rss_icon.gif);
     } /* used in rss.center.xt */
