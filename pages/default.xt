@@ -24,6 +24,7 @@
 	<xar:var name="adminnav"/>
 	<div class="xpage">
 		<div class="header">
+		    <img src="#xarTplGetThemeDir()#/images/logo.png" alt="" style="float: left;" />
 		    <span style="float: right; margin: 20px 20px 0 0; z-index: 1000;"> 		    <xar:block module="search" type="search" template="contentonly" />
 		    </span>
 		</div>
@@ -31,9 +32,9 @@
 			<xar:blockgroup name="topnav" id="topnav" />
         </div>
 		<div class="toprow" style="width: 100%;">
-            <div class="toprowmenu" style="width: 200px; float:left;">
+            <div class="toprowmenu" style="width: 200px; float:left; margin-bottom: -2px;">
                 <img src="#xarTplGetThemeDir()#/images/toprowmenu.png" alt="" style="vertical-align: top;" />
-                <ul>
+                <ul id="trmenu">
                     <li><a href="#">Link 1</a></li>
                     <li><a href="#">Link 2</a></li>
                     <li><a href="#">Link 3</a></li>
@@ -41,13 +42,13 @@
                     <li><a href="#">Link 5</a></li>
                 </ul>
             </div>
-            <div style="background: red; width: 40%; float: left;">
+            <div style="width: 40%; float: left;">
                 <xar:blockgroup name="toprowmiddle" id="toprowmiddle" />
             </div>
-            <div style="background: red; width: 40%; margin: 0; float: right;">
+            <div style="width: 40%; margin: 0; float: right;">
                 <xar:blockgroup name="toprowright" id="toprowright" />
             </div>            
-		<hr style="clear: both; visibility: hidden;" />
+		<hr style="clear: both; visibility: hidden; margin: 0;" />
 		</div>
 		
 		<div class="xcontentcontainer">

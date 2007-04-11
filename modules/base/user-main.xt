@@ -1,4 +1,12 @@
-<!--    <xar:template file="calpic" type="theme" /> -->
-<xar:blockgroup name="announcement" id="announcement" />
-<xar:module module="articles" main="false" func="view" status="3" />
+<div style="margin: 20px 0;">
+    <div style="width: 50%; float: left; margin-right: 0px;">
+        <xar:blockgroup name="midleft" id="midleft" />
+    </div>
+    <div style="width: 50%; float: left;">
+        <xar:blockgroup name="midright" id="midright" />
+    </div>
+<hr style="clear: both;  margin: 0; visibility: hidden;" />
+</div>
+
 <xar:blockgroup name="center" id="center" />
+<xar:module module="articles" main="false" func="view" status="3" />

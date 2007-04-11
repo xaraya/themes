@@ -1,0 +1,12 @@
+<div style="margin: 0 10px 20px 10px;">
+    <span style="margin: 20px;">
+        <xar:sec mask="AdminPanel" catch="false">
+            <span class="xar-sub">
+                <a href="#xarModURL('blocks','admin','modify_instance', array('bid' => $bid))#">
+                <img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" />                
+                </a>
+            </span>
+        </xar:sec>
+    </span>
+    #$content#
+</div>

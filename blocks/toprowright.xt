@@ -1,18 +1,20 @@
-<xar:if id="title_condition" condition="!empty($title)">
-  <div class="xar-block-head-right">
-    <div class="xar-block-title-right">
-        <xar:var name="title" prep="false"/>
-        <xar:sec mask="AdminPanel" catch="false">
-        <span class="xar-sub">
-            <a href="#xarModURL('blocks','admin','modify_instance', array('bid' => $bid))#">
-            <img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" />                
-            </a>
-        </span>
-        </xar:sec>        
+<div class="toprowblockwrap">
+    <xar:if id="title_condition" condition="!empty($title)">
+      <div class="toprowright_head">
+        <div class="toprowright_title">
+            <xar:var name="title" prep="false"/>
+            <xar:sec mask="AdminPanel" catch="false">
+            <span class="xar-sub">
+                <a href="#xarModURL('blocks','admin','modify_instance', array('bid' => $bid))#">
+                <img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" />                
+                </a>
+            </span>
+            </xar:sec>        
+        </div>
+      </div>
+    </xar:if>
+    <div class="toprowright_body">
+      <xar:var name="content" prep="false"/>
     </div>
-  </div>
-</xar:if>
-<div class="xar-block-body-right">
-  <xar:var name="content" prep="false"/>
+    <div class="toprowright_foot"></div>
 </div>
-<div class="xar-block-foot-right"></div>

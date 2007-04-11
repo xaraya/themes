@@ -3,7 +3,7 @@
 /* Styles for 'm83' theme, updated 7 Apr 2007 */
 .toprow {
     background: #ccc;
-    border-bottom: solid 5px #000;
+ /*   border-bottom: solid 5px #000; */
 }
 .toprowmenu {
     width: 200px;
@@ -19,6 +19,19 @@
 	list-style-image: url(../images/trm_bullet.png);
     background: #ffeecb;
 	list-style-position: inside;
+}
+ul#trmenu a:link, #trmenu a:visited {
+	color: #000;
+	text-decoration: none ;
+	font-weight: bold;
+}
+
+ul#trmenu a:active, #trmenu a:hover {
+	color: #ff9300;
+	text-decoration: none ;
+	font-weight: bold;
+}
+
 }
 /* toprow blocks */
 .toprowblockwrap {
@@ -37,7 +50,20 @@
 .toprowmiddle_foot{}
 
 
-
+.toprowblockwrap {
+	margin: 10px;
+}
+.toprowright_head {
+	margin-bottom: 10px;
+}
+.toprowright_title {
+	font-size: 12px;
+	font-weight: bold;
+}
+.toprowright_body {
+	font-size: 10px;
+}
+.toprowright_foot{}
 
 
 
@@ -56,7 +82,7 @@ td.xar-alt {background: #f0f0f0;}
 body {
     font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
     font-size: 10px;
-    background: #999;
+    background: #ccc;
     }
 
 div {font-size: 12px;}
@@ -110,7 +136,7 @@ h1, h2, h3, h4 {
 .xar-block-title {
     font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
     font-weight: bold;
-    color: #7182b8;
+    color: #000;
     }
 .xar-block-body {
     font-size: 10px;
@@ -122,13 +148,13 @@ h1, h2, h3, h4 {
 /* right block group classes */
 .xar-block-head-right{
     text-align: center;
-    border-bottom: dotted 1px #000;
+    border-bottom: solid 1px #000;
     margin-bottom: 4px;
     }
 .xar-block-title-right {
     font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
     font-weight: bold;
-    color: #7182b8;
+    color: #000;
     }
 .xar-block-body-right {
     font-size: 10px;
@@ -256,7 +282,7 @@ h1, h2, h3, h4 {
 /* ---------------- HEADER STYLES ------------------------------------- */
 .header {
     background:url(../images/header/header.png) no-repeat #ff9300;
-    height: 100px;
+    height: 150px;
     margin: 0;
     padding: 0;
     font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
