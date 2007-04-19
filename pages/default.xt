@@ -18,7 +18,7 @@
 	<xar:base-render-javascript position="head" />
 	<xar:set name="adminnav">
     	<xar:block module="base" type="adminmenu" template="mainnavbubble;top" />
-    </xar:set>	  
+    </xar:set>
     </head>
     <body>
 	<xar:var name="adminnav"/>
@@ -31,26 +31,32 @@
         <div class="topnav">
 			<xar:blockgroup name="topnav" id="topnav" />
         </div>
-		<div class="toprow" style="width: 100%;">
-            <div class="toprowmenu" style="width: 200px; float:left; margin-bottom: -2px;">
-                <img src="#xarTplGetThemeDir()#/images/toprowmenu.png" alt="" style="vertical-align: top;" />
-                <ul id="trmenu">
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
-                    <li><a href="#">Link 4</a></li>
-                    <li><a href="#">Link 5</a></li>
-                </ul>
+
+        <div class="toprow" style="position: relative;">
+            <div>
+                <div style="float: right; width: 100%; margin-left: -200px; ">
+                    <div class="toprowmenu">
+                        <img src="#xarTplGetThemeDir()#/images/toprowmenu.png" alt="" style="vertical-align: top;" />
+                        <ul id="trmenu">
+                            <li><a href="#">Link 1</a></li>
+                            <li><a href="#">Link 2</a></li>
+                            <li><a href="#">Link 3</a></li>
+                            <li><a href="#">Link 4</a></li>
+                            <li><a href="#">Link 5</a></li>
+                        </ul>
+                    </div>
+                    <div style="margin-left: 200px;">
+                        <div style="width: 50%; float: left;">
+                            <xar:blockgroup name="toprowmiddle" id="toprowmiddle" />
+                        </div>
+                        <div style="width: 50%; margin: 0; float: right;">
+                            <xar:blockgroup name="toprowright" id="toprowright" />
+                        </div>
+        		    </div>
+    		    </div>
             </div>
-            <div style="width: 40%; float: left;">
-                <xar:blockgroup name="toprowmiddle" id="toprowmiddle" />
-            </div>
-            <div style="width: 40%; margin: 0; float: right;">
-                <xar:blockgroup name="toprowright" id="toprowright" />
-            </div>            
-		<hr style="clear: both; visibility: hidden; margin: 0;" />
-		</div>
-		
+		<hr style="clear: both; visibility: hidden;" />
+        </div>
 		<div class="xcontentcontainer">
 			<div class="fauxpadding">
 				<div class="xcontent">
@@ -79,7 +85,7 @@
 		#$sitecopyright# | #$sitefooter# | #$siteslogan#
 	</div>
 	</div>
-	      
+
       <xar:base-render-javascript position="body" />
     </body>
   </html>
