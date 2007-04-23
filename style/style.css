@@ -1,7 +1,7 @@
 @import "verticalmenu.css";
 @import "code.css";
 
-/* Styles for 'm83' theme, updated 19 Apr 2007 */
+/* Styles for 'm83' theme, updated 23 Apr 2007 */
 .toprow {
     background: #ccc;
  /*   border-bottom: solid 5px #000; */
@@ -380,7 +380,7 @@ basically what controls the outer appearance of the menu.
 /* ----------------- END TOP NAV BAR STYLES ------- */
 .xpage {
     width: auto;
-    margin: 10px;
+    margin: 0;
     background: url(../images/page_bg.png) top right repeat-y #fff;
     border: solid 5px #000;
     }

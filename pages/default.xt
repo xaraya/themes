@@ -14,6 +14,8 @@
 	<title>#$tpl:pageTitle#</title>
 	<xar:style scope="common" />
 	<xar:style scope="theme" file="style" title="#xarTplGetThemeName()#" />
+	<xar:style scope="theme" file="ie6" condition="lt IE 7" />
+    <xar:style scope="theme" file="ie7" condition="gte IE 7" />	
 	<xar:additional-styles />
 	<xar:base-render-javascript position="head" />
 	<xar:set name="adminnav">
@@ -34,7 +36,7 @@
 
         <div class="toprow" style="position: relative;">
             <div>
-                <div style="float: right; width: 100%; margin-left: -200px; ">
+                <div style="float: right; width: 100%; margin-left: 0; ">
                     <div class="toprowmenu">
                         <img src="#xarTplGetThemeDir()#/images/toprowmenu.png" alt="" style="vertical-align: top;" />
                         <ul id="trmenu">
