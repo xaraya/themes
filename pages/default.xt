@@ -40,11 +40,11 @@
                     <div class="toprowmenu">
                         <img src="#xarTplGetThemeDir()#/images/toprowmenu.png" alt="" style="vertical-align: top;" />
                         <ul id="trmenu">
-                            <li><a href="#">Link 1</a></li>
-                            <li><a href="#">Link 2</a></li>
-                            <li><a href="#">Link 3</a></li>
-                            <li><a href="#">Link 4</a></li>
-                            <li><a href="#">Link 5</a></li>
+                            <li><a href="http://xaraya.com/">Xaraya Homepage</a></li>
+                            <li><a href="http://xaraya.com/index.php/xarbb/">Xaraya Forums</a></li>
+                            <li><a href="http://mt.xaraya.com/">Xaraya Monotone </a></li>
+                            <li><a href="http://trac.xaraya.com">Xaraya 2 Trac site</a></li>
+                            <li><a href="http://zwiggybo.com/forum/">Zwiggybo Forums</a></li>
                         </ul>
                     </div>
                     <div style="margin-left: 200px;">

@@ -1,7 +1,7 @@
 @import "verticalmenu.css";
 @import "code.css";
 
-/* Styles for 'm83' theme, updated 23 Apr 2007 */
+/* Styles for 'm83' theme, updated 24 Apr 2007 */
 .toprow {
     background: #ccc;
  /*   border-bottom: solid 5px #000; */
@@ -407,13 +407,15 @@ basically what controls the outer appearance of the menu.
     padding: 5px 0;
     border-top: solid 5px #000;
     }
-.footer a:link, .footer a:visited {
+div.footer a:link, .footer a:visited {
+/*	font-weight: bold;	*/
     text-decoration: none;
-    color: #fcf8b6;
+    color: #000;
     }
-.footer a:active, .footer a:hover {
+div.footer a:active, .footer a:hover {
+/*	font-weight: bold;	*/
     text-decoration: none;
-    color: #999;
+    color: #fff;
     }
 
 /* --------------- RANDOM QUOTES BLOCK ------------- */
@@ -443,12 +445,12 @@ div.newssummary_title h5 {
     font-weight: normal;
     font-style: italic;
     }
-.newssummary_title a:link, .newssummary_title a:visited {
-    color: #003663;
+div.newssummary_title a:link, .newssummary_title a:visited {
+    color: #000;
     background: #fff;
     text-decoration: none;
     }
-.newssummary_title a:hover, .newssummary_title a:active {
+div.newssummary_title a:hover, .newssummary_title a:active {
     color: #ccc;
     background: #fff;
     text-decoration: none;
@@ -496,12 +498,12 @@ div.docs_summarytitle h5 {
     font-style: italic;
     }
 	
-.docs_summarytitle a:link, .docs_summarytitle a:visited {
-    color: #003663;
+div.docs_summarytitle a:link, .docs_summarytitle a:visited {
+    color: #000;
     text-decoration: none;
     }
-.docs_summarytitle a:hover, .docs_summarytitle a:active {
-    color: #ccc;
+div.docs_summarytitle a:hover, .docs_summarytitle a:active {
+    color: #ff8400;
     text-decoration: none;    
     }
 /* --------------- WEBLINKS SUMMARY & DISPLAY STYLES ---*/
@@ -522,7 +524,7 @@ div.links_summarytitle h5 {
     }
 	
 .links_summarytitle a:link, .links_summarytitle a:visited {
-    color: #003663;
+    color: #000;
     text-decoration: none;
     }
 .links_summarytitle a:hover, .links_summarytitle a:active {

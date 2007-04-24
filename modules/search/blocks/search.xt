@@ -1,0 +1,8 @@
+<form action="#xarModURL('search','user','main')#" method="get">
+    <div>
+        <input type="hidden" name="module" id="module" value="search" />
+
+        <input type="text" name="q" id="q#$blockid#" size="15" value="#xarML('search')#..." onfocus="this.value = ''" onblur="this.value = (this.value == '' ? '#xarML('search')#...' : this.value)" />
+        <input type="submit" value="#xarML('Go!')#" />
+    </div>
+</form>
