@@ -11,7 +11,7 @@
     <xar:set name="siteslogan"><xar:var scope="module" module="themes" name="SiteSlogan"/></xar:set>
     <xar:set name="sitecopyright"><xar:var scope="module" module="themes" name="SiteCopyRight"/></xar:set>
 	<xar:blockgroup name="header" id="header" />
-	<title>#$tpl:pageTitle#</title>
+	<title>info.zwiggybo.com: collaborative information done right</title>
 	<xar:style scope="common" />
 	<xar:style scope="theme" file="style" title="#xarTplGetThemeName()#" />
 	<xar:style scope="theme" file="ie6" condition="lt IE 7" />
@@ -26,7 +26,7 @@
 	<xar:var name="adminnav"/>
 	<div class="xpage">
 		<div class="header">
-		    <img src="#xarTplGetThemeDir()#/images/logo.png" alt="" style="float: left;" />
+		    <img src="#xarTplGetThemeDir()#/images/header/logo.png" alt="" style="float: left;" />
 		    <span style="float: right; margin: 20px 20px 0 0; z-index: 1000;"> 		    <xar:block module="search" type="search" template="contentonly" />
 		    </span>
 		</div>

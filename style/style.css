@@ -1,26 +1,30 @@
 @import "verticalmenu.css";
 @import "code.css";
 
-/* Styles for 'm83' theme, updated 24 Apr 2007 */
+/* Styles for 'm83 theme updated 8 May2007 */
 .toprow {
-    background: #ccc;
- /*   border-bottom: solid 5px #000; */
+    background: #323232; 
+    border-bottom: solid 1px #ccc;
+    border-top: solid 1px #ccc;
 }
+.toprow h3 {color: #ff9300;}
 .toprowmenu {
     float: left; 
-    width: 200px;
+    width: 198px;
     z-index: 1000;
+    border-right: solid 1px #ccc;
+    border-bottom: solid 1px #ccc;
 }
 .toprowmenu ul {
     padding: 0;
     margin: /* -1px 0 0 0; */ 0;
-    background: #fff;
+    background: #000;
 }
 .toprowmenu ul li {
     margin: 1px 0;
 	padding: 3px 0;
 	list-style-image: url(../images/trm_bullet.png);
-    background: #ffeecb;
+    background: url(../images/navbar_bg.png) repeat-x #666;
 	list-style-position: inside;
 }
 ul#trmenu a:link, #trmenu a:visited {
@@ -30,7 +34,7 @@ ul#trmenu a:link, #trmenu a:visited {
 }
 
 ul#trmenu a:active, #trmenu a:hover {
-	color: #ff9300;
+	color: #999;
 	text-decoration: none ;
 	font-weight: bold;
 }
@@ -72,28 +76,30 @@ ul#trmenu a:active, #trmenu a:hover {
 
 a:link, a:visited {
     text-decoration: underline;
-    color: #830081;
+    color: #ff9300;
     }
 a:active, a:hover {
     text-decoration: none;
-    color: red;
+    color: #ccc;
     }
 td.xar-norm { background: #fff;}
 td.xar-alt {background: #f0f0f0;}
 body {
     font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
     font-size: 10px;
-    background: #ccc;
+    background: url(../images/body_bg.gif) repeat #000;
+    color: #ff9300;
     }
 
 div {font-size: 12px;}
 
 img {border: none;}
 input {border: solid 1px #7182b8; padding: 2px;}
-textarea {border: solid 1px #7182b8; padding: 2px;}
+textarea {border: solid 1px #ffc600; padding: 2px;}
 fieldset {
-    border: solid 1px #7182b8;
-    background: #fff;
+    border: solid 1px #ffc600;
+    background: #000;
+    color: #ccc;
     margin: 5px 0;
     padding: 15px;
     }
@@ -103,9 +109,9 @@ legend {
     padding: 3px 5px;
     min-width:10em;
     display:block;
-    border: solid 1px #7182b8;
+    border: solid 1px #ffc600;
     color: #666;
-    background: #f0f0f0;
+    background:url(../images/navbar_bg.png) repeat-x #000;
     }
 code {
     font-family:"Courier New", Courier, monospace;
@@ -120,7 +126,7 @@ pre {
     }
 	
 h1, h2, h3, h4 {
-    color: #ff8400;
+    color: #ff9300;
     font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
     padding: 0;
     margin: 0;
@@ -137,7 +143,7 @@ h1, h2, h3, h4 {
 .xar-block-title {
     font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
     font-weight: bold;
-    color: #000;
+    color: #ffc600;
     }
 .xar-block-body {
     font-size: 10px;
@@ -155,7 +161,7 @@ h1, h2, h3, h4 {
 .xar-block-title-right {
     font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
     font-weight: bold;
-    color: #000;
+    color: #ffc600;
     }
 .xar-block-body-right {
     font-size: 10px;
@@ -186,6 +192,7 @@ h1, h2, h3, h4 {
     font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
     font-weight: bold;
     padding-top: 7px;
+    color: #ffc600;
     }
 .centerblock_body { 
     font-size: 12px;
@@ -197,20 +204,25 @@ h1, h2, h3, h4 {
 .xar-mod-head {}
 .xar-mod-title {
     font-size: 18px;
+    color: #ffc600;
     }
 .xar-mod-body {}
 .xar-mod-foot {}
 .xar-alt {}
 .xar-accent {
-    background: #e0e0e0;
+    background: #666;
+    color: #fff;
     }
 .xar-alt-outline {}
 .xar-accent-outline {
 	border: solid 1px #7182b8;
 	background: #f0f0f0;
+	color: #000;
 	}/* also provides background for comment bbcode box  */
 .xar-norm-outline {}
-.xar-norm {}
+.xar-norm {
+	color: #000;
+	}
 .xar-sub {
     font-size: 9px;
     color:#666;
@@ -230,7 +242,7 @@ h1, h2, h3, h4 {
     }
 .xar-menu-item {
     list-style-type: square;
-    color: #003663;
+    color: #fff;
 }
 .xar-menu-item-current {
     color: #999; /* makes the bullet a lighter color */
@@ -246,20 +258,20 @@ h1, h2, h3, h4 {
 }
 /* ----- a little fun ----- */
 .xar-menu-item a:link, .xar-menu-item a:visited {
-    color: #003663;
+    color: #ffc600;
     }
 .xar-menu-item a:active, .xar-menu-item a:hover {
     color: #999;
     }
 /* ---------- yay ---------- */
 .xar-menu-subitem {
-    color: #003663;
+    color: #fff;
 }
 .xar-menu-subitem:hover {
     color: red;
     }
 .xar-menu-subitem a:link, .xar-menu-subitem a:visited {
-    color: #003663;
+    color: #ffc600;
     }
 .xar-menu-subitem a:active, .xar-menu-subitem a:hover {
     color: #999;
@@ -268,7 +280,7 @@ h1, h2, h3, h4 {
     color: #999;
 }
 .xar-menu-item .xar-menu-item-current .xar-menu-subitem a:link, .xar-menu-item .xar-menu-item-current .xar-menu-subitem a:visited {
-    color: #003663;
+    color: #fff;
 }
 .xar-menu-item .xar-menu-item-current  .xar-menu-subitem  a:active, .xar-menu-item .xar-menu-item-current  .xar-menu-subitem  a:active {
     color: #999;
@@ -276,17 +288,20 @@ h1, h2, h3, h4 {
 /* --------------------- END THE MENU STYLES --------------- */
 .xar-title {
     font-size: 18px;
+    color: #ffc600;
     }
 .xar-error {}
 /* theme specific styles */
 
 /* ---------------- HEADER STYLES ------------------------------------- */
 .header {
-    background:url(../images/header/header.png) no-repeat #ff9300;
+    background:url(../images/header/hdr_bg.png) repeat-x #000;
+    color: #fff;
     height: 150px;
     margin: 0;
     padding: 0;
     font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
+    border-bottom: solid 1px #ccc;
     }
 /* -- the .sitename, and .slogan are not used in this theme, but are 
     useful if styling the sitename, and slogan somewhere --*/
@@ -317,12 +332,12 @@ h1, h2, h3, h4 {
 
 /* ----------------- BEGIN TOP NAV BAR STYLES ------------------------- */
 .topnav {
-    background: #ffdb6c; /* colors the background of topnav */
+    background: url(../images/navbar_bg.png) repeat-x #666; /* colors the background of topnav */
     margin: 0;
     padding: 0;
     height: 25px; 
-    border-bottom: solid 5px #000;
-    border-top: solid 5px #000;
+    border-bottom: solid 1px #000;
+    border-top: solid 1px #000;
 } 
 .topnav ul, .topnav li {
     display: inline;
@@ -368,7 +383,7 @@ basically what controls the outer appearance of the menu.
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    color: #ff9300;
+    color: #545454;
     padding: 5px 5px 5px 5px;
     z-index: 1000;
     border-collapse:collapse;
@@ -380,9 +395,10 @@ basically what controls the outer appearance of the menu.
 /* ----------------- END TOP NAV BAR STYLES ------- */
 .xpage {
     width: auto;
-    margin: 0;
-    background: url(../images/page_bg.png) top right repeat-y #fff;
-    border: solid 5px #000;
+    margin: 10px;
+    background: url(../images/page_bg.png) top right repeat-y #141414;
+    border: solid 1px #ccc;
+    color:  #fff;
     }
 .xcontentcontainer {
     float: left;
@@ -400,22 +416,20 @@ basically what controls the outer appearance of the menu.
     }
 .footer {
     font-size: 10px;
-    color: #fff;
-    background: #999;
+    color: #666;
+    background: #323232;
     text-align: center;
     margin: 0px;
     padding: 5px 0;
-    border-top: solid 5px #000;
+    border-top: solid 1px #ccc;
     }
-div.footer a:link, .footer a:visited {
-/*	font-weight: bold;	*/
+.footer a:link, .footer a:visited {
     text-decoration: none;
-    color: #000;
+    color: #fcf8b6;
     }
-div.footer a:active, .footer a:hover {
-/*	font-weight: bold;	*/
+.footer a:active, .footer a:hover {
     text-decoration: none;
-    color: #fff;
+    color: #999;
     }
 
 /* --------------- RANDOM QUOTES BLOCK ------------- */
@@ -433,24 +447,24 @@ div.footer a:active, .footer a:hover {
 .newssummary_title {
     font-size: 14px;
     font-weight: bold;
-    border-bottom: solid 1px #e0e0e0;
+    border-bottom: solid 1px #ffc600;
     }
 div.newssummary_title h5 {
     float: right; 
     margin: -1.33em 3px 0 0; 
     padding: 0; 
-    color: #667;
+    color: #7d7e92;
     background: #fff;
     font-size: 10px;
     font-weight: normal;
     font-style: italic;
     }
-div.newssummary_title a:link, .newssummary_title a:visited {
-    color: #000;
+.newssummary_title a:link, .newssummary_title a:visited {
+    color: #ff9300;
     background: #fff;
     text-decoration: none;
     }
-div.newssummary_title a:hover, .newssummary_title a:active {
+.newssummary_title a:hover, .newssummary_title a:active {
     color: #ccc;
     background: #fff;
     text-decoration: none;
@@ -460,7 +474,7 @@ div.newssummary_title a:hover, .newssummary_title a:active {
     }
 .news_displaytitle {
     margin-bottom: 5px; 
-    background: #ff8400; 
+    background: #000; 
     padding: 5px;
     font-size:14px;
     font-weight: bold;
@@ -476,12 +490,12 @@ div.newssummary_title a:hover, .newssummary_title a:active {
 /* --------------- DOCUMENT SUMMARY & DISPLAY TEMPLATES ------ */
 .docs_displaytitle {
     margin-bottom: 5px; 
-    background: #ff8400; 
+    background: #ffc600; 
     padding: 5px;
     font-size:14px;
     font-weight: bold;
     font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
-    color: #fff;
+    color: #000;
     }
 .docs_summarytitle {
     font-size: 12px;
@@ -492,18 +506,18 @@ div.docs_summarytitle h5 {
     float: right; 
     margin: -1.33em 3px 0 0; 
     padding: 0; 
-    color: #667;
+    color: #ccc;
     font-size: 10px;
     font-weight: normal;
     font-style: italic;
     }
 	
-div.docs_summarytitle a:link, .docs_summarytitle a:visited {
-    color: #000;
+.docs_summarytitle a:link, .docs_summarytitle a:visited {
+    color: #ff9300;
     text-decoration: none;
     }
-div.docs_summarytitle a:hover, .docs_summarytitle a:active {
-    color: #ff8400;
+.docs_summarytitle a:hover, .docs_summarytitle a:active {
+    color: #ccc;
     text-decoration: none;    
     }
 /* --------------- WEBLINKS SUMMARY & DISPLAY STYLES ---*/
@@ -524,7 +538,7 @@ div.links_summarytitle h5 {
     }
 	
 .links_summarytitle a:link, .links_summarytitle a:visited {
-    color: #000;
+    color: #ff9300;
     text-decoration: none;
     }
 .links_summarytitle a:hover, .links_summarytitle a:active {
@@ -544,7 +558,7 @@ h3.faq_title {
     margin: 0 0 10px 0;
     border-bottom: dotted 1px #666;
     }
-.faq_title a:link, .faq_title a:visited {color: #003663;}
+.faq_title a:link, .faq_title a:visited {color: #ff9300;}
 .faq_title a:hover, .faq_title a:active {color: #ccc;}
 faqsummary_wrapper {
 margin-bottom: 20px;
