@@ -25,10 +25,13 @@
     <body>
 	<xar:var name="adminnav"/>
 	<div class="xpage">
-		<div class="header">
-		    <img src="#xarTplGetThemeDir()#/images/header/logo.png" alt="" style="float: left;" />
+		<div id="header" class="showlogo">
+		   <!-- <img src="#xarTplGetThemeDir()#/images/header/logo.png" alt="" style="float: left;" /> -->
 		    <span style="float: right; margin: 20px 20px 0 0; z-index: 1000;"> 		    <xar:block module="search" type="search" template="contentonly" />
 		    </span>
+		    
+		    <span class="siteTitle"><a href="">#$sitename#</a></span>
+		    <span class="siteSlogan">#$siteslogan#</span>
 		</div>
         <div class="topnav">
 			<xar:blockgroup name="topnav" id="topnav" />

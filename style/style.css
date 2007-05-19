@@ -294,7 +294,7 @@ h1, h2, h3, h4 {
 /* theme specific styles */
 
 /* ---------------- HEADER STYLES ------------------------------------- */
-.header {
+#header {
     background:url(../images/header/hdr_bg.png) repeat-x #000;
     color: #fff;
     height: 150px;
@@ -302,10 +302,12 @@ h1, h2, h3, h4 {
     padding: 0;
     font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
     border-bottom: solid 1px #ccc;
+    z-index: 400;
     }
+
 /* -- the .sitename, and .slogan are not used in this theme, but are 
     useful if styling the sitename, and slogan somewhere --*/
-.sitename {
+.siteTitle {
     position: relative;
     top: 10px;
     left: 10px;
@@ -320,10 +322,10 @@ h1, h2, h3, h4 {
 .sitename a:active, .sitename a:hover {
     color: #FFDEAD;
     }
-.slogan {
+.siteSlogan {
     position: relative;
     top: 30px;
-    left: 0px;
+    left: -130px;
     font-size: 14px;
     font-weight: bold;
     font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
@@ -606,6 +608,13 @@ input.xar-ib-field, textarea.xar-ib-fieldtext {
 	
 
 /* other interesting styles for forms */
+ .xar-form-input-wrapper {
+	color: #ff8400;
+    }
+.xar-form-input-wrapper-after {
+	color: #fff;
+    }
+   
  .xar-form-input-wrapper input {
 border: solid 1px #000;
 } /* adds border around the name, email, and organization input boxes */
