@@ -1,7 +1,7 @@
 @import "verticalmenu.css";
 @import "code.css";
 
-/* Styles for 'm83 theme updated 8 May2007 */
+/* Styles for 'm83 theme updated 18 May2007 */
 .toprow {
     background: #323232; 
     border-bottom: solid 1px #ccc;
@@ -443,49 +443,7 @@ basically what controls the outer appearance of the menu.
     } 
 
 
-/* --------------- NEWS SUMMARY & DISPLAY TEMPLATES -------- */
-.newssummary_title {
-    font-size: 14px;
-    font-weight: bold;
-    border-bottom: solid 1px #ffc600;
-    }
-div.newssummary_title h5 {
-    float: right; 
-    margin: -1.33em 3px 0 0; 
-    padding: 0; 
-    color: #7d7e92;
-    background: #fff;
-    font-size: 10px;
-    font-weight: normal;
-    font-style: italic;
-    }
-.newssummary_title a:link, .newssummary_title a:visited {
-    color: #ff9300;
-    background: #fff;
-    text-decoration: none;
-    }
-.newssummary_title a:hover, .newssummary_title a:active {
-    color: #ccc;
-    background: #fff;
-    text-decoration: none;
-    }
-.news_summarycontent {
-    margin: 10px 5px 5px 5px;
-    }
-.news_displaytitle {
-    margin-bottom: 5px; 
-    background: #000; 
-    padding: 5px;
-    font-size:14px;
-    font-weight: bold;
-    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;
-    color: #fff;
-    }
-.news_displaytitle a:link, .news_displaytitle a:visited {
-    color: #fff;
-    text-decoration: none;
-    }
-
+/* --------------- NEWS SUMMARY & DISPLAY TEMPLATES -------- */.outernews_summaryWrapper {border: solid 1px #666;margin-top: 10px;}.innernews_summaryWrapper {background: #666;padding-bottom: 1px;border: solid 1px #000;}.newsSummary_xar-sub {color: #000;font-size: 9px;margin: 3px 0 0 5px;}.newssummary_title {    font-size: 14px;    font-weight: bold;    border-bottom: solid 1px #ffc600;	background: #FF9900;	color: #000;    background: url(../images/navbar_bg.png) repeat-x #666; /* colors the background of topnav */    height: 25px;    border-bottom: solid 1px #000;    border-top: solid 1px #000;	padding-top: 5px;    }div.newssummary_title h5 {    float: right;    margin: -1.33em 6px 0 0;    padding: 0;    color: #fff;    font-size: 10px;    font-weight: normal;    font-style: italic;    }.newssummary_title a {	margin-left: 5px;}.newssummary_title a:link, .newssummary_title a:visited {    color: #000;    background: none;    text-decoration: underline;    }.newssummary_title a:hover, .newssummary_title a:active {    color: #ccc;    background: none;    text-decoration: none;    }.news_summarycontent {    margin: 10px 5px 5px 5px;	padding: 5px;	color: #000;	font-size: 10px;	background: #fff;	border: solid 1px #000;    }.news_displaytitle {    margin-bottom: 5px;    background: #000;    padding: 5px;    font-size:14px;    font-weight: bold;    font-family: "Futura Condensed","Tahoma Bold",futura,"Franklin Gothic Bold",sans-serif;    color: #fff;    }.news_displaytitle a:link, .news_displaytitle a:visited {    color: #fff;    text-decoration: none;    }
 
 /* --------------- DOCUMENT SUMMARY & DISPLAY TEMPLATES ------ */
 .docs_displaytitle {

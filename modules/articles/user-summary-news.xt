@@ -8,30 +8,25 @@ This template has a conditional which has two versions of the user-summary-webli
 </xar:comment>
 
 <div class="xar-norm xar-standard-box-padding">
-    <xar:if condition="!empty($categories) and count($categories) gt 0">
-        [ 
-        <xar:foreach in="$categories" value="$cat">
-            #$cat['cjoin']# <a href="#$cat['clink']#">#$cat['cname']#</a> 
-        </xar:foreach>
-        ] 
-    </xar:if>
-    <div class="newssummary_title" > 
+
+<div class="outernews_summaryWrapper"><!-- the close to this div is on line #77 -->
+<div class="innernews_summaryWrapper"><!-- the close to this div is on line #76 -->
+	<div class="newssummary_title" > 
+        <xar:if condition="!empty($categories) and count($categories) gt 0">
+            <xar:foreach in="$categories" value="$cat">
+                #$cat['cjoin']# <a href="#$cat['clink']#">(#$cat['cname']#)</a> 
+            </xar:foreach>
+        </xar:if>        
         <a href="#$link#">#$title#</a>
         <xar:sec mask="AdminArticles" catch="false">
-            <a href="#xarModURL('articles','admin','modify', array('aid' => $aid))#"><img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" /></a>
+            <a href="#xarModURL('articles','admin','modify', array('aid' => $aid))#">
+            	<img src="#xarTplGetImage('edit.gif','categories')#" alt="edit" />
+            </a>
         </xar:sec>        
-        <h5 >
-        <xar:mlvar>
-            #xarLocaleGetFormattedDate('short',$pubdate)#
-        </xar:mlvar>
-<!--        <xar:mlvar>
-            #xarLocaleGetFormattedTime('short',$pubdate)#
-        </xar:mlvar>
--->
-        </h5>
+        <h5 ><xar:mlvar>#xarLocaleGetFormattedDate('short',$pubdate)#</xar:mlvar></h5>
     </div> 
     <div >
-        <span class="xar-sub"> 
+        <span class="newsSummary_xar-sub"> 
             <xar:ml>
                 <xar:mlstring>
                     Posted by: #(1)
@@ -42,17 +37,9 @@ This template has a conditional which has two versions of the user-summary-webli
             </xar:ml>
             <xar:if condition="!empty($counter)">
                 <xar:if condition="$counter eq 1">
-                    (#$counter#&nbsp;
-                    <xar:mlstring>
-                        read
-                    </xar:mlstring>
-                    ) 
+                    (#$counter#&nbsp;read) 
                     <xar:else />
-                    (#$counter#&nbsp;
-                    <xar:mlstring>
-                        reads
-                    </xar:mlstring>
-                    ) 
+                    (#$counter#&nbsp;reads) 
                 </xar:if>
             </xar:if>
         </span> 
@@ -61,39 +48,20 @@ This template has a conditional which has two versions of the user-summary-webli
         <span class="xar-sub"> #$topic_icons# </span> 
     </div>
     <div class="news_summarycontent"><!-- enclosing div around content etc -->
-        <div  class="xar-articles-summary">
-            #$summary# 
-        </div>
+        <div  class="xar-articles-summary">#$summary#</div>
         <div class="xar-align-right">
             <xar:if condition="!empty($words)">
-                <a href="#$link#">
-                    <xar:mlstring>
-                        Read More
-                    </xar:mlstring>
-                </a> 
+                <a href="#$link#">Read More</a> 
                 <xar:if condition="$words eq 1">
-                    (#$words#&nbsp;
-                    <xar:mlstring>
-                        word
-                    </xar:mlstring>
-                    ) 
+                    (#$words#&nbsp;word) 
                     <xar:else />
-                    (#$words#&nbsp;
-                    <xar:mlstring>
-                        words
-                    </xar:mlstring>
-                    ) 
+                    (#$words#&nbsp;words) 
                 </xar:if>
             </xar:if>
-            <xar:if condition="!empty($comments)">
-                #$comments# 
-            </xar:if>
+            <xar:if condition="!empty($comments)">#$comments#</xar:if>
             <div class="xar-articles-keywords">
                 <xar:if condition="!empty($keywords)">
-                    <xar:mlstring>
-                        Keywords 
-                    </xar:mlstring>
-                    : 
+					Keywords: 
                     <xar:loop name="$keywords">
                         <a href="#xarModUrl('keywords', 'user', 'main', array('keyword'=> $loop:item['keyword']))#" title="#$loop:item['keyword']#">#$loop:item['keyword']#</a> 
                     </xar:loop>
@@ -101,6 +69,8 @@ This template has a conditional which has two versions of the user-summary-webli
             </div>
         </div>
     </div> <!-- close encapse div -->
+</div><!-- opened on line #18 -->
+</div><!-- opened on line #19 -->
 </div>
 
 <xar:else />
