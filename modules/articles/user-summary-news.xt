@@ -49,9 +49,11 @@ This template has a conditional which has two versions of the user-summary-webli
     </div>
     <div class="news_summarycontent"><!-- enclosing div around content etc -->
         <div  class="xar-articles-summary">#$summary#</div>
-        <div class="xar-align-right">
+        <div class="xar-align-right xar-sub">
             <xar:if condition="!empty($words)">
-                <a href="#$link#">Read More</a> 
+                <a href="#$link#">
+                    <img src="#xarTplGetThemeDir()#/images/readMore.png" alt="read more" style="vertical-align: bottom; margin-bottom: 0;" />
+                </a> 
                 <xar:if condition="$words eq 1">
                     (#$words#&nbsp;word) 
                     <xar:else />
