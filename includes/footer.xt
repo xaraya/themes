@@ -1,0 +1,55 @@
+	<div id="footerdonate">
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+			<div>
+				<input type="hidden" name="cmd" value="_xclick" />
+				<input type="hidden" name="business" value="xaraya_pmc@xaraya.com" />
+				<input type="hidden" name="item_name" value="Xaraya project donation" />
+				<input type="hidden" name="cn" value="Optional Note" />
+				<input type="hidden" name="currency_code" value="USD" />
+				<input type="hidden" name="tax" value="0" />
+				<input type="image" src="&xar-baseurl;#$themedir#/images/x-click-but04.gif" name="submit" alt="Donate with PayPal - it's fast, free and secure!" />
+			</div>
+		</form>
+		<xar:mlstring>
+			Support Xaraya! 
+		</xar:mlstring>
+	</div>
+
+	<div id="footersponsors">
+		<a rel="external" id="footersponsorev1" href="http://www.ev1servers.net/">
+			<img src="&xar-baseurl;#$themedir#/images/ev1.gif" alt="Sponsored by EV1" />
+		</a>
+		<a rel="external" id="footersponsorneosurge" href='http://www.neosurge.com/index.html?xaraya'> 
+            <img src="&xar-baseurl;#$themedir#/images/neosurge.gif" alt="Sponsored by NeoSurge" />
+        </a>
+		<span>
+			<a href="index.php/base/sponsorlist" title="Full list of sponsors and donations">
+			<xar:mlstring>
+				Kindly sponsored by
+			</xar:mlstring>
+			</a>
+		</span>
+	</div>
+<xar:set name="hometitle"><xar:mlstring>Go to Home Webpage</xar:mlstring></xar:set>
+<xar:set name="contacttitle"><xar:mlstring>View Contact Webpage</xar:mlstring></xar:set>
+<xar:set name="legaltitle"><xar:mlstring>View Legal Terms</xar:mlstring></xar:set>
+<xar:set name="privacytitle"><xar:mlstring>View Privacy Statement</xar:mlstring></xar:set>
+<div id="footerlinks">
+    <a href="&xar-baseurl;index.php" title="#$hometitle#">
+        <xar:mlstring>Home</xar:mlstring></a>
+    &bull;
+    <a href="&xar-baseurl;index.php/sitecontact" title="#$contacttitle#">
+        <xar:mlstring>Contact Us</xar:mlstring></a>
+    &bull;
+    <a href="&xar-baseurl;index.php/registration/terms" title="#$legaltitle#">
+        <xar:mlstring>Legal</xar:mlstring></a>
+    &bull;
+    <a href="&xar-baseurl;index.php/registration/privacy" title="#$privacytitle#">
+        <xar:mlstring>Privacy</xar:mlstring></a>
+</div>
+<div id="footercopyright">
+    &copy; 2004 - 2007
+    <xar:mlstring>
+        Xaraya Development Group 
+    </xar:mlstring>
+</div>

@@ -1,0 +1,12 @@
+<div class="xar-mod-head">
+	<span class="xar-mod-title">
+		<xar:mlstring>Supporting Xaraya</xar:mlstring>
+	</span>
+</div>
+<xar:block module="articles" type="featureditems" instance="sponsor_overview_doc" template="overview" />
+<xar:block module="articles" type="topitems" instance="sponsors_major" template="sponsor;sponsors"/>
+<xar:block module="articles" type="topitems" instance="sponsors_minor" template="sponsor;sponsors"/>
+<xar:block module="articles" type="topitems" instance="sponsors_donormajor" template="sponsor;sponsors"/>
+<xar:block module="articles" type="topitems" instance="sponsors_donorminor" template="sponsor;sponsors"/>
+<p style="clear:both;text-align:right;"><a href="index.php/sponsors/c_176/"><xar:mlstring>Browse all donations</xar:mlstring></a></p>
+

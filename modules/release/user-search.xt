@@ -1,0 +1,121 @@
+<xar:comment>
+    License: GPL http://www.gnu.org/copyleft/gpl.html
+</xar:comment>
+<xar:if condition="!isset($ishooked) or empty($ishooked)">
+	<div class="xar-mod-head">
+	   <span class="xar-mod-title"><xar:mlstring>Project Registration &amp; Releases</xar:mlstring></span>
+	</div>
+	<div class="xar-mod-body">
+</xar:if>
+
+<h2><xar:mlstring>Search Registered Extensions</xar:mlstring></h2>
+
+<xar:if condition="!isset($ishooked) or empty($ishooked)">
+		<xar:template type="module" file="user-menu" />
+
+	    <form method="post" action="&xar-modurl-release-user-search;">
+			<p>
+				<label for="q"><xar:mlstring>Search for</xar:mlstring></label>
+				<input type="text" name="q" id="q" value="" size="20" />
+				<xar:set name="$search"><xar:mlstring>Search</xar:mlstring></xar:set>
+				<input type="submit" name="search" value="#$search#" />
+			</p>
+			<p>
+				<xar:mlstring>By author </xar:mlstring>
+				<input type="text" name="author" id="author" value="" size="20" />
+			</p>
+</xar:if>
+<xar:if condition="!empty($release) and count($release) gt 0">
+
+	<div class="xar-form-input-wrapper">
+	    <span class="xar-form-label">
+	        <xar:mlstring>Search in:</xar:mlstring>
+	    </span>
+	    <div class="xar-form-container-after">
+			<span style="margin-right: 2em;white-space: nowrap;">
+			    <xar:if condition="isset($rid) && $rid eq '1'">
+			        <input type="checkbox" name="rid" id="rid" value="1" checked="checked" />
+			    <xar:else />
+			        <input type="checkbox" name="rid" id="rid" value="1" />
+			    </xar:if>
+				<label for="rid">
+			    	<xar:mlstring>Extension ID</xar:mlstring>
+			    </label>
+			</span>
+
+			<span style="margin-right: 2em;white-space: nowrap;">
+			    <xar:if condition="isset($regname) && $regname eq '1'">
+				    <input type="checkbox" name="regname" id="regname" value="1" checked="checked" />
+			    <xar:else />
+				    <input type="checkbox" name="regname" id="regname" value="1" />
+			    </xar:if>
+				<label for="regname">
+				    <xar:mlstring>Registered Name</xar:mlstring>
+				</label>
+			</span>
+
+			<span style="margin-right: 2em;white-space: nowrap;">
+			    <xar:if condition="isset($displname) and $displname eq '1'">
+				    <input type="checkbox" name="displname" id="displname" value="1" checked="checked" />
+			    <xar:else />
+				    <input type="checkbox" name="displname" id="displname" value="1" />
+			    </xar:if>
+				<label for="displname">
+				    <xar:mlstring>Display Name</xar:mlstring>
+				</label>
+			</span>
+
+			<span style="margin-right: 2em;white-space: nowrap;">
+			    <xar:if condition="isset($desc) and $desc eq '1'">
+				    <input type="checkbox" name="desc" id="desc" value="1" checked="checked" />
+			    <xar:else />
+				    <input type="checkbox" name="desc" id="desc" value="1" />
+			    </xar:if>
+				<label for="desc">
+				    <xar:mlstring>Extension Description</xar:mlstring>
+				</label>
+			</span>
+
+			<span style="margin-right: 2em;white-space: nowrap;">
+			    <xar:if condition="isset($authorsearch) && $authorsearch eq 1">
+				    <input type="checkbox" name="authorsearch" id="authorsearch" value="1" checked="checked" />
+			    <xar:else />
+				    <input type="checkbox" name="authorsearch" id="authorsearch" value="1" />
+			    </xar:if>
+				<label for="authorsearch">
+				   <xar:mlstring>Extension Author</xar:mlstring>
+				</labe>
+			</span>
+		</div>
+	</div>
+
+    <h3>
+        <xar:mlstring>Registered Extensions Found:</xar:mlstring>
+    </h3>
+
+    <ul>
+        <xar:foreach in="$release" key="$key" value="$extension">
+
+             <xar:foreach in="$exttypes" key="$k" value="$v">
+                <xar:if condition="$extension['exttype'] eq $k and ($k ne 0)">
+                      <xar:set name="exttypename">$v</xar:set>
+                </xar:if>
+             </xar:foreach>
+            <li>
+                <h4><a href="#xarModURL('release', 'user', 'display', array('eid' => $extension['eid']))#">#$extension['displname']#</a></h4>
+                <xar:mlstring> by </xar:mlstring>
+                <a href="#xarModURL('roles', 'user', 'display', array('uid' => $extension['uid']))#">#$extension['author']#</a>
+				[ #$exttypename# | ID #$extension['rid']# ]
+            </li>
+        </xar:foreach>
+    </ul>
+<xar:else/>
+    <xar:if condition="!empty($status)">
+        <p>
+            #$status#
+        </p>
+    </xar:if>
+</xar:if>
+<xar:if condition="empty($ishooked)">
+</div>
+</xar:if>

@@ -1,0 +1,12 @@
+<div id="main_right">
+    <xar:block module="search" type="search" title="Search Xaraya.com" template="homeright;home" />
+    <xar:blockgroup name="main2" id="main2" template="homeright" />
+    <xar:blockgroup name="main3" id="main3" template="homeright" />
+
+    <xar:blockgroup name="admin"  id="admin"  />
+    <xar:blockgroup name="center" id="center" />
+</div>
+<div id="main_left">
+    <h3>Latest News</h3>
+    <xar:block module="articles" type="featureditems" instance="main_overview_article" template="xe1-overview;fp" />
+</div>

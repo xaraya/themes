@@ -1,0 +1,35 @@
+<div class="xar-mod-head">
+	<span class="xar-mod-title">
+		<xar:mlstring>Xaraya Documentation</xar:mlstring>
+	</span>
+</div>
+<h1>
+	<xar:mlstring>Documentation Matrix</xar:mlstring>
+</h1>
+
+<xar:set name="properties">#xarModAPIFunc('dynamicdata','user','getobject',array('module'=>'articles','itemtype'=>9))#</xar:set>
+<xar:set name="values">#xarModAPIFunc('dynamicdata','user','getitems', array('module'=> 'articles','itemtype'=> 9))#</xar:set>
+<xar:set name="rootcategory">xarModAPIFunc('categories','user','getcat', array('cid' => 18))</xar:set>
+<xar:set name="primarycategory">xarModAPIFunc('categories','user','getchildren', array('cid' => 18))</xar:set>
+<h2><a href="http://xaraya.com/index.php/documentation/c_18/">#$rootcategory[0]['name']#</a></h2>
+<ul>
+<xar:foreach in="$primarycategory" value="$primarycategoryout">
+<xar:set name="$boo">xarModURL('articles', 'user', 'view', array('itemtype' => 9, 'catid'=>$primarycategoryout['cid'] ))</xar:set>
+ <li><h3><a href="#$boo#">#$primarycategoryout['name']#</a></h3>
+ <xar:set name="secondarycategory">xarModAPIFunc('categories','user','getchildren',array('cid'=>$primarycategoryout['cid']))</xar:set>
+  <ul>
+  <xar:foreach in="$secondarycategory" value="$secondarycategoryout">
+<xar:set name="$doo">xarModURL('articles', 'user', 'view', array('itemtype' => 9, 'catid'=>$secondarycategoryout['cid'] ))</xar:set>
+   <li><h4><a href="#$doo#">#$secondarycategoryout['name']#</a></h4></li>
+   <xar:set name="$articletitlez">xarModAPIFunc('articles','user','getall', array('ptid' => 9, 'cids' => array($secondarycategoryout['cid'] )))</xar:set>
+  <ul>
+  <xar:foreach in="$articletitlez" value="$articletitlezout">
+  <xar:set name="$foo">xarModURL('articles', 'user', 'display', array('ptid' => 9, 'aid' => $articletitlezout['aid'] ))</xar:set>
+  <xar:data-getitem name="$properties" values="$values" module="articles" itemtype="9" itemid="$articletitlezout['aid']" />
+  <li><a href="#$foo#">#$articletitlezout['title']#</a> | <xar:data-output property="$properties['docstatus']" />|  #xarLocaleFormatDate('%d %b %Y', $articletitlezout['pubdate'])# </li>
+  </xar:foreach>
+  </ul>
+ </xar:foreach>
+</ul>
+</xar:foreach>
+</ul>

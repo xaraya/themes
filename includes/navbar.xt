@@ -1,0 +1,68 @@
+<ul id="navbar_core">
+    <li id="about_item">
+        <a href="&xar-baseurl;index.php/base/about" class="navoverview"><xar:mlstring>About</xar:mlstring></a>
+        <div id="menu_about">
+        <ul>
+            <xar:block instance="about_mainmenu" module="base" type="menu" template="bare;mainnav" />
+        </ul>
+        </div>
+    </li>
+    <li id="access_item">
+        <a href="#foo" class="navoverview"><xar:mlstring>Access</xar:mlstring></a>
+        <div id="menu_access">
+        <ul>
+            <xar:if condition="xarUserIsLoggedIn()">
+                <li><a href="&xar-modurl-authsystem-user-logout;"><xar:mlstring>Log out</xar:mlstring></a></li>
+                <li><a href="index.php/roles/account"><xar:mlstring>View Your Account</xar:mlstring></a></li>
+                <li><a href="index.php/messages/Inbox"><xar:mlstring>Private Messages</xar:mlstring></a></li>
+                <li><a href="index.php/roles/list/"><xar:mlstring>Members Online</xar:mlstring></a></li>
+                <li><a href="index.php/registration/privacy"><xar:mlstring>Privacy Policy</xar:mlstring></a></li>
+                <li><a href="index.php/registration/terms"><xar:mlstring>Terms of Use</xar:mlstring></a></li>
+                <li><a href="index.php/base/accessibility" accesskey="0"><xar:mlstring>Accessibilty Statement</xar:mlstring></a></li>
+            <xar:else />
+                <li><a href="&xar-modurl-authsystem-user-main;"><xar:mlstring>Log in</xar:mlstring></a></li>
+                <li><a href="&xar-modurl-registration-user-main;"><xar:mlstring>New User (register)</xar:mlstring></a></li>
+                <li><a href="index.php?module=roles&amp;func=lostpassword"><xar:mlstring>Lost Password?</xar:mlstring></a></li>
+                <li><a href="index.php/roles/list/viewall"><xar:mlstring>Member List</xar:mlstring></a></li>
+                <li><a href="&xar-modurl-registration-user-privacy;"><xar:mlstring>Privacy Policy</xar:mlstring></a></li>
+                <li><a href="&xar-modurl-registration-user-terms;"><xar:mlstring>Terms of Use</xar:mlstring></a></li>
+                <li><a href="index.php/base/accessibility" accesskey="0"><xar:mlstring>Accessibilty Statement</xar:mlstring></a></li>
+            </xar:if>
+        </ul>
+        </div>
+    </li>
+    <li id="solutions_item">
+        <a href="&xar-baseurl;index.php/base/solutions" class="navoverview"><xar:mlstring>Solutions</xar:mlstring></a>
+        <div id="menu_solutions">
+        <ul>
+            <xar:block instance="solutions_mainmenu" module="base" type="menu" template="bare;mainnav" />
+        </ul>
+        </div>
+    </li>
+    <li id="community_item">
+        <a href="&xar-baseurl;index.php/base/community" class="navoverview"><xar:mlstring>Community</xar:mlstring></a>
+        <div id="menu_community">
+        <ul>
+            <xar:block instance="community_mainmenu" module="base" type="menu" template="bare;mainnav" />
+        </ul>
+        </div>
+    </li>
+    <li id="extensions_item">
+        <a href="&xar-baseurl;index.php/release/view" class="navoverview"><xar:mlstring>Extensions</xar:mlstring></a>
+        <div id="menu_extensions">
+        <ul>
+            <li><a href="#foo">Modules</a></li>
+            <li><a href="#foo">Themes</a></li>
+            <li><a href="#foo">Search Extensions</a></li>
+        </ul>
+        </div>
+    </li>
+    <li id="documentation_item">
+        <a href="&xar-baseurl;index.php/base/documentation" class="navoverview"><xar:mlstring>Documentation</xar:mlstring></a>
+        <div id="menu_documentation" style="margin-left: -55px;">
+        <ul>
+            <xar:block instance="docs_mainmenu" module="base" type="menu" template="bare;mainnav" />
+        </ul>
+        </div>
+    </li>
+</ul>

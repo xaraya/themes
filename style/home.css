@@ -1,0 +1,89 @@
+body {
+    color: #000;
+    background-color: #fff;
+    font: 10pt Arial, Verdana, sans-serif;
+    background: #fff url(/themes/xartropics/images/home/header_bg.png) repeat-x;
+    padding: 0;
+    margin: 0;
+}
+div#header {
+    height: 232px;
+    background-image: url(/themes/xartropics/images/home/logo.png);
+    background-repeat: no-repeat;
+}
+div#header_content_wrap {
+    margin: 0 10px 0 220px;
+    padding-top: 42px;
+    width: auto;
+}
+div#header_content {
+    height: 130px;
+    background-image: url(/themes/xartropics/images/home/head-bgbr.png);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+}
+div#header_contentinner {
+    background-image: url(/themes/xartropics/images/home/head-bgtl.gif);
+    background-position: top left;
+    background-repeat: no-repeat;
+    height: 105px;
+}
+div#header_trcorner {
+    height: 15px;
+    background-image: url(/themes/xartropics/images/home/head-bgtr.png);
+    background-position: top right;
+    background-repeat: no-repeat;
+    font-size: 0;
+}
+div#header_blcorner {
+    height: 25px;
+    background-image: url(/themes/xartropics/images/home/head-bgbl.png);
+    background-position: top left;
+    background-repeat: no-repeat;
+    font-size: 0;
+}
+a#head_link {
+    display: block;
+    width: 182px;
+    margin: 15px 0 0 17px;
+    height: 150px;
+    float: left;
+    text-indent: -512pt;
+}
+div#navbar {
+    height: 50px;
+    background-image: url(/themes/xartropics/images/home/navbar-bgbr.png);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+}
+div#navbar_inner {
+    background-image: url(/themes/xartropics/images/home/navbar-bgtl.gif);
+    background-position: top left;
+    background-repeat: no-repeat;
+    height: 30px;
+}
+div#navbar_trcorner {
+    height: 15px;
+    background-image: url(/themes/xartropics/images/home/navbar-bgtr.png);
+    background-position: top right;
+    background-repeat: no-repeat;
+    margin-bottom: -5px;
+    font-size: 0;
+}
+div#navbar_blcorner {
+    height: 19px;
+    background-image: url(/themes/xartropics/images/home/navbar-bgbl.png);
+    background-position: top left;
+    background-repeat: no-repeat;
+    font-size: 0;
+}
+
+div#header_whatis {
+    float: left;
+    width: 57%;
+}
+div#header_release {
+    float: right;
+    width: 40%;
+}
+

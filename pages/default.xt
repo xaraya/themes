@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xar type="page" ?>
+<!DOCTYPE blocklayout PUBLIC "-//XAR//DTD BL 1.0 Strict//EN" "http://xaraya.com/bl1/DTD/bl1-strict.dtd">
+<xar:blocklayout content="text/html" xmlns:xar="http://xaraya.com/2004/blocklayout" version="1.0" dtd="xhtml1-strict">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <base href="#xarServerGetBaseURL()#" />
+	<xar:set name="thisreq">xarRequestGetInfo()</xar:set>
+	<xar:set name="thismodule">$thisreq[0]</xar:set>
+	<xar:set name="thistype">$thisreq[1]</xar:set>
+	<xar:set name="thisfunc">$thisreq[2]</xar:set>
+	<xar:set name="thisreq">implode('_', $thisreq)</xar:set>
+
+    <xar:set name="thispage">
+        xarVarGetCached('Base.pages','page') 
+    </xar:set>
+    <xar:set name="thismod">
+        xarModGetName()
+    </xar:set>
+
+    <xar:if condition="(isset($thispage) and ($thispage eq 'support')) or (isset($thismod) and (($thismod eq 'xarbb') or ($thismod eq 'chat') or ($thismod eq 'newsgroups') or ($thismod eq 'messages')))">
+        <xar:set name="section">'support'</xar:set>
+    <xar:elseif condition="(isset($thispage) and ($thispage eq 'about')) or (isset($thismod) and (($thismod eq 'stats')))" />
+        <xar:set name="section">'about'</xar:set>
+    <xar:elseif condition="((isset($thispage) and (($thispage eq 'community') or ($thispage eq 'xarteam')))) or (isset($thismod) and (($thismod eq 'polls') or ($thismod eq 'roles') or ($thismod eq 'comments')))" />
+        <xar:set name="section">'team'</xar:set>
+    <xar:elseif condition="(isset($thispage) and ($thispage eq 'developer')) or (isset($thismod) and (($thismod eq 'release') or ($thismod eq 'bkview')))" />
+        <xar:set name="section">'development'</xar:set>
+    <xar:elseif condition="isset($thispage) and ($thispage eq 'solutions')" />
+        <xar:set name="section">'solutions'</xar:set>
+    <xar:elseif condition="(isset($thispage) and ($thispage eq 'documentation') or (isset($thismod) and ($thismod eq 'xarpages')))" />
+        <xar:set name="section">'documentation'</xar:set>
+    <xar:else />
+        <xar:set name="section">''</xar:set>
+    </xar:if>
+
+    <xar:if condition="$thisreq eq 'base_user_main' and $section eq ''">
+        <xar:set name="is_home">true</xar:set>
+    <xar:else />
+        <xar:set name="is_home">false</xar:set>
+    </xar:if>
+    <xar:set name="themedir">#xarTplGetThemeDir()#</xar:set>
+
+
+    <xar:blockgroup name="header" id="header" />
+    <title>#$tpl:pageTitle#</title>
+    <link rel="shortcut icon" href="&xar-baseurl;#$themedir#/images/favicon.png" type="image/x-icon" />
+    <xar:style scope="common" />
+    <style type="text/css">@import url(&xar-baseurl;#$themedir#/style/style.css); </style>
+    <xar:if condition="$is_home">
+        <style type="text/css">@import url(&xar-baseurl;#$themedir#/style/home.css); </style>
+    <xar:elseif condition="$thismodule eq 'dynamicdata' and $thistype eq 'util'" />
+        <style type="text/css">@import url(&xar-baseurl;#$themedir#/style/admin.css); </style>
+    <xar:else />
+        <style type="text/css">@import url(&xar-baseurl;#$themedir#/style/inside.css); </style>
+    </xar:if>
+
+    <xar:template file="suckerfish" type="theme" />
+
+    <xar:additional-styles />
+    <xar:base-render-javascript position="head" />
+</head>
+<body>
+    <div id="header">
+        <a href="&xar-baseurl;" id="head_link">Xaraya</a>
+        <div id="header_content_wrap">
+            <div id="header_content">
+                <div id="header_contentinner">
+                    <div id="header_trcorner"></div><div id="header_contentcore">
+					    <xar:if condition="$is_home">
+					    	<h1>Home:  #xarRequestGetVar('module')# : #xarRequestGetVar('type')# : #xarRequestGetVar('func')# (#$section#) #$thisreq#</h1>
+					    <xar:else />
+					        <h1>inside: #xarRequestGetVar('module')# : #xarRequestGetVar('type')# : #xarRequestGetVar('func')# (#$section#) #$thisreq#</h1>
+					    </xar:if>
+                    </div>
+                </div>
+            <div id="header_blcorner"></div>
+        </div>
+            <div id="navbar">
+                <div id="navbar_inner">
+                    <div id="navbar_trcorner"></div>
+                    <xar:template file="navbar" type="theme" />
+                </div>
+                <div id="navbar_blcorner"></div>
+            </div>
+        </div>
+    </div>
+
+	<xar:if condition="$thismodule ne 'dynamicdata' and $thistype ne 'util'" >
+	    <div id="contentleft">
+	        <xar:if condition="$section ne ''">
+				<div class="xar-block-head-right topblock">
+					<xar:set name="sectitle">ucwords($section)</xar:set>
+		            <h3 class="xar-block-title-right">#$sectitle#</h3>
+		        </div>
+	            <div id="section_image" class="section-#$section#"></div>
+	        </xar:if>
+	        <xar:blockgroup name="right$section" id="right" template="right" />
+	        <xar:blockgroup name="left" id="left" template="right" />
+	    </div>
+	</xar:if>
+
+    <div id="contentmain">
+    	<div id="contentmain_inner"><div id="contentmain_tlcorner"><div id="contentmain_trcorner"></div></div>
+            <div id="contentmain_core">
+                <xar:module id="modulespace" main="true" />
+            </div>
+            <div id="contentmain_blcorner"><div id="contentmain_brcorner"></div></div></div>
+    </div>
+
+    <div id="footerwrap">
+        <div id="footer_content">
+            <div id="footer_contentinner">
+                <div id="footer_trcorner"></div>
+                <div id="footer_core">
+                    <xar:template file="footer" type="theme" />
+                </div>
+            </div>
+            <div id="footer_blcorner"></div>
+        </div>
+    </div>
+    <xar:base-render-javascript position="body" />
+</body>
+</html>
+</xar:blocklayout>

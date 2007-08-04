@@ -1,0 +1,54 @@
+<div class="xar-alt" style="margin: 0px 3px 6px 3px;padding: 1px;text-align: left;">
+	<div class="xar-norm" style="padding: 3px; margin-bottom:15px;">
+		<xar:comment>
+			jojodee: Do we really want these categories here .. crowds the page. 
+			<xar:if condition="!empty($categories) and count($categories) gt 0">
+				[ 
+				<xar:foreach in="$categories" value="$cat">
+					#$cat['cjoin']# 
+					<a href="#$cat['clink']#">
+						#$cat['cname']# 
+					</a>
+				</xar:foreach>
+				] 
+			</xar:if>
+		</xar:comment>
+		<h1>
+			<a class="xar-title" href="#$link#">
+				#$title#
+			</a>
+		</h1>
+		<xar:if condition="!empty($notes)">
+			<p>
+				Note: 
+				<br />
+				<i>
+					#$notes# 
+				</i>
+			</p>
+		</xar:if>
+		<div class="xar-sub">
+			<span style="float: right; width: 100%; text-align: right; margin-top:3px; margin-bottom:3px;">
+				<xar:comment>
+					<xar:ml>
+						<xar:mlstring>
+							Last update: 
+						</xar:mlstring>
+					</xar:ml>
+					#xarLocaleFormatDate('%d %B %Y', $lastupdate)# 
+				</xar:comment>
+				<xar:if condition="!empty($hooks) and !empty($hooks['changelog'])">
+					#$hooks['changelog']# 
+				</xar:if>
+				<xar:if condition="!empty($words)">
+					<a href="#$link#">
+						>> 
+						<xar:mlstring>
+							Read More 
+						</xar:mlstring>
+					</a>
+				</xar:if>
+			</span>
+		</div>
+	</div>
+</div>

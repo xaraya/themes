@@ -1,0 +1,28 @@
+<div class="xar-norm" style="padding: 3px;">
+	<h2>
+		<a href="#$link#">
+			#$title#</a>
+	</h2>
+	<xar:if condition="isset($author)">
+		<div class="xar-alt">
+			#$author#
+		</div>
+	</xar:if>
+	<xar:if condition="isset($pubdate)">
+		<div class="xar-norm">
+			<xar:ml>
+				<xar:mlstring>
+					#(1)
+				</xar:mlstring>
+				<xar:mlvar>
+				#xarLocaleFormatDate('%a, %d %B %Y %H:%M:%S %Z', $pubdate)#
+				</xar:mlvar>
+			</xar:ml>
+		</div>
+	</xar:if>
+	<xar:if condition="isset($summary)">
+		<p>
+			#$summary#
+		</p>
+	</xar:if>
+</div>

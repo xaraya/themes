@@ -1,0 +1,73 @@
+/* system-wide navigation tabs nicely wrappable and made out of a list */
+dl.xar-tabs {
+    margin: 1em 0 .5em 0;
+    padding: 3px 0 0 0;
+    width: 100%;
+    float: left;
+    background: #F6FADE url(/themes/xartropics/images/greenbar.png) top left repeat-x;
+    line-height: 1.6em;
+    border-bottom: 1px solid #abe324;
+}
+
+html * dl.xar-tabs {
+    display: table;
+    float: none;
+}
+
+dl.xar-tabs dt.help {
+    float: left;
+    padding: 2px 6px;
+    margin-bottom: -2px;
+    line-height: 1.6em;
+    border: 0 none;
+    font-weight: bold;
+}
+
+dl.xar-tabs dd {
+    margin: 1px -6px -1px 5px;
+    padding: 0;
+    float: left;
+    background-color: #F6FADE;
+    border: 1px solid #abe324;
+    border-bottom: 1px solid #F6FADE;
+}
+
+dl.xar-tabs dd a {
+    display: block;
+    padding: 0 .5em;
+    color: #f93;
+    background-color: #F6FADE;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+dl.xar-tabs dd a:hover {
+    color: #FF5712;
+    text-decoration: none;
+}
+
+dl.xar-tabs dd.active a {
+    color: #FF5712;
+    background-color: #F6FADE;
+    border: 1px solid #FF5712;
+    border-bottom: 1px solid #F6FADE;
+}
+
+/* ie5-mac seems to need this */
+* html dl.xar-tabs dd a { display: inline-block; }
+
+/* a bit fancier look for good browsers */
+dl.xar-tabs dd.active > a {
+    margin: -5px 1px -1px -1px;
+    border-bottom: 5px solid #F6FADE;
+}
+
+* html dl.xar-tabs dd.active {
+    margin-top: -5px;
+    border: 0 none;
+    line-height: 1.9em;
+}
+
+dl.xar-tabs dd.active a:hover {
+    color: #FF5712;
+}

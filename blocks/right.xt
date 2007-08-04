@@ -1,0 +1,13 @@
+<div class="xar-block-right">
+    <div class="xar-block-head-right">
+        <h3 class="xar-block-title-right">#$title#</h3>
+    </div>
+    <xar:set name="waveoffset">rand(0,5) * 30</xar:set>
+    <div class="xar-block-middle-right" style="background-position: #$waveoffset#px 0;"></div>
+    <div class="xar-block-body-right">
+        <div class="xar-block-core-right">
+            #$content#
+        </div>
+    </div>
+    <div class="xar-block-foot-right"></div>
+</div>

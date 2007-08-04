@@ -1,0 +1,9 @@
+<div class="xar-mod-head">
+	<span class="xar-mod-title">
+		<xar:mlstring>Xaraya Documentation</xar:mlstring>
+	</span>
+</div>
+<xar:block module="articles" type="featureditems" instance="doc_overview" template="overview" />
+<xar:blockgroup name="docs2" id="docs2" template="xe1_half_right_framed_cleared" />
+<xar:blockgroup name="docs3" id="docs3" template="xe1_half_left_framed_cleared" />
+

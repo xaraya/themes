@@ -1,0 +1,75 @@
+<div style="clear: both; padding: 2px; margin-top:20px;">
+	<span style="float: left; width: 48%; text-align: left;">
+		<a rel="external" class="xar-title" href="#$body#">
+			#$title#
+		</a>
+	</span>
+	<span class="xar-sub" style="float: right; width: 48%; text-align: right;">
+		<xar:if condition="!empty($categories) and count($categories) gt 0">
+			[ 
+			<xar:foreach in="$categories" value="$cat">
+				#$cat['cjoin']# 
+				<a href="#$cat['clink']#">
+					#$cat['cname']#
+				</a>
+			</xar:foreach>
+			]
+		</xar:if>
+	</span>
+</div>
+<div class="docs-article-wrapper" style="clear:both; padding: 5px; margin-bottom:20px;">
+<div style="clear: both; padding: 5px; margin-bottom:10px;">
+    <xar:if condition="isset($screenshot_output) AND count($screenshot_output) ge '1'">
+	<span class="xar-normal" style="float: left; width: 160; text-align: left;">
+        <xar:foreach in="$screenshot_output" key="$imageId">
+        <a class="xar-title" href="#$body#">
+            <xar:image-resize src="$imageId" width="150px" constrain="1" label="$title" />
+        </a>
+        </xar:foreach>
+    </span>
+	<span class="xar-normal" style="float:right; position-left:175px; width:70%; text-align: left;">
+		 #$summary#
+	</span>
+    <xar:else />
+	<span class="xar-normal" style="float:left; width:98%; text-align: left;">
+		 #$summary#
+	</span>
+    </xar:if>
+	<div class="xar-sub" style="clear: both; padding:10px 2px 2px 2px;">
+		<span style="float: left; width: 48%; text-align: left;">
+			<xar:mlstring>
+				Added on
+			</xar:mlstring>
+			 #xarLocaleGetFormattedDate('medium',$pubdate)#
+
+		    <xar:mlstring> by </xar:mlstring>
+   			<a href="&xar-modurl-roles-user-display;&amp;uid=#$authorid#">#xarUserGetVar('name',$authorid)#</a>
+		</span>
+		<span style="float: right; width: 48%; text-align: right;">
+			>>
+			<a href="#$link#">
+				<xar:mlstring>
+					Rate this site
+				</xar:mlstring>
+			</a>
+            <xar:if condition="!empty($rating)">
+            <xar:set name='fracrating'>round($rating/20)</xar:set>
+            <xar:set name='modrating'>fmod($rating,20)</xar:set>
+	            <xar:for start="$i = 0" test="$i lt $fracrating" iter="$i++">
+		           <img src="modules/ratings/xarimages/star.gif" alt="star" />
+     	       </xar:for>
+	           <xar:if condition="$modrating ge 0.5">
+		           <img src="modules/ratings/xarimages/halfstar.gif" alt="half star" />
+    	       </xar:if>
+			</xar:if>
+			<xar:if condition="!empty($counter)">
+				(#$counter#
+				<xar:mlstring>
+					Visits
+				</xar:mlstring>
+				)
+			</xar:if>
+		</span>
+	</div>
+</div>
+</div>

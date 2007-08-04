@@ -1,0 +1,420 @@
+/* XARAYA REQUIRED CLASSES */
+a {
+    color: #0E81AB;
+    font-weight: bold;
+    text-decoration: underline;
+}
+a:hover {
+    color: #00a675;
+}
+a:visited {
+    color: #1095C6;
+    text-decoration: none;
+}
+a img {
+    border: 0;
+}
+blockquote {
+}
+body {
+    color: #000;
+    background-color: #fff;
+    font: 10pt Arial, Verdana, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+code {
+}
+h1,h2,h3,h4,h5,h6 {
+    color: #f93;
+}
+h1 {
+}
+h2 {
+}
+h3 {
+}
+h4 {
+}
+th {
+}
+td {
+}
+table {
+}
+thead {
+}
+tbody {
+}
+tfoot {
+}
+p {
+}
+pre {
+}
+input {
+}
+button {
+}
+select {
+}
+textarea {
+}
+img {
+}
+li {
+}
+ul {
+}
+ol {
+}
+sup {
+}
+sub {
+}
+
+/*  XARAYA REQUIRED INDIVIDUAL CLASSES */
+td.xar-norm {}
+td.xar-alt {}
+
+/*  XARAYA REQUIRED ANONYMOUS CLASSES  */
+
+/* these defaults apply to the left block group */
+.xar-block-head{
+}
+.xar-block-title {
+}
+.xar-block-body {
+}
+.xar-block-foot {
+}
+
+/* right block group classes */
+div.xar-block-right {
+    padding: 0;
+    margin: 0 0 2em 0;
+    width: 100%;
+}
+div.xar-block-head-right{
+    background: #B3F5FA url(/themes/xartropics/images/block-head.gif) top center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 6px 0 3px 0;
+}
+h3.xar-block-title-right {
+    text-align: center;
+    line-height: 1;
+    font-size: 11pt;
+    color: #1095C6;
+    margin: 0px 10px;
+}
+div.xar-block-middle-right {
+    height: 10px;
+    background: #B3F5FA url(/themes/xartropics/images/block-wave.png) 0 0;
+    border: 1px solid #ABE324;
+    border-width: 0 1px;
+    font-size: 0;
+}
+div.xar-block-body-right {
+    background: #fff url(/themes/xartropics/images/block-body.png) top center;
+    background-repeat: no-repeat;
+    min-height: 125px;
+}
+div.xar-block-core-right {
+    padding-top: 1px;
+    margin: 0 10px;
+}
+.xar-block-foot-right {
+}
+div.xar-block-core-right ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+div.xar-block-core-right li {
+    margin-bottom: .5em;
+}
+div.xar-block-core-right *:first-child {
+    margin-top: 0;
+}
+
+div#contentleft div.xar-block-right:first-child div.xar-block-head-right {
+    background-image: url(/themes/xartropics/images/block-tophead.gif);
+}
+
+
+
+/* topnav block group classes */
+.xar-block-head-topnav {
+}
+.xar-block-title-topnav {
+}
+.xar-block-body-topnav {
+}
+.xar-block-foot-topnav {
+}
+
+/* center block group classes */
+.xar-block-head-center{
+}
+.xar-block-title-center {
+}
+.xar-block-body-center {
+}
+.xar-block-foot-center {
+}
+.xar-mod-head {
+}
+.xar-mod-title {
+}
+.xar-mod-body {
+}
+.xar-mod-foot {
+}
+.xar-alt {
+}
+.xar-accent {
+}
+.xar-alt-outline {
+}
+.xar-accent-outline {
+}
+.xar-norm-outline {
+}
+.xar-norm {
+}
+.xar-sub {
+}
+.xar-menu-section {
+}
+.xar-menu-section-current {
+}
+.xar-menu-item {
+}
+.xar-menu-item-current {
+}
+.xar-menu-item:hover {
+}
+.xar-menu-subitem {
+}
+.xar-menu-subitem:hover {
+
+}
+.xar-menu-subitem-current {
+}
+.xar-menu-item-current > .xar-menu-subitem > a {
+}
+.xar-menu-item-current > .xar-menu-subitem > a:visited {
+}
+.xar-title {
+}
+.xar-error {
+}
+
+/* Misc theme-specific styles */
+div#header_content h1, div#header_content h2, div#header_content p, div#header_content ul, div#header_content li {
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style: none;
+} 
+div#header_content h1, div#header_content h2 {
+    font-size: 12pt;
+}
+div#header_content ul, div#header_content li {
+    margin: 0;
+    padding: 0;
+}
+div#header_contentcore {
+    margin: 0 20px 0 10px;
+}
+ul#navbar_core {
+    margin: 0 20px 0 10px;
+    padding: 0;
+    height: 20px;
+    z-index: 200;
+}
+ul#navbar_core li {
+    float: left;
+    width: 16.6%;
+    text-align: left;
+    list-style: none;
+    font-size: 12pt;
+    height: 100%;
+}
+ul#navbar_core a, div#contentmain h1 a {
+    color: #f93;
+    text-decoration: none;
+    display: block;
+    height: 100%;
+}
+div#contentmain h2 a, div#contentmain h3 a, div#contentmain h4 a {
+    color: #f93;
+    text-decoration: none;
+}
+ul#navbar_core a:hover, 
+ul#navbar_core > li:hover > a, 
+div#contentmain h1 a:hover, 
+div#contentmain h2 a:hover, 
+div#contentmain h3 a:hover, 
+div#contentmain h4 a:hover {
+    color: #FF5712;
+}
+ul#navbarcore a:hover {
+    color: #FF5712;
+}
+ul#navbar_core div {
+    width: 182px;
+    padding: 9px 0 0 0;
+    margin: 0;
+    position: absolute;
+    left: -999em;
+}
+ul#navbar_core li ul {
+    width: 182px;
+    margin: 0;
+    padding: 0;
+    background-image: url(/themes/xartropics/images/drop-bg.png);
+    background-position: bottom;
+    padding-bottom: 1em;
+}
+ul#navbar_core div li {
+    z-index: 200 !important;
+    height: auto;
+}
+ul#navbar_core li:hover div, li.sfhover div {
+    z-index: 200 !important;
+    left: auto !important;
+}
+ul#navbar_core li ul li {
+    font-size: 10pt;
+    margin: 0 1em .5em 1em;
+    padding: 0;
+    width: auto;
+    float: none;
+}
+div#contentwrap {
+    margin: 0 20px;
+    clear: both;
+}
+div#contentmain {
+    margin-left: 200px;
+    color: #333;
+    background: #fff url(/themes/xartropics/images/content-bgtl.png) 0 0 no-repeat;
+}
+div#contentmain_trcorner {
+    height: 10px;
+    font-size: 0;
+    background: transparent url(/themes/xartropics/images/content-bgtr.png) top right no-repeat;
+}
+div#contentmain_inner {
+    border-left: 1px solid #12ABE3;
+    border-right: 1px solid #12ABE3;
+}
+div#contentmain_core {
+    margin: 0 10px;
+    padding: 1px 0;
+}
+div#contentmain li {
+    list-style-image: url(/themes/xartropics/images/list-item.gif);
+}
+div#contentmain_core:after {
+    content: '.';
+    font-size: 0;
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+/* Hides from IE-mac \*/
+* html div#contentmain_core {height: 1%;}
+/* End hide from IE-mac */
+
+div#contentmain_blcorner {
+    height: 10px;
+    font-size: 0;
+    background: transparent url(/themes/xartropics/images/content-bgbl.png) 0 0 no-repeat;
+}       
+/*
+* html div#contentmain_blcorner {
+    margin-left: -3px;
+}
+*/
+div#contentmain_brcorner {
+    height: 10px;
+    font-size: 0;
+    background: transparent url(/themes/xartropics/images/content-bgbr.png) top right no-repeat;
+}
+div#contentleft {
+    float: left;
+    width: 180px;
+}
+/*
+* html div#contentmain {
+    margin-left: 197px !important;
+}
+*/
+div#main_left {
+    position: relative;
+    margin-right: 310px;        
+    padding-top: 1px;
+}
+div#main_right {
+    position: relative;
+    width: 280px;
+    float: right;
+    padding-top: 1px;
+}
+div#contentmain h3 {
+    font-size: 12pt;
+    color: #FF5712;
+    border-bottom: 1px solid #FF5712 !important;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+div#contentmain h4 {
+    margin-bottom: 0;
+    font-size: 11pt;
+}
+div.byline {
+    color: #80AB1B;
+    margin: 0;
+    font-size: 9pt;
+}
+div#footerwrap {
+    clear: both;
+    background: #fff url(/themes/xartropics/images/footer_bg.png) bottom left repeat-x;
+    height: 82px;
+    margin-top: 20px;
+}
+div#footer_content {
+    height: 70px;
+    margin: 0 10px 0 20px;
+    background-image: url(/themes/xartropics/images/foot-bgbr.png);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+}
+div#footer_contentinner {
+    background-image: url(/themes/xartropics/images/foot-bgtl.gif);
+    background-position: top left;
+    background-repeat: no-repeat;
+    height: 50px;
+}
+div#footer_trcorner {
+    height: 10px;
+    background-image: url(/themes/xartropics/images/foot-bgtr.png);
+    background-position: top right;
+    background-repeat: no-repeat;
+    font-size: 0;
+}
+div#footer_blcorner {
+    height: 20px;
+    background-image: url(/themes/xartropics/images/foot-bgbl.png);
+    background-position: top left;
+    background-repeat: no-repeat;
+    font-size: 0;
+}
+div#footer_core {
+    margin: 0 10px;
+    text-align: center;
+}
+

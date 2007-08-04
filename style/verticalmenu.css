@@ -1,0 +1,104 @@
+div#hmenu {
+	padding: 0;
+	margin: 3px 0 0 0;
+	height:20px;
+	position:relative;
+    background-color: #D2F7FA;
+    font-size: 10pt;
+    border: 1px solid #12ABE3;
+}
+
+* html div#hmenu { z-index:9998;}
+
+div#hmenu li#hmenulabel {
+	padding: 0 1em;
+	display:block;
+	font-weight: bold;
+	line-height: 1.3;
+    color: #000;
+}
+div#hmenu li#hmenulabel:after {
+    content: ':';
+}
+div#hmenu ul#hmenuroot a.empty {
+	color: #f93;
+	font-weight: bold;
+	line-height: 1.3;
+	width:auto;
+}
+
+#hmenuroot, #hmenuroot ul {
+	/* all lists */
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	float: left;
+}
+
+div#hmenu ul#hmenuroot li.cat {
+   width: auto;
+    padding: 0 1em;
+}
+
+#hmenuroot li {
+	/* all list items */
+	position: relative;
+	display:block;
+	float: left;
+	line-height: 1.3;
+	margin: 0;
+}
+
+#hmenuroot li ul {
+	/* second-level lists */
+	position: absolute;
+	left: -999em;
+	margin: 0;
+	z-index:9999;
+	width:12em;
+    border: 1px solid #12ABE3;
+    background-color: #D2F7FA;
+    border-width: 0 1px 1px 1px;
+    padding-bottom: 1em;
+}
+
+#hmenuroot li ul ul {
+	/* third-and-above-level lists */
+    position: absolute;
+    top:1px;
+    margin-left:12em;
+    padding-bottom: 1em;
+    border: 1px solid #12ABE3;
+}
+
+* html #hmenuroot li ul ul { margin-left:120px; }
+
+#hmenuroot li a {
+	display: block;
+	color: #f93;
+	text-decoration: none;
+	padding: 0;
+	margin: 0;
+	font-weight: bold;
+    background-color: #D2F7FA;
+}
+
+#hmenuroot li li a {
+    width:120px;
+    margin: 0 .5em;
+}
+
+#hmenuroot a:hover {
+	color: #FF5712 !important;
+}
+
+#hmenuroot li:hover ul, 
+#hmenuroot li li:hover ul, 
+#hmenuroot li li li:hover ul, 
+#hmenuroot li.over ul, 
+#hmenuroot li li.over ul, 
+#hmenuroot li li li.over ul {
+	/* lists nested under hovered list items */
+	left: auto;
+	z-index:10000;
+}

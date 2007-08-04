@@ -1,0 +1,174 @@
+<xar:template file="publinks" type="module" />
+<xar:categories-navigation layout="trails" showchildren="1" module="articles" itemtype="10" itemid="$aid" cids="$cids" showcatcount="$showcatcount" showempty="0" />
+<xar:set name='editlabel'>
+    <xar:mlstring>
+        Edit 
+    </xar:mlstring>
+</xar:set>
+<xar:if condition="xarUserIsLoggedIn()">
+    <xar:set name="currentuseruid">
+        #xarUserGetVar('uid')# 
+    </xar:set>
+</xar:if>
+<xar:set name="writer_exists">
+    xarUFindRole($writer) 
+</xar:set>
+<xar:if condition="isset($writer_exists) and !empty($writer)">
+    <xar:set name="writer_uid">
+        #xarModAPIFunc('roles','user','get',array('uname'=>$writer))# 
+    </xar:set>
+    <xar:set name="writer_url">
+        #xarModURL('roles','user','display',array('uid'=>$writer_uid['uid']))# 
+    </xar:set>
+    <xar:set name="writer_string">
+        '<a href="'.$writer_url.'">'.$writer_uid['name'].'</a>'
+    </xar:set>
+    <xar:else />
+    <xar:set name="writer_string">
+        $writer 
+    </xar:set>
+</xar:if>
+<div class="xar-norm-outline">
+    <h1>
+        #$title# 
+    </h1>
+    <span class="xar-sub">
+        <xar:if condition="!empty($writer)">
+            <xar:ml>
+                <xar:mlstring>
+                    Author: #(1) &#160;&#160;Posted: #(2) 
+                </xar:mlstring>
+                <xar:mlvar>
+                    #$writer_string# 
+                </xar:mlvar>
+                <xar:mlvar>
+                    #xarLocaleGetFormattedDate($length = 'long',$timestamp = $pubdate)#
+                </xar:mlvar>
+            </xar:ml>
+            <xar:else />
+            <xar:ml>
+                <xar:mlstring>
+                    Posted: #(1) 
+                </xar:mlstring>
+                <xar:mlvar>
+                    #xarLocaleGetFormattedDate($length = 'long',$timestamp = $pubdate)#
+                </xar:mlvar>
+            </xar:ml>
+        </xar:if>
+        <xar:if condition="!empty($counter)">
+            <xar:ml>
+                <xar:mlstring>
+                    (#(1) Reads) 
+                </xar:mlstring>
+                <xar:mlvar>
+                    #$counter# 
+                </xar:mlvar>
+            </xar:ml>
+        </xar:if>
+    </span>
+    <div>
+        #$summary#
+    </div>
+    #$body# 
+    <xar:if condition="!empty($notes)">
+        <p class="xar-quote">
+            Note: 
+            <em>
+                #$notes# 
+            </em>
+        </p>
+    </xar:if>
+    <xar:if condition="!empty($previous) and !empty($next)">
+        <div class="fc-full fc-text-r fc-gutter">
+            #$pager# 
+        </div>
+        <div class="fc-clear">
+            &#160; 
+        </div>
+    </xar:if>
+</div>
+<div class="docs-article-wrapper">
+    <xar:if condition="!empty($doclevel_output)">
+        <p class="fc-full fc-gutter">
+            <strong>
+                <xar:mlstring>
+                    Level: 
+                </xar:mlstring>
+            </strong>
+            <xar:ml>
+                <xar:mlstring>
+                    #(1) 
+                </xar:mlstring>
+                <xar:mlvar>
+                    #$doclevel_output# 
+                </xar:mlvar>
+            </xar:ml>
+        </p>
+    </xar:if>
+    <p class="fc-full fc-gutter">
+        <xar:if condition="!empty($editurl) or
+            (!empty($writer_uid['uid']) and isset($currentuseruid) and ($writer_uid['uid'] eq $currentuseruid))">
+            [<a href="#xarModURL('articles','admin','modify',array('aid'=>$aid))#">#$editlabel#</a>] 
+        </xar:if>
+<!--            [<a href="#xarModURL('articles','admin','modify',array('aid'=>$aid))#">#$edittitle#</a>]-->
+        <xar:if condition="!empty($maintainer_output)">
+            <xar:ml>
+                <xar:mlstring>
+                    Maintainer: #(1) 
+                </xar:mlstring>
+                <xar:mlvar>
+                    #$maintainer_output# 
+                </xar:mlvar>
+            </xar:ml>
+        </xar:if>
+        <xar:comment>
+            Let's get changelog to handle this 
+            <xar:ml>
+                <xar:mlstring>
+                    Updated: #(1) 
+                </xar:mlstring>
+                <xar:mlvar>
+                    #xarLocaleFormatDate(' %d %b %y %H:%M', $lastupdate)# 
+                </xar:mlvar>
+            </xar:ml>
+        </xar:comment>
+        <xar:if condition="!empty($hooks) and !empty($hooks['changelog'])">
+            #$hooks['changelog']# 
+        </xar:if>
+    </p>
+    <xar:if condition="!empty($prevart) and isset($prevartinfo)">
+        <p class="fc-full fc-gutter">
+            <xar:mlstring>
+                Previous Article 
+            </xar:mlstring>
+            <a href="#$prevart#">
+                &lt; #$prevartinfo['title']# 
+            </a>
+        </p>
+    </xar:if>
+    <xar:if condition="!empty($nextart) and isset($nextartinfo)">
+        <p class="fc-full fc-gutter">
+            <xar:mlstring>
+                Next Article 
+            </xar:mlstring>
+            &gt; 
+            <a href="#$nextart#">
+                #$nextartinfo['title']# 
+            </a>
+        </p>
+    </xar:if>
+    <div class="fc-clear">
+        &#160; 
+    </div>
+</div>
+<xar:if condition="!empty($hooks)">
+    <xar:foreach in="$hooks" key="$hookmodule">
+        <xar:comment>
+            We already have dealt with changelog display
+        </xar:comment>
+        <xar:if condition="$hookmodule ne 'changelog'">
+            #$hooks[$hookmodule]# 
+        </xar:if>
+    </xar:foreach>
+</xar:if>
+<xar:template file="navtabs-user" type="module" />

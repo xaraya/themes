@@ -1,0 +1,18 @@
+<script type="text/javascript">
+    // <![CDATA[
+    var sfHover = function() {
+        var sfEls = document.getElementById("navbar_core").getElementsByTagName("LI");
+        for (var i=0; i<sfEls.length; i++) {
+            sfEls[i].onmouseover=function() {
+                this.className=this.className.replace(new RegExp(" ?sfhover"), "");
+                this.className+=" sfhover";
+            }
+            sfEls[i].onmouseout=function() {
+                this.className=this.className.replace(new RegExp(" ?sfhover"), "");
+            }
+        }
+    }
+    if (window.attachEvent) window.attachEvent("onload", sfHover);
+    // ]]>
+</script>
+

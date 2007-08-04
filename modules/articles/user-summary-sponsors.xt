@@ -1,0 +1,70 @@
+<xar:if condition="isset($sponsortype)and ($sponsortype eq '1' or $sponsortype eq '3')">
+    <div style="clear: both; padding: 2px; margin-top:20px;">
+	    <span style="float: left; width: 48%; text-align: left;">
+		    <strong>
+			    #$title#
+    		</strong>
+	    </span>
+    	<span class="xar-sub" style="float: right; width: 48%; text-align: right;">
+	    	<xar:if condition="!empty($categories) and count($categories) gt 0">
+			[
+			<xar:foreach in="$categories" value="$cat">
+				#$cat['cjoin']#
+				<a href="#$cat['clink']#">
+					#$cat['cname']#
+				</a>
+			</xar:foreach>
+			]
+		    </xar:if>
+    	</span>
+    </div>
+
+    <div style="width:95%; float:left; clear:both; float:left; background-color: #fdfdfd; border: 1px solid #f0f0f0; padding:10px; margin-bottom:20px;">
+                <span style="float:left; padding-right:20px; width: 100px">
+                    <xar:if condition="isset($logoimage_output) AND count($logoimage_output) ge '1'">
+                         <xar:foreach in="$logoimage_output" value="$v" key="$imageId">
+                               <xar:image-resize src="$imageId" width="100%" constrain="1" label="logo" />
+                         </xar:foreach>
+
+                </xar:if>
+               </span>
+
+                <xar:if condition="!empty($summary)">
+                    <span style="float:left; width:250px;text-align:left;">
+                        #$summary#
+                    </span>
+                </xar:if>
+               <xar:if condition="isset($website_output)">
+                     <span style="float:right; text-align:right;">
+                       <xar:mlstring>Visit &gt;&gt;</xar:mlstring> #$website_output#
+                    </span>
+               </xar:if>
+     </div>
+ <xar:else />
+    <div style="clear: both; padding: 2px; margin-top:20px;">
+	    <span style="float: left; width: 38%; text-align: left;">
+		    <strong>
+			    #$title#
+    		</strong>
+	    </span>
+        <xar:if condition="isset($website_output)">
+              <span style="width: 30%;float:left; text-align:left;">
+                 #$website_output#
+              </span>
+        </xar:if>
+    	<span class="xar-sub" style="float: right; width: 28%; text-align: right;">
+	    	<xar:if condition="!empty($categories) and count($categories) gt 0">
+			[
+			<xar:foreach in="$categories" value="$cat">
+				#$cat['cjoin']#
+				<a href="#$cat['clink']#">
+					#$cat['cname']#
+				</a>
+			</xar:foreach>
+			]
+		    </xar:if>
+    	</span>
+    </div>
+ </xar:if>
+
+

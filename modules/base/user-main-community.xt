@@ -1,0 +1,9 @@
+<div class="xar-mod-head">
+	<span class="xar-mod-title">
+		<xar:mlstring>Xaraya Community</xar:mlstring>
+	</span>
+</div>
+<xar:block module="articles" type="featureditems" instance="community_overview_doc" template="overview" />
+<xar:blockgroup name="community2" id="community2" template="xe1_half_right_framed_cleared" />
+<xar:blockgroup name="community3" id="community3" template="xe1_half_left_framed_cleared" />
+

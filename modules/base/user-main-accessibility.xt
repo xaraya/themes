@@ -1,0 +1,7 @@
+<div class="xar-mod-head">
+	<span class="xar-mod-title">
+		<xar:mlstring>Xaraya.com</xar:mlstring>
+	</span>
+</div>
+<xar:block module="articles" type="featureditems" instance="access_article_overview" template="overview" />
+<xar:blockgroup name="access2" id="access2" template="xe1_half_right_framed"/>

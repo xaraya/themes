@@ -1,0 +1,30 @@
+<xar:template file="publinks" type="module" />
+<div class="xar-norm">
+	<h1>
+		#$title#
+	</h1>
+	<div class="xar-accent">
+		<xar:ml>
+			<xar:mlstring>
+				Posted By #(1) on #(2)
+			</xar:mlstring>
+			<xar:mlvar>
+				#$author#
+			</xar:mlvar>
+			<xar:mlvar>
+                    #xarLocaleGetFormattedDate($length = 'long',$timestamp = $pubdate)#
+			</xar:mlvar>
+		</xar:ml>
+	</div>
+	<div class="xar-norm">
+		#$summary# #$body# 
+	</div>
+	<div class="xar-norm">
+		<xar:if condition="!empty($hooks)">
+			<br />
+			<xar:foreach in="$hooks" key="$hookmodule">
+				#$hooks[$hookmodule]# 
+			</xar:foreach>
+		</xar:if>
+	</div>
+</div>

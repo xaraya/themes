@@ -1,0 +1,9 @@
+<div class="xar-mod-head">
+	<span class="xar-mod-title">
+		<xar:mlstring>Developing With Xaraya</xar:mlstring>
+	</span>
+</div>
+<xar:block module="articles" type="featureditems" instance="developer_overview_article" template="overview" />
+<xar:blockgroup name="developer2" id="developer2" template="xe1_half_right_framed_cleared" />
+<xar:blockgroup name="developer3" id="developer3" template="xe1_half_left_framed_cleared" />
+
