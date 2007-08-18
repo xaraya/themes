@@ -11,134 +11,119 @@
 		] 
 	</xar:if>
 </xar:comment>
-<div class="box">
-	<div class="bi">
-		<div class="bt">
-			<div>
-			</div>
-		</div>
-		<div class="docs-summary-wrapper">
-			<div class="docstats">
-				<xar:comment>
-					<xar:if condition='isset($lastupdate)'>
-						<xar:mlstring>
-							<strong>
-								Last update: 
-							</strong>
-						</xar:mlstring>
-                    #xarLocaleGetFormattedDate($length = 'long',$timestamp = $lastupdate)#
-					</xar:if>
-				</xar:comment>
-				<xar:if condition="!empty($hooks) and !empty($hooks['changelog'])">
-					<p>
-						#$hooks['changelog']# 
-					</p>
-				</xar:if>
-				<xar:if condition="!empty($extversion) and !empty($doclevel)">
-					<p>
-						<strong>
-							<xar:mlstring>
-								Level: 
-							</xar:mlstring>
-						</strong>
-						<xar:ml>
-							<xar:mlstring>
-								#(1) 
-							</xar:mlstring>
-							<xar:mlvar>
-								#$doclevel# 
-							</xar:mlvar>
-						</xar:ml>
-					</p>
-					<p>
-						<strong>
-							<xar:mlstring>
-								For versions: 
-							</xar:mlstring>
-						</strong>
-						<xar:ml>
-							<xar:mlstring>
-								#(1) 
-							</xar:mlstring>
-							<xar:mlvar>
-								#$extversion# 
-							</xar:mlvar>
-						</xar:ml>
-					</p>
-					<xar:elseif condition="!empty($doclevel)" />
-					<p>
-						<strong>
-							<xar:mlstring>
-								Level: 
-							</xar:mlstring>
-						</strong>
-						<xar:ml>
-							<xar:mlstring>
-								#(1) 
-							</xar:mlstring>
-							<xar:mlvar>
-								#$doclevel# 
-							</xar:mlvar>
-						</xar:ml>
-					</p>
-					<xar:elseif condition="!empty($extversion)" />
-					<p>
-						<strong>
-							<xar:mlstring>
-								For versions: 
-							</xar:mlstring>
-						</strong>
-						<xar:ml>
-							<xar:mlstring>
-								#(1) 
-							</xar:mlstring>
-							<xar:mlvar>
-								#$extversion# 
-							</xar:mlvar>
-						</xar:ml>
-					</p>
-				</xar:if>
-				<xar:if condition="!empty($words)">
-					<p>
-						<a href="#$link#">
-							<xar:mlstring>
-								Read More 
-							</xar:mlstring>
-						</a>
-						<xar:ml>
-							<xar:mlstring>
-								(#(1) words) 
-							</xar:mlstring>
-							<xar:mlvar>
-								#$words# 
-							</xar:mlvar>
-						</xar:ml>
-					</p>
-				</xar:if>
-			</div>
-			<h1>
-				<a class="xar-title" href="#$link#">
-					#$title# 
-				</a>
-			</h1>
-			<div class="summarytext">
-				#$summary# 
-			</div>
-			<xar:if condition="!empty($notes)">
-				<p>
-					Note: 
-					<em>
-						#$notes# 
-					</em>
-				</p>
-			</xar:if>
-			<div class="docs-summary-clear">
-				&#160; 
-			</div>
-		</div>
-		<div class="bb">
-			<div>
-			</div>
-		</div>
-	</div>
+
+<h2>
+	<a class="xar-title" href="#$link#">
+		#$title# 
+	</a>
+</h2>
+<div class="summarytext">
+	#$summary# 
 </div>
+
+<div class="docstats">
+	<xar:comment>
+		<xar:if condition='isset($lastupdate)'>
+			<xar:mlstring>
+				<strong>
+					Last update: 
+				</strong>
+			</xar:mlstring>
+        #xarLocaleGetFormattedDate($length = 'long',$timestamp = $lastupdate)#
+		</xar:if>
+	</xar:comment>
+	<xar:if condition="!empty($hooks) and !empty($hooks['changelog'])">
+		<p>
+			#$hooks['changelog']# 
+		</p>
+	</xar:if>
+	<xar:if condition="!empty($extversion) and !empty($doclevel)">
+		<p>
+			<strong>
+				<xar:mlstring>
+					Level: 
+				</xar:mlstring>
+			</strong>
+			<xar:ml>
+				<xar:mlstring>
+					#(1) 
+				</xar:mlstring>
+				<xar:mlvar>
+					#$doclevel# 
+				</xar:mlvar>
+			</xar:ml>
+		</p>
+		<p>
+			<strong>
+				<xar:mlstring>
+					For versions: 
+				</xar:mlstring>
+			</strong>
+			<xar:ml>
+				<xar:mlstring>
+					#(1) 
+				</xar:mlstring>
+				<xar:mlvar>
+					#$extversion# 
+				</xar:mlvar>
+			</xar:ml>
+		</p>
+		<xar:elseif condition="!empty($doclevel)" />
+		<p>
+			<strong>
+				<xar:mlstring>
+					Level: 
+				</xar:mlstring>
+			</strong>
+			<xar:ml>
+				<xar:mlstring>
+					#(1) 
+				</xar:mlstring>
+				<xar:mlvar>
+					#$doclevel# 
+				</xar:mlvar>
+			</xar:ml>
+		</p>
+		<xar:elseif condition="!empty($extversion)" />
+		<p>
+			<strong>
+				<xar:mlstring>
+					For versions: 
+				</xar:mlstring>
+			</strong>
+			<xar:ml>
+				<xar:mlstring>
+					#(1) 
+				</xar:mlstring>
+				<xar:mlvar>
+					#$extversion# 
+				</xar:mlvar>
+			</xar:ml>
+		</p>
+	</xar:if>
+	<xar:if condition="!empty($words)">
+		<p>
+			<a href="#$link#">
+				<xar:mlstring>
+					Read More 
+				</xar:mlstring>
+			</a>
+			<xar:ml>
+				<xar:mlstring>
+					(#(1) words) 
+				</xar:mlstring>
+				<xar:mlvar>
+					#$words# 
+				</xar:mlvar>
+			</xar:ml>
+		</p>
+	</xar:if>
+</div>
+<xar:if condition="!empty($notes)">
+	<p>
+		<xar:mlstring>Note:</xar:mlstring> 
+		<em>
+			#$notes# 
+		</em>
+	</p>
+</xar:if>

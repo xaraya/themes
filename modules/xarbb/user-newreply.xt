@@ -5,6 +5,11 @@
     minimum use of tables for layout - a css-driven template
 </xar:comment>
 
+<div class="xar-mod-head">
+	<span class="xar-mod-title">
+		<xar:mlstring>New Forum Reply</xar:mlstring>
+	</span>
+</div>
 <xar:style module="xarbb" scope="module" file="xarbb-layout" />
 
 <xar:base-include-javascript module="base" filename="formcheck.js" position="head" />
@@ -45,7 +50,7 @@
 
 <div class="xarbb-tablewrapper">
     <form action="#$receipt.post_url#" method="post" name="post" id="post" onsubmit="return xar_base_formcheck(this, fieldRequired, fieldDescription);">
-        <table>
+        <table class="xarbb-topic">
             <tr>
                 <th colspan="2">
                     <xar:ml>

@@ -4,7 +4,7 @@ a {
     font-weight: bold;
     text-decoration: underline;
 }
-a:hover {
+a:hover, a:visited:hover {
     color: #00a675;
 }
 a:visited {
@@ -17,7 +17,7 @@ a img {
 blockquote {
 }
 body {
-    color: #000;
+    color: #544E41;
     background-color: #fff;
     font: 10pt Arial, Verdana, sans-serif;
     padding: 0;
@@ -48,6 +48,7 @@ hr {
 }
 
 th {
+	color: #000;
     background: #EDF9AA url(/themes/xartropics/images/thbg.png) top left repeat-x;
     border: 1px solid #dca;
 }
@@ -57,8 +58,8 @@ td {
 tr.xar-norm, tr.xar-norm td {
     background-color: #fff;
 }
-tr.xar-alt, tr.xar-alt td {
-    background-color: #F6FADE;
+td.xar-alt, tr.xar-alt, tr.xar-alt td {
+    background-color: #EBF9FA;
 }
 tr:hover, tr:hover td {
     background-color: #FFF7E5;
@@ -94,6 +95,7 @@ textarea {
 }
 fieldset {
     border: 1px solid #3CE;
+	margin: 0 0 1em 0;
 }
 legend {
     font-weight: bold;
@@ -208,6 +210,7 @@ div#contentleft div.xar-block-right:first-child div.xar-block-head-right {
     background: #DEF8FA url(/themes/xartropics/images/bluebar.png) top left repeat-x;
     border-bottom: 1px solid #3ce;
     padding: .2em .5em;
+	margin-bottom: 1em;
 }
 .xar-mod-title {
     font-size: 11pt;
@@ -221,7 +224,7 @@ div#contentleft div.xar-block-right:first-child div.xar-block-head-right {
 }
 
 .xar-alt {
-	background-color: #12ABE3;
+	background-color: #EBF9FA;
 }
 .xar-accent {
 }
@@ -230,6 +233,7 @@ div#contentleft div.xar-block-right:first-child div.xar-block-head-right {
 .xar-accent-outline {
 }
 .xar-norm-outline {
+	border: 1px solid #DCA;
 }
 .xar-norm {
 }
@@ -277,6 +281,24 @@ div#header_content ul, div#header_content li {
 div#header_contentcore {
     margin: 0 20px 0 10px;
 }
+div#header_contentcore input {
+	font-size: 85%;
+}
+div#header_contentcore table {
+	border: 0;
+	margin: 0;
+}
+div#header_contentcore table td, div#header_contentcore table th {
+	border: 0;
+	background: transparent;
+	padding: 0 .3em;
+}
+div#header_contentcore table *:hover {
+	background: transparent;
+}
+div#header_contentcore table th {
+	text-align: right;
+}
 ul#navbar_core {
     margin: 0 20px 0 10px;
     padding: 0;
@@ -294,7 +316,7 @@ ul#navbar_core li {
 ul#navbar_core a, div#contentmain h1 a {
     color: #f93;
     text-decoration: none;
-/*    display: block; */
+    display: block;
     height: 100%;
 }
 div#contentmain h2 a, div#contentmain h3 a, div#contentmain h4 a {
@@ -344,12 +366,19 @@ ul#navbar_core li ul li {
     width: auto;
     float: none;
 }
+div#menu_documentation {
+	margin-left: -55px !important;
+}
+div#contentwrap {
+	margin: 0 22px 0 220px;
+}
 div#contentmain {
-	color: #333;
+	color: #544E41;
 	background: #fff;
 	float: left;
-	margin: 0 20px 20px 220px;
+	margin-bottom: 20px;
 	border: 1px solid #12ABE3;
+	width: 100%;
 }
 * html #contentmain, * html div#contentleft {
 	display: inline;
@@ -357,7 +386,7 @@ div#contentmain {
 div#contentleft {
 	width: 180px;
 	float: left;
-	margin: 0 -200px 0 20px;
+	margin: 0 20px 0 -200px;
 	position: relative;
 }
 
@@ -461,7 +490,6 @@ div#footerwrap {
     clear: both;
     background: #fff url(/themes/xartropics/images/footer_bg.png) bottom left repeat-x;
     height: 82px;
-    margin-top: 20px;
 }
 div#footer_content {
     height: 70px;
@@ -536,4 +564,15 @@ div.byline {
 	color: #80AB1B;
 	margin: 0;
 	font-size: 10pt;
+}
+
+h1.overview {
+	margin-top: 0;
+}
+div.polls-pollbar {
+    background: #DEF8FA url(/themes/xartropics/images/pollbar.png) center left repeat-x;
+	height: 15px;
+	min-width:1px;
+	font-size: 0;
+	content: '.';
 }

@@ -51,13 +51,14 @@ div#xarbb-topics li {
 }
 
 div.xarbb-messagecontrols {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #12ABE3;
     margin-bottom: .5em;
 }
 
 div.xarbb-messagecontrols .leftnote {
     float: left;
     width: 48%;
+	font-weight: bold;
 }
 
 div.xarbb-messagecontrols .rightnote {
@@ -72,20 +73,14 @@ div#xarbb-tablewrapper {
 }
 
 div.xarbb-tablewrapper table {
-/*    padding: 1px; */
     margin: 0 0 1em;
     width: 100%;
-/*    border-collapse: separate;
-    border: 1px solid #999;
-    border-spacing: 1px; */
     empty-cells: show;
 }
 
 div.xarbb-tablewrapper table td, div.xarbb-tablewrapper table th {
-    /*margin: 1px;*/
     padding: .25em;
 	vertical-align: top;
-    /*border-bottom: 1px solid #000;*/
 }
 
 div.xarbb-tablewrapper table th, div.xarbb-tablewrapper table td.forumgroup {
@@ -94,7 +89,6 @@ div.xarbb-tablewrapper table th, div.xarbb-tablewrapper table td.forumgroup {
 }
 
 div.xarbb-tablewrapper table td.icon {
-    /*height: 4em;*/
     vertical-align: middle;
     text-align: center;
 }
@@ -113,7 +107,6 @@ div.xarbb-tablewrapper table td.forumname p {
 
 div.xarbb-tablewrapper table td.author {
     width: 11em;
-    border: 1px solid #ccc;
     vertical-align: top;
 }
 
@@ -129,10 +122,13 @@ div.xarbb-tablewrapper table td.lastpost {
 div.xarbb-tablewrapper table td.stats { width: 4em; }
 
 div.xarbb-tablewrapper table td.message {
-    border: 0 none;
     vertical-align: top;
+	padding: .25em 1em;
 }
-
+h3.xarbb-message-subject {
+	margin: 0 0 .5em 0 !important;
+	border: 0 !important;
+}
 div.xarbb-tablewrapper table td.newtopictitle, div.xarbb-tablewrapper table td.newtopicfield, div.xarbb-tablewrapper table td.newtopicbottom {
     padding-top: .5em;
     padding-bottom: .25em;
@@ -155,9 +151,14 @@ div.xarbb-tablewrapper table td.newtopicbottom {
 	text-align: center;
 }
 div.xarbb-tablewrapper table td p.hiddensignature {
-	border-top: 1px dotted #000;
+	border-top: 1px solid #12ABE3;
 }
-
+table.xarbb-topic tr:hover, table.xarbb-topic td:hover, table.xarbb-topic tr:hover td {
+	background-color: #fff;
+}
+table.xarbb-topic td.xar-alt:hover, table.xarbb-topic tr:hover td.xar-alt {
+	background-color: #EBF9FA;
+}
 /* notes just below table */
 div.xarbb-noteswrapper .leftnote {
     float: left;
@@ -255,8 +256,11 @@ div#mainmodulearea div.xarbb-topiccontrols a.cssbutton, div.xarbb-topiccontrols 
     background-position: 100% 0;
     background-repeat: no-repeat;
     text-decoration: none;
+	color: #f93;
 }
-
+div#mainmodulearea div.xarbb-topiccontrols a.cssbutton:hover, div.xarbb-topiccontrols a.cssbutton:hover {
+	color: #FF5712;
+}
 div.xarbb-topiccontrols a.cssbutton span.newtopicicon, div.xarbb-topiccontrols a.cssbutton span.postreplyicon, div.xarbb-topiccontrols a.cssbutton span.closedtopicicon {
     float: left;
     height: 28px;

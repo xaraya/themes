@@ -21,13 +21,12 @@
 </head>
 <body>
     <div id="header">
-        <a href="&xar-baseurl;" id="head_link">Xaraya</a>
+        <a href="&xar-baseurl;" id="head_link" title="#xarML('Return to Xaraya home page')#">Xaraya</a>
         <div id="header_content_wrap">
             <div id="header_content">
                 <div id="header_contentinner">
                     <div id="header_trcorner"></div>
                     <div id="header_contentcore">
-        <h1>admin: #xarRequestGetVar('module')# : #xarRequestGetVar('type')# : #xarRequestGetVar('func')#</h1>
                         <xar:block instance="adminpanel" id="adminpanel" template="bare;top" />
                     </div>
                 </div>
@@ -43,13 +42,15 @@
         </div>
     </div>
 
-    <div id="contentmain"><div id="contentmain_inner"><div id="contentmain_tlcorner"><div id="contentmain_trcorner"></div></div>
-            <div id="contentmain_core">
-                <xar:module id="modulespace"  main="true" />
-            </div>
-            <div id="contentmain_blcorner"><div id="contentmain_brcorner"></div></div>
-        </div>
-    </div>
+	<div id="contentwrap">
+	    <div id="contentmain"><div id="contentmain_inner"><div id="contentmain_tlcorner"><div id="contentmain_trcorner"></div></div>
+	            <div id="contentmain_core">
+	                <xar:module id="modulespace"  main="true" />
+	            </div>
+	            <div id="contentmain_blcorner"><div id="contentmain_brcorner"></div></div>
+	        </div>
+	    </div>
+	</div>
 
     <div id="footerwrap">
         <div id="footer_content">

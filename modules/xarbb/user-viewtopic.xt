@@ -6,7 +6,11 @@
     FIXME: whole chunks of duplication in this template handle topic and replies, although they
     are essentially formatted the same. Duplication to be removed.
 </xar:comment>
-
+<div class="xar-mod-head">
+	<span class="xar-mod-title">
+		<xar:mlstring>View Forum Topic</xar:mlstring>
+	</span>
+</div>
 <xar:style module="xarbb" scope="module" file="xarbb-layout" />
 <xar:base-include-javascript filename="confirmlink.js" module="base" position="head"/>
 
@@ -102,7 +106,7 @@
     </xar:comment>
     <xar:data-getitems name="$properties" value="$posterdata" module="roles" itemids="$posterlist" fieldlist="website,avatar,location,signature,icq,msnm,yim,aim" />
 
-    <table>
+    <table class="xarbb-topic">
         <tr>
             <th scope="col">
                 <xar:mlstring>Author</xar:mlstring>
@@ -148,6 +152,12 @@
 
                 <td class="xar-norm message">
                     <div class="xarbb-messagecontrols">
+                        <xar:comment>
+                            Placement of subject for full width of message containing div
+                        </xar:comment>
+                        <h3 class="xarbb-message-subject">
+                            #$transformedtitle#
+                        </h3>
                         <div class="leftnote">
                             <span class="xar-sub">
                                 <xar:ml>
@@ -193,17 +203,6 @@
                             </div>
                         </xar:if>
 
-                        <xar:comment>
-                            Placement of subject for full width of message containing div
-                        </xar:comment>
-                        <div style="float: left;">
-                            <strong class="xar-sub">
-                                <xar:ml>
-                                    <xar:mlstring>Subject: #(1)</xar:mlstring>
-                                    <xar:mlvar>#$transformedtitle#</xar:mlvar>
-                                </xar:ml>
-                            </strong>
-                        </div>
                         <div style="clear: both;"></div>
                     </div>
 
@@ -356,6 +355,11 @@
 
                 <td class="#$myclass# message">
                     <div class="xarbb-messagecontrols">
+                        <h3 class="xarbb-message-subject">
+                            <a name="#$item['xar_cid']#" href="#xarModURL('xarbb', 'user', 'viewtopic', array('tid' => $tid),NULL, $item['xar_cid'])#">
+                                #$item['xar_title']#
+                            </a>
+                        </h3>
                         <div class="leftnote">
                             <span class="xar-sub">
                                 <xar:mlstring>Posted</xar:mlstring>:
@@ -395,14 +399,6 @@
                                     </a>
                                 </xar:sec>
                             </xar:if>
-                        </div>
-                        <div style="float:left;">
-                            <strong class="xar-sub">
-                                <xar:mlstring>Subject</xar:mlstring>:
-                                <a name="#$item['xar_cid']#" href="#xarModURL('xarbb', 'user', 'viewtopic', array('tid' => $tid),NULL, $item['xar_cid'])#">
-                                    #$item['xar_title']#
-                                </a>
-                            </strong>
                         </div>
                         <div style="clear: both;"></div>
                     </div>

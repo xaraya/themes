@@ -1,0 +1,41 @@
+<xar:foreach in="$items" value="$item">
+	<xar:if condition="isset($item['sponsortype']) and ($item['sponsortype'] eq '1' or $item['sponsortype'] eq '0')">
+		<div style="background-color: #F6FADE; border: 1px solid #ABE324; padding:10px; margin-bottom:10px;">
+			<h4 style="margin-top: 0;">
+				<xar:if condition="isset($item['website_output'])">
+					#$item['website_output']#
+				<xar:else />
+					#$item['title']#
+				</xar:if>
+			</h4>
+					
+			<span style="float:left;width: 125px;margin-right: 1em;">
+				<xar:if condition="isset($item['logoimage_output']) AND count($item['logoimage_output']) ge '1'">
+					<xar:foreach in="$item['logoimage_output']" value="$v" key="$imageId">
+						<xar:image-resize src="$imageId" width="100%" constrain="1" label="logo" />
+					</xar:foreach>
+				<xar:else />
+					#$item['title']#
+				</xar:if>
+			</span>
+
+			<xar:if condition="!empty($item['summary'])">
+				<p style="margin-top: 0;">
+					#$item['summary']#
+				</p>
+			</xar:if>
+			<br style="clear:both;height: 0;font-size: 0;" />
+		</div>
+	 <xar:else />
+		<p>
+			<span style="float:left; width:16em;">
+				#$item['title']#
+			</span>
+			<xar:if condition="isset($item['website_output'])">
+				#$item['website_output']#
+			</xar:if>
+			<br style="clear:both;height: 0;font-size: 0;" />
+		</p>
+	</xar:if>
+</xar:foreach>
+

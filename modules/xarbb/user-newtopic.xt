@@ -5,6 +5,11 @@
 <xar:comment>
     minimum use of tables for layout - a css-driven template 
 </xar:comment>
+<div class="xar-mod-head">
+	<span class="xar-mod-title">
+		<xar:mlstring>New Topic</xar:mlstring>
+	</span>
+</div>
 
 <xar:style module="xarbb" scope="module" file="xarbb-layout" />
 <xar:base-include-javascript module="base" filename="formcheck.js" position="head" />
@@ -35,7 +40,7 @@
 
 <xar:if condition="!empty($preview)">
     <div class="xarbb-tablewrapper">
-        <table>
+        <table class="xarbb-topic">
             <tr>
                 <th>
                     <xar:mlstring>Preview</xar:mlstring>
@@ -81,7 +86,7 @@
     </xar:comment>
 
     <form method="post" action="&xar-modurl-xarbb-user-newtopic;&amp;phase=update" name="post" id="post" enctype="application/x-www-form-urlencoded" onsubmit="return xar_base_formcheck(this, fieldRequired, fieldDescription);">
-        <table>
+        <table class="xarbb-topic">
             <tr>
                 <th colspan="2">
                     <xar:if condition="!isset($tid)">
@@ -236,9 +241,11 @@
 
             <xar:if condition="!empty($hooks) and count($hooks) gt 0">
                 <xar:foreach in="$hooks" key="$hookmodule">
-                    <tr align="left" valign="middle">
-                        <td colspan="2">#$hooks[$hookmodule]#</td>
-                    </tr>
+                	<xar:if condition="trim($hooks[$hookmodule]) ne ''">
+	                    <tr align="left" valign="middle">
+	                        <td colspan="2">#$hookmodule# #$hooks[$hookmodule]#</td>
+	                    </tr>
+	                </xar:if>
                 </xar:foreach>
             </xar:if>
         </table>

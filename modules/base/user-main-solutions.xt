@@ -3,7 +3,10 @@
 		<xar:mlstring>Xaraya Solutions</xar:mlstring>
 	</span>
 </div>
-<xar:block module="articles" type="featureditems" instance="solutions_overview_doc" template="overview" />
-<xar:blockgroup name="solutions2" id="solutions2" template="xe1_half_right_framed_cleared" />
-<xar:blockgroup name="solutions3" id="solutions3" template="xe1_half_left_framed_cleared" />
-
+<div id="main_right">
+	<xar:blockgroup name="solutions2" id="solutions2" template="homeright" />
+	<xar:blockgroup name="solutions3" id="solutions3" template="homeright" />
+</div>
+<div id="main_left">
+	<xar:block module="articles" type="featureditems" instance="solutions_overview_doc" template="overview" />
+</div>

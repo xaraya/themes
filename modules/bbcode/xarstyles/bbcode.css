@@ -1,0 +1,27 @@
+/* Classes for bbcode module */
+
+/* Quote (for xarBB) */
+
+dl.bbcode-quote {
+	margin: 1em 2em;
+}
+dl.bbcode-quote dt {
+	display: inline;
+	position: relative;
+	padding: 0 0.4em;
+	left: 0.5em;
+	top: 0.6em;
+	background-color: #EDF9A8;
+	font-weight: bold;
+	list-style-type: none;
+	border: 1px solid #ce6;
+}
+dl.bbcode-quote dd {
+	margin-left: 0;
+}
+dl.bbcode-quote dd blockquote {
+	padding: 1em;
+	border: 1px solid #ce6;
+	margin: 0 1em 0 0;
+}
+

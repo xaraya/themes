@@ -1,0 +1,38 @@
+<xar:comment>
+    License: GPL http://www.gnu.org/copyleft/gpl.html 
+</xar:comment>
+<form action="&xar-modurl-authsystem-user-login;" method="post" class="xar-margin-none">
+    <div>
+        <input type="hidden" name="redirecturl" id="returnurl#$blockid#" value="#$return_url#" />
+        <label for="uname#$blockid#" title="#xarML('Enter your user name')#">
+            <xar:mlstring>Username:</xar:mlstring>
+        </label>
+        <input class="xar-form-textshort" type="text" name="uname" id="uname#$blockid#" maxlength="64" />
+
+        <label for="pass#$blockid#" title="#xarML('Enter your password')#">
+            <xar:mlstring>Password:</xar:mlstring>
+        </label>
+        <input class="xar-form-textshort" type="password" name="pass" id="pass#$blockid#" maxlength="64" />
+        <input type="submit" value="#xarML('Log In')#" style="margin-left: 1em;" />
+    </div>
+    <div>
+        <xar:if condition="xarConfigGetVar('Site.Session.SecurityLevel') ne 'High'">
+            <input type="checkbox" name="rememberme" id="rememberme#$blockid#" value="1" />
+            <label for="rememberme#$blockid#" style="margin-right: 1em;">
+                <xar:mlstring>Remember me</xar:mlstring>
+            </label>
+        </xar:if>
+
+	    <xar:if condition="xarModGetVar('registration', 'allowregistration')">
+            <a href="&xar-modurl-registration-user-main;">
+                    <xar:mlstring>Register</xar:mlstring>
+            </a> | 
+	    </xar:if>
+
+        <a href="&xar-modurl-roles-user-lostpassword;">
+            <xar:mlstring>Lost password?</xar:mlstring>
+        </a>
+
+    </div>
+
+</form>

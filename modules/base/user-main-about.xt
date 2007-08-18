@@ -3,7 +3,11 @@
 		<xar:mlstring>About Xaraya</xar:mlstring>
 	</span>
 </div>
-<xar:block module="articles" type="featureditems" instance="about_overview_article" template="overview" />
-<xar:blockgroup name="about2" id="about2" template="xe1_half_right_framed_cleared" />
-<xar:blockgroup name="about3" id="about3" template="xe1_half_left_framed_cleared" />
 
+<div id="main_right">
+	<xar:blockgroup name="about2" id="about2" template="homeright" />
+	<xar:blockgroup name="about3" id="about3" template="homeright" />
+</div>
+<div id="main_left">
+	<xar:block module="articles" type="featureditems" instance="about_overview_article" template="overview" />
+</div>

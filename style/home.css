@@ -1,5 +1,5 @@
 body {
-    color: #000;
+    color: #544E41;
     background-color: #fff;
     font: 10pt Arial, Verdana, sans-serif;
     background: #fff url(/themes/xartropics/images/home/header_bg.png) repeat-x;
@@ -45,10 +45,12 @@ div#header_blcorner {
 a#head_link {
     display: block;
     width: 182px;
-    margin: 15px 0 0 17px;
     height: 150px;
     float: left;
     text-indent: -512pt;
+	position: absolute;
+	top: 15px;
+	left: 17px;
 }
 div#navbar {
     height: 50px;

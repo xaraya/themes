@@ -1,7 +1,7 @@
 @import url(/themes/xartropics/style/verticalmenu.css);
 
 body {
-    color: #000;
+    color: #544E41;
     background-color: #fff;
     font: 10pt Arial, Verdana, sans-serif;
     background: #fff url(/themes/xartropics/images/inside/header_bg.png) repeat-x;
@@ -9,7 +9,7 @@ body {
     margin: 0;
 }
 div#header {
-    height: 157px;
+    height: 167px;
     background-image: url(/themes/xartropics/images/admin/logo.png);
     background-repeat: no-repeat;
 }
@@ -19,7 +19,7 @@ div#header_content_wrap {
     width: auto;
 }
 div#header_content {
-    height: 72px;
+    height: 82px;
     background-image: url(/themes/xartropics/images/inside/head-bgbr.png);
     background-position: bottom right;
     background-repeat: no-repeat;
@@ -28,7 +28,7 @@ div#header_contentinner {
     background-image: url(/themes/xartropics/images/inside/head-bgtl.gif);
     background-position: top left;
     background-repeat: no-repeat;
-    height: 52px;
+    height: 62px;
 }
 div#header_trcorner {
     height: 15px;
@@ -47,11 +47,13 @@ div#header_blcorner {
 }
 a#head_link {
     display: block;
-    width: 108px;
-    margin: 10px 0 0 56px;
-    height: 87px;
+    width: 180px;
+    height: 73px;
     float: left;
     text-indent: -512pt;
+	position: absolute;
+	top: 25px;
+	left: 20px;
 }
 div#navbar {
     height: 50px;
@@ -80,6 +82,6 @@ div#navbar_blcorner {
     background-repeat: no-repeat;
     font-size: 0;
 }
-div#contentmain {
-    margin-left: 20px;
+div#contentwrap {
+	margin: 0 22px 0 20px;
 }
