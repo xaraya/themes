@@ -3,39 +3,25 @@
 	This looks really ugly when an article is assigned to more than one category which most are. 
 	<xar:categories-navigation layout="trails" showchildren="1" module="articles" itemtype="9" itemid="$aid" cids="$cids" showcatcount="$showcatcount" showempty="1" />
 </xar:comment>
-<xar:set name='editlabel'>
-	<xar:mlstring>
-		Edit 
-	</xar:mlstring>
-</xar:set>
+
 <xar:if condition="xarUserIsLoggedIn()">
-	<xar:set name="currentuseruid">
-		#xarUserGetVar('uid')# 
-	</xar:set>
+	<xar:set name="currentuseruid">#xarUserGetVar('uid')#</xar:set>
 </xar:if>
-<xar:set name="writer_exists">
-	xarUFindRole($writer) 
-</xar:set>
+
+<xar:set name="writer_exists">xarUFindRole($writer)</xar:set>
+
 <xar:if condition="isset($writer_exists) and !empty($writer)">
-	<xar:set name="writer_uid">
-		#xarModAPIFunc('roles','user','get',array('uname'=>$writer))# 
-	</xar:set>
-	<xar:set name="writer_url">
-		#xarModURL('roles','user','display',array('uid'=>$writer_uid['uid']))# 
-	</xar:set>
-	<xar:set name="writer_string">
-		'<a href="'.$writer_url.'">'.$writer_uid['name'].'</a>' 
-	</xar:set>
-	<xar:else />
-	<xar:set name="writer_string">
-		$writer 
-	</xar:set>
+	<xar:set name="writer_uid">#xarModAPIFunc('roles','user','get',array('uname'=>$writer))#</xar:set>
+	<xar:set name="writer_url">#xarModURL('roles','user','display',array('uid'=>$writer_uid['uid']))#</xar:set>
+	<xar:set name="writer_string">'<a href="'.$writer_url.'">'.$writer_uid['name'].'</a>'</xar:set>
+<xar:else />
+	<xar:set name="writer_string">$writer</xar:set>
 </xar:if>
+
 <div class="docs-article-wrapper">
-	<h1>
-		#$title# 
-	</h1>
-	<span class="xar-sub">
+	<h1 class="xar-margin-nonebottom">#$title#</h1>
+
+	<div class="byline">
 		<xar:if condition="!empty($writer)">
 			<xar:ml>
 				<xar:mlstring>
@@ -72,7 +58,7 @@
 				</xar:ml>
 			</xar:if>
 		</xar:comment>
-	</span>
+	</div>
 	<div>
 		#$summary# 
 	</div>
@@ -142,7 +128,7 @@
 	<p class="fc-full fc-gutter">
 		<xar:if condition="!empty($editurl) or
                 (!empty($writer_uid['uid']) and isset($currentuseruid) and ($writer_uid['uid'] eq $currentuseruid))">
-			[<a href="#xarModURL('articles','admin','modify',array('aid'=>$aid))#">#$editlabel#</a>] 
+			[<a href="#xarModURL('articles','admin','modify',array('aid'=>$aid))#"><xar:mlstring>Edit</xar:mlstring></a>] 
 		</xar:if>
 <!--            [<a href="#xarModURL('articles','admin','modify',array('aid'=>$aid))#">#$edittitle#</a>]-->
 		<xar:ml>

@@ -2,9 +2,8 @@
 
 body {
     color: #544E41;
-    background-color: #fff;
     font: 10pt Arial, Verdana, sans-serif;
-    background: #fff url(/themes/xartropics/images/inside/header_bg.png) repeat-x;
+    background: #FFF7E5 url(/themes/xartropics/images/inside/header_bg.png) repeat-x;
     padding: 0;
     margin: 0;
 }

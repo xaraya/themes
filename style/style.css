@@ -18,7 +18,7 @@ blockquote {
 }
 body {
     color: #544E41;
-    background-color: #fff;
+    background-color: #FFF7E5;
     font: 10pt Arial, Verdana, sans-serif;
     padding: 0;
     margin: 0;
@@ -133,6 +133,7 @@ td.xar-alt {}
 
 /* right block group classes */
 div.xar-block-right {
+	background-color: #fff;
     padding: 0;
     margin: 0 0 20px 0;
     width: 100%;
@@ -152,7 +153,7 @@ h3.xar-block-title-right {
 div.xar-block-middle-right {
     height: 10px;
     background: #B3F5FA url(/themes/xartropics/images/block-wave.png) 0 0;
-    border: 1px solid #ABE324;
+    border: 1px solid #80AB1B;
     border-width: 0 1px;
     font-size: 0;
 }
@@ -391,7 +392,7 @@ div#contentleft {
 }
 
 div.topblock {
-	background: #A7F3F9 url(/themes/xartropics/images/block-tophead.png) top center no-repeat;
+	background: #A7F3F9 url(/themes/xartropics/images/block-tophead.gif) top center no-repeat;
 	background-repeat: no-repeat;
 }
 div#section_image {
@@ -425,6 +426,12 @@ div#contentmain_core {
 }
 div#contentmain li {
     list-style-image: url(/themes/xartropics/images/list-item.gif);
+}
+div#contentmain li li {
+    list-style-image: url(/themes/xartropics/images/list-item-square.gif);
+}
+div#contentmain li li li {
+    list-style-image: url(/themes/xartropics/images/list-item-disc.gif);
 }
 div#contentmain_core:after {
 	content: '.';
@@ -562,10 +569,19 @@ ul li h4 {
 
 div.byline {
 	color: #80AB1B;
-	margin: 0;
+	margin: 0 0 1em 0;
 	font-size: 10pt;
 }
-
+span.byline-item {
+	width: 10em;
+	display: table-cell;
+	display: inline-block;
+}
+p.summary-notes {
+	border: 1px solid #FFDB54;
+	font-style: italic;
+	padding: .5em 1em;
+}
 h1.overview {
 	margin-top: 0;
 }
