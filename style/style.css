@@ -300,6 +300,27 @@ div#header_contentcore table *:hover {
 div#header_contentcore table th {
 	text-align: right;
 }
+div#header_search {
+    float: right;
+    width: 17em;
+    z-index: 400;
+    position: relative;
+}
+
+div#header_release {
+    float: right;
+    z-index: 400;
+    position: relative;
+    margin: 0 1em;
+    width: 18em;
+}
+div#header_release h4 {
+    margin: 0;
+    text-align: center;
+}
+div#header_release table {
+    margin: auto;
+}
 ul#navbar_core {
     margin: 0 20px 0 10px;
     padding: 0;
