@@ -355,15 +355,22 @@ div#contentmain h3 a:hover,
 div#contentmain h4 a:hover {
     color: #FF5712;
 }
+a.navbar-on {
+	color: #FF5712;
+}
+
+/*
 li.sfhover a.navoverview {
     color: #FF5712 !important;
 }
+*/
 ul#navbar_core div {
     width: 182px;
     padding: 9px 0 0 0;
     margin: 0;
     position: absolute;
-    left: -999em;
+	display: none;
+    z-index: 200 !important;
 }
 ul#navbar_core li ul {
     width: 182px;
@@ -374,12 +381,12 @@ ul#navbar_core li ul {
     padding-bottom: 1em;
 }
 ul#navbar_core div li {
-    z-index: 200 !important;
+/*    z-index: 200 !important;*/
     height: auto;
 }
 ul#navbar_core li:hover div, li.sfhover div {
-    z-index: 200 !important;
-    left: auto !important;
+/*    z-index: 200 !important;
+    left: auto !important;*/
 }
 ul#navbar_core li ul li {
     font-size: 10pt;

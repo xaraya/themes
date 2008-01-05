@@ -1,18 +1,29 @@
 <script type="text/javascript">
-    // <![CDATA[
-    var sfHover = function() {
-        var sfEls = document.getElementById("navbar_core").getElementsByTagName("LI");
-        for (var i=0; i<sfEls.length; i++) {
-            sfEls[i].onmouseover=function() {
-                this.className=this.className.replace(new RegExp(" ?sfhover"), "");
-                this.className+=" sfhover";
-            }
-            sfEls[i].onmouseout=function() {
-                this.className=this.className.replace(new RegExp(" ?sfhover"), "");
-            }
+
+$(document).ready(function(){
+    $("ul#navbar_core > li").hover(
+        function(){
+        	$(this).children('a').toggleClass('navbar-on').end().find('div').animate({ height: 'show'}, 'normal');
+        }, 
+        function() {
+        	$(this).children('a').toggleClass('navbar-on').end().find('div').animate({ height: 'hide'}, 'fast');
         }
-    }
-    if (window.attachEvent) window.attachEvent("onload", sfHover);
-    // ]]>
+    );
+});
+/*
+$.fn.hoverClass = function(c) {
+    return this.each(function(){
+        $(this).hover( 
+            function() {
+            	$(this).addClass(c);
+            },
+            function() {
+            	$(this).removeClass(c);
+            }
+        );
+    });
+};
+*/
+
 </script>
 
