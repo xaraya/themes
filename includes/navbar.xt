@@ -60,10 +60,10 @@
 	        <ul>
 				<xar:if condition="is_array($extcats) and count($extcats) gt 0">
 					<xar:foreach in="$extcats" key="$extcatid" value="$extcat">
-						<li><a href="#$baseurl#release/view.html?catid=#$extcatid#" title="#xarVarPrepForDisplay($extcat['description'])#">#xarVarPrepForDisplay($extcat['name'])#</a></li>
+						<li><a href="#$baseurl#index.php/release/view.html?catid=#$extcatid#" title="#xarVarPrepForDisplay($extcat['description'])#">#xarVarPrepForDisplay($extcat['name'])#</a></li>
 					</xar:foreach>
 				<xar:else />
-		            <li><a href="#$baseurl#release/view.html?catid=53">Modules</a></li>
+		            <li><a href="#$baseurl#index.php/release/view.html?catid=53">Modules</a></li>
 		            <li><a href="#$baseurl#index.php/release/view.html?catid=55">Themes</a></li>
 		        </xar:if>
 	            <li><a href="#$baseurl#index.php?module=release&amp;func=search&amp;displname=1&amp;regid=1&amp;regname=1&amp;desc=1&amp;authorsearch=1"><xar:mlstring>Search Extensions ...</xar:mlstring></a></li>
