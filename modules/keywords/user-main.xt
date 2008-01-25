@@ -1,0 +1,133 @@
+<xar:comment>License: GPL http://www.gnu.org/copyleft/gpl.html</xar:comment>
+<div class="xar-mod-head">
+	<span class="xar-mod-title">
+		<xar:mlstring>Keywords</xar:mlstring>
+	</span>
+</div>
+<div class="xar-mod-body">
+	<xar:set name="totitems">count($items)</xar:set>
+
+	<xar:if condition="empty($status)">
+		<h1>
+			<xar:mlstring>Keyword List</xar:mlstring>
+
+			<xar:if condition="$tab eq 1" >
+				(<xar:mlstring>A - F</xar:mlstring>)
+			<xar:elseif condition="$tab eq 2" />
+				(<xar:mlstring>G - L</xar:mlstring>)
+			<xar:elseif condition="$tab eq 3" />
+				(<xar:mlstring>M - R</xar:mlstring>)
+			<xar:elseif condition="$tab eq 4" />
+				(<xar:mlstring>S - Z</xar:mlstring>)
+			<xar:elseif condition="$tab eq 5" />
+				(<xar:mlstring>Other</xar:mlstring>)
+			</xar:if>
+		</h1>
+
+		<xar:comment>Nav Tabs moved to the includes folder</xar:comment>
+		<xar:if condition="xarModGetVar('keywords', 'showsort')">
+			<xar:template file="navtabs" type="module" />
+		</xar:if>
+
+		<xar:if condition="empty($items)">
+			<p>
+				<xar:mlstring>No keywords found!</xar:mlstring>
+			</p>
+		<xar:else /> 
+			<xar:comment>Start the list column output</xar:comment>
+			<xar:set name="totitemspercol">round($totitems/$displaycolumns)</xar:set>
+			<xar:set name="extraitems">($totitems %$displaycolumns)</xar:set>
+			<xar:set name="divwidth">round(95/$displaycolumns)</xar:set>
+
+			<xar:set name="i">1</xar:set>
+
+			<xar:for start="$i eq 1" test="$i le $displaycolumns" iter="$i++">
+				<xar:comment>
+					grab a slice of the items array... 
+					overload the first column if not evenly divisible
+				</xar:comment>
+				<xar:if condition="$i eq 1">
+					<xar:set name="colitems">array_slice($items, 0, ($totitemspercol + $extraitems))</xar:set>
+				<xar:else />
+					<xar:set name="colitems">array_slice($items, (($totitemspercol * ($i - 1))  + $extraitems), $totitemspercol)</xar:set>
+				</xar:if>
+
+				<xar:if condition="count($colitems) gt 0">
+					<xar:comment> don't show empty columns </xar:comment>
+					<div class="xar-floatleft xar-align-left" style="width: #$divwidth#%;">
+						<ul>
+							<xar:foreach in="$colitems" value="$item">
+								<li class="xar-margin-thickbottom">
+									<a href="#$item['url']#">#$item['label']#</a> (#$item['count']#)
+								</li>
+							</xar:foreach>
+						</ul>
+					</div>
+				</xar:if>
+			</xar:for>
+		</xar:if>
+
+		<xar:comment>da qui sicuramene buono. c'e una chiusura di div direy xat body</xar:comment>		
+		<xar:comment> End div for wrapping whole if section </xar:comment>
+	<xar:elseif condition="$status eq 1 and !empty($keyword)" />
+
+		<h1>
+			<xar:ml>
+				<xar:mlstring>Keyword: #(1)</xar:mlstring>
+				<xar:mlvar>#$keyword#</xar:mlvar>
+			</xar:ml>
+		</h1>
+
+		<xar:if condition="!empty($items) and count($items) gt 0">
+			<ul class="xar-list-nostyle">
+				<xar:foreach in="$items" key="$id" value="$item">
+					<xar:if condition="!empty($item['url']) and !empty($item['label'])">
+						<li class="xar-margin-thickbottom">
+							<h2 class="xar-margin-noneends">
+								<a href="#$item['url']#">#$item['label']#</a>
+							</h2>
+							<xar:if condition="!empty($item['modname'])">
+								[ #$item['modname']# ] 
+							</xar:if>
+							<xar:comment> other clauses in this if were removed to only show active items </xar:comment>
+						</li>
+					</xar:if>
+				</xar:foreach>
+			</ul>
+		<xar:else />
+			<p>
+				<xar:mlstring>No results found.</xar:mlstring>
+			</p>
+		</xar:if>
+
+		<p>
+			<a href="javascript:history.back(-1)">
+				<xar:mlstring>Click here to go back </xar:mlstring>
+			</a>
+		</p>
+
+	<xar:elseif condition="$status eq 1 and empty($keyword)" />
+		<xar:mlstring>No keywords</xar:mlstring>
+	<xar:elseif condition="$status eq 2" />
+		<h2>
+			<xar:mlstring>Overview of Keyword Assignments</xar:mlstring>
+		</h2>
+		<p>
+			<xar:mlstring>Unable to find corresponding item</xar:mlstring>
+		</p>
+	<xar:elseif condition="$status eq 3" />
+		<h2>
+			<xar:mlstring>Overview of Keyword Assignments</xar:mlstring>
+		</h2>
+		<p>
+			<xar:mlstring>Unable to find module for the corresponding item</xar:mlstring>
+		</p>
+	<xar:else />
+		<h2>
+			<xar:mlstring>Overview of Keyword Assignments</xar:mlstring>
+		</h2>
+		<p>
+			<xar:mlstring>Unknown status</xar:mlstring>
+		</p>
+	</xar:if>
+</div>

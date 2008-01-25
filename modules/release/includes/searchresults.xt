@@ -1,0 +1,32 @@
+<xar:if condition="!empty($release) and count($release) gt 0">
+    <h3><xar:mlstring>Registered Extensions Found:</xar:mlstring></h3>
+
+    <ul>
+        <xar:foreach in="$release" key="$key" value="$extension">
+
+			<xar:if condition="isset($extension['exttype']) and isset($exttypes[$extension['exttype']])">
+				<xar:set name="exttypename">$exttypes[$extension['exttype']]</xar:set>
+			<xar:else />
+				<xar:set name="exttypename">xarML('Unknown')</xar:set>
+			</xar:if>
+
+            <li>
+            	<h4>
+	                <a href="#xarModURL('release', 'user', 'display', array('eid' => $extension['eid']))#">
+	                    #$extension['displname']# (<xar:mlstring>registered name:</xar:mlstring> #$extension['regname']#)
+	                </a>
+	            </h4>
+				<xar:ml>
+	                <xar:mlstring> #(1) ID #(2) by </xar:mlstring>
+					<xar:mlvar>#$exttypename#</xar:mlvar>
+					<xar:mlvar>#$extension['rid']#</xar:mlvar>
+                </xar:ml>
+				<a href="#xarModURL('roles', 'user', 'display', array('uid' => $extension['uid']))#">#$extension['author']#</a>
+            </li>
+        </xar:foreach>
+    </ul>
+<xar:else/>
+    <xar:if condition="!empty($status)">
+        <p>#$status#</p>
+    </xar:if>
+</xar:if>
