@@ -228,10 +228,13 @@ div#contentleft div.xar-block-right:first-child div.xar-block-head-right {
 	background-color: #EBF9FA;
 }
 .xar-accent {
+	background-color: #FFF3C7;
 }
 .xar-alt-outline {
+	border: 1px solid #12ABE3;
 }
 .xar-accent-outline {
+	border: 1px solid #f93;
 }
 .xar-norm-outline {
 	border: 1px solid #DCA;
@@ -587,6 +590,10 @@ div#footerdonate form {
     float: left;
     width: 62px;
     margin: 0 .5em 0 0;
+}
+
+.help {
+    cursor: help;
 }
 
 /* misc additions */
