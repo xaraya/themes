@@ -1,29 +1,14 @@
 <script type="text/javascript">
 
-$(document).ready(function(){
-    $("ul#navbar_core > li").hover(
+jQuery(document).ready(function(){
+    jQuery("ul#navbar_core > li").hover(
         function(){
-        	$(this).children('a').toggleClass('navbar-on').end().find('div').animate({ height: 'show'}, 'normal');
+        	jQuery(this).children('a').toggleClass('navbar-on').end().find('div').animate({ height: 'show'}, 'normal');
         }, 
         function() {
-        	$(this).children('a').toggleClass('navbar-on').end().find('div').animate({ height: 'hide'}, 'fast');
+        	jQuery(this).children('a').toggleClass('navbar-on').end().find('div').animate({ height: 'hide'}, 'fast');
         }
     );
 });
-/*
-$.fn.hoverClass = function(c) {
-    return this.each(function(){
-        $(this).hover( 
-            function() {
-            	$(this).addClass(c);
-            },
-            function() {
-            	$(this).removeClass(c);
-            }
-        );
-    });
-};
-*/
 
 </script>
-
