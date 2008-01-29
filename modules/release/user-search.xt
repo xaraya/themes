@@ -11,82 +11,7 @@
 		<xar:template type="module" file="user-menu" />
 
 	    <form method="post" action="&xar-modurl-release-user-search;">
-			<div class="xar-form-input-wrapper">
-			    <label for="q" class="xar-form-label">
-			        <xar:mlstring>Search for:</xar:mlstring>
-			    </label>
-				<div class="xar-form-input-wrapper">
-		          	<input type="text" name="q" id="q" value="#$q#" size="20" />
-					<input type="submit" name="search" value="#xarML('Search')#" />
-				</div>
-			</div>
-			<div class="xar-form-input-wrapper">
-			    <span class="xar-form-label">
-			        <xar:mlstring>Search in:</xar:mlstring>
-			    </span>
-				<div class="xar-form-input-wrapper">
-					<div class="xar-form-input-wrapper">
-					    <xar:if condition="isset($rid) and $rid">
-					        <input type="checkbox" name="rid" id="rid" value="1" checked="checked" />
-					    <xar:else />
-					        <input type="checkbox" name="rid" id="rid" value="1" />
-					    </xar:if>
-					    <label for="rid">
-							<xar:mlstring>Extension ID</xar:mlstring>
-						</label>
-					</div>
-					<div class="xar-form-input-wrapper">
-					    <xar:if condition="isset($regname) and $regname">
-						    <input type="checkbox" name="regname" id="regname" value="1" checked="checked" />
-					    <xar:else />
-						    <input type="checkbox" name="regname" id="regname" value="1" />
-					    </xar:if>
-					    <label for="regname">
-					    	<xar:mlstring>Registered Name</xar:mlstring>
-					    </label>
-					</div>
-					<div class="xar-form-input-wrapper">
-					    <xar:if condition="isset($displname) and $displname">
-						    <input type="checkbox" name="displname" id="displname" value="1" checked="checked" />
-					    <xar:else />
-						    <input type="checkbox" name="displname" id="displname" value="1" />
-					    </xar:if>
-					    <label for="displname">
-						    <xar:mlstring>Display Name</xar:mlstring>
-						</label>
-					</div>
-					<div class="xar-form-input-wrapper">
-					    <xar:if condition="isset($desc) and ($desc)">
-						    <input type="checkbox" name="desc" id="desc" value="1" checked="checked" />
-					    <xar:else />
-						    <input type="checkbox" name="desc" id="desc" value="1" />
-					    </xar:if>
-					    <label for="desc">
-						    <xar:mlstring>Extension Description</xar:mlstring>
-						</label>
-					</div>
-				</div>
-			</div>
-			<div class="xar-form-input-wrapper">
-			    <label for="author" class="xar-form-label">
-			        <xar:mlstring>By author:</xar:mlstring>
-			    </label>
-				<input type="text" name="author" id="author" value="#$author#" size="20" />
-			</div>
-			<div class="xar-form-input-wrapper">
-			    <label for="exttype" class="xar-form-label">
-			        <xar:mlstring>Extension Type:</xar:mlstring>
-			    </label>
-				<select name="exttype" id="exttype">
-					<xar:foreach in="$exttypes" key="$k" value="$v">
-						<xar:if condition="$k eq $exttype">
-							<option value="#$k#" selected="selected">#xarML($v)#</option>
-						<xar:else />
-							<option value="#$k#">#xarML($v)#</option>
-						</xar:if>
-					</xar:foreach>
-				</select>
-			</div>
+			<xar:template type="module" module="release" file="searchform" />
 		</form>
 
 		<xar:template type="module" module="release" file="searchresults" />
@@ -95,5 +20,7 @@
 <xar:else />
 	<h2><xar:mlstring>Search for Registered Extensions</xar:mlstring></h2>
 
-	<xar:template type="module" file="searchresults" />
+	<xar:template type="module" module="release" file="searchform" />
+
+	<xar:template type="module" module="release" file="searchresults" />
 </xar:if>
