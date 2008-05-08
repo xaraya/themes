@@ -1,14 +1,23 @@
 <script type="text/javascript">
 
+var xt_navdrop = function() {
+	jQuery(this).children('a').toggleClass('navbar-on').end().find('div').animate({ height: 'show'}, 'normal');
+}
+
+var xt_navraise = function() {
+	jQuery(this).children('a').toggleClass('navbar-on').end().find('div').animate({ height: 'hide'}, 'fast');
+}
+
+var hoverConfig = {
+     sensitivity: 1, // number = sensitivity threshold (must be 1 or higher)    
+     interval: 20, // number = milliseconds for onMouseOver polling interval    
+     over: xt_navdrop, // function = onMouseOver callback (REQUIRED)    
+     timeout: 50, // number = milliseconds delay before onMouseOut    
+     out: xt_navraise // function = onMouseOut callback (REQUIRED)    
+};
+
 jQuery(document).ready(function(){
-    jQuery("ul#navbar_core > li").hover(
-        function(){
-        	jQuery(this).children('a').toggleClass('navbar-on').end().find('div').animate({ height: 'show'}, 'normal');
-        }, 
-        function() {
-        	jQuery(this).children('a').toggleClass('navbar-on').end().find('div').animate({ height: 'hide'}, 'fast');
-        }
-    );
+    jQuery("ul#navbar_core > li").hoverIntent(hoverConfig);
 });
 
 </script>
