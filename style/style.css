@@ -314,12 +314,15 @@ div#header_release {
     float: right;
     z-index: 400;
     position: relative;
-    margin: 0 1em;
-    width: 18em;
+    margin: 0 0 0 20px;
+    width: 30%;
 }
-div#header_release h4 {
+div#header_release h4, div#header_release ul {
     margin: 0;
     text-align: center;
+}
+div#header_whatis h4 {
+    margin: 0;
 }
 div#header_release table {
     margin: auto;
@@ -344,7 +347,7 @@ ul#navbar_core a, div#contentmain h1 a {
     display: block;
     height: 100%;
 }
-div#contentmain h2 a, div#contentmain h3 a, div#contentmain h4 a {
+div#header_contentcore h4 a, div#contentmain h2 a, div#contentmain h3 a, div#contentmain h4 a {
     color: #f93;
     text-decoration: none;
 }
@@ -352,6 +355,7 @@ ul#navbar_core > li:hover > a {
     color: #FF5712;
 }
 ul#navbar_core a:hover, 
+div#header_contentcore h4 a:hover, 
 div#contentmain h1 a:hover, 
 div#contentmain h2 a:hover, 
 div#contentmain h3 a:hover, 

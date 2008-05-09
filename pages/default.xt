@@ -80,7 +80,12 @@
                         <xar:block instance="adminpanel" id="adminpanel" template="bare;top" />
 
 					    <xar:if condition="$is_home">
-					    	<h1>Home:  #xarRequestGetVar('module')# : #xarRequestGetVar('type')# : #xarRequestGetVar('func')# (#$section#) #$thisreq#</h1>
+					    	<div id="header_whatis">
+						    	<xar:block instance="trop_whatis_header" />
+						    </div>
+							<div id="header_release">
+                                <xar:block instance="trop_release_header" />
+							</div>
 					    <xar:else />
 					    	<div id="header_search">
 						    	<xar:block module="search" type="search" title="Search Xaraya.com" template="bare;header" />
@@ -88,10 +93,6 @@
 							<div id="header_release">
                                 <xar:block instance="trop_release_header" />
 							</div>
-                            <xar:comment>
-					            <h1>inside: #xarRequestGetVar('module')# : #xarRequestGetVar('type')# : #xarRequestGetVar('func')# (#$section#) #$thisreq#</h1>
-                            </xar:comment>
-
 					    </xar:if>
                     </div>
                 </div>

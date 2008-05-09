@@ -81,10 +81,15 @@ div#navbar_blcorner {
 
 div#header_whatis {
     float: left;
-    width: 57%;
+    width: 39%;
+	margin-right: 20px;
+	height: 90px;
+
 }
 div#header_release {
     float: right;
-    width: 40%;
+    width: 20%;
 }
-
+div#header_release li {
+	margin: 0 0 .5em 0;
+}
