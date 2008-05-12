@@ -3,72 +3,45 @@
 body {
     color: #544E41;
     font: 10pt Arial, Verdana, sans-serif;
-    background: #FFF7E5 url(/themes/xartropics/images/inside/header_bg.png) repeat-x;
+    background: #FFF7E5 url(/themes/xartropics/images/admin/header_bg.png) repeat-x;
     padding: 0;
     margin: 0;
 }
 div#header {
-    height: 167px;
+    height: 95px;
     background-image: url(/themes/xartropics/images/admin/logo.png);
     background-repeat: no-repeat;
 }
 div#header_content_wrap {
-    margin: 0 10px 0 220px;
-    padding-top: 25px;
+    margin: 0 10px 0 20px;
+    padding-top: 35px;
     width: auto;
-}
-div#header_content {
-    height: 82px;
-    background-image: url(/themes/xartropics/images/inside/head-bgbr.png);
-    background-position: bottom right;
-    background-repeat: no-repeat;
-}
-div#header_contentinner {
-    background-image: url(/themes/xartropics/images/inside/head-bgtl.gif);
-    background-position: top left;
-    background-repeat: no-repeat;
-    height: 62px;
-}
-div#header_trcorner {
-    height: 15px;
-    background-image: url(/themes/xartropics/images/inside/head-bgtr.png);
-    background-position: top right;
-    background-repeat: no-repeat;
-    font-size: 0;
-    margin-bottom: -5px;
-}
-div#header_blcorner {
-    height: 29px;
-    background-image: url(/themes/xartropics/images/inside/head-bgbl.png);
-    background-position: top left;
-    background-repeat: no-repeat;
-    font-size: 0;
 }
 a#head_link {
     display: block;
-    width: 180px;
-    height: 73px;
+    width: 186px;
+    height: 35px;
     float: left;
     text-indent: -512pt;
 	position: absolute;
-	top: 25px;
+	top: 0px;
 	left: 20px;
 }
 div#navbar {
     height: 50px;
-    background-image: url(/themes/xartropics/images/inside/navbar-bgbr.png);
+    background-image: url(/themes/xartropics/images/admin/navbar-bgbr.png);
     background-position: bottom right;
     background-repeat: no-repeat;
 }
 div#navbar_inner {
-    background-image: url(/themes/xartropics/images/inside/navbar-bgtl.gif);
+    background-image: url(/themes/xartropics/images/admin/navbar-bgtl.gif);
     background-position: top left;
     background-repeat: no-repeat;
     height: 30px;
 }
 div#navbar_trcorner {
     height: 15px;
-    background-image: url(/themes/xartropics/images/inside/navbar-bgtr.png);
+    background-image: url(/themes/xartropics/images/admin/navbar-bgtr.png);
     background-position: top right;
     background-repeat: no-repeat;
     margin-bottom: -5px;
@@ -76,11 +49,34 @@ div#navbar_trcorner {
 }
 div#navbar_blcorner {
     height: 19px;
-    background-image: url(/themes/xartropics/images/inside/navbar-bgbl.png);
+    background-image: url(/themes/xartropics/images/admin/navbar-bgbl.png);
     background-position: top left;
     background-repeat: no-repeat;
     font-size: 0;
 }
 div#contentwrap {
 	margin: 0 22px 0 20px;
+}
+div.xar-block-body-adminheader {
+	height: 100px;
+	margin-left: 6em;
+}
+ul#navbar_core li {
+	width: 14.2%
+}
+li#waiting_item p {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+li#waiting_item a {
+	margin-top: 0;
+	display: inline;
+}
+li#waiting_item div ul li div {
+	display: block;
+	position: static;
+	padding: 0;
+}
+div#menu_documentation {
+	margin-left: -45px !important;
 }

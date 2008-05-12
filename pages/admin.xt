@@ -30,19 +30,11 @@
     <div id="header">
         <a href="&xar-baseurl;" id="head_link" title="#xarML('Return to Xaraya home page')#">Xaraya</a>
         <div id="header_content_wrap">
-            <div id="header_content">
-                <div id="header_contentinner">
-                    <div id="header_trcorner"></div>
-                    <div id="header_contentcore">
-                        <xar:block instance="adminpanel" id="adminpanel" template="bare;top" />
-                    </div>
-                </div>
-                <div id="header_blcorner"></div>
-            </div>
+            <xar:block instance="adminpanel" id="adminpanel" template="bare;top" />
             <div id="navbar">
                 <div id="navbar_inner">
                     <div id="navbar_trcorner"></div>
-                    <xar:template file="navbar" type="theme" />
+                    <xar:template file="adminnavbar" type="theme" />
                 </div>
                 <div id="navbar_blcorner"></div>
             </div>

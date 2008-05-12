@@ -1,11 +1,11 @@
 <script type="text/javascript">
 
 var xt_navdrop = function() {
-	jQuery(this).children('a').toggleClass('navbar-on').end().find('div').animate({ height: 'show'}, 'normal');
+	jQuery(this).children('a').toggleClass('navbar-on').end().children('div').animate({ height: 'show'}, 'normal');
 }
 
 var xt_navraise = function() {
-	jQuery(this).children('a').toggleClass('navbar-on').end().find('div').animate({ height: 'hide'}, 'fast');
+	jQuery(this).children('a').toggleClass('navbar-on').end().children('div').animate({ height: 'hide'}, 'fast');
 }
 
 var hoverConfig = {
