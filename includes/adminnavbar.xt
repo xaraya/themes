@@ -5,7 +5,7 @@
         <div id="menu_waiting">
 	        <ul>
 	        	<li>
-		            <xar:block instance="trop_waiting_adminheader" template="bare;" />
+		            <xar:block instance="trop_waiting_navbar" template="bare;" />
 		        </li>
 	        </ul>
         </div>
