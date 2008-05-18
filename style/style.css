@@ -55,7 +55,7 @@ th {
 td {
     border: 1px solid #dca;
 }
-tr.xar-norm, tr.xar-norm td {
+td.xar-norm, tr.xar-norm, tr.xar-norm td {
     background-color: #fff;
 }
 td.xar-alt, tr.xar-alt, tr.xar-alt td {

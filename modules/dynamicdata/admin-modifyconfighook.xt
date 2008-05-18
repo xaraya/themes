@@ -1,0 +1,54 @@
+<xar:comment>License: GPL http://www.gnu.org/copyleft/gpl.html</xar:comment>
+<xar:comment>You can use different admin-modifyconfighook-[objectname].xd templates for different objects</xar:comment>
+<fieldset>
+	<legend>#$labels.dynamicdata#</legend>
+
+	<p>
+		<a href="#$link#">#$labels.config#</a>
+	</p>
+	<table class="xar-fullwidth">
+	    <xar:if condition="!empty($fields)">
+	        <tr>
+	            <th>#$labels.id#</th>
+	            <th>#$labels.name#</th>
+	            <th>#$labels.label#</th>
+	            <th>#$labels.type#</th>
+	            <th>#$labels.default#</th>
+	            <th>#$labels.source#</th>
+	            <th>#$labels.validation#</th>
+	        </tr>
+	        <xar:set name="row">0</xar:set>
+	        <xar:foreach in="$fields" value="$field">
+            	<xar:if condition="$row % 2 eq 0">
+            		<xar:set name="stripe">'norm'</xar:set>
+            	<xar:else />
+            		<xar:set name="stripe">'accent'</xar:set>
+            	</xar:if>
+	            <tr>
+	                <td class="xar-#$stripe#">
+	                	#$field.id#
+	                </td>
+	                <td class="xar-#$stripe#">
+	                	#$field.name#
+	                </td>
+	                <td class="xar-#$stripe#">
+	                	#$field.label#
+	                </td>
+	                <td class="xar-#$stripe#">
+	                    <xar:data-output property="$fieldtypeprop" value="$field['type']" />
+	                </td>
+	                <td class="xar-#$stripe#">
+	                	<xar:var name="field.default" prep="true"/>
+	                </td>
+	                <td class="xar-#$stripe#">
+	                	#$field.source#
+	                </td>
+	                <td class="xar-#$stripe#">
+	                	<xar:var name="field.validation" prep="true"/>
+	                </td>
+	            </tr>
+	            <xar:set name="row">$row + 1</xar:set>
+	        </xar:foreach>
+	    </xar:if>
+	</table>
+</fieldset>
