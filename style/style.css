@@ -61,9 +61,11 @@ td.xar-norm, tr.xar-norm, tr.xar-norm td {
 td.xar-alt, tr.xar-alt, tr.xar-alt td {
     background-color: #EBF9FA;
 }
+/*
 tr:hover, tr:hover td {
     background-color: #FFF7E5;
 }
+*/
 table {
     border: 1px solid #dca;
     border-collapse: collapse;

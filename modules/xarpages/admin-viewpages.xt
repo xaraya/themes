@@ -1,0 +1,63 @@
+<xar:style scope="module" module="xarpages" file="xarpages" />
+
+<div class="xar-mod-head"><span class="xar-mod-title"><xar:mlstring>Page Administration</xar:mlstring></span></div>
+
+<div class="xar-mod-body">
+    <xar:template type="module" file="admin-menu" />
+    <h2><xar:mlstring>View Pages</xar:mlstring></h2>
+    <xar:if condition="empty($pages)">
+    	<p>
+    	     <xar:mlstring>No pages defined.</xar:mlstring>
+    	</p>
+    <xar:else />
+        <xar:if condition="!empty($add_allowed)">
+            <p>
+            	<a href="#xarModURL('xarpages','admin','modifypage')#"><xar:mlstring>Add Page</xar:mlstring></a>
+            </p>
+        </xar:if>
+
+        <table class="xar-fullwidth">
+            <tr>
+                <th><xar:mlstring>Name</xar:mlstring></th>
+                <th><xar:mlstring>Description</xar:mlstring></th>
+                <th><xar:mlstring>Options</xar:mlstring></th>
+            </tr>
+            <xar:loop name="$pages">
+                <xar:if condition="$loop:index ge 0">
+                    <xar:if condition="(($loop:index + 1) % 2)">
+                        <xar:set name="$row_class">''</xar:set>
+                    <xar:else />
+                        <xar:set name="$row_class">'xar-accent'</xar:set>
+                    </xar:if>
+
+                    <tr>
+                        <td class="xar-align-left #$row_class#">
+                            #$loop:item.xar_map#
+                            #xarVarPrepForDisplay($loop:item.name)#
+                        </td>
+                        <td class="#$row_class#" title="#xarML('Status: ')# #$loop:item.status#"><span class="xar-xarpages-status-#$loop:item.status#">#xarVarPrepForDisplay($loop:item.pagetype.name)#: #xarVarPrepForDisplay($loop:item.desc)#</span></td>
+                        <td class="xar-align-center #$row_class#">
+                            <xar:if condition="!empty($loop:item.edit_allowed)">
+                                <a href="#xarModURL('xarpages', 'admin', 'modifypage', array('pid' =&gt; $loop:item.pid))#">
+                                    <xar:mlstring>Modify</xar:mlstring>
+                                </a>
+                                | 
+                            </xar:if>
+
+                            <xar:if condition="!empty($loop:item.delete_allowed)">
+                                <a href="#xarModURL('xarpages', 'admin', 'deletepage', array('pid' =&gt; $loop:item.pid))#">
+                                    <xar:mlstring>Delete</xar:mlstring>
+                                </a>
+                                | 
+                            </xar:if>
+
+                            <a href="#xarModURL('xarpages', 'user', 'display', array('pid' =&gt; $loop:item.pid))#">
+                                <xar:mlstring>Display</xar:mlstring>
+                            </a>
+                        </td>
+                    </tr>
+                </xar:if>
+            </xar:loop>
+        </table>
+    </xar:if>
+</div>
