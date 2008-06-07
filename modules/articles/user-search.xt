@@ -7,13 +7,13 @@
 </xar:if>
 
 <xar:if condition="empty($ishooked)">
-	<form method="post" action="&xar-modurl-articles-user-search;" style="background-color: #cfc;">
+	<form method="post" action="&xar-modurl-articles-user-search;">
 </xar:if>
 
 <xar:if condition="empty($ishooked)">
 	<div class="xar-form-input-wrapper">
 	    <label for="q" class="xar-form-label">
-	        <xar:mlstring>LABEL:</xar:mlstring>
+	        <xar:mlstring>Search for:</xar:mlstring>
 	    </label>
 	    <input type="text" name="q" id="q" value="#$q#" class="xar-form-textlong" />
 		<xar:set name="$search"><xar:mlstring>Search</xar:mlstring></xar:set>
