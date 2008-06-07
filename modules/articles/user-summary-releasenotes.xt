@@ -1,0 +1,29 @@
+<div>
+    <h2>
+        <a href="#$link#">#$title#</a>
+    </h2>
+
+    <xar:comment>
+        <div style="text-align: right;">
+            <span class="xar-sub">
+                #$topic_icons# 
+            </span>
+        </div>
+    </xar:comment>
+    <div>
+        #$summary# 
+    </div>
+    <div class="byline">
+        <xar:if condition="!empty($words)">
+            <a href="#$link#"><xar:mlstring>Read More</xar:mlstring></a>  
+            <xar:ml>
+                <xar:mlstring>
+                    (#(1) words) 
+                </xar:mlstring>
+                <xar:mlvar>
+                    #$words# 
+                </xar:mlvar>
+            </xar:ml>
+        </xar:if>
+    </div>
+</div>

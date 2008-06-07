@@ -1,0 +1,99 @@
+<xar:template file="publinks" type="module" />
+
+<h1>#$title#</h1>
+
+<div class="byline">
+		<xar:ml>
+			<xar:mlstring>
+				Posted: #(1) 
+			</xar:mlstring>
+			<xar:mlvar>
+                #xarLocaleGetFormattedDate($length = 'long',$timestamp = $pubdate)#
+			</xar:mlvar>
+		</xar:ml>
+	<xar:if condition="!empty($counter)">
+		<xar:ml>
+			<xar:mlstring>(#(1) Reads)</xar:mlstring>
+			<xar:mlvar>#$counter#</xar:mlvar>
+		</xar:ml>
+	</xar:if>
+</div>
+
+<div>
+	#$summary#
+</div>
+
+#$body# 
+
+<xar:if condition="!empty($notes)">
+	<p class="xar-accent">
+		Note: <em>#$notes#</em>
+	</p>
+</xar:if>
+
+<xar:if condition="!empty($previous) and !empty($next)">
+	<div>
+		#$pager# 
+	</div>
+</xar:if>
+
+<hr />
+
+<div>
+	<p>
+		<xar:if condition="!empty($editurl)">
+			[<a href="#xarModURL('articles','admin','modify',array('aid'=>$aid))#"><xar:mlstring>Edit</xar:mlstring></a>] 
+			<xar:ml>
+				<xar:mlstring>Editor: #(1)</xar:mlstring>
+				<xar:mlvar>#$author#</xar:mlvar>
+			</xar:ml>
+		</xar:if>
+
+		<xar:comment>
+			Let's get changelog to handle this 
+			<xar:ml>
+				<xar:mlstring>
+					Updated: #(1) 
+				</xar:mlstring>
+				<xar:mlvar>
+					#xarLocaleFormatDate(' %d %b %y %H:%M', $lastupdate)#
+				</xar:mlvar>
+			</xar:ml>
+		</xar:comment>
+
+		<xar:if condition="!empty($hooks) and !empty($hooks['changelog'])">
+			#$hooks['changelog']# 
+		</xar:if>
+	</p>
+
+	<xar:if condition="!empty($prevart) and isset($prevartinfo)">
+		<p style="float: left; width: 45%;text-align: left;">
+			<strong>&lt;
+			<xar:mlstring>Previous Article</xar:mlstring></strong><br />
+			<a href="#$prevart#">#$prevartinfo['title']#</a>
+		</p>
+	</xar:if>
+
+	<xar:if condition="!empty($nextart) and isset($nextartinfo)">
+		<p style="float: right; width: 45%;text-align: right;">
+			<strong><xar:mlstring>Next Article</xar:mlstring> &gt;</strong><br />
+			<a href="#$nextart#">#$nextartinfo['title']#</a>
+		</p>
+	</xar:if>
+
+	<div class="xar-clearboth">
+		&#160; 
+	</div>
+</div>
+
+<xar:if condition="!empty($hooks)">
+	<xar:foreach in="$hooks" key="$hookmodule">
+		<xar:comment>
+			We already have dealt with changelog display 
+		</xar:comment>
+		<xar:if condition="$hookmodule ne 'changelog'">
+			#$hooks[$hookmodule]# 
+		</xar:if>
+	</xar:foreach>
+</xar:if>
+<xar:template file="navtabs-user" type="module" />
