@@ -1,0 +1,29 @@
+<xar:set name="item">array_shift($items)</xar:set>
+<xar:if condition="isset($item['screenshot_output']) AND count($item['screenshot_output']) ge '1'">
+    <xar:set name="imgid">array_shift(array_keys($item['screenshot_output']))</xar:set>
+    <xar:set name="img">array_shift($item['screenshot_output'])</xar:set>
+    <xar:set name="imginfo">xarModAPIFunc('images','user','getimageinfo',array('fileId' => $imgid))</xar:set>
+    <xar:set name="width">ceil($imginfo['imageWidth'] * ( 75 / $imginfo['imageHeight']))</xar:set>
+    <div id="header_rand_img" class="xar-alt-outline" style="width: #$width#px;">
+        <xar:set name="imgtitle">$item['title']</xar:set>
+        <a class="xar-title" href="#$item.body#">
+            <xar:image-resize src="$imgid" height="75px" constrain="1" label="$imgtitle" />
+        </a>
+    </div>
+<xar:else />
+    <div id="header_rand_noimg" class="xar-alt-outline">
+        <p style="margin-top: 20px;">
+            No Image Available
+        </p>
+    </div>
+</xar:if>
+
+<h4>Xaraya-ized</h4>
+
+<xar:if condition="!empty($showtitle)">
+    <xar:if condition="isset($linkpubtype)">
+        <a href="#xarModURL('articles', 'user', 'display', array('aid' => $item['aid'], 'itemtype' => $item['pubtypeid']))#">#$item['title']#</a>
+    <xar:else />
+        <a href="#xarModURL('articles', 'user', 'display', array('aid' => $item['aid']))#">#$item['title']#</a>
+    </xar:if>
+</xar:if>

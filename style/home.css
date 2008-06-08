@@ -86,6 +86,11 @@ div#header_whatis {
 	height: 90px;
 
 }
+div#header_rand {
+	float: left;
+	height: 90px;
+	width: 35%;
+}
 div#header_release {
     float: right;
     width: 20%;

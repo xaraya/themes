@@ -323,8 +323,20 @@ div#header_release h4, div#header_release ul {
     margin: 0;
     text-align: center;
 }
-div#header_whatis h4 {
+div#header_whatis h4, div#header_rand h4 {
     margin: 0;
+}
+div#header_rand_img {
+	float: right;
+	margin-left: 1em;
+}
+div#header_rand_noimg {
+	float: right;
+	width: 100px;
+	height: 75px;
+	background-color: #fff;
+	margin-left: 1em;
+	text-align: center;
 }
 div#header_release table {
     margin: auto;

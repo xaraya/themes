@@ -83,6 +83,9 @@
 					    	<div id="header_whatis">
 						    	<xar:block instance="trop_whatis_header" />
 						    </div>
+							<div id="header_rand">
+                                <xar:block instance="trop_rand_xarayaized" />
+							</div>
 							<div id="header_release">
                                 <xar:block instance="trop_release_header" />
 							</div>
