@@ -326,9 +326,12 @@ div#header_release h4, div#header_release ul {
 div#header_whatis h4, div#header_rand h4 {
     margin: 0;
 }
-div#header_rand_img {
+a#header_rand_img {
 	float: right;
 	margin-left: 1em;
+}
+a#header_rand_img img {
+    display: block;
 }
 div#header_rand_noimg {
 	float: right;

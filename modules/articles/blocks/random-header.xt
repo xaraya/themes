@@ -4,12 +4,10 @@
     <xar:set name="img">array_shift($item['screenshot_output'])</xar:set>
     <xar:set name="imginfo">xarModAPIFunc('images','user','getimageinfo',array('fileId' => $imgid))</xar:set>
     <xar:set name="width">ceil($imginfo['imageWidth'] * ( 75 / $imginfo['imageHeight']))</xar:set>
-    <div id="header_rand_img" class="xar-alt-outline" style="width: #$width#px;">
-        <xar:set name="imgtitle">$item['title']</xar:set>
-        <a href="#xarModURL('articles', 'user', 'display', array('aid' => $item['aid']))#">
-            <xar:image-resize src="$imgid" height="75px" constrain="1" label="$imgtitle" />
-        </a>
-    </div>
+    <xar:set name="imgtitle">$item['title']</xar:set>
+    <a href="#xarModURL('articles', 'user', 'display', array('aid' => $item['aid']))#"  id="header_rand_img" class="xar-alt-outline" style="width: #$width#px;">
+        <xar:image-resize src="$imgid" height="75px" constrain="1" label="$imgtitle" />
+    </a>
 <xar:else />
     <div id="header_rand_noimg" class="xar-alt-outline">
         <p style="margin-top: 20px;">
