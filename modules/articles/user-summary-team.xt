@@ -1,113 +1,53 @@
-<div class="xar-alt" style="margin: 0px 3px 6px 3px;padding: 1px;text-align: left;">
-	<div class="xar-norm" style="padding: 3px; margin-bottom:20px;">
-        <xar:comment>
-            jojodee: Do we really want these categories here .. crowds the page. 
-            <xar:if condition="!empty($categories) and count($categories) gt 0">
-                [ 
-                <xar:foreach in="$categories" value="$cat">
-                    #$cat['cjoin']# 
-                    <a href="#$cat['clink']#">
-                        #$cat['cname']# 
-                    </a>
-                </xar:foreach>
-                ] 
-            </xar:if>
-        </xar:comment>
-        <h1>
-            <a class="xar-title" href="#$link#">
-                #$title#
-            </a>
-        </h1>
-        <div class="xar-normal" style="padding: 2px;">
-            #$summary# 
-        </div>
-        <xar:if condition="!empty($notes)">
-			<p>
-            Note: 
-            <br />
-            <i>
-                #$notes# 
-            </i>
-			</p>
-        </xar:if>
-		<div class="xar-sub">
-			<span style="float: right; width: 100%; text-align: right; margin-top:3px; margin-bottom:3px;">
-               <xar:comment>
-                    <xar:ml>
-                        <xar:mlstring>
-                                Last update: 
-                        </xar:mlstring>
-                    </xar:ml>
-                    #xarLocaleGetFormattedDate($length = 'long',$timestamp = $lastupdate)#
-				</xar:comment>
-                <xar:if condition="!empty($hooks) and !empty($hooks['changelog'])">
-                    #$hooks['changelog']#
-                </xar:if>
-            </span>
-            <span style="float: left; width: 40%; text-align: left; padding-top:5px;">
-                <xar:if condition="!empty($extversion) and !empty($doclevel)">
-                    <xar:ml>
-                        <xar:mlstring>
-                            <strong>
-                                Level: 
-                            </strong>
-                            #(1)&#160;&#160;&#160; 
-                            <strong>
-                                For versions: 
-                            </strong>
-                            #(2) 
-                        </xar:mlstring>
-                        <xar:mlvar>
-                            #$doclevel# 
-                        </xar:mlvar>
-                        <xar:mlvar>
-                            #$extversion# 
-                        </xar:mlvar>
-                    </xar:ml>
-                    <xar:elseif condition="!empty($doclevel)" />
-                    <xar:ml>
-                        <xar:mlstring>
-                            <strong>
-                                Level: 
-                            </strong>
-                            #(1)&#160;&#160;&#160; 
-                        </xar:mlstring>
-                        <xar:mlvar>
-                            #$doclevel# 
-                        </xar:mlvar>
-                    </xar:ml>
-                    <xar:elseif condition="!empty($extversion)" />
-                    <xar:ml>
-                        <xar:mlstring>
-                            <strong>
-                                For versions: 
-                            </strong>
-                            #(1)
-                        </strong>
-                    </xar:mlstring>
-                    <xar:mlvar>
-                        #$extversion# 
-                    </xar:mlvar>
-                </xar:ml>
+<div>
+    <h2 class="xar-margin-nonebottom">
+        <a class="xar-title" href="#$link#">#$title#</a>
+    </h2>
+
+	<div class="byline">
+		<span>
+           <xar:comment>
+                <xar:mlstring>Last update: </xar:mlstring>
+                #xarLocaleGetFormattedDate($length = 'long',$timestamp = $lastupdate)#
+			</xar:comment>
+            <xar:if condition="!empty($hooks) and !empty($hooks['changelog'])">
+                #$hooks['changelog']#
             </xar:if>
         </span>
-        <span style="float: right; width: 25%; text-align: right; padding-top:5px;">
-            <xar:if condition="!empty($words)">
-                <a href="#$link#">
-                    <xar:mlstring>
-                        Read More 
-                    </xar:mlstring>
-                </a>
+        <span>
+            <xar:if condition="!empty($extversion) and !empty($doclevel)">
+             | 
                 <xar:ml>
-                    <xar:mlstring>
-                        (#(1) words) 
-                    </xar:mlstring>
-                    <xar:mlvar>
-                        #$words# 
-                    </xar:mlvar>
+                    <xar:mlstring><strong>Level: </strong>#(1)&#160;&#160;&#160; <strong>For versions: </strong>#(2) </xar:mlstring>
+                    <xar:mlvar>#$doclevel#</xar:mlvar>
+                    <xar:mlvar>#$extversion#</xar:mlvar>
+                </xar:ml>
+            <xar:elseif condition="!empty($doclevel)" />
+                <xar:ml>
+                    <xar:mlstring><strong>Level: </strong>#(1)&#160;&#160;&#160; </xar:mlstring>
+                    <xar:mlvar>#$doclevel#</xar:mlvar>
+                </xar:ml>
+            <xar:elseif condition="!empty($extversion)" />
+                <xar:ml>
+                    <xar:mlstring><strong>For versions: </strong>#(1)</strong></xar:mlstring>
+                    <xar:mlvar>#$extversion#</xar:mlvar>
                 </xar:ml>
             </xar:if>
         </span>
     </div>
-</div>
+
+    <div>
+        #$summary# 
+    </div>
+
+    <xar:if condition="!empty($words)">
+        <p>
+            <a href="#$link#">
+                <xar:mlstring>Read More</xar:mlstring>
+            </a>
+            <xar:ml>
+                <xar:mlstring>(#(1) words)</xar:mlstring>
+                <xar:mlvar>#$words#</xar:mlvar>
+            </xar:ml>
+        </p>
+    </xar:if>
 </div>

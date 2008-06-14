@@ -5,19 +5,16 @@
 <xar:elseif condition="!empty($ptid) and !empty($catid)" />
 	<xar:categories-navigation layout="trails" showchildren="1" module="articles" itemtype="10" catid="$catid" showcatcount="$showcatcount" showempty="1" />
 </xar:if>
+
 <xar:if condition="!empty($author)">
-	<h2>
+	<h1>
 		<xar:ml>
-			<xar:mlstring>
-				By Author : #(1) 
-			</xar:mlstring>
-			<xar:mlvar>
-				#$author# 
-			</xar:mlvar>
+			<xar:mlstring>By Author : #(1) </xar:mlstring>
+			<xar:mlvar>#$author#</xar:mlvar>
 		</xar:ml>
-	</h2>
-	<br />
+	</h1>
 </xar:if>
+
 <xar:if condition="!empty($numcols) and $number gt 0">
 	<table border="0" cellpadding="0" cellspacing="0" width="100%">
 		<tr>
@@ -45,7 +42,7 @@
 				single-column display 
 			</xar:mlstring>
 		</a>
-		<xar:else />
+    <xar:else />
 		<a href="#xarModURL('articles','user','view')#">
 			<xar:ml>
 				<xar:mlstring>

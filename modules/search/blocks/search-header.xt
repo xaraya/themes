@@ -2,7 +2,7 @@
     <div style="text-align: right !important;">
         <input type="hidden" name="module" id="module" value="search" />
         <label for="q#$blockid#"><xar:mlstring>Search</xar:mlstring></label>
-        <input type="text" name="q" class="xar-form-textmedium" />
+        <input type="text" name="q" id="q#blockid#" class="xar-form-textmedium" />
         <input type="submit" value="#xarML('Go!')#" />
     </div>
     <p style="margin: .1em 0 0 0;text-align: right;">
