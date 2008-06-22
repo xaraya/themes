@@ -232,11 +232,17 @@ div#contentleft div.xar-block-right:first-child div.xar-block-head-right {
 .xar-accent {
 	background-color: #FFF3C7;
 }
+.xar-hilite {
+	background-color: #f6fade;
+}
 .xar-alt-outline {
 	border: 1px solid #12ABE3;
 }
 .xar-accent-outline {
 	border: 1px solid #f93;
+}
+.xar-hilite-outline {
+	border: 1px solid #abe324;
 }
 .xar-norm-outline {
 	border: 1px solid #DCA;
@@ -650,3 +656,94 @@ div.polls-pollbar {
 	font-size: 0;
 	content: '.';
 }
+
+/* ARTICLES */
+
+div.summary-news {
+	border-bottom: 1px solid #12ABE3;
+}
+div.summary-docs {
+	border-bottom: 1px solid #12ABE3;
+}
+div.summary-weblinks {
+	border-bottom: 1px solid #12ABE3;
+}
+div.summary-quotes {
+	border-bottom: 1px solid #12ABE3;
+}
+div.summary-documentation {
+	border-bottom: 1px solid #12ABE3;
+}
+div.summary-team {
+	border-bottom: 1px solid #12ABE3;
+}
+div.summary-blogentry {
+	border-bottom: 1px solid #12ABE3;
+}
+div.summary-sponsors {
+	border-bottom: 1px solid #12ABE3;
+	margin-bottom: 1em;
+}
+div.summary-userwiki {
+	border-bottom: 1px solid #12ABE3;
+}
+div.summary-foo {
+	border-bottom: 1px solid #12ABE3;
+}
+div.summary-releasenotes {
+	border-bottom: 1px solid #12ABE3;
+}
+div.summary-faqs {
+	border-bottom: 1px solid #12ABE3;
+}
+div.summary-links {
+	border-bottom: 1px solid #12ABE3;
+}
+div.summary-weblinks a img, div.summary-sponsors a img {
+	display: block;
+}
+
+div.display-news {
+}
+div.display-docs {
+}
+div.display-weblinks {
+}
+div.display-quotes {
+}
+div.display-documentation {
+}
+div.display-team {
+}
+div.display-blogentry {
+}
+div.display-sponsors {
+}
+div.display-userwiki {
+}
+div.display-foo {
+}
+div.display-releasenotes {
+}
+div.display-faqs {
+}
+div.display-links {
+}
+
+div.summary-news h2,
+div.summary-docs h2,
+div.summary-weblinks h2,
+div.summary-quotes h2,
+div.summary-documentation h2,
+div.summary-team h2,
+div.summary-blogentry h2,
+div.summary-sponsors h2,
+div.summary-userwiki h2,
+div.summary-releasenotes h2,
+div.summary-faqs h2,
+div.summary-links h2 {
+	margin-bottom: 0;
+}
+
+
+/* END ARTICLES */

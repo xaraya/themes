@@ -1,21 +1,21 @@
-<div class="xar-norm-outline fc-wrapper">
-    <h1 class="fc-half fc-inline">
-        <a class="xar-title" href="#$link#">
-            #$title# 
-        </a>
-    </h1>
-    <h2 class="xar-sub fc-half-r fc-inline fc-text-r">
-        <xar:if condition="!empty($categories) and count($categories) gt 0">
-            [ 
-            <xar:foreach in="$categories" value="$cat">
-                #$cat['cjoin']# 
-                <a href="#$cat['clink']#">
-                    #$cat['cname']# 
-                </a>
-            </xar:foreach>
-            ] 
-        </xar:if>
+<div class="summary-news">
+    <h2>
+        <a href="#$link#">#$title#</a>
     </h2>
+	<xar:comment>
+	    <div>
+	        <xar:if condition="!empty($categories) and count($categories) gt 0">
+	            [ 
+	            <xar:foreach in="$categories" value="$cat">
+	                #$cat['cjoin']# 
+	                <a href="#$cat['clink']#">
+	                    #$cat['cname']# 
+	                </a>
+	            </xar:foreach>
+	            ] 
+	        </xar:if>
+	    </div>
+	</xar:comment>
     <xar:comment>
         <div style="text-align: right;">
             <span class="xar-sub">
@@ -23,66 +23,46 @@
             </span>
         </div>
     </xar:comment>
-    <div class="fc-full">
-        <xar:if condition="isset($submitter)">
-            <div class="fc-half-r fc-wrapper xar-alt">
-            <xar:comment>This field not available here
-                <span class="xar-sub fc-block">
-                    <xar:ml>
-                        <xar:mlstring>
-                            Submitted by: #(1)
-                        </xar:mlstring>
-                        <xar:mlvar>
-                            #$submitter#
-                        </xar:mlvar>
-                    </xar:ml>
-                </span>
-                </xar:comment>
-                <span class="xar-sub fc-block">
-                    <xar:ml>
-                        <xar:mlstring>
-                            Posted: #(1) 
-                        </xar:mlstring>
-                        <xar:mlvar>
-                            #xarLocaleGetFormattedDate('long',$pubdate)# 
-                        </xar:mlvar>
-                    </xar:ml>
-                </span>
-            </div>
+    <div class="byline">
+        <xar:ml>
+            <xar:mlstring>Posted: #(1)</xar:mlstring>
+            <xar:mlvar>#xarLocaleGetFormattedDate('long',$pubdate)#</xar:mlvar>
+        </xar:ml>
+        <xar:if condition="!empty($categories) and count($categories) gt 0">
+             | <xar:mlstring>Categories</xar:mlstring>:  
+            <xar:foreach in="$categories" value="$cat">
+                #$cat['cjoin']# 
+                <a href="#$cat['clink']#">#$cat['cname']#</a>
+            </xar:foreach>
+             
         </xar:if>
+	</div>
+	<div>
         #$summary# 
     </div>
-    <div class="xar-sub fc-third-r fc-text-r">
+    <xar:if condition="!empty($notes)">
+        <div class="xar-accent">
+			<div class="xar-margin-thick">
+	            <p><strong>Note:</strong></p>
+	            <em>
+	                #$notes# 
+	            </em>
+	        </div>
+        </div>
+    </xar:if>
+
+    <p class="xar-align-right">
         <xar:if condition="!empty($words)">
-            <a href="#$link#">
-                <xar:mlstring>
-                    Read More 
-                </xar:mlstring>
-            </a>
             <xar:ml>
-                <xar:mlstring>
-                    (#(1) words) 
-                </xar:mlstring>
-                <xar:mlvar>
-                    #$words# 
-                </xar:mlvar>
+                <xar:mlstring>(#(1) words)</xar:mlstring>
+                <xar:mlvar>#$words#</xar:mlvar>
             </xar:ml>
         </xar:if>
+        <a href="#$link#">
+            <xar:mlstring>Read More</xar:mlstring>
+        </a>
         <xar:if condition="!empty($comments)">
             #$comments# 
         </xar:if>
-    </div>
-    <div class="fc-clear">
-        &#160; 
-    </div>
-    <xar:if condition="!empty($notes)">
-        <div class="fc-wrapper xar-alt">
-            <h4 class="fc-inline">
-                Note: 
-            </h4>
-            <em>
-                #$notes# 
-            </em>
-        </div>
-    </xar:if>
+    </p>
 </div>

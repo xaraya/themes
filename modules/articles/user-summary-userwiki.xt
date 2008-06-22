@@ -1,5 +1,18 @@
-<div>
-	<h2 style="margin-bottom: 0;"><a class="xar-title" href="#$link#">#$title#</a></h2>
+<div class="summary-userwiki">
+	<h2>
+		<a href="#$link#">#$title#</a>
+	</h2>
+	<div class="byline">
+		<xar:if condition="isset($author)">
+			<xar:mlstring>By</xar:mlstring>: 
+			<a href="&xar-modurl-roles-user-display;&amp;uid=#$authorid#">#xarUserGetVar('name',$authorid)#</a>
+		</xar:if>
+		<xar:if condition="isset($author) and isset($pubdate)"> | </xar:if>
+		<xar:if condition="isset($pubdate)">
+			#xarLocaleGetFormattedDate('long', $pubdate)#
+		</xar:if>
+	</div>
+<xar:comment>
     <xar:if condition="!empty($categories) and count($categories) gt 0">
     	[ 
 	    <xar:foreach in="$categories" value="$cat">
@@ -7,22 +20,27 @@
 		    <a href="#$cat['clink']#">#$cat['cname']#</a></xar:foreach>
 		]
 	</xar:if>
-    <span>
+</xar:comment>
+
+    <p class="xar-align-right">
         <xar:if condition="!empty($counter)">
-            <xar:if condition="$counter eq 1">(#$counter#&#160;
-	            <xar:mlstring>read</xar:mlstring>) 
+           	#$counter#
+            <xar:if condition="$counter eq 1">
+	            <xar:mlstring>read</xar:mlstring> 
             <xar:else />
-            	(#$counter#&#160;
-            	<xar:mlstring>reads</xar:mlstring>)
+            	<xar:mlstring>reads</xar:mlstring>
             </xar:if>
-        </xar:if>
-    </span>
-    <div class="xar-articles-keywords">
+        </xar:if> | 
+<xar:comment>
         <xar:if condition="!empty($keywords)">
 	        <xar:mlstring>Keywords</xar:mlstring>: 
 	        <xar:loop name="$keywords">
 	            <a href="#xarModUrl('keywords', 'user', 'main', array('keyword'=&gt; $loop:item['keyword']))#" title="#$loop:item['keyword']#">#$loop:item['keyword']#</a>
 	        </xar:loop>
 	    </xar:if>
-    </div>
+</xar:comment>
+        <a href="#$link#">
+            <xar:mlstring>Read More</xar:mlstring>
+        </a>
+    </p>
 </div>

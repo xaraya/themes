@@ -60,15 +60,14 @@
 		</a>
 	</xar:if>
 </xar:if>
-<!--
+
 <xar:template file="alphapager" type="module" />
--->
-<div style="text-align: center;">
+
+<div class="xar-align-center" style="margin-top: 1em;">
 	#$pager# 
 </div>
+
 <xar:if condition="!empty($showprevnext)">
 	<xar:categories-navigation layout="prevnext" />
 </xar:if>
-<xar:comment>
 <xar:template file="navtabs-user" type="module" />
-</xar:comment>

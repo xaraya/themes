@@ -1,0 +1,56 @@
+<div class="summary-links">
+    <h2><a href="#$redirect#">#$title#</a></h2>
+
+    <div class="byline">
+        <xar:mlstring>Added by</xar:mlstring>:
+		<a href="&xar-modurl-roles-user-display;&amp;uid=#$authorid#">#xarUserGetVar('name',$authorid)#</a> | 
+        #xarLocaleGetFormattedDate('long',$pubdate)# #xarLocaleGetFormattedTime('long',$pubdate)# 
+    </div>
+
+    <div>
+    	#$summary#
+    </div>
+
+	<xar:if condition="!empty($notes)">
+		<div class="xar-accent">
+			<div class="xar-margin-thick">
+				<p><strong>Note:</strong></p>
+				<em>#$notes#</em>
+			</div>
+		</div>
+	</xar:if>
+
+	<p class="xar-align-right">
+        <xar:if condition="!empty($rating)">
+            <xar:set name="intrating">(int)($rating/20)</xar:set>
+            <xar:set name="fracrating">$rating - (20 * $intrating)</xar:set>
+
+			<xar:mlstring>Rating</xar:mlstring>: 
+
+            <xar:for start="$i = 1" test="$i le 5" iter="$i++">              
+                <xar:if condition="$i le $intrating">    
+                    <img src="themes/xartropics/modules/ratings/images/star-#$i#.png" alt="#xarML('star')#" />
+                <xar:elseif condition="(($i - 1) eq $intrating) and $fracrating ge 10" />
+                    <img src="themes/xartropics/modules/ratings/images/halfstar-#$i#.png" alt="#xarML('half star')#" />
+                <xar:else />
+                    <img src="themes/xartropics/modules/ratings/images/nostar-#$i#.png" alt="#xarML('no star')#" />
+                </xar:if>
+            </xar:for>
+		<xar:else />
+			<xar:mlstring>This site not rated yet</xar:mlstring> | 
+		</xar:if>
+
+		<xar:if condition="!empty($counter)">
+	        #$counter# 
+		    <xar:if condition="$counter eq 1">
+		        <xar:mlstring>read</xar:mlstring>
+		    <xar:else />
+		        <xar:mlstring>reads</xar:mlstring>
+		    </xar:if> | 
+		</xar:if>
+
+	    <a href="#$link#">
+	        <xar:mlstring>Rate / Read More</xar:mlstring>
+	    </a>
+	</p>
+</div>

@@ -1,23 +1,23 @@
 <xar:template file="publinks" type="module" />
-
-<xar:set name="docoverviewblockgroup"><xar:blockgroup name="doc_overview" id="doc_overview"/></xar:set>
-
-<xar:if condition="($catid eq '127' or $catid eq '137' or $catid eq '16')">
-	<xar:categories-navigation layout="trails" showchildren="1" module="articles" itemtype="9" catid="137" showcatcount="$showcatcount" showempty="1" />
-<xar:elseif condition="($catid eq  '' or $catid eq '18')" />
-	<xar:categories-navigation layout="trails" showchildren="1" module="articles" itemtype="9" catid="$catid" showcatcount="$showcatcount" showempty="1" />
-<xar:elseif condition="!empty($ptid) and !empty($catid)" />
-	<xar:categories-navigation layout="trails" showchildren="1" module="articles" itemtype="9" catid="$catid" showcatcount="$showcatcount" showempty="1" />
+<xar:set name="weblinkoverviewgroup"><xar:blockgroup name="weblink_overviewgroup" id="weblink_overviewgroup"/></xar:set>
+<xar:if condition="$catid eq '7'">
+    #$weblinkoverviewgroup#
+	<xar:categories-navigation layout="trails" showchildren="1" module="articles" itemtype="6" catid="$catid" showcatcount="2" showempty="1" />
+<xar:elseif condition="!empty($ptid) or !empty($catid)" />
+	<xar:categories-navigation layout="trails" showchildren="1" module="articles" itemtype="6" catid="$catid" showcatcount="2" showempty="1" />
 </xar:if>
-
-
 <xar:if condition="!empty($author)">
-	<h1>
+	<h2>
 		<xar:ml>
-			<xar:mlstring>By Author : #(1)</xar:mlstring>
-			<xar:mlvar>#$author#</xar:mlvar>
+			<xar:mlstring>
+				By Author : #(1) 
+			</xar:mlstring>
+			<xar:mlvar>
+				#$author# 
+			</xar:mlvar>
 		</xar:ml>
-	</h1>
+	</h2>
+	<br />
 </xar:if>
 <xar:if condition="!empty($numcols) and $number gt 0">
 	<table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -59,14 +59,12 @@
 		</a>
 	</xar:if>
 </xar:if>
-
-
+<!--
 <xar:template file="alphapager" type="module" />
-
-<div class="xar-align-center" style="margin-top: 1em;">
+-->
+<div style="text-align: center;">
 	#$pager# 
 </div>
-
 <xar:if condition="!empty($showprevnext)">
 	<xar:categories-navigation layout="prevnext" />
 </xar:if>

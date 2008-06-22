@@ -1,41 +1,16 @@
-<table border="0" cellpadding="5" cellspacing="0" width="100%">
-    <tr>
-        <td align="left" valign="top" class="xar-normal">
-            <a class="xar-title" href="#$link#">
-                #$title#</a>
-            <br />
-            <xar:mlstring>
-                Description
-            </xar:mlstring>
-            : #$summary#
-            <br />
-            <xar:mlstring>
-                Added on
-            </xar:mlstring>
-            : #xarLocaleGetFormattedDate('long',$pubdate)# 
-            <xar:comment>
-                Don't need this stuff 
-                <xar:if condition="!empty($rating)">
-                    - 
-                    <xar:mlstring>
-                        Rating
-                    </xar:mlstring>
-                    : #$rating# 
-                </xar:if>
-                <xar:if condition="!empty($counter)">
-                    (#$counter# 
-                    <xar:mlstring>
-                        Hits
-                    </xar:mlstring>
-                    ) 
-                </xar:if>
-                | 
-                <a href="#$link#">
-                    <xar:mlstring>
-                        Rate / Comment
-                    </xar:mlstring>
-                </a>
-            </xar:comment>
-        </td>
-    </tr>
-</table>
+<div class="summary-quotes">
+	<h2>
+		<a class="xar-title" href="#$link#">#$title#</a>
+	</h2>
+	<div class="byline">
+		<xar:mlstring>Added on</xar:mlstring> #xarLocaleGetFormattedDate('long',$pubdate)# 
+	</div>
+	<div>
+		#$summary#
+	</div>
+	<p class="xar-align-right">
+	    <a href="#$link#">
+	        <xar:mlstring>Read more</xar:mlstring>
+	    </a>
+	</p>
+</div>

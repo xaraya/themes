@@ -1,34 +1,60 @@
-<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
-<h2 class="xar-margin-nonebottom"><a name="#$aid#" href="#$link#">#$title#</a></h2>
-<div class="byline">
-<xar:if condition="!empty($counter)">
-    <xar:if condition="$counter eq 1">
-        (#$counter#&nbsp;<xar:mlstring>read</xar:mlstring>)
-    <xar:else />
-        (#$counter#&nbsp;<xar:mlstring>reads</xar:mlstring>)
-    </xar:if>
-</xar:if>
-<xar:if condition="!empty($notes)">
-    <xar:mlstring>by</xar:mlstring> #$notes#
-</xar:if>
+<div class="summary-faqs">
+	<h2><a name="#$aid#" href="#$link#">#$title#</a></h2>
+	<div class="byline">
+		<xar:if condition="!empty($notes)">
+		    <xar:mlstring>by</xar:mlstring> #$notes# | 
+		</xar:if>
+	    <xar:mlstring>Added on</xar:mlstring> 
+        #xarLocaleGetFormattedDate('long',$pubdate)# #xarLocaleGetFormattedTime('long',$pubdate)#
+	</div>
+	
+	<xar:if condition="!empty($summary)">
+	    <p>#$summary#</p>
+	</xar:if>
+	<xar:if condition="empty($body)">
+	    <p><xar:mlstring>This question has not been answered yet.</xar:mlstring></p>
+	</xar:if>
+
+<xar:comment>
+	<xar:if condition="!empty($categories) and count($categories) gt 0">
+	    <xar:set name="numcats">count($categories)</xar:set>
+	    <xar:set name="counter">1</xar:set>
+	    <p><xar:mlstring>Categories</xar:mlstring>:  <xar:foreach in="$categories" value="$cat">
+	        #$cat['cjoin']# <a href="#$cat['clink']#">#$cat['cname']#</a><xar:if condition="$counter lt $numcats"> | </xar:if><xar:set name="counter">$counter + 1</xar:set>
+	    </xar:foreach> ]</p>
+	</xar:if>
+</xar:comment>
+
+	<p class="xar-align-right" style="position: relative;">
+		<a href="#xarServerGetCurrentURL()##titles" style="position: absolute;bottom: 0px;left:0px;"><xar:mlstring>Return to top</xar:mlstring></a>
+        <xar:if condition="!empty($rating)">
+            <xar:set name="intrating">(int)($rating/20)</xar:set>
+            <xar:set name="fracrating">$rating - (20 * $intrating)</xar:set>
+
+			<xar:mlstring>Rating</xar:mlstring>: 
+
+            <xar:for start="$i = 1" test="$i le 5" iter="$i++">              
+                <xar:if condition="$i le $intrating">    
+                    <img src="themes/xartropics/modules/ratings/images/star-#$i#.png" alt="#xarML('star')#" />
+                <xar:elseif condition="(($i - 1) eq $intrating) and $fracrating ge 10" />
+                    <img src="themes/xartropics/modules/ratings/images/halfstar-#$i#.png" alt="#xarML('half star')#" />
+                <xar:else />
+                    <img src="themes/xartropics/modules/ratings/images/nostar-#$i#.png" alt="#xarML('no star')#" />
+                </xar:if>
+            </xar:for>
+		<xar:else />
+			<xar:mlstring>This site not rated yet</xar:mlstring> | 
+		</xar:if>
+        <xar:if condition="isset($counter)">
+           	 | #$counter#
+            <xar:if condition="$counter eq 1">
+	            <xar:mlstring>read</xar:mlstring> 
+            <xar:else />
+            	<xar:mlstring>reads</xar:mlstring>
+            </xar:if> | 
+        </xar:if>
+        <a href="#$link#">
+            <xar:mlstring>Read More</xar:mlstring>
+        </a>
+	</p>
 </div>
-
-<xar:if condition="!empty($summary)">
-    <p>#$summary#</p>
-</xar:if>
-<xar:if condition="!empty($body)">
-    <p>#$body#</p>
-<xar:else />
-    <p><xar:mlstring>This question has not been answered yet.</xar:mlstring></p>
-</xar:if>
-<xar:if condition="!empty($categories) and count($categories) gt 0">
-    <xar:set name="numcats">count($categories)</xar:set>
-    <xar:set name="counter">1</xar:set>
-    <p>[ <xar:foreach in="$categories" value="$cat">
-        #$cat['cjoin']# <a href="#$cat['clink']#">#$cat['cname']#</a><xar:if condition="$counter lt $numcats">, </xar:if><xar:set name="counter">$counter + 1</xar:set>
-    </xar:foreach> ]</p>
-</xar:if>
-
-
-<p><a href="#xarServerGetCurrentURL()##titles"><xar:mlstring>Return to top</xar:mlstring></a></p>
-<hr />

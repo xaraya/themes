@@ -1,0 +1,12 @@
+div.alphapager-wrapper {
+	text-align: center;
+	margin: 1em 0;
+}
+div.alphapager-wrapper * {
+    margin: 0 .3em;
+}
+div.alphapager-wrapper span {
+	/* Subtle highlight for the selected letter */
+    font-weight: bold;
+    color: #f93;
+}
