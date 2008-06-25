@@ -509,7 +509,7 @@ div#contentmain_core:after {
 div#contentmain_tlcorner {
     height: 10px;
     font-size: 0;
-    background: transparent url(/themes/xartropics/images/content-bgtop.png) top left no-repeat;
+    background: transparent url(/themes/xartropics/images/content-bg.png) top left no-repeat;
 	margin: -1px -1px 0 -1px;
 	position: relative;
 }
@@ -517,12 +517,12 @@ div#contentmain_trcorner {
     height: 10px;
     margin-left: 50%;
     font-size: 0;
-    background: transparent url(/themes/xartropics/images/content-bgtop.png) top right no-repeat;
+    background: transparent url(/themes/xartropics/images/content-bg.png) top right no-repeat;
 }
 div#contentmain_blcorner {
     height: 10px;
     font-size: 0;
-    background: transparent url(/themes/xartropics/images/content-bgbottom.png) bottom left no-repeat;
+    background: transparent url(/themes/xartropics/images/content-bg.png) bottom left no-repeat;
 	margin: 0 -1px -1px -1px;
 	position: relative;
 	clear: both;
@@ -531,7 +531,7 @@ div#contentmain_brcorner {
     height: 10px;
     margin-left: 50%;
     font-size: 0;
-    background: transparent url(/themes/xartropics/images/content-bgbottom.png) bottom right no-repeat;
+    background: transparent url(/themes/xartropics/images/content-bg.png) bottom right no-repeat;
 }
 div#main_left {
 	margin-right: 310px;
