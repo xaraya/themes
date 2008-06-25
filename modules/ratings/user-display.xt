@@ -1,7 +1,7 @@
 <xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
 <div class="xar-alt-outline xar-align-center">
 	<div class="boxcore">
-	    <xar:if condition="$showdisplay eq 1">
+	    <xar:if condition="!isset($showdisplay) or $showdisplay eq 1">
 	        <h5>
 	            <xar:mlstring>Rating:</xar:mlstring>&nbsp;
 	        </h5>
