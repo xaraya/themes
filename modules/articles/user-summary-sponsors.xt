@@ -6,8 +6,8 @@
 	</xar:if>
 	<div class="summary-sponsors" style="border: 0;">
 		<div class="xar-alt-outline xar-alt">
-			<div style="margin: 1em;">
-			    <h2>#$title#</h2>
+			<div class="boxcore">
+			    <h2><a href="#$link#">#$title#</a></h2>
 	            <div class="byline">
 			    	<xar:if condition="!empty($categories) and count($categories) gt 0">
 						<xar:foreach in="$categories" value="$cat">
@@ -42,7 +42,7 @@
 	</div>
 <xar:else />
 	<div class="summary-sponsors">
-	    <h2>#$title#</h2>
+	    <h2><a href="#$link#">#$title#</a></h2>
          <div class="byline">
 	    	<xar:if condition="!empty($categories) and count($categories) gt 0">
 				<xar:foreach in="$categories" value="$cat">

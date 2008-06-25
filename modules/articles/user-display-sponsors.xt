@@ -1,71 +1,67 @@
-<xar:if condition="isset($sponsortype)and ($sponsortype eq '1' or $sponsortype eq '3')">
-    <div style="clear: both; padding: 2px; margin-top:20px;">
-	    <span style="float: left; width: 48%; text-align: left;">
-		    <strong>
-			    #$title#
-    		</strong>
-	    </span>
-    	<span class="xar-sub" style="float: right; width: 48%; text-align: right;">
-	    	<xar:if condition="!empty($categories) and count($categories) gt 0">
-			[
-			<xar:foreach in="$categories" value="$cat">
-				#$cat['cjoin']#
-				<a href="#$cat['clink']#">
-					#$cat['cname']#
-				</a>
+<div class="display-sponsors">
+	<xar:template file="publinks" type="module" />
+	<h1>
+	    #$title#
+	</h1>
+
+    <div class="byline">
+    	<xar:if condition="!empty($topic_urls) and count($topic_urls) gt 0">
+			<xar:foreach in="$topic_urls" value="$cat" key="$cid">
+				<a href="#$cat#">#$topic_names.$cid#</a> | 
 			</xar:foreach>
-			]
-		    </xar:if>
-    	</span>
-    </div>
+	    </xar:if>
+		<xar:if condition="isset($website_output) and strpos($website_output, 'http://') nd false">
+			<xar:mlstring>Visit</xar:mlstring> #$website_output#
+	    </xar:if>
+	</div>
 
-    <div style="width:95%; float:left; clear:both; float:left; background-color: #fdfdfd; border: 1px solid #f0f0f0; padding:10px; margin-bottom:10px;">
-                <span style="float:left; padding-right:20px; width: 100px">
-                    <xar:if condition="isset($logoimage_output) AND count($logoimage_output) ge '1'">
-                         <xar:foreach in="$logoimage_output" value="$v" key="$imageId">
-                               <xar:image-resize src="$imageId" width="100%" constrain="1" label="logo" />
-                         </xar:foreach>
-                    <xar:else />
-                        &nbsp;
-                </xar:if>
-               </span>
+	<div>
+	    <xar:if condition="isset($logoimage_output) AND count($logoimage_output) ge '1'">
+			<div style="float: left; width: auto;margin: 0 1em 1em 0;">
+		        <xar:foreach in="$logoimage_output" key="$imageId">
+			        <a href="#$body#">
+			            <xar:image-resize src="$imageId" width="100%" constrain="1" label="logo" />
+			        </a>
+		        </xar:foreach>
+		    </div>
+		</xar:if>
 
-                <xar:if condition="!empty($summary)">
-                    <span style="float:left; width:250px;text-align:left;">
-                        #$summary#
-                    </span>
-                </xar:if>
-               <xar:if condition="isset($website_output)">
-                     <span style="float:right; text-align:right;">
-                       <xar:mlstring>Visit &gt;&gt;</xar:mlstring> #$website_output#
-                    </span>
-               </xar:if>
-     </div>
- <xar:else />
-    <div style="clear: both; padding: 2px; margin-top:20px;">
-	    <span style="float: left; width: 38%; text-align: left;">
-		    <strong>
-			    #$title#
-    		</strong>
-	    </span>
-        <xar:if condition="isset($website_output)">
-              <span style="width: 30%;float:left; text-align:left;">
-                 #$website_output#
-              </span>
+        <xar:if condition="!empty($summary)">
+			<div>
+                #$summary#
+            </div>
         </xar:if>
-    	<span class="xar-sub" style="float: right; width: 28%; text-align: right;">
-	    	<xar:if condition="!empty($categories) and count($categories) gt 0">
-			[
-			<xar:foreach in="$categories" value="$cat">
-				#$cat['cjoin']#
-				<a href="#$cat['clink']#">
-					#$cat['cname']#
-				</a>
-			</xar:foreach>
-			]
-		    </xar:if>
-    	</span>
+		<br class="xar-clearboth" />
+	</div>
+
+	<xar:if condition="isset($website_output) and strpos($website_output, 'http://') nd false">
+        <div class="xar-align-center xar-hilite xar-hilite-outline boxfooter">
+			<div class="boxcore">
+				<h2>
+					<xar:mlstring>Visit</xar:mlstring> #$website_output#
+				</h2>
+	        </div>
+        </div>
+	</xar:if>
+
+
+</div>
+<hr />
+
+<xar:if condition="(!empty($prevart) and isset($prevartinfo)) or (!empty($nextart) and isset($nextartinfo))">
+    <div style="margin: 1em 0;">
+        <xar:if condition="!empty($prevart)">
+            <div style="width: 45%;float: left;">
+                <strong>&lt;&lt; <xar:mlstring>Previous Sponsor</xar:mlstring></strong><br />
+                <a href="#$prevart#">#$prevartinfo['title']#</a>
+            </div>
+        </xar:if>
+        <xar:if condition="!empty($nextart)">
+            <div class="xar-align-right" style="width: 45%;float: right;">
+                <strong><xar:mlstring>Next Sponsor</xar:mlstring> &gt;&gt;</strong><br />
+				<a href="#$nextart#">#$nextartinfo['title']#</a>
+            </div>
+        </xar:if>
+        <br class="xar-clearboth" />
     </div>
- </xar:if>
-
-
+</xar:if>

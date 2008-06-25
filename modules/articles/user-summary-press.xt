@@ -1,0 +1,16 @@
+<div class="summary-faqs">
+	<h2><a href="#$link#">#$title#</a></h2>
+	<div class="byline">
+		<xar:if condition="!empty($summary)">
+		    <strong><xar:mlstring>Location</xar:mlstring>:</strong>
+            #$summary# | 
+		</xar:if>
+        <strong><xar:mlstring>Released</xar:mlstring>:</strong> #xarLocaleGetFormattedDate('long',$pubdate)# #xarLocaleGetFormattedTime('long',$pubdate)#
+	</div>
+	
+	<p class="xar-align-right">
+        <a href="#$link#">
+            <xar:mlstring>Read Full Release</xar:mlstring>
+        </a>
+	</p>
+</div>

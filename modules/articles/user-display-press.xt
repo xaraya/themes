@@ -1,40 +1,33 @@
-<div class="display-releasenotes">
-<xar:template file="publinks" type="module" />
+<div class="display-press">
+	<xar:template file="publinks" type="module" />
 
-	<h1>#$title#</h1>
+	<div class="xar-alt-outline">
+		<div class="boxcore">
+			<div class="boxfooter">
+				<xar:if condition="strpos($notes, 'Immediate') nd false">
+					<xar:mlstring>FOR IMMEDIATE RELEASE</xar:mlstring>
+				<xar:else />
+					<xar:set name="displaydate">strtoupper(xarLocaleGetFormattedDate($length = 'long',$timestamp = $pubdate))</xar:set>
+					<xar:mlstring>HOLD FOR RELEASE UNTIL</xar:mlstring> #$displaydate#
+				
+				</xar:if>
+			</div>
 
-	<div class="byline">
-		<xar:if condition="!empty($editurl)">
-			<a href="#xarModURL('articles','admin','modify',array('aid'=>$aid))#"><xar:mlstring>Edit</xar:mlstring></a> | 
-		</xar:if>
-        #xarLocaleGetFormattedDate($length = 'long',$timestamp = $pubdate)#
-		<xar:if condition="!empty($counter)"> | 
-			<xar:ml>
-				<xar:mlstring>(#(1) Reads)</xar:mlstring>
-				<xar:mlvar>#$counter#</xar:mlvar>
-			</xar:ml>
-		</xar:if>
+			<h1>#$title#</h1>
+
+			<div class="boxfooter pressbody"><em>#$summary# - #xarLocaleGetFormattedDate($length = 'long',$timestamp = $pubdate)#</em> - #$body#</div>
+
+			<p>
+				<xar:mlstring>Contact:</xar:mlstring><br />
+				<xar:mlstring>Xaraya Development Team</xar:mlstring><br />
+				<xar:mlstring>info@xaraya.com</xar:mlstring><br />
+				<xar:mlstring>http://www.xaraya.com</xar:mlstring><br />
+			</p>
+				
+			<div class="xar-align-center">#####</div>
+
+		</div>
 	</div>
-
-	<div>
-		#$summary#
-	</div>
-
-	#$body# 
-
-	<xar:if condition="!empty($notes)">
-		<p class="xar-accent">
-			Note: <em>#$notes#</em>
-		</p>
-	</xar:if>
-
-	<xar:if condition="!empty($previous) and !empty($next)">
-        <div class="xar-align-center xar-hilite xar-hilite-outline boxfooter">
-			<div class="boxcore">
-				#$pager# 
-	        </div>
-        </div>
-	</xar:if>
 </div>
 <hr />
 
@@ -58,10 +51,10 @@
 
 
 <xar:if condition="!empty($hooks) and !empty($hooks['changelog'])">
-	#$hooks['changelog']# 
+	<p>
+		#$hooks['changelog']# 
+	</p>
 </xar:if>
-
-</div>
 
 <xar:if condition="!empty($hooks)">
 	<xar:foreach in="$hooks" key="$hookmodule">
@@ -73,4 +66,5 @@
 		</xar:if>
 	</xar:foreach>
 </xar:if>
+
 <xar:template file="navtabs-user" type="module" />

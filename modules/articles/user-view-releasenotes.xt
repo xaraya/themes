@@ -1,7 +1,7 @@
 <xar:template file="publinks" type="module" />
 
 <xar:if condition="!empty($author)">
-	<h2>
+	<h1>
 		<xar:ml>
 			<xar:mlstring>
 				By Author : #(1) 
@@ -10,8 +10,7 @@
 				#$author# 
 			</xar:mlvar>
 		</xar:ml>
-	</h2>
-	<br />
+	</h1>
 </xar:if>
 <xar:if condition="!empty($numcols) and $number gt 0">
 	<table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -53,10 +52,14 @@
 		</a>
 	</xar:if>
 </xar:if>
+
+
 <xar:template file="alphapager" type="module" />
-<div style="text-align: center;">
+
+<div class="xar-align-center" style="margin-top: 1em;">
 	#$pager# 
 </div>
+
 <xar:if condition="!empty($showprevnext)">
 	<xar:categories-navigation layout="prevnext" />
 </xar:if>

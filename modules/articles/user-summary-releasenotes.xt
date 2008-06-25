@@ -1,21 +1,18 @@
-<div>
+<div class="summary-releasenotes">
     <h2>
         <a href="#$link#">#$title#</a>
     </h2>
 
-    <xar:comment>
-        <div style="text-align: right;">
-            <span class="xar-sub">
-                #$topic_icons# 
-            </span>
-        </div>
-    </xar:comment>
+    <div class="byline">
+		#xarLocaleGetFormattedDate('long', $pubdate)#
+    </div>
+
     <div>
         #$summary# 
     </div>
-    <div class="byline">
+
+	<p class="xar-align-right">
         <xar:if condition="!empty($words)">
-            <a href="#$link#"><xar:mlstring>Read More</xar:mlstring></a>  
             <xar:ml>
                 <xar:mlstring>
                     (#(1) words) 
@@ -23,7 +20,11 @@
                 <xar:mlvar>
                     #$words# 
                 </xar:mlvar>
-            </xar:ml>
+            </xar:ml> | 
         </xar:if>
-    </div>
+		<a href="#$link#">
+            <xar:mlstring>Read More</xar:mlstring>
+        </a>
+	</p>
+
 </div>

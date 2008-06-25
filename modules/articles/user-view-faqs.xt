@@ -7,7 +7,7 @@
 </xar:if>
 <xar:if condition="!empty($titles) and count($titles) gt 0">
 	<div class="xar-hilite-outline xar-hilite">
-		<div style="margin: 1em;">
+		<div class="boxcore">
 			<h3 class="xar-margin-nonetop"><xar:mlstring>Questions on this page:</xar:mlstring></h3>
 		    <ul>
 		        <xar:foreach in="$titles" key="$aid" value="$title">

@@ -40,6 +40,10 @@ h3 {
 h4 {
     font-size: 11pt;
 }
+h5 {
+    font-size: 10pt;
+	margin-bottom: 1em;
+}
 hr {
     color: #12ABE3;
     margin: 1em 0;
@@ -367,7 +371,6 @@ ul#navbar_core li {
 ul#navbar_core a, div#contentmain h1 a {
     color: #f93;
     text-decoration: none;
-    display: block;
     height: 100%;
 }
 div#header_contentcore h4 a, div#contentmain h2 a, div#contentmain h3 a, div#contentmain h4 a {
@@ -657,6 +660,16 @@ div.polls-pollbar {
 	content: '.';
 }
 
+.boxcore {
+	margin: 1em;
+}
+.boxcore *:first-child {
+	margin-top: 0;
+}
+.boxfooter {
+	margin-bottom: 1em;
+}
+
 /* ARTICLES */
 
 div.summary-news {
@@ -699,7 +712,10 @@ div.summary-faqs {
 div.summary-links {
 	border-bottom: 1px solid #12ABE3;
 }
-div.summary-weblinks a img, div.summary-sponsors a img {
+div.summary-weblinks a img, 
+div.summary-sponsors a img, 
+div.display-weblinks a img, 
+div.display-sponsors a img {
 	display: block;
 }
 
@@ -745,5 +761,41 @@ div.summary-links h2 {
 	margin-bottom: 0;
 }
 
+div.display-news h1,
+div.display-docs h1,
+div.display-weblinks h1,
+div.display-quotes h1,
+div.display-documentation h1,
+div.display-team h1,
+div.display-blogentry h1,
+div.display-sponsors h1,
+div.display-userwiki h1,
+div.display-releasenotes h1,
+div.display-faqs h1,
+div.display-links h1 {
+	margin-bottom: 0;
+}
+div.display-news div.byline,
+div.display-docs div.byline,
+div.display-weblinks div.byline,
+div.display-quotes div.byline,
+div.display-documentation div.byline,
+div.display-team div.byline,
+div.display-blogentry div.byline,
+div.display-sponsors div.byline,
+div.display-userwiki div.byline,
+div.display-releasenotes div.byline,
+div.display-faqs div.byline,
+div.display-links div.byline {
+    background: #fff6e6 url(/themes/xartropics/images/tanbar.png) top left repeat-x;
+    border-bottom: 1px solid #dca;
+	padding: .2em;
+}
+
+div.pressbody {
+	white-space: -o-pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: pre-wrap;
+}	
 
 /* END ARTICLES */

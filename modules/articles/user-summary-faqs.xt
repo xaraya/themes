@@ -12,7 +12,7 @@
 	    <p>#$summary#</p>
 	</xar:if>
 	<xar:if condition="empty($body)">
-	    <p><xar:mlstring>This question has not been answered yet.</xar:mlstring></p>
+	    <p><em><xar:mlstring>This question has not been answered yet.</xar:mlstring></em></p>
 	</xar:if>
 
 <xar:comment>
@@ -46,7 +46,7 @@
 			<xar:mlstring>This site not rated yet</xar:mlstring> | 
 		</xar:if>
         <xar:if condition="isset($counter)">
-           	 | #$counter#
+           	#$counter#
             <xar:if condition="$counter eq 1">
 	            <xar:mlstring>read</xar:mlstring> 
             <xar:else />
@@ -54,7 +54,7 @@
             </xar:if> | 
         </xar:if>
         <a href="#$link#">
-            <xar:mlstring>Read More</xar:mlstring>
+            <xar:mlstring>Rate / Read More</xar:mlstring>
         </a>
 	</p>
 </div>
