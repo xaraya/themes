@@ -55,7 +55,7 @@
 	            </xar:ml>
 	        </div>
 	    </xar:if>
-	    <xar:if condition="(!isset($rated)) and $showinput eq 1">
+	    <xar:if condition="(!isset($rated)) and (!isset($showinput) or $showinput eq 1)">
 	        <xar:if condition="xarSecurityCheck('CommentRatings',0)">
 	            <form method="post" action="&xar-modurl-ratings-user-rate;" id="post" enctype="application/x-www-form-urlencoded" style="clear: left;margin-top: 1em;">
 	                <div>
