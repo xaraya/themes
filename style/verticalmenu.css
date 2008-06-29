@@ -1,8 +1,8 @@
 div#hmenu {
 	padding: 0;
 	margin: 0;
-	height:20px;
-    background: #D2F7FA url(../images/bluebar.png) bottom left repeat-x;
+	height: 1.5em;
+    background: #fff url(../images/bluebar.png) bottom left repeat-x;
     font-size: 10pt;
     border: 1px solid #12ABE3;
 	border-width: 0 1px 1px 1px;

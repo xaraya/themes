@@ -1,16 +1,15 @@
 @import url(/themes/xartropics/style/verticalmenu.css);
 
-body {
-    color: #544E41;
-    font: 10pt Arial, Verdana, sans-serif;
-    background: #FFF7E5 url(/themes/xartropics/images/admin/header_bg.png) repeat-x;
-    padding: 0;
-    margin: 0;
-}
 div#header {
-    height: 95px;
-    background-image: url(/themes/xartropics/images/admin/logo.png);
-    background-repeat: no-repeat;
+    min-height: 35px;
+    _height: 35px;
+    background: #7DD1F0 url(/themes/xartropics/images/admin/header_bg.png) repeat-x scroll bottom left;
+}
+div#header_logo {
+    _height: 35px;
+	min-height: 35px;
+    background: transparent url(/themes/xartropics/images/admin/logo.png) no-repeat scroll bottom left;
+	position: relative;
 }
 div#header_content_wrap {
     margin: 0 10px 0 20px;
@@ -28,31 +27,14 @@ a#head_link {
 	left: 20px;
 }
 div#navbar {
-    height: 50px;
-    background-image: url(/themes/xartropics/images/admin/navbar-bgbr.png);
-    background-position: bottom right;
-    background-repeat: no-repeat;
+	clear: both;
+    height: 60px;
+    background: transparent url(/themes/xartropics/images/admin/navbar-lead.png) no-repeat scroll center left;
 }
 div#navbar_inner {
-    background-image: url(/themes/xartropics/images/admin/navbar-bgtl.gif);
-    background-position: top left;
-    background-repeat: no-repeat;
-    height: 30px;
-}
-div#navbar_trcorner {
-    height: 15px;
-    background-image: url(/themes/xartropics/images/admin/navbar-bgtr.png);
-    background-position: top right;
-    background-repeat: no-repeat;
-    margin-bottom: -5px;
-    font-size: 0;
-}
-div#navbar_blcorner {
-    height: 19px;
-    background-image: url(/themes/xartropics/images/admin/navbar-bgbl.png);
-    background-position: top left;
-    background-repeat: no-repeat;
-    font-size: 0;
+	margin: 0 0 0 35px;
+    background: transparent url(/themes/xartropics/images/admin/navbar-bg.png) no-repeat scroll center right;
+    height: 60px;
 }
 div#contentwrap {
 	margin: 0 22px 0 20px;
@@ -62,7 +44,7 @@ div.xar-block-body-adminheader {
 	margin-left: 6em;
 }
 ul#navbar_core li {
-	width: 14.2%
+	width: auto;
 }
 li#waiting_item p {
 	margin-top: 0;
@@ -76,7 +58,4 @@ li#waiting_item div ul li div {
 	display: block;
 	position: static;
 	padding: 0;
-}
-div#menu_documentation {
-	margin-left: -45px !important;
 }

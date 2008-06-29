@@ -1,5 +1,8 @@
 <xar:set name="baseurl">xarServerGetBaseURL()</xar:set>
 <ul id="navbar_core">
+    <li id="home_item" class="navbar-item">
+        <a href="#$baseurl#index.php" accesskey="0" class="navoverview"><xar:mlstring>Home</xar:mlstring></a>
+    </li>
     <li id="waiting_item">
         <a href="#" accesskey="2" class="navoverview" onclick="return false;"><xar:mlstring>Waiting</xar:mlstring></a>
         <div id="menu_waiting">

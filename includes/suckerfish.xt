@@ -18,6 +18,17 @@ var hoverConfig = {
 
 jQuery(document).ready(function(){
     jQuery("ul#navbar_core > li").hoverIntent(hoverConfig);
+
+	if(jQuery.browser.msie) {
+		// manually set margins on dropdowns to make them
+		// appear in the correct location
+		jQuery('div#menu_about').css('margin', '28px 0 0 -56px');
+		jQuery('div#menu_access').css('margin', '28px 0 0 -65px');
+		jQuery('div#menu_solutions').css('margin', '28px 0 0 -82px');
+		jQuery('div#menu_community').css('margin', '28px 0 0 -93px');
+		jQuery('div#menu_extensions').css('margin', '28px 0 0 -94px');
+		jQuery('div#menu_documentation').css('margin', '28px 0 0 -122px');
+	}
 });
 
 </script>

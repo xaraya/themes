@@ -1,83 +1,63 @@
-body {
-    color: #544E41;
-    font: 10pt Arial, Verdana, sans-serif;
-    background: #FFF7E5 url(/themes/xartropics/images/inside/header_bg.png) repeat-x;
-    padding: 0;
-    margin: 0;
-}
 div#header {
-    height: 167px;
-    background-image: url(/themes/xartropics/images/inside/logo.png);
-    background-repeat: no-repeat;
+    min-height: 107px;
+    _height: 107px;
+    background: #7DD1F0 url(/themes/xartropics/images/inside/header_bg.png) repeat-x scroll bottom left;
 }
-div#header_content_wrap {
-    margin: 0 10px 0 220px;
-    padding-top: 25px;
-    width: auto;
-}
-div#header_content {
-    height: 82px;
-    background-image: url(/themes/xartropics/images/inside/head-bgbr.png);
-    background-position: bottom right;
-    background-repeat: no-repeat;
-}
-div#header_contentinner {
-    background-image: url(/themes/xartropics/images/inside/head-bgtl.gif);
-    background-position: top left;
-    background-repeat: no-repeat;
-    height: 62px;
-}
-div#header_trcorner {
-    height: 15px;
-    background-image: url(/themes/xartropics/images/inside/head-bgtr.png);
-    background-position: top right;
-    background-repeat: no-repeat;
-    font-size: 0;
-    margin-bottom: -5px;
+div#header_logo {
+    min-height: 107px;
+    _height: 107px;
+    background: transparent url(/themes/xartropics/images/inside/logo.png) no-repeat scroll bottom left;
 	position: relative;
 }
-div#header_blcorner {
-    height: 20px;
-    background-image: url(/themes/xartropics/images/inside/head-bgbl.png);
-    background-position: top left;
-    background-repeat: no-repeat;
+div#header_content_wrap {
+    margin: 0 20px 0px 220px;
+    padding: 25px 0 10px 0;
+	_zoom: 1;
+}
+div#header_content {
+/*    height: 130px; */
+    background: #fff url(/themes/xartropics/images/inside/head_bg.png) repeat-x scroll bottom left;
+}
+div#header_tlcorner {
+    height: 10px;
     font-size: 0;
+    background: transparent url(/themes/xartropics/images/inside/header-box.gif) no-repeat scroll top left;
+}
+div#header_trcorner {
+    height: 10px;
+    margin-left: 50%;
+    font-size: 0;
+    background: transparent url(/themes/xartropics/images/inside/header-box.gif) no-repeat scroll top right;
+}
+div#header_blcorner {
+    height: 10px;
+    font-size: 0;
+    background: transparent url(/themes/xartropics/images/inside/header-box.gif) no-repeat scroll bottom left ;
+	clear: both;
+}       
+div#header_brcorner {
+    height: 10px;
+    margin-left: 50%;
+    font-size: 0;
+    background: transparent url(/themes/xartropics/images/inside/header-box.gif) no-repeat scroll bottom right;
 }
 a#head_link {
     display: block;
-    width: 108px;
-    height: 87px;
-    float: left;
+    width: 110px;
+    height: 89px;
     text-indent: -512pt;
 	position: absolute;
-	top: 10px;
-	left: 56px;
+	bottom: 9px;
+	left: 55px;
 }
 div#navbar {
-    height: 50px;
-    background-image: url(/themes/xartropics/images/inside/navbar-bgbr.png);
-    background-position: bottom right;
-    background-repeat: no-repeat;
+	clear: both;
+    height: 60px;
+    background: transparent url(/themes/xartropics/images/inside/navbar-lead.png) no-repeat scroll center left;
 }
 div#navbar_inner {
-    background-image: url(/themes/xartropics/images/inside/navbar-bgtl.gif);
-    background-position: top left;
-    background-repeat: no-repeat;
-    height: 30px;
-}
-div#navbar_trcorner {
-    height: 15px;
-    background-image: url(/themes/xartropics/images/inside/navbar-bgtr.png);
-    background-position: top right;
-    background-repeat: no-repeat;
-    margin-bottom: -5px;
-    font-size: 0;
-}
-div#navbar_blcorner {
-    height: 19px;
-    background-image: url(/themes/xartropics/images/inside/navbar-bgbl.png);
-    background-position: top left;
-    background-repeat: no-repeat;
-    font-size: 0;
+	margin: 0 0 0 235px;
+    background: transparent url(/themes/xartropics/images/inside/navbar-bg.png) no-repeat scroll center right;
+    height: 60px;
 }
 

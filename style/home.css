@@ -1,97 +1,81 @@
-body {
-    color: #544E41;
-    font: 10pt Arial, Verdana, sans-serif;
-    background: #FFF7E5 url(/themes/xartropics/images/home/header_bg.png) repeat-x;
-    padding: 0;
-    margin: 0;
-}
 div#header {
-    height: 232px;
-    background-image: url(/themes/xartropics/images/home/logo.png);
-    background-repeat: no-repeat;
+    _height: 172px;
+	min-height: 172px;
+    background: #7DD1F0 url(/themes/xartropics/images/home/header_bg.png) repeat-x scroll bottom left;
+}
+div#header_logo {
+    _height: 172px;
+	min-height: 172px;
+    background: transparent url(/themes/xartropics/images/home/logo.png) no-repeat scroll bottom left;
+	position: relative;
 }
 div#header_content_wrap {
-    margin: 0 10px 0 220px;
-    padding-top: 42px;
-    width: auto;
+    margin: 0 20px 0px 220px;
+    padding: 42px 0 10px 0;
+	_zoom: 1;
 }
 div#header_content {
-    height: 130px;
-    background-image: url(/themes/xartropics/images/home/head-bgbr.png);
-    background-position: bottom right;
-    background-repeat: no-repeat;
+/*    height: 130px; */
+    background: #fff url(/themes/xartropics/images/home/head_bg.png) repeat-x scroll bottom left;
 }
-div#header_contentinner {
-    background-image: url(/themes/xartropics/images/home/head-bgtl.gif);
-    background-position: top left;
-    background-repeat: no-repeat;
-    height: 105px;
+div#header_tlcorner {
+    height: 10px;
+    font-size: 0;
+    background: transparent url(/themes/xartropics/images/home/header-box.gif) no-repeat scroll top left;
 }
 div#header_trcorner {
-    height: 15px;
-    background-image: url(/themes/xartropics/images/home/head-bgtr.png);
-    background-position: top right;
-    background-repeat: no-repeat;
+    height: 10px;
+    margin-left: 50%;
     font-size: 0;
+    background: transparent url(/themes/xartropics/images/home/header-box.gif) no-repeat scroll top right;
 }
 div#header_blcorner {
-    height: 25px;
-    background-image: url(/themes/xartropics/images/home/head-bgbl.png);
-    background-position: top left;
-    background-repeat: no-repeat;
+    height: 10px;
     font-size: 0;
+    background: transparent url(/themes/xartropics/images/home/header-box.gif) no-repeat scroll bottom left ;
+	clear: both;
+}       
+div#header_brcorner {
+    height: 10px;
+    margin-left: 50%;
+    font-size: 0;
+    background: transparent url(/themes/xartropics/images/home/header-box.gif) no-repeat scroll bottom right;
 }
 a#head_link {
     display: block;
     width: 182px;
     height: 150px;
-    float: left;
     text-indent: -512pt;
 	position: absolute;
-	top: 15px;
+	bottom: 8px;
 	left: 17px;
 }
 div#navbar {
-    height: 50px;
-    background-image: url(/themes/xartropics/images/home/navbar-bgbr.png);
-    background-position: bottom right;
-    background-repeat: no-repeat;
+	clear: both;
+    height: 60px;
+    background: transparent url(/themes/xartropics/images/home/navbar-lead.png) no-repeat scroll center left;
 }
 div#navbar_inner {
-    background-image: url(/themes/xartropics/images/home/navbar-bgtl.gif);
-    background-position: top left;
-    background-repeat: no-repeat;
-    height: 30px;
+	margin: 0 0 0 235px;
+    background: transparent url(/themes/xartropics/images/home/navbar-bg.png) no-repeat scroll center right;
+    height: 60px;
 }
-div#navbar_trcorner {
-    height: 15px;
-    background-image: url(/themes/xartropics/images/home/navbar-bgtr.png);
-    background-position: top right;
-    background-repeat: no-repeat;
-    margin-bottom: -5px;
-    font-size: 0;
-}
-div#navbar_blcorner {
-    height: 19px;
-    background-image: url(/themes/xartropics/images/home/navbar-bgbl.png);
-    background-position: top left;
-    background-repeat: no-repeat;
-    font-size: 0;
-}
-
 div#header_whatis {
     float: left;
-    width: 39%;
-	margin-right: 20px;
-	height: 90px;
-
+    width: 37%;
+	margin: 0 20px 0 10px;
+	_height: 90px;
+	min-height: 90px;
 }
 div#header_rand {
 	float: left;
-	height: 90px;
+	_height: 90px;
+	min-height: 90px;
 	width: 35%;
 }
 div#header_release {
+	_height: 90px;
+	min-height: 90px;
     float: right;
     width: 20%;
 }

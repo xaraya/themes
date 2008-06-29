@@ -24,31 +24,34 @@
 
     <xar:template file="suckerfish" type="theme" />
 
-    <script type="text/javascript" src="&xar-baseurl;#$themedir#/scripts/nav.js"></script>
 </head>
 <body>
     <div id="header">
-        <a href="&xar-baseurl;" id="head_link" title="#xarML('Return to Xaraya home page')#">Xaraya</a>
-        <div id="header_content_wrap">
-            <xar:block instance="adminpanel" id="adminpanel" template="bare;top" />
-            <div id="navbar">
-                <div id="navbar_inner">
-                    <div id="navbar_trcorner"></div>
-                    <xar:template file="adminnavbar" type="theme" />
-                </div>
-                <div id="navbar_blcorner"></div>
-            </div>
+    	<div id="header_logo">
+	        <a href="&xar-baseurl;" id="head_link" title="#xarML('Return to Xaraya home page')#">Xaraya</a>
+	        <div id="header_content_wrap">
+	            <xar:block instance="adminpanel" id="adminpanel" template="bare;top" />
+	        </div>
+		</div>
+    </div>
+
+    <div id="navbar">
+        <div id="navbar_inner">
+            <xar:template file="adminnavbar" type="theme" />
         </div>
     </div>
 
-	<div id="contentwrap">
-	    <div id="contentmain"><div id="contentmain_inner"><div id="contentmain_tlcorner"><div id="contentmain_trcorner"></div></div>
-	            <div id="contentmain_core">
-	                <xar:module id="modulespace"  main="true" />
-	            </div>
-	            <div id="contentmain_blcorner"><div id="contentmain_brcorner"></div></div>
-	        </div>
-	    </div>
+	<div id="contentouter">
+		<div id="contentwrap">
+		    <div id="contentmain"><div id="contentmain_inner"><div id="contentmain_tlcorner"><div id="contentmain_trcorner"></div></div>
+		            <div id="contentmain_core">
+		                <xar:module id="modulespace" main="true" />
+		            </div>
+		            <div id="contentmain_blcorner"><div id="contentmain_brcorner"></div></div>
+		        </div>
+		    </div>
+		</div>
+		<br class="xar-clearboth" />
 	</div>
 
     <div id="footerwrap">

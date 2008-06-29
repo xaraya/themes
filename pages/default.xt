@@ -72,13 +72,13 @@
 </head>
 <body>
     <div id="header">
-        <a href="&xar-baseurl;" id="head_link" accesskey="1" title="#xarML('Return to Xaraya home page')#">Xaraya</a>
-        <div id="header_content_wrap">
-            <div id="header_content">
-                <div id="header_contentinner">
-                    <div id="header_trcorner"></div><div id="header_contentcore">
-                        <xar:block instance="adminpanel" id="adminpanel" template="bare;top" />
+		<div id="header_logo">
+	        <a href="&xar-baseurl;" id="head_link" accesskey="1" title="#xarML('Return to Xaraya home page')#">Xaraya</a>
+	        <div id="header_content_wrap">
+	            <div id="header_content">
+                    <div id="header_tlcorner"><div id="header_trcorner"></div></div>
 
+                    <div id="header_contentcore">
 					    <xar:if condition="$is_home">
 					    	<div id="header_whatis">
 						    	<xar:block instance="trop_whatis_header" />
@@ -97,49 +97,53 @@
                                 <xar:block instance="trop_release_header" />
 							</div>
 					    </xar:if>
+                    	<br class="xar-clearboth" />
                     </div>
-                </div>
-            <div id="header_blcorner"></div>
-        </div>
-            <div id="navbar">
-                <div id="navbar_inner">
-                    <div id="navbar_trcorner"></div>
-                    <xar:template file="navbar" type="theme" />
-                </div>
-                <div id="navbar_blcorner"></div>
-            </div>
+					<div id="header_blcorner"><div id="header_brcorner"></div></div>
+				</div>
+	        </div>
+		</div>
+    </div>
+
+    <div id="navbar">
+        <div id="navbar_inner">
+            <xar:template file="navbar" type="theme" />
         </div>
     </div>
 
-	<div id="contentwrap">
-		<xar:if condition="$thismodule ne 'dynamicdata' and $thistype ne 'util'" >
-		    <div id="contentleft">
-		        <xar:if condition="$section ne ''">
-					<div class="xar-block-head-right topblock">
-						<xar:set name="sectitle">ucwords($section)</xar:set>
-			            <h3 class="xar-block-title-right">#$sectitle#</h3>
-			        </div>
-		            <div id="section_image" class="section-#$section#"></div>
-		        </xar:if>
-				<xar:if condition="$section eq 'development'">
-					<xar:set name="secname">'dev'</xar:set>
-				<xar:elseif condition="$section eq 'documentation'" />
-					<xar:set name="secname">'docs'</xar:set>
-				<xar:else />
-					<xar:set name="secname">#$section#</xar:set>
-				</xar:if>
-		        <xar:blockgroup name="right$secname" id="right" template="right" />
-		        <xar:blockgroup name="left" id="left" template="right" />
-		    </div>
-		</xar:if>
+	<div id="contentouter">
+		<div id="contentwrap">
+			<xar:if condition="$thismodule ne 'dynamicdata' and $thistype ne 'util'" >
+			    <div id="contentleft">
+			        <xar:if condition="$section ne ''">
+						<div class="xar-block-head-right topblock">
+							<xar:set name="sectitle">ucwords($section)</xar:set>
+				            <h3 class="xar-block-title-right">#$sectitle#</h3>
+				        </div>
+			            <div id="section_image" class="section-#$section#"></div>
+			        </xar:if>
+					<xar:if condition="$section eq 'development'">
+						<xar:set name="secname">'dev'</xar:set>
+					<xar:elseif condition="$section eq 'documentation'" />
+						<xar:set name="secname">'docs'</xar:set>
+					<xar:else />
+						<xar:set name="secname">#$section#</xar:set>
+					</xar:if>
+			        <xar:blockgroup name="right$secname" id="right" template="right" />
+			        <xar:blockgroup name="left" id="left" template="right" />
+			    </div>
+			</xar:if>
 
-	    <div id="contentmain">
-	    	<div id="contentmain_inner"><div id="contentmain_tlcorner"><div id="contentmain_trcorner"></div></div>
-	            <div id="contentmain_core">
-	                <xar:module id="modulespace" main="true" />
-	            </div>
-	            <div id="contentmain_blcorner"><div id="contentmain_brcorner"></div></div></div>
-	    </div>
+		    <div id="contentmain">
+		    	<div id="contentmain_inner"><div id="contentmain_tlcorner"><div id="contentmain_trcorner"></div></div>
+		            <div id="contentmain_core">
+		                <xar:module id="modulespace" main="true" />
+		            </div>
+		            <div id="contentmain_blcorner"><div id="contentmain_brcorner"></div></div>
+		        </div>
+		    </div>
+		</div>
+		<br class="xar-clearboth" />
 	</div>
 
     <div id="footerwrap">
@@ -154,6 +158,7 @@
         </div>
     </div>
     <xar:base-render-javascript position="body" />
+    <xar:block instance="adminpanel" id="adminpanel" template="bare;top" />
 </body>
 </html>
 </xar:blocklayout>

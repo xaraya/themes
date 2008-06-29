@@ -1,10 +1,5 @@
 <div id="hmenu">
 	<ul id="hmenuroot">
-	    <li id="hmenulabel">
-	        <xar:mlstring>
-	            Administration
-	        </xar:mlstring>
-	    </li>
 		<xar:foreach in="$catmods" key="$catname" value="$cats">
 			<xar:set name="mystyle">
 				substr ( strtolower($catname), 0 , 5) 

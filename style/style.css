@@ -295,7 +295,10 @@ div#header_content ul, div#header_content li {
     padding: 0;
 }
 div#header_contentcore {
-    margin: 0 20px 0 10px;
+	background-color #fff;
+	border: 1px solid #12abe3;
+	border-width: 0 1px;
+	_zoom: 1;
 }
 div#header_contentcore input {
 	font-size: 85%;
@@ -320,8 +323,8 @@ div#header_search {
     width: 17em;
     z-index: 400;
     position: relative;
+	margin-right: 10px;
 }
-
 div#header_release {
     float: right;
     z-index: 400;
@@ -355,18 +358,24 @@ div#header_release table {
     margin: auto;
 }
 ul#navbar_core {
-    margin: 0 20px 0 10px;
+    margin: 0 30px 0 0px;
     padding: 0;
-    height: 20px;
+    _height: 40px;
+	min-height: 40px;
     z-index: 200;
 }
+ul#navbar_core:after {
+	clear: both;
+}
 ul#navbar_core li {
+    width: auto;
+	display: block;
     float: left;
-    width: 16.6%;
+	margin-right: 1.5em;
     text-align: left;
     list-style: none;
-    font-size: 12pt;
-    height: 100%;
+    font-size: 11pt;
+    height: 39px;
 }
 ul#navbar_core a, div#contentmain h1 a {
     color: #f93;
@@ -380,6 +389,9 @@ div#header_contentcore h4 a, div#contentmain h2 a, div#contentmain h3 a, div#con
 ul#navbar_core > li:hover > a {
     color: #FF5712;
 }
+li.navbar-item {
+	height: 39px;
+}
 ul#navbar_core a:hover, 
 div#header_contentcore h4 a:hover, 
 div#contentmain h1 a:hover, 
@@ -387,6 +399,13 @@ div#contentmain h2 a:hover,
 div#contentmain h3 a:hover, 
 div#contentmain h4 a:hover {
     color: #FF5712;
+}
+div#header_contentcore h4 a:after, 
+div#contentmain h1 a:after, 
+div#contentmain h2 a:after, 
+div#contentmain h3 a:after, 
+div#contentmain h4 a:after {
+	content: ' \21D2';
 }
 a.navbar-on {
 	color: #FF5712;
@@ -397,9 +416,15 @@ li.sfhover a.navoverview {
     color: #FF5712 !important;
 }
 */
+a.navoverview {
+	height: 39px;
+	line-height: 39px;
+	width: auto;
+	margin-left: 11px;
+}
 ul#navbar_core div {
     width: 182px;
-    padding: 9px 0 0 0;
+    padding: 0;
     margin: 0;
     position: absolute;
 	display: none;
@@ -417,19 +442,26 @@ ul#navbar_core div li {
 /*    z-index: 200 !important;*/
     height: auto;
 }
-ul#navbar_core li:hover div, li.sfhover div {
+ul#navbar_core li:hover div, li.navbar-on div {
 /*    z-index: 200 !important;
     left: auto !important;*/
 }
 ul#navbar_core li ul li {
     font-size: 10pt;
-    margin: 0 1em .5em 1em;
+    margin: 0 11px .5em 11px;
     padding: 0;
     width: auto;
     float: none;
 }
+/*
 div#menu_documentation {
 	margin-left: -55px !important;
+}
+*/
+div#contentouter {
+	clear: both;
+	margin: 0;
+    background: transparent url(/themes/xartropics/images/wrap-bg.png) repeat-x scroll top left;
 }
 div#contentwrap {
 	margin: 0 22px 0 220px;
