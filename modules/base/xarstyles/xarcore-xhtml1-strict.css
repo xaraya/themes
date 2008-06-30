@@ -62,7 +62,8 @@
 /* floater height clearing - use with caution, see Hint (3) above */
 .xar-clearleft { clear: left; }
 .xar-clearright { clear: right; }
-.xar-clearboth { clear: both; font-size: 0;height: 0;}
+.xar-clearboth { clear: both;}
+br.xar-clearboth { clear: both; font-size: 0;height: 0;}
 
 /* overflow control */
 .xar-overflow-auto { overflow: auto; }
