@@ -213,6 +213,19 @@ div#contentleft div.xar-block-right:first-child div.xar-block-head-right {
 .xar-block-foot-center {
 }
 
+/* homeright block group classes */
+.xar-block-head-homeright{
+}
+.xar-block-title-homeright {
+}
+.xar-block-body-homeright {
+}
+.xar-block-foot-homeright {
+}
+.xar-block-homeright {
+	margin-bottom: 1.5em;
+}
+
 .xar-mod-head {
     background: #DEF8FA url(/themes/xartropics/images/bluebar.png) top left repeat-x;
     border-bottom: 1px solid #3ce;
