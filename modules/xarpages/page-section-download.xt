@@ -1,0 +1,62 @@
+<div id="main_right">
+
+    <xar:if condition="!empty($side_group_name)">
+        <xar:blockgroup name="$side_group_name" />
+    </xar:if>
+
+    <xar:blockgroup name="admin"  id="admin"  />
+    <xar:blockgroup name="center" id="center" />
+
+</div>
+<div id="main_left">
+    <h1>#$current_page.desc#</h1>    
+
+    <div>
+        #$current_page.dd.intro#
+    </div>
+
+    <xar:if condition="count($releases) gt 0">
+        <h3>Recent Core Release Notes</h3>
+        <ul>
+        <xar:foreach in="$releases" value="$article">
+            <li>
+                <a href="#xarModURL('articles','user','display',array('aid'=>$article['aid']))#">#$article.title#</a>: 
+                #xarLocaleGetFormattedDate('medium', $article.pubdate)#
+            </li>
+        </xar:foreach>
+        </ul>
+    </xar:if>
+
+    <h2>Xaraya Modules</h2>
+
+    <p>Many of the most widely used Xaraya modules are developed and maintained by the Xaraya team.  
+    We are currently working on a method to provide direct download links for these modules.</p>
+
+    <p>Information (including download links) on all modules can be found in the 
+    <a href="#xarmodURL('release','user','view',array('catid'=>53))#">Modules section of Extensions</a>.</p>
+
+    <h2>Blocks, Themes, and Other Extensions</h2>
+
+    <p>Other types of Xaraya Extensions are also listed in Extensions:</p>
+
+    <xar:if condition="count($releasecats) gt 0">
+        <ul>
+        <xar:foreach in="$releasecats" value="$ext">
+            <xar:if condition="$ext['name'] ne 'Modules' and $ext['name'] ne 'Core API'">
+                <li>
+                    <a href="#xarModURL('release','user','view',array('catid'=>$ext['cid']))#">#$ext.name#</a>
+                </li>
+            </xar:if>
+        </xar:foreach>
+        </ul>
+    </xar:if>
+
+    <h2>For Developers</h2>
+
+    <p>Xaraya uses <a href="http://monotone.ca">Monotone</a> for source control.  To learn more 
+    about working with our repositories, see 
+    <a href="#xarModURL('articles','user','display',array('aid'=>493))#">Tracking Xaraya development via Monotone</a>.</p>
+
+    <p>Repository activity can be viewed on the web at <A href="http://mt.xaraya.com/">http://mt.xaraya.com</a></p>
+
+</div>

@@ -1,0 +1,21 @@
+<h4>
+	#$uname#
+</h4>
+<div>
+	<a href="#xarModURL('roles','user','account')#">
+		<xar:mlstring>Display Profile</xar:mlstring>
+	</a> | 
+	<a href="#xarModURL('roles','user','account', array('moduleload' => 'roles'))#">
+		<xar:mlstring>Edit Profile</xar:mlstring>
+	</a> | 
+	<a href="#xarModURL('authsystem','user','logout')#">
+		<xar:mlstring>Logout</xar:mlstring>
+	</a>
+</div>
+<xar:if condition="isset($totalmessages) and isset($unreadmessages)">
+	<div>
+		<a href="#xarModURL('messages','user','display')#"><xar:mlstring>Messages</xar:mlstring></a>: 
+		<xar:mlstring>Total</xar:mlstring>: <strong>#$totalmessages#</strong> | 
+		<xar:mlstring>Unread</xar:mlstring>: <strong>#$totalmessages#</strong>
+	</div>
+</xar:if>

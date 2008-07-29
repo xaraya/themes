@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+\<?xml version="1.0" encoding="utf-8"?>
 <?xar type="page" ?>
 <!DOCTYPE blocklayout PUBLIC "-//XAR//DTD BL 1.0 Strict//EN" "http://xaraya.com/bl1/DTD/bl1-strict.dtd">
 <xar:blocklayout content="text/html" xmlns:xar="http://xaraya.com/2004/blocklayout" version="1.0" dtd="xhtml1-strict">
@@ -10,31 +10,88 @@
 	<xar:set name="thistype">$thisreq[1]</xar:set>
 	<xar:set name="thisfunc">$thisreq[2]</xar:set>
 	<xar:set name="thisreq">implode('_', $thisreq)</xar:set>
-
     <xar:set name="thispage">
         xarVarGetCached('Base.pages','page') 
     </xar:set>
-    <xar:set name="thismod">
-        xarModGetName()
-    </xar:set>
-
-    <xar:if condition="(isset($thispage) and ($thispage eq 'support')) or (isset($thismod) and (($thismod eq 'xarbb') or ($thismod eq 'chat') or ($thismod eq 'newsgroups') or ($thismod eq 'messages')))">
+    <xar:set name="thismod">xarModGetName()</xar:set>
+	<xar:if condition="$thismod eq 'xarpages'">
+	    <xar:set name="thispage">xarRequestGetVar('pid')</xar:set>
+	</xar:if>
+	
+    <xar:if condition="(
+    						isset($thispage) and 
+    						($thispage eq 'support' or $thispage eq 52)
+    					) or 
+    					(
+    						isset($thismod) and 
+    						(
+    							($thismod eq 'xarbb') or 
+    							($thismod eq 'chat') or 
+    							($thismod eq 'newsgroups') or 
+    							($thismod eq 'messages')
+    						)
+    					)">
         <xar:set name="section">'support'</xar:set>
-    <xar:elseif condition="(isset($thispage) and ($thispage eq 'about')) or (isset($thismod) and (($thismod eq 'stats')))" />
+    <xar:elseif condition="(
+    							isset($thispage) and 
+    							($thispage eq 'about' or $thispage eq 51)
+    						) or 
+    						(
+    							isset($thismod) and 
+    							(
+    								($thismod eq 'stats')
+    							)
+    						)" />
         <xar:set name="section">'about'</xar:set>
-    <xar:elseif condition="((isset($thispage) and (($thispage eq 'community') or ($thispage eq 'xarteam')))) or (isset($thismod) and (($thismod eq 'polls') or ($thismod eq 'roles') or ($thismod eq 'comments')))" />
+    <xar:elseif condition="(
+    							(
+    								isset($thispage) and 
+    								(
+    									($thispage eq 'community' or $thispage eq 53) or 
+    									($thispage eq 'xarteam')
+    								)
+    							)
+    						) or 
+    						(
+    							isset($thismod) and 
+    							(
+    								($thismod eq 'polls') or 
+    								($thismod eq 'roles') or 
+    								($thismod eq 'comments')
+	    						)
+    						)" />
         <xar:set name="section">'team'</xar:set>
-    <xar:elseif condition="(isset($thispage) and ($thispage eq 'developer')) or (isset($thismod) and (($thismod eq 'release') or ($thismod eq 'bkview')))" />
+    <xar:elseif condition="(
+    							isset($thispage) and 
+    							($thispage eq 'developer')
+    						) or 
+    						(
+    							isset($thismod) and 
+	    						(
+	    							($thismod eq 'release') or 
+	    							($thismod eq 'bkview')
+	    						)
+	    					)" />
         <xar:set name="section">'development'</xar:set>
-    <xar:elseif condition="isset($thispage) and ($thispage eq 'solutions')" />
+    <xar:elseif condition="
+    					isset($thispage) and ($thispage eq 'solutions')
+    					" />
         <xar:set name="section">'solutions'</xar:set>
-    <xar:elseif condition="(isset($thispage) and ($thispage eq 'documentation') or (isset($thismod) and ($thismod eq 'xarpages')))" />
+    <xar:elseif condition="(
+    							isset($thispage) and 
+    							($thispage eq 'documentation') or 
+    							(
+    								isset($thismod) and 
+    								($thismod eq 'xarpages')
+    							)
+    						)" />
         <xar:set name="section">'documentation'</xar:set>
     <xar:else />
         <xar:set name="section">''</xar:set>
     </xar:if>
 
-    <xar:if condition="$thisreq eq 'base_user_main' and $section eq ''">
+    <xar:if condition="($thisreq eq 'base_user_main' and $section eq '') or ($thismod eq 'xarpages' and $thispage eq 50)">
+        <xar:set name="section">''</xar:set>
         <xar:set name="is_home">true</xar:set>
     <xar:else />
         <xar:set name="is_home">false</xar:set>
@@ -80,9 +137,15 @@
 
                     <div id="header_contentcore">
 					    <xar:if condition="$is_home">
-					    	<div id="header_whatis">
-						    	<xar:block instance="trop_whatis_header" />
-						    </div>
+                            <xar:if condition="xarUserIsLoggedIn()">
+                                <div id="header_user">
+	    					    	<xar:block instance="trop_user_infohome" />
+                                </div>
+                            <xar:else />
+    					    	<div id="header_whatis">
+	    					    	<xar:block instance="trop_whatis_header" />
+		    				    </div>
+                            </xar:if>
 							<div id="header_rand">
                                 <xar:block instance="trop_rand_xarayaized" />
 							</div>
@@ -96,6 +159,11 @@
 							<div id="header_release">
                                 <xar:block instance="trop_release_header" />
 							</div>
+                            <xar:if condition="xarUserIsLoggedIn()">
+                                <div id="header_user">
+	    					    	<xar:block instance="trop_user_infohome" />
+                                </div>
+                            </xar:if>
 					    </xar:if>
                     	<br class="xar-clearboth" />
                     </div>

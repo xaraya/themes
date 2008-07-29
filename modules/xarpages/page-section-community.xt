@@ -1,0 +1,25 @@
+<div id="main_right">
+
+    <xar:if condition="!empty($side_group_name)">
+        <xar:blockgroup name="$side_group_name" />
+    </xar:if>
+
+    <xar:blockgroup name="admin"  id="admin"  />
+    <xar:blockgroup name="center" id="center" />
+
+</div>
+<div id="main_left">
+    <h1>#$current_page.desc#</h1>    
+
+    <xar:if condition="!empty($current_page['dd']['intro'])">
+        <div>
+            #$current_page.dd.intro#
+        </div>
+    </xar:if>
+
+    <div>
+        #$article.body#
+    </div>
+
+
+</div>

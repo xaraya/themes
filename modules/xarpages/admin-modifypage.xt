@@ -269,12 +269,11 @@
             </xar:if>
 
             <div class="xar-align-center xar-margin-thickends">
+                <input type="hidden" name="authid" id="authid" value="#xarSecGenAuthKey()#" />
+                <input type="hidden" name="pid" id="pid" value="#$pid#" />
+                <input type="hidden" name="ptid" id="ptid" value="#$ptid#" />
+                <input type="hidden" name="return_url" id="return_url" value="#xarVarPrepForDisplay($return_url)#" />
                 <xar:if condition="$func eq 'modify'">
-                    <input type="hidden" name="authid" id="authid" value="#xarSecGenAuthKey()#" />
-                    <input type="hidden" name="pid" id="pid" value="#$pid#" />
-                    <input type="hidden" name="ptid" id="ptid" value="#$ptid#" />
-                    <input type="hidden" name="return_url" id="return_url" value="#xarVarPrepForDisplay($return_url)#" />
-
                     <input type="submit" value="#xarML('Modify')#" />
                     <input type="hidden" name="creating" id="creating" value="false"/>
                 <xar:else />

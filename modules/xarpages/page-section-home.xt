@@ -1,0 +1,30 @@
+<div id="main_right">
+
+    <xar:if condition="!empty($side_group_name)">
+        <xar:blockgroup name="$side_group_name" />
+    </xar:if>
+
+    <xar:blockgroup name="admin"  id="admin"  />
+    <xar:blockgroup name="center" id="center" />
+
+</div>
+<div id="main_left">
+    <h1>#$current_page.desc#</h1>    
+
+    <div>
+        #$current_page.dd.intro#
+    </div>
+
+    <h3>#$news_header#</h3>
+
+    <xar:foreach in="$news" value="$article">
+        #xarTplModule('articles', 'user', 'summary', $article, 'news')#
+
+    </xar:foreach>
+    <p>
+        <a href="#xarModURL('articles','user','view',array('ptid'=>1,'startnum'=>4))#">
+            <xar:mlstring>More News...</xar:mlstring>
+        </a>
+    </p>
+
+</div>
