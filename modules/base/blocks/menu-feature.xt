@@ -1,0 +1,8 @@
+<xar:if condition="!empty($usercontent)">   
+    <ul>
+    <xar:loop name="$usercontent">
+        <li><a href="#$loop:item['url']#" title="#$loop:item['comment']#">#$loop:item['title']#</a></li>
+    </xar:loop>
+    </ul>
+</xar:if>
+

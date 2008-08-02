@@ -13,9 +13,5 @@
         </div>
     </xar:if>
 
-    <div>
-        #$article.body#
-    </div>
-
 
 </div>

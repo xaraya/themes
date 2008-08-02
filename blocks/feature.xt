@@ -1,0 +1,9 @@
+<div class="xar-block-feature">
+    <xar:if id="title_condition" condition="!empty($title)">
+        <h3 class="xar-block-title-feature">#$title#</h3>
+    </xar:if>
+    <div class="xar-block-body-feature">
+        #$content#
+    </div>
+    <div class="xar-block-foot-feature"></div>
+</div>

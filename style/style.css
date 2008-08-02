@@ -226,6 +226,9 @@ div#contentleft div.xar-block-right:first-child div.xar-block-head-right {
 	margin-bottom: 1.5em;
 }
 
+/* feature block group classes */
+/* moved toward OEF for inheritance purposes */
+
 .xar-mod-head {
     background: #def8fa url(/themes/xartropics/images/bluebar.png) repeat-x scroll top left;
     border-bottom: 1px solid #3ce;
@@ -839,3 +842,35 @@ div.pressbody {
 }	
 
 /* END ARTICLES */
+
+/* feature block group classes */
+.xar-block-head-feature {
+}
+h3.xar-block-title-feature {
+    margin: 0 10px auto 10px !important;
+    color: #544341 !important;
+    font-size: 11pt !important;
+    border: 0 !important;
+}
+.xar-block-body-feature {
+    margin: 10px;
+}
+.xar-block-foot-feature {
+    background: #edf9a8 url(/themes/xartropics/images/feature_bg.png) no-repeat scroll bottom center;
+    margin-top: 1em;
+    height: 10px;
+}
+.xar-block-feature {
+    width: 280px;
+    background: #edf9a8 url(/themes/xartropics/images/feature_bg.png) no-repeat scroll top center;
+    padding-top: 10px;
+	margin-bottom: 1.5em;
+}
+.xar-block-body-feature ul, .xar-block-body-feature li {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    list-style: none !important;
+}
+.xar-block-body-feature li {
+    margin-bottom: .5em !important;
+}
