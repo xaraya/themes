@@ -1,3 +1,4 @@
+<xar:style file="buttontable" />
 <div id="main_right">
     <xar:if condition="!empty($side_group_name)">
         <xar:blockgroup name="$side_group_name" />

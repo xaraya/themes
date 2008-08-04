@@ -1,0 +1,21 @@
+table.buttons {
+    width: 100%;
+}
+table.buttons td {
+    vertical-align: top;
+}
+table.buttons td.desc {
+    
+}
+table.buttons td.format {
+    width: 6em;    
+    text-align: center;
+}
+table.buttons td.image {
+    width: 120px;
+    text-align: center;    
+}
+table.buttons td.image img {
+    display: block;
+    margin: auto;
+}
