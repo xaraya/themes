@@ -1,5 +1,5 @@
 <div class="display-releasenotes">
-<xar:template file="publinks" type="module" />
+    <xar:template file="publinks" type="module" />
 
 	<h1>#$title#</h1>
 
@@ -36,6 +36,7 @@
         </div>
 	</xar:if>
 </div>
+
 <hr />
 
 <xar:if condition="(!empty($prevart) and isset($prevartinfo)) or (!empty($nextart) and isset($nextartinfo))">
@@ -60,8 +61,6 @@
 <xar:if condition="!empty($hooks) and !empty($hooks['changelog'])">
 	#$hooks['changelog']# 
 </xar:if>
-
-</div>
 
 <xar:if condition="!empty($hooks)">
 	<xar:foreach in="$hooks" key="$hookmodule">

@@ -834,12 +834,17 @@ div.display-links div.byline {
     border-bottom: 1px solid #dca;
 	padding: .2em;
 }
-
 div.pressbody {
 	white-space: -o-pre-wrap;
 	white-space: -moz-pre-wrap;
 	white-space: pre-wrap;
 }	
+div.display-releasenotes table th { 
+    white-space: nowrap;
+}
+div.display-releasenotes table td { 
+    vertical-align: top;
+}
 
 /* END ARTICLES */
 
