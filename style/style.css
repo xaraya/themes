@@ -224,6 +224,7 @@ div#contentleft div.xar-block-right:first-child div.xar-block-head-right {
 .xar-block-foot-homeright {
 }
 .xar-block-homeright {
+    clear: both;
 	margin-bottom: 1.5em;
 }
 
@@ -359,19 +360,19 @@ div#header_release h4, div#header_release ul {
     margin: 0;
     text-align: center;
 }
-a#header_rand_img {
+a#rand_img {
 	float: right;
-	margin-left: 1em;
+	margin: .2em 0 .3em .5em;
 }
-a#header_rand_img img {
+a#rand_img img {
     display: block;
 }
-div#header_rand_noimg {
+div#rand_noimg {
 	float: right;
-	width: 100px;
-	height: 75px;
+	width: 120px;
+	height: 80px;
 	background-color: #fff;
-	margin-left: 1em;
+	margin: .2em 0 .3em .5em;
 	text-align: center;
 }
 div#header_release table {
@@ -673,7 +674,81 @@ div#footerdonate form {
     width: 62px;
     margin: 0 .5em 0 0;
 }
+div.modalwrap {
+	width: 512px;
+	display: none;
+	position: fixed;
+    top: 150px;
+    left: 50%;
+    margin-left: -256px;
+}
+div.modalmain {
+	color: #544e41;
+/*	background-color: #fff;*/
+/*	border: 1px solid #12abe3;*/
+	width: 100%;
+}
+* html .modalmain, * html div.modalleft {
+	display: inline;
+}
+div.modalmain_inner {
+	border: 1px solid #12abe3;
+	border-width: 0px 1px;
+	background-color: #fff;
+}
+div.modalmain_core {
+	margin: 0px 10px;
+}
+div.modalmain_core:after {
+	content: '.';
+	font-size: 0;
+	clear: both;
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+/* Hides from IE-mac \*/
+* html div.modalmain_core {height: 1%;}
+/* End hide from IE-mac */
 
+div.modalmain_tlcorner {
+    height: 10px;
+    font-size: 0;
+    background: transparent url(/themes/xartropics/images/modalbg.png) no-repeat scroll top left;
+	margin-right: 10px;
+}
+div.modalmain_trcorner {
+    height: 10px;
+    margin-left: 50%;
+    font-size: 0;
+    background: transparent url(/themes/xartropics/images/modalbg.png) no-repeat scroll top right;
+	position: relative;
+	margin-right: -10px;
+}
+div.modalmain_blcorner {
+    height: 10px;
+    font-size: 0;
+    background: transparent url(/themes/xartropics/images/modalbg.png) no-repeat scroll bottom left;
+	margin-right: 10px;
+	clear: both;
+}       
+div.modalmain_brcorner {
+    height: 10px;
+    margin-left: 50%;
+    font-size: 0;
+    background: transparent url(/themes/xartropics/images/modalbg.png) no-repeat scroll bottom right;
+	position: relative;
+	margin-right: -10px;
+}
+div.modal-overlay {
+	background-color: #3ce;
+}
+.jqmClose {
+	position: absolute;
+	right: 20px;
+	top: 10px;
+	cursor: pointer;
+}
 .help {
     cursor: help;
 }

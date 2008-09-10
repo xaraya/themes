@@ -1,11 +1,10 @@
-<form action="#xarModURL('search','user','main')#" method="get" style="margin: 0 0 1em 0;">
-    <div style="padding: .5em 0;">
+<form action="#xarModURL('search','user','main')#" method="get" style="margin: 0;">
+    <div>
         <input type="hidden" name="module" id="module" value="search" />
-        <label for="q#$blockid#"><xar:mlstring>Search</xar:mlstring></label>
-        <input type="text" name="q" id="q#$blockid#" size="15" class="xar-form-textmedium" />
+        <input type="text" name="q" id="q#$blockid#" value="" class="xar-form-textlong" />
         <input type="submit" value="#xarML('Go!')#" />
     </div>
-    <p style="margin: 0;">
+    <p style="margin: .1em 0 0 0;text-align: right;">
         <a href="#xarModURL('search','user','main')#"><xar:mlstring>Advanced Search &gt;&gt;</xar:mlstring></a>
     </p>
 </form>

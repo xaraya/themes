@@ -29,6 +29,12 @@ jQuery(document).ready(function(){
 		jQuery('div#menu_extensions').css('margin', '28px 0 0 -94px');
 		jQuery('div#menu_documentation').css('margin', '28px 0 0 -122px');
 	}
+    <xar:if condition="!xarUserIsLoggedIn()">
+    if(!jQuery.browser.msie) {
+	    jQuery('#modal_trop_modal_login').jqm({overlay: 30, overlayClass: 'modal-overlay'});
+	}
+    </xar:if>
+
 });
 
 </script>

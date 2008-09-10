@@ -109,7 +109,7 @@
 	</xar:if>
 
     <xar:if condition="$is_home">
-        <style type="text/css">@import url(&xar-baseurl;#$themedir#/style/home.css); </style>
+        <style type="text/css">@import url(&xar-baseurl;#$themedir#/style/inside.css); </style>
     <xar:elseif condition="$thismodule eq 'dynamicdata' and $thistype eq 'util'" />
         <style type="text/css">@import url(&xar-baseurl;#$themedir#/style/admin.css); </style>
     <xar:else />
@@ -120,6 +120,7 @@
 	<xar:base-include-javascript filename="jquery.pack.js" module="jquery" />
 	<xar:base-include-javascript filename="jquery.compat-1.1.js" module="jquery" />
 	<xar:base-include-javascript filename="jquery.hoverIntent.minified.js" module="jquery" />
+	<xar:base-include-javascript filename="jqModal.js" module="jquery" />
 
     <xar:base-render-javascript position="head" />
 
@@ -136,35 +137,19 @@
                     <div id="header_tlcorner"><div id="header_trcorner"></div></div>
 
                     <div id="header_contentcore">
-					    <xar:if condition="$is_home">
-                            <xar:if condition="xarUserIsLoggedIn()">
-                                <div id="header_user">
-	    					    	<xar:block instance="trop_user_infohome" />
-                                </div>
-                            <xar:else />
-    					    	<div id="header_whatis">
-	    					    	<xar:block instance="trop_whatis_header" />
-		    				    </div>
-                            </xar:if>
-							<div id="header_rand">
-                                <xar:block instance="trop_rand_xarayaized" />
-							</div>
-							<div id="header_release">
-                                <xar:block instance="trop_release_header" />
-							</div>
-					    <xar:else />
 					    	<div id="header_search">
 						    	<xar:block module="search" type="search" title="Search Xaraya.com" template="bare;header" />
 							</div>
 							<div id="header_release">
                                 <xar:block instance="trop_release_header" />
 							</div>
-                            <xar:if condition="xarUserIsLoggedIn()">
                                 <div id="header_user">
-	    					    	<xar:block instance="trop_user_infohome" />
+                                    <xar:if condition="xarUserIsLoggedIn()">
+	        					    	<xar:block instance="trop_user_infohome" />
+                                    <xar:else />
+                                        <xar:block instance="trop_welcome" />
+                                    </xar:if>
                                 </div>
-                            </xar:if>
-					    </xar:if>
                     	<br class="xar-clearboth" />
                     </div>
 					<div id="header_blcorner"><div id="header_brcorner"></div></div>
@@ -227,6 +212,9 @@
     </div>
     <xar:base-render-javascript position="body" />
     <xar:block instance="adminpanel" id="adminpanel" template="bare;top" />
+	<xar:if condition="!xarUserIsLoggedIn()">
+	    <xar:block instance="trop_modal_login" />
+	</xar:if>
 </body>
 </html>
 </xar:blocklayout>

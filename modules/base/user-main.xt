@@ -1,7 +1,5 @@
 <div id="main_right">
-    <xar:block module="search" type="search" title="Search Xaraya.com" template="homeright;home" />
-    <xar:blockgroup name="main2" id="main2" template="homeright" />
-    <xar:blockgroup name="main3" id="main3" template="homeright" />
+    <xar:blockgroup name="trop_home_right" id="trop_home_right" />
 
     <xar:blockgroup name="admin"  id="admin"  />
     <xar:blockgroup name="center" id="center" />

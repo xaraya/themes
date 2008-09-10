@@ -1,0 +1,4 @@
+<xar:if condition="!empty($title)">
+    <h4>#$title#</h4>
+</xar:if>
+#$content#

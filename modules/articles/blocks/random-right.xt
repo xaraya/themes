@@ -1,0 +1,21 @@
+<xar:set name="item">array_shift($items)</xar:set>
+<xar:if condition="isset($item['screenshot_output']) AND count($item['screenshot_output']) ge 1">
+    <xar:set name="imgid">array_shift(array_keys($item['screenshot_output']))</xar:set>
+    <xar:set name="imgtitle">$item['title']</xar:set>
+    <a href="#xarModURL('articles', 'user', 'display', array('aid' => $item['aid']))#"  id="rand_img" class="xar-alt-outline" style="width: 130px;">
+        <xar:image-resize src="$imgid" width="130px" constrain="1" label="$imgtitle" />
+    </a>
+<xar:else />
+    <div id="rand_noimg" class="xar-alt-outline">
+        <p style="margin-top: 30px;">
+            No Image Available
+        </p>
+    </div>
+</xar:if>
+
+<xar:if condition="!empty($showtitle)">
+    <h4><a href="#xarModURL('articles', 'user', 'display', array('aid' => $item['aid']))#">#$item['title']#</a></h4>
+</xar:if>
+<xar:if condition="!empty($showsummary)">
+    <div style="margin-top: 1em;">#$item['summary']#</div>
+</xar:if>
