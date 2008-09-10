@@ -26,7 +26,8 @@ body {
 code {
 }
 h1,h2,h3,h4,h5,h6 {
-    color: #f93;
+/*    color: #f93; */
+    color: #ff5712;
 }
 h1 {
     font-size: 14pt;
@@ -347,12 +348,16 @@ div#header_release {
     margin: 0 0 0 20px;
     width: 30%;
 }
+div#header_contentcore h1, 
+div#header_contentcore h2, 
+div#header_contentcore h3, 
+div#header_contentcore h4 {
+    margin: 0;
+    color: #80AB1B;
+}
 div#header_release h4, div#header_release ul {
     margin: 0;
     text-align: center;
-}
-div#header_user h4, div#header_whatis h4, div#header_rand h4 {
-    margin: 0;
 }
 a#header_rand_img {
 	float: right;
@@ -415,6 +420,7 @@ div#contentmain h3 a:hover,
 div#contentmain h4 a:hover {
     color: #ff5712;
 }
+/*
 div#header_contentcore h4 a:after, 
 div#contentmain h1 a:after, 
 div#contentmain h2 a:after, 
@@ -422,6 +428,7 @@ div#contentmain h3 a:after,
 div#contentmain h4 a:after {
 	content: ' \21D2';
 }
+*/
 a.navbar-on {
 	color: #ff5712;
 }
