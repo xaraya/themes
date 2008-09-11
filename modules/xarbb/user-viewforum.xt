@@ -27,7 +27,6 @@
 
     <div class="xarbb-noteswrapper" style="margin-bottom: 1em;">
         <div class="xar-sub rightnote">
-            <xar:if condition="!empty($pager)">#$pager#</xar:if>
 
             <div id="xarbb-topics">
                 <ul>
@@ -50,7 +49,7 @@
             </div>
         </div>
 
-        <h1>
+        <h1 class="xarbb-header">
             <a href="#xarModUrl('xarbb', 'user', 'viewforum', array('fid' => $fid))#">
                 #xarVarPrepForDisplay($fname)#
             </a>
@@ -68,6 +67,11 @@
     <xar:comment>End of top zone</xar:comment>
 </div>
 
+<xar:if condition="!empty($pager)">
+    <div class="xar-align-center" style="margin: 1em 0;">
+        #$pager#
+    </div>
+</xar:if>
 
 <xar:comment>Middle zone - the topic detail table</xar:comment>
 <div class="xarbb-tablewrapper">
@@ -149,18 +153,19 @@
         </xar:loop>
     </table>
 
-    <div style="clear: both;"></div>
 </div>
+
+<xar:if condition="!empty($pager)">
+    <div class="xar-align-center" style="margin: 1em 0;">
+        #$pager#
+    </div>
+</xar:if>
 
 
 <xar:comment>Bottom zone - the topic footer</xar:comment>
 <div class="xarbb-noteswrapper">
     <div class="xarbb-topiccontrols">
         <xar:template file="forum-topic-controls" type="module" />
-    </div>
-
-    <div class="xar-sub rightnote">
-        <xar:if condition="!empty($pager)">#$pager#</xar:if>
     </div>
 
     <div style="clear: both;"></div>

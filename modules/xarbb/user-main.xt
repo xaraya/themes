@@ -61,7 +61,7 @@
     </div>
 </xar:if>
 
-<h1>
+<h1 class="xarbb-header">
     <a href="&xar-modurl-xarbb-user-main;">
         <xar:if condition="!empty($xarbbtitle)">
             #$xarbbtitle#

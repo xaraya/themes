@@ -14,7 +14,7 @@
     var fieldDescription = Array("Topic Subject", "Topic body text");
 //-->
 </script>
-<h1>
+<h1 class="xarbb-header">
     <xar:mlstring>
         Submit the following?
     </xar:mlstring>

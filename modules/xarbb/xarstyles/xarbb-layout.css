@@ -4,6 +4,10 @@
 
 /* TODO: far too many floats here - we should remove some, and avoid a lot of clearing */
 
+h1.xarbb-header {
+    font-size: 13pt;
+}
+
 div#xarbb-topics {
     float: none;
     width: 99%;
@@ -29,7 +33,7 @@ div#xarbb-topics ul#xarbb-topics-uservisithistory {
     float: left;
     width: 48%;
     text-align: left;
-    list-style-type: none;
+    list-style: none !important;
     margin: 0;
     padding: 0;
 }
@@ -38,14 +42,14 @@ div#xarbb-topics ul#xarbb-topics-userlinks {
     float: right;
     width: 48%;
     text-align: right;
-    list-style-type: none;
+    list-style: none !important;
     margin: 0;
     padding: 0;
 }
 
 /* xartropics theme additions */
-div#xarbb-topics li {
-	list-style: none;
+div#xarbb-topics ul, div#xarbb-topics li {
+	list-style: none !important;
 	margin: 0;
 	padding: 0;
 }

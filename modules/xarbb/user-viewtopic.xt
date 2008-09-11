@@ -79,7 +79,7 @@
         <div style="clear: both;"></div>
     </div>
 
-    <h1>
+    <h1 class="xarbb-header">
         <a class="xar-title" href="#xarModUrl('xarbb', 'user', 'viewtopic', array('tid' => $tid))#">#$ttitle#</a>
     </h1>
 

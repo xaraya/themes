@@ -9,7 +9,7 @@
     <xar:mlstring>Move Topic</xar:mlstring>
 </div>
 
-<h1><xar:mlstring>Confirm Topic Move</xar:mlstring></h1>
+<h1 class="xarbb-header"><xar:mlstring>Confirm Topic Move</xar:mlstring></h1>
 
 <form action="&xar-modurl-xarbb-user-movetopic;" method="post" name="post" id="post">
     <p class="xar-norm">
