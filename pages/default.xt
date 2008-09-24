@@ -138,7 +138,7 @@
 
                     <div id="header_contentcore">
 					    	<div id="header_search">
-						    	<xar:block module="search" type="search" title="Search Xaraya.com" template="bare;header" />
+						    	<xar:block instance="trop_search_head" />
 							</div>
 							<div id="header_release">
                                 <xar:block instance="trop_release_header" />
