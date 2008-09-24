@@ -794,6 +794,14 @@ div.polls-pollbar {
 .boxfooter {
 	margin-bottom: 1em;
 }
+.clearall {
+	content: '.';
+	font-size: 0;
+	clear: both;
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
 
 /* ARTICLES */
 
