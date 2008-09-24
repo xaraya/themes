@@ -1,0 +1,45 @@
+<div class="xar-mod-head"><span class="xar-mod-title"><xar:mlstring>Newsgroups</xar:mlstring></span></div>
+<div class="xar-mod-body">
+
+    <h2>
+        <xar:mlstring>Newsgroups from</xar:mlstring> <a href="#$server#">#$server#</a>
+    </h2>
+
+    <xar:if condition="!empty($error_message)">
+        <p class="xar-error">
+            <xar:mlstring>News Server Error:</xar:mlstring> <strong>#$error_message#</strong>
+        </p>
+
+    <xar:else />
+
+    <table class="xar-fullwidth">
+        <tr>
+            <th>
+                <xar:mlstring>Name</xar:mlstring>
+            </th>
+            <th>
+                <xar:mlstring>Description</xar:mlstring>
+            </th>
+            <!-- <th><xar:mlstring>Number of Posts</xar:mlstring></th> -->
+        </tr>
+        <xar:loop name="$items">
+            <xar:if condition="!empty($loop:item['group'])">
+                <xar:if condition="(($loop:index + 1) % 2)">
+                    <xar:set name="rowclass">'xar-norm'</xar:set>
+                <xar:else />
+                    <xar:set name="rowclass">'xar-alt'</xar:set>
+                </xar:if>
+                <tr class="#$rowclass#">
+                    <td>
+                        <a href="#xarModUrl('newsgroups', 'user', 'group', array('group' => $loop:item['group']))#"> #$loop:item['group']#</a>
+                    </td>
+                    <td>
+                        #$loop:item['desc']#
+                    </td>
+                    <!-- <td>#$loop:item['count']#</td> -->
+                </tr>
+            </xar:if>
+        </xar:loop>
+    </table>
+    </xar:if>
+</div>

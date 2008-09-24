@@ -1,0 +1,49 @@
+<div class="xar-mod-head"><span class="xar-mod-title"><xar:mlstring>Newsgroups</xar:mlstring></span></div>
+<div class="xar-mod-body">
+
+    <h2><xar:ml><xar:mlstring>Messages in newsgroup #(1)</xar:mlstring><xar:mlvar>#$group#</xar:mlvar></xar:ml></h2>
+
+<xar:if condition="isset($error_message)">
+    <p> <xar:mlstring>News Server Error:</xar:mlstring>
+        <span class="xar-error">
+            #$error_message#
+        </span>
+    </p>
+<xar:else />
+    <p><a href="#xarModUrl('newsgroups', 'user', 'main')#"><xar:mlstring>Back to main list</xar:mlstring></a></p>
+    <xar:sec mask="SendNewsGroups" catch="false">
+        <p><a href="#xarModUrl('newsgroups', 'user', 'post', array('group' => $group, 'phase' => 'new'))#"><xar:mlstring>Post to this newsgroup</xar:mlstring></a></p>
+    </xar:sec>
+<table class="xar-fullwidth">
+    <tr>
+        <th><xar:mlstring>Subject</xar:mlstring></th>
+        <th><xar:mlstring>From</xar:mlstring></th>
+        <th><xar:mlstring>Date</xar:mlstring></th>
+    </tr>
+    <xar:loop name="$items">
+    <xar:if condition="(($loop:index + 1) % 2)">
+        <xar:set name="rowclass">'xar-norm'</xar:set>
+    <xar:else />
+        <xar:set name="rowclass">'xar-alt'</xar:set>
+    </xar:if>
+    <tr class="#$rowclass#">
+        <td>
+            <div style="margin-left: #$loop:item['depth']*5#px;"><a href="#xarModUrl('newsgroups', 'user', 'article', array('group' => $group, 'article' => $loop:item['number']))#">#xarVarPrepForDisplay($loop:item['Subject'])#</a></div>
+        </td>
+        <td style="width: 10em;">
+            <div style="overflow: hidden;clip: rect(0,0,0,0);white-space: nowrap;">
+                #xarVarPrepEmailDisplay(xarVarPrepForDisplay($loop:item['From']))#
+            </div>
+        </td>
+        <td style="width: 12em;" class="xar-nowrap">
+            <div style="overflow: hidden;clip: rect(0,0,0,0);white-space: nowrap;">
+                #xarVarPrepForDisplay($loop:item['Date'])#
+            </div>
+        </td>
+    </tr>
+    </xar:loop>
+</table>
+#$pager#
+</xar:if>
+
+</div>
