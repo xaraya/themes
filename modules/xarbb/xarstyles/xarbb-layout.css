@@ -157,11 +157,8 @@ div.xarbb-tablewrapper table td.newtopicbottom {
 div.xarbb-tablewrapper table td p.hiddensignature {
 	border-top: 1px solid #12ABE3;
 }
-table.xarbb-topic tr:hover, table.xarbb-topic td:hover, table.xarbb-topic tr:hover td {
-	background-color: #fff;
-}
-table.xarbb-topic td.xar-alt:hover, table.xarbb-topic tr:hover td.xar-alt {
-	background-color: #EBF9FA;
+table.xarbb-topic td.xar-accent {
+    background-color: #fff7e5;
 }
 /* notes just below table */
 div.xarbb-noteswrapper .leftnote {
