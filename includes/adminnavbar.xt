@@ -62,23 +62,18 @@
 	        </ul>
         </div>
     </li>
-	<xar:if condition="xarModIsAvailable('categories')">
-		<xar:set name="extcats">xarModAPIFunc('categories','user','getchildren',array('cid' => 11))</xar:set>
-	<xar:else />
-		<xar:set name="extcats">''</xar:set>
-	</xar:if>
     <li id="extensions_item">
         <a href="#$baseurl#index.php/release/view" class="navoverview"><xar:mlstring>Extensions</xar:mlstring></a>
         <div id="menu_extensions">
 	        <ul>
-				<xar:if condition="is_array($extcats) and count($extcats) gt 0">
-					<xar:foreach in="$extcats" key="$extcatid" value="$extcat">
-						<li><a href="#$baseurl#index.php/release/view.html?catid=#$extcatid#" title="#xarVarPrepForDisplay($extcat['description'])#">#xarVarPrepForDisplay($extcat['name'])#</a></li>
-					</xar:foreach>
-				<xar:else />
-		            <li><a href="#$baseurl#index.php/release/view.html?catid=53">Modules</a></li>
-		            <li><a href="#$baseurl#index.php/release/view.html?catid=55">Themes</a></li>
-		        </xar:if>
+                <li><a href="#$baseurl#index.php/release/view.html?catid=85" title="Core API">Core API</a></li>
+                <li><a href="#$baseurl#index.php/release/view.html?catid=53" title="Xaraya Modules">Modules</a></li>
+                <li><a href="#$baseurl#index.php/release/view.html?catid=55" title="Xaraya Themes">Themes</a></li>
+                <li><a href="#$baseurl#index.php/release/view.html?catid=205" title="">Blocks</a></li>
+                <li><a href="#$baseurl#index.php/release/view.html?catid=206" title="">TemplatePacks</a></li>
+                <li><a href="#$baseurl#index.php/release/view.html?catid=207" title="">Dynamic Data Properties</a></li>
+                <li><a href="#$baseurl#index.php/release/view.html?catid=208" title="">Add Ons</a></li>
+                <li><a href="#$baseurl#index.php/release/view.html?catid=209" title="">Code Snippets</a></li>
 	            <li><a href="#$baseurl#index.php?module=release&amp;func=search&amp;displname=1&amp;regid=1&amp;regname=1&amp;desc=1&amp;authorsearch=1"><xar:mlstring>Search Extensions ...</xar:mlstring></a></li>
 	        </ul>
         </div>
