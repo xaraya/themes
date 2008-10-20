@@ -10,94 +10,73 @@
 	<xar:set name="thistype">$thisreq[1]</xar:set>
 	<xar:set name="thisfunc">$thisreq[2]</xar:set>
 	<xar:set name="thisreq">implode('_', $thisreq)</xar:set>
-    <xar:set name="thispage">
-        xarVarGetCached('Base.pages','page') 
-    </xar:set>
+    <xar:set name="thispage">xarVarGetCached('Base.pages','page')</xar:set>
     <xar:set name="thismod">xarModGetName()</xar:set>
-	<xar:if condition="$thismod eq 'xarpages'">
+
+    <xar:set name="section">''</xar:set>
+    <xar:set name="is_home">false</xar:set>
+
+	<xar:if condition="$thismod eq 'base'">
+		<xar:set name="section">''</xar:set>
+	<xar:elseif condition="$thismod eq 'authsystem'" />
+		<xar:set name="section">''</xar:set>
+	<xar:elseif condition="$thismod eq 'xarpages'" />
 	    <xar:set name="thispage">xarRequestGetVar('pid')</xar:set>
+	    <xar:if condition="$thispage eq 50">
+	    	<xar:set name="section">''</xar:set>
+	    	<xar:set name="is_home">true</xar:set>
+	    <xar:elseif condition="in_array($thispage, array(51,55,56,57,68,58,59,60,61))" />
+	    	<xar:set name="section">'about'</xar:set>
+	    <xar:elseif condition="in_array($thispage, array(52,62))" />
+	    	<xar:set name="section">'support'</xar:set>
+	    <xar:elseif condition="in_array($thispage, array(53,63,64,65,66))" />
+	    	<xar:set name="section">'team'</xar:set>
+	    <xar:elseif condition="$thispage eq 67" />
+	    	<xar:set name="section">'docs'</xar:set>
+	    <xar:elseif condition="in_array($thispage, array(54,38,16))" />
+	    	<xar:set name="section">''</xar:set>
+		<xar:else />
+	    	<xar:set name="section">'docs'</xar:set>
+		</xar:if>
+	<xar:elseif condition="$thismod eq 'articles'" />
+		<xar:set name="thispt">xarRequestGetVar('ptid')</xar:set>
+		<xar:if condition="in_array($thispt, array(6,7,10,11,12,14,18))">
+			<xar:set name="section">'team'</xar:set>
+		<xar:elseif condition="$thispt eq 9 or $thispt eq 16" />
+			<xar:set name="section">'docs'</xar:set>
+		<xar:elseif condition="$thispt eq 17" />
+			<xar:set name="section">'about'</xar:set>
+		<xar:elseif condition="$thispt eq 1" />
+			<xar:set name="section">''</xar:set>
+		</xar:if>
+	<xar:elseif condition="$thismod eq 'xarbb'" />
+	    	<xar:set name="section">'support'</xar:set>
+	<xar:elseif condition="$thismod eq 'chat'" />
+	    	<xar:set name="section">'team'</xar:set>
+	<xar:elseif condition="$thismod eq 'newsgroups'" />
+	    	<xar:set name="section">'support'</xar:set>
+	<xar:elseif condition="$thismod eq 'messages'" />
+	    	<xar:set name="section">'team'</xar:set>
+	<xar:elseif condition="$thismod eq 'stats'" />
+	    	<xar:set name="section">'about'</xar:set>
+	<xar:elseif condition="$thismod eq 'polls'" />
+	    	<xar:set name="section">'team'</xar:set>
+	<xar:elseif condition="$thismod eq 'roles'" />
+		<xar:if condition="xarUserIsLoggedIn()">
+	    	<xar:set name="section">'team'</xar:set>
+	    <xar:else />
+	    	<xar:set name="section">''</xar:set>
+	    </xar:if>
+	<xar:elseif condition="$thismod eq 'comments'" />
+	    	<xar:set name="section">'team'</xar:set>
+	<xar:elseif condition="$thismod eq 'release'" />
+	    	<xar:set name="section">'team'</xar:set>
+	<xar:elseif condition="$thismod eq 'sitecontact'" />
+	    	<xar:set name="section">''</xar:set>
+	<xar:elseif condition="$thismod eq 'search'" />
+	    	<xar:set name="section">'support'</xar:set>
 	</xar:if>
-	
-    <xar:if condition="(
-    						isset($thispage) and 
-    						($thispage eq 'support' or $thispage eq 52)
-    					) or 
-    					(
-    						isset($thismod) and 
-    						(
-    							($thismod eq 'xarbb') or 
-    							($thismod eq 'chat') or 
-    							($thismod eq 'newsgroups') or 
-    							($thismod eq 'messages')
-    						)
-    					)">
-        <xar:set name="section">'support'</xar:set>
-    <xar:elseif condition="(
-    							isset($thispage) and 
-    							($thispage eq 'about' or $thispage eq 51)
-    						) or 
-    						(
-    							isset($thismod) and 
-    							(
-    								($thismod eq 'stats')
-    							)
-    						)" />
-        <xar:set name="section">'about'</xar:set>
-    <xar:elseif condition="(
-    							(
-    								isset($thispage) and 
-    								(
-    									($thispage eq 'community' or $thispage eq 53) or 
-    									($thispage eq 'xarteam')
-    								)
-    							)
-    						) or 
-    						(
-    							isset($thismod) and 
-    							(
-    								($thismod eq 'polls') or 
-    								($thismod eq 'roles') or 
-    								($thismod eq 'comments')
-	    						)
-    						)" />
-        <xar:set name="section">'team'</xar:set>
-    <xar:elseif condition="(
-    							isset($thispage) and 
-    							($thispage eq 'developer')
-    						) or 
-    						(
-    							isset($thismod) and 
-	    						(
-	    							($thismod eq 'release') or 
-	    							($thismod eq 'bkview')
-	    						)
-	    					)" />
-        <xar:set name="section">'development'</xar:set>
-    <xar:elseif condition="
-    					isset($thispage) and ($thispage eq 'solutions')
-    					" />
-        <xar:set name="section">'solutions'</xar:set>
-    <xar:elseif condition="(
-    							isset($thispage) and 
-    							($thispage eq 'documentation') or 
-    							(
-    								isset($thismod) and 
-    								($thismod eq 'xarpages')
-    							)
-    						)" />
-        <xar:set name="section">'documentation'</xar:set>
-    <xar:else />
-        <xar:set name="section">''</xar:set>
-    </xar:if>
-
-    <xar:if condition="($thisreq eq 'base_user_main' and $section eq '') or ($thismod eq 'xarpages' and $thispage eq 50)">
-        <xar:set name="section">''</xar:set>
-        <xar:set name="is_home">true</xar:set>
-    <xar:else />
-        <xar:set name="is_home">false</xar:set>
-    </xar:if>
     <xar:set name="themedir">#xarTplGetThemeDir()#</xar:set>
-
 
     <xar:blockgroup name="header" id="header" />
     <title>#$tpl:pageTitle#</title>

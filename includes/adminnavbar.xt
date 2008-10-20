@@ -3,7 +3,7 @@
     <li id="home_item" class="navbar-item">
         <a href="#$baseurl#index.php" accesskey="0" class="navoverview"><xar:mlstring>Home</xar:mlstring></a>
     </li>
-    <li id="waiting_item">
+    <li id="waiting_item" class="navbar-item">
         <a href="#" accesskey="2" class="navoverview" onclick="return false;"><xar:mlstring>Waiting</xar:mlstring></a>
         <div id="menu_waiting">
 	        <ul>
@@ -13,31 +13,31 @@
 	        </ul>
         </div>
     </li>
-    <li id="about_item">
-        <a href="#$baseurl#index.php/base/about" accesskey="2" class="navoverview"><xar:mlstring>About</xar:mlstring></a>
+    <li id="about_item" class="navbar-item">
+        <a href="#$baseurl#index.php/xarpages/about" accesskey="2" class="navoverview"><xar:mlstring>About</xar:mlstring></a>
         <div id="menu_about">
 	        <ul>
 	            <xar:block instance="about_mainmenu" module="base" type="menu" template="bare;mainnav" />
 	        </ul>
         </div>
     </li>
-    <li id="access_item">
+    <li id="access_item" class="navbar-item">
         <xar:if condition="xarUserIsLoggedIn()">
 	        <a href="#$baseurl#index.php/roles/settings/form" accesskey="6" class="navoverview"><xar:mlstring>Access</xar:mlstring></a>
 	    <xar:else />
 	        <a href="#xarModURL('authsystem')#" accesskey="6" class="navoverview"><xar:mlstring>Access</xar:mlstring></a>
-		</xar:if>	    	
+		</xar:if>
         <div id="menu_access">
 	        <ul>
 	            <xar:if condition="xarUserIsLoggedIn()">
-	                <li><a href="&xar-modurl-authsystem-user-logout;"><xar:mlstring>Log out</xar:mlstring></a></li>
+	                <li><a href="#xarModURL('authsystem','user','logout')#"><xar:mlstring>Log out</xar:mlstring></a></li>
 	                <li><a href="#$baseurl#index.php/roles/account"><xar:mlstring>View Your Account</xar:mlstring></a></li>
 	                <li><a href="#$baseurl#index.php/messages/Inbox"><xar:mlstring>Private Messages</xar:mlstring></a></li>
 	                <li><a href="#$baseurl#index.php/roles/list/"><xar:mlstring>Members Online</xar:mlstring></a></li>
 	            <xar:else />
-	                <li><a href="&xar-modurl-authsystem-user-main;"><xar:mlstring>Log in</xar:mlstring></a></li>
-	                <li><a href="&xar-modurl-registration-user-main;"><xar:mlstring>New User (register)</xar:mlstring></a></li>
-	                <li><a href="#$baseurl#index.php?module=roles&amp;func=lostpassword"><xar:mlstring>Lost Password?</xar:mlstring></a></li>
+	                <li><a href="#xarModURL('authsystem','user','main')#"><xar:mlstring>Log in</xar:mlstring></a></li>
+	                <li><a href="#xarModURL('registration','user','main')#"><xar:mlstring>New User (register)</xar:mlstring></a></li>
+	                <li><a href="#xarModURL('roles','lostpassword')#"><xar:mlstring>Lost Password?</xar:mlstring></a></li>
 	                <li><a href="#$baseurl#index.php/roles/list/viewall"><xar:mlstring>Member List</xar:mlstring></a></li>
 	            </xar:if>
 	            <li><a href="#$baseurl#index.php/registration/privacy"><xar:mlstring>Privacy Policy</xar:mlstring></a></li>
@@ -46,7 +46,7 @@
 	        </ul>
         </div>
     </li>
-    <li id="solutions_item">
+    <li id="solutions_item" class="navbar-item">
         <a href="#$baseurl#index.php/base/solutions" accesskey="3" class="navoverview"><xar:mlstring>Solutions</xar:mlstring></a>
         <div id="menu_solutions">
 	        <ul>
@@ -54,15 +54,15 @@
 	        </ul>
         </div>
     </li>
-    <li id="community_item">
-        <a href="#$baseurl#index.php/base/community" accesskey="5" class="navoverview"><xar:mlstring>Community</xar:mlstring></a>
+    <li id="community_item" class="navbar-item">
+        <a href="#$baseurl#index.php/xarpages/community" accesskey="5" class="navoverview"><xar:mlstring>Community</xar:mlstring></a>
         <div id="menu_community">
 	        <ul>
 	            <xar:block instance="community_mainmenu" module="base" type="menu" template="bare;mainnav" />
 	        </ul>
         </div>
     </li>
-    <li id="extensions_item">
+    <li id="extensions_item" class="navbar-item">
         <a href="#$baseurl#index.php/release/view" class="navoverview"><xar:mlstring>Extensions</xar:mlstring></a>
         <div id="menu_extensions">
 	        <ul>
@@ -78,8 +78,8 @@
 	        </ul>
         </div>
     </li>
-    <li id="documentation_item">
-        <a href="#$baseurl#index.php/base/documentation" class="navoverview"><xar:mlstring>Documentation</xar:mlstring></a>
+    <li id="documentation_item" class="navbar-item">
+        <a href="#$baseurl#index.php/xarpages/documentation" class="navoverview"><xar:mlstring>Documentation</xar:mlstring></a>
         <div id="menu_documentation">
 	        <ul>
 	            <xar:block instance="docs_mainmenu" module="base" type="menu" template="bare;mainnav" />
