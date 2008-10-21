@@ -35,8 +35,10 @@
 	    	<xar:set name="section">'docs'</xar:set>
 	    <xar:elseif condition="in_array($thispage, array(54,38,16))" />
 	    	<xar:set name="section">''</xar:set>
-		<xar:else />
+	    <xar:elseif condition="in_array($thispage, array(1,2,28,29,30,31,32,33,34,35,36,37,10,3,4,20,18,21,19,40,22,23,24,25,26,27,39,41,42,43,44,45,46,47,48,7,8,15,13,17,9,11,12,14,38,16))" />
 	    	<xar:set name="section">'docs'</xar:set>
+		<xar:else />
+	    	<xar:set name="section">''</xar:set>
 		</xar:if>
 	<xar:elseif condition="$thismod eq 'articles'" />
 		<xar:set name="thispt">xarRequestGetVar('ptid')</xar:set>
