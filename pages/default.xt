@@ -25,7 +25,7 @@
 	    <xar:if condition="$thispage eq 50">
 	    	<xar:set name="section">''</xar:set>
 	    	<xar:set name="is_home">true</xar:set>
-	    <xar:elseif condition="in_array($thispage, array(51,55,56,57,68,58,59,60,61))" />
+	    <xar:elseif condition="in_array($thispage, array(51,55,56,57,68,58,59,60,61,69,70))" />
 	    	<xar:set name="section">'about'</xar:set>
 	    <xar:elseif condition="in_array($thispage, array(52,62))" />
 	    	<xar:set name="section">'support'</xar:set>
