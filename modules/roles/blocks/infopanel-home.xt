@@ -16,6 +16,6 @@
 	<div>
 		<a href="#xarModURL('messages','user','display')#"><xar:mlstring>Messages</xar:mlstring></a>: 
 		<xar:mlstring>Total</xar:mlstring>: <strong>#$totalmessages#</strong> | 
-		<xar:mlstring>Unread</xar:mlstring>: <strong>#$totalmessages#</strong>
+		<xar:mlstring>Unread</xar:mlstring>: <strong>#$unreadmessages#</strong>
 	</div>
 </xar:if>
