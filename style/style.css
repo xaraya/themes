@@ -969,3 +969,14 @@ h3.xar-block-title-feature {
 .xar-block-body-feature li {
     margin-bottom: .5em !important;
 }
+
+/* xarpage menu block styles */
+
+div.xar-block-body-feature div.xarpage-menu li {
+    font-weight: bold;
+}
+
+div.xar-block-body-feature div.xarpage-menu li ul {
+    margin-top: .5em !important;
+    margin-left: 1.5em !important;
+}
