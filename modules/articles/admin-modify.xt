@@ -1,0 +1,94 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+<xar:if condition="xarSecurityCheck('AdminArticles',0,'Article',$ptid . ':All:All:All')">
+	<xar:set name="can_admin">1</xar:set>
+<xar:else />
+	<xar:set name="can_admin">0</xar:set>
+	<xar:set name="foo">xarTplSetPageTemplateName('submit')</xar:set>
+    <xar:if condition="empty($return_url)">
+        <xar:set name="return_url">xarModURL('xarpages','user','display',array('pid' => 71))</xar:set>
+    </xar:if>
+</xar:if>
+
+<div class="xar-mod-head">
+    <span class="xar-mod-title">
+		<xar:if condition="$can_admin">
+	        <xar:mlstring>Articles Administration</xar:mlstring>
+	    <xar:else />
+	        <xar:mlstring>Articles Submission</xar:mlstring>
+		</xar:if>    
+    </span>
+</div>
+<div class="xar-mod-body">
+	<xar:if condition="$can_admin">
+	    <xar:template type="module" file="admin-menu" />
+	</xar:if>
+    <h2>
+        <xar:mlstring>Modify Article</xar:mlstring>
+    </h2>
+    <xar:if condition="!empty($preview)">
+        <div>
+            #$preview#
+        </div>
+    </xar:if>
+    <xar:if condition="!empty($withupload)">
+        <xar:set name="enctype">
+            'multipart/form-data'
+        </xar:set>
+        <xar:else />
+        <xar:set name="enctype">
+            'application/x-www-form-urlencoded'
+        </xar:set>
+    </xar:if>
+    <form method="post" name="post" id="post" action="&xar-modurl-articles-admin-update;" enctype="#$enctype#" #$formhooks['formaction']# >
+        <div class="xar-form-input-wrapper">
+            <label class="help xar-form-label" title="#xarML('This is the publication type that this article will appear in.')#">
+                <xar:mlstring>
+                    Publication Type
+                </xar:mlstring>
+            </label> #$values['pubtype']#
+        </div>
+        <xar:foreach in="$fields" value="$field">
+            <div class="xar-form-input-wrapper">
+                <label class="help xar-form-label" title="#$field['label']#" for="#$field['id']#">#$field['label']#</label>
+                <xar:articles-field definition="$field['definition']" />
+            </div>
+        </xar:foreach>
+        <xar:if condition="!empty($formhooks['formdisplay'])">
+            <div class="xar-form-input-wrapper">
+                <label class="help xar-form-label" title="#xarML('Form Controls as determined by hook selection.')#">
+                    <xar:mlstring>
+                        Form Controls
+                    </xar:mlstring>
+                </label> #$formhooks['formdisplay']#
+            </div>
+        </xar:if>
+        <xar:if condition="!empty($hooks)">
+            <xar:foreach in="$hooks" key="$hookmodule">
+                #$hooks[$hookmodule]#
+            </xar:foreach>
+        </xar:if>
+        <div class="xar-form-input-wrapper">
+            <label class="help xar-form-label" title="#xarML('This is the allowed HTML that this website has configured.')#">
+                <xar:mlstring>
+                    Allowed HTML tags
+                </xar:mlstring>
+            </label>
+            <div class="xar-form-container-after">
+                #$allowedhtml#
+            </div>
+        </div>
+        <div class="xar-form-input-wrapper">
+            <div class="xar-form-container-after">
+                <input type="hidden" name="authid" id="authid" value="#$authid#" />
+                <input type="hidden" name="aid" id="aid" value="#$aid#" />
+                <input type="hidden" name="ptid" id="ptid" value="#$ptid#" />
+                <input type="hidden" name="return_url" value="#$return_url#" />
+                <input type="submit" name="preview" id="preview" value="#$previewlabel#" />
+                <xar:if condition="xarSecurityCheck('EditArticles',0,'Article',$ptid.':All:All:All')">
+                    <input type="submit" name="save" id="save" value="#xarML('Save and Edit')#" />
+                </xar:if>
+                <input type="submit" value="#$updatelabel#" />
+            </div>
+        </div>
+    </form>
+</div>
