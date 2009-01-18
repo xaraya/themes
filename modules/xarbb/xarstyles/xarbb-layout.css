@@ -160,6 +160,9 @@ div.xarbb-tablewrapper table td p.hiddensignature {
 table.xarbb-topic td.xar-accent {
     background-color: #fff7e5;
 }
+table.xarbb-topic tr.post-footer td {
+    background-color: #dca;
+}
 /* notes just below table */
 div.xarbb-noteswrapper .leftnote {
     float: left;

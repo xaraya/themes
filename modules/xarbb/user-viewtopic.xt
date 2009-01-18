@@ -235,7 +235,7 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr class="post-footer">
                 <td class="xar-norm author">
                     <a href="#xarModURL('xarbb', 'user', 'viewtopic', array('tid' => $tid))##top">
                         <xar:mlstring>Back to top</xar:mlstring>
@@ -416,7 +416,7 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr class="post-footer">
                 <td class="xar-norm author">
                     <a href="#xarModURL('xarbb', 'user', 'viewtopic', array('tid' => $tid))##top">
                         <xar:mlstring>Back to top</xar:mlstring>
