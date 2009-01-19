@@ -119,11 +119,12 @@ div.xarbb-tablewrapper table td.authorname {
 }
 
 div.xarbb-tablewrapper table td.lastpost {
-    /*width: 10em;*/
-    white-space: nowrap;
 }
 
-div.xarbb-tablewrapper table td.stats { width: 4em; }
+div.xarbb-tablewrapper table td.stats {
+    background-color: #fff7e5 !important;
+    width: 4em;
+}
 
 div.xarbb-tablewrapper table td.message {
     vertical-align: top;
@@ -157,8 +158,8 @@ div.xarbb-tablewrapper table td.newtopicbottom {
 div.xarbb-tablewrapper table td p.hiddensignature {
 	border-top: 1px solid #12ABE3;
 }
-table.xarbb-topic td.xar-accent {
-    background-color: #fff7e5;
+div.xarbb-tablewrapper td.xar-accent {
+    background-color: #fff7e5 !important;
 }
 table.xarbb-topic tr.post-footer td {
     font-weight: bold;
