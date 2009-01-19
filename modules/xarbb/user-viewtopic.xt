@@ -235,21 +235,18 @@
                 </td>
             </tr>
 
-            <tr class="post-footer">
-                <td class="xar-norm author">
+            <tr class="post-footer" colspan="2">
+                <td class="xar-norm author" colspan="2">
                     <a href="#xarModURL('xarbb', 'user', 'viewtopic', array('tid' => $tid))##top">
-                        <xar:mlstring>Back to top</xar:mlstring>
+                        <img src="#xarTplGetImage('new/icon_totop.gif')#" alt="#xarML('Back to top')#" />
                     </a>
                     <xar:if condition="isset($changelog)">
                         <xar:sec mask="ModxarBB" catch="false">
-                            <br />
                             <a href="#xarModUrl('changelog', 'admin', 'showlog', array('modid' => '300', 'itemtype' => $fid, 'itemid' => $tid))#">
-                                <xar:mlstring>View changes</xar:mlstring>
+                                <img src="#xarTplGetImage('new/icon_log.gif')#" alt="#xarML('View changes')#" />
                             </a>
                         </xar:sec>
                     </xar:if>
-                </td>
-                <td class="xar-alt">
                     <xar:sec mask="ReadRole" catch="false">
                         <xar:comment>
                             FIXME: jojodee: This is not strictly correct as anon users may have permission to send PMs etc Each of these should really have their own xar:sec .... 
@@ -417,21 +414,17 @@
             </tr>
 
             <tr class="post-footer">
-                <td class="xar-norm author">
+                <td class="xar-norm author" colspan="2">
                     <a href="#xarModURL('xarbb', 'user', 'viewtopic', array('tid' => $tid))##top">
-                        <xar:mlstring>Back to top</xar:mlstring>
+                        <img src="#xarTplGetImage('new/icon_totop.gif')#" alt="#xarML('Back to top')#" />
                     </a>
                     <xar:if condition="isset($changelog)">
                         <xar:sec mask="ModxarBB" catch="false">
-                            <br />
                             <a href="#xarModUrl('changelog', 'admin', 'showlog', array('modid' => '14', 'itemid' => $item['xar_cid']))#">
-                                <xar:mlstring>View changes</xar:mlstring>
+                                <img src="#xarTplGetImage('new/icon_log.gif')#" alt="#xarML('View changes')#" />
                             </a>
                         </xar:sec>
                     </xar:if>
-                </td>
-
-                <td class="xar-alt">
                     <xar:sec mask="ReadRole" catch="false">
                         <xar:comment>
                             FIXME: jojodee: This is not strictly correct as anon users may have permission to send PMs etc Each of these should really have their own xar:sec .... 

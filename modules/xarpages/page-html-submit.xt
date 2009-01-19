@@ -1,0 +1,30 @@
+<xar:set name="public_ptids">array(1,6,7,9,14,17,18)</xar:set>
+<xar:set name="ptid">xarRequestGetVar('ptid')</xar:set>
+<xar:if condition="!empty($ptid) and in_array($ptid, $public_ptids)">
+    <xar:set name="pt_info">array_shift(xarModAPIFunc('articles','user','getpubtypes',array('ptid' => $ptid)))</xar:set>
+
+    <div id="main_right">
+        <xar:blockgroup name="trop_home_right" />
+    </div>
+    <div id="main_left">
+        <h1><xar:mlstring>Thank You For Your Submission</xar:mlstring></h1>    
+
+        <p>
+            <xar:ml>
+                <xar:mlstring>Your <em>#(1)</em> article has been received.  It will be reviewed and should appear shortly.</xar:mlstring>
+                <xar:mlvar>#$pt_info.descr#</xar:mlvar>
+            </xar:ml>
+        </p>
+
+    </div>
+<xar:else />
+    <div id="main_right">
+        <xar:blockgroup name="trop_home_right" />
+    </div>
+    <div id="main_left">
+        <h1><xar:mlstring>Access Error</xar:mlstring></h1>
+        <p>
+            <xar:mlstring>If you did not just submit an article, you should not be seeing this page.</xar:mlstring>
+        </p>
+    </div>
+</xar:if>

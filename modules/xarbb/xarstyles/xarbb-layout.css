@@ -161,7 +161,10 @@ table.xarbb-topic td.xar-accent {
     background-color: #fff7e5;
 }
 table.xarbb-topic tr.post-footer td {
-    background-color: #dca;
+    background: #fff7e5 url(/themes/xartropics/images/brownbar.png) repeat-x scroll left bottom;
+}
+table.xarbb-topic tr.post-footer td img {
+    vertical-align: bottom;
 }
 /* notes just below table */
 div.xarbb-noteswrapper .leftnote {
