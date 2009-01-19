@@ -251,6 +251,7 @@
                         <xar:comment>
                             FIXME: jojodee: This is not strictly correct as anon users may have permission to send PMs etc Each of these should really have their own xar:sec .... 
                         </xar:comment>
+                        &nbsp;&nbsp;#$postername#:&nbsp;
                         <a href="#xarModUrl('roles', 'user', 'display', array('uid' => $tposter))#">
                             <img src="#xarTplGetImage('new/icon_profile.gif')#" alt="#xarML('Profile')#" />
                         </a>
@@ -430,6 +431,7 @@
                             FIXME: jojodee: This is not strictly correct as anon users may have permission to send PMs etc Each of these should really have their own xar:sec .... 
                         </xar:comment>
                         <xar:if condition="$item['xar_postanon'] eq 0">
+                            &nbsp;&nbsp;#$postername#:&nbsp;
                             <a href="#xarModUrl('roles', 'user', 'display', array('uid' => $item['xar_uid']))#">
                                 <img src="#xarTplGetImage('new/icon_profile.gif')#" alt="#xarML('Profile')#" />
                             </a>
