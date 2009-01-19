@@ -107,11 +107,11 @@
     <xar:data-getitems name="$properties" value="$posterdata" module="roles" itemids="$posterlist" fieldlist="website,avatar,location,signature,icq,msnm,yim,aim" />
 
     <table class="xarbb-topic">
-        <tr>
-            <th scope="col">
+        <tr id="top">
+            <th>
                 <xar:mlstring>Author</xar:mlstring>
             </th>
-            <th scope="col">
+            <th>
                 <xar:mlstring>Message</xar:mlstring>
             </th>
         </tr>
