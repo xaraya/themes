@@ -50,7 +50,7 @@ a#head_link {
 	bottom: -40px;
 	_bottom: -41px;
 	left: 20px;
-    background: #f6f url(/themes/xartropics/images/inside/logo.png) no-repeat scroll bottom right;
+    background: transparent url(/themes/xartropics/images/inside/logo.png) no-repeat scroll bottom right;
 }
 div#navbar {
 	clear: both;
