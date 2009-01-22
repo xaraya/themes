@@ -6,7 +6,7 @@ div#header {
 div#header_logo {
     min-height: 107px;
     _height: 107px;
-    background: transparent url(/themes/xartropics/images/inside/logo.png) no-repeat scroll bottom left;
+    background: transparent url(/themes/xartropics/images/inside/logobg.png) no-repeat scroll bottom left;
 	position: relative;
 }
 div#header_content_wrap {
@@ -43,12 +43,14 @@ div#header_brcorner {
 }
 a#head_link {
     display: block;
-    width: 110px;
-    height: 89px;
+    width: 180px;
+    height: 137px;
     text-indent: -512pt;
 	position: absolute;
-	bottom: 9px;
-	left: 55px;
+	bottom: -40px;
+	_bottom: -41px;
+	left: 20px;
+    background: #f6f url(/themes/xartropics/images/inside/logo.png) no-repeat scroll bottom right;
 }
 div#navbar {
 	clear: both;
