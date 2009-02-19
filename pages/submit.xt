@@ -97,7 +97,6 @@
         <style type="text/css">@import url(&xar-baseurl;#$themedir#/style/inside.css); </style>
     </xar:if>
 
-	<xar:base-include-javascript filename="jquery.js" module="jquery" />
 	<xar:base-include-javascript filename="jquery.pack.js" module="jquery" />
 	<xar:base-include-javascript filename="jquery.compat-1.1.js" module="jquery" />
 	<xar:base-include-javascript filename="jquery.hoverIntent.minified.js" module="jquery" />
