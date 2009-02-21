@@ -1,0 +1,20 @@
+<div id="main_right">
+
+    <xar:if condition="!empty($side_group_name)">
+        <xar:blockgroup name="$side_group_name" />
+    </xar:if>
+</div>
+<div id="main_left">
+    <h1>#$current_page.desc#</h1>    
+
+    <div>
+        #$current_page.dd.intro#
+    </div>
+
+    <xar:if condition="!empty($transdata)">
+        #$transdata#
+    <xar:else />
+        <p><xar:mlstring>Currently unavailable.</xar:mlstring></p>
+    </xar:if>
+
+</div>
