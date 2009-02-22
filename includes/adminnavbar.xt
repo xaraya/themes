@@ -4,7 +4,7 @@
         <a href="#$baseurl#index.php" accesskey="0" class="navoverview"><xar:mlstring>Home</xar:mlstring></a>
     </li>
     <li id="waiting_item" class="navbar-item">
-        <a href="#" accesskey="2" class="navoverview" onclick="return false;"><xar:mlstring>Waiting</xar:mlstring></a>
+        <a href="#" accesskey="1" class="navoverview" onclick="return false;"><xar:mlstring>Waiting</xar:mlstring></a>
         <div id="menu_waiting">
 	        <ul>
 	        	<li>
@@ -13,77 +13,79 @@
 	        </ul>
         </div>
     </li>
-    <li id="about_item" class="navbar-item">
-        <a href="#$baseurl#index.php/xarpages/about" accesskey="2" class="navoverview"><xar:mlstring>About</xar:mlstring></a>
-        <div id="menu_about">
-	        <ul>
-	            <xar:block instance="about_mainmenu" module="base" type="menu" template="bare;mainnav" />
-	        </ul>
-        </div>
-    </li>
-    <li id="access_item" class="navbar-item">
-        <xar:if condition="xarUserIsLoggedIn()">
-	        <a href="#$baseurl#index.php/roles/settings/form" accesskey="6" class="navoverview"><xar:mlstring>Access</xar:mlstring></a>
-	    <xar:else />
-	        <a href="#xarModURL('authsystem')#" accesskey="6" class="navoverview"><xar:mlstring>Access</xar:mlstring></a>
-		</xar:if>
-        <div id="menu_access">
-	        <ul>
-	            <xar:if condition="xarUserIsLoggedIn()">
-	                <li><a href="#xarModURL('authsystem','user','logout')#"><xar:mlstring>Log out</xar:mlstring></a></li>
-	                <li><a href="#$baseurl#index.php/roles/account"><xar:mlstring>View Your Account</xar:mlstring></a></li>
-	                <li><a href="#$baseurl#index.php/messages/Inbox"><xar:mlstring>Private Messages</xar:mlstring></a></li>
-	                <li><a href="#$baseurl#index.php/roles/list/"><xar:mlstring>Members Online</xar:mlstring></a></li>
-	            <xar:else />
-	                <li><a href="#xarModURL('authsystem','user','main')#"><xar:mlstring>Log in</xar:mlstring></a></li>
-	                <li><a href="#xarModURL('registration','user','main')#"><xar:mlstring>New User (register)</xar:mlstring></a></li>
-	                <li><a href="#xarModURL('roles','lostpassword')#"><xar:mlstring>Lost Password?</xar:mlstring></a></li>
-	                <li><a href="#$baseurl#index.php/roles/list/viewall"><xar:mlstring>Member List</xar:mlstring></a></li>
-	            </xar:if>
-	            <li><a href="#$baseurl#index.php/registration/privacy"><xar:mlstring>Privacy Policy</xar:mlstring></a></li>
-	            <li><a href="#$baseurl#index.php/registration/terms"><xar:mlstring>Terms of Use</xar:mlstring></a></li>
-	            <li><a href="#$baseurl#index.php/base/accessibility" accesskey="0"><xar:mlstring>Accessibilty Statement</xar:mlstring></a></li>
-	        </ul>
-        </div>
-    </li>
-    <li id="solutions_item" class="navbar-item">
-        <a href="#$baseurl#index.php/base/solutions" accesskey="3" class="navoverview"><xar:mlstring>Solutions</xar:mlstring></a>
-        <div id="menu_solutions">
-	        <ul>
-	            <xar:block instance="solutions_mainmenu" module="base" type="menu" template="bare;mainnav" />
-	        </ul>
-        </div>
-    </li>
-    <li id="community_item" class="navbar-item">
-        <a href="#$baseurl#index.php/xarpages/community" accesskey="5" class="navoverview"><xar:mlstring>Community</xar:mlstring></a>
-        <div id="menu_community">
-	        <ul>
-	            <xar:block instance="community_mainmenu" module="base" type="menu" template="bare;mainnav" />
-	        </ul>
-        </div>
-    </li>
-    <li id="extensions_item" class="navbar-item">
-        <a href="#$baseurl#index.php/release/view" class="navoverview"><xar:mlstring>Extensions</xar:mlstring></a>
-        <div id="menu_extensions">
-	        <ul>
-                <li><a href="#$baseurl#index.php/release/view.html?catid=85" title="Core API">Core API</a></li>
-                <li><a href="#$baseurl#index.php/release/view.html?catid=53" title="Xaraya Modules">Modules</a></li>
-                <li><a href="#$baseurl#index.php/release/view.html?catid=55" title="Xaraya Themes">Themes</a></li>
-                <li><a href="#$baseurl#index.php/release/view.html?catid=205" title="">Blocks</a></li>
-                <li><a href="#$baseurl#index.php/release/view.html?catid=206" title="">TemplatePacks</a></li>
-                <li><a href="#$baseurl#index.php/release/view.html?catid=207" title="">Dynamic Data Properties</a></li>
-                <li><a href="#$baseurl#index.php/release/view.html?catid=208" title="">Add Ons</a></li>
-                <li><a href="#$baseurl#index.php/release/view.html?catid=209" title="">Code Snippets</a></li>
-	            <li><a href="#$baseurl#index.php?module=release&amp;func=search&amp;displname=1&amp;regid=1&amp;regname=1&amp;desc=1&amp;authorsearch=1"><xar:mlstring>Search Extensions ...</xar:mlstring></a></li>
-	        </ul>
-        </div>
-    </li>
-    <li id="documentation_item" class="navbar-item">
-        <a href="#$baseurl#index.php/xarpages/documentation" class="navoverview"><xar:mlstring>Documentation</xar:mlstring></a>
-        <div id="menu_documentation">
-	        <ul>
-	            <xar:block instance="docs_mainmenu" module="base" type="menu" template="bare;mainnav" />
-	        </ul>
-        </div>
-    </li>
+	<li id="about_item" class="navbar-item">
+		<a href="#$baseurl#index.php/xarpages/about" accesskey="2" class="navoverview" title="#xarML('Click for about overview')#"><xar:mlstring>About</xar:mlstring></a>
+		<div id="menu_about">
+			<ul>
+				<li><a href="index.php/xarpages/about/project_history"><xar:mlstring>Project History</xar:mlstring></a></li>
+				<li><a href="index.php/xarpages/about/features"><xar:mlstring>Features &amp; Requirements</xar:mlstring></a></li>
+				<li><a href="index.php/xarpages/about/roadmap"><xar:mlstring>Xaraya Project Roadmap</xar:mlstring></a></li>
+				<li><a href="index.php/news"><xar:mlstring>News Room</xar:mlstring></a></li>
+				<li><a href="index.php/xarpages/about/team"><xar:mlstring>Meet the Team</xar:mlstring></a></li>
+				<li><a href="index.php/xarpages/about/contribute"><xar:mlstring>Support Xaraya</xar:mlstring></a></li>
+				<li><a href="index.php/xarpages/about/sponsors"><xar:mlstring>Sponsors and Donations</xar:mlstring></a></li>
+				<li><a href="index.php/sitecontact"><xar:mlstring>Contact Us</xar:mlstring></a></li>
+			</ul>
+		</div>
+	</li>
+	<li id="download_item" class="navbar-item">
+		<a href="#$baseurl#index.php/xarpages/download" accesskey="3" class="navoverview"><xar:mlstring>Download</xar:mlstring></a>
+	</li>
+	<li id="support_item" class="navbar-item">
+		<a href="#$baseurl#index.php/roles/settings/form" accesskey="4" class="navoverview" title="#xarML('Click for support overview')#"><xar:mlstring>Support</xar:mlstring></a>
+		<div id="menu_support">
+			<ul>
+				<li><a href="#$baseurl#index.php/xarbb"><xar:mlstring>Forums</xar:mlstring></a></li>
+				<li><a href="#$baseurl#index.php/userwiki"><xar:mlstring>User Wiki</xar:mlstring></a></li>
+				<li><a href="#$baseurl#/index.php/faqs"><xar:mlstring>FAQ</xar:mlstring></a></li>
+				<li><a href="#$baseurl#/index.php/chat"><xar:mlstring>Live IRC Chat</xar:mlstring></a></li>
+			</ul>
+		</div>
+	</li>
+	<li id="documentation_item" class="navbar-item">
+		<a href="#$baseurl#index.php/xarpages/documentation" accesskey="5" class="navoverview" title="#xarML('Click for documentation overview')#"><xar:mlstring>Documentation</xar:mlstring></a>
+		<div id="menu_documentation">
+			<ul>
+				<li><a href="#$baseurl#index.php/releasenotes"><xar:mlstring>Release Notes</xar:mlstring></a></li>
+	            <li><a href="index.php/documentation/c80/">Developers</a></li>
+	            <li><a href="index.php/documentation/c81/">Site Builders</a></li>
+	            <li><a href="index.php/documentation/c82/">Theme Creators</a></li>
+	            <li><a href="index.php/documentation/c122/">Reference &amp; Manuals</a></li>
+	            <li><a href="index.php/documentation/c121/">Tutorial &amp; Guides</a></li>
+	            <li><a href="index.php/documentation/c119/">Knowledgebase</a></li>
+	            <li><a href="index.php?module=keywords">Find Docs by Keyword</a></li>
+			</ul>
+		</div>
+	</li>
+	<li id="community_item" class="navbar-item">
+		<a href="#$baseurl#index.php/xarpages/community" accesskey="6" class="navoverview" title="#xarML('Click for community overview')#"><xar:mlstring>Community</xar:mlstring></a>
+		<div id="menu_community">
+			<ul>
+			   <li><a href="http://www.xaraya.com/index.php/xarpages/community/communication"><xar:mlstring>Communication</xar:mlstring></a></li>
+			   <li><a href="http://www.xaraya.com/index.php/xarpages/community/case_studies"><xar:mlstring>Case Studies</xar:mlstring></a></li>
+			   <li><a href="http://www.xaraya.com/index.php/xarpages/community/industry_focus"><xar:mlstring>Industry Focus</xar:mlstring></a></li>
+			   <li><a href="http://www.xaraya.com/index.php/weblinks"><xar:mlstring>Xaraya-ized</xar:mlstring></a></li>
+			   <li><a href="http://www.xaraya.com/index.php/quotes"><xar:mlstring>Testimonials</xar:mlstring></a></li>
+			   <li><a href="http://www.xaraya.com/index.php/xarpages/community/code_of_conduct"><xar:mlstring>Xaraya Code of Conduct</xar:mlstring></a></li>
+			   <li><a href="http://www.xaraya.com/index.php/registration/privacy"><xar:mlstring>Privacy Policy</xar:mlstring></a></li>
+			   <li><a href="http://www.xaraya.com/index.php/registration/terms"><xar:mlstring>Terms of Use</xar:mlstring></a></li>
+			   <li><a href="http://www.xaraya.com/index.php/xarpages/community/accessibility_statement"><xar:mlstring>Accessibility Statement</xar:mlstring></a></li>
+			</ul>
+		</div>
+	</li>
+	<li id="extensions_item" class="navbar-item">
+		<a href="#$baseurl#index.php/release/view" accesskey="7" class="navoverview" title="#xarML('Click for extensions overview')#"><xar:mlstring>Extensions</xar:mlstring></a>
+		<div id="menu_extensions">
+			<ul>
+				<li><a href="#$baseurl#index.php/release/view.html?catid=53" title="Xaraya Modules">Modules</a></li>
+				<li><a href="#$baseurl#index.php/release/view.html?catid=55" title="Xaraya Themes">Themes</a></li>
+				<li><a href="#$baseurl#index.php/release/view.html?catid=205" title="">Blocks</a></li>
+				<li><a href="#$baseurl#index.php/release/view.html?catid=206" title="">TemplatePacks</a></li>
+				<li><a href="#$baseurl#index.php/release/view.html?catid=207" title="">Dynamic Data Properties</a></li>
+				<li><a href="#$baseurl#index.php/release/view.html?catid=208" title="">Add Ons</a></li>
+				<li><a href="#$baseurl#index.php/release/view.html?catid=209" title="">Code Snippets</a></li>
+				<li><a href="#$baseurl#index.php?module=release&amp;func=search&amp;displname=1&amp;regid=1&amp;regname=1&amp;desc=1&amp;authorsearch=1"><xar:mlstring>Search Extensions ...</xar:mlstring></a></li>
+			</ul>
+		</div>
+	</li>
 </ul>
