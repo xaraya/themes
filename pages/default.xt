@@ -31,7 +31,7 @@
 	    	<xar:set name="section">'support'</xar:set>
 	    <xar:elseif condition="in_array($thispage, array(53,63,64,65,66,80))" />
 	    	<xar:set name="section">'team'</xar:set>
-	    <xar:elseif condition="$thispage eq 67" />
+	    <xar:elseif condition="in_array($thispage, array(67,81))" />
 	    	<xar:set name="section">'docs'</xar:set>
 	    <xar:elseif condition="in_array($thispage, array(54,38,16))" />
 	    	<xar:set name="section">''</xar:set>
