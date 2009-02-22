@@ -17,14 +17,14 @@
 		<a href="#$baseurl#index.php/xarpages/about" accesskey="2" class="navoverview" title="#xarML('Click for about overview')#"><xar:mlstring>About</xar:mlstring></a>
 		<div id="menu_about">
 			<ul>
-				<li><a href="index.php/xarpages/about/project_history"><xar:mlstring>Project History</xar:mlstring></a></li>
-				<li><a href="index.php/xarpages/about/features"><xar:mlstring>Features &amp; Requirements</xar:mlstring></a></li>
-				<li><a href="index.php/xarpages/about/roadmap"><xar:mlstring>Xaraya Project Roadmap</xar:mlstring></a></li>
-				<li><a href="index.php/news"><xar:mlstring>News Room</xar:mlstring></a></li>
-				<li><a href="index.php/xarpages/about/team"><xar:mlstring>Meet the Team</xar:mlstring></a></li>
-				<li><a href="index.php/xarpages/about/contribute"><xar:mlstring>Support Xaraya</xar:mlstring></a></li>
-				<li><a href="index.php/xarpages/about/sponsors"><xar:mlstring>Sponsors and Donations</xar:mlstring></a></li>
-				<li><a href="index.php/sitecontact"><xar:mlstring>Contact Us</xar:mlstring></a></li>
+				<li><a href="#$baseurl#index.php/xarpages/about/project_history"><xar:mlstring>Project History</xar:mlstring></a></li>
+				<li><a href="#$baseurl#index.php/xarpages/about/features"><xar:mlstring>Features &amp; Requirements</xar:mlstring></a></li>
+				<li><a href="#$baseurl#index.php/xarpages/about/roadmap"><xar:mlstring>Xaraya Project Roadmap</xar:mlstring></a></li>
+				<li><a href="#$baseurl#index.php/news"><xar:mlstring>News Room</xar:mlstring></a></li>
+				<li><a href="#$baseurl#index.php/xarpages/about/team"><xar:mlstring>Meet the Team</xar:mlstring></a></li>
+				<li><a href="#$baseurl#index.php/xarpages/about/contribute"><xar:mlstring>Support Xaraya</xar:mlstring></a></li>
+				<li><a href="#$baseurl#index.php/xarpages/about/sponsors"><xar:mlstring>Sponsors and Donations</xar:mlstring></a></li>
+				<li><a href="#$baseurl#index.php/sitecontact"><xar:mlstring>Contact Us</xar:mlstring></a></li>
 			</ul>
 		</div>
 	</li>
@@ -37,8 +37,8 @@
 			<ul>
 				<li><a href="#$baseurl#index.php/xarbb"><xar:mlstring>Forums</xar:mlstring></a></li>
 				<li><a href="#$baseurl#index.php/userwiki"><xar:mlstring>User Wiki</xar:mlstring></a></li>
-				<li><a href="#$baseurl#/index.php/faqs"><xar:mlstring>FAQ</xar:mlstring></a></li>
-				<li><a href="#$baseurl#/index.php/chat"><xar:mlstring>Live IRC Chat</xar:mlstring></a></li>
+				<li><a href="#$baseurl#index.php/faqs"><xar:mlstring>FAQ</xar:mlstring></a></li>
+				<li><a href="#$baseurl#index.php/chat"><xar:mlstring>Live IRC Chat</xar:mlstring></a></li>
 			</ul>
 		</div>
 	</li>
@@ -47,13 +47,13 @@
 		<div id="menu_documentation">
 			<ul>
 				<li><a href="#$baseurl#index.php/releasenotes"><xar:mlstring>Release Notes</xar:mlstring></a></li>
-	            <li><a href="index.php/documentation/c80/">Developers</a></li>
-	            <li><a href="index.php/documentation/c81/">Site Builders</a></li>
-	            <li><a href="index.php/documentation/c82/">Theme Creators</a></li>
-	            <li><a href="index.php/documentation/c122/">Reference &amp; Manuals</a></li>
-	            <li><a href="index.php/documentation/c121/">Tutorial &amp; Guides</a></li>
-	            <li><a href="index.php/documentation/c119/">Knowledgebase</a></li>
-	            <li><a href="index.php?module=keywords">Find Docs by Keyword</a></li>
+	            <li><a href="#$baseurl#index.php/documentation/c80/">Developers</a></li>
+	            <li><a href="#$baseurl#index.php/documentation/c81/">Site Builders</a></li>
+	            <li><a href="#$baseurl#index.php/documentation/c82/">Theme Creators</a></li>
+	            <li><a href="#$baseurl#index.php/documentation/c122/">Reference &amp; Manuals</a></li>
+	            <li><a href="#$baseurl#index.php/documentation/c121/">Tutorial &amp; Guides</a></li>
+	            <li><a href="#$baseurl#index.php/documentation/c119/">Knowledgebase</a></li>
+	            <li><a href="#$baseurl#index.php/keywords">Find Docs by Keyword</a></li>
 			</ul>
 		</div>
 	</li>
@@ -61,15 +61,15 @@
 		<a href="#$baseurl#index.php/xarpages/community" accesskey="6" class="navoverview" title="#xarML('Click for community overview')#"><xar:mlstring>Community</xar:mlstring></a>
 		<div id="menu_community">
 			<ul>
-			   <li><a href="http://www.xaraya.com/index.php/xarpages/community/communication"><xar:mlstring>Communication</xar:mlstring></a></li>
-			   <li><a href="http://www.xaraya.com/index.php/xarpages/community/case_studies"><xar:mlstring>Case Studies</xar:mlstring></a></li>
-			   <li><a href="http://www.xaraya.com/index.php/xarpages/community/industry_focus"><xar:mlstring>Industry Focus</xar:mlstring></a></li>
-			   <li><a href="http://www.xaraya.com/index.php/weblinks"><xar:mlstring>Xaraya-ized</xar:mlstring></a></li>
-			   <li><a href="http://www.xaraya.com/index.php/quotes"><xar:mlstring>Testimonials</xar:mlstring></a></li>
-			   <li><a href="http://www.xaraya.com/index.php/xarpages/community/code_of_conduct"><xar:mlstring>Xaraya Code of Conduct</xar:mlstring></a></li>
-			   <li><a href="http://www.xaraya.com/index.php/registration/privacy"><xar:mlstring>Privacy Policy</xar:mlstring></a></li>
-			   <li><a href="http://www.xaraya.com/index.php/registration/terms"><xar:mlstring>Terms of Use</xar:mlstring></a></li>
-			   <li><a href="http://www.xaraya.com/index.php/xarpages/community/accessibility_statement"><xar:mlstring>Accessibility Statement</xar:mlstring></a></li>
+			   <li><a href="#$baseurl#index.php/xarpages/community/communication"><xar:mlstring>Communication</xar:mlstring></a></li>
+			   <li><a href="#$baseurl#index.php/xarpages/community/case_studies"><xar:mlstring>Case Studies</xar:mlstring></a></li>
+			   <li><a href="#$baseurl#index.php/xarpages/community/industry_focus"><xar:mlstring>Industry Focus</xar:mlstring></a></li>
+			   <li><a href="#$baseurl#index.php/weblinks"><xar:mlstring>Xaraya-ized</xar:mlstring></a></li>
+			   <li><a href="#$baseurl#index.php/quotes"><xar:mlstring>Testimonials</xar:mlstring></a></li>
+			   <li><a href="#$baseurl#index.php/xarpages/community/code_of_conduct"><xar:mlstring>Xaraya Code of Conduct</xar:mlstring></a></li>
+			   <li><a href="#$baseurl#index.php/registration/privacy"><xar:mlstring>Privacy Policy</xar:mlstring></a></li>
+			   <li><a href="#$baseurl#index.php/registration/terms"><xar:mlstring>Terms of Use</xar:mlstring></a></li>
+			   <li><a href="#$baseurl#index.php/xarpages/community/accessibility_statement"><xar:mlstring>Accessibility Statement</xar:mlstring></a></li>
 			</ul>
 		</div>
 	</li>
