@@ -14,7 +14,7 @@
         #$current_page.dd.intro#
     </div>
 
-    <h3>#$news_header#</h3>
+    <h2>#$news_header#</h2>
 
     <xar:foreach in="$news" value="$article">
         #xarTplModule('articles', 'user', 'summary', $article, 'news')#

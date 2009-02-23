@@ -1,7 +1,13 @@
 <div class="summary-news">
-    <h2>
-        <a href="#$link#">#$title#</a>
-    </h2>
+    <xar:if condition="isset($is_home_xarpage)">
+        <h3>
+            <a href="#$link#">#$title#</a>
+        </h3>
+    <xar:else />
+        <h2>
+            <a href="#$link#">#$title#</a>
+        </h2>
+    </xar:if>
 	<xar:comment>
 	    <div>
 	        <xar:if condition="!empty($categories) and count($categories) gt 0">
