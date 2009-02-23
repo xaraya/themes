@@ -475,11 +475,10 @@ ul#navbar_core li ul li {
     float: none;
     background-color: #edf9a7;
 }
-/*
-div#menu_documentation {
-	margin-left: -55px !important;
+
+li#extensions_item > div#menu_extensions {
+	margin-left: -20px !important;
 }
-*/
 div#contentouter {
 	clear: both;
 	margin: 0;
@@ -596,10 +595,13 @@ div#main_right {
 	padding-top: 1px;
 	margin: 0px;
 }
+div#contentmain h2 {
+    border-bottom: 1px solid #ff5712;
+    color: #ff5712;
+}
 div#contentmain h3 {
     font-size: 12pt;
     color: #ff5712;
-    border-bottom: 1px solid #ff5712;
 }
 div#main_left h1 {
     margin-top: 0;
@@ -609,6 +611,7 @@ div#main_left h3, div#main_right h3 {
 }
 div#main_right h3 {
     margin-top: 0;
+    border-bottom: 1px solid #ff5712;
 }
 div#contentmain h4 {
     margin-bottom: 0;

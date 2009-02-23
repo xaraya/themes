@@ -5,7 +5,7 @@ var xt_navdrop = function() {
 }
 
 var xt_navraise = function() {
-	jQuery(this).children('a').toggleClass('navbar-on').end().children('div').animate({ height: 'hide'}, 'fast');
+	jQuery(this).children('a').toggleClass('navbar-on').end().children('div').hide();
 }
 
 var hoverConfig = {
@@ -24,9 +24,9 @@ jQuery(document).ready(function(){
 		// appear in the correct location
 		jQuery('div#menu_about').css('margin', '28px 0 0 -56px');
 		jQuery('div#menu_support').css('margin', '28px 0 0 -71px');
-		jQuery('div#menu_community').css('margin', '28px 0 0 -92px');
-		jQuery('div#menu_extensions').css('margin', '28px 0 0 -93px');
 		jQuery('div#menu_documentation').css('margin', '28px 0 0 -121px');
+		jQuery('div#menu_community').css('margin', '28px 0 0 -92px');
+		jQuery('div#menu_extensions').css('margin', '28px 0 0 -115px');
 	}
     <xar:if condition="!xarUserIsLoggedIn()">
     if(!jQuery.browser.msie) {
