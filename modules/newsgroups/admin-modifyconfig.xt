@@ -30,7 +30,7 @@
                     <label for="pass" class="xar-form-label">
                         <xar:mlstring>Password</xar:mlstring>
                     </label>
-                    <input type="password" name="pass" id="pass" value="" size="25" maxlength="255" />
+                    <input type="password" name="pass" id="pass" value="" size="25" autocomplete="off" maxlength="255" />
             </div>
              <div class="xar-form-input-wrapper">
                     <label for="wildmat_0" class="xar-form-label">

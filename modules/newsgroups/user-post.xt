@@ -35,7 +35,7 @@
             <b>eMail:</b>
         </td>
         <td align="left">
-            <input type="text" name="email" value="#$email#" size="40" maxlength="40" />
+            <input type="text" name="email" value="#$email#" autocomplete="off" size="40" maxlength="40" />
         </td>
     </tr>
 </table>

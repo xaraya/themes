@@ -13,7 +13,7 @@
     <label for="pass#$blockid#" title="#xarML('Enter your password')#" class="xar-form-label">
         <xar:mlstring>Password:</xar:mlstring>
     </label>
-    <input class="xar-form-textlong" type="password" name="pass" id="pass#$blockid#" maxlength="64" />
+    <input class="xar-form-textlong" type="password" name="pass" id="pass#$blockid#" autocomplete="off" maxlength="64" />
 </div>
 
 <xar:if condition="xarConfigGetVar('Site.Session.SecurityLevel') ne 'High'">

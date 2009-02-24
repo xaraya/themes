@@ -537,13 +537,13 @@ div#contentmain_inner {
 div#contentmain_core {
 	margin: 5px 10px;
 }
-div#contentmain li {
+div#contentmain ul li {
     list-style-image: url(/themes/xartropics/images/list-item.gif);
 }
-div#contentmain li li {
+div#contentmain ul li li {
     list-style-image: url(/themes/xartropics/images/list-item-square.gif);
 }
-div#contentmain li li li {
+div#contentmain ul li li li {
     list-style-image: url(/themes/xartropics/images/list-item-disc.gif);
 }
 div#contentmain_core:after {
