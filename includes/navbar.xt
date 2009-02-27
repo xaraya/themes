@@ -22,7 +22,7 @@
 		<a href="#$baseurl#index.php/xarpages/download" accesskey="3" class="navoverview"><xar:mlstring>Download</xar:mlstring></a>
 	</li>
 	<li id="support_item" class="navbar-item">
-		<a href="#$baseurl#index.php/roles/settings/form" accesskey="4" class="navoverview" title="#xarML('Click for support overview')#"><xar:mlstring>Support</xar:mlstring></a>
+		<a href="#$baseurl#index.php/xarpages/support" accesskey="4" class="navoverview" title="#xarML('Click for support overview')#"><xar:mlstring>Support</xar:mlstring></a>
 		<div id="menu_support">
 			<ul>
 				<li><a href="#$baseurl#index.php/xarbb"><xar:mlstring>Forums</xar:mlstring></a></li>

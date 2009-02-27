@@ -26,7 +26,7 @@
 </xar:if>
 
     <div class="xar-align-center xar-margin-thicktop">
-        <input type="hidden" name="redirecturl" id="returnurl#$blockid#" value="#$return_url#" />
+        <input type="hidden" name="redirecturl" id="returnurl#$blockid#" value="#xarServerGetCurrentURL()#" />
         <input type="submit" value="#xarML('Log In')#" />
     </div>
 

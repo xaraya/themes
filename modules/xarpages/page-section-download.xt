@@ -15,7 +15,7 @@
         <ul>
         <xar:foreach in="$releases" value="$article">
             <li>
-                <a href="#xarModURL('articles','user','display',array('aid'=>$article['aid']))#">#$article.title#</a>: 
+                <a href="#xarModURL('articles','user','display',array('aid'=>$article['aid'],'ptid'=>16))#">#$article.title#</a>: 
                 #xarLocaleGetFormattedDate('medium', $article.pubdate)#
             </li>
         </xar:foreach>
@@ -50,7 +50,7 @@
 
     <p>Xaraya uses <a href="http://monotone.ca">Monotone</a> for source control.  To learn more 
     about working with our repositories, see 
-    <a href="#xarModURL('articles','user','display',array('aid'=>493))#">Tracking Xaraya development via Monotone</a>.</p>
+    <a href="#xarModURL('articles','user','display',array('aid'=>493,'ptid'=>10))#">Tracking Xaraya development via Monotone</a>.</p>
 
     <p>Repository activity can be viewed on the web at <A href="http://mt.xaraya.com/">http://mt.xaraya.com</a></p>
 

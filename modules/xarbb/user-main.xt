@@ -29,6 +29,11 @@
                 </a>
             </li>
             <li>
+                <a href="&xar-modurl-xarbb-user-searchtopics;&amp;from=0">
+                    <xar:mlstring>View latest topics</xar:mlstring>
+                </a>
+            </li>
+            <li>
                 <a href="&xar-modurl-xarbb-user-searchtopics;&amp;by=#$uid#">
                     <xar:mlstring>View your topics</xar:mlstring>
                 </a>
