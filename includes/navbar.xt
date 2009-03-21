@@ -43,6 +43,7 @@
 	            <li><a href="#$baseurl#index.php/documentation/c122/">Reference &amp; Manuals</a></li>
 	            <li><a href="#$baseurl#index.php/documentation/c121/">Tutorial &amp; Guides</a></li>
 	            <li><a href="#$baseurl#index.php/documentation/c119/">Knowledgebase</a></li>
+	            <li><a href="#$baseurl#index.php/xarpages/documentation/rfcindex">RFC Library</a></li>
 	            <li><a href="#$baseurl#index.php/keywords">Find Docs by Keyword</a></li>
 			</ul>
 		</div>

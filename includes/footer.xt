@@ -19,7 +19,7 @@
 		<a rel="external" id="footersponsorev1" href="http://www.ev1servers.net/">
 			<img src="&xar-baseurl;#$themedir#/images/ev1.gif" alt="Sponsored by EV1" />
 		</a>
-		<a rel="external" id="footersponsorneosurge" href='http://www.neosurge.com/index.html?xaraya'> 
+		<a rel="external" id="footersponsorneosurge" href='http://www.neosurge.com/index.php?xaraya'> 
             <img src="&xar-baseurl;#$themedir#/images/neosurge.gif" alt="Sponsored by NeoSurge" />
         </a>
 		<span>
