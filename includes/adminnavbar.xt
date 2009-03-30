@@ -63,10 +63,7 @@
 		<div id="menu_community">
 			<ul>
 			   <li><a href="#$baseurl#index.php/xarpages/community/communication"><xar:mlstring>Communication</xar:mlstring></a></li>
-			   <li><a href="#$baseurl#index.php/xarpages/community/case_studies"><xar:mlstring>Case Studies</xar:mlstring></a></li>
-			   <li><a href="#$baseurl#index.php/xarpages/community/industry_focus"><xar:mlstring>Industry Focus</xar:mlstring></a></li>
 			   <li><a href="#$baseurl#index.php/weblinks"><xar:mlstring>Xaraya-ized</xar:mlstring></a></li>
-			   <li><a href="#$baseurl#index.php/quotes"><xar:mlstring>Testimonials</xar:mlstring></a></li>
 			   <li><a href="#$baseurl#index.php/xarpages/community/code_of_conduct"><xar:mlstring>Xaraya Code of Conduct</xar:mlstring></a></li>
 			   <li><a href="#$baseurl#index.php/registration/privacy"><xar:mlstring>Privacy Policy</xar:mlstring></a></li>
 			   <li><a href="#$baseurl#index.php/registration/terms"><xar:mlstring>Terms of Use</xar:mlstring></a></li>
@@ -74,18 +71,17 @@
 			</ul>
 		</div>
 	</li>
-	<li id="extensions_item" class="navbar-item">
-		<a href="#$baseurl#index.php/release/view" accesskey="7" class="navoverview" title="#xarML('Click for extensions overview')#"><xar:mlstring>Extensions</xar:mlstring></a>
-		<div id="menu_extensions">
+	<li id="devel_item" class="navbar-item">
+		<a href="#$baseurl#index.php/xarpages/development" accesskey="7" class="navoverview" title="#xarML('Click for development overview')#"><xar:mlstring>Development</xar:mlstring></a>
+		<div id="menu_devel">
 			<ul>
-				<li><a href="#$baseurl#index.php/release/view.html?catid=53" title="Xaraya Modules">Modules</a></li>
-				<li><a href="#$baseurl#index.php/release/view.html?catid=55" title="Xaraya Themes">Themes</a></li>
-				<li><a href="#$baseurl#index.php/release/view.html?catid=205" title="">Blocks</a></li>
-				<li><a href="#$baseurl#index.php/release/view.html?catid=206" title="">TemplatePacks</a></li>
-				<li><a href="#$baseurl#index.php/release/view.html?catid=207" title="">Dynamic Data Properties</a></li>
-				<li><a href="#$baseurl#index.php/release/view.html?catid=208" title="">Add Ons</a></li>
-				<li><a href="#$baseurl#index.php/release/view.html?catid=209" title="">Code Snippets</a></li>
-				<li><a href="#$baseurl#index.php?module=release&amp;func=search&amp;displname=1&amp;regid=1&amp;regname=1&amp;desc=1&amp;authorsearch=1"><xar:mlstring>Search Extensions ...</xar:mlstring></a></li>
+				<li><a href="#$baseurl#index.php/xarpages/development/terminology"><xar:mlstring>Terminology</xar:mlstring></a></li>
+				<li><a href="#$baseurl#index.php/xarpages/development/cycle"><xar:mlstring>Development Cycle</xar:mlstring></a></li>
+				<li><a href="#$baseurl#index.php/xarpages/development/tools"><xar:mlstring>Tools</xar:mlstring></a></li>
+				<li><a href="#$baseurl#index.php/xarpages/development/nightly_builds"><xar:mlstring>Nightly Builds</xar:mlstring></a></li>
+				<li><a href="#$baseurl#index.php/xarpages/development/aruba_roadmap"><xar:mlstring>Aruba (1x) Roadmap</xar:mlstring></a></li>
+				<li><a href="#$baseurl#index.php/xarpages/development/jamaica_roadmap"><xar:mlstring>Jamaica (2x) Roadmap</xar:mlstring></a></li>
+				<li><a href="#$baseurl#index.php/release/view"><xar:mlstring>Extensions</xar:mlstring></a>
 			</ul>
 		</div>
 	</li>

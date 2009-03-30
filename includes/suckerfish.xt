@@ -26,7 +26,7 @@ jQuery(document).ready(function(){
 		jQuery('div#menu_support').css('margin', '28px 0 0 -71px');
 		jQuery('div#menu_documentation').css('margin', '28px 0 0 -121px');
 		jQuery('div#menu_community').css('margin', '28px 0 0 -92px');
-		jQuery('div#menu_extensions').css('margin', '28px 0 0 -115px');
+		jQuery('div#menu_devel').css('margin', '28px 0 0 -115px');
 	}
     <xar:if condition="!xarUserIsLoggedIn()">
     if(!jQuery.browser.msie) {

@@ -476,7 +476,7 @@ ul#navbar_core li ul li {
     background-color: #edf9a7;
 }
 
-li#extensions_item > div#menu_extensions {
+li#devel_item > div#menu_devel {
 	margin-left: -20px !important;
 }
 div#contentouter {
@@ -613,8 +613,7 @@ div#main_right h3 {
     margin-top: 0;
     border-bottom: 1px solid #ff5712;
 }
-div#contentmain h4 {
-    margin-bottom: 0;
+div#main_right h4 {
     margin-top: 0;
     font-size: 11pt;
 }

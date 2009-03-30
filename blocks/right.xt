@@ -1,7 +1,13 @@
 <div class="xar-block-right">
-    <div class="xar-block-head-right">
-        <h3 class="xar-block-title-right">#$title#</h3>
-    </div>
+    <xar:if condition="$bid gt 0 and xarSecurityCheck('EditBlock', 0, 'Block','::' . $bid)">
+        <div class="xar-block-head-right">
+            <h3 class="xar-block-title-right" style="cursor: pointer;" onclick="window.open('#xarModURL('blocks','admin','modify_instance',array('bid' => $bid))#')" title="Edit #$name#">#$title#</h3>
+        </div>
+    <xar:else /> 
+        <div class="xar-block-head-right">
+          <h3 class="xar-block-title-right">#$title#</h3>
+        </div>
+    </xar:if>
     <xar:set name="waveoffset">rand(0,5) * 30</xar:set>
     <div class="xar-block-middle-right" style="background-position: #$waveoffset#px 0;"></div>
     <div class="xar-block-body-right">

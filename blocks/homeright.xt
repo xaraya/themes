@@ -1,6 +1,10 @@
 <div class="xar-block-homeright">
     <xar:if id="title_condition" condition="!empty($title)">
-        <h3>#$title#</h3>
+        <xar:if condition="$bid gt 0 and xarSecurityCheck('EditBlock', 0, 'Block','::' . $bid)">
+            <h3 style="cursor: pointer;" onclick="window.open('#xarModURL('blocks','admin','modify_instance',array('bid' => $bid))#')" title="Edit #$name#">#$title#</h3>
+        <xar:else />
+          <h3>#$title#</h3>
+        </xar:if>
     </xar:if>
     <div>
         #$content#

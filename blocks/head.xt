@@ -1,4 +1,8 @@
 <xar:if condition="!empty($title)">
-    <h4>#$title#</h4>
+    <xar:if condition="$bid gt 0 and xarSecurityCheck('EditBlock', 0, 'Block','::' . $bid)">
+        <h4 style="cursor: pointer;" onclick="window.open('#xarModURL('blocks','admin','modify_instance',array('bid' => $bid))#')" title="Edit #$name#">#$title#</h4>
+    <xar:else />
+        <h4>#$title#</h4>
+    </xar:if>
 </xar:if>
 #$content#
