@@ -585,9 +585,21 @@ div#contentmain_brcorner {
     font-size: 0;
     background: transparent url(/themes/xartropics/images/content-bg.png) no-repeat scroll bottom right;
 }
+div#masthead {
+    background: transparent url(/themes/xartropics/images/masthead.jpg) no-repeat scroll bottom right;
+    min-height: 316px;
+    _height: 316px;
+    margin-bottom: 1em;
+}
+div#masthead h1 {
+    margin-top: 0;
+}
+div#masthead_content {
+    margin-right: 310px;
+}
+
 div#main_left {
 	margin-right: 310px;
-	padding-top: 1px;
 }
 div#main_right {
 	width: 280px;

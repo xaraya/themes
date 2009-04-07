@@ -1,3 +1,15 @@
+<div id="masthead">
+    <div id="masthead_content">
+        <h1>#$current_page.desc#</h1>    
+
+        #$current_page.dd.intro#
+    </div>
+
+
+</div>
+
+
+
 <div id="main_right">
     <xar:if condition="!empty($side_group_name)">
         <xar:blockgroup name="$side_group_name" />
@@ -8,13 +20,7 @@
 
 </div>
 <div id="main_left">
-    <h1>#$current_page.desc#</h1>    
-
-    <div>
-        #$current_page.dd.intro#
-    </div>
-
-    <h2>#$news_header#</h2>
+    <h2 style="margin-top: 0;">#$news_header#</h2>
 
     <xar:foreach in="$news" value="$article">
         #xarTplModule('articles', 'user', 'summary', $article, 'news')#
