@@ -46,9 +46,37 @@
         </ul>
     </xar:if>
 
+    <h2>Language Packs</h2>
+
+    <p>Translations for Xaraya are available in several languages.  The most complete language packs are listed below.  For more, visit <a href="http://mt.xaraya.com/download/nightly/languages/" rel="external">http://mt.xaraya.com/download/nightly/languages/</a>.
+
+    <ul>
+        <li><a href="http://mt.xaraya.com/download/nightly/languages/com.xaraya.languages.da.tgz" rel="external">DA</a></li>
+        <li><a href="http://mt.xaraya.com/download/nightly/languages/com.xaraya.languages.de.tgz" rel="external">DE</a></li>
+        <li><a href="http://mt.xaraya.com/download/nightly/languages/com.xaraya.languages.el.tgz" rel="external">EL</a></li>
+        <li><a href="http://mt.xaraya.com/download/nightly/languages/com.xaraya.languages.en.tgz" rel="external">EN</a></li>
+        <li><a href="http://mt.xaraya.com/download/nightly/languages/com.xaraya.languages.es.tgz" rel="external">ES</a></li>
+        <li><a href="http://mt.xaraya.com/download/nightly/languages/com.xaraya.languages.fi.tgz" rel="external">FI</a></li>
+        <li><a href="http://mt.xaraya.com/download/nightly/languages/com.xaraya.languages.fr.tgz" rel="external">FR</a></li>
+        <li><a href="http://mt.xaraya.com/download/nightly/languages/com.xaraya.languages.hu.tgz" rel="external">HU</a></li>
+        <li><a href="http://mt.xaraya.com/download/nightly/languages/com.xaraya.languages.id.tgz" rel="external">ID</a></li>
+        <li><a href="http://mt.xaraya.com/download/nightly/languages/com.xaraya.languages.it.tgz" rel="external">IT</a></li>
+        <li><a href="http://mt.xaraya.com/download/nightly/languages/com.xaraya.languages.ja.tgz" rel="external">JA</a></li>
+        <li><a href="http://mt.xaraya.com/download/nightly/languages/com.xaraya.languages.lt.tgz" rel="external">LT</a></li>
+        <li><a href="http://mt.xaraya.com/download/nightly/languages/com.xaraya.languages.ms.tgz" rel="external">MS</a></li>
+        <li><a href="http://mt.xaraya.com/download/nightly/languages/com.xaraya.languages.nl.tgz" rel="external">NL</a></li>
+        <li><a href="http://mt.xaraya.com/download/nightly/languages/com.xaraya.languages.ph.tgz" rel="external">PH</a></li>
+        <li><a href="http://mt.xaraya.com/download/nightly/languages/com.xaraya.languages.pl.tgz" rel="external">PL</a></li>
+        <li><a href="http://mt.xaraya.com/download/nightly/languages/com.xaraya.languages.pt.tgz" rel="external">PT</a></li>
+        <li><a href="http://mt.xaraya.com/download/nightly/languages/com.xaraya.languages.ru.tgz" rel="external">RU</a></li>
+        <li><a href="http://mt.xaraya.com/download/nightly/languages/com.xaraya.languages.sv.tgz" rel="external">SV</a></li>
+        <li><a href="http://mt.xaraya.com/download/nightly/languages/com.xaraya.languages.uk.tgz" rel="external">UK</a></li>
+        <li><a href="http://mt.xaraya.com/download/nightly/languages/com.xaraya.languages.zh.tgz" rel="external">ZH</a></li>
+    </ul>
+
     <h2>For Developers</h2>
 
-    <p>Xaraya uses <a href="http://monotone.ca">Monotone</a> for source control.  To learn more 
+    <p>Xaraya uses <a href="http://monotone.ca" rel="external">Monotone</a> for source control.  To learn more 
     about working with our repositories, see 
     <a href="#xarModURL('articles','user','display',array('aid'=>493,'ptid'=>10))#">Tracking Xaraya development via Monotone</a>.</p>
 
