@@ -161,7 +161,11 @@
 						/ #$section# #$secname# #$thispage# &gt; #$rootpage# /
 						</xar:comment>
 						<div class="xar-block-head-right topblock">
-							<xar:set name="sectitle">ucwords($section)</xar:set>
+                            <xar:if condition="$section eq 'team'">
+							    <xar:set name="sectitle">'Community'</xar:set>
+                            <xar:else />
+							    <xar:set name="sectitle">ucwords($section)</xar:set>
+                            </xar:if>
 				            <h3 class="xar-block-title-right">#$sectitle#</h3>
 				        </div>
 			            <div id="section_image" class="section-#$section#"></div>
