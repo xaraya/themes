@@ -9,13 +9,17 @@
         <xar:template file="catnavigation"/>
     </xar:if>
     <h1>
-        #$title#
+        #xarVarPrepForDisplay($title)#
     </h1>
+
+    <xar:comment>Create an 'introduction' DD text area to have it displayed at the top of the poll result.</xar:comment>
+    <xar:if condition="!empty($dynamicdata.introduction)">#$dynamicdata.introduction#</xar:if>
+    
     <div class="xar-center xar-standard-box-padding">
         <xar:if condition="$private">
-            <p>
+            <div>
                 <xar:mlstring>This Poll is currently private.  Please check again soon for the results.</xar:mlstring>
-            </p>
+            </div>
         <xar:else /> 
 			<div class="xar-center xar-halfwidth xar-padding-thick xar-norm-outline">
 	            <xar:loop name="$options">
@@ -34,18 +38,22 @@
     </div>
     <div class="xar-standard-box-padding xar-align-center">
         <xar:if condition="$showtotalvotes eq 1">
-            <b>
-                <xar:mlstring>Total votes</xar:mlstring>
-                : #$totalvotes#
-            </b>
+            <strong>
+                <xar:ml>
+                    <xar:mlstring>Total votes: #(1)</xar:mlstring>
+                    <xar:mlvar>#$totalvotes#</xar:mlvar>
+                </xar:ml>
+            </strong>
         </xar:if>
     </div>    
     <div class="xar-standard-box-padding xar-align-center">  
-        <xar:if condition="$open == 1">
-            <div>
-                <xar:mlstring>We allow just one vote</xar:mlstring>
-                    #$votelimit# 
-            </div>
+        <xar:if condition="$open eq 1 and $state eq 'open'">
+            <p>
+                <xar:ml>
+                    <xar:mlstring>We allow just one vote #(1)</xar:mlstring>
+                    <xar:mlvar>#$votelimit#</xar:mlvar>
+                </xar:ml>
+            </p>
             <xar:if condition="$canvote">                                         
                 <a href="#$voteurl#">
                     <xar:mlstring>Vote</xar:mlstring>
@@ -57,6 +65,9 @@
             <xar:mlstring>Main List</xar:mlstring>
         </a>
     </div>
+
+    <xar:comment>Create a 'footer' DD text area to have it displayed underneath the poll result.</xar:comment>
+    <xar:if condition="!empty($dynamicdata.footer)">#$dynamicdata.footer#</xar:if>
 </div>
 <div class="xar-standard-box-padding xar-align-center">
 #$hookoutput#
