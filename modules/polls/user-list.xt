@@ -1,0 +1,72 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+<div class="xar-mod-head">
+    <span class="xar-mod-title">
+        <xar:mlstring>Existing Polls</xar:mlstring>
+    </span>
+</div>
+<div class="xar-mod-body xar-polls-list-wrapper">
+    <xar:if condition="xarModIsHooked('categories','polls')">
+        <xar:template file="catnavigation"/>
+    </xar:if>
+    <xar:if condition="empty($polls)">
+        <div class="xar-form-input-wrapper">
+            <xar:mlstring>There are no polls available</xar:mlstring>
+        </div>
+    <xar:else/>
+        <div class="xar-form-input-wrapper">
+            <table class="xar-fullwidth">
+                <tr>
+                    <th class="xar-align-center">
+                        <xar:mlstring>Title</xar:mlstring>
+                    </th>
+                    <th class="xar-align-center">
+                        <xar:mlstring>Actions</xar:mlstring>
+                    </th>
+                </tr>
+                <xar:loop name="$polls">
+                    <xar:if condition="$loop:item.state eq 'open' or $loop:item.state eq 'closed'">
+                        <tr>
+                            <td class="xar-align-left">
+                                #$loop:item['title']# (#$loop:item['type']#  -
+                                    <xar:if condition="$loop:item.open and $loop:item.state eq 'open'">
+                                        <xar:mlstring>
+                                            Open
+                                        </xar:mlstring>
+                                    <xar:else />
+                                        <xar:mlstring>
+                                            Closed
+                                        </xar:mlstring>
+                                    </xar:if>)
+                                <xar:if condition="$showtotalvotes eq 1">
+                                    <xar:ml>
+                                        <xar:mlstring>#(1) Votes</xar:mlstring>
+                                        <xar:mlvar>#$loop:item.votes#</xar:mlvar>
+                                    </xar:ml>
+                                </xar:if>
+                            </td>
+                            <td class="xar-align-center">
+                                <xar:if condition="$previewresults or !$loop:item.canvote or $loop:item.state eq 'closed'">
+                                    <xar:if condition="$loop:item['private']">
+                                        <span class="xar-error"><xar:mlstring>Private</xar:mlstring></span>
+                                    <xar:else />
+                                        <a href="#$loop:item.action_results#"><xar:mlstring>Results</xar:mlstring></a>
+                                    </xar:if>
+                                </xar:if>
+                                <xar:if condition="$previewresults and $loop:item.canvote and $loop:item.open and $loop:item.state eq 'open'">
+                                    |
+                                </xar:if>
+                                <xar:if condition="$loop:item.canvote and $loop:item.open and $loop:item.state eq 'open'">
+                                    <a href="#$loop:item.action_vote#">
+                                        <xar:mlstring>
+                                            Vote
+                                        </xar:mlstring>
+                                    </a>
+                                </xar:if>
+                            </td>
+                        </tr>
+                    </xar:if>                    
+                </xar:loop>
+            </table>
+        </div>
+    </xar:if>
+</div>

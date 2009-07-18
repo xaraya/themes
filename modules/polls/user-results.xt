@@ -64,10 +64,18 @@
         <a href="#$listurl#">
             <xar:mlstring>Main List</xar:mlstring>
         </a>
-    </div>
-
     <xar:comment>Create a 'footer' DD text area to have it displayed underneath the poll result.</xar:comment>
-    <xar:if condition="!empty($dynamicdata.footer)">#$dynamicdata.footer#</xar:if>
+
+    </div>
+    <xar:if condition="!empty($dynamicdata.footer)">
+        <p class="xar-align-center">
+        <a href="#xarModURL('xarbb','user','viewtopic',array('tid' => $dynamicdata['footer']))#">
+            <xar:mlstring>Discuss this poll</xar:mlstring>
+        </a> 
+        </p>
+    </xar:if>
+
+
 </div>
 <div class="xar-standard-box-padding xar-align-center">
 #$hookoutput#
