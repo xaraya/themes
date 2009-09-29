@@ -1,0 +1,49 @@
+div.irclog {
+    font-family: Courier, monospace;
+    border: 1px solid #dca;
+    background-color: #fff7e5;
+    color: #544e41;
+    padding: 0;
+    font-size: 7pt;
+}
+div.irclog a {
+    font-weight: normal !important;
+    white-space: nowrap;
+    text-decoration: underline !important;
+}
+div.irclog-line {
+    margin: 0;
+    padding: .1em 0 .2em 0;
+}
+div.irclog-oddline {
+    background-color: #fff;
+}
+span.irclog-timestamp {
+    float: left;
+    width: 10em;
+    color: #dca;
+    margin-left: .5em;
+}
+span.irclog-say {
+}
+span.irclog-action {
+    color: #80ab1b;
+}
+span.irclog-notice {
+    color: #f93;
+}
+span.irclog-nick {
+    color: #3ce;
+}
+div.irclog-wrap {
+    margin: 0 .5em 0 11em;
+}
+div.irclog-wrap:after {
+    content: '.';  
+    font-size: 0;
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+

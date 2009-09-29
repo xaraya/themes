@@ -1,0 +1,71 @@
+<div id="main_right">
+    <xar:if condition="!empty($side_group_name) and $current_page eq 111">
+        <xar:blockgroup name="$side_group_name" />
+    <xar:else />
+        <xar:block instance="trop_community_menu" />
+    </xar:if>
+</div>
+<div id="main_left">
+    <h1>#$current_page.desc#</h1>    
+
+    <xar:if condition="!empty($current_page['dd']['intro'])">
+        <div>
+            #$current_page.dd.intro#
+        </div>
+    </xar:if>
+
+    <xar:if condition="$current_page['pid'] eq 111">
+    <xar:else />
+        <div class="xar-alt xar-alt-outline">
+            <div class="boxcore">
+                <p><strong>Select Date:</strong></p>
+
+                <p>
+                    <xar:foreach in="$years" key="$y" value="$year">
+                        <xar:if condition="$y ne 0"> | </xar:if>
+                        <xar:if condition="$year ne $sel_year">
+                            <a href="#xarmodURL('xarpages','user','display',array('pid' => $current_page['pid'], 'date' => ($year . $sel_month . $sel_day)))#">#$year#</a>
+                        <xar:else />
+                            <strong>#$year#</strong>
+                        </xar:if>
+                    </xar:foreach>
+                </p>
+
+                <p>
+                    <xar:foreach in="$months" key="$m" value="$month">
+                        <xar:if condition="$m ne 1"> | </xar:if>
+                        <xar:if condition="(int)$m ne (int)$sel_month">
+                            <a href="#xarmodURL('xarpages','user','display',array('pid' => $current_page['pid'], 'date' => ($sel_year . $m . $sel_day)))#">#$month#</a>
+                        <xar:else />
+                            <strong>#$month#</strong>
+                        </xar:if>
+                    </xar:foreach>
+                </p>
+
+                <p>
+                    <xar:for start="$d = 1" test="$d le $sel_month_days" iter="$d++">
+                        <xar:if condition="$d ne 1"> | </xar:if>
+                        <xar:if condition="(int)$d ne (int)$sel_day">
+                            <a href="#xarmodURL('xarpages','user','display',array('pid' => $current_page['pid'], 'date' => ($sel_year . $sel_month . str_pad($d, 2, '0', STR_PAD_LEFT))))#">#$d#</a>
+                        <xar:else />
+                            <strong>#$d#</strong>
+                        </xar:if>
+                    </xar:for>
+                </p>
+            </div>
+        </div>
+    </xar:if>
+</div>
+<xar:if condition="$current_page['pid'] ne 111">
+    <div style="clear: both;">
+        <h2>#$displaydate#</h2>
+
+        <xar:if condition="isset($logerror) and $logerror">
+            <p class="xar-error"><xar:mlstring>Log for the given date could not be found or could not be loaded.</xar:mlstring></p>
+        <xar:else />
+            <div class="irclog">
+                #$irclog#
+            </div>
+        </xar:if>
+    </div>
+</xar:if>

@@ -57,7 +57,7 @@
         </div>
     </xar:if>
 
-    <p class="xar-align-right">
+    <p class="xar-align-right xar-clearleft">
         <xar:if condition="!empty($words)">
             <xar:ml>
                 <xar:mlstring>(#(1) words)</xar:mlstring>
