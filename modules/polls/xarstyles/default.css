@@ -11,7 +11,7 @@
 
 /* Default styles for the CSS (non-image) bars */
 .xar-polls-block .xar-polls-css-bar {
-    background: #def8fa url(/themes/xartropics/images/pollbar.png) repeat-x scroll center left;
+    background: #C8E7EA url(/themes/xartropics/images/pollbar.png) repeat-x scroll center left;
     height: 15px;
     min-width:1px;
     font-size: 0;

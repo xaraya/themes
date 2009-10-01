@@ -1,14 +1,14 @@
 /* XARAYA REQUIRED CLASSES */
 a {
-    color: #0e81ab;
+    color: #00578A;
     font-weight: bold;
     text-decoration: underline;
 }
 a:hover, a:visited:hover {
-    color: #00a675;
+    color: #00874C;
 }
 a:visited {
-    color: #1095c6;
+    color: #0072AE;
     text-decoration: none;
 }
 a img {
@@ -17,8 +17,8 @@ a img {
 blockquote {
 }
 body {
-    color: #544e41;
-    background-color: #fff7e5;
+    color: #544E41;
+    background-color: #F0E6D0;
     font: 10pt Arial, Verdana, sans-serif;
     padding: 0;
     margin: 0;
@@ -26,8 +26,8 @@ body {
 code {
 }
 h1,h2,h3,h4,h5,h6 {
-/*    color: #f93; */
-    color: #ff5712;
+/*    color: #FF9933; */
+    color: #FF5712;
 }
 h1 {
     font-size: 14pt;
@@ -46,33 +46,33 @@ h5 {
 	margin-bottom: 1em;
 }
 hr {
-    color: #12abe3;
+    color: #0080C4;
     margin: 1em 0;
-    border: 1px solid #12abe3;
+    border: 1px solid #0080C4;
     border-width: 1px 0 0 0;
 }
 
 th {
-	color: #000;
-    background: #edf9aa url(/themes/xartropics/images/thbg.png) repeat-x scroll top left;
-    border: 1px solid #dca;
+	color: #000000;
+    background: #A9C50D url(/themes/xartropics/images/thbg.png) repeat-x scroll top left;
+    border: 1px solid #C7B289;
 }
 td {
-    border: 1px solid #dca;
+    border: 1px solid #C7B289;
 }
 td.xar-norm, tr.xar-norm, tr.xar-norm td {
-    background-color: #fff;
+    background-color: #FFFFFF;
 }
 td.xar-alt, tr.xar-alt, tr.xar-alt td {
-    background-color: #ebf9fa;
+    background-color: #C8E7EA;
 }
 /*
 tr:hover, tr:hover td {
-    background-color: #fff7e5;
+    background-color: #F0E6D0;
 }
 */
 table {
-    border: 1px solid #dca;
+    border: 1px solid #C7B289;
     border-collapse: collapse;
     margin-bottom: 1em;
 }
@@ -101,12 +101,12 @@ select {
 textarea {
 }
 fieldset {
-    border: 1px solid #3ce;
+    border: 1px solid #00B2DB;
 	margin: 0 0 1em 0;
 }
 legend {
     font-weight: bold;
-    color: #f93;
+    color: #FF9933;
     padding: 0 .2em;
 }
 img {
@@ -140,13 +140,13 @@ td.xar-alt {}
 
 /* right block group classes */
 div.xar-block-right {
-	background-color: #fff;
+	background-color: #FFFFFF;
     padding: 0;
     margin: 0 0 20px 0;
     width: 100%;
 }
 div.xar-block-head-right{
-    background: #b3f5fa url(/themes/xartropics/images/block-head.gif) no-repeat scroll top center;
+    background: #8BE3ED url(/themes/xartropics/images/block-head.gif) no-repeat scroll top center;
     margin: 0;
     padding: 6px 0 3px 0;
 }
@@ -154,18 +154,18 @@ h3.xar-block-title-right {
     text-align: center;
     line-height: 1;
     font-size: 11pt;
-    color: #1095c6;
+    color: #0080C4;
     margin: 0px 10px;
 }
 div.xar-block-middle-right {
     height: 10px;
-    background: #b3f5fa url(/themes/xartropics/images/block-wave.png) repeat-x scroll 0 0;
-    border: 1px solid #80ab1b;
+    background: #8BE3ED url(/themes/xartropics/images/block-wave.png) repeat-x scroll 0 0;
+    border: 1px solid #568A00;
     border-width: 0 1px;
     font-size: 0;
 }
 div.xar-block-body-right {
-    background: #fff url(/themes/xartropics/images/block-body.png) no-repeat scroll top center;
+    background: #FFFFFF url(/themes/xartropics/images/block-body.png) no-repeat scroll top center;
 	min-height: 64px;
 }
 div.xar-block-core-right {
@@ -174,7 +174,7 @@ div.xar-block-core-right {
 }
 .xar-block-foot-right {
     height: 15px;
-    background: #fff url(/themes/xartropics/images/block-foot.png) no-repeat scroll bottom center;
+    background: #FFFFFF url(/themes/xartropics/images/block-foot.png) no-repeat scroll bottom center;
 }
 div.xar-block-core-right ul {
     margin: 0;
@@ -232,8 +232,8 @@ div#contentleft div.xar-block-right:first-child div.xar-block-head-right {
 /* moved toward OEF for inheritance purposes */
 
 .xar-mod-head {
-    background: #def8fa url(/themes/xartropics/images/bluebar.png) repeat-x scroll top left;
-    border-bottom: 1px solid #3ce;
+    background: #C8E7EA url(/themes/xartropics/images/bluebar.png) repeat-x scroll top left;
+    border-bottom: 1px solid #00B2DB;
     padding: .2em .5em;
 	margin-bottom: 1em;
 }
@@ -241,7 +241,7 @@ div#contentleft div.xar-block-right:first-child div.xar-block-head-right {
     font-size: 11pt;
     font-style: italic;
     font-weight: bold;
-    color: #0e81ab;
+    color: #00578A;
 }
 .xar-mod-body {
 }
@@ -249,25 +249,25 @@ div#contentleft div.xar-block-right:first-child div.xar-block-head-right {
 }
 
 .xar-alt {
-	background-color: #ebf9fa;
+	background-color: #C8E7EA;
 }
 .xar-accent {
-	background-color: #fff3c7;
+	background-color: #F0E1AC;
 }
 .xar-hilite {
-	background-color: #f6fade;
+	background-color: #DDE99D;
 }
 .xar-alt-outline {
-	border: 1px solid #12abe3;
+	border: 1px solid #0080C4;
 }
 .xar-accent-outline {
-	border: 1px solid #f93;
+	border: 1px solid #FF9933;
 }
 .xar-hilite-outline {
-	border: 1px solid #abe324;
+	border: 1px solid #568A00;
 }
 .xar-norm-outline {
-	border: 1px solid #dca;
+	border: 1px solid #C7B289;
 }
 .xar-norm {
 }
@@ -313,7 +313,7 @@ div#header_content ul, div#header_content li {
     padding: 0;
 }
 div#header_contentcore {
-	border: 1px solid #12abe3;
+	border: 1px solid #0080C4;
 	border-width: 0 1px;
 	_zoom: 1;
 }
@@ -354,7 +354,7 @@ div#header_contentcore h2,
 div#header_contentcore h3, 
 div#header_contentcore h4 {
     margin: 0;
-    color: #80AB1B;
+    color: #568A00;
 }
 div#header_release h4, div#header_release ul {
     margin: 0;
@@ -371,7 +371,7 @@ div#rand_noimg {
 	float: right;
 	width: 120px;
 	height: 80px;
-	background-color: #fff;
+	background-color: #FFFFFF;
 	margin: .2em 0 .3em .5em;
 	text-align: center;
 }
@@ -399,16 +399,16 @@ ul#navbar_core li {
     height: 39px;
 }
 ul#navbar_core a, div#contentmain h1 a {
-    color: #f93;
+    color: #FF9933;
     text-decoration: none;
     height: 100%;
 }
 div#header_contentcore h4 a, div#contentmain h2 a, div#contentmain h3 a, div#contentmain h4 a {
-    color: #f93;
+    color: #FF9933;
     text-decoration: none;
 }
 ul#navbar_core > li:hover > a {
-    color: #ff5712;
+    color: #FF5712;
 }
 li.navbar-item {
 	height: 39px;
@@ -419,7 +419,7 @@ div#contentmain h1 a:hover,
 div#contentmain h2 a:hover, 
 div#contentmain h3 a:hover, 
 div#contentmain h4 a:hover {
-    color: #ff5712;
+    color: #FF5712;
 }
 /*
 div#header_contentcore h4 a:after, 
@@ -431,12 +431,12 @@ div#contentmain h4 a:after {
 }
 */
 a.navbar-on {
-	color: #ff5712;
+	color: #FF5712;
 }
 
 /*
 li.sfhover a.navoverview {
-    color: #ff5712 !important;
+    color: #FF5712 !important;
 }
 */
 a.navoverview {
@@ -473,7 +473,7 @@ ul#navbar_core li ul li {
     padding: 0;
     width: auto;
     float: none;
-    background-color: #edf9a7;
+    background-color: #DEF26D;
 }
 
 li#devel_item > div#menu_devel {
@@ -488,11 +488,11 @@ div#contentwrap {
 	margin: 0 22px 0 220px;
 }
 div#contentmain {
-	color: #544e41;
-	background-color: #fff;
+	color: #544E41;
+	background-color: #FFFFFF;
 	float: left;
 	margin-bottom: 20px;
-	border: 1px solid #12abe3;
+	border: 1px solid #0080C4;
 	width: 100%;
 }
 * html #contentmain, * html div#contentleft {
@@ -506,7 +506,7 @@ div#contentleft {
 }
 
 div.topblock {
-	background: #a7f3f9 url(/themes/xartropics/images/block-tophead.gif) no-repeat scroll top center;
+	background: #8BE3ED url(/themes/xartropics/images/block-tophead.gif) no-repeat scroll top center;
 }
 div#section_image {
 	width: 180px;
@@ -608,12 +608,12 @@ div#main_right {
 	margin: 0px;
 }
 div#contentmain h2 {
-    border-bottom: 1px solid #ff5712;
-    color: #ff5712;
+    border-bottom: 1px solid #FF5712;
+    color: #FF5712;
 }
 div#contentmain h3 {
     font-size: 12pt;
-    color: #ff5712;
+    color: #FF5712;
 }
 div#main_left h1 {
     margin-top: 0;
@@ -623,7 +623,7 @@ div#main_left h3, div#main_right h3 {
 }
 div#main_right h3 {
     margin-top: 0;
-    border-bottom: 1px solid #ff5712;
+    border-bottom: 1px solid #FF5712;
 }
 div#main_right h4 {
     margin-top: 0;
@@ -631,7 +631,7 @@ div#main_right h4 {
 }
 div#footerwrap {
     clear: both;
-    background: #fff url(/themes/xartropics/images/footer_bg.png) repeat-x scroll bottom left;
+    background: #FFFFFF url(/themes/xartropics/images/footer_bg.png) repeat-x scroll bottom left;
     height: 82px;
 }
 div#footer_content {
@@ -697,18 +697,18 @@ div.modalwrap {
     margin-left: -256px;
 }
 div.modalmain {
-	color: #544e41;
-/*	background-color: #fff;*/
-/*	border: 1px solid #12abe3;*/
+	color: #544E41;
+/*	background-color: #FFFFFF;*/
+/*	border: 1px solid #0080C4;*/
 	width: 100%;
 }
 * html .modalmain, * html div.modalleft {
 	display: inline;
 }
 div.modalmain_inner {
-	border: 1px solid #12abe3;
+	border: 1px solid #0080C4;
 	border-width: 0px 1px;
-	background-color: #fff;
+	background-color: #FFFFFF;
 }
 div.modalmain_core {
 	margin: 0px 10px;
@@ -755,7 +755,7 @@ div.modalmain_brcorner {
 	margin-right: -10px;
 }
 div.modal-overlay {
-	background-color: #3ce;
+	background-color: #00B2DB;
 }
 .jqmClose {
 	position: absolute;
@@ -779,7 +779,7 @@ form ul li h4 {
 }
 
 div.byline {
-	color: #80ab1b;
+	color: #568A00;
 	margin: 0 0 1em 0;
 	font-size: 10pt;
 }
@@ -789,7 +789,7 @@ span.byline-item {
 	display: inline-block;
 }
 p.summary-notes {
-	border: 1px solid #ffdb54;
+	border: 1px solid #FFC73C;
 	font-style: italic;
 	padding: .5em 1em;
 }
@@ -797,7 +797,7 @@ h1.overview {
 	margin-top: 0;
 }
 div.polls-pollbar {
-    background: #def8fa url(/themes/xartropics/images/pollbar.png) repeat-x scroll center left;
+    background: #C8E7EA url(/themes/xartropics/images/pollbar.png) repeat-x scroll center left;
 	height: 15px;
 	min-width:1px;
 	font-size: 0;
@@ -825,44 +825,44 @@ div.polls-pollbar {
 /* ARTICLES */
 
 div.summary-news {
-	border-bottom: 1px solid #12abe3;
+	border-bottom: 1px solid #0080C4;
 }
 div.summary-docs {
-	border-bottom: 1px solid #12abe3;
+	border-bottom: 1px solid #0080C4;
 }
 div.summary-weblinks {
-	border-bottom: 1px solid #12abe3;
+	border-bottom: 1px solid #0080C4;
 }
 div.summary-quotes {
-	border-bottom: 1px solid #12abe3;
+	border-bottom: 1px solid #0080C4;
 }
 div.summary-documentation {
-	border-bottom: 1px solid #12abe3;
+	border-bottom: 1px solid #0080C4;
 }
 div.summary-team {
-	border-bottom: 1px solid #12abe3;
+	border-bottom: 1px solid #0080C4;
 }
 div.summary-blogentry {
-	border-bottom: 1px solid #12abe3;
+	border-bottom: 1px solid #0080C4;
 }
 div.summary-sponsors {
-	border-bottom: 1px solid #12abe3;
+	border-bottom: 1px solid #0080C4;
 	margin-bottom: 1em;
 }
 div.summary-userwiki {
-	border-bottom: 1px solid #12abe3;
+	border-bottom: 1px solid #0080C4;
 }
 div.summary-foo {
-	border-bottom: 1px solid #12abe3;
+	border-bottom: 1px solid #0080C4;
 }
 div.summary-releasenotes {
-	border-bottom: 1px solid #12abe3;
+	border-bottom: 1px solid #0080C4;
 }
 div.summary-faqs {
-	border-bottom: 1px solid #12abe3;
+	border-bottom: 1px solid #0080C4;
 }
 div.summary-links {
-	border-bottom: 1px solid #12abe3;
+	border-bottom: 1px solid #0080C4;
 }
 div.summary-weblinks a img, 
 div.summary-sponsors a img, 
@@ -939,8 +939,8 @@ div.display-userwiki div.byline,
 div.display-releasenotes div.byline,
 div.display-faqs div.byline,
 div.display-links div.byline {
-    background: #fff6e6 url(/themes/xartropics/images/tanbar.png) repeat-x scroll top left;
-    border-bottom: 1px solid #dca;
+    background: #F2E9D6 url(/themes/xartropics/images/tanbar.png) repeat-x scroll top left;
+    border-bottom: 1px solid #C7B289;
 	padding: .2em;
 }
 div.pressbody {
@@ -962,7 +962,7 @@ div.display-releasenotes table td {
 }
 h3.xar-block-title-feature {
     margin: 0 10px auto 10px !important;
-    color: #544341 !important;
+    color: #544E41 !important;
     font-size: 11pt !important;
     border: 0 !important;
 }
@@ -970,13 +970,13 @@ h3.xar-block-title-feature {
     margin: 10px;
 }
 .xar-block-foot-feature {
-    background: #edf9a8 url(/themes/xartropics/images/feature_bg.png) no-repeat scroll bottom center;
+    background: #D1E94C url(/themes/xartropics/images/feature_bg.png) no-repeat scroll bottom center;
     margin-top: 1em;
     height: 10px;
 }
 .xar-block-feature {
     width: 280px;
-    background: #edf9a8 url(/themes/xartropics/images/feature_bg.png) no-repeat scroll top center;
+    background: #D1E94C url(/themes/xartropics/images/feature_bg.png) no-repeat scroll top center;
     padding-top: 10px;
 	margin-bottom: 1.5em;
 }
@@ -1015,7 +1015,7 @@ div.xar-block-body-feature div.xarpage-menu li ul {
 
 /* Default styles for the CSS (non-image) bars */
 .xar-polls-block .xar-polls-css-bar {
-    background: #def8fa url(/themes/xartropics/images/pollbar.png) repeat-x scroll center left;
+    background: #C8E7EA url(/themes/xartropics/images/pollbar.png) repeat-x scroll center left;
     height: 15px;
     min-width:1px;
     font-size: 0;

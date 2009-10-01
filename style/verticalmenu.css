@@ -2,9 +2,9 @@ div#hmenu {
 	padding: 0;
 	margin: 0;
 	height: 1.5em;
-    background: #fff url(../images/bluebar.png) bottom left repeat-x;
+    background: #FFFFFF url(../images/bluebar.png) bottom left repeat-x;
     font-size: 10pt;
-    border: 1px solid #12ABE3;
+    border: 1px solid #0080C4;
 	border-width: 0 1px 1px 1px;
 	position: absolute;
 	top: 0;
@@ -19,13 +19,13 @@ div#hmenu li#hmenulabel {
 	display:block;
 	font-weight: bold;
 	line-height: 1.3;
-    color: #000;
+    color: #000000;
 }
 div#hmenu li#hmenulabel:after {
     content: ':';
 }
 div#hmenu ul#hmenuroot a.empty {
-	color: #f93;
+	color: #FF9933;
 	font-weight: bold;
 	line-height: 1.3;
 	width:auto;
@@ -61,8 +61,8 @@ div#hmenu ul#hmenuroot li.cat {
 	margin: 0;
 	z-index:9999;
 	width:12em;
-    border: 1px solid #12ABE3;
-    background-color: #D2F7FA;
+    border: 1px solid #0080C4;
+    background-color: #C9E8EA;
     border-width: 0 1px 1px 1px;
     padding-bottom: 1em;
 }
@@ -75,14 +75,14 @@ div#hmenu ul#hmenuroot li.cat {
     top:1px;
     margin-left:12em;
     padding-bottom: 1em;
-    border: 1px solid #12ABE3;
+    border: 1px solid #0080C4;
 }
 
 * html #hmenuroot li ul ul { margin-left:120px; }
 
 #hmenuroot li a {
 	display: block;
-	color: #f93;
+	color: #FF9933;
 	text-decoration: none;
 	padding: 0;
 	margin: 0;

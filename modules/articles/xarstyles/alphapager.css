@@ -8,5 +8,5 @@ div.alphapager-wrapper * {
 div.alphapager-wrapper span {
 	/* Subtle highlight for the selected letter */
     font-weight: bold;
-    color: #f93;
+    color: #FF9933;
 }

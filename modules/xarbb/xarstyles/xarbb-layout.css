@@ -55,7 +55,7 @@ div#xarbb-topics ul, div#xarbb-topics li {
 }
 
 div.xarbb-messagecontrols {
-    border-bottom: 1px solid #12ABE3;
+    border-bottom: 1px solid #0080C4;
     margin-bottom: .5em;
 }
 
@@ -122,7 +122,7 @@ div.xarbb-tablewrapper table td.lastpost {
 }
 
 div.xarbb-tablewrapper table td.stats {
-    background-color: #fff7e5 !important;
+    background-color: #F0E6D0 !important;
     width: 4em;
 }
 
@@ -156,14 +156,14 @@ div.xarbb-tablewrapper table td.newtopicbottom {
 	text-align: center;
 }
 div.xarbb-tablewrapper table td p.hiddensignature {
-	border-top: 1px solid #12ABE3;
+	border-top: 1px solid #0080C4;
 }
 div.xarbb-tablewrapper td.xar-accent {
-    background-color: #fff7e5 !important;
+    background-color: #F0E6D0 !important;
 }
 table.xarbb-topic tr.post-footer td {
     font-weight: bold;
-    background: #fff7e5 url(/themes/xartropics/images/brownbar.png) repeat-x scroll left bottom;
+    background: #F0E6D0 url(/themes/xartropics/images/brownbar.png) repeat-x scroll left bottom;
 }
 table.xarbb-topic tr.post-footer td img {
     vertical-align: bottom;
@@ -265,7 +265,7 @@ div#mainmodulearea div.xarbb-topiccontrols a.cssbutton, div.xarbb-topiccontrols 
     background-position: 100% 0;
     background-repeat: no-repeat;
     text-decoration: none;
-	color: #f93;
+	color: #FF9933;
 }
 div#mainmodulearea div.xarbb-topiccontrols a.cssbutton:hover, div.xarbb-topiccontrols a.cssbutton:hover {
 	color: #FF5712;

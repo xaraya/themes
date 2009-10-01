@@ -1,7 +1,7 @@
 div#header {
     min-height: 107px;
     _height: 107px;
-    background: #7dd1f0 url(/themes/xartropics/images/inside/header_bg.png) repeat-x scroll bottom left;
+    background: #00B2DB url(/themes/xartropics/images/inside/header_bg.png) repeat-x scroll bottom left;
 }
 div#header_logo {
     min-height: 107px;
@@ -16,7 +16,7 @@ div#header_content_wrap {
 }
 div#header_content {
 /*    height: 130px; */
-    background: #fff url(/themes/xartropics/images/inside/head_bg.png) repeat-x scroll bottom left;
+    background: #FFFFFF url(/themes/xartropics/images/inside/head_bg.png) repeat-x scroll bottom left;
 }
 div#header_tlcorner {
     height: 10px;

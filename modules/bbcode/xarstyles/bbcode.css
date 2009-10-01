@@ -11,17 +11,17 @@ dl.bbcode-quote dt {
 	padding: 0 0.4em;
 	left: 0.5em;
 	top: 0.6em;
-	background-color: #EDF9A8;
+	background-color: #D1E94C;
 	font-weight: bold;
 	list-style-type: none;
-	border: 1px solid #ce6;
+	border: 1px solid #B2DB36;
 }
 dl.bbcode-quote dd {
 	margin-left: 0;
 }
 dl.bbcode-quote dd blockquote {
 	padding: 1em;
-	border: 1px solid #ce6;
+	border: 1px solid #B2DB36;
 	margin: 0 1em 0 0;
 }
 

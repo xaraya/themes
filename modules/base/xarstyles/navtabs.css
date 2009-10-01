@@ -4,9 +4,9 @@ dl.xar-tabs {
     padding: 3px 0 0 0;
     width: 100%;
     float: left;
-    background: #F6FADE url(/themes/xartropics/images/greenbar.png) top left repeat-x;
+    background: #DDE99D url(/themes/xartropics/images/greenbar.png) top left repeat-x;
     line-height: 1.6em;
-    border-bottom: 1px solid #abe324;
+    border-bottom: 1px solid #568A00;
 }
 
 html * dl.xar-tabs {
@@ -27,16 +27,16 @@ dl.xar-tabs dd {
     margin: 1px -6px -1px 5px;
     padding: 0;
     float: left;
-    background-color: #F6FADE;
-    border: 1px solid #abe324;
-    border-bottom: 1px solid #F6FADE;
+    background-color: #E9F2B5;
+    border: 1px solid #568A00;
+    border-bottom: 1px solid #e9f2b5;
 }
 
 dl.xar-tabs dd a {
     display: block;
     padding: 0 .5em;
-    color: #f93;
-    background-color: #F6FADE;
+    color: #FF9933;
+    background-color: #E9F2B5;
     text-decoration: none;
     white-space: nowrap;
 }
@@ -48,9 +48,9 @@ dl.xar-tabs dd a:hover {
 
 dl.xar-tabs dd.active a {
     color: #FF5712;
-    background-color: #F6FADE;
+    background-color: #E9F2B5;
     border: 1px solid #FF5712;
-    border-bottom: 1px solid #F6FADE;
+    border-bottom: 1px solid #e9f2b5;
 }
 
 /* ie5-mac seems to need this */
@@ -59,7 +59,7 @@ dl.xar-tabs dd.active a {
 /* a bit fancier look for good browsers */
 dl.xar-tabs dd.active > a {
     margin: -5px 1px -1px -1px;
-    border-bottom: 5px solid #F6FADE;
+    border-bottom: 5px solid #E9F2B5;
 }
 
 * html dl.xar-tabs dd.active {

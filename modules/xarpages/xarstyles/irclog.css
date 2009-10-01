@@ -1,8 +1,8 @@
 div.irclog {
     font-family: Courier, monospace;
-    border: 1px solid #dca;
-    background-color: #fff7e5;
-    color: #544e41;
+    border: 1px solid #C7B289;
+    background-color: #F0E6D0;
+    color: #544E41;
     padding: 0;
     font-size: 7pt;
 }
@@ -16,24 +16,24 @@ div.irclog-line {
     padding: .1em 0 .2em 0;
 }
 div.irclog-oddline {
-    background-color: #fff;
+    background-color: #FFFFFF;
 }
 span.irclog-timestamp {
     float: left;
     width: 10em;
-    color: #dca;
+    color: #C7B289;
     margin-left: .5em;
 }
 span.irclog-say {
 }
 span.irclog-action {
-    color: #80ab1b;
+    color: #568A00;
 }
 span.irclog-notice {
-    color: #f93;
+    color: #FF9933;
 }
 span.irclog-nick {
-    color: #3ce;
+    color: #00B2DB;
 }
 div.irclog-wrap {
     margin: 0 .5em 0 11em;
