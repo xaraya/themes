@@ -6,8 +6,11 @@
     </xar:if>
 </div>
 <div id="main_left">
-    <h1>#$current_page.desc#</h1>    
-
+    <xar:if condition="$current_page.pid eq 111">
+        <h1>#$current_page.desc#</h1>
+    <xar:else />
+        <h1>IRC Log: #$current_page.desc#</h1>
+    </xar:if>
     <xar:if condition="!empty($current_page['dd']['intro'])">
         <div>
             #$current_page.dd.intro#

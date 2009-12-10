@@ -64,6 +64,7 @@
 			<ul>
 			   <li><a href="#$baseurl#index.php/xarpages/community/communication"><xar:mlstring>Communication</xar:mlstring></a></li>
 			   <li><a href="#$baseurl#index.php/weblinks"><xar:mlstring>Xaraya-ized</xar:mlstring></a></li>
+               <li><a href="#$baseurl#index.php/xarpages/community/irclogs"><xar:mlstring>IRC Logs</xar:mlstring></a></li>
 			   <li><a href="#$baseurl#index.php/xarpages/community/code_of_conduct"><xar:mlstring>Xaraya Code of Conduct</xar:mlstring></a></li>
 			   <li><a href="#$baseurl#index.php/registration/privacy"><xar:mlstring>Privacy Policy</xar:mlstring></a></li>
 			   <li><a href="#$baseurl#index.php/registration/terms"><xar:mlstring>Terms of Use</xar:mlstring></a></li>
