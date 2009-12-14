@@ -10,8 +10,8 @@ $themeinfo['contact_info'] = 'via the website';
 $themeinfo['publish_date'] = 'May 2006';
 $themeinfo['license'] = 'GPL';
 $themeinfo['version'] = '1.1.0';
-$themeinfo['xar_version'] = '1.0';
-$themeinfo['bl_version'] = '1.0';
+$themeinfo['xar_version'] = '1.0.0';
+$themeinfo['bl_version'] = '1.0.0';
 $themeinfo['class'] = '2';
 
 $themevars[] = array('name' => 'index', 'value' => '1', 'description' => 'turn on right blocks');
