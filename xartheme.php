@@ -10,8 +10,8 @@ $themeinfo['contact_info'] = 'Dorothy Crawford, briahna25@xaraya.com';
 $themeinfo['publish_date'] = '05/18/2003';
 $themeinfo['license'] = 'GPL';
 $themeinfo['version'] = '1.0.0';
-$themeinfo['xar_version'] = '1.0';
-$themeinfo['bl_version'] = '1.0';
+$themeinfo['xar_version'] = '1.0.0';
+$themeinfo['bl_version'] = '1.0.0';
 $themeinfo['class'] = '2';
 
 $themevars[] = array('name' => 'index', 'value' => '1', 'description' => 'turn on right blocks');
