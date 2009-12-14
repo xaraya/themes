@@ -21,6 +21,6 @@ $themeinfo['publish_date'] = 'Xmas day, 2005';
 $themeinfo['license'] = 'GPL';
 $themeinfo['version'] = '1.0.0';
 $themeinfo['xar_version'] = '1.0.0';
-$themeinfo['bl_version'] = '1.0';
+$themeinfo['bl_version'] = '1.0.0';
 $themeinfo['class'] = '0';
 ?>
