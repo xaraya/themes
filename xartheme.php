@@ -10,8 +10,8 @@ $themeinfo['contact_info'] = 'John Cox, admin@dinerminor.com';
 $themeinfo['publish_date'] = '03/04/03';
 $themeinfo['license'] = 'GPL';
 $themeinfo['version'] = '1.0.0';
-$themeinfo['xar_version'] = '1.0';
-$themeinfo['bl_version'] = '1.0';
+$themeinfo['xar_version'] = '1.0.0';
+$themeinfo['bl_version'] = '1.0.0';
 $themeinfo['class'] = '2';
 
 $themevars[] = array('name' => 'index', 'value' => '1', 'description' => 'turn on right blocks');
