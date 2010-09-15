@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+<head>
+    <title>
+        <xar:var name="tpl:pageTitle"/>
+    </title>
+    <base href="#xarServer::getBaseURL()#"/>
+    <link rel='icon' href="#$themedir#/images/manta16x16.png"/>
+    <xar:var name="head_bg" />
+    <xar:style scope="common"/>
+    <xar:style scope="theme" file="style" title="BlueRay Stylesheet"/>
+    <xar:place-css />
+    <xar:place-javascript position="head"/>
+</head>
+</xar:template>

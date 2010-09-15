@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE blocklayout PUBLIC "-//XAR//DTD BL 1.0 Strict//EN" "http://xaraya.com/bl1/DTD/bl1-strict.dtd">
+<?xar type="page" ?>
+<xar:blocklayout version="1.0" content="text/html" xmlns:xar="http://xaraya.com/2004/blocklayout" dtd="xhtml1-strict">
+<xar:set name="header_bg"><xar:blockgroup name="banner" id="banner" /></xar:set>
+<xar:set name="topnav_bg"><xar:blockgroup name="topnav" id="topnav" /></xar:set>
+<xar:set name="left_bg"><xar:blockgroup name="admin" id="admin" /></xar:set>
+<xar:set name="bottomnav_bg"><xar:blockgroup name="bottomnav" id="bottomnav" /></xar:set>
+<xar:set name="footer_bg"><xar:blockgroup name="footer" id="footer" /></xar:set>
+<xar:set name="head_bg"><xar:blockgroup name="header" id="header" /></xar:set>
+<xar:set name="themedir">#xarTPLGetThemeDir()#</xar:set>
+<xar:set name="sitename"><xar:var scope="module" module="themes" name="SiteName" /></xar:set>
+<xar:set name="siteslogan"><xar:var scope="module" module="themes" name="SiteSlogan" /></xar:set>
+<xar:set name="sitefooter"><xar:var scope="module" module="themes" name="SiteFooter" /></xar:set>
+<xar:set name="sitecopyright"><xar:var scope="module" module="themes" name="SiteCopyRight" /></xar:set>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<xar:template type="theme" file="head"/>
+<body>
+    <div id="body-wrapper">
+        <xar:template type="theme" file="header-wrapper"/>
+
+        <xar:if condition="!empty($topnav_bg)">
+        <div id="topnav-wrapper">
+            <xar:var name="topnav_bg" />
+        </div>
+        </xar:if>
+        <div id="maincontent">
+            <xar:if condition="!empty($left_bg) and !empty($right_bg)">
+                <xar:template type="theme" file="col-leftright"/>
+            <xar:elseif condition="!empty($left_bg)"/>
+                <xar:template type="theme" file="col-left"/>
+            <xar:elseif condition="!empty($right_bg)"/>
+                <xar:template type="theme" file="col-right"/>
+            <xar:else />
+                <xar:template type="theme" file="col-none"/>
+            </xar:if>
+        </div>
+        <xar:if condition="!empty($bottomnav_bg)">
+        <div id="bottomnav-wrapper">
+            <xar:var name="bottomnav_bg" />
+        </div>
+        </xar:if>
+        <xar:template type="theme" file="footer-wrapper"/>
+    </div>
+    <xar:place-javascript position="body"/>
+</body>
+</html>
+</xar:blocklayout>

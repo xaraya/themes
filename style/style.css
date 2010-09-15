@@ -1,0 +1,460 @@
+/*
+Import layout
+-------------------------------------------------------------------------[comment] */
+@import url(layout.css);
+
+/*
+HTML tag styling
+-------------------------------------------------------------------------[comment] */
+body {
+    font-family: "trebuchet ms", "luxi sans", verdana, helvetica, sans-serif;
+    font-size: 62.5%;
+    margin: 0;
+    padding: 0;
+	color: #494949;
+	background-color: #eaeaea;
+}
+
+img { border: 0 none; }
+
+/* set nested elements to inherit from parents (add more as required) */
+li li, li li li, li p, thead th {
+	font-size: 1em;
+}
+
+a:link, a:visited {
+	color: #4b5676;
+	text-decoration: none;
+}
+
+a:link:hover, a:visited:hover {
+	/*color: #f57900;*/
+	text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #7c8ec2;
+	margin-top: 0;
+}
+.xar-mod-body h2, .xar-mod-body h3, .xar-mod-body h4, .xar-mod-body h5, .xar-mod-body h6
+{
+	margin-top: .5em;
+}
+pre, code {
+	font-size: 1.2em;
+}
+pre {
+	color: #4e9a06;
+}
+/* standard tables */
+table {
+    width: 100%;
+    margin: 0;
+    border-collapse: collapse;
+    border: 1px dotted #3465a4;
+    border-width: 1px 0;
+    background-color: #fff;
+}
+
+tr:nth-child(odd) {
+    background-color: #fff; /* lighter */
+    background-color: #efeded; /* darker */
+}
+th, td {
+    padding: .125em .25em;
+    text-align: left;
+    font-weight: normal;
+}
+thead, th {
+    border-bottom: 2px solid #3465a4;
+    text-transform: uppercase;
+    font-size: .88em;
+    letter-spacing: .1em;
+/*    color: #D77043;*/
+}
+tfoot {
+    border-bottom: 1px solid #3465a4;
+}
+
+/*
+Theme Style
+-------------------------------------------------------------------------[comment] */
+
+div#body-wrapper {
+	margin: 0 10px;
+	padding: 5px 10px 10px 10px;
+	background-color: #fff;
+}
+div#maincontent {
+	background-color: #dbdbdb;
+}
+div#header-wrapper {
+	height: 70px;
+	position: relative;
+	background: #7b8dc1 url(../images/header-bg.png) repeat-x left top;
+	border-bottom: 1px solid #7c8ec2;
+}
+div#header-wrapper h1 {
+	height: 70px;
+	width: 300px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background: #7b8dc1 url(../images/header-logo.png) no-repeat left top;
+}
+div#header-wrapper h1 a {
+	height: 70px;
+	width: 300px;
+	line-height: 70px;
+	vertical-align: middle;
+	padding-left: 120px;
+	display: block;
+	font-size: 1.2em;
+	color: #f0f1f2;
+}
+div#header-wrapper h1 a:hover {
+	text-decoration: none;
+}
+div#header-wrapper div.header_slogan {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	color: #fff;
+	font-size: 1.2em;
+	font-weight: bold;
+	letter-spacing: .2em;
+}
+div#left-wrapper {
+	background: #fff url(../images/column-bg.png) repeat-y left top;
+}
+div#right-wrapper {
+	background: transparent url(../images/column-bg.png) repeat-y right top;
+}
+div#center-column {
+	font-size: 1.2em;
+}
+div#footer-wrapper {
+	height: 70px;
+	position: relative;
+	background-color: #646464;
+	color: #fff;
+	border-top: 1px solid #cccccc;
+	padding: 5px;
+	font-size: 1.1em;
+}
+div#footer-wrapper a {
+	color: #fff;
+}
+div#footer-wrapper a:hover {
+	color: #fff;
+}
+div#footer-sitecopy {
+	width: 195px;
+	position: absolute;
+	left: 5px;
+	top: 5px;
+}
+div#footer-text {
+	margin-left: 195px;
+	margin-right: 85px;
+}
+div#footer-text ul {
+	display:block;
+	width: 25%;
+	float: left;
+	margin: 0;
+	list-style: none;
+	padding: 0;
+}
+div#footer-text ul li {
+	padding: 0px 3px 3px 0px;
+}
+div#footer-badges {
+	width: 80px;
+	position: absolute;
+	right: 5px;
+	bottom: 0;
+}
+div#footer-badges a.microbutton {
+	display: block;
+}
+
+/*
+Xaraya Block Style
+-------------------------------------------------------------------------[comment] */
+
+.xar-block-title {
+	width: 186px;
+	margin: 0 2px;
+	padding: 0 5px;
+	line-height: 25px;
+	font-weight: bold;
+	font-size: 1.3em;
+	background: #fff url(../images/title-bg.png) repeat-x left bottom;
+	color: #4b5676;
+}
+
+.xar-block-title img {
+	float: right;
+	display: block;
+	margin-top: 5px;
+}
+
+.xar-block-body .xar-block-body {
+	background-color: #fff;
+	border-width: 0px 1px 1px 1px;
+	border-color: #fff;
+	border-style: solid;
+	width: 194px;
+	margin: 0 2px;
+}
+
+/*
+Xaraya Menu Blocks
+-------------------------------------------------------------------------[comment] 
+Menu nesting/classes
+ul.xar-menu-section
+	li.xar-menu-section
+		h4
+		ul.xar-menu-item
+			li.xar-menu-section
+			li.xar-menu-item
+			li.xar-menu-item-current
+				ul.xar-menu-subitem
+					li.xar-menu-subitem
+					li.xar-menu-subitem-current
+*/
+.xar-block-body ul.xar-menu-section, ul.xar-menu-item, ul.xar-menu-subitem {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.xar-block-body ul.xar-menu-section li {
+	line-height: 1.8em;
+}
+.xar-block-body ul.xar-menu-section a {
+	display: block;
+}
+.xar-block-body li.xar-menu-section h4 {
+	text-align: right;
+	border-bottom: 1px solid #fff;
+	margin: 0;
+	padding: 0 5px;
+	font-size: .9em;
+	color: #4b5676;
+	background-color: #efeded;
+	text-transform: uppercase;
+}
+.xar-block-body li.xar-menu-section, li.xar-menu-item, li.xar-menu-item-current {
+	font-size: 1.1em;
+	font-weight: bold;
+}
+.xar-block-body li.xar-menu-item-current {
+	background-color: #4b5676;
+	background-image: url(../images/expanded2.png);
+	background-repeat: no-repeat;
+	background-position: 178px 5px;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #4b5676;
+}
+.xar-block-body li.xar-menu-item-current a {
+	color: #fff;
+}
+.xar-block-body li.xar-menu-item-current a:hover {
+	color: #fff;
+	text-decoration: none;
+}	
+.xar-block-body li.xar-menu-item a, li.xar-menu-item-current a {
+	padding-left: 5px;
+}
+.xar-block-body li.xar-menu-item a:hover {
+	background-color: #4b5676;
+	color: #fff;
+	text-decoration: none;
+}
+	
+.xar-block-body ul.xar-menu-subitem li {
+	text-align: right;
+}
+.xar-block-body li.xar-menu-subitem a {
+	background-color: #646e97;
+	color: #fff;
+	padding-right: 5px;
+}
+.xar-block-body li.xar-menu-subitem a:hover {
+	background-color: #fff;
+	color: #4b5676;
+	text-decoration: none;
+}
+.xar-block-body li.xar-menu-subitem-current a {
+	background-color: #fff;
+	color: #4b5676;
+	padding-right: 5px;
+}
+.xar-block-body li.xar-menu-subitem-current a:hover {
+	background-color: #fff;
+	color: #4b5676;
+}
+/*
+Xaraya Common Styles
+-------------------------------------------------------------------------[comment] */
+
+.xar-mod-head, .xar-mod-body, .xar-mod-foot {
+	background-color: #fff;
+}
+
+.xar-mod-head {
+	padding: 0 5px;
+	line-height: 25px;
+	background: #fff url(../images/title-bg.png) repeat-x left bottom;
+}
+.xar-mod-title {
+	color: #4b5676;	
+	font-size: 1.1em;
+	font-weight: bold;
+}
+.xar-mod-body {
+	padding: 5px;
+}
+.xar-mod-foot {
+	padding: 5px;
+}
+
+.xar-norm {
+	background-color: #fff;
+}
+.xar-norm-outline {
+	border-color: #4b5676;
+}
+.xar-alt {
+	background-color: #efeded;
+}
+.xar-alt-outline {
+	border-color: #646464;
+}
+.xar-accent {
+	background-color: #7c8ec2;
+	color: #fff;
+}
+.xar-accent-outline {
+	border-color: #394159;
+}
+
+.xar-clearboth {
+    clear: both;
+    height: 1px;
+    font-size: 1px;
+    margin-bottom: -1px;
+}
+
+.xar-error {
+	color: #dc1301;
+}
+
+.xar-title { font-weight: bold; }
+
+
+/* tab structure (margin, padding, float, etc is controlled in core css in          
+   the base module.  Colors (border, background) are inherited from the norm,        
+   alt, accent classes above.  The below rules are intended to be                  
+   theme-specific supplements.  
+*/
+
+/* tabs parent element */ 
+ul.xar-tabs { 
+	color: #4b5676;
+	background: #fff url(../images/tabs.png) repeat-x left -9px;
+	border-top: 1px solid #dbdbdb;
+	border-bottom: 1px solid #dbdbdb;
+}
+ul.xar-tabs.xar-alt {
+}
+ul.xar-tabs.xar-norm-outline {
+}
+/* tabs label */
+ul.xar-tabs li.xar-tabs-label {
+    background-image: none;
+}
+/* inactive tab */
+ul.xar-tabs li.xar-tab {
+    font-weight: bold;
+	background: #fff url(../images/tabs.png) repeat-x left -10px;
+}
+ul.xar-tabs li.xar-tab.xar-norm {
+}
+
+/* active tab */
+ul.xar-tabs li.xar-tab-active {
+    font-weight: bold;
+}
+/* inactive tab link */
+ul.xar-tabs li.xar-tab a {
+	color: #4b5676;
+    text-decoration: none;
+	background: #fff url(../images/tabs.png) repeat-x left top;
+}
+/* inactive tab link */
+ul.xar-tabs li.xar-tab a.xar-norm {
+}
+ul.xar-tabs li.xar-tab a.xar-norm-outline {
+	border: 0 none;
+}	
+/* active tab link */
+ul.xar-tabs li.xar-tab-active a {
+	color: #7c8ec2;
+    text-decoration: none;
+	background: #fff url(../images/tabs.png) repeat-x left -43px;
+}
+ul.xar-tabs li.xar-tab-active a.xar-accent {
+}
+ul.xar-tabs li.xar-tab-active a.xar-accent-outline {
+	border: 0 none;
+}	
+/* inactive tab link hover - not handled elsewhere */
+ul.xar-tabs li.xar-tab a:hover {
+	background: #fff url(../images/tabs.png) repeat-x left -45px;
+	color: #7c8ec2;
+}
+ul.xar-tabs li.xar-tab a.xar-norm:hover {
+}
+/* active tab link hover - not handled elsewhere */
+ul.xar-tabs li.xar-tab-active a:hover {
+/* see colstyle files */
+}
+ul.xar-tabs li.xar-tab-active a.xar-accent:hover {
+}	
+
+/*
+Xaraya Form Styles
+-------------------------------------------------------------------------[comment] */
+
+label.xar-form-label {
+	background: #fff url(../images/tabs.png) repeat-x left -43px;
+	/*background: #eae9ea url(../images/form-gradient.png) repeat-y right top; */
+	padding: 1px 0px 1px 3px;
+	border: 1px solid #eae9ea;
+	clear: left;
+	margin: 0 5px 0 0;
+}
+
+legend {
+	min-width: 15em;
+	background: #fff url(../images/tabs.png) repeat-x left -43px;
+	/*background: #eae9ea url(../images/form-gradient.png) repeat-y right top; */
+	padding: 1px 0px 1px 3px;
+	border: 1px solid #eae9ea;
+	color: #7c8ec2;
+	font-weight: bold;
+	display: block;
+}
+fieldset {
+	margin-bottom: 1em;
+	border: 1px solid #eae9ea;
+}
+fieldset fieldset {
+	margin: .5em 0;
+	border: 0 none;
+}
+fieldset fieldset legend {
+	display: none;
+}

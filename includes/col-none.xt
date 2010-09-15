@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+<xar:comment> One Column </xar:comment>
+<div id="inner-wrapper">
+    <div id="inner">
+        <div id="center-column">
+            <xar:if condition="!empty($center_bg)">
+            <div id="center-bg">
+                <xar:var name="center_bg" />
+            </div>
+            </xar:if>
+            <div id="center-module">
+                <a id="content"></a>
+                <xar:module class="modulespace" main="true" />
+            </div>
+            <xar:if condition="!empty($centerfoot_bg)">
+            <div id="centerfoot-bg">
+                <xar:var name="centerfoot_bg" />
+            </div>
+            </xar:if>
+        </div>
+    </div>
+</div>
+</xar:template>

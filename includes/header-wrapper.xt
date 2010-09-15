@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+    <div id="header-wrapper">
+        <h1>
+            <a href="#xarServer::getBaseURL()#" class="header_home" title="#xarML('Home')#"><xar:var scope="module" module="themes" name="SiteName" /></a>
+        </h1>
+        <xar:if condition="!empty($header_bg)">
+            <xar:var name="header_bg" />
+        </xar:if>
+        <div class="header_slogan">
+            <xar:var scope="module" module="themes" name="SiteSlogan"/>
+        </div>
+    </div>
+</xar:template>

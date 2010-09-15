@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+    <div id="footer-wrapper">
+        <div id="footer-sitecopy">
+            <xar:var name="sitecopyright" />
+        </div>
+        <div id="footer-text">
+            <ul>
+                <xar:if condition="xarMod::isAvailable('sitecontact')">
+                    <li>
+                        <a href="#xarModURL('sitecontact', 'user', 'main')#">
+                            Contact Us
+                        </a>
+                    </li>                    
+                </xar:if>
+                <xar:if condition="xarMod::isAvailable('registration')">
+                    <xar:sec mask="ViewRegistration" catch="false">
+                        <xar:if condition="xarModVars::get('registration', 'showterms')">
+                            <xar:set name="termslink">xarModVars::get('registration', 'termslink')</xar:set>
+                            <xar:if condition="empty($termslink)">
+                                <xar:set name="termslink">xarModURL('registration', 'user', 'terms')</xar:set>
+                            </xar:if>
+                            <li>
+                                <a href="#$termslink#">
+                                    Terms of Use
+                                </a>
+                            </li>
+                        </xar:if>
+                        <xar:if condition="xarModVars::get('registration', 'showprivacy')">
+                            <xar:set name="privacylink">xarModVars::get('registration', 'privacylink')</xar:set>
+                            <xar:if condition="empty($privacylink)">
+                                <xar:set name="privacylink">xarModURL('registration', 'user', 'privacy')</xar:set>
+                            </xar:if>
+                            <li>
+                                <a href="#$privacylink#">
+                                    Privacy and Cookies
+                                </a>
+                            </li>
+                        </xar:if>
+                    </xar:sec>
+                </xar:if>
+            </ul>
+            <xar:var name="sitefooter" />
+        </div>
+        <div id="footer-badges">
+            <xar:var name="xartitle">Powered by Xaraya</xar:var>
+            <a class="microbutton" href="http://www.xaraya.com" title="#$xartitle#">
+                <img src="#$themedir#/images/xaraya-microbutton.gif" alt="#$xartitle#"/>
+            </a>
+            <xar:var name="xhtmltitle">Validate XHTML 1.0 Strict</xar:var>
+            <a class="microbutton" href="http://validator.w3.org/check?uri=referer" title="#$xhtmltitle#">
+                <img src="#$themedir#/images/xhtml10-microbutton.gif" alt="#$xhtmltitle#"/>
+            </a>
+            <xar:var name="csstitle">Validate CSS</xar:var>
+            <a class="microbutton" href="http://jigsaw.w3.org/css-validator/validator?uri=&xar-baseurl;index.php" title="#$csstitle#">
+                <img src="#$themedir#/images/css-microbutton.gif" alt="#$csstitle#"/>
+            </a>
+            <xar:var name="tabletitle">Tableless layout</xar:var>
+            <a class="microbutton" href="http://www.webreference.com/authoring/style/sheets/layout/" title="#$tabletitle#">
+                <img src="#$themedir#/images/csstableless-microbutton.gif" alt="#$tabletitle"/>
+            </a>
+        </div>
+        <br class="xar-clearall"/>
+    </div>
+</xar:template>

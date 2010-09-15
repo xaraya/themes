@@ -1,0 +1,78 @@
+/*
+this file deals with page layout only, use style.css to style elements
+-------------------------------------------------------------------------[comment] */
+body {
+    position:relative;
+    min-width: 740px;
+    margin: 0 auto;
+}
+
+div#body-wrapper {
+    text-align: left;
+}
+
+div#header-wrapper {}
+
+div#topnav-wrapper {}
+
+div#maincontent {}
+
+div#left-wrapper {
+    width: auto;
+}
+
+div#noleft-wrapper {
+    width: auto;
+    margin-right: 201px;
+}
+
+div#right-wrapper {
+    width: auto;
+}
+
+div#noright-wrapper {
+    width: auto;
+    margin-left: 200px;
+}
+
+div#center-wrapper {
+    width: auto;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+div#inner-wrapper {
+    margin: 0;
+    width: 100%;
+}
+
+div#inner {}
+
+div#left-column {
+    float: left;
+    position: relative;
+    width: 200px;
+    margin-left: -201px;
+    z-index: 10;
+}
+
+div#center-column {
+    float: left;
+    position: relative;
+    width: 100%;
+    z-index: 12;
+    margin-left: 0px;
+    margin-right: -2px;
+}
+
+div#center-module {
+    position: relative;
+    }
+
+div#right-column {
+    float: right;
+    position: relative;
+    width: 200px;
+    margin-right: -201px;
+    z-index: 11;
+}
