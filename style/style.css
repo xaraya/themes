@@ -1,5 +1,5 @@
-/* z2 Theme */
-/* modified 12 Sep 2010 */
+/* zulu Theme */
+/* modified 14 Sep 2010 */
 
 html, body {
     margin: 0;
@@ -252,7 +252,7 @@ div.xar-pager span.xar-page a:hover {
 .sideInfo li li li {
     padding-left: 1em;
     margin-left: .25em;
-    background: transparent url(../images/li-bullet2-5.png) no-repeat center left;
+    background: transparent url(../images/bullet.png) no-repeat center left;
 }
 .sideInfo h4 {
     margin: 0;
@@ -283,7 +283,7 @@ div.xar-pager span.xar-page a:hover {
 .admin-sideInfo li li li {
     padding-left: 1em;
     margin-left: .25em;
-    background: transparent url(../images/li-bullet2-5.png) no-repeat center left;
+    background: transparent url(../images/bullet.png) no-repeat center left;
 }
 .admin-sideInfo h4 {
     margin: 0;

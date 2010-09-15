@@ -11,7 +11,7 @@
             <base href="#xarServer::getBaseURL()#index.php"/>
             <link rel='icon' href="favicon.ico"/>
             <xar:style scope="common"/>
-            <xar:style scope="theme" file="style" title="z2 Stylesheet"/>
+            <xar:style scope="theme" file="style" title="zulu Stylesheet"/>
             <xar:place-css />
             <xar:place-javascript position="head"/>
         </head>
@@ -35,13 +35,14 @@
                     <xar:blockgroup name="right" id="right"/>
                 </div>
                 <xar:blockgroup name="topnav" id="topnav"/>
+
+                <xar:place-javascript position="body"/>
+            </div>
                 <div id="siteFooter">
 					<xar:var scope="module" module="themes" name="SiteCopyRight"/> | 
 					<xar:var scope="module" module="themes" name="SiteFooter"/>
 					
             	</div>                
-                <xar:place-javascript position="body"/>
-            </div>
         </body>
     </html>
 </xar:blocklayout>
