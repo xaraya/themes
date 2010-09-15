@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+<div class="xar-norm xar-standard-box-padding">
+    <xar:if condition="!empty($categories) and count($categories) gt 0">
+        [
+        <xar:foreach in="$categories" value="$cat">
+            #$cat['cjoin']# <a href="#$cat['clink']#">#$cat['cname']#</a>
+        </xar:foreach>
+        ]
+    </xar:if>
+    <h1>#$title#</h1>
+    <div class="xar-accent xar-padding-thick">
+        <span class="xar-sub">
+            Posted at #xarLocaleGetFormattedTime('short',$pubdate)# on  #xarLocaleGetFormattedDate('long',$pubdate)# 
+        </span>
+    </div>
+    <div class="xar-align-right">
+        <span class="xar-sub"> #$topic_icons# </span>
+    </div>
+    <div class="xar-articles-summary">
+        #$summary#       
+        <p>
+			<xar:if condition="!empty($blogfileupload)">
+				<img src="/var/uploads/#$blogfileupload#" />
+			</xar:if>
+        </p>
+    </div>
+    <xar:if condition="!empty($notes)">
+        <div class="xar-articles-notes">
+				Note: #$notes#
+        </div>
+    </xar:if>
+    <div class="xar-align-right">
+        <div class="xar-articles-keywords">
+            <xar:if condition="!empty($keywords)">
+                    Keywords:
+                <xar:loop name="$keywords">
+                    <a href="#xarModUrl('keywords', 'user', 'main', array('keyword'=> $loop:item['keyword']))#" title="#$loop:item['keyword']#">#$loop:item['keyword']#</a>
+                </xar:loop>
+            </xar:if>
+        </div>
+    </div>
+</div>
+</xar:template>
