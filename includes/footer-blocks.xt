@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+<div>
+	<div style="width: 34%; height: 200px; float: left; text-align: left; background: #222;">
+		<div style="margin: 10px;">Foot-block one</div>
+	</div>
+	<div style="width: 32%; height: 200px; background: #444; float: left; text-align: left;">
+		<div style="margin: 10px;">Foot-block two</div>
+	</div>
+	<div style="width: 34%; height: 200px; background: #666; float: right; text-align: left;">
+		<div style="margin: 10px;">Foot-block three</div>
+	</div>
+</div>
+<hr style="clear: both; visibility: hidden;" />
+</xar:template>

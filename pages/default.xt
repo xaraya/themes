@@ -17,6 +17,9 @@
         </head>
         <body>
             <div id="wrapper">
+            	<div id="topnav">
+            		<xar:blockgroup name="topnav" id="topnav"/>
+				</div>
 			<div id="logo">
 				<a href="index.php" title="home">
 					<img src="#xarTplGetThemeDir()#/images/siteLogo.png"  alt="Site Logo" title="Main Page"/>
@@ -34,14 +37,12 @@
                 <div id="sideInfo2" class="sideInfo">
                     <xar:blockgroup name="right" id="right"/>
                 </div>
-                <xar:blockgroup name="topnav" id="topnav"/>
-
                 <xar:place-javascript position="body"/>
             </div>
                 <div id="siteFooter">
+                	<xar:template type="theme" file="footer-blocks"/>
 					<xar:var scope="module" module="themes" name="SiteCopyRight"/> | 
-					<xar:var scope="module" module="themes" name="SiteFooter"/>
-					
+					<xar:var scope="module" module="themes" name="SiteFooter"/>					
             	</div>                
         </body>
     </html>
