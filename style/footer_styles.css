@@ -1,0 +1,32 @@
+/* updated 71 Sep 2010 */
+
+#leftFooterBlockSize {
+	width: 34%; 
+	height: 200px; 
+	float: left; 
+	text-align: left; 
+	background: #222;
+    }
+
+#middleFooterBlockSize {
+	width: 32%; 
+	height: 200px; 
+	background: #444; 
+	float: left; 
+	text-align: left; 
+	padding: 0; 
+	margin: 0;
+    }
+    
+#rightFooterBlockSize {
+	width: 34%; 
+	height: 200px; 
+	background: #666; 
+	float: right; 
+	text-align: left;
+    }    
+    
+.footerBlocksCusion {
+	padding: 0; 
+	margin: 0;
+    }    

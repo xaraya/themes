@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
-<div style="margin: 10px;">
-	<h2>footer-blocks-middle.xt</h2>
-	<p>to edit this go to the theme directory zulu/includes/footer-blocks-middle.xt</p>
+<div style="background: url(#xarTplGetThemeDir()#/images/highway.jpg) no-repeat top left; height: 200px;">
+	<div style="padding: 10px; font-size: 12px; ">
+		<h2 style="margin: 0px; padding: 0;">Want a complex layout?</h2>
+		<p>With Xaraya, editing templates is a snap. If you understand how to use HTML and CSS then you already halfway home.</p>
+		<div><em>To edit this go to the theme directory</em>:<br />  <strong style="color: #8393ca;">zulu/includes/footer-blocks-middle.xt</strong>
+		</div>
+	</div>
 </div>
 <hr style="clear: both; visibility: hidden;" />
 </xar:template>
