@@ -1,12 +1,12 @@
 /* zulu Theme */
-/* modified 17 Sep 2010 */
+/* modified 18 Sep 2010 */
 
 html, body {
     margin: 0;
     padding: 0;
 }
 body {
-    background: url(../images/zBG.png) repeat-x left top;
+    background: url(../images/headerBG.png) repeat-x left top;
     color: #020;
     font: .8em/1.5em Arial, Helvetica, sans-serif;
 }
