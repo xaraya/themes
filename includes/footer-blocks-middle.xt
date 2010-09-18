@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+<div style="margin: 10px;">
+	<h2>footer-blocks-middle.xt</h2>
+	<p>to edit this go to the theme directory zulu/includes/footer-blocks-middle.xt</p>
+</div>
+<hr style="clear: both; visibility: hidden;" />
+</xar:template>

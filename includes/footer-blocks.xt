@@ -2,13 +2,13 @@
 <xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
 <div>
 	<div style="width: 34%; height: 200px; float: left; text-align: left; background: #222;">
-		<div style="margin: 10px;">Foot-block one</div>
+		<xar:template type="theme" file="footer-blocks-left"/>
 	</div>
 	<div style="width: 32%; height: 200px; background: #444; float: left; text-align: left;">
-		<div style="margin: 10px;">Foot-block two</div>
+		<xar:template type="theme" file="footer-blocks-middle"/>
 	</div>
 	<div style="width: 34%; height: 200px; background: #666; float: right; text-align: left;">
-		<div style="margin: 10px;">Foot-block three</div>
+		<xar:template type="theme" file="footer-blocks-right"/>
 	</div>
 </div>
 <hr style="clear: both; visibility: hidden;" />
