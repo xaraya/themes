@@ -1,7 +1,8 @@
 div#header {
     min-height: 107px;
     _height: 107px;
-    background: #00B2DB url(/themes/xartropics/images/inside/header_bg.png) repeat-x scroll bottom left;
+/*  background: #00B2DB url(/themes/xartropics/images/inside/header_bg.png) repeat-x scroll bottom left; */
+    background: #00B2DB url(/themes/xartropics/images/inside/header_bg.png) repeat-x scroll top left;
 }
 div#header_logo {
     min-height: 107px;

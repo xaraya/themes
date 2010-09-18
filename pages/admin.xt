@@ -4,24 +4,28 @@
 <xar:blocklayout content="text/html" xmlns:xar="http://xaraya.com/2004/blocklayout" version="1.0" dtd="xhtml1-strict">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-    <base href="#xarServerGetBaseURL()#" />
+    <base href="#xarServer::getBaseURL()#" />
     <xar:set name="themedir">#xarTplGetThemeDir()#</xar:set>
     <xar:blockgroup name="header" id="header" />
     <title>#$tpl:pageTitle#</title>
     <link rel="shortcut icon" href="&xar-baseurl;#$themedir#/images/favicon.png" type="image/x-icon" />
     <xar:style scope="common" />
-    <style type="text/css">@import url(&xar-baseurl;#$themedir#/style/style.css); </style>
-    <style type="text/css">@import url(&xar-baseurl;#$themedir#/style/admin.css); </style>
+    <xar:style scope="theme" file="style" title="XarTropics StyleSheet"/>
+    <xar:style scope="theme" file="admin" method="import"/>
+    <xar:place-css />
 
-    <xar:additional-styles />
+    <!-- @TODO: move the jquery files to themedir/scripts/jquery/
+    <xar:javascript filename="jquery.pack.js" module="jquery" />
+	<xar:javascript filename="jquery.compat-1.1.js" module="jquery" />
+	<xar:javascript filename="jquery.hoverIntent.minified.js" module="jquery" />
+	<xar:javascript filename="jqModal.js" module="jquery" />
+    -->
 
-	<xar:base-include-javascript filename="jquery.pack.js" module="jquery" />
-	<xar:base-include-javascript filename="jquery.compat-1.1.js" module="jquery" />
-	<xar:base-include-javascript filename="jquery.hoverIntent.minified.js" module="jquery" />
-
-    <xar:base-render-javascript position="head" />
-
-    <xar:template file="suckerfish" type="theme" />
+    <xar:place-javascript position="head" />
+    <!-- @TODO: move the js out of this include template to a file in /themedir/scripts/
+        and include it using xar:javascript tag instead.
+        <xar:template file="suckerfish" type="theme" />
+    -->
 
 </head>
 <body>
@@ -42,11 +46,11 @@
 
 	<div id="contentouter">
 		<div id="contentwrap">
-		    <div id="contentmain"><div id="contentmain_inner"><div id="contentmain_tlcorner"><div id="contentmain_trcorner"></div></div>
+		    <div id="contentmain"><div id="contentmain_inner"><div id="contentmain_tlcorner"><div id="contentmain_trcorner">&#160;</div></div>
 		            <div id="contentmain_core">
 		                <xar:module id="modulespace" main="true" />
 		            </div>
-		            <div id="contentmain_blcorner"><div id="contentmain_brcorner"></div></div>
+		            <div id="contentmain_blcorner"><div id="contentmain_brcorner">&#160;</div></div>
 		        </div>
 		    </div>
 		</div>
@@ -56,22 +60,22 @@
     <div id="footerwrap">
         <div id="footer_content">
             <div id="footer_contentinner">
-                <div id="footer_trcorner"></div>
+                <div id="footer_trcorner">&#160;</div>
                 <div id="footer_core">
                     <xar:template file="footer" type="theme" />
                 </div>
             </div>
-            <div id="footer_blcorner"></div>
+            <div id="footer_blcorner">&#160;</div>
         </div>
     </div>
-    <xar:base-render-javascript position="body" />
+    <xar:place-javascript position="body" />
 <!--
-    <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">        
-    </script>        
-    <script type="text/javascript">        
-        _uacct = "UA-80308-1";        
-        urchinTracker();        
-    </script>        
+    <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+        _uacct = "UA-80308-1";
+        urchinTracker();
+    </script>
 -->
 </body>
 </html>

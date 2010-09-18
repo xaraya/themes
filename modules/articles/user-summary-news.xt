@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <div class="summary-news">
     <xar:if condition="isset($is_home_xarpage)">
         <h3>
@@ -72,3 +75,6 @@
         </xar:if>
     </p>
 </div>
+
+
+</xar:template>

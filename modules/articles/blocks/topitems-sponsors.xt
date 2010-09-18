@@ -1,6 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:foreach in="$items" value="$item">
 	<xar:if condition="isset($item['sponsortype']) and ($item['sponsortype'] eq '1' or $item['sponsortype'] eq '0')">
-		<div style="background-color: #F6FADE; border: 1px solid #ABE324; padding:10px; margin-bottom:10px;">
+		<div style="background-color: ####F6FADE; border: 1px solid #ABE324; padding:10px; margin-bottom:10px;">
 			<h4 style="margin-top: 0;">
 				<xar:if condition="isset($item['website_output'])">
 					#$item['website_output']#
@@ -39,3 +42,6 @@
 	</xar:if>
 </xar:foreach>
 
+
+
+</xar:template>

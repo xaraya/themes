@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <div class="summary-blogentry">
 	<h2>
 		<a href="#$link#">#$title#</a>
@@ -5,7 +8,7 @@
 	<div class="byline">
 		<xar:if condition="isset($author)">
 			<xar:mlstring>By</xar:mlstring>: 
-			<a href="&xar-modurl-roles-user-display;&amp;uid=#$authorid#">#xarUserGetVar('name',$authorid)#</a>
+			<a href="&xar-modurl-roles-user-display;&#38;uid=#$authorid#">#xarUserGetVar('name',$authorid)#</a>
 		</xar:if>
 		<xar:if condition="isset($author) and isset($pubdate)"> | </xar:if>
 		<xar:if condition="isset($pubdate)">
@@ -40,3 +43,6 @@
     </p>
 
 </div>
+
+
+</xar:template>

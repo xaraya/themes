@@ -1,8 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <h1>
     <a href="#xarModUrl('xarbb', 'user', 'main')#">
-        #xarModGetVar('themes', 'SiteName', 0)# #xarModGetVar('themes', 'SiteTitleSeparator', 0)#  #xarModGetVar('themes', 'SiteSlogan', 0)#
+        #xarModVars::get('themes', 'SiteName', 0)# #xarModVars::get('themes', 'SiteTitleSeparator', 0)#  #xarModVars::get('themes', 'SiteSlogan', 0)#
     </a>
-    -&gt;
+    -&#62;
     <xar:mlstring>Check IP</xar:mlstring>
 </h1>
 
@@ -18,7 +21,7 @@
     </tr>
     <tr>
         <td>#$ip#</td>
-        <td>&nbsp;</td>
+        <td>&#160;</td>
         <td align="right">
             [<a href="http://ws.arin.net/cgi-bin/whois.pl?queryinput=#$ip#">
                 <xar:mlstring>Look up IP</xar:mlstring>
@@ -68,3 +71,5 @@
   </tr>
 </xar:loop>
 </table>
+
+</xar:template>

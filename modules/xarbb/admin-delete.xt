@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
 <div class="xar-mod-head"><span class="xar-mod-title"><xar:mlstring>xarbb Module</xar:mlstring></span></div>
 <!-- common admin menu for this module - remove link to the current function -->
@@ -23,10 +26,13 @@
           </label>
         </div>
         <div class="xar-form-input-wrapper-after">
-          <xar:set name="$mlconfirm"><xar:mlstring>Confirm</xar:mlstring></xar:set>
+          <xar:set name="mlconfirm"><xar:mlstring>Confirm</xar:mlstring></xar:set>
           <input type="submit" value="#$mlconfirm#"  tabindex="1" />
         </div>
     </fieldset>
-    <a href="&xar-modurl-xarbb-admin-modify;&amp;fid=#$fid#"><xar:mlstring>Cancel deletion of forum</xar:mlstring></a>
+    <a href="&xar-modurl-xarbb-admin-modify;&#38;fid=#$fid#"><xar:mlstring>Cancel deletion of forum</xar:mlstring></a>
   </form>        
 </div>
+
+
+</xar:template>

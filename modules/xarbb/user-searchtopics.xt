@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 
 
 <h3>#$message#</h3>
@@ -13,11 +16,11 @@
                 <xar:if condition="!empty($xarbbtitle)">
                     #xarVarPrepForDisplay($xarbbtitle)#
                 <xar:else />
-                    #xarModGetVar('themes', 'SiteName', 1)#
-                    #xarModGetVar('themes', 'SiteTitleSeparator', 1)#
-                    #xarModGetVar('themes', 'SiteSlogan', 1)#
+                    #xarModVars::get('themes', 'SiteName', 1)#
+                    #xarModVars::get('themes', 'SiteTitleSeparator', 1)#
+                    #xarModVars::get('themes', 'SiteSlogan', 1)#
                 </xar:if>
-                #xarModGetVar('themes', 'SiteTitleSeparator', 1)#
+                #xarModVars::get('themes', 'SiteTitleSeparator', 1)#
                 <xar:mlstring>Forum Index</xar:mlstring>
             </a>
         </h4>
@@ -26,7 +29,7 @@
     <div class="xarbb-tablewrapper">
         <table>
             <tr>
-                <th scope="col">&nbsp;</th>
+                <th scope="col">&#160;</th>
                 <th scope="col"><xar:mlstring>Forum</xar:mlstring></th>
                 <th scope="col"><xar:mlstring>Topic</xar:mlstring></th>
                 <th scope="col"><xar:mlstring>Author</xar:mlstring></th>
@@ -102,3 +105,6 @@
 
 <p style="text-align: right;"><a href="#xarModURL('xarbb','user','main')#"><xar:mlstring>Return to forum index</xar:mlstring></a></p>
 
+
+
+</xar:template>

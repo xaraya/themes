@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
 <xar:template file="publinks" type="module" />
 <a name="titles">
@@ -12,7 +15,7 @@
 		    <ul>
 		        <xar:foreach in="$titles" key="$aid" value="$title">
 		            <li>
-		                <a href="#xarServerGetCurrentURL()####$aid#">
+		                <a href="#xarServer::getCurrentURL()####$aid#">
 		                    #$title#
 		                </a>
 		            </li>
@@ -72,3 +75,6 @@
 	<xar:categories-navigation layout="prevnext" />
 </xar:if>
 <xar:template file="navtabs-user" type="module" />
+
+
+</xar:template>

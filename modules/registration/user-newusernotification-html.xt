@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <p>
 <xar:ml>
     <xar:mlstring>Dear #(1)</xar:mlstring>
@@ -22,3 +25,5 @@
 <p>
     <xar:mlstring>When logged in, you can access this user account at </xar:mlstring> <a href="#$rolelink#">#$rolelink#</a>
 </p>
+
+</xar:template>

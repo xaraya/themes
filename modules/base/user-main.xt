@@ -1,3 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+<div id="masthead">
+    <div id="masthead_content">
+        <h1>Welcome to the new, new Xaraya.com</h1>
+    </div>
+    <p>This site is a work in progress...</p>
+</div>
+<xar:block instance="site_todo_list" template="center"/>
+
+<!--
 <div id="main_right">
     <xar:blockgroup name="trop_home_right" id="trop_home_right" />
 
@@ -8,3 +19,6 @@
     <h3>Latest News</h3>
     <xar:block module="articles" type="featureditems" instance="main_overview_article" template="xe1-overview;fp" />
 </div>
+-->
+
+</xar:template>

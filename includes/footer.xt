@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 	<div id="footerdonate">
 		<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 			<div>
@@ -25,10 +28,8 @@
         </a>
 </xar:comment>
 		<span>
-			<a href="index.php/base/sponsorlist" title="Full list of sponsors and donations">
-			<xar:mlstring>
-				Kindly sponsored by
-			</xar:mlstring>
+			<a href="/index.php/xarpages/about/sponsors" title="Full list of sponsors and donations">
+			<xar:mlstring>Kindly sponsored by</xar:mlstring>
 			</a>
 		</span>
 	</div>
@@ -39,19 +40,22 @@
 <div id="footerlinks">
     <a href="&xar-baseurl;index.php" title="#$hometitle#">
         <xar:mlstring>Home</xar:mlstring></a>
-    &bull;
+    &#8226;
     <a href="&xar-baseurl;index.php/sitecontact" title="#$contacttitle#">
         <xar:mlstring>Contact Us</xar:mlstring></a>
-    &bull;
+    &#8226;
     <a href="&xar-baseurl;index.php/registration/terms" title="#$legaltitle#">
         <xar:mlstring>Legal</xar:mlstring></a>
-    &bull;
+    &#8226;
     <a href="&xar-baseurl;index.php/registration/privacy" title="#$privacytitle#">
         <xar:mlstring>Privacy</xar:mlstring></a>
 </div>
 <div id="footercopyright">
-    &copy; 2004 - 2009
+    &#169; 2004 - 2009
     <xar:mlstring>
         Xaraya Development Group 
     </xar:mlstring>
 </div>
+
+
+</xar:template>

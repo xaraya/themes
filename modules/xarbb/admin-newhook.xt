@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <div class="xar-form-input-wrapper">
     <label for="xarbb_forum" class="xar-form-label" title="#xarML('Add this entry to which forum.  Summary only.')#">
         <xar:mlstring>Forum for topic creation</xar:mlstring>:
@@ -21,3 +24,5 @@
          </xar:loop>
     </select>
 </div>
+
+</xar:template>

@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:comment>
     License: GPL http://www.gnu.org/copyleft/gpl.html
 </xar:comment>
@@ -24,22 +27,22 @@
     <div id="xarbb-topics">
         <ul id="xarbb-topics-userlinks">
             <li>
-                <a href="&xar-modurl-xarbb-user-searchtopics;&amp;from=#$lastvisitdate#">
+                <a href="&xar-modurl-xarbb-user-searchtopics;&#38;from=#$lastvisitdate#">
                     <xar:mlstring>View topics since last visit</xar:mlstring>
                 </a>
             </li>
             <li>
-                <a href="&xar-modurl-xarbb-user-searchtopics;&amp;from=0">
+                <a href="&xar-modurl-xarbb-user-searchtopics;&#38;from=0">
                     <xar:mlstring>View latest topics</xar:mlstring>
                 </a>
             </li>
             <li>
-                <a href="&xar-modurl-xarbb-user-searchtopics;&amp;by=#$uid#">
+                <a href="&xar-modurl-xarbb-user-searchtopics;&#38;by=#$uid#">
                     <xar:mlstring>View your topics</xar:mlstring>
                 </a>
             </li>
             <li>
-                <a href="&xar-modurl-xarbb-user-searchtopics;&amp;replies=1">
+                <a href="&xar-modurl-xarbb-user-searchtopics;&#38;replies=1">
                     <xar:mlstring>View unanswered topics</xar:mlstring>
                 </a>
             </li>
@@ -71,11 +74,11 @@
         <xar:if condition="!empty($xarbbtitle)">
             #$xarbbtitle#
         <xar:else />
-            #xarVarPrepForDisplay(xarModGetVar('themes', 'SiteName'))#
-            #xarVarPrepForDisplay(xarModGetVar('themes', 'SiteTitleSeparator'))#
-            #xarVarPrepForDisplay(xarModGetVar('themes', 'SiteSlogan'))# 
+            #xarVarPrepForDisplay(xarModVars::get('themes', 'SiteName'))#
+            #xarVarPrepForDisplay(xarModVars::get('themes', 'SiteTitleSeparator'))#
+            #xarVarPrepForDisplay(xarModVars::get('themes', 'SiteSlogan'))# 
         </xar:if>
-        #xarVarPrepForDisplay(xarModGetVar('themes', 'SiteTitleSeparator'))#
+        #xarVarPrepForDisplay(xarModVars::get('themes', 'SiteTitleSeparator'))#
         <xar:mlstring>Forum Index</xar:mlstring>
     </a>
 </h1>
@@ -91,11 +94,11 @@
 
             <h2>
                 <xar:if condition="isset($loop:item['catname'])">
-                    <a href="#xarModUrl('xarbb', 'user', 'main', array('catid' =&gt; $loop:item.cid))#">
+                    <a href="#xarModUrl('xarbb', 'user', 'main', array('catid' =&#62; $loop:item.cid))#">
                         #$loop:item.catname# 
                     </a>
                 <xar:else />
-                    <a href="#xarModUrl('xarbb', 'user', 'main', array('catid' =&gt; $loop:item.cid))#">
+                    <a href="#xarModUrl('xarbb', 'user', 'main', array('catid' =&#62; $loop:item.cid))#">
                         #$loop:item.name# 
                     </a>
                 </xar:if>
@@ -104,7 +107,7 @@
 	        <table>
 	            <tr>
 	                <th scope="col">
-	                    <xar:mlstring>&nbsp;</xar:mlstring>
+	                    <xar:mlstring>&#160;</xar:mlstring>
 	                </th>
 	                <th scope="col" class="forumname">
 	                    <xar:mlstring>Forum</xar:mlstring>
@@ -127,7 +130,7 @@
                         </td>
                         <td class="forumname" colspan="4">
                             <span class="xar-title">
-                                <a href="#xarModURL('xarbb', 'user', 'main', array('catid' =&gt; $cats.cid))#" title="#$cats.name#">
+                                <a href="#xarModURL('xarbb', 'user', 'main', array('catid' =&#62; $cats.cid))#" title="#$cats.name#">
                                     #$cats.name# GG
                                 </a>
                             </span>
@@ -183,11 +186,11 @@
                                         <xar:mlvar>#xarLocaleGetFormattedTime('medium', $forum.fpostid)#</xar:mlvar>
                                     </xar:ml>
                                     <xar:comment>FIXME: (a) anonymous gets a link (it shouldn't); (b) text does not translate</xar:comment>
-                                    <a href="#xarModUrl('roles', 'user', 'display', array('uid' =&gt; $forum.fposter))#">
+                                    <a href="#xarModUrl('roles', 'user', 'display', array('uid' =&#62; $forum.fposter))#">
                                         #$forum.name#
                                     </a>
                                     <xar:if condition="!empty($forum.foptions.ttitle)">
-                                        <br /><a href="#xarModUrl('xarbb', 'user', 'viewtopic', array('tid' =&gt; $forum.foptions.tid))#">
+                                        <br /><a href="#xarModUrl('xarbb', 'user', 'viewtopic', array('tid' =&#62; $forum.foptions.tid))#">
                                             #xarVarPrepForDisplay($forum.foptions.ttitle)#
                                         </a>
                                     </xar:if>
@@ -203,7 +206,7 @@
 
         <div class="xarbb-noteswrapper">
             <span class="xar-sub leftnote">
-                <a href="#xarServerGetCurrentURL(array('read'=&gt;1))#">
+                <a href="#xarServer::getCurrentURL(array('read'=&#62;1))#">
                     <xar:mlstring>Mark all forums as read</xar:mlstring>
                 </a>
             </span>
@@ -220,3 +223,6 @@
         <xar:if condition="!empty($pager)">#$pager#</xar:if>
     </xar:if>
 </div>
+
+
+</xar:template>

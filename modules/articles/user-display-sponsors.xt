@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <div class="display-sponsors">
 	<xar:template file="publinks" type="module" />
 	<h1>
@@ -52,16 +55,19 @@
     <div style="margin: 1em 0;">
         <xar:if condition="!empty($prevart)">
             <div style="width: 45%;float: left;">
-                <strong>&lt;&lt; <xar:mlstring>Previous Sponsor</xar:mlstring></strong><br />
+                <strong>&#60;&#60; <xar:mlstring>Previous Sponsor</xar:mlstring></strong><br />
                 <a href="#$prevart#">#$prevartinfo['title']#</a>
             </div>
         </xar:if>
         <xar:if condition="!empty($nextart)">
             <div class="xar-align-right" style="width: 45%;float: right;">
-                <strong><xar:mlstring>Next Sponsor</xar:mlstring> &gt;&gt;</strong><br />
+                <strong><xar:mlstring>Next Sponsor</xar:mlstring> &#62;&#62;</strong><br />
 				<a href="#$nextart#">#$nextartinfo['title']#</a>
             </div>
         </xar:if>
         <br class="xar-clearboth" />
     </div>
 </xar:if>
+
+
+</xar:template>

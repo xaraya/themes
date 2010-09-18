@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <div class="summary-weblinks">
 	<h2>
 		<a rel="external" class="xar-title" href="#$body#">#$title#</a>
@@ -6,7 +9,7 @@
 		<xar:mlstring>Added on</xar:mlstring>
 		 #xarLocaleGetFormattedDate('long',$pubdate)#
 	    <xar:mlstring> by </xar:mlstring>
-		<a href="&xar-modurl-roles-user-display;&amp;uid=#$authorid#">#xarUserGetVar('name',$authorid)#</a>
+		<a href="&xar-modurl-roles-user-display;&#38;uid=#$authorid#">#xarUserGetVar('name',$authorid)#</a>
 		<xar:if condition="!empty($counter)">
 			| (#$counter# <xar:mlstring>Visits</xar:mlstring>)
 		</xar:if>
@@ -62,3 +65,6 @@
 
 	</p>
 </div>
+
+
+</xar:template>

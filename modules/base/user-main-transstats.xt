@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <div class="xar-mod-head">
 	<span class="xar-mod-title">
 		<xar:mlstring>Xaraya.com</xar:mlstring>
@@ -5,3 +8,6 @@
 </div>
 <xar:block module="base" type="php" instance="transstats" template="overview" />
 
+
+
+</xar:template>

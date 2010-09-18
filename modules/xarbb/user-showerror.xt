@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 
 <xar:comment>
     This provides the means to display an error message while staying in the context of the module.
@@ -6,7 +9,7 @@
 </xar:comment>
 
 <xar:if condition="$errortype eq 'NOTOPIC'">
-    <xar:set name="$message">
+    <xar:set name="message">
         <xar:ml>
             <xar:mlstring>Topic '#(1)' does not exist, has been deleted, or you do not have access to it.</xar:mlstring>
             <xar:mlvar>#$tid#</xar:mlvar>
@@ -23,3 +26,6 @@
 <h1><xar:mlstring>Error</xar:mlstring></h1>
 <p>#$message#</p>
 
+
+
+</xar:template>

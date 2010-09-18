@@ -139,19 +139,20 @@ td.xar-alt {}
 }
 
 /* right block group classes */
-div.xar-block-right {
+div.xar-block-right, div.xar-block {
 	background-color: #FFFFFF;
     padding: 0;
     margin: 0 0 20px 0;
     width: 100%;
 }
-div.xar-block-head-right{
+div.xar-block-head-right, div.xar-block-head {
     background: #8BE3ED url(/themes/xartropics/images/block-head.gif) no-repeat scroll top center;
     margin: 0;
     padding: 6px 0 3px 0;
 }
-h3.xar-block-title-right {
-    text-align: center;
+h3.xar-block-title-right, h3.xar-block-title {
+    /*text-align: center; */
+	text-align: left;
     line-height: 1;
     font-size: 11pt;
     color: #0080C4;
@@ -164,7 +165,7 @@ div.xar-block-middle-right {
     border-width: 0 1px;
     font-size: 0;
 }
-div.xar-block-body-right {
+div.xar-block-body-right, div.xar-block-body {
     background: #FFFFFF url(/themes/xartropics/images/block-body.png) no-repeat scroll top center;
 	min-height: 64px;
 }
@@ -172,7 +173,7 @@ div.xar-block-core-right {
     padding-top: 1px;
     margin: 0 10px;
 }
-.xar-block-foot-right {
+.xar-block-foot-right, .xar-block-foot {
     height: 15px;
     background: #FFFFFF url(/themes/xartropics/images/block-foot.png) no-repeat scroll bottom center;
 }
@@ -188,7 +189,8 @@ div.xar-block-core-right *:first-child {
     margin-top: 0;
 }
 
-div#contentleft div.xar-block-right:first-child div.xar-block-head-right {
+div#contentleft div.xar-block-right:first-child div.xar-block-head-right,
+div#contentleft div.xar-block-right:first-child div.xar-block-head {
     background-image: url(/themes/xartropics/images/block-tophead.gif);
 }
 
@@ -482,7 +484,8 @@ li#devel_item > div#menu_devel {
 div#contentouter {
 	clear: both;
 	margin: 0;
-    background: transparent url(/themes/xartropics/images/wrap-bg.png) repeat-x scroll top left;
+/*  background: transparent url(/themes/xartropics/images/wrap-bg.png) repeat-x scroll top left; */
+    background: #F0E6D0 url(/themes/xartropics/images/wrap-bg.png) repeat-x scroll top left;
 }
 div#contentwrap {
 	margin: 0 22px 0 220px;

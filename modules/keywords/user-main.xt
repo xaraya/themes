@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:comment>License: GPL http://www.gnu.org/copyleft/gpl.html</xar:comment>
 <div class="xar-mod-head">
 	<span class="xar-mod-title">
@@ -25,7 +28,7 @@
 		</h1>
 
 		<xar:comment>Nav Tabs moved to the includes folder</xar:comment>
-		<xar:if condition="xarModGetVar('keywords', 'showsort')">
+		<xar:if condition="xarModVars::get('keywords', 'showsort')">
 			<xar:template file="navtabs" type="module" />
 		</xar:if>
 
@@ -131,3 +134,6 @@
 		</p>
 	</xar:if>
 </div>
+
+
+</xar:template>

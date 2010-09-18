@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+<!--
+<xar:var name="content" prep="false" />
+-->
+<xar:if condition="$type eq 'blockgroup'">
+    <xar:var name="content" />
+<xar:else/>
+    <div class="xar-block">
+        <xar:if id="title_condition" condition="!empty($title)">
+            <div class="xar-block-head">
+                <div class="xar-block-title">
+                    <h3 class="xar-block-title">
+                        <xar:var name="title" prep="false" />
+                        <xar:sec mask="AdminBase" catch="false">
+                            <a href="#xarModURL('blocks','admin','modify_instance',array('bid' => $bid))#" title="Edit this block" style="float: right">
+                                <img src="#xarTplGetImage('icons/modify.png','base')#"/>
+                            </a>
+                        </xar:sec>
+                    </h3>
+                </div>
+            </div>
+        <xar:else/>
+            <xar:sec mask="AdminBase" catch="false">
+                <div class="xar-block-head">
+                    <div class="xar-block-title">
+                    &#160;
+                        <a href="#xarModURL('blocks','admin','modify_instance',array('bid' => $bid))#" title="Edit this block" style="float: right">
+                            <img src="#xarTplGetImage('icons/modify.png','base')#"/>
+                        </a>
+                    </div>
+                </div>
+            </xar:sec>
+        </xar:if>
+        <xar:set name="waveoffset">rand(0,5) * 30</xar:set>
+        <div class="xar-block-middle-right" style="background-position: #$waveoffset#px 0;"></div>
+        <div class="xar-block-body">
+            <div class="xar-block-core-right">
+                <xar:var name="content" />
+            </div>
+        </div>
+        <div class="xar-block-foot"></div>
+    </div>
+</xar:if>
+</xar:template>

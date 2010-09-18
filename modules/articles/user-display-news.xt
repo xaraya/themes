@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <div class="display-news">
 	<xar:template file="publinks" type="module" />
 	<xar:set name="inthenewsurl">
@@ -38,7 +41,7 @@
 
 	<xar:if condition="isset($submitter_exists) and !empty($submitter)">
 		<xar:set name="submitter_uid">
-			#xarModAPIFunc('roles','user','get',array('uname'=>$submitter))# 
+			#xarMod::apiFunc('roles','user','get',array('uname'=>$submitter))# 
 		</xar:set>
 		<xar:set name="submitter_url">
 			#xarModURL('roles','user','display',array('uid'=>$submitter_uid['uid']))# 
@@ -119,13 +122,13 @@
     <div style="margin: 1em 0;">
         <xar:if condition="!empty($prevart)">
             <div style="width: 45%;float: left;">
-                <strong>&lt;&lt; <xar:mlstring>Previous Article</xar:mlstring></strong><br />
+                <strong>&#60;&#60; <xar:mlstring>Previous Article</xar:mlstring></strong><br />
                 <a href="#$prevart#">#$prevartinfo['title']#</a>
             </div>
         </xar:if>
         <xar:if condition="!empty($nextart)">
             <div class="xar-align-right" style="width: 45%;float: right;">
-                <strong><xar:mlstring>Next Article</xar:mlstring> &gt;&gt;</strong><br />
+                <strong><xar:mlstring>Next Article</xar:mlstring> &#62;&#62;</strong><br />
 				<a href="#$nextart#">#$nextartinfo['title']#</a>
             </div>
         </xar:if>
@@ -145,3 +148,6 @@
 </xar:if>
 
 <xar:template file="navtabs-user" type="module" />
+
+
+</xar:template>

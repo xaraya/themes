@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <div class="display-userwiki">
 	<xar:template file="publinks" type="module" />
 
@@ -7,9 +10,9 @@
 		    <a href="#$editurl#">#$edittitle#</a> | 
 		</xar:if>
         <xar:if condition="!empty($profile)">
-            <xar:set name="$author_string">'<a href="'.$profile.'">'.$author.'</a>'</xar:set>
+            <xar:set name="author_string">'<a href="'.$profile.'">'.$author.'</a>'</xar:set>
         <xar:else />
-            <xar:set name="$author_string">#$author#</xar:set>
+            <xar:set name="author_string">#$author#</xar:set>
         </xar:if>
         <xar:ml>
             <xar:mlstring>Posted by: #(1) | #(2) #(3)</xar:mlstring>
@@ -55,13 +58,13 @@
     <div style="margin: 1em 0;">
         <xar:if condition="!empty($prevart)">
             <div style="width: 45%;float: left;">
-                <strong>&lt;&lt; <xar:mlstring>Previous Article</xar:mlstring></strong><br />
+                <strong>&#60;&#60; <xar:mlstring>Previous Article</xar:mlstring></strong><br />
                 <a href="#$prevart#">#$prevartinfo['title']#</a>
             </div>
         </xar:if>
         <xar:if condition="!empty($nextart)">
             <div class="xar-align-right" style="width: 45%;float: right;">
-                <strong><xar:mlstring>Next Article</xar:mlstring> &gt;&gt;</strong><br />
+                <strong><xar:mlstring>Next Article</xar:mlstring> &#62;&#62;</strong><br />
 				<a href="#$nextart#">#$nextartinfo['title']#</a>
             </div>
         </xar:if>
@@ -89,3 +92,6 @@
 	</xar:foreach>
 </xar:if>
 <xar:template file="navtabs-user" type="module" />
+
+
+</xar:template>

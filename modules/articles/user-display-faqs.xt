@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <div class="display-faqs">
 <xar:template file="publinks" type="module" />
 	<xar:categories-navigation layout="trails" showchildren="1" module="articles" itemtype="$ptid" itemid="$aid" cids="$cids" showcatcount="$showcatcount" showempty="0" />
@@ -35,13 +38,13 @@
     <div style="margin: 1em 0;">
         <xar:if condition="!empty($prevart)">
             <div style="width: 45%;float: left;">
-                <strong>&lt;&lt; <xar:mlstring>Previous FAQ</xar:mlstring></strong><br />
+                <strong>&#60;&#60; <xar:mlstring>Previous FAQ</xar:mlstring></strong><br />
                 <a href="#$prevart#">#$prevartinfo['title']#</a>
             </div>
         </xar:if>
         <xar:if condition="!empty($nextart)">
             <div class="xar-align-right" style="width: 45%;float: right;">
-                <strong><xar:mlstring>Next FAQ</xar:mlstring> &gt;&gt;</strong><br />
+                <strong><xar:mlstring>Next FAQ</xar:mlstring> &#62;&#62;</strong><br />
 				<a href="#$nextart#">#$nextartinfo['title']#</a>
             </div>
         </xar:if>
@@ -56,3 +59,6 @@
     </xar:foreach>
 </xar:if>
 <xar:template file="navtabs-user" type="module" />
+
+
+</xar:template>

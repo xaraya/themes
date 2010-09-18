@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
 <div class="xar-polls-block">
     <xar:if condition="$canvote">
@@ -38,7 +41,7 @@
                     </strong>
                     [#$loop:item.percentage#%
                     <xar:if condition="$showtotalvotes eq 1">
-                        &nbsp;(#$loop:item.votes#)
+                        &#160;(#$loop:item.votes#)
                     </xar:if>]
                     <xar:if condition="$imggraph eq 1">
                         <xar:if condition="$loop:item.barwidth le 1">
@@ -75,3 +78,6 @@
 
 
 </div>
+
+
+</xar:template>

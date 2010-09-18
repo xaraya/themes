@@ -1,4 +1,29 @@
-<xar:set name="baseurl">xarServerGetBaseURL()</xar:set>
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+    <!-- @TODO: call a group of menu blocks or a menu block here instead of hardcoding links
+    <xar:block instance="navbarusers" template="navbarusers;navbar-users"/>
+    <xar:block instance="mainmenu" template="empty;navbar-users"/>
+    -->
+    <xar:set name="baseurl">xarServer::getBaseURL()</xar:set>
+    <ul id="navbar_core">
+        <li id="home_item" class="navbar-item">
+            <a href="#$baseurl#index.php" accesskey="0" class="navoverview"><xar:mlstring>Home</xar:mlstring></a>
+        <!--
+            <div id="menu_home">
+                <ul>
+                    <li><a href="#$baseurl#path/to/sublink"><xar:mlstring>Example sublink</xar:mlstring></a></li>
+                </ul>
+            </div>
+        -->
+        </li>
+        <xar:if condition="!xarUserIsLoggedIn()">
+        <li id="login_item" class="navbar-item">
+            <a href="#xarModURL('authsystem', 'user', 'showloginform')#" accesskey="0" class="navoverview"><xar:mlstring>Login</xar:mlstring></a>
+        </li>
+        </xar:if>
+    </ul>
+<!--
+<xar:set name="baseurl">xarServer::getBaseURL()</xar:set>
 <ul id="navbar_core">
 	<li id="home_item" class="navbar-item">
 		<a href="#$baseurl#index.php" accesskey="0" class="navoverview"><xar:mlstring>Home</xar:mlstring></a>
@@ -8,7 +33,7 @@
 		<div id="menu_about">
 			<ul>
 				<li><a href="#$baseurl#index.php/xarpages/about/project_history"><xar:mlstring>Project History</xar:mlstring></a></li>
-				<li><a href="#$baseurl#index.php/xarpages/about/features"><xar:mlstring>Features &amp; Requirements</xar:mlstring></a></li>
+				<li><a href="#$baseurl#index.php/xarpages/about/features"><xar:mlstring>Features &#38; Requirements</xar:mlstring></a></li>
 				<li><a href="#$baseurl#index.php/xarpages/about/roadmap"><xar:mlstring>Xaraya Project Roadmap</xar:mlstring></a></li>
 				<li><a href="#$baseurl#index.php/news"><xar:mlstring>News Room</xar:mlstring></a></li>
 				<li><a href="#$baseurl#index.php/xarpages/about/team"><xar:mlstring>Meet the Team</xar:mlstring></a></li>
@@ -40,8 +65,8 @@
 	            <li><a href="#$baseurl#index.php/documentation/c80/">Developers</a></li>
 	            <li><a href="#$baseurl#index.php/documentation/c81/">Site Builders</a></li>
 	            <li><a href="#$baseurl#index.php/documentation/c82/">Theme Creators</a></li>
-	            <li><a href="#$baseurl#index.php/documentation/c122/">Reference &amp; Manuals</a></li>
-	            <li><a href="#$baseurl#index.php/documentation/c121/">Tutorial &amp; Guides</a></li>
+	            <li><a href="#$baseurl#index.php/documentation/c122/">Reference &#38; Manuals</a></li>
+	            <li><a href="#$baseurl#index.php/documentation/c121/">Tutorial &#38; Guides</a></li>
 	            <li><a href="#$baseurl#index.php/documentation/c119/">Knowledgebase</a></li>
 	            <li><a href="#$baseurl#index.php/xarpages/documentation/rfcindex">RFC Library</a></li>
 	            <li><a href="#$baseurl#index.php/keywords">Find Docs by Keyword</a></li>
@@ -77,3 +102,6 @@
 		</div>
 	</li>
 </ul>
+-->
+
+</xar:template>

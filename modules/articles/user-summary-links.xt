@@ -1,9 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <div class="summary-links">
     <h2><a href="#$redirect#">#$title#</a></h2>
 
     <div class="byline">
         <xar:mlstring>Added by</xar:mlstring>:
-		<a href="&xar-modurl-roles-user-display;&amp;uid=#$authorid#">#xarUserGetVar('name',$authorid)#</a> | 
+		<a href="&xar-modurl-roles-user-display;&#38;uid=#$authorid#">#xarUserGetVar('name',$authorid)#</a> | 
         #xarLocaleGetFormattedDate('long',$pubdate)# #xarLocaleGetFormattedTime('long',$pubdate)# 
     </div>
 
@@ -54,3 +57,6 @@
 	    </a>
 	</p>
 </div>
+
+
+</xar:template>

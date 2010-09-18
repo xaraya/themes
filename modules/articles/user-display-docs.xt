@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <div class="display-docs">
 	<xar:comment>
 		<xar:template file="publinks" type="module" />
@@ -21,7 +24,7 @@
 	<xar:set name="maintainer_exists">xarUFindRole($maintainer)</xar:set>
 
 	<xar:if condition="isset($maintainer_exists) and !empty($maintainer)">
-		<xar:set name="maintainer_uid">xarModAPIFunc('roles','user','get',array('uname'=>$maintainer))</xar:set>
+		<xar:set name="maintainer_uid">xarMod::apiFunc('roles','user','get',array('uname'=>$maintainer))</xar:set>
 		<xar:set name="maintainer_url">xarModURL('roles','user','display',array('uid'=>$maintainer_uid['uid']))</xar:set>
 		<xar:set name="maintainer_string">'<a href="#$maintainer_url#">'.$maintainer_uid['name'].'</a>'</xar:set>
 	<xar:else />
@@ -75,13 +78,13 @@
     <div style="margin: 1em 0;">
         <xar:if condition="!empty($prevart)">
             <div style="width: 45%;float: left;">
-                <strong>&lt;&lt; <xar:mlstring>Previous Article</xar:mlstring></strong><br />
+                <strong>&#60;&#60; <xar:mlstring>Previous Article</xar:mlstring></strong><br />
                 <a href="#$prevart#">#$prevartinfo['title']#</a>
             </div>
         </xar:if>
         <xar:if condition="!empty($nextart)">
             <div class="xar-align-right" style="width: 45%;float: right;">
-                <strong><xar:mlstring>Next Article</xar:mlstring> &gt;&gt;</strong><br />
+                <strong><xar:mlstring>Next Article</xar:mlstring> &#62;&#62;</strong><br />
 				<a href="#$nextart#">#$nextartinfo['title']#</a>
             </div>
         </xar:if>
@@ -101,3 +104,6 @@
 </xar:if>
 
 <xar:template file="navtabs-user" type="module" />
+
+
+</xar:template>

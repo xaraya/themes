@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <div id="main_right">
     <xar:if condition="!empty($side_group_name)">
         <xar:blockgroup name="$side_group_name" />
@@ -74,6 +77,8 @@
         <li><a href="http://mt.xaraya.com/download/nightly/languages/com.xaraya.languages.zh.tgz" rel="external">ZH</a></li>
     </ul>
 
+    <p>Note: Language packs may be out of date.  If you can help translate Xaraya, <a href="http://www.xaraya.com/index.php/sitecontact">let us know</a>.</p>
+
     <h2>For Developers</h2>
 
     <p>Xaraya uses <a href="http://monotone.ca" rel="external">Monotone</a> for source control.  To learn more 
@@ -83,3 +88,6 @@
     <p>Repository activity can be viewed on the web at <A href="http://mt.xaraya.com/">http://mt.xaraya.com</a></p>
 
 </div>
+
+
+</xar:template>

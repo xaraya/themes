@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <div id="masthead">
     <div id="masthead_content">
         <h1>#$current_page.desc#</h1>    
@@ -24,12 +27,15 @@
 
     <xar:foreach in="$news" value="$article">
         #xarTplModule('articles', 'user', 'summary', $article, 'news')#
-
     </xar:foreach>
+
     <p>
-        <a href="#xarModURL('articles','user','view',array('ptid'=>1,'startnum'=>4))#">
+        <a href="#xarModURL('articles','user','view',array('ptid'=>1,'startnum'=>6))#">
             <xar:mlstring>More News...</xar:mlstring>
         </a>
     </p>
 
 </div>
+
+
+</xar:template>

@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <div class="summary-quotes">
 	<h2>
 		<a class="xar-title" href="#$link#">#$title#</a>
@@ -14,3 +17,5 @@
 	    </a>
 	</p>
 </div>
+
+</xar:template>

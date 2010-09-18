@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:comment>
   License: GPL http://www.gnu.org/copyleft/gpl.html 
 </xar:comment>
@@ -35,7 +38,7 @@
 
     <xar:set name="dummy">xarSessionSetVar('statusmsg','')</xar:set>
 
-    <form method="post" name="post" id="post" action="&xar-modurl-xarbb-admin-modify;&amp;phase=update" enctype="application/x-www-form-urlencoded" onsubmit="return formCheck(this, fieldRequired, fieldDescription);">
+    <form method="post" name="post" id="post" action="&xar-modurl-xarbb-admin-modify;&#38;phase=update" enctype="application/x-www-form-urlencoded" onsubmit="return formCheck(this, fieldRequired, fieldDescription);">
         <fieldset >
             <legend>
                 <strong>
@@ -226,7 +229,7 @@
                 </select>
           </div>
 
-          <xar:if condition="xarModIsAvailable('newsgroups') and xarModGetVar('xarbb', 'masternntpsetting')">
+          <xar:if condition="xarModIsAvailable('newsgroups') and xarModVars::get('xarbb', 'masternntpsetting')">
                 <div class="xar-form-input-wrapper">
                     <label for="nntp"  class="xar-form-label" title="#xarML('Associate with which Newsgroup')#">
                         <xar:mlstring>NNTP Association</xar:mlstring>
@@ -305,3 +308,6 @@
     </div>
   </fieldset>
 </xar:comment>
+
+
+</xar:template>

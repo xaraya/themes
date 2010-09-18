@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
 <div class="xar-mod-head">
     <span class="xar-mod-title">
@@ -40,7 +43,7 @@
             </h3>
         </xar:if>
         <xar:categories-navigation layout="trails" showchildren="1" module="articles" type="admin" itemtype="$ptid" catid="$catid" />
-        <xar:base-include-javascript module="base" filename="checkall.js" />
+        <xar:javascript module="base" filename="checkall.js" />
             <form method="post" name="viewarticles" id="viewarticles" action="#xarModURL('articles','admin','updatestatus')#">
                 <div>
                     <input type="hidden" name="ptid" id="ptid" value="#$ptid#" />
@@ -136,7 +139,7 @@
                         <label for="status">
                             <xar:mlstring>Change checked article status to</xar:mlstring>:
                         </label>
-                        &nbsp;
+                        &#160;
                         <select name="status" id="status">
 	                        <xar:if condition="xarSecurityCheck('DeleteArticles',0,'Article',$ptid.':All:All:All')">
 	                            <option value="-1">
@@ -151,7 +154,7 @@
 	                                </option>
 	                            <xar:elseif condition="$id eq 3"/>
 	                                <xar:comment>Frontpage</xar:comment>
-	                                <xar:if condition="xarModGetVar('articles','defaultpubtype') eq $ptid or xarModGetVar('articles','defaultpubtype') eq ''">
+	                                <xar:if condition="xarModVars::get('articles','defaultpubtype') eq $ptid or xarModVars::get('articles','defaultpubtype') eq ''">
 	                                    <option value="#$id#">
 	                                        #$name#
 	                                    </option>
@@ -175,3 +178,6 @@
         #$pager#
     </div>
 </div>
+
+
+</xar:template>

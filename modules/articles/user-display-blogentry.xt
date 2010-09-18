@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <div class="display-blogentry">
 	<xar:template file="publinks" type="module" />
 	<h1>
@@ -5,7 +8,7 @@
 	</h1>
 	<div class="byline">
 		<xar:mlstring>Posted By </xar:mlstring>
-		<a href="&xar-modurl-roles-user-display;&amp;uid=#$authorid#">#$author#</a>
+		<a href="&xar-modurl-roles-user-display;&#38;uid=#$authorid#">#$author#</a>
 
 		 | #xarLocaleGetFormattedDate('long',$pubdate)# #xarLocaleGetFormattedTime('long',$pubdate)#
 
@@ -25,13 +28,13 @@
     <div style="margin: 1em 0;">
         <xar:if condition="!empty($prevart)">
             <div style="width: 45%;float: left;">
-                <strong>&lt;&lt; <xar:mlstring>Previous Entry</xar:mlstring></strong><br />
+                <strong>&#60;&#60; <xar:mlstring>Previous Entry</xar:mlstring></strong><br />
                 <a href="#$prevart#">#$prevartinfo['title']#</a>
             </div>
         </xar:if>
         <xar:if condition="!empty($nextart)">
             <div class="xar-align-right" style="width: 45%;float: right;">
-                <strong><xar:mlstring>Next Entry</xar:mlstring> &gt;&gt;</strong><br />
+                <strong><xar:mlstring>Next Entry</xar:mlstring> &#62;&#62;</strong><br />
 				<a href="#$nextart#">#$nextartinfo['title']#</a>
             </div>
         </xar:if>
@@ -58,3 +61,6 @@
 </xar:if>
 
 <xar:template file="navtabs-user" type="module" />
+
+
+</xar:template>

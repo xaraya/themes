@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
 
 <div class="xar-mod-head">
@@ -25,14 +28,14 @@
 		            	#xarVarPrepForDisplay($loop:item.description)#
 		            </td>
 		            <td>
-		            	<xar:if condition="empty($loop:item.image)">&nbsp;<xar:else />#$loop:item.image#</xar:if>
+		            	<xar:if condition="empty($loop:item.image)">&#160;<xar:else />#$loop:item.image#</xar:if>
 		            </td>
 		            <td style="text-align: center;">
 		                <xar:sec mask="EditCategories" catch="false">
 		                <a href="#xarModURL('categories', 'admin', 'modifycat', array('cid' => $loop:item['cid']))#">
 		                    <xar:mlstring>Modify</xar:mlstring>
 		                </a>
-		                &nbsp;|&nbsp;
+		                &#160;|&#160;
 		                <a href="#xarModURL('categories', 'admin', 'deletecat', array('cid' => $loop:item['cid']))#">
 		                    <xar:mlstring>Delete</xar:mlstring>
 		                </a>
@@ -46,13 +49,13 @@
 		                #xarVarPrepForDisplay($loop:item.name)#
 		            </td>
 		            <td class="xar-accent">#xarVarPrepForDisplay($loop:item.description)#</td>
-		            <td class="xar-accent"><xar:if condition="empty($loop:item.image)">&nbsp;<xar:else />#$loop:item.image#</xar:if></td>
+		            <td class="xar-accent"><xar:if condition="empty($loop:item.image)">&#160;<xar:else />#$loop:item.image#</xar:if></td>
 		            <td class="xar-accent" style="text-align: center;">
 		                <xar:sec mask="EditCategories" catch="false">
 		                <a href="#xarModURL('categories', 'admin', 'modifycat', array('cid' => $loop:item['cid']))#">
 		                    <xar:mlstring>Modify</xar:mlstring>
 		                </a>
-		                &nbsp;|&nbsp;
+		                &#160;|&#160;
 		                <a href="#xarModURL('categories', 'admin', 'deletecat', array('cid' => $loop:item['cid']))#">
 		                    <xar:mlstring>Delete</xar:mlstring>
 		                </a>
@@ -75,14 +78,14 @@
             <xar:if condition="(($i%100) eq 1) and ($i ne 1)">
                 <br />
             <xar:else />
-                &nbsp;|&nbsp;
+                &#160;|&#160;
             </xar:if>
         </xar:for>
         <xar:if condition="$i eq $pagertotal">
             <xar:if condition="$i le $pagerstart  AND ($i + $catsperpage) gt $pagerstart">
                 #$i#
             <xar:else />
-                <a href="#xarModURL('categories', 'admin', 'viewcats', array('pagerstart' =&gt; $i, 'catsperpage' =&gt; $catsperpage))#">
+                <a href="#xarModURL('categories', 'admin', 'viewcats', array('pagerstart' =&#62; $i, 'catsperpage' =&#62; $catsperpage))#">
                     #$i#
                 </a>
             </xar:if>
@@ -91,23 +94,26 @@
             <xar:if condition="$i le $pagerstart  AND ($i + $catsperpage) gt $pagerstart">
                 #$i#-#$pagertotal#
             <xar:else />
-                <a href="#xarModURL('categories', 'admin', 'viewcats', array('pagerstart' =&gt; $i, 'catsperpage' =&gt; $catsperpage))#">
+                <a href="#xarModURL('categories', 'admin', 'viewcats', array('pagerstart' =&#62; $i, 'catsperpage' =&#62; $catsperpage))#">
                     #$i#-#$pagertotal#
                 </a>
             </xar:if>
         </xar:if>
 
 		<p>
-			<xar:mlstring>Categories Total:</xar:mlstring>&nbsp;#$pagertotal#
+			<xar:mlstring>Categories Total:</xar:mlstring>&#160;#$pagertotal#
 		</p>
 
 	</div>
 
 	<div class="xar-align-center xar-margin-thickends">
 	    <form action="#xarModURL('categories','admin','viewcats')#" method="post">
-	        <xar:mlstring>Categories per page:</xar:mlstring>&nbsp;
+	        <xar:mlstring>Categories per page:</xar:mlstring>&#160;
 	        <input type="text" name="catsperpage" id="catsperpage" value="#$catsperpage#" size="5" />
 	        <input type="submit" value="#$reloadlabel#" />
 	    </form>
 	</div>
 </div>
+
+
+</xar:template>

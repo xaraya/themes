@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:template file="publinks" type="module" />
 <xar:if condition="!empty($ptid) or !empty($catid)">
 	<xar:categories-navigation layout="trails" showchildren="2" module="articles" itemtype="$ptid" catid="$catid" showcatcount="$showcatcount" showempty="1" />
@@ -71,3 +74,6 @@
 	<xar:categories-navigation layout="prevnext" />
 </xar:if>
 <xar:template file="navtabs-user" type="module" />
+
+
+</xar:template>

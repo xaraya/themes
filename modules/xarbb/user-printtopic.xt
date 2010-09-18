@@ -1,7 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:comment>
     License: GPL http://www.gnu.org/copyleft/gpl.html 
 </xar:comment>
-<xar:base-include-javascript module="base" filename="confirmlink.js" />
+<xar:javascript module="base" filename="confirmlink.js" />
 <xar:comment>
     using css-driven template, avoiding excess tables for layout, especially nested ones 
 </xar:comment>
@@ -33,7 +36,7 @@
                 <td class="xar-norm author" valign="top">
                     <div>
                         <strong>
-                            <a href="&xar-modurl-roles-user-display;&amp;uid=#$tposter#">
+                            <a href="&xar-modurl-roles-user-display;&#38;uid=#$tposter#">
                                 #$postername# 
                             </a>
                         </strong>
@@ -82,7 +85,7 @@
                             Reply post could be anonymous - need to check 
                         </xar:comment>
                         <xar:if condition="$item['xar_postanon'] eq 0">
-                            <a href="&xar-modurl-roles-user-display;&amp;uid=#$item['xar_uid']#">
+                            <a href="&xar-modurl-roles-user-display;&#38;uid=#$item['xar_uid']#">
                                 #$item['xar_author']# 
                             </a>
                             <xar:else />
@@ -124,3 +127,6 @@
         </xar:foreach>
     </table>
 </div>
+
+
+</xar:template>

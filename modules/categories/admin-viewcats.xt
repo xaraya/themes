@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
 <div class="xar-mod-head">
 	<span class="xar-mod-title"><xar:mlstring>Categories Administration</xar:mlstring></span>
@@ -21,12 +24,12 @@
                 #$loop:item['name']#
             </td>
             <td>#$loop:item['description']#</td>
-            <td><xar:if condition="empty($loop:item['image'])">&nbsp;<xar:else />#$loop:item['image']#</xar:if></td>
+            <td><xar:if condition="empty($loop:item['image'])">&#160;<xar:else />#$loop:item['image']#</xar:if></td>
             <td style="text-align: center;">
                 <a href="#xarModURL('categories', 'admin', 'modifycat', array('cid' => $loop:item['cid']))#">
                     <xar:mlstring>Modify</xar:mlstring>
                 </a>
-                &nbsp;|&nbsp;
+                &#160;|&#160;
                 <a href="#xarModURL('categories', 'admin', 'deletecat', array('cid' => $loop:item['cid']))#">
                     <xar:mlstring>Delete</xar:mlstring>
                 </a>
@@ -40,15 +43,15 @@
             </td>
             <td class="xar-accent">#$loop:item['description']#</td>
             <td class="xar-accent">
-              <xar:if condition="empty($loop:item['image'])">&nbsp;<xar:else />#$loop:item['image']#</xar:if>
-              &nbsp;|&nbsp;
+              <xar:if condition="empty($loop:item['image'])">&#160;<xar:else />#$loop:item['image']#</xar:if>
+              &#160;|&#160;
               #$hooks#
             </td>
             <td class="xar-accent" style="text-align: center;">
                 <a href="#xarModURL('categories', 'admin', 'modifycat', array('cid' => $loop:item['cid']))#">
                     <xar:mlstring>Modify</xar:mlstring>
                 </a>
-                &nbsp;|&nbsp;
+                &#160;|&#160;
                 <a href="#xarModURL('categories', 'admin', 'deletecat', array('cid' => $loop:item['cid']))#">
                     <xar:mlstring>Delete</xar:mlstring>
                 </a>
@@ -72,7 +75,7 @@
             <xar:if condition="(($i%100) eq 1) and ($i ne 1)">
                 <br />
             <xar:else />
-                &nbsp;|&nbsp;
+                &#160;|&#160;
             </xar:if>
         </xar:for>
         <xar:if condition="$i eq $pagertotal">
@@ -96,12 +99,14 @@
     </td>
 </tr>
 <form action="#xarModURL('categories','admin','viewcats',array())#" method="post">
-<tr><td><xar:mlstring>Categories per page:</xar:mlstring>&nbsp;&nbsp;
+<tr><td><xar:mlstring>Categories per page:</xar:mlstring>&#160;&#160;
     <input type="text" name="catsperpage" id="catsperpage" value="#$catsperpage#" size="5" />
     <input type="submit" value="#$reloadlabel#" />
     </td></tr>
 </form>
-<tr><td><xar:mlstring>Categories Total:</xar:mlstring>&nbsp;&nbsp;#$pagertotal#</td></tr>
+<tr><td><xar:mlstring>Categories Total:</xar:mlstring>&#160;&#160;#$pagertotal#</td></tr>
 </table>
 
 </div>
+
+</xar:template>

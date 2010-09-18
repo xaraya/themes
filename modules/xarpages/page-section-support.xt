@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <div id="main_right">
     <xar:if condition="!empty($side_group_name)">
         <xar:blockgroup name="$side_group_name" />
@@ -43,7 +46,7 @@
     </h2>
 
     <p>Xaraya's <a href="#xarModURL('articles','user','view',array('ptid'=>14,))#">User Wiki</a> is the place where 
-    quick tips &amp; tricks can be submitted by the community.</p>
+    quick tips &#38; tricks can be submitted by the community.</p>
 
     <div>
         #$article.body#
@@ -51,3 +54,6 @@
 
 
 </div>
+
+
+</xar:template>

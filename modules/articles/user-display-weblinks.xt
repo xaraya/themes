@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <div class="display-weblinks">
 	<xar:template file="publinks" type="module" />
 
@@ -13,7 +16,7 @@
 		#xarLocaleGetFormattedDate('medium',$pubdate)#
 
 	    <xar:mlstring> by </xar:mlstring> 
-		<a href="&xar-modurl-roles-user-display;&amp;uid=#$authorid#">#xarUserGetVar('name',$authorid)#</a>
+		<a href="&xar-modurl-roles-user-display;&#38;uid=#$authorid#">#xarUserGetVar('name',$authorid)#</a>
 		<xar:if condition="!empty($counter)"> | 
 			#$counter#
 			<xar:mlstring>
@@ -42,13 +45,13 @@
     <div style="margin: 1em 0;">
         <xar:if condition="!empty($prevart)">
             <div style="width: 45%;float: left;">
-                <strong>&lt;&lt; <xar:mlstring>Previous Site</xar:mlstring></strong><br />
+                <strong>&#60;&#60; <xar:mlstring>Previous Site</xar:mlstring></strong><br />
                 <a href="#$prevart#">#$prevartinfo['title']#</a>
             </div>
         </xar:if>
         <xar:if condition="!empty($nextart)">
             <div class="xar-align-right" style="width: 45%;float: right;">
-                <strong><xar:mlstring>Next Site</xar:mlstring> &gt;&gt;</strong><br />
+                <strong><xar:mlstring>Next Site</xar:mlstring> &#62;&#62;</strong><br />
 				<a href="#$nextart#">#$nextartinfo['title']#</a>
             </div>
         </xar:if>
@@ -88,3 +91,6 @@
 </div>
 
 <xar:template file="navtabs-user" type="module" />
+
+
+</xar:template>

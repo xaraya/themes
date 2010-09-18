@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <script type="text/javascript">
 
 var xt_navdrop = function() {
@@ -9,31 +12,34 @@ var xt_navraise = function() {
 }
 
 var hoverConfig = {
-     sensitivity: 1, // number = sensitivity threshold (must be 1 or higher)    
-     interval: 20, // number = milliseconds for onMouseOver polling interval    
-     over: xt_navdrop, // function = onMouseOver callback (REQUIRED)    
-     timeout: 50, // number = milliseconds delay before onMouseOut    
-     out: xt_navraise // function = onMouseOut callback (REQUIRED)    
+     sensitivity: 1, // number = sensitivity threshold (must be 1 or higher)
+     interval: 20, // number = milliseconds for onMouseOver polling interval
+     over: xt_navdrop, // function = onMouseOver callback (REQUIRED)
+     timeout: 50, // number = milliseconds delay before onMouseOut
+     out: xt_navraise // function = onMouseOut callback (REQUIRED)
 };
 
 jQuery(document).ready(function(){
-    jQuery("ul#navbar_core > li").hoverIntent(hoverConfig);
+    jQuery("ul##navbar_core > li").hoverIntent(hoverConfig);
 
 	if(jQuery.browser.msie) {
 		// manually set margins on dropdowns to make them
 		// appear in the correct location
-		jQuery('div#menu_about').css('margin', '28px 0 0 -56px');
-		jQuery('div#menu_support').css('margin', '28px 0 0 -71px');
-		jQuery('div#menu_documentation').css('margin', '28px 0 0 -121px');
-		jQuery('div#menu_community').css('margin', '28px 0 0 -92px');
-		jQuery('div#menu_devel').css('margin', '28px 0 0 -115px');
+		jQuery('div##menu_about').css('margin', '28px 0 0 -56px');
+		jQuery('div##menu_support').css('margin', '28px 0 0 -71px');
+		jQuery('div##menu_documentation').css('margin', '28px 0 0 -121px');
+		jQuery('div##menu_community').css('margin', '28px 0 0 -92px');
+		jQuery('div##menu_devel').css('margin', '28px 0 0 -115px');
 	}
     <xar:if condition="!xarUserIsLoggedIn()">
     if(!jQuery.browser.msie) {
-	    jQuery('#modal_trop_modal_login').jqm({overlay: 30, overlayClass: 'modal-overlay'});
+	    jQuery('##modal_trop_modal_login').jqm({overlay: 30, overlayClass: 'modal-overlay'});
 	}
     </xar:if>
 
 });
 
 </script>
+
+
+</xar:template>

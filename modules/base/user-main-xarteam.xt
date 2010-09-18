@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <div class="xar-mod-head">
 	<span class="xar-mod-title">
 		<xar:mlstring>Xaraya Contributors</xar:mlstring>
@@ -10,3 +13,6 @@
 <div id="main_left">
 	<xar:block module="articles" type="featureditems" instance="team_article_overview" template="overview" />
 </div>
+
+
+</xar:template>

@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 
 <xar:comment>
     This is a very simple example of a template for the 'html' page type.
@@ -17,9 +20,9 @@
     <xar:mlstring>You are here:</xar:mlstring>
     <xar:loop name="$ancestors">
         <xar:if condition="$loop:item.pid eq $pid">
-            &gt;&gt; <span title="#xarVarPrepForDisplay($loop:item.desc)#">#$loop:item.name#</span>
+            &#62;&#62; <span title="#xarVarPrepForDisplay($loop:item.desc)#">#$loop:item.name#</span>
         <xar:else />
-            &gt;&gt; <a href="#xarModURL('xarpages','user','display',array('pid'=&gt;$loop:item.pid))#" title="#xarVarPrepForDisplay($loop:item.desc)#">#$loop:item.name#</a>
+            &#62;&#62; <a href="#xarModURL('xarpages','user','display',array('pid'=&#62;$loop:item.pid))#" title="#xarVarPrepForDisplay($loop:item.desc)#">#$loop:item.name#</a>
         </xar:if>
     </xar:loop>
 </div>
@@ -31,7 +34,7 @@
             <xar:if condition="$loop:item.pid eq $pid">
                 <span title="#xarVarPrepForDisplay($loop:item.desc)#">#$loop:item.name#</span>
             <xar:else />
-                <a href="#xarModURL('xarpages','user','display',array('pid'=&gt;$loop:item.pid))#" title="#xarVarPrepForDisplay($loop:item.desc)#">#$loop:item.name#</a>
+                <a href="#xarModURL('xarpages','user','display',array('pid'=&#62;$loop:item.pid))#" title="#xarVarPrepForDisplay($loop:item.desc)#">#$loop:item.name#</a>
             </xar:if>
         </xar:loop>
     </div>
@@ -41,14 +44,17 @@
     <div>
         <xar:mlstring>Sub-pages:</xar:mlstring>
         <xar:loop name="$children">
-            <a href="#xarModURL('xarpages','user','display',array('pid'=&gt;$loop:item.pid))#" title="#xarVarPrepForDisplay($loop:item.desc)#">#$loop:item.name#</a>
+            <a href="#xarModURL('xarpages','user','display',array('pid'=&#62;$loop:item.pid))#" title="#xarVarPrepForDisplay($loop:item.desc)#">#$loop:item.name#</a>
         </xar:loop>
     </div>
 </xar:if>
 
 <xar:if condition="isset($current_page.dd.aid)">
-  <a href="#xarModURL('articles','user','display',array('aid'=&gt;$current_page.dd.aid,'ptid'=&gt;$current_page.dd.pub))#">#$current_page.name#</a>
+  <a href="#xarModURL('articles','user','display',array('aid'=&#62;$current_page.dd.aid,'ptid'=&#62;$current_page.dd.pub))#">#$current_page.name#</a>
 
 <xar:elseif condition="isset($current_page.dd.body)" />
     <div>#$current_page.dd.body#</div>
 </xar:if>
+
+
+</xar:template>

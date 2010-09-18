@@ -1,4 +1,15 @@
-<xar:if condition="isset($sponsortype)and ($sponsortype eq '1' or $sponsortype eq '3')">
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
+<xar:if condition="isset($is_home_xarpage)">
+	<div class="summary-sponsor">
+	    <h2><a href="#$link#">#$title#</a></h2>
+        <xar:if condition="!empty($summary)">
+            #$summary#
+        </xar:if>
+
+	</div>
+<xar:elseif condition="isset($sponsortype)and ($sponsortype eq '1' or $sponsortype eq '3')" />
 	<xar:if condition="!(isset($logoimage_output) and count($logoimage_output) lt 1) and empty($summary)">
 		<xar:set name="style">''</xar:set>
 	<xar:else />
@@ -61,3 +72,6 @@
  </xar:if>
 
 
+
+
+</xar:template>

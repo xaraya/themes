@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:comment>
     License: GPL http://www.gnu.org/copyleft/gpl.html 
 </xar:comment>
@@ -26,7 +29,7 @@
 </xar:if>
 
     <div class="xar-align-center xar-margin-thicktop">
-        <input type="hidden" name="redirecturl" id="returnurl#$blockid#" value="#xarServerGetCurrentURL()#" />
+        <input type="hidden" name="redirecturl" id="returnurl#$blockid#" value="#xarServer::getCurrentURL()#" />
         <input type="submit" value="#xarML('Log In')#" />
     </div>
 
@@ -36,3 +39,6 @@
         </a>
     </p>
 </form>
+
+
+</xar:template>

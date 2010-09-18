@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
 <div class="xar-mod-head"><span class="xar-mod-title"><xar:mlstring>xarbb Module</xar:mlstring></span></div>
 <!-- common admin menu for this module - remove link to the current function -->
@@ -11,9 +14,12 @@
 
     <span class="xar-title"><xar:mlstring>Confirm deletion of reply</xar:mlstring></span><br /><br />
 
-    <xar:set name="$mlconfirm"><xar:mlstring>Confirm</xar:mlstring></xar:set>
+    <xar:set name="mlconfirm"><xar:mlstring>Confirm</xar:mlstring></xar:set>
     <input type="submit" value="#$mlconfirm#"  tabindex="1" /><br /><br />
     
     <a href="&xar-modurl-xarbb-user-viewtopic;"><xar:mlstring>Cancel deletion of reply</xar:mlstring></a>
 </form>
 </div>
+
+
+</xar:template>

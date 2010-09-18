@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:comment>
     License: GPL http://www.gnu.org/copyleft/gpl.html
 </xar:comment>
@@ -13,9 +16,9 @@
         <xar:if condition="!empty($xarbbtitle)">
             #$xarbbtitle#
         <xar:else />
-            #xarModGetVar('themes', 'SiteName', 0)# #xarModGetVar('themes', 'SiteTitleSeparator', 0)# #xarModGetVar('themes', 'SiteSlogan', 0)#
+            #xarModVars::get('themes', 'SiteName', 0)# #xarModVars::get('themes', 'SiteTitleSeparator', 0)# #xarModVars::get('themes', 'SiteSlogan', 0)#
         </xar:if>
-        #xarModGetVar('themes', 'SiteTitleSeparator', 0)#
+        #xarModVars::get('themes', 'SiteTitleSeparator', 0)#
         <xar:mlstring>Forum Index</xar:mlstring>
     </a>
 </h4>
@@ -59,3 +62,6 @@
         </tr>
     </table>
 </div>
+
+
+</xar:template>

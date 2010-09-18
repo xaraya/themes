@@ -1,16 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:if condition="!empty($prevlabel) or !empty($prevlabel)">
-    <div style="margin: 1em 0;background-color: #f6fade;">
+    <div style="margin: 1em 0;background-color: ####f6fade;">
         <xar:if condition="!empty($prevlabel)">
             <div style="width: 45%;float: left;margin: .5em;">
-                <a href="#$prevlink#">&lt;&lt; #$prevlabel#</a>
+                <a href="#$prevlink#">&#60;&#60; #$prevlabel#</a>
             </div>
         </xar:if>
         <xar:if condition="!empty($nextlabel)">
             <div class="xar-align-right" style="width: 45%;float: right;margin: .5em;">
-                <a href="#$nextlink#">#$nextlabel# &gt;&gt; </a>
+                <a href="#$nextlink#">#$nextlabel# &#62;&#62; </a>
             </div>
         </xar:if>
         <br class="xar-clearboth" />
     </div>
 </xar:if>
 
+
+
+</xar:template>

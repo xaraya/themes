@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <div class="xar-mod-head"><span class="xar-mod-title"><xar:mlstring>Newsgroups</xar:mlstring></span></div>
 <div class="xar-mod-body">
 
@@ -47,3 +50,6 @@
 </xar:if>
 
 </div>
+
+
+</xar:template>

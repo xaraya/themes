@@ -4,8 +4,8 @@
 <xar:blocklayout content="text/html" xmlns:xar="http://xaraya.com/2004/blocklayout" version="1.0" dtd="xhtml1-strict">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-    <base href="#xarServerGetBaseURL()#" />
-	<xar:set name="thisreq">xarRequestGetInfo()</xar:set>
+    <base href="#xarServer::getBaseURL()#" />
+	<xar:set name="thisreq">xarController::$request->getInfo()</xar:set>
 	<xar:set name="thismodule">$thisreq[0]</xar:set>
 	<xar:set name="thistype">$thisreq[1]</xar:set>
 	<xar:set name="thisfunc">$thisreq[2]</xar:set>
@@ -20,12 +20,12 @@
 	<xar:elseif condition="$thismod eq 'authsystem'" />
 		<xar:set name="section">''</xar:set>
 	<xar:elseif condition="$thismod eq 'xarpages'" />
-	    <xar:set name="thispage">xarRequestGetVar('pid')</xar:set>
+	    <xar:set name="thispage">xarRequest::getVar('pid')</xar:set>
 	    <xar:if condition="$thispage eq 50">
 	    	<xar:set name="section">''</xar:set>
 	    	<xar:set name="is_home">true</xar:set>
 		<xar:else />
-			<xar:set name="rootpage">array_shift(xarModAPIFunc('xarpages','tree','getancestors',array('id'=>$thispage,'tablename'=>'xar_xarpages_pages','idname'=>'xar_pid','rootonly'=>true)))</xar:set>
+			<xar:set name="rootpage">array_shift(xarMod::apiFunc('xarpages','tree','getancestors',array('id'=>$thispage,'tablename'=>'xar_xarpages_pages','idname'=>'xar_pid','rootonly'=>true)))</xar:set>
 		    <xar:if condition="in_array($rootpage, array(51,90))" >
 		    	<xar:set name="section">'about'</xar:set>
 		    <xar:elseif condition="in_array($rootpage, array(52))" />
@@ -41,7 +41,7 @@
 			</xar:if>
 		</xar:if>
 	<xar:elseif condition="$thismod eq 'articles'" />
-		<xar:set name="thispt">xarRequestGetVar('ptid')</xar:set>
+		<xar:set name="thispt">xarRequest::getVar('ptid')</xar:set>
 		<xar:if condition="in_array($thispt, array(6,7,10,11,12,14,18))">
 			<xar:set name="section">'team'</xar:set>
 		<xar:elseif condition="$thispt eq 9 or $thispt eq 16" />
@@ -97,16 +97,16 @@
         <style type="text/css">@import url(&xar-baseurl;#$themedir#/style/inside.css); </style>
     </xar:if>
 
-	<xar:base-include-javascript filename="jquery.pack.js" module="jquery" />
-	<xar:base-include-javascript filename="jquery.compat-1.1.js" module="jquery" />
-	<xar:base-include-javascript filename="jquery.hoverIntent.minified.js" module="jquery" />
-	<xar:base-include-javascript filename="jqModal.js" module="jquery" />
+	<xar:javascript filename="jquery.pack.js" module="jquery" />
+	<xar:javascript filename="jquery.compat-1.1.js" module="jquery" />
+	<xar:javascript filename="jquery.hoverIntent.minified.js" module="jquery" />
+	<xar:javascript filename="jqModal.js" module="jquery" />
 
-    <xar:base-render-javascript position="head" />
+    <xar:place-javascript position="head" />
 
     <xar:template file="suckerfish" type="theme" />
 
-    <xar:additional-styles />
+    <xar:place-css />
 </head>
 <body>
     <div id="header">
@@ -158,7 +158,7 @@
 							<xar:set name="secname">#$section#</xar:set>
 						</xar:if>
 						<xar:comment>
-						/ #$section# #$secname# #$thispage# &gt; #$rootpage# /
+						/ #$section# #$secname# #$thispage# &#62; #$rootpage# /
 						</xar:comment>
 						<div class="xar-block-head-right topblock">
                             <xar:if condition="$section eq 'team'">
@@ -198,7 +198,7 @@
             <div id="footer_blcorner"></div>
         </div>
     </div>
-    <xar:base-render-javascript position="body" />
+    <xar:place-javascript position="body" />
 <!--
     <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
     </script>

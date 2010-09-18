@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:comment>
     License: GPL http://www.gnu.org/copyleft/gpl.html
 </xar:comment>
@@ -12,8 +15,8 @@
 </div>
 <xar:style module="xarbb" scope="module" file="xarbb-layout" />
 
-<xar:base-include-javascript module="base" filename="formcheck.js" position="head" />
-<xar:base-include-javascript module="xarbb" filename="popup.js" position="head" />
+<xar:javascript module="base" filename="formcheck.js" position="head" />
+<xar:javascript module="xarbb" filename="popup.js" position="head" />
 
 <script type="text/javascript">
 <!--
@@ -30,11 +33,11 @@
         <xar:if condition="!empty($xarbbtitle)">
             #$xarbbtitle#
         <xar:else />
-            #xarModGetVar('themes', 'SiteName', 0)#
-            #xarModGetVar('themes', 'SiteTitleSeparator', 0)#
-            #xarModGetVar('themes', 'SiteSlogan', 0)#
+            #xarModVars::get('themes', 'SiteName', 0)#
+            #xarModVars::get('themes', 'SiteTitleSeparator', 0)#
+            #xarModVars::get('themes', 'SiteSlogan', 0)#
         </xar:if>
-            #xarModGetVar('themes', 'SiteTitleSeparator', 0)#
+            #xarModVars::get('themes', 'SiteTitleSeparator', 0)#
         <xar:mlstring>
             Forum Index
         </xar:mlstring>
@@ -65,7 +68,7 @@
                 </td>
                 <td class="xar-norm newtopicfield">
                     <xar:if condition="strtolower(xarUserGetVar('uname')) ne 'anonymous'">
-                        <a href="&xar-modurl-roles-user-email;&amp;uid=#$package.uid#">
+                        <a href="&xar-modurl-roles-user-email;&#38;uid=#$package.uid#">
                             #$package.name#
                         </a>
                         <xar:if condition="$receipt.action ne 'modify' and xarUserIsLoggedIn()">
@@ -75,7 +78,7 @@
                             </a>
                             ]
                         </xar:if>
-                        <xar:if condition="xarModGetVar('comments','AllowPostAsAnon') eq '1'">
+                        <xar:if condition="xarModVars::get('comments','AllowPostAsAnon') eq '1'">
                             <xar:if condition="isset($package.postanon) and $package.postanon eq '1'">
                                 <input type="checkbox" name="package[postanon]" id="package_postanon" checked="checked" />
                             <xar:else />
@@ -160,7 +163,7 @@
                         <br />
                         <xar:mlstring>Smilies are</xar:mlstring>
                         <xar:if condition="xarModIsHooked('smilies', 'xarbb', $fid)">
-                            <a href="#xarModUrl('smilies', 'user', 'main', array('theme' =&gt; 'print'))#" onclick="xarbb_popUp(this.href,'elastic',400,400);return false;" target="newWin" style="color: green;">
+                            <a href="#xarModUrl('smilies', 'user', 'main', array('theme' =&#62; 'print'))#" onclick="xarbb_popUp(this.href,'elastic',400,400);return false;" target="newWin" style="color: green;">
                                 <xar:mlstring>On</xar:mlstring>
                             </a>
                         <xar:else />
@@ -191,7 +194,7 @@
             <input type="hidden" name="receipt[action]" id="receipt_action"/>
 
             <input type="submit" id="receipt_action_preview" onclick="document.getElementById('receipt_action').value='preview'" value="#xarML('Preview')#" tabindex="3" />
-            &nbsp;
+            &#160;
             <input type="submit" id="receipt_action_submit" onclick="document.getElementById('receipt_action').value='submit'" value="#xarML('Submit')#" tabindex="4" />
         </div>
     </form>
@@ -207,5 +210,8 @@
     <div style="clear: both;"></div>
 </div>
 
-<xar:set name="topic_view">#xarModFunc('xarbb','user','viewtopic', array('tid' =&gt; $tid, 'post' =&gt; 1))#</xar:set>
+<xar:set name="topic_view">#xarMod::guiFunc('xarbb','user','viewtopic', array('tid' =&#62; $tid, 'post' =&#62; 1))#</xar:set>
 #$topic_view#
+
+
+</xar:template>

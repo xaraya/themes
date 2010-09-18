@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:comment> for this module specific css rules look at comments/xarstyles/comments.css file [andyv] </xar:comment>
 <script type="text/javascript" src="modules/base/xartemplates/includes/submitonce.js"></script>
 <xar:sec mask="Comments-Reply" catch="false">
@@ -23,7 +26,7 @@
             </xar:mlstring>
             : 
             <xar:if condition="strtolower(xarUserGetVar('uname')) ne 'anonymous'">
-              <a href="&xar-modurl-roles-user-display;&amp;uid=#$package['uid']#"> #$package['name']# </a> 
+              <a href="&xar-modurl-roles-user-display;&#38;uid=#$package['uid']#"> #$package['name']# </a> 
               <xar:if condition="$receipt['action'] ne 'modify' and xarUserIsLoggedIn()">
                 [ <a class="xar-norm" href="&xar-modurl-authsystem-user-logout;"> 
                   <xar:mlstring>
@@ -31,7 +34,7 @@
                   </xar:mlstring>
                 </a> ] 
               </xar:if>
-              <xar:if condition="xarModGetVar('comments','AllowPostAsAnon') eq '1'">
+              <xar:if condition="xarModVars::get('comments','AllowPostAsAnon') eq '1'">
                 <xar:if condition="isset($package['postanon']) and $package['postanon'] eq '1'">
                   <input type="checkbox" name="package[postanon]" id="package-postanon" checked="checked" /> 
                 <xar:else />
@@ -100,7 +103,7 @@
             </xar:mlstring>
             : 
             <xar:if condition="strtolower(xarUserGetVar('uname')) ne 'anonymous'">
-              <a href="&xar-modurl-roles-user-display;&amp;uid=#$package['uid']#"> #$package['name']# </a> 
+              <a href="&xar-modurl-roles-user-display;&#38;uid=#$package['uid']#"> #$package['name']# </a> 
               <xar:if condition="$receipt['action'] ne 'modify' and xarUserIsLoggedIn()">
                 [ <a class="xar-norm" href="&xar-modurl-authsystem-user-logout;"> 
                   <xar:mlstring>
@@ -108,7 +111,7 @@
                   </xar:mlstring>
                 </a> ] 
               </xar:if>
-              <xar:if condition="xarModGetVar('comments','AllowPostAsAnon') eq '1'">
+              <xar:if condition="xarModVars::get('comments','AllowPostAsAnon') eq '1'">
                 <xar:if condition="isset($package['postanon']) and $package['postanon'] eq '1'">
                   <input type="checkbox" name="package[postanon]" id="package-postanon" checked="checked" /> 
                 <xar:else />
@@ -173,3 +176,6 @@
     </div>
   </form>
 </xar:sec>
+
+
+</xar:template>

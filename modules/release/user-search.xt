@@ -1,9 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:comment>
     License: GPL http://www.gnu.org/copyleft/gpl.html
 </xar:comment>
 <xar:if condition="!isset($ishooked) or empty($ishooked)">
 	<div class="xar-mod-head">
-	   <span class="xar-mod-title"><xar:mlstring>Project Registration &amp; Releases</xar:mlstring></span>
+	   <span class="xar-mod-title"><xar:mlstring>Project Registration &#38; Releases</xar:mlstring></span>
 	</div>
 	<div class="xar-mod-body">
 		<h2><xar:mlstring>Search Registered Extensions</xar:mlstring></h2>
@@ -24,3 +27,6 @@
 
 	<xar:template type="module" module="release" file="searchresults" />
 </xar:if>
+
+
+</xar:template>

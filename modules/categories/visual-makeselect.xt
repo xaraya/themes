@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
 <xar:if condition="!empty($size)">
     <xar:set name="sizestring">'size="'.$size.'"'</xar:set>
@@ -28,12 +31,12 @@
     <xar:set name="name">#xarVarPrepForDisplay($category['name'])#</xar:set>
     <xar:set name="indent">''</xar:set>
     <xar:for start="$i = 0" test="$i lt $category['indentation']" iter="$i++">
-        <xar:set name="indent">$indent . '&nbsp;&nbsp;&nbsp;&nbsp;'</xar:set>
+        <xar:set name="indent">$indent . '&#160;&#160;&#160;&#160;'</xar:set>
     </xar:for>
     <xar:if condition="$lastindent lt $category['indentation']">
-        <xar:set name="indent">$indent . '--+&nbsp;&nbsp;'</xar:set>
+        <xar:set name="indent">$indent . '--+&#160;&#160;'</xar:set>
     <xar:else/>
-        <xar:set name="indent">$indent . '&nbsp;&nbsp;&nbsp;+&nbsp;'</xar:set>
+        <xar:set name="indent">$indent . '&#160;&#160;&#160;+&#160;'</xar:set>
     </xar:if>
     <xar:set name="lastindent">$category['indentation']</xar:set>
     <xar:if condition="(isset($cid)) and ($id eq $cid)">
@@ -62,9 +65,12 @@
 
 <xar:if condition="!empty($show_edit) and !empty($current_id)">
     <xar:sec id="showEdit" mask="EditCategories" catch="false" component="Category" instance="All:$current_id">
-        [&nbsp;<a href="#xarModURL('categories','admin','modifycat',array('cid' => $current_id))#">
+        [&#160;<a href="#xarModURL('categories','admin','modifycat',array('cid' => $current_id))#">
         <xar:mlstring>Edit</xar:mlstring>
         </a> ]
     </xar:sec>
 </xar:if>
 
+
+
+</xar:template>

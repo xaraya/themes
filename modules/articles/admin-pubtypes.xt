@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
 <div class="xar-mod-head">
     <span class="xar-mod-title">
@@ -217,7 +220,7 @@
         </form>
 
         <xar:if condition="xarModIsHooked('dynamicdata','articles',$ptid)">
-            #xarModFunc('dynamicdata','admin','modifyconfighook',array('extrainfo' => array('module' => 'articles','itemtype' => $ptid)))#
+            #xarMod::guiFunc('dynamicdata','admin','modifyconfighook',array('extrainfo' => array('module' => 'articles','itemtype' => $ptid)))#
         </xar:if>
         <p class="xar-align-left">
         	<a href="#xarModURL('articles','admin','exportpubtype',array('ptid' => $ptid))#">
@@ -252,7 +255,7 @@
                     <xar:mlvar>#$numitems#</xar:mlvar>
                 </xar:ml>
             </p>
-            <xar:if condition="$ptid eq xarModGetVar('articles','defaultpubtype')">
+            <xar:if condition="$ptid eq xarModVars::get('articles','defaultpubtype')">
                 <p>
                     <strong>
                         <xar:mlstring>Warning: this is the current default publication type!</xar:mlstring>
@@ -382,3 +385,6 @@
     </xar:if>
     <xar:set name="dummy">xarSessionSetVar('statusmsg','')</xar:set>
 </div>
+
+
+</xar:template>

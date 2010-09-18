@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <div class="modalwrap" id="modal_#$name#">
 	<div class="modalmain">
 		<div class="modalmain_tlcorner"><div class="modalmain_trcorner"></div></div>
@@ -13,3 +16,5 @@
         <div class="modalmain_blcorner"><div class="modalmain_brcorner"></div></div>
 	</div>
 </div>
+
+</xar:template>

@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:comment>License: GPL http://www.gnu.org/copyleft/gpl.html</xar:comment>
 <div class="xar-mod-head">
     <span class="xar-mod-title">
@@ -27,7 +30,7 @@
 	                    <p class="xar-margin-none"><strong>#$loop:item['name']#
 	                    [ #$loop:item['percentage']#%
 	                    <xar:if condition="$showtotalvotes eq 1">
-	                        &nbsp;(#$loop:item['votes']#)
+	                        &#160;(#$loop:item['votes']#)
 	                    </xar:if>    
 	                    ]</strong></p>
                         <div class="xar-margin-thickends polls-pollbar" style="width: #$loop:item['barwidth']#%;"></div>
@@ -80,3 +83,6 @@
 <div class="xar-standard-box-padding xar-align-center">
 #$hookoutput#
 </div>
+
+
+</xar:template>

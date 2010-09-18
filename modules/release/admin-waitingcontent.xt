@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <p><strong><xar:mlstring>In Releases</xar:mlstring> : 
 <xar:if condition="empty($loop)">
     <xar:mlstring>None</xar:mlstring>
@@ -12,3 +15,6 @@
 		</div>
     </xar:foreach>
 </xar:if>
+
+
+</xar:template>

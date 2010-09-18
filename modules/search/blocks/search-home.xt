@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <form action="#xarModURL('search','user','main')#" method="get" style="margin: 0;">
     <div>
         <input type="hidden" name="module" id="module" value="search" />
@@ -5,6 +8,9 @@
         <input type="submit" value="#xarML('Go!')#" />
     </div>
     <p style="margin: .1em 0 0 0;text-align: right;">
-        <a href="#xarModURL('search','user','main')#"><xar:mlstring>Advanced Search &gt;&gt;</xar:mlstring></a>
+        <a href="#xarModURL('search','user','main')#"><xar:mlstring>Advanced Search &#62;&#62;</xar:mlstring></a>
     </p>
 </form>
+
+
+</xar:template>

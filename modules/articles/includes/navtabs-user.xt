@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:set name="public_ptids">array(1,6,7,9)</xar:set>
 <xar:if condition="!empty($maplink) or !empty($archivelink) or !empty($submitlink) or (!xarUserIsLoggedIn() and !in_array($ptid, $public_ptids))">
     <xar:if condition="xarTplAddStyleLink('base', 'navtabs')">
@@ -32,3 +35,6 @@
         </xar:if>
     </dl>
 </xar:if>
+
+
+</xar:template>

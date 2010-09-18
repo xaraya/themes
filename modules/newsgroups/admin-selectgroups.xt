@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <div class="xar-mod-head"><span class="xar-mod-title"><xar:mlstring>NewsGroups Administration</xar:mlstring></span></div>
 <div class="xar-mod-body">
     <xar:template type="module" file="admin-menu" />
@@ -24,7 +27,7 @@
             </div>
         </form>
 
-        <xar:base-include-javascript module="base" filename="checkall.js" />
+        <xar:javascript module="base" filename="checkall.js" />
         <form method="post" name="selectgroups" id="selectgroups" action="#xarModURL('newsgroups', 'admin', 'selectgroups', array('phase' => 'update'))#" enctype="application/x-www-form-urlencoded" >
             <input type="hidden" name="authid" id="authid" value="#$authid#" />
             <fieldset>
@@ -62,3 +65,6 @@
             </div>
         </form>
 </div>
+
+
+</xar:template>

@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:style scope="module" module="xarpages" file="xarpages" />
 
 <div class="xar-mod-head"><span class="xar-mod-title"><xar:mlstring>Page Administration</xar:mlstring></span></div>
@@ -25,9 +28,9 @@
             <xar:loop name="$pages">
                 <xar:if condition="$loop:index ge 0">
                     <xar:if condition="(($loop:index + 1) % 2)">
-                        <xar:set name="$row_class">''</xar:set>
+                        <xar:set name="row_class">''</xar:set>
                     <xar:else />
-                        <xar:set name="$row_class">'xar-accent'</xar:set>
+                        <xar:set name="row_class">'xar-accent'</xar:set>
                     </xar:if>
 
                     <tr>
@@ -38,20 +41,20 @@
                         <td class="#$row_class#" title="#xarML('Status: ')# #$loop:item.status#"><span class="xar-xarpages-status-#$loop:item.status#">#xarVarPrepForDisplay($loop:item.pagetype.name)#: #xarVarPrepForDisplay($loop:item.desc)#</span></td>
                         <td class="xar-align-center #$row_class#">
                             <xar:if condition="!empty($loop:item.edit_allowed)">
-                                <a href="#xarModURL('xarpages', 'admin', 'modifypage', array('pid' =&gt; $loop:item.pid))#">
+                                <a href="#xarModURL('xarpages', 'admin', 'modifypage', array('pid' =&#62; $loop:item.pid))#">
                                     <xar:mlstring>Modify</xar:mlstring>
                                 </a>
                                 | 
                             </xar:if>
 
                             <xar:if condition="!empty($loop:item.delete_allowed)">
-                                <a href="#xarModURL('xarpages', 'admin', 'deletepage', array('pid' =&gt; $loop:item.pid))#">
+                                <a href="#xarModURL('xarpages', 'admin', 'deletepage', array('pid' =&#62; $loop:item.pid))#">
                                     <xar:mlstring>Delete</xar:mlstring>
                                 </a>
                                 | 
                             </xar:if>
 
-                            <a href="#xarModURL('xarpages', 'user', 'display', array('pid' =&gt; $loop:item.pid))#">
+                            <a href="#xarModURL('xarpages', 'user', 'display', array('pid' =&#62; $loop:item.pid))#">
                                 <xar:mlstring>Display</xar:mlstring>
                             </a>
                         </td>
@@ -61,3 +64,6 @@
         </table>
     </xar:if>
 </div>
+
+
+</xar:template>

@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <div id="main_right">
 
     <xar:if condition="!empty($side_group_name)">
@@ -12,3 +15,6 @@
     </div>
 
 </div>
+
+
+</xar:template>

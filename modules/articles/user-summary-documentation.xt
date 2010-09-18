@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <div class="summary-documentation">
 	<xar:comment>
 		jojodee: Do we really want these categories here .. crowds the page.
@@ -80,3 +83,5 @@
 		<a href="#$link#"><xar:mlstring>Read More</xar:mlstring></a>
 	</p>
 </div>
+
+</xar:template>

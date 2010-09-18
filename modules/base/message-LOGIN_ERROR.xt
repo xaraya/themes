@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
 <xar:comment>
 ***********
@@ -36,7 +39,7 @@
     </xar:if>
 </div>
     <p>
-        <!--<xar:set name="contactus">xarModGetVar('mail', 'adminmail',1)</xar:set>-->
+        <!--<xar:set name="contactus">xarModVars::get('mail', 'adminmail',1)</xar:set>-->
         <xar:set name="contactus">xarModURL('sitecontact','user','main')</xar:set>
         <xar:ml>
         <xar:mlstring>Please review the information above and try logging in again.
@@ -50,3 +53,6 @@
        <xar:block module="authsystem" type="login" />
     </div>
 </div>
+
+
+</xar:template>

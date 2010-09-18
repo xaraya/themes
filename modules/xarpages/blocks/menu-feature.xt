@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:comment>
     This simple menu template formats the pages tree into a nested-list menu.
     Required paramaters are:
@@ -17,5 +20,8 @@
     <xar:set name="max_level">0</xar:set>
 </xar:if>
 
-<xar:template file="feature" subdata="array('parent'=&gt;$root_page,'pages'=&gt;$pages,'max_level'=&gt;$max_level)" />
+<xar:template file="feature" subdata="array('parent'=&#62;$root_page,'pages'=&#62;$pages,'max_level'=&#62;$max_level)" />
 </div>
+
+
+</xar:template>

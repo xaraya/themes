@@ -1,7 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:set name="public_ptids">array(1,6,7,9,14,17,18)</xar:set>
-<xar:set name="ptid">xarRequestGetVar('ptid')</xar:set>
+<xar:set name="ptid">xarRequest::getVar('ptid')</xar:set>
 <xar:if condition="!empty($ptid) and in_array($ptid, $public_ptids)">
-    <xar:set name="pt_info">array_shift(xarModAPIFunc('articles','user','getpubtypes',array('ptid' => $ptid)))</xar:set>
+    <xar:set name="pt_info">array_shift(xarMod::apiFunc('articles','user','getpubtypes',array('ptid' => $ptid)))</xar:set>
 
     <div id="main_right">
         <xar:blockgroup name="trop_home_right" />
@@ -28,3 +31,6 @@
         </p>
     </div>
 </xar:if>
+
+
+</xar:template>

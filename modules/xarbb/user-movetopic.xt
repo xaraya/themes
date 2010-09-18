@@ -1,8 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <div class="xar-sub">
     <a href="#xarModUrl('xarbb', 'user', 'main')#">
-        #xarModGetVar('themes', 'SiteName', 0)# #xarModGetVar('themes', 'SiteTitleSeparator', 0)#
-        #xarModGetVar('themes', 'SiteSlogan', 0)#
-        #xarModGetVar('themes', 'SiteTitleSeparator', 0)# 
+        #xarModVars::get('themes', 'SiteName', 0)# #xarModVars::get('themes', 'SiteTitleSeparator', 0)#
+        #xarModVars::get('themes', 'SiteSlogan', 0)#
+        #xarModVars::get('themes', 'SiteTitleSeparator', 0)# 
         <xar:mlstring>Forum Index</xar:mlstring>
     </a> 
     <span style="font-size: larger;">&#187;</span> 
@@ -51,3 +54,6 @@
         <input type="submit" name="confirm" value="#xarML('Submit')#" />
     </p>
 </form>
+
+
+</xar:template>

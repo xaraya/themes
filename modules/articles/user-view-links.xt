@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:template file="publinks" type="module" />
 <xar:set name="weblinkoverviewgroup"><xar:blockgroup name="weblink_overviewgroup" id="weblink_overviewgroup"/></xar:set>
 <xar:if condition="$catid eq '7'">
@@ -69,3 +72,6 @@
 	<xar:categories-navigation layout="prevnext" />
 </xar:if>
 <xar:template file="navtabs-user" type="module" />
+
+
+</xar:template>

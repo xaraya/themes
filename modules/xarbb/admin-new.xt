@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
 <script type="text/javascript" src="modules/base/xartemplates/functions.js"></script>
 <script type="text/javascript">
@@ -27,7 +30,7 @@
             #$warning#
         </p>
     </xar:if>
-    <form method="post" name="post" id="post" action="&xar-modurl-xarbb-admin-new;&amp;phase=update" enctype="application/x-www-form-urlencoded" onsubmit="return formCheck(this, fieldRequired, fieldDescription);" >
+    <form method="post" name="post" id="post" action="&xar-modurl-xarbb-admin-new;&#38;phase=update" enctype="application/x-www-form-urlencoded" onsubmit="return formCheck(this, fieldRequired, fieldDescription);" >
         <fieldset>
             <legend>
                 <strong>
@@ -231,3 +234,5 @@
         </fieldset>
     </form>
 </div>
+
+</xar:template>

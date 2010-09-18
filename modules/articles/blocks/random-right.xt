@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:set name="item">array_shift($items)</xar:set>
 <xar:if condition="isset($item['screenshot_output']) AND count($item['screenshot_output']) ge 1">
     <xar:set name="imgid">array_shift(array_keys($item['screenshot_output']))</xar:set>
@@ -19,3 +22,6 @@
 <xar:if condition="!empty($showsummary)">
     <div style="margin-top: 1em;">#$item['summary']#</div>
 </xar:if>
+
+
+</xar:template>

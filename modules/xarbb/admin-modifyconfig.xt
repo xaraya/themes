@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
 <script type="text/javascript" src="modules/base/xartemplates/functions.js"></script>
 <script type="text/javascript">
@@ -23,7 +26,7 @@
             Modify Configuration
         </xar:mlstring>
     </h2>
-    <form action="&xar-modurl-xarbb-admin-modifyconfig;&amp;phase=update" method="post" enctype="application/x-www-form-urlencoded" onsubmit="return formCheck(this, fieldRequired, fieldDescription);">
+    <form action="&xar-modurl-xarbb-admin-modifyconfig;&#38;phase=update" method="post" enctype="application/x-www-form-urlencoded" onsubmit="return formCheck(this, fieldRequired, fieldDescription);">
         <fieldset>
             <legend>
                 <strong>
@@ -39,7 +42,7 @@
                             Support Short Urls
                         </xar:mlstring>
                 </label>
-                <xar:if condition="xarModGetVar('xarbb', 'SupportShortURLs')">
+                <xar:if condition="xarModVars::get('xarbb', 'SupportShortURLs')">
                     <input type="checkbox" name="supportshorturls" id="supportshorturls" value="1" checked="checked" />
                 <xar:else />
                     <input type="checkbox" name="supportshorturls" id="supportshorturls" value="1" />
@@ -51,7 +54,7 @@
                             Use a module alias
                         </xar:mlstring>
                 </label>
-                <xar:if condition="xarModGetVar('xarbb', 'useModuleAlias')">
+                <xar:if condition="xarModVars::get('xarbb', 'useModuleAlias')">
                     <input type="checkbox" name="modulealias" id="modulealias" value="1" checked="checked" />
                 <xar:else />
                     <input type="checkbox" name="modulealias" id="modulealias" value="1" />
@@ -64,7 +67,7 @@
                             Module Alias Name
                         </xar:mlstring>
                 </label>
-                <input type="text" name="aliasname" id="aliasname" value="#xarModGetVar('xarbb', 'aliasname')#" size="32" maxlength="100" />
+                <input type="text" name="aliasname" id="aliasname" value="#xarModVars::get('xarbb', 'aliasname')#" size="32" maxlength="100" />
             </div>
 
             <div class="xar-form-input-wrapper">
@@ -73,7 +76,7 @@
                             Admin Forums per Page
                         </xar:mlstring>
                 </label>
-                <input type="text" name="forumsperpage" id="forumsperpage" value="#xarModGetVar('xarbb', 'forumsperpage', 1)#" size="2" maxlength="4" />
+                <input type="text" name="forumsperpage" id="forumsperpage" value="#xarModVars::get('xarbb', 'forumsperpage', 1)#" size="2" maxlength="4" />
             </div>
             <div class="xar-form-input-wrapper">
                 <label for="xarbbtitle" class="xar-form-label" title="#xarML('Forum title for main forum listing pages.')#">
@@ -81,7 +84,7 @@
                             Forum Home Link Title
                         </xar:mlstring>
                 </label>
-                <input type="text" name="xarbbtitle" id="xarbbtitle" value="#xarModGetVar('xarbb', 'xarbbtitle', 1)#" size="32" maxlength="100" />
+                <input type="text" name="xarbbtitle" id="xarbbtitle" value="#xarModVars::get('xarbb', 'xarbbtitle', 1)#" size="32" maxlength="100" />
             </div>
         </fieldset>
         <fieldset>
@@ -246,3 +249,6 @@
         </fieldset>
     </form>
 </div>
+
+
+</xar:template>

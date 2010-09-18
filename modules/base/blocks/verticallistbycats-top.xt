@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <div id="hmenu">
 	<ul id="hmenuroot">
 		<xar:foreach in="$catmods" key="$catname" value="$cats">
@@ -117,3 +120,6 @@
 		</xar:foreach>
 	</ul>
 </div>
+
+
+</xar:template>

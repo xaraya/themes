@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:if condition="!empty($usercontent)">   
     <xar:loop name="$usercontent">
         <xar:if condition="$loop:index gt 0">
@@ -6,3 +9,6 @@
     </xar:loop>
 </xar:if>
 
+
+
+</xar:template>

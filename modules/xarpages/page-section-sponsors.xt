@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <div id="main_right">
 
     <xar:if condition="!empty($side_group_name)">
@@ -11,4 +14,18 @@
         #$current_page.dd.intro#
     </div>
 
+    <xar:foreach in="$sponsors" value="$article">
+        #xarTplModule('articles', 'user', 'summary', $article, 'sponsors')#
+    </xar:foreach>
+
+    <p>
+        <a href="#xarModURL('articles','user','view',array('ptid'=>12))#">
+            <xar:mlstring>More Sponsors and Donations...</xar:mlstring>
+        </a>
+    </p>
+
+
 </div>
+
+
+</xar:template>

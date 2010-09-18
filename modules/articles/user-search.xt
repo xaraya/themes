@@ -1,7 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
 <h2><xar:mlstring>Search in Articles</xar:mlstring></h2>
 
-<xar:set name="fulltext">xarModGetVar('articles', 'fulltextsearch')</xar:set>
+<xar:set name="fulltext">xarModVars::get('articles', 'fulltextsearch')</xar:set>
 <xar:if condition="!empty($fulltext)">
 	<xar:set name="fulltextfields">explode(',',$fulltext)</xar:set>
 </xar:if>
@@ -16,7 +19,7 @@
 	        <xar:mlstring>Search for:</xar:mlstring>
 	    </label>
 	    <input type="text" name="q" id="q" value="#$q#" class="xar-form-textlong" />
-		<xar:set name="$search"><xar:mlstring>Search</xar:mlstring></xar:set>
+		<xar:set name="search"><xar:mlstring>Search</xar:mlstring></xar:set>
 		<input type="submit" name="search" value="#$search#" style="margin-left: 2em;" />
 	</div>
 
@@ -71,7 +74,7 @@
         <xar:mlstring>Publications</xar:mlstring>
     </span>
     <div class="xar-form-container-after">
-		<xar:set name="$i">0</xar:set>
+		<xar:set name="i">0</xar:set>
 		<input type="hidden" name="ptids[]" value="0" />
 		<xar:foreach in="$publications" value="$pubtype">
 			<div style="float: left;margin-right: 1em;white-space: nowrap;width: 12em;">
@@ -209,3 +212,6 @@
 </xar:if>
 
 <br />
+
+
+</xar:template>

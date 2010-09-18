@@ -1,4 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:if id="title_condition" condition="!empty($title)">
 	<h1 class="overview">#$title#</h1>
 </xar:if>
 #$content# 
+
+
+</xar:template>

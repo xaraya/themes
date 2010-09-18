@@ -1,7 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <div class="xar-mod-head"><span class="xar-mod-title"><xar:mlstring>Search Module</xar:mlstring></span></div>
 <div class="xar-mod-body"><h2><xar:mlstring>Search</xar:mlstring></h2>
 <div style="margin: auto;">
-<xar:set name="showlastsearches">#xarModGetVar('search','showsearches')#</xar:set>
+<xar:set name="showlastsearches">#xarModVars::get('search','showsearches')#</xar:set>
 <xar:if condition="$showlastsearches">
     <h4><xar:mlstring>Last 10 Searches Made</xar:mlstring></h4>
     <table>
@@ -93,3 +96,6 @@
 </xar:if>
 </div>
 </div>
+
+
+</xar:template>

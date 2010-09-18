@@ -1,9 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
 <div class="xar-alt-outline xar-align-center">
 	<div class="boxcore">
 	    <xar:if condition="!isset($showdisplay) or $showdisplay eq 1">
 	        <h5>
-	            <xar:mlstring>Rating:</xar:mlstring>&nbsp;
+	            <xar:mlstring>Rating:</xar:mlstring>&#160;
 	        </h5>
 	        <xar:if condition="$style eq 'percentage'">
 	            #$rating# %
@@ -130,3 +133,6 @@
 	    </xar:if>
 	</div>
 </div>
+
+
+</xar:template>

@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <div class="xar-block-right">
     <xar:if condition="$bid gt 0 and xarSecurityCheck('EditBlock', 0, 'Block','::' . $bid)">
         <div class="xar-block-head-right">
@@ -17,3 +20,6 @@
     </div>
     <div class="xar-block-foot-right"></div>
 </div>
+
+
+</xar:template>

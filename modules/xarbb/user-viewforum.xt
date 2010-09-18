@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:comment>
     License: GPL http://www.gnu.org/copyleft/gpl.html 
 </xar:comment>
@@ -31,7 +34,7 @@
             <div id="xarbb-topics">
                 <ul>
                     <li>
-                        <a href="#xarServerGetCurrentURL(array('read'=&gt;1))#">
+                        <a href="#xarServer::getCurrentURL(array('read'=&#62;1))#">
                             <xar:mlstring>Mark All Topics as Read</xar:mlstring>
                         </a>
                     </li>
@@ -56,7 +59,7 @@
         </h1>
 
         <div class="xarbb-topiccontrols">
-            <xar:template file="jump-menu" type="module" subdata="array('forums'=&gt;$forums,'fid'=&gt;$fid)" />
+            <xar:template file="jump-menu" type="module" subdata="array('forums'=&#62;$forums,'fid'=&#62;$fid)" />
         </div>
 
         <div class="xarbb-topiccontrols">
@@ -183,3 +186,6 @@
         <xar:block module="roles" type="login" showlogout="1" />
     </div>
 </xar:comment>
+
+
+</xar:template>

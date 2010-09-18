@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:if condition="!empty($showpublinks)">
 	<!-- show a link to all publication types -->
 	#$publabel# : 
@@ -24,3 +27,6 @@
 	</xar:foreach>
 </xar:if>
 
+
+
+</xar:template>

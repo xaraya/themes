@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:comment>
     Input:
         $pages      - list of all pages
@@ -69,17 +72,17 @@
                             used to divide sections of pages in a single menu level.
                         </xar:comment>
                         <xar:if condition="$page.status eq 'EMPTY' and empty($page.has_children)">
-                            &gt; <xar:if condition="!empty($page.dd.menu_title)">
+                            &#62; <xar:if condition="!empty($page.dd.menu_title)">
                                 #xarVarPrepForDisplay($page.dd.menu_title)#
                             <xar:else />
                                 #$page.desc#
                             </xar:if>
 
                         <xar:elseif condition="!empty($page.dd.aid)" />
-                               <a href="#xarModURL('articles','user','display',array('aid'=&gt;$page.dd.aid,'ptid'=&gt;$page.dd.pub))#" title="#xarVarPrepForDisplay($page.desc)#">#$page.dd.menu_title#</a>
+                               <a href="#xarModURL('articles','user','display',array('aid'=&#62;$page.dd.aid,'ptid'=&#62;$page.dd.pub))#" title="#xarVarPrepForDisplay($page.desc)#">#$page.dd.menu_title#</a>
                         <xar:else />
                             <xar:if condition="empty($page.is_current)">
-                                <a href="#xarModURL('xarpages','user','display',array('pid'=&gt;$page.pid))#" title="#xarVarPrepForDisplay($page.desc)#">
+                                <a href="#xarModURL('xarpages','user','display',array('pid'=&#62;$page.pid))#" title="#xarVarPrepForDisplay($page.desc)#">
                                     <xar:if condition="!empty($page.dd.menu_title)">
                                         #xarVarPrepForDisplay($page.dd.menu_title)#
                                     <xar:else />
@@ -96,7 +99,7 @@
 
 
                             <xar:if condition="!empty($page.has_children)">
-                                <xar:template file="feature" subdata="array('parent'=&gt;$page,'pages'=&gt;$pages,'max_level'=&gt;$max_level,'menu_level'=&gt;$menu_level+1)" />
+                                <xar:template file="feature" subdata="array('parent'=&#62;$page,'pages'=&#62;$pages,'max_level'=&#62;$max_level,'menu_level'=&#62;$menu_level+1)" />
                             </xar:if>
                         </xar:if>
                     </li>
@@ -105,3 +108,6 @@
         </ul>
     </xar:if>
 </xar:if>
+
+
+</xar:template>
