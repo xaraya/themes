@@ -2,25 +2,22 @@
 <?xar type="page" ?>
 <!DOCTYPE blocklayout PUBLIC "-//XAR//DTD BL 2.0 Strict//EN" "http://xaraya.com/bl2/DTD/bl2-strict.dtd">
 <xar:blocklayout version="2.0" content="text/html" xmlns:xar="http://xaraya.com/2004/blocklayout" dtd="xhtml1-strict">
-    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-        <head>
-            <xar:blockgroup name="header" id="header"/>
-            <title>
-                <xar:var name="tpl:pageTitle"/>
-            </title>
-            <base href="#xarServer::getBaseURL()#index.php"/>
-            <link rel='icon' href="favicon.ico"/>
-            <xar:style scope="common"/>
-            <xar:style scope="theme" file="style" title="zulu Stylesheet"/>
-			<xar:style scope="theme" file="footer_styles" />            
-            <xar:place-css />
-            <xar:place-javascript position="head"/>
-        </head>
-        <body>
-            <div id="wrapper">
-            	<div id="topnav">
-            		<xar:blockgroup name="topnav" id="topnav"/>
-				</div>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<xar:blockgroup name="header" id="header"/>
+		<title>
+			<xar:var name="tpl:pageTitle"/>
+		</title>
+		<base href="#xarServer::getBaseURL()#index.php"/>
+		<link rel='icon' href="favicon.ico"/>
+		<xar:style scope="common"/>
+		<xar:style scope="theme" file="style" title="zulu Stylesheet"/>
+		<xar:style scope="theme" file="footer_styles" />            
+		<xar:place-css />
+		<xar:place-javascript position="head"/>
+	</head>
+	<body>
+		<div id="header">
 			<div id="logo">
 				<a href="index.php" title="home">
 					<img src="#xarTplGetThemeDir()#/images/siteLogo.png"  alt="Site Logo" title="Main Page"/>
@@ -28,23 +25,25 @@
 			</div>
 			<span id="slogan">
 				<xar:var name="SiteSlogan" scope="module" module="themes"/>
-			</span>			
-                <div id="main">
-                    <xar:module id="modulespace"/>
-                </div>
-                <div id="sideInfo1" class="sideInfo">
-                    <xar:blockgroup name="left" id="left"/>
-                </div>
-                <div id="sideInfo2" class="sideInfo">
-                    <xar:blockgroup name="right" id="right"/>
-                </div>
-                <xar:place-javascript position="body"/>
-            </div>
-                <div id="siteFooter">
-                	<xar:template type="theme" file="footer-blocks"/>
-					<xar:var scope="module" module="themes" name="SiteCopyRight"/> | 
-					<xar:var scope="module" module="themes" name="SiteFooter"/>					
-            	</div>                
-        </body>
-    </html>
+			</span>	
+		</div>
+		<div id="wrapper">
+			<div id="topnav">
+				<xar:blockgroup name="topnav" id="topnav"/>
+			</div>
+			<div id="leftBlockGroup" class="sideInfo">
+				<xar:blockgroup name="left" id="left"/>
+			</div>			
+			<div id="main">
+				<xar:module id="modulespace"/>
+			</div>
+			<xar:place-javascript position="body"/>
+		</div>
+			<div id="siteFooter">
+				<xar:template type="theme" file="footer-blocks"/>
+				<xar:var scope="module" module="themes" name="SiteCopyRight"/> | 
+				<xar:var scope="module" module="themes" name="SiteFooter"/>					
+			</div>                
+	</body>
+</html>
 </xar:blocklayout>
