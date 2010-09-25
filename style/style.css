@@ -153,7 +153,6 @@ div.xar-pager span.xar-page a:hover {
     font-size: .88em;
     letter-spacing: .1em;
     color: #D77043;
-    border-top: 1px solid #D77043;
     text-align: right;
 }
 .sideInfo .xar-block-body {
@@ -369,7 +368,9 @@ a:active {color: #D77043;}
 	font-weight: bold;
 	background: none;
     } 
-.xar-block-body {}   
+.xar-block-body {
+	border: none;
+	}   
 
 /* Default block template */
 .defaultBlock-wrapper {  } 
@@ -394,6 +395,11 @@ a:active {color: #D77043;}
     } 
 .centerblock-body {margin: 0 20px 20px 20px;}   
 
+/* contentonly block */
+.contentOnly {
+	
+    }
+
 /* miscellaneous Page template styles */
 .basePageBlocks {
 	font: 1.5em "Courier New", Courier, mono;
@@ -406,13 +412,8 @@ a:active {color: #D77043;}
 
 /* login block */
 #authsystemBlocksLogin fieldset {
-	/* color: #93a6e5; */
-	
 	color: #8393ca;
 	width: 180px;
 	font-size: 1em;
     }
-#authsystemBlocksLogin input {
-	color: #b90a00;
-	border: solid 1px #93a6e5;
-    }    
+#authsystemBlocksLogin input {}    
