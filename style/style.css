@@ -1,5 +1,5 @@
 /* zulu Theme */
-/* modified 18 Sep 2010 */
+/* modified 24 Sep 2010 */
 
 /* theme styles that ARE critical to the page layout */
 html, body {
@@ -203,15 +203,17 @@ div.xar-pager span.xar-page a:hover {
 
 /* standard forms */
 fieldset {
-    border: 1px solid #B9B6B3;
-    margin: 0 0 2.25em;
-    padding: 0.5em 1.5em .5em;
+    border: none;
+    margin: 0 0 15px 0;
+    padding: 10px;
+    width: 180px;
+    color: red;
 }
 legend {
     text-transform: uppercase;
     font-size: .88em;
     letter-spacing: .1em;
-    color: #020;
+    color: #8393ca;
 }
 fieldset fieldset {
     margin: 1.5em 0 1.5em;
@@ -236,7 +238,8 @@ form p {
 .textInputContainer, .passInputContainer, .checkInputContainer, .radioInputContainer, .selectContainer, .textareaContainer {
     margin: .375em 0 .75em;
     clear: left;
-}
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    }
 #main .textInputContainer label, #main .passInputContainer label, #main .selectContainer label, #main .textareaContainer label {
     float: left;
     width: 25%;
@@ -318,11 +321,16 @@ pre {
     padding-left: 1.5em;
 }
 #authsystemBlocksLogin .textInputContainer label, #authsystemBlocksLogin .passInputContainer label {
-    font: italic normal 1em Georgia, Times, "Times New Roman", serif;
-}
+	text-transform: uppercase;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	font-weight: bold;
+    }
 #authsystemBlocksLogin .textInputContainer input, #authsystemBlocksLogin .passInputContainer input {
     width: 96%; /* wanted to do this with display: block, but that does not work correctly, this seems to work best... */
 }
+.xar-form-label {
+	font-variant: small-caps;
+    }
 
 /*
 icon related styling
@@ -375,7 +383,8 @@ a:active {color: #D77043;}
     }
 /* --- the CENTER BLOCK --- */
 .centerBlock-wrapper {
-	
+	margin: 0;
+	padding: 0;
     }
 .centerblock-title {
 	color: #6089d1;
@@ -385,3 +394,13 @@ a:active {color: #D77043;}
 	margin: 20px 20px 0 20px;
     } 
 .centerblock-body {margin: 0 20px 20px 20px;}   
+
+/* miscellaneous Page template styles */
+.basePageBlocks {
+	font: 1.5em "Courier New", Courier, mono;
+	border-bottom: dotted 1px blue;
+	margin: 0 0 30px 0;
+    }
+.basePageBlocks .centerblock-title {
+	text-transform: uppercase;
+    }
