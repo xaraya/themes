@@ -3,7 +3,6 @@
 <div style="margin: 10px; font-size: 12px;">
 	<h2 style="color: #8393ca;">FIND OUT MORE ABOUT XARAYA</h2>
 	<p>The Xaraya project is a group of brilliant developers, who are passionate about developing a great apparatus for web-development applications</p>
-	<p style="color: #c18a65;">So easy a caveman could do it? Yeah.... a caveman web-developer!</p>
 	<p>* <a href="http://xaraya.com">visit the Xaraya website!</a></p>
 	<div style="font-size: 10px;"><p><em>To edit this go to the theme directory</em>:<br />  <strong>zulu/includes/footer-blocks-left.xt</strong></p>
 	</div>
