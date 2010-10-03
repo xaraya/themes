@@ -1,5 +1,5 @@
 /* zulu Theme */
-/* modified 25 Sep 2010 */
+/* modified 3 Oct 2010 */
 
 /* theme styles that ARE critical to the page layout */
 html, body {
@@ -59,7 +59,7 @@ input, textarea {margin: 0;}
     font-size: 120%;
     letter-spacing: .1em;
     text-align: right;
-    color: #fff;
+    color: #d6cdbe;
 }
 #leftBlockGroup {
     left: 0;
@@ -69,7 +69,7 @@ input, textarea {margin: 0;}
     margin: 0 0px;
     padding: 0;   
     position: relative;
-    color: #8393ca;
+    color: #cfc6b8;
     background: url(../images/leftBlockBG.jpg)  no-repeat left top;         
 
 	display: inline-block;
@@ -83,15 +83,15 @@ input, textarea {margin: 0;}
     text-transform: uppercase;
     font-size: .88em;
     letter-spacing: .1em;
-    color: #D77043;
+    color: #417870;
 }
 .xar-mod-body {  }
 .xar-mod-foot {  }
-.xar-norm {background-color: #f6f0e7;}
+.xar-norm {background-color: #c7e0fe;}
 .xar-norm-outline {border-color: #002200;}
-.xar-alt {background-color: #F5DCBB;}
+.xar-alt {background-color: #8393ca;}
 .xar-alt-outline {border-color: #6B5273;}
-.xar-accent {background-color: #f9d57f;}
+.xar-accent {background-color: #a3b8fd;}
 .xar-accent-outline {border-color: #2352a8;}
 .xar-sub {
 	font-size: 10px;
@@ -108,7 +108,7 @@ ul.xar-tabs {
 }
 /* tabs label */
 ul.xar-tabs li.xar-tabs-label {
-    color: #D77043;
+    color: #6d58ca;
     text-transform: uppercase;
 }
 /* inactive tab */
@@ -127,11 +127,12 @@ ul.xar-tabs li.xar-tab-active a {
 }
 /* inactive tab link hover - not handled elsewhere */
 ul.xar-tabs li.xar-tab a:hover {
-    background-color: #F5EADC;
-}
+    background-color: #6c7aaa;
+	color: #d6cdbe;
+    }
 /* active tab link hover - not handled elsewhere */
 ul.xar-tabs li.xar-tab-active a:hover {
-    background-color: #f5dcbb;
+    background-color: #a3b8fd;
 }
 /* pager structure (margin, padding, etc is controlled in pager.css in 
    the base module.  Colors (border, background) are inherited from the norm, 
@@ -152,7 +153,7 @@ div.xar-pager span.xar-page a:hover {
     text-transform: uppercase;
     font-size: .88em;
     letter-spacing: .1em;
-    color: #D77043;
+    color: #417870;
     text-align: right;
 }
 .sideInfo .xar-block-body {
@@ -213,7 +214,7 @@ fieldset {
 legend {
     text-transform: uppercase;
     font-size: 1em;
-    color: #93a6e5;
+    color: red;
 	font-weight: bold;
     }
 fieldset fieldset {
@@ -354,8 +355,8 @@ img.xar-icon-disabled {
 
 /* -----theme specific styles that are NOT critical to the page layout ----*/
 a img {border: 0;}
-a:link, a:visited {color: orange;}
-a:hover, a:focus {color: #e0e0e0;}
+a:link, a:visited {color: #967e49;}
+a:hover, a:focus {color: #ba9954;}
 a:active {color: #D77043;}
 #main h2 {
     text-align: center;
