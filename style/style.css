@@ -87,11 +87,11 @@ input, textarea {margin: 0;}
 }
 .xar-mod-body {  }
 .xar-mod-foot {  }
-.xar-norm {background-color: #c7e0fe;}
+.xar-norm {background-color: #9cb3c0;}
 .xar-norm-outline {border-color: #002200;}
 .xar-alt {background-color: #8393ca;}
 .xar-alt-outline {border-color: #6B5273;}
-.xar-accent {background-color: #a3b8fd;}
+.xar-accent {background-color: #b4d3b5;}
 .xar-accent-outline {border-color: #2352a8;}
 .xar-sub {
 	font-size: 10px;
@@ -355,7 +355,7 @@ img.xar-icon-disabled {
 
 /* -----theme specific styles that are NOT critical to the page layout ----*/
 a img {border: 0;}
-a:link, a:visited {color: #967e49;}
+a:link, a:visited {color: #6d58ca;}
 a:hover, a:focus {color: #ba9954;}
 a:active {color: #D77043;}
 #main h2 {
