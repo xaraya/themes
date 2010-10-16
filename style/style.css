@@ -1,5 +1,5 @@
 /* zulu Theme */
-/* modified 3 Oct 2010 */
+/* modified 10 Oct 2010 */
 
 /* theme styles that ARE critical to the page layout */
 html, body {
@@ -59,7 +59,7 @@ input, textarea {margin: 0;}
     font-size: 120%;
     letter-spacing: .1em;
     text-align: right;
-    color: #d6cdbe;
+    color: #fff;
 }
 #leftBlockGroup {
     left: 0;
@@ -87,11 +87,11 @@ input, textarea {margin: 0;}
 }
 .xar-mod-body {  }
 .xar-mod-foot {  }
-.xar-norm {background-color: #9cb3c0;}
+.xar-norm {background-color: #c7e0fe;}
 .xar-norm-outline {border-color: #002200;}
 .xar-alt {background-color: #8393ca;}
 .xar-alt-outline {border-color: #6B5273;}
-.xar-accent {background-color: #b4d3b5;}
+.xar-accent {background-color: #a3b8fd;}
 .xar-accent-outline {border-color: #2352a8;}
 .xar-sub {
 	font-size: 10px;
@@ -210,8 +210,6 @@ fieldset {
     border: none;
     margin: 0 0 15px 0;
     padding: 10px;
-    width: 180px;
-    color: red;
 }
 legend {
     text-transform: uppercase;
@@ -357,7 +355,7 @@ img.xar-icon-disabled {
 
 /* -----theme specific styles that are NOT critical to the page layout ----*/
 a img {border: 0;}
-a:link, a:visited {color: #6d58ca;}
+a:link, a:visited {color: #967e49;}
 a:hover, a:focus {color: #ba9954;}
 a:active {color: #D77043;}
 #main h2 {
@@ -405,8 +403,7 @@ a:active {color: #D77043;}
 
 /* miscellaneous Page template styles */
 .basePageBlocks {
-	font: 1.5em "Courier New", Courier, mono;
-	border-bottom: dotted 1px blue;
+	font: 1.3em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 	margin: 0 0 30px 0;
     }
 .basePageBlocks .centerblock-title {
@@ -419,4 +416,22 @@ a:active {color: #D77043;}
 	width: 180px;
 	font-size: 1em;
     }
-#authsystemBlocksLogin input {}    
+#authsystemBlocksLogin input {}   
+
+/*-- article templates --*/
+.blog-wrapper {
+	border-bottom: dashed 1px #8393ca;
+	margin: 30px 0 0 0;
+    }
+.blog-title {
+	border-bottom: dashed 1px #8393ca;	
+    }
+.blog-sub {
+	margin: -15px 0 0 20px;
+	padding: 0;
+	font-size: .9em;
+	color: #8393ca;
+    } 
+.blog-summary {
+	padding: 20px;
+    }
