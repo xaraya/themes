@@ -1,5 +1,5 @@
 /* zulu Theme */
-/* modified 24 Sep 2010 */
+/* modified 3 Oct 2010 */
 
 /* theme styles that ARE critical to the page layout */
 html, body {
@@ -12,6 +12,10 @@ body {
     font: .8em/1.5em Arial, Helvetica, sans-serif;
     position: absolute;
 }
+code {
+	font-size: 1.4em;
+	color: #bb3f3a;
+    }
 input, textarea {margin: 0;}
 #wrapper {
     background: url(../images/bodyBG.png) repeat-y left top;    
@@ -55,7 +59,7 @@ input, textarea {margin: 0;}
     font-size: 120%;
     letter-spacing: .1em;
     text-align: right;
-    color: #fff;
+    color: #d6cdbe;
 }
 #leftBlockGroup {
     left: 0;
@@ -65,7 +69,7 @@ input, textarea {margin: 0;}
     margin: 0 0px;
     padding: 0;   
     position: relative;
-    color: #8393ca;
+    color: #cfc6b8;
     background: url(../images/leftBlockBG.jpg)  no-repeat left top;         
 
 	display: inline-block;
@@ -79,15 +83,15 @@ input, textarea {margin: 0;}
     text-transform: uppercase;
     font-size: .88em;
     letter-spacing: .1em;
-    color: #D77043;
+    color: #417870;
 }
 .xar-mod-body {  }
 .xar-mod-foot {  }
-.xar-norm {background-color: #f6f0e7;}
+.xar-norm {background-color: #9cb3c0;}
 .xar-norm-outline {border-color: #002200;}
-.xar-alt {background-color: #F5DCBB;}
+.xar-alt {background-color: #8393ca;}
 .xar-alt-outline {border-color: #6B5273;}
-.xar-accent {background-color: #f9d57f;}
+.xar-accent {background-color: #b4d3b5;}
 .xar-accent-outline {border-color: #2352a8;}
 .xar-sub {
 	font-size: 10px;
@@ -104,7 +108,7 @@ ul.xar-tabs {
 }
 /* tabs label */
 ul.xar-tabs li.xar-tabs-label {
-    color: #D77043;
+    color: #6d58ca;
     text-transform: uppercase;
 }
 /* inactive tab */
@@ -123,11 +127,12 @@ ul.xar-tabs li.xar-tab-active a {
 }
 /* inactive tab link hover - not handled elsewhere */
 ul.xar-tabs li.xar-tab a:hover {
-    background-color: #F5EADC;
-}
+    background-color: #6c7aaa;
+	color: #d6cdbe;
+    }
 /* active tab link hover - not handled elsewhere */
 ul.xar-tabs li.xar-tab-active a:hover {
-    background-color: #f5dcbb;
+    background-color: #a3b8fd;
 }
 /* pager structure (margin, padding, etc is controlled in pager.css in 
    the base module.  Colors (border, background) are inherited from the norm, 
@@ -148,8 +153,7 @@ div.xar-pager span.xar-page a:hover {
     text-transform: uppercase;
     font-size: .88em;
     letter-spacing: .1em;
-    color: #D77043;
-    border-top: 1px solid #D77043;
+    color: #417870;
     text-align: right;
 }
 .sideInfo .xar-block-body {
@@ -173,8 +177,8 @@ div.xar-pager span.xar-page a:hover {
 }
 .sideInfo h4 {
     margin: 0;
-    font: italic normal 1em Georgia, Times, "Times New Roman", serif;
-}
+	font-size: 1em;
+    }
 .xar-menu-section {
 }
 .xar-menu-section-current {
@@ -211,10 +215,10 @@ fieldset {
 }
 legend {
     text-transform: uppercase;
-    font-size: .88em;
-    letter-spacing: .1em;
-    color: #8393ca;
-}
+    font-size: 1em;
+    color: red;
+	font-weight: bold;
+    }
 fieldset fieldset {
     margin: 1.5em 0 1.5em;
     padding: 0;
@@ -353,16 +357,12 @@ img.xar-icon-disabled {
 
 /* -----theme specific styles that are NOT critical to the page layout ----*/
 a img {border: 0;}
-a:link {color: #2380A8;}
-a:visited {color: #8F5D59;}
-a:visited {color: #6B5273;}
-a:visited {color: #845161;}
-a:hover, a:focus {color: #2352A8;}
+a:link, a:visited {color: #6d58ca;}
+a:hover, a:focus {color: #ba9954;}
 a:active {color: #D77043;}
 #main h2 {
-    font: italic normal 1.5em Georgia, Times, "Times New Roman", serif;
     text-align: center;
-    color: #868ea9;
+    color: #93a6e5;
 }
    
 .xar-block-title {
@@ -371,12 +371,15 @@ a:active {color: #D77043;}
 	font-weight: bold;
 	background: none;
     } 
-.xar-block-body {}   
+.xar-block-body {
+	border: none;
+	}   
 
 /* Default block template */
 .defaultBlock-wrapper {  } 
 .defaultBlock-title {
-	
+	font-size: 1em;
+	font-weight: bold;
     }
 .defaultBlock-body {
 	
@@ -395,6 +398,11 @@ a:active {color: #D77043;}
     } 
 .centerblock-body {margin: 0 20px 20px 20px;}   
 
+/* contentonly block */
+.contentOnly {
+	
+    }
+
 /* miscellaneous Page template styles */
 .basePageBlocks {
 	font: 1.5em "Courier New", Courier, mono;
@@ -404,3 +412,11 @@ a:active {color: #D77043;}
 .basePageBlocks .centerblock-title {
 	text-transform: uppercase;
     }
+
+/* login block */
+#authsystemBlocksLogin fieldset {
+	color: #8393ca;
+	width: 180px;
+	font-size: 1em;
+    }
+#authsystemBlocksLogin input {}    

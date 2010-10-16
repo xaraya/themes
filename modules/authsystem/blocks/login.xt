@@ -3,7 +3,9 @@
     <!-- License: GPL http://www.gnu.org/copyleft/gpl.html -->
     <form id="authsystemBlocksLogin" action="#xarModURL('authsystem','user','login')#" method="post">
         <fieldset>
-            <legend>Login to your account:</legend>
+            <div>
+            	<img src="#xarTplGetThemeDir()#/images/login.png"  alt="log-in" />
+           	</div>
             <input type="hidden" name="redirecturl" id="returnurl#$blockid#"
             value="#$return_url#"/>
             <div class="textInputContainer">
@@ -19,7 +21,7 @@
             <xar:if condition="xarConfigVars::get(null,'Site.Session.SecurityLevel') ne 'High'">
                 <div class="checkInputContainer">
                     <input type="checkbox" name="rememberme" id="rememberme#$blockid#" value="1"/>&#160;
-                    <label for="rememberme#$blockid#">Remember my password</label>
+                    <label for="rememberme#$blockid#">Remember password</label>
                 </div>
             </xar:if>
             <div class="submitInputContainer">
