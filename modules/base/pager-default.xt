@@ -1,3 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+
 <xar:comment>
   This is just a placeholder so the pager-default.xd doesnt get used.
 </xar:comment>
+
+</xar:template>
