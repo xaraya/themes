@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
+<!-- License: GPL http://www.gnu.org/copyleft/gpl.html -->
+
+ <url>
+	
+<xar:set name="loc">xarModURL('content','user','display',array('itemid' => $itemid))</xar:set>
+
+<loc>#$loc#</loc>
+      
+<xar:if condition="isset($date_modified)">
+	<lastmod>#xarLocaleFormatUTCDate("%Y-%m-%d", $date_modified)#</lastmod>
+<xar:elseif condition="isset($publication_date)"/>
+	<lastmod>#xarLocaleFormatUTCDate("%Y-%m-%d", $publication_date)#</lastmod>
+<xar:elseif condition="isset($date_created)"/>
+	<lastmod>#xarLocaleFormatUTCDate("%Y-%m-%d", $date_created)#</lastmod>
+</xar:if>
+	
+<xar:if condition="isset($changefreq)">
+	<changefreq>#$changefreq#</changefreq>
+<xar:elseif condition="$loc eq xarServer::getBaseURL()"/>
+	<changefreq>weekly</changefreq>
+<xar:else/>
+	<changefreq>monthly</changefreq>
+</xar:if>
+      
+<xar:if condition="isset($priority)">
+	<priority>#$priority#</priority>
+<xar:elseif condition="$loc eq xarServer::getBaseURL()"/>
+	<priority>1.0</priority>
+<xar:else/>
+	<priority>0.5</priority>
+</xar:if>
+	
+
+   </url>
+
+</xar:template>
