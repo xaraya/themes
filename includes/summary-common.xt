@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xar:template xmlns:xar="http://xaraya.com/2004/blocklayout">
 
-<xar:set name="gsmlink">str_replace('&#38;', '&#38;', $link)</xar:set>
+<xar:set name="gsmlink">str_replace('&amp;', '&#38;', $link)</xar:set>
    <url>
       <loc><xar:var name="gsmlink"/></loc>
       <lastmod>#xarLocaleFormatUTCDate("%Y-%m-%d",$pubdate)#</lastmod>
