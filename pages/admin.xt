@@ -12,7 +12,7 @@
                 <xar:var name="tpl:pageTitle"/>
             </title>
             <base href="#xarServer::getBaseURL()#index.php"/>
-            <link rel='icon' href="favicon.ico"/>
+            <link rel="icon" href="#xarTplGetImage('favicon.ico', 'theme')#" type="image/x-icon" />
             <xar:style scope="common"/>
             <xar:style scope="theme" file="style" title="Xaraya Default Stylesheet"/>
             <xar:style scope="theme" file="admin" title="Xaraya Default Admin Stylesheet"/>
