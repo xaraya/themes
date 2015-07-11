@@ -4,8 +4,6 @@
     <form id="authsystemBlocksLogin" action="#xarModURL('authsystem','user','login')#" method="post">
         <fieldset>
             <legend>Login</legend>
-            <input type="hidden" name="redirecturl" id="returnurl#$blockid#"
-            value="#$return_url#"/>
             <div class="textInputContainer">
                 <label for="uname#$blockid#" title="#xarML('Enter your user name')#">
                 Username:</label>
@@ -23,7 +21,9 @@
                 </div>
             </xar:if>
             <div class="submitInputContainer">
-                <input type="submit" value="#xarML('Log In')#"/>
+                <xar:var name="label">Log In</xar:var>
+                <xar:button type="submit" label="$label"/>
+                <input type="hidden" name="redirecturl" id="returnurl#$blockid#" value="#$return_url#"/>
             </div>
             <p>
                 <a href="#xarModURL('roles','user','lostpassword')#">Request new password</a>
